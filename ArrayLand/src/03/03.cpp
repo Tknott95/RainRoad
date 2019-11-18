@@ -6,7 +6,7 @@ int main() {
   
   for(int i = 0; i < byteSize; i++) {
     fermatArray[i] = i;
-    if(i % 3 == 0) {
+    if(i % 3 == 0 && i % 5 ==0) {
       std::cout << fermatArray[i] << std::endl;
     }
   }
