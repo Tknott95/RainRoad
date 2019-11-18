@@ -1,5 +1,12 @@
 #include "game.h"
 
+void Game::Init() {
+ /* Initlialize Variables */
+
+ /* Initialize Window */
+
+}
+
 Game::Game() {
 
 }
