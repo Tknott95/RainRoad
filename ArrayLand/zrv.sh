@@ -1,1 +1,1 @@
-g++ ./src/$1/01.cpp -o ./runtime/01 && ./runtime/01
+g++ ./src/$1/$1.cpp -o ./runtime/$1 && ./runtime/$1
