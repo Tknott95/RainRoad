@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-  const int byteSize = 11;
+  const int byteSize = 8;
   int test[byteSize];
   
   test[0] = 4;
