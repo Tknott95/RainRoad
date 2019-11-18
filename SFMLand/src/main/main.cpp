@@ -20,8 +20,14 @@ int main() {
           window.close();
           break;
         case sf::Event::KeyPressed:
-          if(event.key.code == sf::Keyboard::Escape)
+          if(event.key.code == sf::Keyboard::Escape){
+            cout << "CLOSING WINDOW" << endl;
             window.close();
+          }
+          break;
+          
+          if (event.key.code == sf::Keyboard::Space)
+            cout << "Space PRESSED" << endl;
           break;
       }
     }
