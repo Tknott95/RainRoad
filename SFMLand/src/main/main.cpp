@@ -23,11 +23,12 @@ int main() {
           if(event.key.code == sf::Keyboard::Escape){
             cout << "CLOSING WINDOW" << endl;
             window.close();
+            break;
           }
-          break;
-          
-          if (event.key.code == sf::Keyboard::Space)
+          if (event.key.code == sf::Keyboard::Space){
             cout << "Space PRESSED" << endl;
+            break;
+          }
           break;
       }
     }
