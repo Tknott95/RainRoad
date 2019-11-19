@@ -1,4 +1,4 @@
-#include "Game.cpp"
+#include "game.cpp"
 
 int main() {
   cout << "\n App Initialized... \n" << endl;
