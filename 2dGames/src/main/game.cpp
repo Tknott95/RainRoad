@@ -1,5 +1,15 @@
 #include "game.h"
 
+/* REFACTOR THIS REFACTOR THIS */
+void Game::initEnemy() {
+  // this->enemy.setPosition();
+  this->enemy.setSize(sf::Vector2f(100.f, 100.f));
+  this->enemy.setFillColor(sf::Color::Cyan);
+  this->enemy.setOutlineColor(sf::Color::Green);
+  this->enemy.setOutlineThickness(1.f);
+}
+/* REFACTOR THIS REFACTOR THIS */
+
 void Game::init() {
  /* Initlialize Variables */
   this->window = nullptr;
@@ -9,6 +19,9 @@ void Game::init() {
   this->videoMode.height = 720;
 
   this->window = new sf::RenderWindow(this->videoMode, "Tks Flatland", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
+  this->window->setFramerateLimit(88);
+
+  this->initEnemy();
 }
 
 Game::Game() {
@@ -50,5 +63,6 @@ void Game::update() {
 
 void Game::render() {
   this->window->clear(sf::Color::Blue);
+  this->window->draw(this->enemy);
   this->window->display();
 }

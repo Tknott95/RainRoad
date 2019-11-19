@@ -15,11 +15,14 @@ class Game {
     sf::VideoMode videoMode;
     sf::Event event;
 
+    sf::RectangleShape enemy;
+
   public:
     Game();
     virtual ~Game();
 
     void init();
+    void initEnemy();
 
     const bool isOpen() const;
 
