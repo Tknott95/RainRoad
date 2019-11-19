@@ -1,36 +1,14 @@
-#include <iostream>
-#include "game.h"
-using namespace std;
+#include "Game.cpp"
 
 int main() {
   cout << "\n App Initialized... \n" << endl;
+  
+  Game game;
 
-  sf::RenderWindow window(sf::VideoMode(1280, 720), "Tks Flatland", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
-  sf::Event event;
-
-  while(window.isOpen()) {
-    while(window.pollEvent(event)) {
-      switch(event.type) {
-        case sf::Event::Closed:
-          window.close();
-          break;
-        case sf::Event::KeyPressed:
-          if(event.key.code == sf::Keyboard::Escape){
-            cout << "CLOSING WINDOW" << endl;
-            window.close();
-            break;
-          }
-          if (event.key.code == sf::Keyboard::Space){
-            cout << "Space PRESSED" << endl;
-            break;
-          }
-          break;
-      }
-    }
-
-  window.clear(sf::Color::Blue);
-  window.display();
-
+  while(game.isOpen()) {
+    game.fixedUpdate();
+    game.update();
+    game.render();
   }
  
   return 0;
