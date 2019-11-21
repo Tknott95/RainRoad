@@ -11,12 +11,12 @@ using namespace std;
 
 class Game {
   private:
-    sf::RenderWindow* window;
-    sf::VideoMode videoMode;
-    sf::Event event;
-    sf::Vector2i mousePos;
+    sf::RenderWindow* _window;
+    sf::VideoMode _videoMode;
+    sf::Event _event;
+    sf::Vector2i _mousePos;
 
-    sf::RectangleShape enemy;
+    sf::RectangleShape _enemy;
 
   public:
     Game();
@@ -33,4 +33,3 @@ class Game {
     void update();
     void render();
 };
-
