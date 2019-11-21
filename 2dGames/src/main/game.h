@@ -15,7 +15,6 @@ class Game {
     sf::VideoMode _videoMode;
     sf::Event _event;
     sf::Vector2i _mousePos;
-
     sf::RectangleShape _enemy;
 
   public:
