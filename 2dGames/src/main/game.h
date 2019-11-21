@@ -13,8 +13,7 @@ class Game {
   private:
     sf::RenderWindow* _window;
     sf::VideoMode _videoMode;
-    
-    sf::Texture _bgTexture;
+
     sf::Sprite _bgSprite;
 
     sf::Event _event;
