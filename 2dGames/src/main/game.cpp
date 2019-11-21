@@ -2,16 +2,16 @@
 
 /* REFACTOR THIS REFACTOR THIS */
 void Game::initEnemy() {
-  // this->enemy.setPosition();
-  this->enemy.setSize(sf::Vector2f(100.f, 100.f));
-  this->enemy.setFillColor(sf::Color::Cyan);
-  this->enemy.setOutlineColor(sf::Color::Green);
+  this->enemy.setPosition(50.f, 50.f);
+  this->enemy.setSize(sf::Vector2f(133, 133));
+  this->enemy.setFillColor(sf::Color(40, 40, 104, 100));
+  this->enemy.setOutlineColor(sf::Color::White);
   this->enemy.setOutlineThickness(1.f);
 }
 /* REFACTOR THIS REFACTOR THIS */
 
 void Game::init() {
- /* Initlialize Variables */
+/* Initalize Vars */
   this->window = nullptr;
 
  /* Initialize Window */
@@ -33,7 +33,13 @@ Game::~Game() {
 }
 
 const bool Game::isOpen() const {
-    return this->window->isOpen();
+  return this->window->isOpen();
+}
+
+void Game::setMousePos() {
+  this->mousePos = sf::Mouse::getPosition(*this->window);
+  /* call *this->window inside getPosition() for relative pos to window */
+  cout << "MOUSE POS: " << sf::Mouse::getPosition(*this->window).x << " " << sf::Mouse::getPosition(*this->window).y << "\n";
 }
 
 void Game::fixedUpdate() {
@@ -55,6 +61,8 @@ void Game::fixedUpdate() {
           break;
       }
     }
+
+  this->setMousePos();
 }
 
 void Game::update() {
@@ -62,7 +70,7 @@ void Game::update() {
 }
 
 void Game::render() {
-  this->window->clear(sf::Color::Blue);
+  this->window->clear(sf::Color::Black);
   this->window->draw(this->enemy);
   this->window->display();
 }

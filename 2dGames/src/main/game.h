@@ -14,6 +14,7 @@ class Game {
     sf::RenderWindow* window;
     sf::VideoMode videoMode;
     sf::Event event;
+    sf::Vector2i mousePos;
 
     sf::RectangleShape enemy;
 
@@ -23,7 +24,8 @@ class Game {
 
     void init();
     void initEnemy();
-
+    
+    void setMousePos();
     const bool isOpen() const;
 
     void fixedUpdate();
