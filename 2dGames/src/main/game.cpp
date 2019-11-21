@@ -38,6 +38,13 @@ const bool Game::isOpen() const {
   return this->_window->isOpen();
 }
 
+void Game::setBackground() {
+  this->_bgTexture.loadFromFile("./utils/background.jpg");
+  sf::Vector2u size = this->_bgTexture.getSize();
+  this->_bgSprite.setTexture(this->_bgTexture);
+  this->_window->draw(this->_bgSprite);
+}
+
 void Game::setMousePos() {
   this->_mousePos = sf::Mouse::getPosition(*this->_window);
   /* call *this->_window inside getPosition() for relative pos to _window */
@@ -76,6 +83,7 @@ void Game::update() {
 
 void Game::render() {
   this->_window->clear(sf::Color::Black);
+  this->setBackground();
   this->_window->draw(this->_enemy);
   this->_window->display();
 }

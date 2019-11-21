@@ -13,6 +13,10 @@ class Game {
   private:
     sf::RenderWindow* _window;
     sf::VideoMode _videoMode;
+    
+    sf::Texture _bgTexture;
+    sf::Sprite _bgSprite;
+
     sf::Event _event;
     sf::Vector2i _mousePos;
     sf::RectangleShape _enemy;
@@ -24,6 +28,7 @@ class Game {
     void init();
     void initEnemy();
     
+    void setBackground();
     void setMousePos();
     const bool isOpen() const;
 
