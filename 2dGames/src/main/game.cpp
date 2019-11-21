@@ -42,7 +42,7 @@ void Game::setMousePos() {
   cout << "MOUSE POS: " << sf::Mouse::getPosition(*this->window).x << " " << sf::Mouse::getPosition(*this->window).y << "\n";
 }
 
-void Game::fixedUpdate() {
+void Game::eventPolling() {
   while(this->window->pollEvent(this->event)) {
       switch(this->event.type) {
         case sf::Event::Closed:
@@ -61,7 +61,10 @@ void Game::fixedUpdate() {
           break;
       }
     }
+}
 
+void Game::fixedUpdate() {
+  this->eventPolling();
   this->setMousePos();
 }
 

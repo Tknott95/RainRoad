@@ -28,6 +28,7 @@ class Game {
     void setMousePos();
     const bool isOpen() const;
 
+    void eventPolling();
     void fixedUpdate();
     void update();
     void render();
