@@ -69,7 +69,7 @@ void Game::fixedUpdate() {
 }
 
 void Game::update() {
-  this->fixedUpdate();
+
 }
 
 void Game::render() {
