@@ -21,6 +21,8 @@ void Game::init() {
   this->_window = new sf::RenderWindow(this->_videoMode, "Tks Flatland", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
   this->_window->setFramerateLimit(88);
 
+ /* refactor full enemy methodology
+  for better abstraction */
   this->initEnemy();
 }
 
