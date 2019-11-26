@@ -4,9 +4,9 @@
 void Game::initEnemy() {
   this->_enemy.setPosition(50.f, 50.f);
   this->_enemy.setSize(sf::Vector2f(133, 133));
-  this->_enemy.setFillColor(sf::Color(40, 40, 104, 100));
+  this->_enemy.setFillColor(sf::Color(40, 40, 104, 200));
   this->_enemy.setOutlineColor(sf::Color::White);
-  this->_enemy.setOutlineThickness(1.f);
+  this->_enemy.setOutlineThickness(1.8f);
 }
 /* REFACTOR THIS REFACTOR THIS */
 
@@ -60,7 +60,7 @@ void Game::eventPolling() {
           break;
         case sf::Event::KeyPressed:
           if(this->_event.key.code == sf::Keyboard::Escape){
-            cout << "CLOSING _window" << endl;
+            cout << "\n CLOSING WINDOW \n" << endl;
             this->_window->close();
             break;
           }
