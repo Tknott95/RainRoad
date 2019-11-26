@@ -110,12 +110,11 @@ void Game::render() {
   Draw_Cuboid(0.10,0,0);
 	int i=0; 
 	for (i = 1; i <= 1444; i++) {
-      glRotatef(ang*10.5,-1.3*ang,3*i,1.3*i);
-      glTranslatef(.10, 0.14, -0.10);
-
-      glScalef(0.7314, 0.8314, 1.0014);
-		  Draw_Cuboid(0.44,0.44,0.44);
-	  } 
+    glRotatef(ang*10.5,-1.3*ang,3*i,1.3*i);
+    glTranslatef(.10, 0.14, -0.10);
+    glScalef(0.7314, 0.8314, 1.0014);
+		Draw_Cuboid(0.44,0.44,0.44);
+	} 
   this->window->pushGLStates();
   this->window->draw(text);  glViewport(0, 0, this->window->getSize().x, this->window->getSize().y);
   this->window->popGLStates();
