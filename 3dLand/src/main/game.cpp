@@ -129,7 +129,6 @@ void Game::run() {
   }
 }
 
-
 void test(float ang) {
   glTranslatef(ang*0.0314,0,-0.0);//move everyting after this line by 40 units along y-axis
   Draw_Cuboid(0.20,0.20,0.10);
