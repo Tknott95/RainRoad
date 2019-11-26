@@ -101,7 +101,7 @@ void Game::render() {
     return;
   }
 
-  sf::Text text("TK's Lorem Ipsum", font2, 100);
+  sf::Text text("TK's Lorem Ipsum", font1, 100);
   sf::CircleShape shape(100.f);  
   shape.setFillColor(sf::Color::Blue);
   text.setFillColor(sf::Color::Cyan);
