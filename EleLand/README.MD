@@ -4,6 +4,6 @@
 
 ### 03
 
-### 04
+### 04 ## Prime Number Generator
 
 ### 05 ## || Asker() Fibonacci() Script
