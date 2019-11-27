@@ -1,14 +1,7 @@
 #include "../headers/game.h"
+#include "enemy.cpp"
 
-/* REFACTOR THIS REFACTOR THIS */
-void Game::initEnemy() {
-  this->_enemy.setPosition(50.f, 50.f);
-  this->_enemy.setSize(sf::Vector2f(133, 133));
-  this->_enemy.setFillColor(sf::Color(40, 40, 104, 200));
-  this->_enemy.setOutlineColor(sf::Color::White);
-  this->_enemy.setOutlineThickness(1.8f);
-}
-/* REFACTOR THIS REFACTOR THIS */
+Enemy enemy;
 
 void Game::init() {
 /* Initalize Vars */
@@ -23,7 +16,8 @@ void Game::init() {
 
  /* refactor full enemy methodology
   for better abstraction */
-  this->initEnemy();
+  // this->initEnemy();
+  enemy.init();
 }
 
 Game::Game() {
@@ -85,6 +79,6 @@ void Game::update() {
 void Game::render() {
   this->_window->clear(sf::Color::Black);
   this->setBackground();
-  this->_window->draw(this->_enemy);
+  this->_window->draw(enemy._enemy);
   this->_window->display();
 }

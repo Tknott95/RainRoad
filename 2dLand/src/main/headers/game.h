@@ -18,14 +18,14 @@ class Game {
 
     sf::Event _event;
     sf::Vector2i _mousePos;
-    sf::RectangleShape _enemy;
+    // sf::RectangleShape _enemy;
 
   public:
     Game();
     virtual ~Game();
 
     void init();
-    void initEnemy();
+    // void initEnemy();
     
     void setBackground();
     void setMousePos();
