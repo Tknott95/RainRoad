@@ -1,4 +1,4 @@
-#include "headers/game.h"
+#include "../headers/game.h"
 
 /* REFACTOR THIS REFACTOR THIS */
 void Game::initEnemy() {

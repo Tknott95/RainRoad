@@ -1,4 +1,7 @@
 class Enemy {
   private:
-     sf::RectangleShape _enemy;
+    sf::RectangleShape _enemy;
+
+  public:
+    void init();
 }
