@@ -4,10 +4,6 @@
 Enemy enemy;
 
 void Game::init() {
-/* Initalize Vars */
-  this->_window = nullptr;
-
- /* Initialize _window */
   this->_videoMode.width = 1280;
   this->_videoMode.height = 720;
 
