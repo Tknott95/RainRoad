@@ -2,7 +2,7 @@ class Enemy {
   private:
 
   public:
-    sf::RectangleShape _enemy;
+    sf::RectangleShape enemy;
     // Enemy();
     // virtual ~Enemy();
     void init();
