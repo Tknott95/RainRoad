@@ -7,3 +7,11 @@ void Enemy::init() {
   this->_enemy.setOutlineColor(sf::Color::White);
   this->_enemy.setOutlineThickness(1.8f);
 }
+
+// Enemy::Enemy() {
+//   this->init();
+// }
+
+// Enemy::~Enemy() {
+//   delete this->_enemy;
+// }
