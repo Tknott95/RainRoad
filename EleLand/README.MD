@@ -22,3 +22,7 @@
 06
  - Constructor & Destructor Basics Script
 ```
+```
+07
+ - Basic Console Clock Stopwatch (Modular Concept for Creating FPS etc. )
+```
