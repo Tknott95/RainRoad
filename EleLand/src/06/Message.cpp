@@ -2,16 +2,16 @@
 
 /* Basic Script For Constructor/Destructor Visualization */
 Message::Message(const char *val) {
-  cout << "\n Making: " << _message << endl;
+  cout << "\n Making: " << this->_message << endl;
   _message = new char[strlen(val) + 1];
   strcpy(_message, val);
 }
 
 Message::~Message() {
-  cout << "\n Del: " << _message << endl;
-  delete [] _message;
+  cout << "\n Del: " << this->_message << endl;
+  delete [] this->_message;
 }
 
 void Message::paint() {
-  cout << "\n Msg: " << _message << endl;
+  cout << "\n Msg: " << this->_message << endl;
 }
