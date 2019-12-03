@@ -26,7 +26,6 @@ void Enemy::spawn() {
 }
 
 void Enemy::update() {
-  this->spawn();
   if(this->enemies.size() < this->maxEnemies) {
     if(this->spawnTimer >= this->spawnDelay) {
       this->spawn();
