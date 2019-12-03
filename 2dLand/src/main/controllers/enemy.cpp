@@ -1,8 +1,8 @@
 #include "../headers/enemy.h"
 
 void Enemy::init() {
-  this->spawnTimer = 0.0f;
-  this->spawnDelay = 1000.0f;
+  this->spawnDelay = 10.0f;
+  this->spawnTimer = this->spawnDelay;
   this->maxEnemies = 3;
 
   if (!_texture.loadFromFile("./utils/sprite.png")) {
@@ -11,7 +11,8 @@ void Enemy::init() {
 }
 
 void Enemy::spawn() {
-  this->enemy.setPosition(50.f, 50.f);
+  printf("\n SPAWNING ENEMY \n");
+  // this->enemy.setPosition(50.f, 50.f);
   this->enemy.setSize(sf::Vector2f(133, 133));
   this->enemy.setFillColor(sf::Color(40, 40, 104, 200));
   this->enemy.setOutlineColor(sf::Color::White);
@@ -26,13 +27,18 @@ void Enemy::spawn() {
 }
 
 void Enemy::update() {
+  cout << this->enemies.size() << endl;
   if(this->enemies.size() < this->maxEnemies) {
     if(this->spawnTimer >= this->spawnDelay) {
       this->spawn();
-      this->spawnTimer = 0.0f;
+      this->spawnTimer = 0.f;
     } else {
-      this->spawnTimer += 1.0f;
+      this->spawnTimer += 1.f;
     }
+  }
+
+  for(auto &e : this->enemies) {
+    e.move(0.2f, 1.f);
   }
 }
 

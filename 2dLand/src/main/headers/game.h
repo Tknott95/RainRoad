@@ -12,7 +12,6 @@ using namespace std;
 
 class Game {
   private:
-    sf::RenderWindow* _window;
     sf::VideoMode _videoMode;
 
     sf::Sprite _bgSprite;
@@ -23,6 +22,7 @@ class Game {
     // float score;
 
   public:
+    sf::RenderWindow* _window;
     Game();
     virtual ~Game();
 
