@@ -72,6 +72,8 @@ void Game::update() {
 void Game::render() {
   this->_window->clear(sf::Color::Black);
   this->setBackground();
-  this->_window->draw(enemy.enemies[0]);
+  for(auto &e : enemy.enemies) {
+    this->_window->draw(e);
+  }
   this->_window->display();
 }
