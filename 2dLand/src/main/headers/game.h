@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <ctime>
 
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
@@ -18,6 +19,8 @@ class Game {
 
     sf::Event _event;
     sf::Vector2i _mousePos;
+
+    // float score;
 
   public:
     Game();
