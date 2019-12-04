@@ -62,11 +62,10 @@ void Game::eventPolling() {
 void Game::fixedUpdate() {
   this->eventPolling();
   this->setMousePos();
-  enemy.run();
 }
 
 void Game::update() {
-
+  enemy.run();
 }
 
 void Game::render() {

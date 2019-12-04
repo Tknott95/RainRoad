@@ -1,7 +1,7 @@
 #include "../headers/enemy.h"
 
 void Enemy::init() {
-  this->spawnDelay = 10.0f;
+  this->spawnDelay = 100.0f;
   this->spawnTimer = this->spawnDelay;
   this->maxEnemies = 3;
 
@@ -20,7 +20,7 @@ void Enemy::spawn() {
 
   this->enemy.setPosition(
     /* @REFACTOR grab screen size instead once the dynamic screen size is setup */
-    static_cast<float>(rand() % static_cast<int>(1280/2, 1280/2)),
+    static_cast<float>(rand() % static_cast<int>(1280/3, 1280/3)),
     static_cast<float>(rand() % static_cast<int>(720/2, 720/2))
   );
   this->enemies.push_back(this->enemy);
@@ -38,7 +38,7 @@ void Enemy::update() {
   }
 
   for(auto &e : this->enemies) {
-    e.move(0.2f, 1.f);
+    e.move(1.4f, .8f);
   }
 }
 
