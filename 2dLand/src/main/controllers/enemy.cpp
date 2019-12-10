@@ -1,17 +1,8 @@
 #include "../headers/enemy.h"
 
-/* ctime messes up sfml, needinternal library which sfml does indeed HAVE */
-// void delay(int number_of_seconds) {
-//   int milli_seconds = 1000 * number_of_seconds; 
-//   clock_t start_time = clock(); 
-//   while (clock() < start_time + milli_seconds) ; 
-// }
-
-
-// clock.restart();
-
 void Enemy::init() {
   this->spawnDelay = 1.f;
+
   // this->spawnTimer = 111; //this->spawnDelay; WE NEED AN ACTUAL TIMER HERE
   this->maxEnemies = 3;
 
@@ -37,13 +28,10 @@ void Enemy::spawn() {
 }
 
 void Enemy::update() {
-  // cout << this->enemies.size() << endl;
   this->elapsedTime = clock.getElapsedTime();
   if(this->enemies.size() < this->maxEnemies) {
     if(this->elapsedTime.asSeconds() >= this->spawnDelay) {
       this->spawn();
-      //delay(1000);
-      //this->spawnTimer = 0.f;
       this->clock.restart();
     } 
   }
