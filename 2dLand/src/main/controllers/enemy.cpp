@@ -1,16 +1,18 @@
 #include "../headers/enemy.h"
-#include <ctime>
 
 /* ctime messes up sfml, needinternal library which sfml does indeed HAVE */
-void delay(int number_of_seconds) {
-  int milli_seconds = 1000 * number_of_seconds; 
-  clock_t start_time = clock(); 
-  while (clock() < start_time + milli_seconds) ; 
-} 
+// void delay(int number_of_seconds) {
+//   int milli_seconds = 1000 * number_of_seconds; 
+//   clock_t start_time = clock(); 
+//   while (clock() < start_time + milli_seconds) ; 
+// }
+
+
+// clock.restart();
 
 void Enemy::init() {
-  this->spawnDelay = 100.0f;
-  this->spawnTimer = 111; //this->spawnDelay; WE NEED AN ACTUAL TIMER HERE
+  this->spawnDelay = 1.f;
+  // this->spawnTimer = 111; //this->spawnDelay; WE NEED AN ACTUAL TIMER HERE
   this->maxEnemies = 3;
 
   if (!_texture.loadFromFile("./utils/sprite.png")) {
@@ -36,14 +38,14 @@ void Enemy::spawn() {
 
 void Enemy::update() {
   // cout << this->enemies.size() << endl;
+  this->elapsedTime = clock.getElapsedTime();
   if(this->enemies.size() < this->maxEnemies) {
-    if(this->spawnTimer >= this->spawnDelay) {
+    if(this->elapsedTime.asSeconds() >= this->spawnDelay) {
       this->spawn();
       //delay(1000);
-      this->spawnTimer = 0.f;
-    } else {
-      this->spawnTimer += 1.f;
-    }
+      //this->spawnTimer = 0.f;
+      this->clock.restart();
+    } 
   }
 
   for(auto &e : this->enemies) {

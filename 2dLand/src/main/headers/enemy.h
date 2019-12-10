@@ -4,6 +4,8 @@ class Enemy {
   private:
     sf::Texture _texture;
     sf::Sprite _sprite;
+    sf::Clock clock;
+    sf::Time elapsedTime;
 
     float spawnTimer;
     float spawnDelay;
