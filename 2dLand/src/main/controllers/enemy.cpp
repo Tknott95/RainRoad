@@ -2,7 +2,7 @@
 
 void Enemy::init() {
   this->spawnDelay = 100.0f;
-  this->spawnTimer = this->spawnDelay;
+  this->spawnTimer = 111; //this->spawnDelay; WE NEED AN ACTUAL TIMER HERE
   this->maxEnemies = 3;
 
   if (!_texture.loadFromFile("./utils/sprite.png")) {
@@ -27,7 +27,7 @@ void Enemy::spawn() {
 }
 
 void Enemy::update() {
-  cout << this->enemies.size() << endl;
+  // cout << this->enemies.size() << endl;
   if(this->enemies.size() < this->maxEnemies) {
     if(this->spawnTimer >= this->spawnDelay) {
       this->spawn();
