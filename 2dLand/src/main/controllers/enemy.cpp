@@ -2,8 +2,6 @@
 
 void Enemy::init() {
   this->spawnDelay = 1.f;
-
-  // this->spawnTimer = 111; //this->spawnDelay; WE NEED AN ACTUAL TIMER HERE
   this->maxEnemies = 3;
 
   if (!_texture.loadFromFile("./utils/sprite.png")) {
