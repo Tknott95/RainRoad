@@ -19,7 +19,7 @@ void Enemy::spawn() {
 
   this->enemy.setPosition(
     /* @REFACTOR grab screen size instead once the dynamic screen size is setup */
-    static_cast<float>(rand() % static_cast<int>(1280/3, 1280/3)),
+    static_cast<float>(rand() % static_cast<int>(1280/2, 1280/2)),
     static_cast<float>(rand() % static_cast<int>(720/2, 720/2))
   );
   this->enemies.push_back(this->enemy);
@@ -35,7 +35,8 @@ void Enemy::update() {
   }
 
   for(auto &e : this->enemies) {
-    e.move(1.4f, .8f);
+    e.move(0.4f, .8f);
+    /* if enemy leaves screen area DEL IT */
   }
 }
 
