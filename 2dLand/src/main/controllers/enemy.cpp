@@ -2,7 +2,7 @@
 
 void Enemy::init() {
   this->spawnDelay = 0.01f;
-  this->maxEnemies = 1333;
+  this->maxEnemies = 2;
 
   if (!_texture.loadFromFile("./utils/sprite.png")) {
     cout << "\n ERROR LOADING ENEMY TEXTURE \n" << endl;
@@ -20,21 +20,16 @@ void Enemy::spawn() {
 
   this->enemy.setPosition(
     /* @REFACTOR grab screen size instead once the dynamic screen size is setup */
-    static_cast<float>(rand() % static_cast<int>(1280/2, 1280/2)),
+    static_cast<float>(rand() % static_cast<int>(1280, 1280)),
     static_cast<float>(rand() % static_cast<int>(720/2, 720/2))
   );
   this->enemies.push_back(this->enemy);
+  this->clock.restart();
 }
 
 void Enemy::update() {
   this->elapsedTime = clock.getElapsedTime();
-  if(this->enemies.size() < this->maxEnemies) {
-    if(this->elapsedTime.asSeconds() >= this->spawnDelay) {
-      this->spawn();
-      this->clock.restart();
-    } 
-  }
-
+  
   // int cur = 0;
   // for(auto &e : this->enemies) { /* change to old school loop */
   //   cur++;
@@ -51,13 +46,27 @@ void Enemy::update() {
   //   // e.setSize(sf::Vector2f(13, rand() % 33));
   //   /* if enemy leaves screen area DEL IT */
   // }
-  for (size_t i = 0; i < this->enemies.size(); i++) {
-     this->enemies[i].move(0.14f, .48f + rand() % 3);
-     this->enemies[i].setRotation(this->enemies[i].getRotation() + 0.1);
+
+
+  if(this->enemies.size() < this->maxEnemies && this->elapsedTime.asSeconds() > this->spawnDelay) {
+    this->spawn();   
   }
+
+  for (size_t i = 0; i < this->enemies.size(); i++) {
+     this->enemies[i].move(0.14f, .48f + rand() % 4);
+     this->enemies[i].setRotation(this->enemies[i].getRotation() + 0.1);
+
+     if(this->enemies[i].getPosition().y >= 720) {
+       this->enemies.erase(this->enemies.begin() + i);
+       cout << this->enemies.size() << endl;
+     }
+  }
+
+
+
+
 }
 
 void Enemy::run() {
-  this->init();
   this->update();
 }

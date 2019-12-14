@@ -2,11 +2,14 @@
 #include <iostream>
 #include <ctime>
 
+
+
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Network.hpp>
 #include <SFML/Audio.hpp>
+#include "enemy.h"
 
 using namespace std;
 
@@ -20,7 +23,7 @@ class Game {
     sf::Event _event;
     sf::Vector2i _mousePos;
     sf::Vector2f _mouseCoords; /* rel to screen size in float foramat */
-
+    Enemy enemy;
     // float score;
 
   public:

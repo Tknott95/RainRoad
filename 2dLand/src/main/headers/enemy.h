@@ -1,3 +1,5 @@
+#pragma once
+
 #include <vector> /* Look into standard include methodology for c++ */
 
 class Enemy {
