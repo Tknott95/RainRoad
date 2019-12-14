@@ -2,7 +2,7 @@
 
 void Enemy::init() {
   this->spawnDelay = 0.01f;
-  this->maxEnemies = 111;
+  this->maxEnemies = 1;
 
   if (!_texture.loadFromFile("./utils/sprite.png")) {
     cout << "\n ERROR LOADING ENEMY TEXTURE \n" << endl;
@@ -35,14 +35,17 @@ void Enemy::update() {
     } 
   }
 
-  for(auto &e : this->enemies) {
+  int cur = 0;
+  for(auto &e : this->enemies) { /* change to old school loop */
+    cur++;
     e.move(0.14f, .48f + rand() % 3);
     //sf::Vector2f pos = e.getPosition();
-    cout << e.getPosition().x << endl;
+    cout << "x pos:" << e.getPosition().x << "  y pos:" << e.getPosition().y << endl;
     e.setRotation(e.getRotation() + 0.1);
 
-    if(e.getPosition().x > 520) {
+    if(e.getPosition().y > 333) {
       printf("\n  DELETE OBJ \n");
+      // this->enemies.erase(e); /* best way I know with vector looping via. auto to grab index as of meow */    
     }
    // cout << e.getGlobalBounds() << endl;
     // e.setSize(sf::Vector2f(13, rand() % 33));
