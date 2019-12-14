@@ -2,7 +2,7 @@
 
 void Enemy::init() {
   this->spawnDelay = 0.01f;
-  this->maxEnemies = 1;
+  this->maxEnemies = 111;
 
   if (!_texture.loadFromFile("./utils/sprite.png")) {
     cout << "\n ERROR LOADING ENEMY TEXTURE \n" << endl;
@@ -40,6 +40,10 @@ void Enemy::update() {
     //sf::Vector2f pos = e.getPosition();
     cout << e.getPosition().x << endl;
     e.setRotation(e.getRotation() + 0.1);
+
+    if(e.getPosition().x > 520) {
+      printf("\n  DELETE OBJ \n");
+    }
    // cout << e.getGlobalBounds() << endl;
     // e.setSize(sf::Vector2f(13, rand() % 33));
     /* if enemy leaves screen area DEL IT */
