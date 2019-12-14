@@ -34,8 +34,10 @@ void Game::setBackground() {
 
 void Game::setMousePos() {
   this->_mousePos = sf::Mouse::getPosition(*this->_window);
+  this->_mouseCoords = this->_window->mapPixelToCoords(this->_mousePos);
   /* call *this->_window inside getPosition() for relative pos to _window */
-  cout << "MOUSE POS: " << sf::Mouse::getPosition(*this->_window).x << " " << sf::Mouse::getPosition(*this->_window).y << "\n";
+  cout << "COORDS MOUSE POS: " << this->_mouseCoords.x << " " << this->_mouseCoords.y << "\n";
+  cout << "MOUSE POS: " << this->_mousePos.x << " " << this->_mousePos.y << "\n";
 }
 
 void Game::eventPolling() {

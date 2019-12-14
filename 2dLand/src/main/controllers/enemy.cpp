@@ -10,7 +10,7 @@ void Enemy::init() {
 }
 
 void Enemy::spawn() {
-  printf("\n SPAWNING ENEMY \n");
+  // printf("\n SPAWNING ENEMY \n");
   // this->enemy.setPosition(50.f, 50.f);
   this->enemy.setSize(sf::Vector2f(33, rand() % 133));
   this->enemy.setFillColor(sf::Color(rand() % 144, rand() % 144, rand() % 255, rand() % 200));
