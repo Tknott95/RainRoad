@@ -1,8 +1,8 @@
 #include "../headers/enemy.h"
 
 void Enemy::init() {
-  this->spawnDelay = 0.01f;
-  this->maxEnemies = 2;
+  this->spawnDelay = 0.0001f;
+  this->maxEnemies = 11111;
 
   if (!_texture.loadFromFile("./utils/sprite.png")) {
     cout << "\n ERROR LOADING ENEMY TEXTURE \n" << endl;
@@ -12,8 +12,8 @@ void Enemy::init() {
 void Enemy::spawn() {
   // printf("\n SPAWNING ENEMY \n");
   // this->enemy.setPosition(50.f, 50.f);
-  this->enemy.setRotation(rand() % 180);
-  this->enemy.setSize(sf::Vector2f(33, rand() % 133));
+  this->enemy.setRotation(rand() % 3);
+  this->enemy.setSize(sf::Vector2f(rand() % 33, rand() % 133));
   this->enemy.setFillColor(sf::Color(rand() % 144, rand() % 144, rand() % 255, rand() % 255));
   this->enemy.setOutlineColor(sf::Color::White);
   this->enemy.setOutlineThickness(1.8f);
@@ -53,12 +53,12 @@ void Enemy::update() {
   }
 
   for (size_t i = 0; i < this->enemies.size(); i++) {
-     this->enemies[i].move(0.14f, .48f + rand() % 4);
-     this->enemies[i].setRotation(this->enemies[i].getRotation() + 0.1);
+     this->enemies[i].move(0-.14f, .08f + rand() % 4);
+     this->enemies[i].setRotation(this->enemies[i].getRotation() + 1.f);
 
-     if(this->enemies[i].getPosition().y >= 720) {
+     if(this->enemies[i].getPosition().y >= 720 |this->enemies[i].getPosition().x >= 1280 ) {
        this->enemies.erase(this->enemies.begin() + i);
-       cout << this->enemies.size() << endl;
+       /* if debugging     cout << this->enemies.size() << endl; */
      }
   }
 
