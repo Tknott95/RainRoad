@@ -76,6 +76,7 @@ void Game::render() {
   this->setBackground();
   
   /* DRAW HERE */
+  this->_player->render(*this->_window);
   /* DRAW HERE */
 
   this->_window->display();
