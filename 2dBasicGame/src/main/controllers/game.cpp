@@ -53,9 +53,10 @@ void Game::eventPolling() {
           }
           if (this->_event.key.code == sf::Keyboard::Space){
             cout << "Space PRESSED" << endl;
+            this->firing = true;
             break;
           }
-          if (this->_event.key.code == sf::Keyboard::Right){
+          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
             // cout << "Space PRESSED" << endl;
             this->_player->move(this->playerSpeed, 0.0);
           } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
@@ -80,6 +81,10 @@ void Game::fixedUpdate() {
 
 void Game::update() {
 //  this->_player->move(3.0, 1.0);
+this->_player->shoot();
+  if(firing) {
+    this->_player->shoot();
+  }
 }
 
 void Game::render() {

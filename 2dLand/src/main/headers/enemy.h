@@ -1,7 +1,10 @@
 #pragma once
+#include <SFML/Graphics.hpp>
 
 #include <vector> /* Look into standard include methodology for c++ */
+#include <iostream>
 
+using namespace std;
 class Enemy {
   private:
     sf::Texture _texture;

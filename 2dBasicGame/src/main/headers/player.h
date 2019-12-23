@@ -8,11 +8,15 @@ class Player {
   private:
     sf::Texture _texture;
     sf::Sprite _sprite;
+    sf::CircleShape _bullet;
+    sf::Clock _clock;
     // sf::Clock clock;
-    // sf::Time elapsedTime;
+    sf::Time elapsedTime;
 
     float movementSpeed = 2.f;
 	  float attackWait;
+
+    float bulletSpeed = 8.f;
 
     void init();
 
@@ -23,6 +27,8 @@ class Player {
 
     void move(const float x, const float y);
 	  const bool canAttack();
+
+    void shoot();
   
     void update();
     void render(sf::RenderTarget& target);

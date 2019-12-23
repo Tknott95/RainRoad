@@ -1,7 +1,7 @@
 #include "../headers/game.h"
-#include "enemy.cpp" /* refactor this */
+ /* refactor this */
 
-Enemy enemy; /* refactor this */
+ /* refactor this */
 
 void Game::init() {
   this->_videoMode.width = 1280;
@@ -10,7 +10,7 @@ void Game::init() {
   this->_window = new sf::RenderWindow(this->_videoMode, "Tks Flatland", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
   this->_window->setFramerateLimit(88);
 
-  enemy.init();
+  this->enemy.init();
 
 }
 
@@ -66,7 +66,7 @@ void Game::eventPolling() {
 void Game::fixedUpdate() {
   this->eventPolling();
   this->setMousePos();
-  enemy.run();
+  this->enemy.run();
 }
 
 void Game::update() {
@@ -76,7 +76,7 @@ void Game::update() {
 void Game::render() {
   this->_window->clear(sf::Color::Black);
   this->setBackground();
-  for(auto &e : enemy.enemies) {
+  for(auto &e : this->enemy.enemies) {
     this->_window->draw(e);
   }
   this->_window->display();

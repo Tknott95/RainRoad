@@ -31,6 +31,14 @@ void Player::move(const float x, const float y) {
   this->_sprite.move(this->movementSpeed * x, this->movementSpeed * y);
 }
 
+void Player::shoot() {
+
+  this->_bullet.setPosition( 50.f, 50.f /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
+  this->_bullet.setRadius(5.f);
+  this->_bullet.setFillColor(sf::Color::Yellow);
+  this->_bullet.move(0.f,  10.f);
+}
+
 void Player::render(sf::RenderTarget& target) {
 	target.draw(this->_sprite);
 }

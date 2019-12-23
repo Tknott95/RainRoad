@@ -9,6 +9,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Network.hpp>
 #include <SFML/Audio.hpp>
+#include "enemy.h"
 
 using namespace std;
 
@@ -23,6 +24,7 @@ class Game {
     sf::Vector2i _mousePos;
     sf::Vector2f _mouseCoords; /* rel to screen size in float foramat */
     // float score;
+    Enemy enemy;
 
   public:
     Game();

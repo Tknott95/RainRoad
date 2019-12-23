@@ -28,6 +28,8 @@ class Game {
     // float score;
     Player* _player;
     float playerSpeed = 3.0;
+
+    bool firing = false;
     
     void init();
 
