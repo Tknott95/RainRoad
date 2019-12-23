@@ -11,7 +11,7 @@ void Player::init() {
   this->_sprite.scale(0.4f, 0.4f);
   this->_sprite.setPosition(674.f, 600.f);
 
-  this->movementSpeed = 1.f;
+  this->movementSpeed = 2.f;
   this->attackWait = 1.f;
 }
 

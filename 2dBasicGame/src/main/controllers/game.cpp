@@ -7,7 +7,6 @@ void Game::init() {
   this->_window = new sf::RenderWindow(this->_videoMode, "Tks Flatland", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
   this->_window->setFramerateLimit(88);
 
-  // this->player = new Player();
   this->_player = new Player();
 }
 
@@ -56,7 +55,7 @@ void Game::eventPolling() {
             cout << "Space PRESSED" << endl;
             break;
           }
-          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+          if (this->_event.key.code == sf::Keyboard::Right){
             // cout << "Space PRESSED" << endl;
             this->_player->move(this->playerSpeed, 0.0);
           } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
@@ -69,7 +68,6 @@ void Game::eventPolling() {
             // cout << "Space PRESSED" << endl;
             this->_player->move(0.0, -this->playerSpeed);
           }
-
           break;
       }
     }
