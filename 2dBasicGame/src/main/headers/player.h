@@ -11,7 +11,7 @@ class Player {
     // sf::Clock clock;
     // sf::Time elapsedTime;
 
-    float movementSpeed;
+    float movementSpeed = 2.f;
 	  float attackWait;
 
     void init();
@@ -21,7 +21,7 @@ class Player {
 	  virtual ~Player();
 	  const sf::Vector2f& getPos() const;
 
-    void move(const float dirX, const float dirY);
+    void move(const float x, const float y);
 	  const bool canAttack();
   
     void update();

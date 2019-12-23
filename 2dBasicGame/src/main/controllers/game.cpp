@@ -1,6 +1,5 @@
 #include "../headers/game.h"
 
-
 void Game::init() {
   this->_videoMode.width = screenWidth;
   this->_videoMode.height = screenHeight;
@@ -57,6 +56,20 @@ void Game::eventPolling() {
             cout << "Space PRESSED" << endl;
             break;
           }
+          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+            // cout << "Space PRESSED" << endl;
+            this->_player->move(this->playerSpeed, 0.0);
+          } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+            this->_player->move(-this->playerSpeed, 0.0);
+          }
+          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+            // cout << "Space PRESSED" << endl;
+            this->_player->move(0.0, this->playerSpeed);
+          } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+            // cout << "Space PRESSED" << endl;
+            this->_player->move(0.0, -this->playerSpeed);
+          }
+
           break;
       }
     }
@@ -68,7 +81,7 @@ void Game::fixedUpdate() {
 }
 
 void Game::update() {
- 
+//  this->_player->move(3.0, 1.0);
 }
 
 void Game::render() {
