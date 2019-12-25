@@ -3,7 +3,7 @@
 
 void Player::init() {
 
-  if(!this->_texture.loadFromFile("utils/sprite.png")) {
+  if(!this->_texture.loadFromFile("utils/img/sprite.png")) {
     std::cout << "ERROR: Could not load player texture file." << "\n";
   }
 
@@ -33,10 +33,10 @@ void Player::move(const float x, const float y) {
 
 void Player::shoot() {
 
-  this->_bullet.setPosition( 50.f, 50.f /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
-  this->_bullet.setRadius(5.f);
+  this->_bullet.setPosition( 674.f, 674.f /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
+  this->_bullet.setRadius(50.f);
   this->_bullet.setFillColor(sf::Color::Yellow);
-  this->_bullet.move(0.f,  10.f);
+  this->_bullet.move(0.f,  -10.f);
 }
 
 void Player::render(sf::RenderTarget& target) {

@@ -25,7 +25,7 @@ const bool Game::isOpen() const {
 
 void Game::setBackground() {
   sf::Texture bgTexture;
-  bgTexture.loadFromFile("./utils/background.jpg");
+  bgTexture.loadFromFile("./utils/img//background.jpg");
   sf::Vector2u size = bgTexture.getSize();
   this->_bgSprite.setTexture(bgTexture);
   this->_window->draw(this->_bgSprite);
