@@ -19,6 +19,8 @@ class Game {
   private:
     sf::RenderWindow* _window;
     sf::VideoMode _videoMode;
+    sf::Clock _clock;
+    sf::Time _timeElapsed;
 
     sf::Sprite _bgSprite;
 

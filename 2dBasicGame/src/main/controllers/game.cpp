@@ -6,6 +6,9 @@ void Game::init() {
 
   this->_window = new sf::RenderWindow(this->_videoMode, "Tks Flatland", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
   this->_window->setFramerateLimit(88);
+  this->_clock.restart();
+
+  this->_timeElapsed = this->_clock.getElapsedTime();
 
   this->_player = new Player();
 }
@@ -25,7 +28,7 @@ const bool Game::isOpen() const {
 
 void Game::setBackground() {
   sf::Texture bgTexture;
-  bgTexture.loadFromFile("./utils/img//background.jpg");
+  bgTexture.loadFromFile("./utils/img/background.jpg");
   sf::Vector2u size = bgTexture.getSize();
   this->_bgSprite.setTexture(bgTexture);
   this->_window->draw(this->_bgSprite);
@@ -56,7 +59,10 @@ void Game::eventPolling() {
             this->firing = true;
             break;
           }
-          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+          break;
+      }
+
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
             // cout << "Space PRESSED" << endl;
             this->_player->move(this->playerSpeed, 0.0);
           } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
@@ -69,8 +75,6 @@ void Game::eventPolling() {
             // cout << "Space PRESSED" << endl;
             this->_player->move(0.0, -this->playerSpeed);
           }
-          break;
-      }
     }
 }
 
@@ -81,6 +85,7 @@ void Game::fixedUpdate() {
 
 void Game::update() {
 //  this->_player->move(3.0, 1.0);
+cout << "\n    _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
 this->_player->shoot();
   if(firing) {
     this->_player->shoot();
