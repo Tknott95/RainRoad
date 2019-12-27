@@ -3,7 +3,7 @@
 
 void Player::init() {
 
-  if(!this->_texture.loadFromFile("utils/img/sprite.png")) {
+  if(!this->_texture.loadFromFile("utils/img/player/p1.png")) {
     std::cout << "ERROR: Could not load player texture file." << "\n";
   }
 
