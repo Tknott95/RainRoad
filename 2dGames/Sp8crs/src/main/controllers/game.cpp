@@ -94,9 +94,10 @@ void Game::update() {
     cout << "COLLIDED" << endl;
   }
 
-  // sf::FloatRect bounds = this->_player->_sprite.getGlobalBounds();
+  float boundsWidth = this->_player->_sprite.getGlobalBounds().width;
+  float boundsHeight = this->_player->_sprite.getGlobalBounds().height;
 
-  // cout << bounds << " - bounds \n" << endl;
+  cout << boundsWidth << " - boundsWidth \n" << boundsHeight << " - boundsHeight \n" << endl;
   
 }
 

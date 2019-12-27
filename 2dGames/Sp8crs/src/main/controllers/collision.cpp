@@ -1,8 +1,7 @@
 #include "../headers/collision.h"
 #include <SFML/Graphics.hpp>
 
-bool Collision::checkCollision(sf::FloatRect r1, sf::FloatRect r2) {
-  
+bool Collision::checkCollision(sf::FloatRect j, sf::FloatRect k) {
   sf::FloatRect intersection;
-  return r1.intersects(r2, intersection);
+  return j.intersects(k, intersection);
 }
