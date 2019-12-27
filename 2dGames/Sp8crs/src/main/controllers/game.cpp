@@ -83,7 +83,6 @@ void Game::fixedUpdate() {
 }
 
 void Game::update() {
-  //  this->_player->move(3.0, 1.0);
   this->_timeElapsed = this->_clock.getElapsedTime();
   cout << "\n    _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
   this->_player->shoot();
