@@ -42,38 +42,38 @@ void Game::setMousePos() {
 
 void Game::eventPolling() {
   while(this->_window->pollEvent(this->_event)) {
-      switch(this->_event.type) {
-        case sf::Event::Closed:
+    switch(this->_event.type) {
+      case sf::Event::Closed:
+        this->_window->close();
+        break;
+      case sf::Event::KeyPressed:
+        if(this->_event.key.code == sf::Keyboard::Escape){
+          cout << "\n CLOSING WINDOW \n" << endl;
           this->_window->close();
           break;
-        case sf::Event::KeyPressed:
-          if(this->_event.key.code == sf::Keyboard::Escape){
-            cout << "\n CLOSING WINDOW \n" << endl;
-            this->_window->close();
-            break;
-          }
-          if (this->_event.key.code == sf::Keyboard::Space){
-            cout << "Space PRESSED" << endl;
-            this->firing = true;
-            break;
-          }
+        }
+        if (this->_event.key.code == sf::Keyboard::Space){
+          cout << "Space PRESSED" << endl;
+          this->firing = true;
           break;
-      }
-
-      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-            // cout << "Space PRESSED" << endl;
-            this->_player->move(this->playerSpeed, 0.0);
-          } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-            this->_player->move(-this->playerSpeed, 0.0);
-          }
-          if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-            // cout << "Space PRESSED" << endl;
-            this->_player->move(0.0, this->playerSpeed);
-          } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-            // cout << "Space PRESSED" << endl;
-            this->_player->move(0.0, -this->playerSpeed);
-          }
+        }
+        break;
     }
+  }
+  
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+    // cout << "Space PRESSED" << endl;
+    this->_player->move(this->playerSpeed, 0.0);
+  } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+    this->_player->move(-this->playerSpeed, 0.0);
+  }
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+    // cout << "Space PRESSED" << endl;
+    this->_player->move(0.0, this->playerSpeed);
+  } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+    // cout << "Space PRESSED" << endl;
+    this->_player->move(0.0, -this->playerSpeed);
+  }
 }
 
 void Game::fixedUpdate() {
