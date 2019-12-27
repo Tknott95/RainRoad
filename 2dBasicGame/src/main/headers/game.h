@@ -21,6 +21,7 @@ class Game {
     sf::VideoMode _videoMode;
     sf::Clock _clock;
     sf::Time _timeElapsed;
+    float _secondsPassed;
 
     sf::Sprite _bgSprite;
 
