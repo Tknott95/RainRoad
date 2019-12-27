@@ -10,6 +10,7 @@
 #include <SFML/Network.hpp>
 #include <SFML/Audio.hpp>
 #include "player.h"
+#include "enemy.h"
 
 using namespace std;
 
@@ -30,6 +31,7 @@ class Game {
     sf::Vector2f _mouseCoords; /* rel to screen size in float foramat */
     // float score;
     Player* _player;
+    Enemy* _enemy;
     float playerSpeed = 3.0;
 
     bool firing = false;

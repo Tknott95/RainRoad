@@ -9,6 +9,7 @@ void Game::init() {
   this->_clock.restart();
 
   this->_player = new Player();
+  this->_enemy = new Enemy();
 }
 
 Game::Game() {
@@ -82,14 +83,14 @@ void Game::fixedUpdate() {
 }
 
 void Game::update() {
-
-//  this->_player->move(3.0, 1.0);
-this->_timeElapsed = this->_clock.getElapsedTime();
-cout << "\n    _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
-this->_player->shoot();
+  //  this->_player->move(3.0, 1.0);
+  this->_timeElapsed = this->_clock.getElapsedTime();
+  cout << "\n    _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
+  this->_player->shoot();
   if(firing) {
     this->_player->shoot();
   }
+
 }
 
 void Game::render() {
@@ -98,6 +99,7 @@ void Game::render() {
   
   /* DRAW HERE */
   this->_player->render(*this->_window);
+  this->_enemy->render(*this->_window);
   /* DRAW HERE */
 
   this->_window->display();

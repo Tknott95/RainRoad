@@ -5,12 +5,12 @@ void Enemy::init() {
     std::cout << "ERROR: Could not load player texture file." << "\n";
   }
   this->_sprite.setTexture(this->_texture);
-  this->_sprite.scale(0.4f, 0.4f);
-  this->_sprite.setPosition(200.f, 200.f);
+  this->_sprite.scale(1.4f, 1.4f);
+  this->_sprite.setPosition(600.f, 200.f);
 }
 
 Enemy::Enemy() {
-
+  this->init();
 }
 
 Enemy::~Enemy() {
@@ -22,5 +22,5 @@ void Enemy::update() {
 }
 
 void Enemy::render(sf::RenderTarget& target) {
-
+  target.draw(this->_sprite);
 }
