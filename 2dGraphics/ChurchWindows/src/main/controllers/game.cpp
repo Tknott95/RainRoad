@@ -10,7 +10,7 @@ void Game::init() {
   this->_window = new sf::RenderWindow(this->_videoMode, "Tks Flatland", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
   this->_window->setFramerateLimit(288);
 
-  this->enemy.init();
+  this->_graphicNode.init();
 
 }
 
@@ -66,7 +66,7 @@ void Game::eventPolling() {
 void Game::fixedUpdate() {
   this->eventPolling();
   this->setMousePos();
-  this->enemy.run();
+  this->_graphicNode.run();
 }
 
 void Game::update() {
@@ -76,7 +76,7 @@ void Game::update() {
 void Game::render() {
   this->_window->clear(sf::Color::Black);
   this->setBackground();
-  for(auto &e : this->enemy.enemies) {
+  for(auto &e : this->_graphicNode.nodes) {
     this->_window->draw(e);
   }
   this->_window->display();

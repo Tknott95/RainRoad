@@ -5,7 +5,7 @@
 #include <iostream>
 
 using namespace std;
-class Enemy {
+class Node {
   private:
     sf::Texture _texture;
     sf::Sprite _sprite;
@@ -14,11 +14,11 @@ class Enemy {
 
     float spawnTimer;
     float spawnDelay;
-    int maxEnemies;
+    int maxNodes;
 
   public:
-    std::vector<sf::RectangleShape> enemies;
-    sf::RectangleShape enemy;
+    std::vector<sf::RectangleShape> nodes;
+    sf::RectangleShape _node;
 
     void init();
     void spawn();
