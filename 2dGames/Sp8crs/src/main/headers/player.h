@@ -7,7 +7,7 @@
 class Player {
   private:
     sf::Texture _texture;
-    sf::Sprite _sprite;
+    
     sf::CircleShape _bullet;
     sf::Clock _clock;
     // sf::Clock clock;
@@ -21,6 +21,8 @@ class Player {
     void init();
 
   public:
+    sf::Sprite _sprite;
+    // float globalBounds; /*this->_player->_sprite.getGlobalBounds() */
     Player();
 	  virtual ~Player();
 	  const sf::Vector2f& getPos() const;

@@ -7,7 +7,6 @@
 class Enemy {
   private:
     sf::Texture _texture;
-    sf::Sprite _sprite;
 
     float movementSpeed = 2.f;
 	  float attackWait;
@@ -17,6 +16,7 @@ class Enemy {
     void init();
 
   public:
+    sf::Sprite _sprite;
     Enemy();
 	  virtual ~Enemy();
 	  const sf::Vector2f& getPos() const;

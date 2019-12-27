@@ -90,7 +90,14 @@ void Game::update() {
   if(firing) {
     this->_player->shoot();
   }
+  if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_sprite.getGlobalBounds())){
+    cout << "COLLIDED" << endl;
+  }
 
+  // sf::FloatRect bounds = this->_player->_sprite.getGlobalBounds();
+
+  // cout << bounds << " - bounds \n" << endl;
+  
 }
 
 void Game::render() {
