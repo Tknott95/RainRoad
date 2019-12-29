@@ -16,6 +16,20 @@ Enemy::Enemy() {
 Enemy::~Enemy() {
 }
 
+sf::Vector2f Enemy::normalize(const sf::Vector2f& j) {
+  float mag = sqrt((j.x * j.x) + (j.y * j.y));
+  if(mag != 0) {
+    return sf::Vector2f(j.x / mag, j.y / mag);
+  } else {
+    return j;
+  }
+}
+
+void Enemy::moveToPlayer(sf::Vector2f playerPos, float enemySpeed) {
+  sf::Vector2f direction = this->normalize(playerPos - this->_sprite.getPosition());
+  this->_sprite.move(enemySpeed * direction);
+}
+
 void Enemy::update() {
 
 }

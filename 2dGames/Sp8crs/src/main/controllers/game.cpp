@@ -98,6 +98,8 @@ void Game::update() {
     }
   }
 
+  this->_enemy->moveToPlayer(this->_player->getPos(), 2.f);
+
   float boundsWidth = this->_player->_sprite.getGlobalBounds().width;
   float boundsHeight = this->_player->_sprite.getGlobalBounds().height;
 

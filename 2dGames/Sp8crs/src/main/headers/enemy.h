@@ -3,6 +3,7 @@
 #include<SFML/Graphics.hpp>
 #include<SFML/System.hpp>
 #include<iostream>
+#include<math.h>
 
 class Enemy {
   private:
@@ -20,12 +21,13 @@ class Enemy {
     Enemy();
 	  virtual ~Enemy();
 	  const sf::Vector2f& getPos() const;
+    sf::Vector2f normalize(const sf::Vector2f&);
 
     // void move(const float x, const float y);
 	  // const bool canAttack();
 
     // void shoot();
-  
+    void moveToPlayer(sf::Vector2f, float);
     void update();
     void render(sf::RenderTarget& target);
 };
