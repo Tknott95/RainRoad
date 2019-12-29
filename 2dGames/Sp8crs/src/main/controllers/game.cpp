@@ -63,10 +63,9 @@ void Game::eventPolling() {
   }
   
   float playerRotation = this->_player->_sprite.getRotation();
-  int rightClamp = 1;
-  int leftClamp = 358;
+  int rightClamp = 1; /* 0->1 */
+  int leftClamp = 358; /* 360->358 */
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-    // cout << "Space PRESSED" << endl;
     this->_player->move(this->playerSpeed, 0.0);
     cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
     if(playerRotation > leftClamp - 1 || playerRotation < rightClamp) {
@@ -79,10 +78,8 @@ void Game::eventPolling() {
     }
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-    // cout << "Space PRESSED" << endl;
     this->_player->move(0.0, this->playerSpeed);
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-    // cout << "Space PRESSED" << endl;
     this->_player->move(0.0, -this->playerSpeed);
   }
 }
