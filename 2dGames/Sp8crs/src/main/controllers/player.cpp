@@ -60,14 +60,14 @@ void Player::displayHealth() {
 } 
 
 void Player::shoot() {
-
-  this->_bullet.setPosition( 674.f, 674.f /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
-  this->_bullet.setRadius(50.f);
+  this->_bullet.setPosition(this->_sprite.getPosition().x + ((this->_sprite.getGlobalBounds().width/2) -5), this->_sprite.getPosition().y /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
+  this->_bullet.setRadius(5.f);
   this->_bullet.setFillColor(sf::Color::Yellow);
-  this->_bullet.move(0.f,  -10.f);
+  this->_bullet.move(0.f, 0.1f + 2.f);
 }
 
 void Player::render(sf::RenderTarget& target) {
   target.draw(this->text);
+  target.draw(this->_bullet);
 	target.draw(this->_sprite);
 }

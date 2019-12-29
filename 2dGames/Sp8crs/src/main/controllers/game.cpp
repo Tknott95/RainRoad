@@ -113,9 +113,9 @@ void Game::update() {
   this->_player->update();
   cout << "\n    _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
   this->_player->shoot();
-  if(firing) {
-    this->_player->shoot();
-  }
+  // if(firing) {
+  //   this->_player->shoot();
+  // }
 
   this->_enemy->moveToPlayer(this->_player->getPos(), 0.7f);
 
