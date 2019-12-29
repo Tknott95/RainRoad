@@ -63,24 +63,35 @@ void Game::eventPolling() {
   }
   
   float playerRotation = this->_player->_sprite.getRotation();
-  int rightClamp = 1; /* 0->1 */
-  int leftClamp = 358; /* 360->358 */
+  int rightClamp = 2; /* 0->1 */
+  int leftClamp = 357; /* 358<-360 */
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-    this->_player->move(this->playerSpeed, 0.0);
-    cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
+    if(this->_player->_sprite.getPosition().x < this->screenWidth - 110) {
+      this->_player->move(this->playerSpeed, 0.0);
+    }
+    
+    // cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
     if(playerRotation > leftClamp - 1 || playerRotation < rightClamp) {
+      // cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
       this->_player->_sprite.setRotation(this->_player->_sprite.getRotation() + 0.1f); /* needs clamp and lerp to orig on keyUP @TODO */
     }
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-    this->_player->move(-this->playerSpeed, 0.0);
+    if(this->_player->_sprite.getPosition().x > 0) {
+      this->_player->move(-this->playerSpeed, 0.0);
+    }
     if(playerRotation < rightClamp + 1 || playerRotation > leftClamp) {
+      // cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
       this->_player->_sprite.setRotation(this->_player->_sprite.getRotation() - 0.1f); /* needs clamp and lerp to orig on keyUP @TODO */
     }
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-    this->_player->move(0.0, this->playerSpeed);
+    if(this->_player->_sprite.getPosition().y < this->screenHeight - 100) {
+      this->_player->move(0.0, this->playerSpeed);
+    }
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-    this->_player->move(0.0, -this->playerSpeed);
+    if(this->_player->_sprite.getPosition().y > 100) {
+      this->_player->move(0.0, -this->playerSpeed);
+    }
   }
 }
 
