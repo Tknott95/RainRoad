@@ -21,6 +21,8 @@ void Player::init() {
   this->_sprite.setTexture(this->_texture);
   this->_sprite.scale(1.4f, 1.4f);
   this->_sprite.setPosition(674.f, 600.f);
+  this->_sprite.setRotation(359);
+
 
   this->movementSpeed = 2.f;
   this->attackWait = 1.f;

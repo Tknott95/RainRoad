@@ -1,0 +1,4105 @@
+
+ App Initialized... 
+
+COORDS MOUSE POS: 431 258
+MOUSE POS: 431 258
+
+    _timeElapsed: | 0.004116 |
+
+ MAGNITUDE(406.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 88 -157
+MOUSE POS: 88 -157
+
+    _timeElapsed: | 0.026539 |
+
+ MAGNITUDE(406.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 88 -157
+MOUSE POS: 88 -157
+
+    _timeElapsed: | 0.041754 |
+
+ MAGNITUDE(405.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 88 -157
+MOUSE POS: 88 -157
+
+    _timeElapsed: | 0.056671 |
+
+ MAGNITUDE(404.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 88 -157
+MOUSE POS: 88 -157
+
+    _timeElapsed: | 0.070709 |
+
+ MAGNITUDE(403.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 88 -157
+MOUSE POS: 88 -157
+
+    _timeElapsed: | 0.084539 |
+
+ MAGNITUDE(403.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.098932 |
+
+ MAGNITUDE(402.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.113985 |
+
+ MAGNITUDE(401.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.126671 |
+
+ MAGNITUDE(401.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.139588 |
+
+ MAGNITUDE(400.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.152418 |
+
+ MAGNITUDE(399.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.166771 |
+
+ MAGNITUDE(399.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.180981 |
+
+ MAGNITUDE(398.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.193812 |
+
+ MAGNITUDE(397.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.206666 |
+
+ MAGNITUDE(396.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.220368 |
+
+ MAGNITUDE(396.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.233306 |
+
+ MAGNITUDE(395.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.246508 |
+
+ MAGNITUDE(394.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.261083 |
+
+ MAGNITUDE(394.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.274319 |
+
+ MAGNITUDE(393.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.286016 |
+
+ MAGNITUDE(392.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.29813 |
+
+ MAGNITUDE(392.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.310494 |
+
+ MAGNITUDE(391.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.321889 |
+
+ MAGNITUDE(390.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.33366 |
+
+ MAGNITUDE(389.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.3453 |
+
+ MAGNITUDE(389.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.356645 |
+
+ MAGNITUDE(388.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.369513 |
+
+ MAGNITUDE(387.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.380775 |
+
+ MAGNITUDE(387.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.393614 |
+
+ MAGNITUDE(386.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.404927 |
+
+ MAGNITUDE(385.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.417363 |
+
+ MAGNITUDE(385.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.42893 |
+
+ MAGNITUDE(384.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.44029 |
+
+ MAGNITUDE(383.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.451836 |
+
+ MAGNITUDE(382.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.463353 |
+
+ MAGNITUDE(382.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.474661 |
+
+ MAGNITUDE(381.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.486122 |
+
+ MAGNITUDE(380.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.497943 |
+
+ MAGNITUDE(380.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.510311 |
+
+ MAGNITUDE(379.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.521588 |
+
+ MAGNITUDE(378.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.533026 |
+
+ MAGNITUDE(378.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.544451 |
+
+ MAGNITUDE(377.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.555845 |
+
+ MAGNITUDE(376.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.568082 |
+
+ MAGNITUDE(375.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.57938 |
+
+ MAGNITUDE(375.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.59103 |
+
+ MAGNITUDE(374.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.602714 |
+
+ MAGNITUDE(373.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.614019 |
+
+ MAGNITUDE(373.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.625806 |
+
+ MAGNITUDE(372.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.638631 |
+
+ MAGNITUDE(371.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.649839 |
+
+ MAGNITUDE(371.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.661406 |
+
+ MAGNITUDE(370.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.672954 |
+
+ MAGNITUDE(369.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.684707 |
+
+ MAGNITUDE(368.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.696017 |
+
+ MAGNITUDE(368.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.711138 |
+
+ MAGNITUDE(367.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.722547 |
+
+ MAGNITUDE(366.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.733926 |
+
+ MAGNITUDE(366.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.745366 |
+
+ MAGNITUDE(365.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.756935 |
+
+ MAGNITUDE(364.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.768234 |
+
+ MAGNITUDE(364.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.779646 |
+
+ MAGNITUDE(363.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.791084 |
+
+ MAGNITUDE(362.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.802494 |
+
+ MAGNITUDE(361.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.813932 |
+
+ MAGNITUDE(361.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.825391 |
+
+ MAGNITUDE(360.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.836754 |
+
+ MAGNITUDE(359.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.848751 |
+
+ MAGNITUDE(359.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.860241 |
+
+ MAGNITUDE(358.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.871527 |
+
+ MAGNITUDE(357.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.882943 |
+
+ MAGNITUDE(357.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.894365 |
+
+ MAGNITUDE(356.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.90587 |
+
+ MAGNITUDE(355.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.917328 |
+
+ MAGNITUDE(354.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.929118 |
+
+ MAGNITUDE(354.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.940499 |
+
+ MAGNITUDE(353.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.95184 |
+
+ MAGNITUDE(352.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.963273 |
+
+ MAGNITUDE(352.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.974704 |
+
+ MAGNITUDE(351.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.986217 |
+
+ MAGNITUDE(350.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 0.998517 |
+
+ MAGNITUDE(350.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.01015 |
+
+ MAGNITUDE(349.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.02148 |
+
+ MAGNITUDE(348.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.0329 |
+
+ MAGNITUDE(347.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.04439 |
+
+ MAGNITUDE(347.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.05575 |
+
+ MAGNITUDE(346.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.06717 |
+
+ MAGNITUDE(345.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.07866 |
+
+ MAGNITUDE(345.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.09015 |
+
+ MAGNITUDE(344.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.10148 |
+
+ MAGNITUDE(343.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.11286 |
+
+ MAGNITUDE(343.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.12442 |
+
+ MAGNITUDE(342.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.13578 |
+
+ MAGNITUDE(341.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.14719 |
+
+ MAGNITUDE(340.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.15963 |
+
+ MAGNITUDE(340.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.17098 |
+
+ MAGNITUDE(339.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.18235 |
+
+ MAGNITUDE(338.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.1938 |
+
+ MAGNITUDE(338.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.2056 |
+
+ MAGNITUDE(337.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.21715 |
+
+ MAGNITUDE(336.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.2281 |
+
+ MAGNITUDE(336.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.23956 |
+
+ MAGNITUDE(335.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.25105 |
+
+ MAGNITUDE(334.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.26258 |
+
+ MAGNITUDE(333.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.27378 |
+
+ MAGNITUDE(333.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.28553 |
+
+ MAGNITUDE(332.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.29676 |
+
+ MAGNITUDE(331.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.30853 |
+
+ MAGNITUDE(331.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.31993 |
+
+ MAGNITUDE(330.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.33185 |
+
+ MAGNITUDE(329.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.34327 |
+
+ MAGNITUDE(329.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.35462 |
+
+ MAGNITUDE(328.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.36606 |
+
+ MAGNITUDE(327.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.37801 |
+
+ MAGNITUDE(326.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.38939 |
+
+ MAGNITUDE(326.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.4008 |
+
+ MAGNITUDE(325.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.41255 |
+
+ MAGNITUDE(324.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.42392 |
+
+ MAGNITUDE(324.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.43563 |
+
+ MAGNITUDE(323.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.4474 |
+
+ MAGNITUDE(322.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.45926 |
+
+ MAGNITUDE(322.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.47079 |
+
+ MAGNITUDE(321.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.48214 |
+
+ MAGNITUDE(320.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.49379 |
+
+ MAGNITUDE(319.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.50513 |
+
+ MAGNITUDE(319.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.51656 |
+
+ MAGNITUDE(318.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.52797 |
+
+ MAGNITUDE(317.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 270 -3
+MOUSE POS: 270 -3
+
+    _timeElapsed: | 1.53938 |
+
+ MAGNITUDE(317.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 306 16
+MOUSE POS: 306 16
+
+    _timeElapsed: | 1.55086 |
+
+ MAGNITUDE(316.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 340 34
+MOUSE POS: 340 34
+
+    _timeElapsed: | 1.56224 |
+
+ MAGNITUDE(315.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 386 55
+MOUSE POS: 386 55
+
+    _timeElapsed: | 1.5737 |
+
+ MAGNITUDE(315.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 386 55
+MOUSE POS: 386 55
+
+    _timeElapsed: | 1.58507 |
+
+ MAGNITUDE(314.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 484 94
+MOUSE POS: 484 94
+
+    _timeElapsed: | 1.59649 |
+
+ MAGNITUDE(313.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 559 125
+MOUSE POS: 559 125
+
+    _timeElapsed: | 1.6081 |
+
+ MAGNITUDE(312.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 559 125
+MOUSE POS: 559 125
+
+    _timeElapsed: | 1.61941 |
+
+ MAGNITUDE(312.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 640 152
+MOUSE POS: 640 152
+
+    _timeElapsed: | 1.631 |
+
+ MAGNITUDE(311.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 732 176
+MOUSE POS: 732 176
+
+    _timeElapsed: | 1.64272 |
+
+ MAGNITUDE(310.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 732 176
+MOUSE POS: 732 176
+
+    _timeElapsed: | 1.65404 |
+
+ MAGNITUDE(310.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 775 185
+MOUSE POS: 775 185
+
+    _timeElapsed: | 1.66579 |
+
+ MAGNITUDE(309.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 804 190
+MOUSE POS: 804 190
+
+    _timeElapsed: | 1.67729 |
+
+ MAGNITUDE(308.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 804 190
+MOUSE POS: 804 190
+
+    _timeElapsed: | 1.68852 |
+
+ MAGNITUDE(308.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 826 191
+MOUSE POS: 826 191
+
+    _timeElapsed: | 1.70005 |
+
+ MAGNITUDE(307.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 834 191
+MOUSE POS: 834 191
+
+    _timeElapsed: | 1.71137 |
+
+ MAGNITUDE(306.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 834 191
+MOUSE POS: 834 191
+
+    _timeElapsed: | 1.72283 |
+
+ MAGNITUDE(305.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 837 191
+MOUSE POS: 837 191
+
+    _timeElapsed: | 1.73427 |
+
+ MAGNITUDE(305.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 842 191
+MOUSE POS: 842 191
+
+    _timeElapsed: | 1.7458 |
+
+ MAGNITUDE(304.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 842 191
+MOUSE POS: 842 191
+
+    _timeElapsed: | 1.75715 |
+
+ MAGNITUDE(303.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 842 191
+MOUSE POS: 842 191
+
+    _timeElapsed: | 1.76853 |
+
+ MAGNITUDE(303.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.7801 |
+
+ MAGNITUDE(302.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.79141 |
+
+ MAGNITUDE(301.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.80277 |
+
+ MAGNITUDE(301.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.81428 |
+
+ MAGNITUDE(300.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.82563 |
+
+ MAGNITUDE(299.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.83702 |
+
+ MAGNITUDE(298.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.84846 |
+
+ MAGNITUDE(298.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.85994 |
+
+ MAGNITUDE(297.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.87135 |
+
+ MAGNITUDE(296.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.88274 |
+
+ MAGNITUDE(296.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.8942 |
+
+ MAGNITUDE(295.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.90559 |
+
+ MAGNITUDE(294.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.91724 |
+
+ MAGNITUDE(294.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.92847 |
+
+ MAGNITUDE(293.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.93999 |
+
+ MAGNITUDE(292.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.95141 |
+
+ MAGNITUDE(291.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.96281 |
+
+ MAGNITUDE(291.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.97423 |
+
+ MAGNITUDE(290.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.9857 |
+
+ MAGNITUDE(289.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 1.99706 |
+
+ MAGNITUDE(289.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.00848 |
+
+ MAGNITUDE(288.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.01994 |
+
+ MAGNITUDE(287.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.03144 |
+
+ MAGNITUDE(287.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.04289 |
+
+ MAGNITUDE(286.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.05432 |
+
+ MAGNITUDE(285.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.06573 |
+
+ MAGNITUDE(284.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.07714 |
+
+ MAGNITUDE(284.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.08859 |
+
+ MAGNITUDE(283.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.1 |
+
+ MAGNITUDE(282.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.11148 |
+
+ MAGNITUDE(282.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.12319 |
+
+ MAGNITUDE(281.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.13457 |
+
+ MAGNITUDE(280.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.14608 |
+
+ MAGNITUDE(280.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.15756 |
+
+ MAGNITUDE(279.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.16907 |
+
+ MAGNITUDE(278.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.18053 |
+
+ MAGNITUDE(277.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.192 |
+
+ MAGNITUDE(277.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.20322 |
+
+ MAGNITUDE(276.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.21473 |
+
+ MAGNITUDE(275.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.22607 |
+
+ MAGNITUDE(275.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.23764 |
+
+ MAGNITUDE(274.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.24903 |
+
+ MAGNITUDE(273.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.26068 |
+
+ MAGNITUDE(273.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.27212 |
+
+ MAGNITUDE(272.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.28352 |
+
+ MAGNITUDE(271.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.29507 |
+
+ MAGNITUDE(270.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.30626 |
+
+ MAGNITUDE(270.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.31768 |
+
+ MAGNITUDE(269.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.3291 |
+
+ MAGNITUDE(268.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.34051 |
+
+ MAGNITUDE(268.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.35236 |
+
+ MAGNITUDE(267.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.3635 |
+
+ MAGNITUDE(266.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.37485 |
+
+ MAGNITUDE(266.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.38628 |
+
+ MAGNITUDE(265.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.39794 |
+
+ MAGNITUDE(264.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.40931 |
+
+ MAGNITUDE(263.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.42068 |
+
+ MAGNITUDE(263.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.43209 |
+
+ MAGNITUDE(262.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.44349 |
+
+ MAGNITUDE(261.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.45528 |
+
+ MAGNITUDE(261.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.46647 |
+
+ MAGNITUDE(260.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.4781 |
+
+ MAGNITUDE(259.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.48945 |
+
+ MAGNITUDE(259.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.50101 |
+
+ MAGNITUDE(258.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.5126 |
+
+ MAGNITUDE(257.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.52398 |
+
+ MAGNITUDE(256.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.53553 |
+
+ MAGNITUDE(256.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.54675 |
+
+ MAGNITUDE(255.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.55875 |
+
+ MAGNITUDE(254.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.57006 |
+
+ MAGNITUDE(254.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.58149 |
+
+ MAGNITUDE(253.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.59292 |
+
+ MAGNITUDE(252.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.60436 |
+
+ MAGNITUDE(252.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.61578 |
+
+ MAGNITUDE(251.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.6272 |
+
+ MAGNITUDE(250.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.63874 |
+
+ MAGNITUDE(249.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.65003 |
+
+ MAGNITUDE(249.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.66147 |
+
+ MAGNITUDE(248.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.67288 |
+
+ MAGNITUDE(247.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.68431 |
+
+ MAGNITUDE(247.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.69571 |
+
+ MAGNITUDE(246.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.70715 |
+
+ MAGNITUDE(245.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.71861 |
+
+ MAGNITUDE(245.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.72998 |
+
+ MAGNITUDE(244.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.74143 |
+
+ MAGNITUDE(243.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.75284 |
+
+ MAGNITUDE(242.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.76424 |
+
+ MAGNITUDE(242.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.77565 |
+
+ MAGNITUDE(241.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.78709 |
+
+ MAGNITUDE(240.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.79852 |
+
+ MAGNITUDE(240.187) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.80993 |
+
+ MAGNITUDE(239.487) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.82138 |
+
+ MAGNITUDE(238.787) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.83282 |
+
+ MAGNITUDE(238.087) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.84425 |
+
+ MAGNITUDE(237.387) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.85566 |
+
+ MAGNITUDE(236.687) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.86705 |
+
+ MAGNITUDE(235.987) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.8785 |
+
+ MAGNITUDE(235.287) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.8899 |
+
+ MAGNITUDE(234.587) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.90133 |
+
+ MAGNITUDE(233.887) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.91304 |
+
+ MAGNITUDE(227.29) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.92438 |
+
+ MAGNITUDE(220.698) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.93569 |
+
+ MAGNITUDE(214.112) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.94712 |
+
+ MAGNITUDE(207.533) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.9586 |
+
+ MAGNITUDE(200.961) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.97017 |
+
+ MAGNITUDE(194.397) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.98148 |
+
+ MAGNITUDE(187.841) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 2.99286 |
+
+ MAGNITUDE(181.295) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.00431 |
+
+ MAGNITUDE(174.759) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.01578 |
+
+ MAGNITUDE(168.235) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.02718 |
+
+ MAGNITUDE(161.723) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.0386 |
+
+ MAGNITUDE(155.226) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.04996 |
+
+ MAGNITUDE(148.745) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.06137 |
+
+ MAGNITUDE(142.282) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.07283 |
+
+ MAGNITUDE(135.839) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.08424 |
+
+ MAGNITUDE(129.42) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.09562 |
+
+ MAGNITUDE(123.027) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.10706 |
+
+ MAGNITUDE(122.327) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.11852 |
+
+ MAGNITUDE(121.627) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.12989 |
+
+ MAGNITUDE(120.927) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.14131 |
+
+ MAGNITUDE(120.227) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.15275 |
+
+ MAGNITUDE(119.527) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.16421 |
+
+ MAGNITUDE(118.827) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.17559 |
+
+ MAGNITUDE(118.127) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.18702 |
+
+ MAGNITUDE(117.427) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.19845 |
+
+ MAGNITUDE(116.727) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.20987 |
+
+ MAGNITUDE(116.027) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.2213 |
+
+ MAGNITUDE(115.327) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.23272 |
+
+ MAGNITUDE(114.627) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.24423 |
+
+ MAGNITUDE(113.927) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.25561 |
+
+ MAGNITUDE(113.227) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.26703 |
+
+ MAGNITUDE(112.527) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.27844 |
+
+ MAGNITUDE(111.827) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.28987 |
+
+ MAGNITUDE(111.127) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.30131 |
+
+ MAGNITUDE(110.427) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.31274 |
+
+ MAGNITUDE(109.727) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.32415 |
+
+ MAGNITUDE(109.027) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.33564 |
+
+ MAGNITUDE(110.412) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(1e-05) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.34711 |
+
+ MAGNITUDE(112.079) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(2e-05) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.3589 |
+
+ MAGNITUDE(114.012) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(3e-05) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.37034 |
+
+ MAGNITUDE(116.195) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(4e-05) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.38178 |
+
+ MAGNITUDE(118.611) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(5e-05) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.39319 |
+
+ MAGNITUDE(121.243) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(6e-05) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.40464 |
+
+ MAGNITUDE(124.075) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(7e-05) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.41615 |
+
+ MAGNITUDE(127.092) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(8e-05) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.42782 |
+
+ MAGNITUDE(130.279) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(9e-05) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.43894 |
+
+ MAGNITUDE(133.622) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.0001) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.45043 |
+
+ MAGNITUDE(137.108) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00011) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.46184 |
+
+ MAGNITUDE(140.725) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00012) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.47324 |
+
+ MAGNITUDE(144.462) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00013) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.48478 |
+
+ MAGNITUDE(148.309) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00014) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.4962 |
+
+ MAGNITUDE(152.256) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00015) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.50869 |
+
+ MAGNITUDE(156.295) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00016) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.51989 |
+
+ MAGNITUDE(160.419) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00017) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.53136 |
+
+ MAGNITUDE(164.619) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00018) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.54276 |
+
+ MAGNITUDE(168.891) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00019) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.55419 |
+
+ MAGNITUDE(173.227) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.0002) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.56562 |
+
+ MAGNITUDE(177.624) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00021) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.57731 |
+
+ MAGNITUDE(182.075) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00022) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.58841 |
+
+ MAGNITUDE(186.577) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00023) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.59991 |
+
+ MAGNITUDE(191.125) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00024) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.61131 |
+
+ MAGNITUDE(195.717) 
+
+119.001 - boundsWidth 
+119 - boundsHeight 
+
+
+   ROTATION(0.00025) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.62272 |
+
+ MAGNITUDE(200.348) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00026) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.63427 |
+
+ MAGNITUDE(205.017) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00027) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.64565 |
+
+ MAGNITUDE(209.719) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00028) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.65701 |
+
+ MAGNITUDE(214.454) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00029) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.66846 |
+
+ MAGNITUDE(219.217) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.0003) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.68016 |
+
+ MAGNITUDE(224.009) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00031) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.69146 |
+
+ MAGNITUDE(228.825) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00032) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.70298 |
+
+ MAGNITUDE(233.666) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00033) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.71442 |
+
+ MAGNITUDE(238.528) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00034) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.7258 |
+
+ MAGNITUDE(243.412) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00035) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.73731 |
+
+ MAGNITUDE(248.315) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00036) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.74879 |
+
+ MAGNITUDE(253.236) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00037) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.76021 |
+
+ MAGNITUDE(258.174) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00038) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.77158 |
+
+ MAGNITUDE(263.128) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+
+   ROTATION(0.00039) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.78337 |
+
+ MAGNITUDE(268.097) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.79442 |
+
+ MAGNITUDE(261.728) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.80583 |
+
+ MAGNITUDE(255.374) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.81728 |
+
+ MAGNITUDE(249.036) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.8287 |
+
+ MAGNITUDE(242.716) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.84011 |
+
+ MAGNITUDE(236.414) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.85157 |
+
+ MAGNITUDE(230.132) 
+
+119 - boundsWidth 
+119 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.863 |
+
+ MAGNITUDE(223.872) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.87439 |
+
+ MAGNITUDE(217.635) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.88581 |
+
+ MAGNITUDE(211.424) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.89722 |
+
+ MAGNITUDE(205.24) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.90864 |
+
+ MAGNITUDE(199.085) 
+
+119.001 - boundsWidth 
+119.001 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.92008 |
+
+ MAGNITUDE(192.963) 
+
+119.002 - boundsWidth 
+119.002 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.9315 |
+
+ MAGNITUDE(186.876) 
+
+119.002 - boundsWidth 
+119.002 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.9429 |
+
+ MAGNITUDE(180.828) 
+
+119.002 - boundsWidth 
+119.002 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.95436 |
+
+ MAGNITUDE(174.822) 
+
+119.002 - boundsWidth 
+119.002 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.96582 |
+
+ MAGNITUDE(168.862) 
+
+119.002 - boundsWidth 
+119.002 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.97721 |
+
+ MAGNITUDE(162.953) 
+
+119.003 - boundsWidth 
+119.002 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 3.98906 |
+
+ MAGNITUDE(157.101) 
+
+119.003 - boundsWidth 
+119.003 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.00003 |
+
+ MAGNITUDE(151.311) 
+
+119.003 - boundsWidth 
+119.003 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.01154 |
+
+ MAGNITUDE(145.59) 
+
+119.003 - boundsWidth 
+119.003 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.02297 |
+
+ MAGNITUDE(139.946) 
+
+119.003 - boundsWidth 
+119.003 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.03451 |
+
+ MAGNITUDE(134.388) 
+
+119.003 - boundsWidth 
+119.003 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.04587 |
+
+ MAGNITUDE(128.926) 
+
+119.004 - boundsWidth 
+119.004 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.05728 |
+
+ MAGNITUDE(123.571) 
+
+119.004 - boundsWidth 
+119.004 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.06875 |
+
+ MAGNITUDE(118.338) 
+
+119.004 - boundsWidth 
+119.004 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.08015 |
+
+ MAGNITUDE(113.24) 
+
+119.004 - boundsWidth 
+119.004 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.09168 |
+
+ MAGNITUDE(108.296) 
+
+119.004 - boundsWidth 
+119.004 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.10321 |
+
+ MAGNITUDE(103.525) 
+
+119.005 - boundsWidth 
+119.005 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.11451 |
+
+ MAGNITUDE(98.9502) 
+
+119.005 - boundsWidth 
+119.005 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.12592 |
+
+ MAGNITUDE(94.5966) 
+
+119.005 - boundsWidth 
+119.005 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.13737 |
+
+ MAGNITUDE(90.4927) 
+
+119.005 - boundsWidth 
+119.005 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.14884 |
+
+ MAGNITUDE(86.6699) 
+
+119.005 - boundsWidth 
+119.005 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.16024 |
+
+ MAGNITUDE(83.162) 
+
+119.005 - boundsWidth 
+119.005 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.17179 |
+
+ MAGNITUDE(80.0049) 
+
+119.006 - boundsWidth 
+119.006 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.18334 |
+
+ MAGNITUDE(77.2349) 
+
+119.006 - boundsWidth 
+119.006 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.19459 |
+
+ MAGNITUDE(74.8877) 
+
+119.006 - boundsWidth 
+119.006 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.20602 |
+
+ MAGNITUDE(72.9958) 
+
+119.006 - boundsWidth 
+119.006 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.21785 |
+
+ MAGNITUDE(71.5863) 
+
+119.006 - boundsWidth 
+119.006 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.22919 |
+
+ MAGNITUDE(70.6784) 
+
+119.007 - boundsWidth 
+119.007 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.2407 |
+
+ MAGNITUDE(70.2813) 
+
+119.007 - boundsWidth 
+119.007 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.25226 |
+
+ MAGNITUDE(70.3937) 
+
+119.007 - boundsWidth 
+119.007 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.26343 |
+
+ MAGNITUDE(71.0031) 
+
+119.007 - boundsWidth 
+119.007 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.27485 |
+
+ MAGNITUDE(72.0872) 
+
+119.007 - boundsWidth 
+119.007 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.28636 |
+
+ MAGNITUDE(73.6164) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.29771 |
+
+ MAGNITUDE(75.5554) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.30907 |
+
+ MAGNITUDE(77.8665) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.32061 |
+
+ MAGNITUDE(80.5113) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.33206 |
+
+ MAGNITUDE(76.4679) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.3435 |
+
+ MAGNITUDE(72.7649) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.35499 |
+
+ MAGNITUDE(69.4496) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.36639 |
+
+ MAGNITUDE(66.5715) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.3778 |
+
+ MAGNITUDE(64.1798) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.3892 |
+
+ MAGNITUDE(62.3192) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.40064 |
+
+ MAGNITUDE(61.0259) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.41209 |
+
+ MAGNITUDE(60.323) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.42356 |
+
+ MAGNITUDE(60.2174) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.43504 |
+
+ MAGNITUDE(60.6986) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.44652 |
+
+ MAGNITUDE(61.7395) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.45867 |
+
+ MAGNITUDE(63.3005) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.47 |
+
+ MAGNITUDE(65.3333) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+   ROTATION(359.996) 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+
+    _timeElapsed: | 4.4815 |
+
+ MAGNITUDE(67.7861) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+COLLIDED
+
+    _timeElapsed: | 4.49294 |
+
+ MAGNITUDE(67.0861) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+COLLIDED
+
+    _timeElapsed: | 4.50443 |
+
+ MAGNITUDE(66.3861) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+COLLIDED
+
+    _timeElapsed: | 4.51577 |
+
+ MAGNITUDE(65.6861) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+COLLIDED
+
+    _timeElapsed: | 4.52718 |
+
+ MAGNITUDE(64.9861) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+COLLIDED
+
+    _timeElapsed: | 4.53862 |
+
+ MAGNITUDE(64.2861) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+COORDS MOUSE POS: 841 191
+MOUSE POS: 841 191
+COLLIDED
+
+    _timeElapsed: | 4.55003 |
+
+ MAGNITUDE(63.5861) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
+
+ CLOSING WINDOW 
+
+COORDS MOUSE POS: 0 0
+MOUSE POS: 0 0
+COLLIDED
+
+    _timeElapsed: | 4.56265 |
+
+ MAGNITUDE(62.8861) 
+
+119.008 - boundsWidth 
+119.008 - boundsHeight 
+
