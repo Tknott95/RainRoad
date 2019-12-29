@@ -22,16 +22,21 @@ class Player {
 
   public:
     sf::Sprite _sprite;
+    sf::Font font;
+    sf::Text text;
+    float curHealth = 100.f; /* REFACTOR TO PRIVATE W/ PUB CLASS  @TODO */
     // float globalBounds; /*this->_player->_sprite.getGlobalBounds() */
     Player();
 	  virtual ~Player();
+    void update();
 	  const sf::Vector2f& getPos() const;
 
     void move(const float x, const float y);
+    void takeDmg(const float amount);
+    void displayHealth();
 	  const bool canAttack();
 
     void shoot();
   
-    void update();
     void render(sf::RenderTarget& target);
 };

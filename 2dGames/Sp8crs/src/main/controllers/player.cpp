@@ -6,6 +6,17 @@ void Player::init() {
   if(!this->_texture.loadFromFile("utils/img/player/p1.png")) {
     std::cout << "ERROR: Could not load player texture file." << "\n";
   }
+  if (!this->font.loadFromFile("utils/fonts/Orbitron-Bold.ttf"))
+  {
+    std::cout << "ERROR: Could not load player font file." << "\n";
+  }
+
+  this->text.setFont(font);
+  this->text.setString(std::to_string(this->curHealth));
+  this->text.setCharacterSize(24);
+  this->text.setFillColor(sf::Color::White); /* switch to rgba .4 opacity @TODO */
+
+  
 
   this->_sprite.setTexture(this->_texture);
   this->_sprite.scale(0.4f, 0.4f);
@@ -23,6 +34,13 @@ Player::~Player() {
 
 }
 
+void Player::update() {
+  if(this->curHealth <= 0.0) {
+    this->curHealth = 0.0;
+  }
+  this->text.setString(std::to_string(this->curHealth));
+}
+
 const sf::Vector2f & Player::getPos() const {
   return this->_sprite.getPosition();
 }
@@ -30,6 +48,14 @@ const sf::Vector2f & Player::getPos() const {
 void Player::move(const float x, const float y) {
   this->_sprite.move(this->movementSpeed * x, this->movementSpeed * y);
 }
+
+void Player::takeDmg(const float amount) {
+  this->curHealth -= amount;
+}
+
+void Player::displayHealth() {
+  // this->curHealth;
+} 
 
 void Player::shoot() {
 
@@ -40,5 +66,6 @@ void Player::shoot() {
 }
 
 void Player::render(sf::RenderTarget& target) {
+  target.draw(this->text);
 	target.draw(this->_sprite);
 }

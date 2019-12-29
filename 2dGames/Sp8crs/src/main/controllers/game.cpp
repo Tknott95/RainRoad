@@ -84,6 +84,7 @@ void Game::fixedUpdate() {
 
 void Game::update() {
   this->_timeElapsed = this->_clock.getElapsedTime();
+  this->_player->update();
   cout << "\n    _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
   this->_player->shoot();
   if(firing) {
@@ -91,13 +92,17 @@ void Game::update() {
   }
   if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_sprite.getGlobalBounds())){
     cout << "COLLIDED" << endl;
+    this->_player->takeDmg(0.93);
+    if(this->_player->curHealth <= 0) {
+      cout << "\n  PLAYER DEAD \n" << endl;
+    }
   }
 
   float boundsWidth = this->_player->_sprite.getGlobalBounds().width;
   float boundsHeight = this->_player->_sprite.getGlobalBounds().height;
 
   cout << boundsWidth << " - boundsWidth \n" << boundsHeight << " - boundsHeight \n" << endl;
-  
+
 }
 
 void Game::render() {
