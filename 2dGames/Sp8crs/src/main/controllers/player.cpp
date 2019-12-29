@@ -3,7 +3,7 @@
 
 void Player::init() {
 
-  if(!this->_texture.loadFromFile("utils/img/player/p1.png")) {
+  if(!this->_texture.loadFromFile("utils/img/player/medfighter.png")) {
     std::cout << "ERROR: Could not load player texture file." << "\n";
   }
   if (!this->font.loadFromFile("utils/fonts/Orbitron-Bold.ttf"))
@@ -19,7 +19,7 @@ void Player::init() {
   
 
   this->_sprite.setTexture(this->_texture);
-  this->_sprite.scale(0.4f, 0.4f);
+  this->_sprite.scale(4.4f, 4.4f);
   this->_sprite.setPosition(674.f, 600.f);
 
   this->movementSpeed = 2.f;
