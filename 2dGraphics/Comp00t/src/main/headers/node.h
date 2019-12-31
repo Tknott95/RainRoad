@@ -14,7 +14,7 @@ class Node {
     sf::Text _text;
 
     void init();
-    void spawn();
+    void spawn(float, float);
     void update();
 
   public:
