@@ -18,7 +18,7 @@ class Node {
     void update();
 
   public:
-   Node();
-   virtual ~Node();
-   void render(sf::RenderTarget& target);
+    Node();
+    virtual ~Node();
+    void render(sf::RenderTarget& target);
 };
