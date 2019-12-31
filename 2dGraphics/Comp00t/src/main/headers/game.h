@@ -8,6 +8,8 @@
 #include <SFML/Network.hpp>
 #include <SFML/Audio.hpp>
 
+#include "node.h"
+
 using namespace std;
 
 class Game {
@@ -21,6 +23,7 @@ class Game {
     float _secondsPassed;
 
     sf::Sprite _bgSprite;
+    Node _graphicNode;
 
     sf::Event _event;
     sf::Vector2i _mousePos;
