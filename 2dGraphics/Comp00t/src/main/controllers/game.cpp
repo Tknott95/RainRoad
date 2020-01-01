@@ -62,15 +62,31 @@ void Game::eventPolling() {
         }
         break;
     }
+
+     
   }
   
 
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+    this->_view.move(2.f, 0.f);
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+    this->_view.move(-2.f, 0.f);
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+    this->_view.move(0.f, 2.f);
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+    this->_view.move(0.f, -2.f);
   }
+
+  if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
+    cout << '\n  zooming in \n' << endl;
+    this->_view.zoom(0.75f);
+  }
+  if(sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
+    cout << ' zooming out \n' << endl;
+    this->_view.zoom(1.25f);
+  }
+  this->_window->setView(this->_view);
 }
 
 void Game::fixedUpdate() {

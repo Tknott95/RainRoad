@@ -6,7 +6,7 @@ using namespace std;
 
 class Node {
   private:
-    const int totalNodes = 2000; /* @TODO | MAKE DYNAMIC w/ vertices[<#>] VARIABLE */
+    const int totalNodes = 1444; /* @TODO | MAKE DYNAMIC w/ vertices[<#>] VARIABLE */
     const float spawnDelay = 0.1f;
     sf::CircleShape _node;
     vector<sf::CircleShape> _nodes;

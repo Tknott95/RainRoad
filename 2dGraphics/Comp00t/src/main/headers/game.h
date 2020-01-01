@@ -29,8 +29,6 @@ class Game {
     sf::Event _event;
     sf::Vector2i _mousePos;
     sf::Vector2f _mouseCoords; /* rel to screen size in float foramat */
-    // float score;
-    float playerSpeed = 3.0;
     
     void init();
 
