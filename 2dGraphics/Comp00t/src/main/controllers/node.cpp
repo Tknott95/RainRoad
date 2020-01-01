@@ -27,7 +27,7 @@ Node::Node() {
   this->init();
 
   float vCount = 0.f;
-  // this->lines(sf::LineStrip, this->totalNodes);
+  //this->lines(sf::LineStrip, this->totalNodes);
   for(int _v=0; _v < this->totalNodes; _v++) {
     cout << '\n _v(' << _v << ') \n' << endl;
     // this->lines[_v].color = sf::Color::Red;
@@ -64,6 +64,15 @@ void Node::render(sf::RenderTarget& target) {
     target.draw(e);
     cout << e.getPosition().x << endl;
   };
+
+  sf::Vertex vertices[] = {
+    sf::Vertex(sf::Vector2f(  0,   0), sf::Color::Red, sf::Vector2f( 0,  0)),
+    sf::Vertex(sf::Vector2f(  0, 100), sf::Color::Red, sf::Vector2f( 0, 10)),
+    sf::Vertex(sf::Vector2f(100, 100), sf::Color::Red, sf::Vector2f(10, 10)),
+    sf::Vertex(sf::Vector2f(100,   0), sf::Color::Red, sf::Vector2f(10,  0))
+  };
+
+  target.draw(vertices, 4, sf::Quads); // sf::LineStrip
   // target.draw(this->lines);
   // target.draw(this->_nodes[0]);
   // target.draw(this->_nodes[1]);

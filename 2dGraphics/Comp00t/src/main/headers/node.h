@@ -12,7 +12,8 @@ class Node {
     vector<sf::CircleShape> _nodes;
     sf::Font _font;
     sf::Text _text;
-    sf::VertexArray lines(float, int);
+    // sf::VertexArray lines(sf::PrimitiveType);
+    // LineStrip // vertexCount Initial number of vertices in the array
 
     void init();
     void spawn(float, float);
