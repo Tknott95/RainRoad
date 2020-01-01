@@ -10,6 +10,7 @@ class Node {
     const float spawnDelay = 0.1f;
     sf::CircleShape _node;
     vector<sf::CircleShape> _nodes;
+    sf::Vertex vertices[4];
     sf::Font _font;
     sf::Text _text;
     // sf::VertexArray lines(sf::PrimitiveType);

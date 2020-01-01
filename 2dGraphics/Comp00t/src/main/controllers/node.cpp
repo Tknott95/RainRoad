@@ -64,13 +64,11 @@ void Node::render(sf::RenderTarget& target) {
     target.draw(e);
     cout << e.getPosition().x << endl;
   };
-
-  sf::Vertex vertices[] = {
-    sf::Vertex(sf::Vector2f(  0,   0), sf::Color::Red, sf::Vector2f( 0,  0)),
-    sf::Vertex(sf::Vector2f(  0, 100), sf::Color::Red, sf::Vector2f( 0, 10)),
-    sf::Vertex(sf::Vector2f(100, 100), sf::Color::Red, sf::Vector2f(10, 10)),
-    sf::Vertex(sf::Vector2f(100,   0), sf::Color::Red, sf::Vector2f(10,  0))
-  };
+ 
+  this->vertices[0] = sf::Vertex(sf::Vector2f(  0,   0), sf::Color::Red, sf::Vector2f( 0,  0));
+  this->vertices[1] = sf::Vertex(sf::Vector2f(  0, 100), sf::Color::Red, sf::Vector2f( 0, 10));
+  this->vertices[2] = sf::Vertex(sf::Vector2f(100, 100), sf::Color::Red, sf::Vector2f(10, 10));
+  this->vertices[3] = sf::Vertex(sf::Vector2f(100,   0), sf::Color::Red, sf::Vector2f(10,  0));
 
   target.draw(vertices, 4, sf::Quads); // sf::LineStrip
   // target.draw(this->lines);
