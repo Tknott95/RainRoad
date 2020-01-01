@@ -31,8 +31,6 @@ class Game {
     sf::Vector2f _mouseCoords; /* rel to screen size in float foramat */
     // float score;
     float playerSpeed = 3.0;
-
-    bool firing = false;
     
     void init();
 
