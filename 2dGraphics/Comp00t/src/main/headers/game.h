@@ -17,6 +17,7 @@ class Game {
   const int screenHeight = 720;
   private:
     sf::RenderWindow* _window;
+    sf::View _view;
     sf::VideoMode _videoMode;
     sf::Clock _clock;
     sf::Time _timeElapsed;

@@ -6,6 +6,11 @@ void Game::init() {
 
   this->_window = new sf::RenderWindow(this->_videoMode, "Tks Flatland", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
   this->_window->setFramerateLimit(88);
+
+  this->_view.reset(sf::FloatRect(100, 100, 400, 200));
+  this->_view.setViewport(sf::FloatRect(0.f, 0.f, 0.5f, 1.f));
+  this->_window->setView(this->_view);
+
   this->_clock.restart();
 
 }
@@ -77,6 +82,7 @@ void Game::fixedUpdate() {
 void Game::update() {
   this->_timeElapsed = this->_clock.getElapsedTime();
   cout << "\n    _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
+  this->_graphicNode.update();
 
 }
 

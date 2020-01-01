@@ -5,7 +5,7 @@ void Node::init() {
 }
 
 void Node::spawn(float posx, float posy) {
-  this->_node.setRadius(10);
+  this->_node.setRadius(5);
   this->_node.setFillColor(sf::Color(180, 180, 255, 205));
   this->_node.setOutlineColor(sf::Color(144, 0, 0, 180));
   this->_node.setOutlineThickness(2.8f);
@@ -16,7 +16,7 @@ void Node::spawn(float posx, float posy) {
     this->_node.setPosition(
       /* @REFACTOR grab screen size instead once the dynamic screen size is setup */
       static_cast<float>(rand() % static_cast<int>(1280, 1280)),
-      static_cast<float>(rand() % static_cast<int>(900/2, 900/2))
+      static_cast<float>(rand() % static_cast<int>(900, 900))
     );
   }
 
@@ -39,6 +39,9 @@ Node::Node() {
     } else if(_v > 14) {
       vCount = 13;
       vCount += vCount/2;
+    } else if(_v > 20) {
+      vCount = 13;
+      vCount += vCount/3;
     } else {
       vCount += 50.f;
     }
@@ -59,7 +62,15 @@ Node::~Node() {
 }
 
 void Node::update() {
+  for(int _v=0; _v < this->totalNodes; _v++) {
+    this->_nodes[_v].setPosition(this->_nodes[_v].getPosition().x + .001f, this->_nodes[_v].getPosition().y + .0001f);
+    this->vertices[_v] = sf::Vertex(sf::Vector2f(this->_nodes[_v].getPosition().x, this->_nodes[_v].getPosition().y), sf::Color::Red, sf::Vector2f(this->_nodes[_v].getPosition().x, this->_nodes[_v].getPosition().y));
+  }
 
+  // for(int _v=0; _v < this->totalNodes; _v++) {
+  //   this->vertices[_v] = sf::Vertex(sf::Vector2f(this->_nodes[_v].getPosition().x, this->_nodes[_v].getPosition().y), sf::Color::Red, sf::Vector2f(this->_nodes[_v].getPosition().x, this->_nodes[_v].getPosition().y));
+  // } 
+  
 }
 
 void Node::render(sf::RenderTarget& target) {
@@ -73,7 +84,7 @@ void Node::render(sf::RenderTarget& target) {
   // this->vertices[2] = sf::Vertex(sf::Vector2f(100, 100), sf::Color::Red, sf::Vector2f(10, 10));
   // this->vertices[3] = sf::Vertex(sf::Vector2f(100,   0), sf::Color::Red, sf::Vector2f(10,  0));
 
-  target.draw(vertices, this->totalNodes, sf::LineStrip); // sf::LineStrip
+  target.draw(vertices, this->totalNodes, sf::LinesStrip); // sf::LineStrip
   // target.draw(this->lines);
   // target.draw(this->_nodes[0]);
   // target.draw(this->_nodes[1]);
