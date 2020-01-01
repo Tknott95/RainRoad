@@ -6,12 +6,13 @@ using namespace std;
 
 class Node {
   private:
-    const int totalNodes = 100;
+    const int totalNodes = 30;
     const float spawnDelay = 0.1f;
     sf::CircleShape _node;
     vector<sf::CircleShape> _nodes;
     sf::Font _font;
     sf::Text _text;
+    sf::VertexArray lines(float, int);
 
     void init();
     void spawn(float, float);
