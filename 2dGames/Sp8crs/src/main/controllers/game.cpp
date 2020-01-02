@@ -112,7 +112,6 @@ void Game::update() {
   this->_timeElapsed = this->_clock.getElapsedTime();
   this->_player->update();
   cout << "\n    _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
-  this->_player->shoot();
   // if(firing) {
   //   this->_player->shoot();
   // }
