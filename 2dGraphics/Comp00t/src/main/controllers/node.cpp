@@ -10,7 +10,7 @@ void Node::spawn(float posx, float posy) {
   this->_node.setOutlineColor(sf::Color(0, 0, 255, 80));
   this->_node.setOutlineThickness(0.8f);
 
-  if(posx != NULL || posy != NULL) {
+  if(&posx != NULL || &posy != NULL) {
     this->_node.setPosition(posx, posy);
   } else { 
     this->_node.setPosition(
