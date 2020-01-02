@@ -1,5 +1,6 @@
 #include "../headers/bullet.h"
 
+/* @TODO create bullet vector, for rapid semi-auto fire bbbyy, maybe auto like a fkn OG */
 void Bullet::init(sf::Vector2f startingPos, float halfSprite) {
   float yOffset = 10.f;
   this->_bullet.setPosition(startingPos.x + (halfSprite-5) /*+((this->_sprite.getGlobalBounds().width/2)-5)*/, startingPos.y + yOffset /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
