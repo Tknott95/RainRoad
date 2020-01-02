@@ -1,5 +1,8 @@
 #include "../headers/enemy.h"
 
+/* @TODO create enemy vector, for rapid abduction anal probe bbbyy, maybe cloning for clone wars like a fkn OG */
+
+
 void Enemy::init() {
   if(!this->_texture.loadFromFile("utils/img/enemy/e1.png")) {
     std::cout << "ERROR: Could not load player texture file." << "\n";
