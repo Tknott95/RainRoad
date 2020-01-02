@@ -67,7 +67,11 @@ void Node::update() {
       this->_nodes[_v].setPosition(this->_nodes[_v].getPosition().x + (rand() % 2), this->_nodes[_v].getPosition().y + (rand() % 2));
     } else if(_v % 2 == 0 ) {
       this->_nodes[_v].setPosition(this->_nodes[_v].getPosition().x - (rand() % 1), this->_nodes[_v].getPosition().y  - (rand() % 1));
-    }else {
+    } else if (_v % 2 == 0 && _v % 4 == 0 ) {
+      this->_nodes[_v].setPosition(this->_nodes[_v].getPosition().x - (rand() % 4), this->_nodes[_v].getPosition().y  - (rand() % 3));
+    } else if (_v % 3 == 0 && _v % 9 == 0 ) {
+      this->_nodes[_v].setPosition(this->_nodes[_v].getPosition().x, this->_nodes[_v].getPosition().y  + (rand() % 7));
+    } else {
       this->_nodes[_v].setPosition(this->_nodes[_v].getPosition().x - (rand() % -2), this->_nodes[_v].getPosition().y + (rand() % -2));
     }
     

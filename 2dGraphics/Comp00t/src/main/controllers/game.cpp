@@ -68,14 +68,14 @@ void Game::eventPolling() {
   
 
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-    this->_view.move(2.f, 0.f);
+    this->_view.move(5.f, 0.f);
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-    this->_view.move(-2.f, 0.f);
+    this->_view.move(-5.f, 0.f);
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-    this->_view.move(0.f, 2.f);
+    this->_view.move(0.f, 5.f);
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-    this->_view.move(0.f, -2.f);
+    this->_view.move(0.f, -5.f);
   }
 
   if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
