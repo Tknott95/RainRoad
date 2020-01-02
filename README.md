@@ -9,4 +9,4 @@
 
 * EleLand
 
-sp8crs - comp00t - churchWindows
+Sp8crs - Comp00t - ChurchWindows
