@@ -1,11 +1,11 @@
 #include "../headers/bullet.h"
 
 Bullet::Bullet() {
-
+  /* @TODO look into constructors for bullets, is it stupid? */
 }
 
 Bullet::~Bullet() {
-
+  /* @TODO look into destructors for bullets, is it stupid? */
 }
 
 void Bullet::fire(sf::Vector2f startingPos) {
