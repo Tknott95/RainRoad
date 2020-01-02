@@ -84,15 +84,16 @@ void Node::render(sf::RenderTarget& target) {
     cout << e.getPosition().x << endl;
   };
 
-  sf::VertexArray curve(sf::LineStrip, 100);
+  sf::VertexArray curve(sf::LinesStrip, 100);
   int lineXPos = 200;
   int lineYPos = 200;
 
-  curve[0].position = sf::Vector2f(200.f, 200.f);
+  // curve[0].position = sf::Vector2f(200.f, 200.f);
   
 
   for (int k=0;k<2000;k++) {
     curve.append(sf::Vertex(sf::Vector2f(k + lineXPos,- sin(k) + lineYPos)));
+    curve[k].color = sf::Color::Yellow;
 }
 
   target.draw(curve);
