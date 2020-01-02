@@ -79,11 +79,11 @@ void Game::eventPolling() {
   }
 
   if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
-    cout << '\n  zooming in \n' << endl;
+    cout << "\n  zooming in \n" << endl;
     this->_view.zoom(0.75f);
   }
   if(sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
-    cout << ' zooming out \n' << endl;
+    cout << "\n  zooming out \n" << endl;
     this->_view.zoom(1.25f);
   }
   this->_window->setView(this->_view);
