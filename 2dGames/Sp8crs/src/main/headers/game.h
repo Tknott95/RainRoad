@@ -11,6 +11,7 @@
 #include <SFML/Audio.hpp>
 #include "player.h"
 #include "enemy.h"
+#include "bullet.h"
 #include "../controllers/collision.cpp"
 
 using namespace std;
@@ -33,6 +34,7 @@ class Game {
     // float score;
     Player* _player;
     Enemy* _enemy;
+    Bullet* _bullet;
 
     Collision collision;
     float playerSpeed = 3.0;
@@ -40,6 +42,7 @@ class Game {
     bool firing = false;
     
     void init();
+    const bool DEBUG = false;
 
   public:
     Game();

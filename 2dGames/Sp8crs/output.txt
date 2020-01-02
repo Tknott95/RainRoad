@@ -1,0 +1,2287 @@
+
+ App Initialized... 
+
+
+    _timeElapsed: | 0.0034 |
+
+ MAGNITUDE(406.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.02088 |
+
+ MAGNITUDE(406.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.033222 |
+
+ MAGNITUDE(405.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.045102 |
+
+ MAGNITUDE(404.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.056124 |
+
+ MAGNITUDE(403.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.067829 |
+
+ MAGNITUDE(403.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.079677 |
+
+ MAGNITUDE(402.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.090942 |
+
+ MAGNITUDE(401.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.102465 |
+
+ MAGNITUDE(401.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.114561 |
+
+ MAGNITUDE(400.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.125877 |
+
+ MAGNITUDE(399.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.137352 |
+
+ MAGNITUDE(399.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.148752 |
+
+ MAGNITUDE(398.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.160195 |
+
+ MAGNITUDE(397.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.171599 |
+
+ MAGNITUDE(396.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.183571 |
+
+ MAGNITUDE(396.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.196207 |
+
+ MAGNITUDE(395.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.207513 |
+
+ MAGNITUDE(394.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.219118 |
+
+ MAGNITUDE(394.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.231228 |
+
+ MAGNITUDE(393.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.242611 |
+
+ MAGNITUDE(392.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.254003 |
+
+ MAGNITUDE(392.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.265421 |
+
+ MAGNITUDE(391.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.276935 |
+
+ MAGNITUDE(390.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.288286 |
+
+ MAGNITUDE(389.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.299742 |
+
+ MAGNITUDE(389.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.311175 |
+
+ MAGNITUDE(388.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.32259 |
+
+ MAGNITUDE(387.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.3341 |
+
+ MAGNITUDE(387.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.345668 |
+
+ MAGNITUDE(386.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.357024 |
+
+ MAGNITUDE(385.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.368517 |
+
+ MAGNITUDE(385.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.379959 |
+
+ MAGNITUDE(384.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.391398 |
+
+ MAGNITUDE(383.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.402865 |
+
+ MAGNITUDE(382.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.414377 |
+
+ MAGNITUDE(382.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.426344 |
+
+ MAGNITUDE(381.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.437244 |
+
+ MAGNITUDE(380.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.448674 |
+
+ MAGNITUDE(380.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.460172 |
+
+ MAGNITUDE(379.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.47167 |
+
+ MAGNITUDE(378.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.483103 |
+
+ MAGNITUDE(378.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.494533 |
+
+ MAGNITUDE(377.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.506024 |
+
+ MAGNITUDE(376.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.517447 |
+
+ MAGNITUDE(375.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.528878 |
+
+ MAGNITUDE(375.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.540386 |
+
+ MAGNITUDE(374.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.551898 |
+
+ MAGNITUDE(373.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.563297 |
+
+ MAGNITUDE(373.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.574725 |
+
+ MAGNITUDE(372.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.586229 |
+
+ MAGNITUDE(371.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.597654 |
+
+ MAGNITUDE(371.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.609105 |
+
+ MAGNITUDE(370.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.620529 |
+
+ MAGNITUDE(369.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.632835 |
+
+ MAGNITUDE(368.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+Space PRESSED
+
+    _timeElapsed: | 0.64429 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(368.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.655627 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(367.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.667087 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(366.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.6785 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(366.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.689924 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(365.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.701367 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(364.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.712753 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(364.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.724287 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(363.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.735757 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(362.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.747228 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(361.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.75875 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(361.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.770242 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(360.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.781651 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(359.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.793145 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(359.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.805086 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(358.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.816156 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(357.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+Space PRESSED
+
+    _timeElapsed: | 0.827721 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(357.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.839085 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(356.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.850542 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(355.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.86201 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(354.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.873379 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(354.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.884817 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(353.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.896307 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(352.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.908145 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(352.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.919219 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(351.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.930634 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(350.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.942058 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(350.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.953589 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(349.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.965024 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(348.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.976481 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(347.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.987995 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(347.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 0.999574 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(346.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+Space PRESSED
+
+    _timeElapsed: | 1.01105 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(345.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.02246 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(345.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.03391 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(344.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.04542 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(343.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.05685 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(343.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.06865 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(342.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.07975 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(341.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.0912 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(340.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.10308 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(340.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.11411 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(339.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.12559 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(338.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.13698 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(338.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.1484 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(337.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.1599 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(336.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.17134 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(336.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+Space PRESSED
+
+    _timeElapsed: | 1.18282 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(335.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.19416 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(334.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.2056 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(333.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.21712 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(333.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.22854 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(332.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.24032 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(331.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.2517 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(331.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.2631 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(330.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.27462 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(329.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.28612 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(329.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.29761 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(328.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.30957 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(327.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.3205 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(326.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.33195 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(326.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.34334 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(325.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.35497 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(324.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+Space PRESSED
+
+    _timeElapsed: | 1.36634 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(324.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.37769 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(323.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.38916 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(322.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.40058 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(322.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.41202 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(321.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.42386 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(320.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.435 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(319.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.4464 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(319.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.45789 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(318.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.46932 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(317.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.48073 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(317.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.49221 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(316.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.50372 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(315.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.51541 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(315.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.52668 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(314.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.53808 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(313.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+Space PRESSED
+
+    _timeElapsed: | 1.54954 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(312.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.56174 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(312.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.57321 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(311.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.58461 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(310.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.59603 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(310.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.60756 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(309.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.61948 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(308.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.63054 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(308.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.64205 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(307.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.65337 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(306.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.66478 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(305.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.67623 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(305.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.68775 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(304.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.69961 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(303.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.71066 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(303.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.72218 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(302.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.73356 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(301.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.74501 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(301.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+Space PRESSED
+
+    _timeElapsed: | 1.75653 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(300.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.76791 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(299.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.77931 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(298.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.79075 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(298.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.80217 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(297.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.8136 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(296.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.82544 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(296.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.83646 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(295.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.84791 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(294.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.85935 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(294.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.87076 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(293.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.8822 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(292.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.8937 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(291.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.90518 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(291.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.91704 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(290.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.9281 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(289.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.93962 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(289.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.95103 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(288.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+Space PRESSED
+
+    _timeElapsed: | 1.96262 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(287.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.974 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(287.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.98539 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(286.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 1.99682 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(285.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.00827 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(284.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.01969 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(284.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.0311 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(283.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.04253 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(282.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.05404 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(282.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.06604 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(281.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.07741 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(280.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.08894 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(280.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.10034 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(279.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.11175 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(278.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.12325 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(277.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.13509 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(277.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+Space PRESSED
+
+    _timeElapsed: | 2.1462 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(276.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.15763 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(275.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.16912 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(275.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.18049 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(274.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.19193 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(273.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.20342 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(273.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.21477 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(272.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.22623 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(271.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.23806 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(270.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.2492 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(270.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.26062 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(269.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.27206 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(268.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.28353 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(268.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.29497 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(267.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.3064 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(266.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.31789 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(266.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.32932 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(265.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.34111 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(264.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+Space PRESSED
+
+    _timeElapsed: | 2.35228 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(263.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.36385 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(263.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.37547 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(262.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.38688 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(261.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.39832 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(261.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.40987 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(260.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.42112 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(259.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.43242 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(259.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.44411 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(258.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.4553 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(257.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.46674 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(256.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.47852 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(256.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.4897 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(255.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.50113 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(254.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.51253 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(254.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+Space PRESSED
+
+    _timeElapsed: | 2.52403 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(253.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.5354 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(252.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.54681 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(252.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.55831 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(251.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.56977 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(250.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.58118 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(249.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.5927 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(249.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.6043 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(248.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.61576 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(247.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.62719 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(247.187) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.63878 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(246.487) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.65024 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(245.787) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.66174 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(245.087) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.67323 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(244.387) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.68434 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(243.687) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.69583 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(242.987) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.7073 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(242.287) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+    _timeElapsed: | 2.71879 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(241.587) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
+
+ CLOSING WINDOW 
+
+
+    _timeElapsed: | 2.73142 |
+ 
+  FIRING(674, 600)
+
+ MAGNITUDE(240.887) 
+
+121.059 - boundsWidth 
+121.059 - boundsHeight 
+
