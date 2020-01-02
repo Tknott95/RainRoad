@@ -10,7 +10,7 @@ void Node::spawn(float posx, float posy) {
   this->_node.setOutlineColor(sf::Color(0, 0, 255, 80));
   this->_node.setOutlineThickness(0.8f);
 
-  if(&posx != NULL || &posy != NULL) {
+  if(&posx == NULL || &posy == NULL) {
     this->_node.setPosition(posx, posy);
   } else { 
     this->_node.setPosition(
@@ -29,7 +29,7 @@ Node::Node() {
   float vCount = 0.f;
   //this->lines(sf::LineStrip, this->totalNodes);
   for(int _v=0; _v < this->totalNodes; _v++) {
-    cout << '\n _v(' << _v << ') \n' << endl;
+    cout << "\n _v(" << _v << ") \n" << endl;
     // this->lines[_v].color = sf::Color::Red;
     // this->lines[_v].position = this->_nodes[_v].getPosition();
 
