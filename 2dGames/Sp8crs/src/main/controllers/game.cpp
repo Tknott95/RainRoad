@@ -121,8 +121,13 @@ void Game::update() {
   if(this->DEBUG == true) {
     cout << "\n    _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
   }
-  if(firing) {
-    this->_bullet->fire(this->_player->_sprite.getPosition(), this->_player->_sprite.getGlobalBounds().width/2);
+
+  sf::Vector2f playerPos = this->_player->_sprite.getPosition();
+
+  cout << " \n   playerPos(" << this->_player->_sprite.getPosition().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl;
+  if(firing  && this->_timeElapsed.asSeconds() > 0.1f) {
+    this->_bullet->fire(playerPos, this->_player->_sprite.getGlobalBounds().width/2);
+    firing = false;
   }
 
   this->_bullet->move(.3f);

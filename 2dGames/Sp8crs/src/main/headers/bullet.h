@@ -3,10 +3,12 @@
 #include<SFML/Graphics.hpp>
 #include<SFML/System.hpp>
 #include<iostream>
+#include<vector>
 
 class Bullet {
   private:
     const float bulletSpeed = 5.f;
+    std::vector <sf::CircleShape> _bullets;
     sf::CircleShape _bullet;
     sf::Clock clock;
     sf::Time elapsedTime;

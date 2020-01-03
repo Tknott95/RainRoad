@@ -1,8 +1,8 @@
 #include "../headers/bullet.h"
 
+float yOffset = 10.f;
 /* @TODO create bullet vector, for rapid semi-auto fire bbbyy, maybe auto like a fkn OG */
 void Bullet::init(sf::Vector2f startingPos, float halfSprite) {
-  float yOffset = 10.f;
   this->_bullet.setPosition(startingPos.x + (halfSprite-5) /*+((this->_sprite.getGlobalBounds().width/2)-5)*/, startingPos.y + yOffset /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
 }
 
@@ -18,9 +18,12 @@ Bullet::~Bullet() {
 
 void Bullet::fire(sf::Vector2f startingPos, float halfSprite) {
   this->elapsedTime = this->clock.getElapsedTime();
+  this->_bullet.setPosition(startingPos.x + (halfSprite-5) /*+((this->_sprite.getGlobalBounds().width/2)-5)*/, startingPos.y + yOffset /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
   std::cout << " \n  FIRING(" << startingPos.x << ", " << startingPos.y << ")" << std::endl;
   this->_bullet.setRadius(5.f);
   this->_bullet.setFillColor(sf::Color::Yellow);
+
+  this->_bullets.push_back(this->_bullet);
   // for(int j=0;j<2000;j++  && this->elapsedTime.asSeconds() > this->spawnDelay) { /* @TODO ADD AN OR W/ A TIME BOOLEAN LOGIC TO CREATE A LERPING STYLE MOVEMENT ON OWN TERMS, NOT FPS */
   //   this->_bullet.move(0.f, -.03f);
   //   std::cout << "\n   SECS ELAPSED (" << this->elapsedTime.asSeconds() << ") \n" << std::endl;
@@ -32,9 +35,13 @@ void Bullet::fire(sf::Vector2f startingPos, float halfSprite) {
 }
 
 void Bullet::move(float ySpeed) {
-  this->_bullet.move(0, -1.f * ySpeed);
+  for(auto &b : this->_bullets) {
+    b.move(0, -1.f * ySpeed);
+  }
 }
 
 void Bullet::render(sf::RenderTarget& target) {
-  target.draw(this->_bullet);
+  for(auto &b : this->_bullets) {
+    target.draw(b);
+  }
 }
