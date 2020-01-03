@@ -425,340 +425,10 @@
 121.059 - boundsHeight 
 
  
-   playerPos(674, 600) 
-
-
- MAGNITUDE(373.887) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(373.187) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(372.487) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
-Space PRESSED
- 
-   playerPos(674, 600) 
-
- 
-  FIRING(674, 600)
-
- MAGNITUDE(371.787) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(371.087) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(370.387) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(369.687) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(368.987) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(368.287) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(367.587) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(366.887) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(366.187) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(365.487) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(364.787) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(364.087) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(363.387) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(362.687) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(361.987) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(361.287) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(360.587) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(359.887) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(359.187) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
-Space PRESSED
- 
-   playerPos(674, 600) 
-
- 
-  FIRING(674, 600)
-
- MAGNITUDE(358.487) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(357.787) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(357.087) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(356.387) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(355.687) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(354.987) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(354.287) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(353.587) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(352.887) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(352.187) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(351.487) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(350.787) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(350.087) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
-   playerPos(674, 600) 
-
-
- MAGNITUDE(349.387) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
-
- 
    playerPos(668, 600) 
 
 
- MAGNITUDE(347.646) 
+ MAGNITUDE(372.843) 
 
 121.263 - boundsWidth 
 121.263 - boundsHeight 
@@ -767,7 +437,7 @@ Space PRESSED
    playerPos(662, 600) 
 
 
- MAGNITUDE(346.005) 
+ MAGNITUDE(371.192) 
 
 121.466 - boundsWidth 
 121.466 - boundsHeight 
@@ -776,7 +446,7 @@ Space PRESSED
    playerPos(656, 600) 
 
 
- MAGNITUDE(344.467) 
+ MAGNITUDE(369.636) 
 
 121.669 - boundsWidth 
 121.669 - boundsHeight 
@@ -785,7 +455,7 @@ Space PRESSED
    playerPos(650, 600) 
 
 
- MAGNITUDE(343.031) 
+ MAGNITUDE(368.176) 
 
 121.872 - boundsWidth 
 121.872 - boundsHeight 
@@ -794,7 +464,7 @@ Space PRESSED
    playerPos(644, 600) 
 
 
- MAGNITUDE(341.698) 
+ MAGNITUDE(366.812) 
 
 122.074 - boundsWidth 
 122.074 - boundsHeight 
@@ -803,7 +473,7 @@ Space PRESSED
    playerPos(638, 600) 
 
 
- MAGNITUDE(340.471) 
+ MAGNITUDE(365.545) 
 
 122.276 - boundsWidth 
 122.276 - boundsHeight 
@@ -812,7 +482,7 @@ Space PRESSED
    playerPos(632, 600) 
 
 
- MAGNITUDE(339.348) 
+ MAGNITUDE(364.376) 
 
 122.478 - boundsWidth 
 122.478 - boundsHeight 
@@ -821,7 +491,7 @@ Space PRESSED
    playerPos(626, 600) 
 
 
- MAGNITUDE(338.331) 
+ MAGNITUDE(363.306) 
 
 122.679 - boundsWidth 
 122.679 - boundsHeight 
@@ -830,7 +500,7 @@ Space PRESSED
    playerPos(620, 600) 
 
 
- MAGNITUDE(337.421) 
+ MAGNITUDE(362.335) 
 
 122.88 - boundsWidth 
 122.88 - boundsHeight 
@@ -839,7 +509,7 @@ Space PRESSED
    playerPos(614, 600) 
 
 
- MAGNITUDE(336.617) 
+ MAGNITUDE(361.463) 
 
 123.081 - boundsWidth 
 123.081 - boundsHeight 
@@ -848,7 +518,7 @@ Space PRESSED
    playerPos(608, 600) 
 
 
- MAGNITUDE(335.92) 
+ MAGNITUDE(360.69) 
 
 123.281 - boundsWidth 
 123.281 - boundsHeight 
@@ -857,7 +527,7 @@ Space PRESSED
    playerPos(602, 600) 
 
 
- MAGNITUDE(335.33) 
+ MAGNITUDE(360.017) 
 
 123.481 - boundsWidth 
 123.481 - boundsHeight 
@@ -866,7 +536,7 @@ Space PRESSED
    playerPos(596, 600) 
 
 
- MAGNITUDE(334.848) 
+ MAGNITUDE(359.445) 
 
 123.68 - boundsWidth 
 123.68 - boundsHeight 
@@ -875,7 +545,7 @@ Space PRESSED
    playerPos(590, 600) 
 
 
- MAGNITUDE(334.473) 
+ MAGNITUDE(358.973) 
 
 123.879 - boundsWidth 
 123.879 - boundsHeight 
@@ -884,7 +554,7 @@ Space PRESSED
    playerPos(584, 600) 
 
 
- MAGNITUDE(334.206) 
+ MAGNITUDE(358.6) 
 
 124.078 - boundsWidth 
 124.078 - boundsHeight 
@@ -893,7 +563,7 @@ Space PRESSED
    playerPos(578, 600) 
 
 
- MAGNITUDE(334.046) 
+ MAGNITUDE(358.328) 
 
 124.276 - boundsWidth 
 124.276 - boundsHeight 
@@ -902,7 +572,7 @@ Space PRESSED
    playerPos(572, 600) 
 
 
- MAGNITUDE(333.992) 
+ MAGNITUDE(358.156) 
 
 124.474 - boundsWidth 
 124.474 - boundsHeight 
@@ -911,7 +581,7 @@ Space PRESSED
    playerPos(566, 600) 
 
 
- MAGNITUDE(334.045) 
+ MAGNITUDE(358.084) 
 
 124.671 - boundsWidth 
 124.671 - boundsHeight 
@@ -920,7 +590,7 @@ Space PRESSED
    playerPos(560, 600) 
 
 
- MAGNITUDE(334.204) 
+ MAGNITUDE(358.11) 
 
 124.868 - boundsWidth 
 124.868 - boundsHeight 
@@ -929,7 +599,7 @@ Space PRESSED
    playerPos(554, 600) 
 
 
- MAGNITUDE(334.468) 
+ MAGNITUDE(358.236) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
@@ -938,7 +608,7 @@ Space PRESSED
    playerPos(548, 600) 
 
 
- MAGNITUDE(334.837) 
+ MAGNITUDE(358.46) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
@@ -947,7 +617,7 @@ Space PRESSED
    playerPos(542, 600) 
 
 
- MAGNITUDE(335.31) 
+ MAGNITUDE(358.782) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
@@ -956,52 +626,2611 @@ Space PRESSED
    playerPos(536, 600) 
 
 
- MAGNITUDE(335.885) 
+ MAGNITUDE(359.202) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(358.502) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(357.802) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(357.102) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(356.402) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(355.702) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+Space PRESSED
+ 
+   playerPos(536, 600) 
+
+ 
+  FIRING(536, 600)
+
+ MAGNITUDE(355.002) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(354.302) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(353.602) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(352.902) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(352.202) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(351.502) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(350.802) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(350.102) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(349.402) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(348.702) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(348.002) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(347.302) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(346.602) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(345.902) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(345.202) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(344.502) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(343.802) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+Space PRESSED
+ 
+   playerPos(536, 600) 
+
+ 
+  FIRING(536, 600)
+
+ MAGNITUDE(343.102) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(342.402) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(341.702) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(341.002) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(340.302) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(339.602) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(338.902) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(338.202) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(337.502) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(336.802) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(336.102) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(335.402) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(334.702) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(334.002) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(333.302) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(332.602) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(331.902) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+Space PRESSED
+ 
+   playerPos(536, 600) 
+
+ 
+  FIRING(536, 600)
+
+ MAGNITUDE(331.202) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(330.502) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(329.802) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(329.102) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(328.402) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(327.702) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(327.002) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(326.302) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(325.602) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(324.902) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(324.202) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(323.502) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(322.802) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(322.102) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(321.402) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+Space PRESSED
+ 
+   playerPos(536, 600) 
+
+ 
+  FIRING(536, 600)
+
+ MAGNITUDE(320.702) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(320.002) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(319.302) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(318.602) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(317.902) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(317.202) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(316.502) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(315.802) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(315.102) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(314.402) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(313.702) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(313.002) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(312.302) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(311.602) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(310.902) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+Space PRESSED
+ 
+   playerPos(536, 600) 
+
+ 
+  FIRING(536, 600)
+
+ MAGNITUDE(310.202) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(309.502) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(308.802) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(308.102) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(307.402) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(306.702) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(306.002) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(305.302) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(304.602) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(303.902) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(303.202) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(302.502) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(301.802) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(301.102) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(300.402) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(299.702) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(299.002) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+Space PRESSED
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(536, 600) 
+
+ 
+  FIRING(536, 600)
+
+ MAGNITUDE(298.302) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(297.602) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(296.902) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(296.202) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(295.502) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(293.693) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(548, 600) 
+
+
+ MAGNITUDE(292.003) 
+
+124.671 - boundsWidth 
+124.671 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(554, 600) 
+
+
+ MAGNITUDE(290.434) 
+
+124.474 - boundsWidth 
+124.474 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(288.987) 
+
+124.276 - boundsWidth 
+124.276 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(566, 600) 
+
+
+ MAGNITUDE(287.662) 
+
+124.078 - boundsWidth 
+124.078 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(572, 600) 
+
+
+ MAGNITUDE(286.462) 
+
+123.879 - boundsWidth 
+123.879 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(578, 600) 
+
+
+ MAGNITUDE(285.387) 
+
+123.68 - boundsWidth 
+123.68 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(584, 600) 
+
+
+ MAGNITUDE(284.438) 
+
+123.481 - boundsWidth 
+123.481 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(590, 600) 
+
+
+ MAGNITUDE(283.615) 
+
+123.281 - boundsWidth 
+123.281 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(596, 600) 
+
+
+ MAGNITUDE(282.92) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(282.352) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(608, 600) 
+
+
+ MAGNITUDE(281.911) 
+
+122.679 - boundsWidth 
+122.679 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(614, 600) 
+
+
+ MAGNITUDE(281.598) 
+
+122.478 - boundsWidth 
+122.478 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(620, 600) 
+
+
+ MAGNITUDE(281.412) 
+
+122.276 - boundsWidth 
+122.276 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(626, 600) 
+
+
+ MAGNITUDE(281.354) 
+
+122.074 - boundsWidth 
+122.074 - boundsHeight 
+
+Space PRESSED
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(632, 600) 
+
+ 
+  FIRING(632, 600)
+
+ MAGNITUDE(281.421) 
+
+121.872 - boundsWidth 
+121.872 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(281.614) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(280.914) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(280.214) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(279.514) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(278.814) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(278.114) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(277.414) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(276.714) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(276.014) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(275.314) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(274.614) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(273.914) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(273.214) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(272.514) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(271.814) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+Space PRESSED
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+ 
+  FIRING(638, 600)
+
+ MAGNITUDE(271.114) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(270.414) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(269.714) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(269.014) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(268.314) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(267.614) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(638, 600) 
+
+
+ MAGNITUDE(266.914) 
+
+121.669 - boundsWidth 
+121.669 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(632, 600) 
+
+
+ MAGNITUDE(265.325) 
+
+121.872 - boundsWidth 
+121.872 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(626, 600) 
+
+
+ MAGNITUDE(263.868) 
+
+122.074 - boundsWidth 
+122.074 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(620, 600) 
+
+
+ MAGNITUDE(262.547) 
+
+122.276 - boundsWidth 
+122.276 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(614, 600) 
+
+
+ MAGNITUDE(261.362) 
+
+122.478 - boundsWidth 
+122.478 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(608, 600) 
+
+
+ MAGNITUDE(260.314) 
+
+122.679 - boundsWidth 
+122.679 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(259.404) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(596, 600) 
+
+
+ MAGNITUDE(258.633) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(590, 600) 
+
+
+ MAGNITUDE(258.002) 
+
+123.281 - boundsWidth 
+123.281 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(584, 600) 
+
+
+ MAGNITUDE(257.51) 
+
+123.481 - boundsWidth 
+123.481 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(578, 600) 
+
+
+ MAGNITUDE(257.158) 
+
+123.68 - boundsWidth 
+123.68 - boundsHeight 
+
+Space PRESSED
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(572, 600) 
+
+ 
+  FIRING(572, 600)
+
+ MAGNITUDE(256.945) 
+
+123.879 - boundsWidth 
+123.879 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(566, 600) 
+
+
+ MAGNITUDE(256.871) 
+
+124.078 - boundsWidth 
+124.078 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(256.936) 
+
+124.276 - boundsWidth 
+124.276 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(554, 600) 
+
+
+ MAGNITUDE(257.138) 
+
+124.474 - boundsWidth 
+124.474 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(548, 600) 
+
+
+ MAGNITUDE(257.477) 
+
+124.671 - boundsWidth 
+124.671 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(257.951) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(257.251) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(256.551) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(255.851) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(255.151) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(254.451) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(253.751) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(253.051) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(252.351) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(251.651) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(250.951) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+Space PRESSED
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+ 
+  FIRING(542, 600)
+
+ MAGNITUDE(250.251) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(249.551) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(248.851) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(248.151) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(247.451) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(246.751) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(246.051) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(245.351) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(244.651) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(243.951) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(243.251) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(242.551) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(241.852) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(241.152) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(240.452) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+Space PRESSED
+ 
+   playerPos(548, 600) 
+
+ 
+  FIRING(548, 600)
+
+ MAGNITUDE(238.583) 
+
+124.671 - boundsWidth 
+124.671 - boundsHeight 
+
+ 
+   playerPos(554, 600) 
+
+
+ MAGNITUDE(236.86) 
+
+124.474 - boundsWidth 
+124.474 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(235.285) 
+
+124.276 - boundsWidth 
+124.276 - boundsHeight 
+
+ 
+   playerPos(566, 600) 
+
+
+ MAGNITUDE(233.861) 
+
+124.078 - boundsWidth 
+124.078 - boundsHeight 
+
+ 
+   playerPos(572, 600) 
+
+
+ MAGNITUDE(232.589) 
+
+123.879 - boundsWidth 
+123.879 - boundsHeight 
+
+ 
+   playerPos(578, 600) 
+
+
+ MAGNITUDE(231.472) 
+
+123.68 - boundsWidth 
+123.68 - boundsHeight 
+
+ 
+   playerPos(584, 600) 
+
+
+ MAGNITUDE(230.509) 
+
+123.481 - boundsWidth 
+123.481 - boundsHeight 
+
+ 
+   playerPos(590, 600) 
+
+
+ MAGNITUDE(229.703) 
+
+123.281 - boundsWidth 
+123.281 - boundsHeight 
+
+ 
+   playerPos(596, 600) 
+
+
+ MAGNITUDE(229.054) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(228.562) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(227.862) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(227.162) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(226.462) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(225.762) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(225.062) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+Space PRESSED
+ 
+   playerPos(602, 600) 
+
+ 
+  FIRING(602, 600)
+
+ MAGNITUDE(224.362) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(223.662) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(222.962) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(222.262) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(221.562) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(220.862) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(220.162) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(219.462) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(218.762) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(218.062) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(217.362) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(216.662) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(215.962) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(215.262) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+Space PRESSED
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+ 
+  FIRING(602, 600)
+
+ MAGNITUDE(214.562) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(213.862) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(213.162) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(212.462) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(211.762) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(211.062) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(210.362) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(209.662) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(208.962) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(208.262) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(207.562) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(206.862) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(206.162) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+
+ MAGNITUDE(205.462) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+Space PRESSED
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(602, 600) 
+
+ 
+  FIRING(602, 600)
+
+ MAGNITUDE(204.762) 
+
+122.88 - boundsWidth 
+122.88 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(596, 600) 
+
+
+ MAGNITUDE(203.864) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(590, 600) 
+
+
+ MAGNITUDE(203.142) 
+
+123.281 - boundsWidth 
+123.281 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(584, 600) 
+
+
+ MAGNITUDE(202.598) 
+
+123.481 - boundsWidth 
+123.481 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(578, 600) 
+
+
+ MAGNITUDE(202.231) 
+
+123.68 - boundsWidth 
+123.68 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(572, 600) 
+
+
+ MAGNITUDE(202.042) 
+
+123.879 - boundsWidth 
+123.879 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(566, 600) 
+
+
+ MAGNITUDE(202.029) 
+
+124.078 - boundsWidth 
+124.078 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(202.192) 
+
+124.276 - boundsWidth 
+124.276 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(554, 600) 
+
+
+ MAGNITUDE(202.529) 
+
+124.474 - boundsWidth 
+124.474 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(548, 600) 
+
+
+ MAGNITUDE(203.038) 
+
+124.671 - boundsWidth 
+124.671 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(542, 600) 
+
+
+ MAGNITUDE(203.716) 
+
+124.868 - boundsWidth 
+124.868 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(536, 600) 
+
+
+ MAGNITUDE(204.56) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
 
  
    playerPos(530, 600) 
 
 
- MAGNITUDE(336.563) 
+ MAGNITUDE(205.568) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
 
  
    playerPos(524, 600) 
 
 
- MAGNITUDE(337.342) 
+ MAGNITUDE(206.735) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
 
  
    playerPos(518, 600) 
 
 
- MAGNITUDE(338.22) 
+ MAGNITUDE(208.059) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
 
  
    playerPos(512, 600) 
 
 
- MAGNITUDE(339.198) 
+ MAGNITUDE(209.535) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
 
  
    playerPos(506, 600) 
 
 
- MAGNITUDE(340.272) 
+ MAGNITUDE(211.158) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+Space PRESSED
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(500, 600) 
+
+ 
+  FIRING(500, 600)
+
+ MAGNITUDE(212.925) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(500, 600) 
+
+
+ MAGNITUDE(212.225) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(500, 600) 
+
+
+ MAGNITUDE(211.525) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(500, 600) 
+
+
+ MAGNITUDE(210.825) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
@@ -1010,1874 +3239,1424 @@ Space PRESSED
    playerPos(500, 600) 
 
 
- MAGNITUDE(341.443) 
+ MAGNITUDE(210.125) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
  
-   playerPos(494, 600) 
+   playerPos(500, 600) 
 
 
- MAGNITUDE(342.709) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(488, 600) 
-
-
- MAGNITUDE(344.068) 
+ MAGNITUDE(209.425) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
  
-   playerPos(482, 600) 
+   playerPos(500, 600) 
 
 
- MAGNITUDE(345.519) 
+ MAGNITUDE(208.725) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
  
-   playerPos(476, 600) 
+   playerPos(500, 600) 
 
 
- MAGNITUDE(347.06) 
+ MAGNITUDE(208.025) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(500, 600) 
+
+
+ MAGNITUDE(207.325) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(500, 600) 
+
+
+ MAGNITUDE(206.625) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(500, 600) 
+
+
+ MAGNITUDE(205.925) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(500, 600) 
+
+
+ MAGNITUDE(205.225) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(500, 600) 
+
+
+ MAGNITUDE(204.525) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(500, 600) 
+
+
+ MAGNITUDE(203.825) 
+
+125.065 - boundsWidth 
+125.065 - boundsHeight 
+
+ 
+   playerPos(500, 600) 
+
+
+ MAGNITUDE(203.125) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
 Space PRESSED
  
-   playerPos(470, 600) 
+   playerPos(500, 600) 
 
  
-  FIRING(470, 600)
+  FIRING(500, 600)
 
- MAGNITUDE(348.69) 
+ MAGNITUDE(202.425) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
  
-   playerPos(464, 600) 
+   playerPos(500, 600) 
 
 
- MAGNITUDE(350.407) 
+ MAGNITUDE(201.725) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
  
-   playerPos(458, 600) 
+   playerPos(500, 600) 
 
 
- MAGNITUDE(352.209) 
+ MAGNITUDE(201.025) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
  
-   playerPos(458, 600) 
+   playerPos(500, 600) 
 
 
- MAGNITUDE(351.509) 
+ MAGNITUDE(200.325) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
  
-   playerPos(458, 600) 
+   playerPos(500, 600) 
 
 
- MAGNITUDE(350.809) 
+ MAGNITUDE(199.625) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
  
-   playerPos(458, 600) 
+   playerPos(500, 600) 
 
 
- MAGNITUDE(350.109) 
+ MAGNITUDE(198.925) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
  
-   playerPos(458, 600) 
+   playerPos(500, 600) 
 
 
- MAGNITUDE(349.409) 
+ MAGNITUDE(198.225) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
  
-   playerPos(458, 600) 
+   playerPos(500, 600) 
 
 
- MAGNITUDE(348.709) 
+ MAGNITUDE(197.525) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
  
-   playerPos(458, 600) 
+   playerPos(500, 600) 
 
 
- MAGNITUDE(348.009) 
+ MAGNITUDE(196.825) 
 
 125.065 - boundsWidth 
 125.065 - boundsHeight 
 
  
-   playerPos(458, 600) 
+   playerPos(506, 600) 
 
 
- MAGNITUDE(347.309) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(346.609) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(345.909) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(345.209) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(344.509) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(343.809) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(343.109) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(342.409) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(341.709) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(341.009) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
-Space PRESSED
- 
-   playerPos(458, 600) 
-
- 
-  FIRING(458, 600)
-
- MAGNITUDE(340.309) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(339.609) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(338.909) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(338.21) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(337.51) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(336.81) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(336.11) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(335.41) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(334.71) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(334.01) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(333.31) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(332.61) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(331.91) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(331.21) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(330.51) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(329.81) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(329.11) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(328.41) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(327.71) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(327.01) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(326.31) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(458, 600) 
-
-
- MAGNITUDE(325.61) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(452, 600) 
-
-
- MAGNITUDE(327.5) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(446, 600) 
-
-
- MAGNITUDE(329.478) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(440, 600) 
-
-
- MAGNITUDE(331.544) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(434, 600) 
-
-
- MAGNITUDE(333.694) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(428, 600) 
-
-
- MAGNITUDE(335.928) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(422, 600) 
-
-
- MAGNITUDE(338.242) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(416, 600) 
-
-
- MAGNITUDE(340.635) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(410, 600) 
-
-
- MAGNITUDE(343.105) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(404, 600) 
-
-
- MAGNITUDE(345.651) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(398, 600) 
-
-
- MAGNITUDE(348.269) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(392, 600) 
-
-
- MAGNITUDE(350.958) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(386, 600) 
-
-
- MAGNITUDE(353.717) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(380, 600) 
-
-
- MAGNITUDE(356.543) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(374, 600) 
-
-
- MAGNITUDE(359.434) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(368, 600) 
-
-
- MAGNITUDE(362.389) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(362, 600) 
-
-
- MAGNITUDE(365.407) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(356, 600) 
-
-
- MAGNITUDE(368.484) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(350, 600) 
-
-
- MAGNITUDE(371.62) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(344, 600) 
-
-
- MAGNITUDE(374.812) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(338, 600) 
-
-
- MAGNITUDE(378.059) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(332, 600) 
-
-
- MAGNITUDE(381.36) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(326, 600) 
-
-
- MAGNITUDE(384.713) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(320, 600) 
-
-
- MAGNITUDE(388.117) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(314, 600) 
-
-
- MAGNITUDE(391.569) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(308, 600) 
-
-
- MAGNITUDE(395.068) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(302, 600) 
-
-
- MAGNITUDE(398.614) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(402.204) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(401.504) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(400.804) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
-Space PRESSED
- 
-   playerPos(296, 600) 
-
- 
-  FIRING(296, 600)
-
- MAGNITUDE(400.104) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(399.404) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(398.704) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(398.004) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(397.304) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(396.604) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(395.904) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(395.204) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(394.504) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(393.804) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(393.104) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(392.404) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(391.704) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(391.004) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(390.304) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(389.604) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(388.904) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(388.204) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(387.504) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
-Space PRESSED
- 
-   playerPos(296, 600) 
-
- 
-  FIRING(296, 600)
-
- MAGNITUDE(386.804) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(386.104) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(385.404) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(384.704) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(384.004) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(383.304) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(382.604) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(381.904) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(381.204) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(380.504) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(379.804) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(379.104) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(378.404) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(377.704) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(377.004) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(376.304) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(375.604) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(374.904) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(374.204) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(373.504) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(372.804) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(372.104) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(371.404) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(296, 600) 
-
-
- MAGNITUDE(370.704) 
-
-125.065 - boundsWidth 
-125.065 - boundsHeight 
-
- 
-   playerPos(302, 600) 
-
-
- MAGNITUDE(365.715) 
+ MAGNITUDE(193.664) 
 
 124.868 - boundsWidth 
 124.868 - boundsHeight 
 
  
-   playerPos(308, 600) 
+   playerPos(512, 600) 
 
 
- MAGNITUDE(360.776) 
+ MAGNITUDE(190.66) 
 
 124.671 - boundsWidth 
 124.671 - boundsHeight 
 
  
-   playerPos(314, 600) 
+   playerPos(518, 600) 
 
 
- MAGNITUDE(355.887) 
+ MAGNITUDE(187.819) 
 
 124.474 - boundsWidth 
 124.474 - boundsHeight 
 
  
-   playerPos(320, 600) 
+   playerPos(524, 600) 
 
 
- MAGNITUDE(351.05) 
+ MAGNITUDE(185.147) 
 
 124.276 - boundsWidth 
 124.276 - boundsHeight 
 
  
-   playerPos(326, 600) 
+   playerPos(530, 600) 
 
 
- MAGNITUDE(346.268) 
+ MAGNITUDE(182.651) 
 
 124.078 - boundsWidth 
 124.078 - boundsHeight 
 
  
-   playerPos(332, 600) 
+   playerPos(536, 600) 
 
 
- MAGNITUDE(341.543) 
+ MAGNITUDE(180.337) 
 
 123.879 - boundsWidth 
 123.879 - boundsHeight 
 
  
-   playerPos(338, 600) 
+   playerPos(542, 600) 
 
 
- MAGNITUDE(336.876) 
+ MAGNITUDE(178.21) 
 
 123.68 - boundsWidth 
 123.68 - boundsHeight 
 
+Space PRESSED
  
-   playerPos(344, 600) 
+   playerPos(548, 600) 
 
+ 
+  FIRING(548, 600)
 
- MAGNITUDE(332.27) 
+ MAGNITUDE(176.275) 
 
 123.481 - boundsWidth 
 123.481 - boundsHeight 
 
  
-   playerPos(350, 600) 
+   playerPos(554, 600) 
 
 
- MAGNITUDE(327.728) 
+ MAGNITUDE(174.537) 
 
 123.281 - boundsWidth 
 123.281 - boundsHeight 
 
  
-   playerPos(356, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(323.251) 
+ MAGNITUDE(173.001) 
 
 123.081 - boundsWidth 
 123.081 - boundsHeight 
 
  
-   playerPos(362, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(318.842) 
+ MAGNITUDE(172.301) 
 
-122.88 - boundsWidth 
-122.88 - boundsHeight 
-
- 
-   playerPos(368, 600) 
-
-
- MAGNITUDE(314.504) 
-
-122.679 - boundsWidth 
-122.679 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(374, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(310.239) 
+ MAGNITUDE(171.601) 
 
-122.478 - boundsWidth 
-122.478 - boundsHeight 
-
- 
-   playerPos(380, 600) 
-
-
- MAGNITUDE(306.05) 
-
-122.276 - boundsWidth 
-122.276 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(386, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(301.94) 
+ MAGNITUDE(170.901) 
 
-122.074 - boundsWidth 
-122.074 - boundsHeight 
-
- 
-   playerPos(392, 600) 
-
-
- MAGNITUDE(297.912) 
-
-121.872 - boundsWidth 
-121.872 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(398, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(293.968) 
+ MAGNITUDE(170.201) 
 
-121.669 - boundsWidth 
-121.669 - boundsHeight 
-
- 
-   playerPos(404, 600) 
-
-
- MAGNITUDE(290.112) 
-
-121.466 - boundsWidth 
-121.466 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(410, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(286.347) 
+ MAGNITUDE(169.501) 
 
-121.263 - boundsWidth 
-121.263 - boundsHeight 
-
- 
-   playerPos(416, 600) 
-
-
- MAGNITUDE(282.676) 
-
-121.059 - boundsWidth 
-121.059 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(422, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(279.102) 
+ MAGNITUDE(168.801) 
 
-120.854 - boundsWidth 
-120.854 - boundsHeight 
-
- 
-   playerPos(428, 600) 
-
-
- MAGNITUDE(275.629) 
-
-120.65 - boundsWidth 
-120.65 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(434, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(272.26) 
+ MAGNITUDE(168.101) 
 
-120.445 - boundsWidth 
-120.445 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(167.401) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(166.701) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(166.001) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(165.301) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(164.601) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(163.901) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(163.201) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(162.501) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 Space PRESSED
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
  
-  FIRING(440, 600)
+  FIRING(560, 600)
 
- MAGNITUDE(268.998) 
+ MAGNITUDE(161.801) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
-
-
- MAGNITUDE(268.298) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(267.598) 
+ MAGNITUDE(161.101) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
-
-
- MAGNITUDE(266.898) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(266.198) 
+ MAGNITUDE(160.401) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
-
-
- MAGNITUDE(265.498) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(264.798) 
+ MAGNITUDE(159.701) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
-
-
- MAGNITUDE(264.098) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(263.397) 
+ MAGNITUDE(159.001) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
-
-
- MAGNITUDE(262.697) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(261.997) 
+ MAGNITUDE(158.301) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
-
-
- MAGNITUDE(261.297) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(260.597) 
+ MAGNITUDE(157.601) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
-
-
- MAGNITUDE(259.897) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(259.197) 
+ MAGNITUDE(156.901) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(156.201) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(155.501) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(154.801) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(154.101) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(153.401) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(152.701) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(152.001) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(151.301) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 Space PRESSED
- 
-   playerPos(440, 600) 
+
+ ENEMY HIT BY BULLET 
 
  
-  FIRING(440, 600)
-
- MAGNITUDE(258.497) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+   playerPos(560, 600) 
 
  
-   playerPos(440, 600) 
+  FIRING(560, 600)
+
+ MAGNITUDE(150.601) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(257.797) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
-
-
- MAGNITUDE(257.097) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(256.397) 
+ MAGNITUDE(149.901) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(255.697) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(254.997) 
+ MAGNITUDE(149.201) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(254.297) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(253.597) 
+ MAGNITUDE(148.501) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(252.897) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(252.197) 
+ MAGNITUDE(147.801) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(251.497) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(250.797) 
+ MAGNITUDE(147.101) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(250.097) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(249.397) 
+ MAGNITUDE(146.401) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(248.697) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(247.997) 
+ MAGNITUDE(145.701) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(247.297) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(246.597) 
+ MAGNITUDE(145.001) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(245.897) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(245.197) 
+ MAGNITUDE(144.301) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(244.497) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(243.797) 
+ MAGNITUDE(143.601) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(243.097) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(242.397) 
+ MAGNITUDE(142.901) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(241.697) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(240.997) 
+ MAGNITUDE(142.201) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(240.297) 
+ ENEMY HIT BY BULLET 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(239.597) 
+ MAGNITUDE(141.501) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
- 
-   playerPos(440, 600) 
+Space PRESSED
+
+ ENEMY HIT BY BULLET 
 
 
- MAGNITUDE(238.897) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
-
-
- MAGNITUDE(238.197) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+   playerPos(560, 600) 
 
  
-   playerPos(440, 600) 
+  FIRING(560, 600)
+
+ MAGNITUDE(140.801) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(237.497) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
-
-
- MAGNITUDE(236.797) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(236.097) 
+ MAGNITUDE(140.101) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(235.397) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(234.697) 
+ MAGNITUDE(139.401) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(233.997) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(233.297) 
+ MAGNITUDE(138.701) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(232.597) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(231.897) 
+ MAGNITUDE(138.001) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(231.197) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(230.497) 
+ MAGNITUDE(137.301) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(229.797) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(229.097) 
+ MAGNITUDE(136.601) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(228.397) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(227.697) 
+ MAGNITUDE(135.901) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(226.997) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(226.297) 
+ MAGNITUDE(135.201) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
-
- 
-   playerPos(440, 600) 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
- MAGNITUDE(225.597) 
-
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+ ENEMY HIT BY BULLET 
 
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(224.897) 
+ MAGNITUDE(134.501) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(133.801) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(133.101) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(132.401) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(131.701) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(131.001) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+Space PRESSED
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+ 
+  FIRING(560, 600)
+
+ MAGNITUDE(130.301) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(129.601) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(128.901) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(128.201) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(127.501) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(126.801) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(126.101) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(125.401) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(124.701) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(124.001) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(123.301) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(122.601) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(121.901) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(121.201) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(120.501) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(119.801) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(119.101) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(118.402) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(117.702) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(117.002) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(116.302) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(115.602) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(114.902) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(114.202) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(113.502) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(112.802) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(112.102) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(111.402) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(110.702) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(110.002) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(109.302) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(108.602) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(107.902) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(107.202) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(106.502) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(105.802) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
+
+
+ ENEMY HIT BY BULLET 
+
+ 
+   playerPos(560, 600) 
+
+
+ MAGNITUDE(105.102) 
+
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 
 
  CLOSING WINDOW 
 
+
+ ENEMY HIT BY BULLET 
+
  
-   playerPos(440, 600) 
+   playerPos(560, 600) 
 
 
- MAGNITUDE(224.197) 
+ MAGNITUDE(104.402) 
 
-120.24 - boundsWidth 
-120.24 - boundsHeight 
+123.081 - boundsWidth 
+123.081 - boundsHeight 
 

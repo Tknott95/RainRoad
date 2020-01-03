@@ -112,6 +112,12 @@ void Game::fixedUpdate() {
       cout << "\n  PLAYER DEAD \n" << endl;
     }
   }
+
+  for(auto &b : this->_bullet->_bullets) {
+    if(collision.checkCollision(this->_enemy->_sprite.getGlobalBounds(), b.getGlobalBounds())) {
+     cout << "\n ENEMY HIT BY BULLET \n" << endl;
+    }
+  }
 }
 
 void Game::update() {
@@ -130,7 +136,7 @@ void Game::update() {
     firing = false;
   }
 
-  this->_bullet->move(.3f);
+  this->_bullet->move(3.3f);
 
   this->_enemy->moveToPlayer(this->_player->getPos(), 0.7f);
 

@@ -8,7 +8,6 @@
 class Bullet {
   private:
     const float bulletSpeed = 5.f;
-    std::vector <sf::CircleShape> _bullets;
     sf::CircleShape _bullet;
     sf::Clock clock;
     sf::Time elapsedTime;
@@ -17,6 +16,7 @@ class Bullet {
     float spawnDelay;
 
   public:
+    std::vector <sf::CircleShape> _bullets;
     void init(sf::Vector2f, float);
     Bullet();
 	  virtual ~Bullet();
