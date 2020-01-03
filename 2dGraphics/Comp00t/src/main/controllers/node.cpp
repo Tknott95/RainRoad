@@ -5,7 +5,7 @@ void Node::init() {
 }
 
 void Node::spawn(float posx, float posy) {
-  this->_node.setRadius(5);
+  this->_node.setRadius(4);
   this->_node.setFillColor(sf::Color(100, 100, 100, 205));
   this->_node.setOutlineColor(sf::Color(0, 0, 255, 80));
   this->_node.setOutlineThickness(0.8f);
@@ -75,15 +75,15 @@ void Node::update() {
       this->_nodes[_v].setPosition(this->_nodes[_v].getPosition().x - (rand() % -2), this->_nodes[_v].getPosition().y + (rand() % -2));
     }
     
-    this->vertices[_v] = sf::Vertex(sf::Vector2f(this->_nodes[_v].getPosition().x, this->_nodes[_v].getPosition().y), sf::Color(rand() % 144, rand() % 144, rand() % 155, 245), sf::Vector2f(this->_nodes[_v].getPosition().x, this->_nodes[_v].getPosition().y));
+    this->vertices[_v] = sf::Vertex(sf::Vector2f(this->_nodes[_v].getPosition().x, this->_nodes[_v].getPosition().y), sf::Color(rand() % 204, rand() % 224, rand() % 235, 230), sf::Vector2f(this->_nodes[_v].getPosition().x, this->_nodes[_v].getPosition().y));
   }
 }
 
 void Node::render(sf::RenderTarget& target) {
   for(auto &e : this->_nodes) {
     target.draw(e);
-    cout << e.getPosition().x << endl;
+    cout << "  (" << e.getPosition().x << ", " << e.getPosition().y << ") " << endl;
   };
  
-  target.draw(vertices, this->totalNodes, sf::LinesStrip); // sf::LineStrip
+  target.draw(vertices, this->totalNodes, sf::LinesStrip); // sf::LineStrip or sf::Triangles, etc
 }
