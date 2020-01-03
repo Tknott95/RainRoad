@@ -9,6 +9,7 @@ void Game::init() {
 
   this->_view.reset(sf::FloatRect(0, 0, screenWidth, screenHeight));
   this->_view.setViewport(sf::FloatRect(0.f, 0.f, 1.f, 1.f));  // last two 1/2 <-> or 1/2 ^
+  this->_view.zoom(.8f);
   this->_window->setView(this->_view);
 
   this->_clock.restart();

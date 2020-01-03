@@ -84,18 +84,25 @@ void Node::render(sf::RenderTarget& target) {
     cout << e.getPosition().x << endl;
   };
 
-  sf::VertexArray curve(sf::LinesStrip, 100);
+  sf::VertexArray curve(sf::LinesStrip, 50);
+  sf::VertexArray curve2(sf::LinesStrip, 50);
+
   int lineXPos = 200;
   int lineYPos = 200;
 
   // curve[0].position = sf::Vector2f(200.f, 200.f);
   
 
-  for (int k=0;k<2000;k++) {
-    curve.append(sf::Vertex(sf::Vector2f(k + lineXPos,- sin(k) + lineYPos)));
+  for (int k=0;k<50;k++) {
+    curve[k] = sf::Vertex(sf::Vector2f(k + lineXPos,- sin(k) + lineYPos), sf::Color(rand() % 144, rand() % 144, rand() % 155, 245), sf::Vector2f(500.f, 500.f));
     curve[k].color = sf::Color::Yellow;
-}
+  }
+  for (int j=0;j<50;j++) {
+    curve2[j] = sf::Vertex(sf::Vector2f(j + lineXPos,- sin(j) + lineYPos + 50), sf::Color(rand() % 144, rand() % 144, rand() % 155, 245), sf::Vector2f(500.f, 500.f));
+    curve2[j].color = sf::Color::Yellow;
+  }
 
   target.draw(curve);
+  target.draw(curve2);
   target.draw(vertices, this->totalNodes, sf::LinesStrip); // sf::LineStrip
 }
