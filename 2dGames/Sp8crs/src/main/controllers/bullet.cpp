@@ -40,6 +40,11 @@ void Bullet::move(float ySpeed) {
   }
 }
 
+void Bullet::erase(int i) {
+  this->_bullets.erase(this->_bullets.begin() + i);
+  std::cout << " \n   erasingBulletID(" << i << ") \n" << std::endl;
+}
+
 void Bullet::render(sf::RenderTarget& target) {
   for(auto &b : this->_bullets) {
     target.draw(b);

@@ -28,6 +28,8 @@ Game::Game() {
 Game::~Game() {
   delete this->_window;
   delete this->_player;
+  delete this->_enemy;
+  delete this->_bullet;
 }
 
 const bool Game::isOpen() const {
@@ -123,6 +125,17 @@ void Game::fixedUpdate() {
   for(auto &b : this->_bullet->_bullets) {
     if(collision.checkCollision(this->_enemy->_sprite.getGlobalBounds(), b.getGlobalBounds())) {
      cout << "\n ENEMY HIT BY BULLET \n" << endl;
+    }
+  }
+
+  cout << " zise: " << this->_bullet->_bullets.size() << endl;
+
+  for(int k=0;k < this->_bullet->_bullets.size(); k++) {
+     cout << "\n  bullPosY(" << this->_bullet->_bullets[k].getPosition().y << ")  \n" << endl;
+    
+    if(this->_bullet->_bullets[k].getPosition().y <= 100) {
+      this->_bullet->erase(k);
+      //this->nodes.erase(this->nodes.begin() + i);
     }
   }
 }

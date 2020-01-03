@@ -22,6 +22,7 @@ class Bullet {
 	  virtual ~Bullet();
     void fire(sf::Vector2f, float);
     void move(float);
+    void erase(int);
     void render(sf::RenderTarget& target);
 
 
