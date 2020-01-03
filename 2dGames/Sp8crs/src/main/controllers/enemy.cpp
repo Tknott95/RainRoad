@@ -10,11 +10,13 @@ void Enemy::init() {
   this->_sprite.setTexture(this->_texture);
   this->_sprite.scale(1.4f, 1.4f);
   this->_sprite.setPosition(600.f, 200.f);
+
+  this->_enemies.push_back(this->_sprite);
 }
 
 Enemy::Enemy() {
   this->init();
-}
+} /* @TODO MAKE GET POS() FUNCTION */
 
 Enemy::~Enemy() {
 }
@@ -29,13 +31,25 @@ sf::Vector2f Enemy::normalize(const sf::Vector2f& j) {
   }
 }
 
-void Enemy::moveToPlayer(sf::Vector2f playerPos, float enemySpeed) {
-  sf::Vector2f direction = this->normalize(playerPos - this->_sprite.getPosition());
-  this->_sprite.move(enemySpeed * direction);
+const bool Enemy::isDead() {
+  if(this->currHealth <= 0.f) {
+    return true;
+  }
+
+  return false;
 }
+
+void Enemy::moveToPlayer(sf::Vector2f playerPos, float enemySpeed, sf::Vector2f enemyPos) {
+  sf::Vector2f direction = this->normalize(playerPos - enemyPos);
+  this->_sprite.move(enemySpeed * direction);
+} /* @TODO refactor to make dynamic for _enemies vector, pass in position most likely */
 
 void Enemy::update() {
 
+}
+
+const sf::Vector2f & Enemy::getPos() const {
+  return this->_sprite.getPosition();
 }
 
 void Enemy::render(sf::RenderTarget& target) {

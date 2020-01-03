@@ -40,9 +40,10 @@ class Game {
     float playerSpeed = 3.0;
 
     bool firing = false;
+    const bool DEBUG = false;
     
     void init();
-    const bool DEBUG = false;
+    const bool isGameOver();  
 
   public:
     Game();

@@ -11,7 +11,14 @@ void Game::init() {
   this->_player = new Player();
   this->_enemy = new Enemy();
   this->_bullet = new Bullet();
-  this->_bullet->init(this->_player->_sprite.getPosition(), this->_player->_sprite.getGlobalBounds().width/2);
+  this->_bullet->init(this->_player->getPos(), this->_player->_sprite.getGlobalBounds().width/2);
+}
+
+const bool Game::isGameOver() { /* @TODO render text and black overlay opacity .5 after "dead" */
+  if(this->_player->curHealth <= 0.f) {
+    return true;
+  }
+  return false;
 }
 
 Game::Game() {
@@ -71,7 +78,7 @@ void Game::eventPolling() {
   int rightClamp = 2; /* 0->1 */
   int leftClamp = 357; /* 358<-360 */
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-    if(this->_player->_sprite.getPosition().x < this->screenWidth - 110) {
+    if(this->_player->getPos().x < this->screenWidth - 110) {
       this->_player->move(this->playerSpeed, 0.0);
     }
     
@@ -81,7 +88,7 @@ void Game::eventPolling() {
       this->_player->_sprite.setRotation(this->_player->_sprite.getRotation() + 0.1f); /* needs clamp and lerp to orig on keyUP @TODO */
     }
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-    if(this->_player->_sprite.getPosition().x > 0) {
+    if(this->_player->getPos().x > 0) {
       this->_player->move(-this->playerSpeed, 0.0);
     }
     if(playerRotation < rightClamp + 1 || playerRotation > leftClamp) {
@@ -90,11 +97,11 @@ void Game::eventPolling() {
     }
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-    if(this->_player->_sprite.getPosition().y < this->screenHeight - 100) {
+    if(this->_player->getPos().y < this->screenHeight - 100) {
       this->_player->move(0.0, this->playerSpeed);
     }
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-    if(this->_player->_sprite.getPosition().y > 100) {
+    if(this->_player->getPos().y > 100) {
       this->_player->move(0.0, -this->playerSpeed);
         this->_bullet->move(.3f);
     }
@@ -128,17 +135,15 @@ void Game::update() {
     cout << "\n    _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
   }
 
-  sf::Vector2f playerPos = this->_player->_sprite.getPosition();
-
-  cout << " \n   playerPos(" << this->_player->_sprite.getPosition().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl;
+  cout << " \n   playerPos(" << this->_player->getPos().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl;
   if(firing  && this->_timeElapsed.asSeconds() > 0.1f) {
-    this->_bullet->fire(playerPos, this->_player->_sprite.getGlobalBounds().width/2);
+    this->_bullet->fire(this->_player->getPos(), this->_player->_sprite.getGlobalBounds().width/2);
     firing = false;
   }
 
   this->_bullet->move(3.3f);
 
-  this->_enemy->moveToPlayer(this->_player->getPos(), 0.7f);
+  this->_enemy->moveToPlayer(this->_player->getPos(), 0.7f, this->_enemy->getPos());
 
   float boundsWidth = this->_player->_sprite.getGlobalBounds().width;
   float boundsHeight = this->_player->_sprite.getGlobalBounds().height;

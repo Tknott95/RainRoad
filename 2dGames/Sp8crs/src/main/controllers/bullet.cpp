@@ -1,6 +1,6 @@
 #include "../headers/bullet.h"
 
-float yOffset = 10.f;
+float yOffset = 10.f; /* @TODO better naming as it is used in two classes and an exyternal var */
 /* @TODO create bullet vector, for rapid semi-auto fire bbbyy, maybe auto like a fkn OG */
 void Bullet::init(sf::Vector2f startingPos, float halfSprite) {
   this->_bullet.setPosition(startingPos.x + (halfSprite-5) /*+((this->_sprite.getGlobalBounds().width/2)-5)*/, startingPos.y + yOffset /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
