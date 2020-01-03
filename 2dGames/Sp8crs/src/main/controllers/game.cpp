@@ -122,20 +122,26 @@ void Game::fixedUpdate() {
     }
   }
 
-  for(auto &b : this->_bullet->_bullets) {
-    if(collision.checkCollision(this->_enemy->_sprite.getGlobalBounds(), b.getGlobalBounds())) {
-     cout << "\n ENEMY HIT BY BULLET \n" << endl;
-    }
-  }
+  /* @TODO use this w/ iterator for dynamic del? or use other way which is working perfectly */
+  // for(auto &b : this->_bullet->_bullets) { 
+  //   if(collision.checkCollision(this->_enemy->_sprite.getGlobalBounds(), b.getGlobalBounds())) {
+  //    cout << "\n ENEMY HIT BY BULLET \n" << endl;
+  //   }
+  // }
 
-  cout << " zise: " << this->_bullet->_bullets.size() << endl;
 
   for(int k=0;k < this->_bullet->_bullets.size(); k++) {
-     cout << "\n  bullPosY(" << this->_bullet->_bullets[k].getPosition().y << ")  \n" << endl;
-    
+    if(DEBUG == true) {
+      cout << "\n  bullPosY(" << this->_bullet->_bullets[k].getPosition().y << ")  \n" << endl;
+      cout << "\n  bulletsVecSize(" << this->_bullet->_bullets.size() << ") \n" << endl;
+    }
+
+    if(collision.checkCollision(this->_enemy->_sprite.getGlobalBounds(), this->_bullet->_bullets[k].getGlobalBounds())) {
+     cout << "\n ENEMY HIT BY BULLET \n" << endl;
+    }
+
     if(this->_bullet->_bullets[k].getPosition().y <= 100) {
       this->_bullet->erase(k);
-      //this->nodes.erase(this->nodes.begin() + i);
     }
   }
 }
