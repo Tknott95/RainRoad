@@ -149,7 +149,7 @@ void Game::fixedUpdate() {
   for(int k=0; k < this->_enemy->_enemies.size(); k++) {
     this->_enemy->moveToPlayer(k, this->_player->getPos(), 0.64f);
 
-    if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_enemies[k].second.getGlobalBounds())){
+    if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_enemies[k].enemy.getGlobalBounds())){
       cout << "COLLIDED" << endl;
       this->_player->takeDmg(0.93);
       if(this->_player->curHealth <= 0) {
@@ -177,7 +177,7 @@ void Game::fixedUpdate() {
     }
 
     for(int j=0; j < this->_enemy->_enemies.size(); j++) {
-      if(collision.checkCollision(this->_enemy->_enemies[j].second.getGlobalBounds(), this->_bullet->_bullets[k].getGlobalBounds())) {
+      if(collision.checkCollision(this->_enemy->_enemies[j].enemy.getGlobalBounds(), this->_bullet->_bullets[k].getGlobalBounds())) {
        cout << "\n ENEMY HIT BY BULLET \n" << endl;
        this->_enemy->takeDmg(j, 33.3);
        this->_bullet->erase(k);

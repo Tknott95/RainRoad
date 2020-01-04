@@ -5,6 +5,12 @@
 #include<iostream>
 #include<math.h>
 
+struct EnemyStruct {
+  float health;
+  sf::Sprite enemy;
+  sf::Text text00;
+};
+
 class Enemy {
   private:
     sf::Texture _texture;
@@ -23,7 +29,7 @@ class Enemy {
     void delEnemy(int eId);
 
   public:
-    std::vector<std::pair<float, sf::Sprite>> _enemies; /* health, _enemySprite */
+    std::vector<EnemyStruct> _enemies; /* health, _enemySprite */
     sf::Sprite _sprite;
     Enemy();
 	  virtual ~Enemy();

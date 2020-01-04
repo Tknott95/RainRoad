@@ -26,7 +26,11 @@ void Enemy::spawn(sf::Vector2f pos) {
   }
 
   this->_sprite.setPosition(pos.x, pos.y);
-  this->_enemies.emplace_back(100.f, this->_sprite); /* replaces push_back due to std::pair usage to track enemy currHealth */
+  EnemyStruct e00;
+  e00.enemy = this->_sprite;
+  e00.health = 100.f;
+  e00.text00 = this->_text00;
+  this->_enemies.emplace_back(e00); /* replaces push_back due to std::pair usage to track enemy currHealth */
 }
 
 Enemy::Enemy() {
@@ -63,20 +67,29 @@ const bool Enemy::isDead() {
  }
 
 void Enemy::takeDmg(int eId, float dmg) {
-  this->_enemies[eId].first -= dmg;
+  this->_enemies[eId].health -= dmg;
 }
 
 void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) {
-  const sf::Vector2f enemyPos = this->_enemies[enemyId].second.getPosition();
+  const sf::Vector2f enemyPos = this->_enemies[enemyId].enemy.getPosition();
   sf::Vector2f direction = this->normalize(playerPos - enemyPos);
-  this->_enemies[enemyId].second.move(enemySpeed * direction);
+  this->_enemies[enemyId].enemy.move(enemySpeed * direction);
 } /* @TODO refactor to make dynamic for _enemies vector, pass in position most likely */
 
 void Enemy::update() {
   for(int _j=0;_j < this->_enemies.size();_j++) {
-    if(this->_enemies[_j].first <= 0.f) {
+    if(this->_enemies[_j].health <= 0.f) {
       this->delEnemy(_j);
     }
+
+    /* @TODO refactor this as the text for enemy may need to be inside the vector for external calls on update */
+    // if(this->_enemies[_j].first < 67.f) {
+    //   this->_text00.setFillColor(sf::Color(60, 140, 40, 130));
+    // } else if(this->_enemies[_j].first < 33.f) {
+    //   this->_text00.setFillColor(sf::Color(140, 60, 40, 120));
+    // } else if(this->_enemies[_j].first < 10.f) {
+    //   this->_text00.setFillColor(sf::Color(240, 40, 40, 110));
+    // }
   }
 }
 
@@ -86,12 +99,13 @@ const sf::Vector2f & Enemy::getPos() const {
 
 void Enemy::render(sf::RenderTarget& target) {
   for(auto &_e : this->_enemies) {
-    target.draw(_e.second);
+    target.draw(_e.enemy);
 
-    this->_text00.setString(std::to_string(_e.first));
+    this->_text00.setString(std::to_string(_e.health).substr(0, 5));
     this->_text00.setCharacterSize(30);
-    this->_text00.setPosition( _e.second.getPosition().x, _e.second.getPosition().y - 30.f);
-    this->_text00.setFillColor(sf::Color(140, 40, 40, 210));
+    this->_text00.setPosition(_e.enemy.getPosition().x, _e.enemy.getPosition().y - 30.f);
+    this->_text00.setFillColor(sf::Color(40, 240, 40, 150));
+
     target.draw(this->_text00);
   }
 }
