@@ -25,6 +25,7 @@ class Game {
     sf::Clock _clock;
     sf::Time _timeElapsed;
     float _secondsPassed;
+    float firingDelay = 0.2f;
 
     sf::Sprite _bgSprite;
     sf::Font _font00;

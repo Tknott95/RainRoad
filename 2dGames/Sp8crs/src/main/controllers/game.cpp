@@ -165,9 +165,11 @@ void Game::fixedUpdate() {
       cout << "\n  bulletsVecSize(" << this->_bullet->_bullets.size() << ") \n" << endl;
     }
 
-    if(collision.checkCollision(this->_enemy->_sprite.getGlobalBounds(), this->_bullet->_bullets[k].getGlobalBounds())) {
-     cout << "\n ENEMY HIT BY BULLET \n" << endl;
-     this->_bullet->erase(k);
+    for(int j=0; j < this->_enemy->_enemies.size(); j++) {
+      if(collision.checkCollision(this->_enemy->_enemies[j].getGlobalBounds(), this->_bullet->_bullets[k].getGlobalBounds())) {
+       cout << "\n ENEMY HIT BY BULLET \n" << endl;
+       this->_bullet->erase(k);
+      }
     }
 
     if(this->_bullet->_bullets[k].getPosition().y <= 100) {
@@ -183,15 +185,18 @@ void Game::update() {
     cout << "\n   _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
   }
 
+  for(int k=0; k < this->_enemy->_enemies.size(); k++) {
+    this->_enemy->moveToPlayer(k, this->_player->getPos(), 0.64f);
+  }
+
   if(!this->DEBUG) { cout << " \n   playerPos(" << this->_player->getPos().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl; };
-  if(firing  && this->_timeElapsed.asSeconds() > 0.1f) {
+  if(firing  && this->_timeElapsed.asSeconds() > this->firingDelay) {
     this->_bullet->fire(this->_player->getPos(), this->_player->_sprite.getGlobalBounds().width/2);
     firing = false;
+    this->_clock.restart();
   }
 
   this->_bullet->move(3.3f);
-
-  this->_enemy->moveToPlayer(this->_player->getPos(), 0.7f, this->_enemy->getPos());
 
   float boundsWidth = this->_player->_sprite.getGlobalBounds().width;
   float boundsHeight = this->_player->_sprite.getGlobalBounds().height;

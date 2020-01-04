@@ -9,13 +9,24 @@ void Enemy::init() {
   }
   this->_sprite.setTexture(this->_texture);
   this->_sprite.scale(1.4f, 1.4f);
-  this->_sprite.setPosition(600.f, 200.f);
+}
 
+void Enemy::spawn(sf::Vector2f pos) {
+  if(&pos.x == NULL || &pos.y == NULL) {
+    pos. x = 600.f;
+    pos.y = 200.f;
+  }
+
+  this->_sprite.setPosition(pos.x, pos.y);
   this->_enemies.push_back(this->_sprite);
 }
 
 Enemy::Enemy() {
   this->init();
+  this->spawn(sf::Vector2f(600.f, 200.f));
+  this->spawn(sf::Vector2f(1000.f, 200.f));
+  this->spawn(sf::Vector2f(000.f, 200.f));
+  this->spawn(sf::Vector2f(100.f, 000.f));
 } /* @TODO MAKE GET POS() FUNCTION */
 
 Enemy::~Enemy() {
@@ -39,9 +50,10 @@ const bool Enemy::isDead() {
   return false;
 }
 
-void Enemy::moveToPlayer(sf::Vector2f playerPos, float enemySpeed, sf::Vector2f enemyPos) {
+void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) {
+  const sf::Vector2f enemyPos = this->_enemies[enemyId].getPosition();
   sf::Vector2f direction = this->normalize(playerPos - enemyPos);
-  this->_sprite.move(enemySpeed * direction);
+  this->_enemies[enemyId].move(enemySpeed * direction);
 } /* @TODO refactor to make dynamic for _enemies vector, pass in position most likely */
 
 void Enemy::update() {
@@ -53,5 +65,7 @@ const sf::Vector2f & Enemy::getPos() const {
 }
 
 void Enemy::render(sf::RenderTarget& target) {
-  target.draw(this->_sprite);
+  for(auto &_e : this->_enemies) {
+    target.draw(_e);
+  }
 }

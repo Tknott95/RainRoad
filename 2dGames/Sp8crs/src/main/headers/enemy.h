@@ -8,13 +8,13 @@
 class Enemy {
   private:
     sf::Texture _texture;
-    float currHealth;
-    float maxHealth;
+    float currHealth = 100.f;
+    float maxHealth = 100.f;
     float movementSpeed = 2.f;
-	  float attackWait;
     float bulletSpeed = 8.f;
 
     void init();
+    void spawn(sf::Vector2f pos);
 
     sf::Vector2f normalize(const sf::Vector2f&);
     const bool isDead();
@@ -31,7 +31,8 @@ class Enemy {
 	  // const bool canAttack();
 
     // void shoot();
-    void moveToPlayer(sf::Vector2f, float, sf::Vector2f);
+    void takeDmg(float dmg);
+    void moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed);
     void update();
     void render(sf::RenderTarget& target);
 };
