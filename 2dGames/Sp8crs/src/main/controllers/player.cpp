@@ -15,12 +15,14 @@ void Player::init() {
   this->text00.setString("PlayerHealth:    "+std::to_string(this->curHealth).substr(0, 6));
   this->text00.setCharacterSize(18);
   this->text00.setFillColor(sf::Color(255, 255, 255, 175)); /* switch to rgba .4 opacity @TODO */
+  this->text00.setOutlineColor(sf::Color::Black);
   this->text00.setPosition(50.f, 50.f);
 
   this->text01.setFont(font00);
   this->text01.setString("PlayerScore:    "+std::to_string(this->score).substr(0, 6));
   this->text01.setCharacterSize(18);
   this->text01.setFillColor(sf::Color(255, 255, 255, 175)); /* switch to rgba .4 opacity @TODO */
+  this->text01.setOutlineColor(sf::Color::Black);
   this->text01.setPosition(50.f, 100.f);
 
   this->_sprite.setTexture(this->_texture);

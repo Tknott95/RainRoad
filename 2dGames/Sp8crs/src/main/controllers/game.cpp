@@ -3,6 +3,9 @@
 void Game::init() {
   this->_videoMode.width = screenWidth;
   this->_videoMode.height = screenHeight;
+  this->_gameMode = running;
+  this->_gameStruct.currScore = 0.f;
+  this->_gameStruct.currLvl = 1;
 
   while(this->_isFirstRun) {
     this->_isFirstRun = false;
@@ -42,7 +45,7 @@ void Game::init() {
   this->_bgMusic.play();
 
   this->_text02.setFont(this->_font00);
-  this->_text02.setString("LEVEL 1"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
+  this->_text02.setString("LEVEL " + to_string(this->_gameStruct.currLvl)); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
   this->_text02.setCharacterSize(180);
   this->_text02.setPosition((screenWidth/2)*0.40, screenHeight/2 - 200);
   this->_text02.setFillColor(sf::Color(178,250,245,100));
@@ -243,6 +246,7 @@ void Game::fixedUpdate() {
 void Game::update() {
   this->_timeElapsed = this->_clock.getElapsedTime();
   this->_trueElapsedTime = this->_trueClock.getElapsedTime();
+  this->_gameStruct.currScore = this->_player->score;
   this->_player->update();
   this->_enemy->update();
   if(!this->DEBUG == true) {
@@ -282,7 +286,7 @@ void Game::render() {
   } else {
     /* for 3 secs */
     this->_window->draw(this->_text02);
-    if(this->_trueElapsedTime.asSeconds() > 2.0f) {this->introFinished = true;}
+    if(this->_trueElapsedTime.asSeconds() > 1.0f) {this->introFinished = true;}
   }
 
   if(this->_enemy->_enemies.size() <= 0) {

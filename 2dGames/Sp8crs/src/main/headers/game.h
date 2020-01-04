@@ -14,12 +14,20 @@
 
 using namespace std;
 
-struct GameEnum {
+struct GameStruct {
   int currLvl;
   float currScore;
   int currEnemies;
+  int maxEnemies;
   /* currAmmo @TODO */
 };
+
+enum GameModeEnum {
+  running,
+  paused,
+  guiOverlay
+};
+
 
 class Game {
   const int screenWidth = 1280;
@@ -31,6 +39,8 @@ class Game {
     sf::Time _timeElapsed;
     sf::Clock _trueClock;
     sf::Time _trueElapsedTime;
+    GameModeEnum _gameMode;
+    GameStruct _gameStruct;
     float _secondsPassed;
     float firingDelay = 0.2f;
     bool _isFirstRun = true;

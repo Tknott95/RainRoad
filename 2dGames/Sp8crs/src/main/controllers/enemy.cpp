@@ -14,7 +14,6 @@ void Enemy::init() {
 
   this->_text00.setFont(this->_font00);
 
-
   this->_sprite.setTexture(this->_texture);
   this->_sprite.scale(1.4f, 1.4f);
 }
@@ -106,9 +105,11 @@ void Enemy::render(sf::RenderTarget& target) {
     target.draw(_e.enemy);
 
     _e.text00.setString(std::to_string(_e.health).substr(0, 5));
-    _e.text00.setCharacterSize(22);
-    _e.text00.setPosition(_e.enemy.getPosition().x, _e.enemy.getPosition().y - 30.f);
-    _e.text00.setFillColor(sf::Color(240, 240, 240, 180));
+    _e.text00.setCharacterSize(18);
+    _e.text00.setPosition(_e.enemy.getPosition().x, _e.enemy.getPosition().y - 20.f);
+    _e.text00.setFillColor(sf::Color(255, 255, 255, 140));
+    _e.text00.setOutlineColor(sf::Color::Black);
+    _e.text00.setOutlineThickness(2.f);
 
     target.draw(_e.text00);
   }
