@@ -26,7 +26,7 @@ void Enemy::spawn(sf::Vector2f pos) {
   }
 
   this->_sprite.setPosition(pos.x, pos.y);
-  this->_enemies.push_back(this->_sprite);
+  this->_enemies.emplace_back(100.f, this->_sprite); /* replaces push_back due to std::pair usage to track enemy currHealth */
 }
 
 Enemy::Enemy() {
@@ -59,9 +59,9 @@ const bool Enemy::isDead() {
 }
 
 void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) {
-  const sf::Vector2f enemyPos = this->_enemies[enemyId].getPosition();
+  const sf::Vector2f enemyPos = this->_enemies[enemyId].second.getPosition();
   sf::Vector2f direction = this->normalize(playerPos - enemyPos);
-  this->_enemies[enemyId].move(enemySpeed * direction);
+  this->_enemies[enemyId].second.move(enemySpeed * direction);
 } /* @TODO refactor to make dynamic for _enemies vector, pass in position most likely */
 
 void Enemy::update() {
@@ -74,11 +74,11 @@ const sf::Vector2f & Enemy::getPos() const {
 
 void Enemy::render(sf::RenderTarget& target) {
   for(auto &_e : this->_enemies) {
-    target.draw(_e);
+    target.draw(_e.second);
 
     this->_text00.setString("100.0");
     this->_text00.setCharacterSize(30);
-    this->_text00.setPosition( _e.getPosition().x, _e.getPosition().y - 30.f);
+    this->_text00.setPosition( _e.second.getPosition().x, _e.second.getPosition().y - 30.f);
     this->_text00.setFillColor(sf::Color(140, 40, 40, 210));
     target.draw(this->_text00);
   }

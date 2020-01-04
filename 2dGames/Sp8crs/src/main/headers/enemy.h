@@ -22,7 +22,7 @@ class Enemy {
     const bool isDead();
 
   public:
-    std::vector<sf::Sprite> _enemies; /* health, _enemySprite */
+    std::vector<std::pair<float, sf::Sprite>> _enemies; /* health, _enemySprite */
     sf::Sprite _sprite;
     Enemy();
 	  virtual ~Enemy();
