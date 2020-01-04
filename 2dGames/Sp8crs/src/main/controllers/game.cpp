@@ -96,6 +96,7 @@ void Game::eventPolling() {
           if(this->DEBUG) { cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl; };
           if(this->isGameOver() && this->_text01.getGlobalBounds().contains(this->_mousePos.x, this->_mousePos.y)) {
             this->_text01.setFillColor(sf::Color(40, 40, 140, 230));
+            this->restartGame = true;
           }
         }
         break;
@@ -217,6 +218,12 @@ void Game::render() {
     this->_window->clear(sf::Color::White);
     this->_window->draw(this->_text00);
     this->_window->draw(this->_text01);
+
+    if(restartGame) {
+      this->_player->render(*this->_window);
+      this->_enemy->render(*this->_window);
+      this->_bullet->render(*this->_window);
+    }
   }
   /* DRAW HERE */
 

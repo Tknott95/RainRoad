@@ -45,6 +45,7 @@ class Game {
     float playerSpeed = 3.0;
 
     bool firing = false;
+    bool restartGame = false;
     const bool DEBUG = false;
     
     void init();
