@@ -20,6 +20,7 @@ class Enemy {
 
     sf::Vector2f normalize(const sf::Vector2f&);
     const bool isDead();
+    void delEnemy(int eId);
 
   public:
     std::vector<std::pair<float, sf::Sprite>> _enemies; /* health, _enemySprite */
@@ -33,7 +34,7 @@ class Enemy {
 	  // const bool canAttack();
 
     // void shoot();
-    void takeDmg(float dmg);
+    void takeDmg(int eId, float dmg);
     void moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed);
     void update();
     void render(sf::RenderTarget& target);

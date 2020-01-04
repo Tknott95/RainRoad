@@ -58,6 +58,14 @@ const bool Enemy::isDead() {
   return false;
 }
 
+ void Enemy::delEnemy(int eId) {
+   this->_enemies.erase(this->_enemies.begin() + eId);
+ }
+
+void Enemy::takeDmg(int eId, float dmg) {
+  this->_enemies[eId].first -= dmg;
+}
+
 void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) {
   const sf::Vector2f enemyPos = this->_enemies[enemyId].second.getPosition();
   sf::Vector2f direction = this->normalize(playerPos - enemyPos);
@@ -65,7 +73,11 @@ void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) 
 } /* @TODO refactor to make dynamic for _enemies vector, pass in position most likely */
 
 void Enemy::update() {
-
+  for(int _j=0;_j < this->_enemies.size();_j++) {
+    if(this->_enemies[_j].first <= 0.f) {
+      this->delEnemy(_j);
+    }
+  }
 }
 
 const sf::Vector2f & Enemy::getPos() const {
@@ -76,7 +88,7 @@ void Enemy::render(sf::RenderTarget& target) {
   for(auto &_e : this->_enemies) {
     target.draw(_e.second);
 
-    this->_text00.setString("100.0");
+    this->_text00.setString(std::to_string(_e.first));
     this->_text00.setCharacterSize(30);
     this->_text00.setPosition( _e.second.getPosition().x, _e.second.getPosition().y - 30.f);
     this->_text00.setFillColor(sf::Color(140, 40, 40, 210));

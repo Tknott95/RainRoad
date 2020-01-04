@@ -4,9 +4,14 @@ void Game::init() {
   this->_videoMode.width = screenWidth;
   this->_videoMode.height = screenHeight;
 
-  this->_window = new sf::RenderWindow(this->_videoMode, "Tks Flatland", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
+  while(this->_isFirstRun) {
+    this->_isFirstRun = false;
+    this->_window = new sf::RenderWindow(this->_videoMode, "Tks Flatland", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
+  }
   this->_window->setFramerateLimit(88);
+
   this->_clock.restart();
+  this->_timeElapsed = this->_clock.getElapsedTime();
 
   if (!this->_font00.loadFromFile("utils/fonts/font00.ttf")) {
     std::cout << "ERROR: Could not load player font file." << "\n";
@@ -174,6 +179,7 @@ void Game::fixedUpdate() {
     for(int j=0; j < this->_enemy->_enemies.size(); j++) {
       if(collision.checkCollision(this->_enemy->_enemies[j].second.getGlobalBounds(), this->_bullet->_bullets[k].getGlobalBounds())) {
        cout << "\n ENEMY HIT BY BULLET \n" << endl;
+       this->_enemy->takeDmg(j, 33.3);
        this->_bullet->erase(k);
       }
     }
@@ -187,6 +193,7 @@ void Game::fixedUpdate() {
 void Game::update() {
   this->_timeElapsed = this->_clock.getElapsedTime();
   this->_player->update();
+  this->_enemy->update();
   if(!this->DEBUG == true) {
     cout << "\n   _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
   }
@@ -215,16 +222,24 @@ void Game::render() {
   this->_bullet->render(*this->_window);
 
   if(this->isGameOver()) {
+    this->_clock.restart();
     this->_window->clear(sf::Color::White);
     this->_window->draw(this->_text00);
     this->_window->draw(this->_text01);
 
     if(restartGame) {
+      delete this->_player;
+      delete this->_enemy;
+      delete this->_bullet;
+      this->init();
+       // @TODO REFACTOR
       this->_window->clear(sf::Color::Black);
       this->setBackground();
       this->_player->render(*this->_window);
       this->_enemy->render(*this->_window);
       this->_bullet->render(*this->_window);
+      restartGame = false;
+      // @TODO REFACTOR
     }
   }
   /* DRAW HERE */
