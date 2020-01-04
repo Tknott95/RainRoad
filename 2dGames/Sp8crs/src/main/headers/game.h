@@ -29,6 +29,7 @@ class Game {
     bool _isFirstRun = true;
 
     sf::Sprite _bgSprite;
+    sf::Sprite _bgCloudsSprite;
     sf::Music _bgMusic;
     sf::Music _audio00; /* shooting - space_music.ogg */
     sf::Music _audio01; /* onDead - doomed_music.wav */

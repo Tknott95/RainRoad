@@ -8,7 +8,7 @@ void Game::init() {
     this->_isFirstRun = false;
     this->_window = new sf::RenderWindow(this->_videoMode, "Tks Flatland", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
   }
-  this->_window->setFramerateLimit(88);
+  this->_window->setFramerateLimit(28);
 
   this->_clock.restart();
   this->_timeElapsed = this->_clock.getElapsedTime();
@@ -82,10 +82,14 @@ const bool Game::isOpen() const {
 
 void Game::setBackground() {
   sf::Texture bgTexture;
-  bgTexture.loadFromFile("./utils/img/background.jpg");
+  sf::Texture cloudTexture;
+  bgTexture.loadFromFile("./utils/img/bg/bg00_bluemap.png");
+  cloudTexture.loadFromFile("./utils/img/bg/bg01_clouds.png");
   sf::Vector2u size = bgTexture.getSize();
   this->_bgSprite.setTexture(bgTexture);
+  this->_bgCloudsSprite.setTexture(cloudTexture);
   this->_window->draw(this->_bgSprite);
+  this->_window->draw(this->_bgCloudsSprite);
 }
 
 void Game::setMousePos() {
@@ -219,12 +223,19 @@ void Game::fixedUpdate() {
 }
 
 void Game::update() {
-  
   this->_timeElapsed = this->_clock.getElapsedTime();
   this->_player->update();
   this->_enemy->update();
   if(!this->DEBUG == true) {
     cout << "\n   _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
+  }
+
+  int _counter = 0;
+  _counter++; 
+  if(this->_timeElapsed.asSeconds() > this->firingDelay) {
+    this->_bgCloudsSprite.move(.001f, -0.0000001f);
+  } else if (_counter % 3 == 0) {
+    this->_bgCloudsSprite.move(-.001f, 0.0000001f);
   }
 
   if(!this->DEBUG) { cout << " \n   playerPos(" << this->_player->getPos().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl; };

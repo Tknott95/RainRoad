@@ -5,11 +5,20 @@
 #include<iostream>
 #include<math.h>
 
+enum EnemyType {
+  kamikaze,
+  wavey,
+  druidic,
+  headless
+};
+
 struct EnemyStruct {
   float health;
   sf::Sprite enemy;
   sf::Text text00;
+  EnemyType type;
 };
+
 
 class Enemy {
   private:
