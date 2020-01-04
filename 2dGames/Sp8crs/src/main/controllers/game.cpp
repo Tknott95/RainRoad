@@ -18,7 +18,6 @@ void Game::init() {
   this->_text00.setPosition((screenWidth/2)*0.25, screenHeight/2 - 200);
   this->_text00.setFillColor(sf::Color(140, 40, 40, 210));
 
-
   this->_text01.setFont(this->_font00);
   this->_text01.setString("PLAY AGAIN?");
   this->_text01.setCharacterSize(100);
@@ -85,10 +84,19 @@ void Game::eventPolling() {
           break;
         }
         if (this->_event.key.code == sf::Keyboard::Space){
-          cout << "Space PRESSED" << endl;
+          cout << "\n Space PRESSED \n" << endl;
           // this->_bullet->fire(this->_player->_sprite.getPosition());
           this->firing = true;
           break;
+        }
+        break;
+      case sf::Event::MouseButtonPressed: /* @TODO refactor this as it is sloppy, maybe remove this case for one similar to while() statement */
+        /* @TODO checkCollision with text01 for playAgain. Maybe inside external class for modularity to pull in. */
+        cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl;
+        if(this->isGameOver() && this->_text01.getGlobalBounds().contains(this->_mousePos.x, this->_mousePos.y)) {
+          //while(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
+          this->_text01.setFillColor(sf::Color(40, 40, 140, 230));
+          //}
         }
         break;
     }
@@ -139,6 +147,17 @@ void Game::fixedUpdate() {
       cout << "\n  PLAYER DEAD \n" << endl;
     }
   }
+
+  /* AFTER GAME TEXT onHOVER() */
+  /* @TODO refactor this hack of onHOVER() */
+  if(this->isGameOver() && this->_text01.getGlobalBounds().contains(this->_mousePos.x, this->_mousePos.y)) {
+    //while(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
+    this->_text01.setFillColor(sf::Color(40, 40, 140, 180));
+    //}
+  } else {
+    this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
+  }
+  /* END AFTER GAME TEXT onHOVER() END */
 
   /* @TODO use this w/ iterator for dynamic del? or use other way which is working perfectly */
   // for(auto &b : this->_bullet->_bullets) { 
