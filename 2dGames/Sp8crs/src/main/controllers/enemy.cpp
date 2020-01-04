@@ -5,8 +5,16 @@
 
 void Enemy::init() {
   if(!this->_texture.loadFromFile("utils/img/enemy/e1.png")) {
-    std::cout << "ERROR: Could not load player texture file." << "\n";
+    std::cout << "ERROR: Could not load enemy texture file." << "\n";
   }
+
+  if (!this->_font00.loadFromFile("utils/fonts/font01.ttf")) {
+    std::cout << "ERROR: Could not load enemy font file." << "\n";
+  }
+
+  this->_text00.setFont(this->_font00);
+
+
   this->_sprite.setTexture(this->_texture);
   this->_sprite.scale(1.4f, 1.4f);
 }
@@ -43,9 +51,9 @@ sf::Vector2f Enemy::normalize(const sf::Vector2f& j) {
 }
 
 const bool Enemy::isDead() {
-  if(this->currHealth <= 0.f) {
-    return true;
-  }
+  // if(this->currHealth <= 0.f) {
+  //   return true;
+  // }
 
   return false;
 }
@@ -67,5 +75,11 @@ const sf::Vector2f & Enemy::getPos() const {
 void Enemy::render(sf::RenderTarget& target) {
   for(auto &_e : this->_enemies) {
     target.draw(_e);
+
+    this->_text00.setString("100.0");
+    this->_text00.setCharacterSize(30);
+    this->_text00.setPosition( _e.getPosition().x, _e.getPosition().y - 30.f);
+    this->_text00.setFillColor(sf::Color(140, 40, 40, 210));
+    target.draw(this->_text00);
   }
 }

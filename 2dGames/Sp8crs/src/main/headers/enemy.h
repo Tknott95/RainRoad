@@ -8,8 +8,10 @@
 class Enemy {
   private:
     sf::Texture _texture;
-    float currHealth = 100.f;
-    float maxHealth = 100.f;
+    sf::Text _text00;
+    sf::Font _font00;
+    // float currHealth = 100.f; /* will add to vec
+    // float maxHealth = 100.f;
     float movementSpeed = 2.f;
     float bulletSpeed = 8.f;
 
@@ -20,7 +22,7 @@ class Enemy {
     const bool isDead();
 
   public:
-    std::vector<sf::Sprite> _enemies;
+    std::vector<sf::Sprite> _enemies; /* health, _enemySprite */
     sf::Sprite _sprite;
     Enemy();
 	  virtual ~Enemy();

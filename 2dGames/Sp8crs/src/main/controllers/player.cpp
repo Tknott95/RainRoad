@@ -6,7 +6,7 @@ void Player::init() {
   if(!this->_texture.loadFromFile("utils/img/player/medfighter.png")) {
     std::cout << "ERROR: Could not load player texture file." << "\n";
   }
-  if (!this->font.loadFromFile("utils/fonts/Orbitron-Bold.ttf"))
+  if (!this->font.loadFromFile("utils/fonts/font01.ttf"))
   {
     std::cout << "ERROR: Could not load player font file." << "\n";
   }
