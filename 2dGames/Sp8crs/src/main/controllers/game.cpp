@@ -19,6 +19,13 @@ void Game::init() {
   this->_text00.setFillColor(sf::Color(140, 40, 40, 210));
 
 
+  this->_text01.setFont(this->_font00);
+  this->_text01.setString("PLAY AGAIN?");
+  this->_text01.setCharacterSize(100);
+  this->_text01.setPosition((screenWidth/2)*0.40, screenHeight/2);
+  this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
+
+
   this->_player = new Player();
   this->_enemy = new Enemy();
   this->_bullet = new Bullet();
@@ -190,7 +197,9 @@ void Game::render() {
   this->_bullet->render(*this->_window);
 
   if(this->isGameOver()) {
+    this->_window->clear(sf::Color::White);
     this->_window->draw(this->_text00);
+    this->_window->draw(this->_text01);
   }
   /* DRAW HERE */
 

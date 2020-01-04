@@ -28,7 +28,9 @@ class Game {
 
     sf::Sprite _bgSprite;
     sf::Font _font00;
+    /* @TODO maybe use vector/array logic 4 readability */
     sf::Text _text00; /* GAME OVER */
+    sf::Text _text01; /* PLAY AGAIN */
 
     sf::Event _event;
     sf::Vector2i _mousePos;
