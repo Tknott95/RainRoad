@@ -8,6 +8,17 @@ void Game::init() {
   this->_window->setFramerateLimit(88);
   this->_clock.restart();
 
+  if (!this->_font00.loadFromFile("utils/fonts/font00.ttf")) {
+    std::cout << "ERROR: Could not load player font file." << "\n";
+  }
+
+  this->_text00.setFont(this->_font00);
+  this->_text00.setString("GAME OVER");
+  this->_text00.setCharacterSize(130);
+  this->_text00.setPosition((screenWidth/2)*0.25, screenHeight/2 - 200);
+  this->_text00.setFillColor(sf::Color(140, 40, 40, 210));
+
+
   this->_player = new Player();
   this->_enemy = new Enemy();
   this->_bullet = new Bullet();
@@ -177,6 +188,10 @@ void Game::render() {
   this->_player->render(*this->_window);
   this->_enemy->render(*this->_window);
   this->_bullet->render(*this->_window);
+
+  if(this->isGameOver()) {
+    this->_window->draw(this->_text00);
+  }
   /* DRAW HERE */
 
   this->_window->display();

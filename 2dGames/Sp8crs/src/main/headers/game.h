@@ -27,6 +27,8 @@ class Game {
     float _secondsPassed;
 
     sf::Sprite _bgSprite;
+    sf::Font _font00;
+    sf::Text _text00; /* GAME OVER */
 
     sf::Event _event;
     sf::Vector2i _mousePos;
