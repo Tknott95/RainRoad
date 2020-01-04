@@ -140,13 +140,18 @@ void Game::fixedUpdate() {
   this->eventPolling();
   this->setMousePos();
 
-  if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_sprite.getGlobalBounds())){
-    cout << "COLLIDED" << endl;
-    this->_player->takeDmg(0.93);
-    if(this->_player->curHealth <= 0) {
-      cout << "\n  PLAYER DEAD \n" << endl;
+  for(int k=0; k < this->_enemy->_enemies.size(); k++) {
+    this->_enemy->moveToPlayer(k, this->_player->getPos(), 0.64f);
+
+    if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_enemies[k].getGlobalBounds())){
+      cout << "COLLIDED" << endl;
+      this->_player->takeDmg(0.93);
+      if(this->_player->curHealth <= 0) {
+        cout << "\n  PLAYER DEAD \n" << endl;
+      }
     }
   }
+
 
   /* AFTER GAME TEXT onHOVER() */
   /* @TODO refactor this hack of onHOVER() */
@@ -183,10 +188,6 @@ void Game::update() {
   this->_player->update();
   if(!this->DEBUG == true) {
     cout << "\n   _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
-  }
-
-  for(int k=0; k < this->_enemy->_enemies.size(); k++) {
-    this->_enemy->moveToPlayer(k, this->_player->getPos(), 0.64f);
   }
 
   if(!this->DEBUG) { cout << " \n   playerPos(" << this->_player->getPos().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl; };
