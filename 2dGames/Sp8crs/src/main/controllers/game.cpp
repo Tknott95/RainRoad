@@ -220,6 +220,8 @@ void Game::render() {
     this->_window->draw(this->_text01);
 
     if(restartGame) {
+      this->_window->clear(sf::Color::Black);
+      this->setBackground();
       this->_player->render(*this->_window);
       this->_enemy->render(*this->_window);
       this->_bullet->render(*this->_window);
