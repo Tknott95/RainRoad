@@ -8,7 +8,7 @@ void Game::init() {
     this->_isFirstRun = false;
     this->_window = new sf::RenderWindow(this->_videoMode, "Tks Flatland", sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize);
   }
-  this->_window->setFramerateLimit(28);
+  this->_window->setFramerateLimit(55);
 
   this->_clock.restart();
   this->_timeElapsed = this->_clock.getElapsedTime();
