@@ -65,7 +65,7 @@ void Game::setMousePos() {
   this->_mousePos = sf::Mouse::getPosition(*this->_window);
   this->_mouseCoords = this->_window->mapPixelToCoords(this->_mousePos);
   /* call *this->_window inside getPosition() for relative pos to _window */
-  if(this->DEBUG == true) {
+  if(this->DEBUG) {
     cout << "COORDS MOUSE POS: " << this->_mouseCoords.x << " " << this->_mouseCoords.y << "\n";
     cout << "MOUSE POS: " << this->_mousePos.x << " " << this->_mousePos.y << "\n";
   }
@@ -79,12 +79,12 @@ void Game::eventPolling() {
         break;
       case sf::Event::KeyPressed:
         if(this->_event.key.code == sf::Keyboard::Escape){
-          cout << "\n CLOSING WINDOW \n" << endl;
+          if(this->DEBUG) { cout << "\n CLOSING WINDOW \n" << endl; };
           this->_window->close();
           break;
         }
         if (this->_event.key.code == sf::Keyboard::Space){
-          cout << "\n Space PRESSED \n" << endl;
+          if(this->DEBUG) { cout << "\n Space PRESSED \n" << endl; };
           // this->_bullet->fire(this->_player->_sprite.getPosition());
           this->firing = true;
           break;
@@ -92,11 +92,11 @@ void Game::eventPolling() {
         break;
       case sf::Event::MouseButtonPressed: /* @TODO refactor this as it is sloppy, maybe remove this case for one similar to while() statement */
         /* @TODO checkCollision with text01 for playAgain. Maybe inside external class for modularity to pull in. */
-        cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl;
-        if(this->isGameOver() && this->_text01.getGlobalBounds().contains(this->_mousePos.x, this->_mousePos.y)) {
-          //while(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
-          this->_text01.setFillColor(sf::Color(40, 40, 140, 230));
-          //}
+        if(this->_event.MouseLeft) {
+          if(this->DEBUG) { cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl; };
+          if(this->isGameOver() && this->_text01.getGlobalBounds().contains(this->_mousePos.x, this->_mousePos.y)) {
+            this->_text01.setFillColor(sf::Color(40, 40, 140, 230));
+          }
         }
         break;
     }
@@ -112,7 +112,7 @@ void Game::eventPolling() {
     
     // cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
     if(playerRotation > leftClamp - 1 || playerRotation < rightClamp) {
-      // cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
+      if(this->DEBUG) { cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl; };
       this->_player->_sprite.setRotation(this->_player->_sprite.getRotation() + 0.1f); /* needs clamp and lerp to orig on keyUP @TODO */
     }
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
@@ -120,7 +120,7 @@ void Game::eventPolling() {
       this->_player->move(-this->playerSpeed, 0.0);
     }
     if(playerRotation < rightClamp + 1 || playerRotation > leftClamp) {
-      // cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
+      if(this->DEBUG) { cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl; };
       this->_player->_sprite.setRotation(this->_player->_sprite.getRotation() - 0.1f); /* needs clamp and lerp to orig on keyUP @TODO */
     }
   }
@@ -186,12 +186,11 @@ void Game::fixedUpdate() {
 void Game::update() {
   this->_timeElapsed = this->_clock.getElapsedTime();
   this->_player->update();
-  // this->_bullet->fire(this->_player->_sprite.getPosition(), this->_player->_sprite.getGlobalBounds().width/2);
-  if(this->DEBUG == true) {
-    cout << "\n    _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
+  if(!this->DEBUG == true) {
+    cout << "\n   _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
   }
 
-  cout << " \n   playerPos(" << this->_player->getPos().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl;
+  if(!this->DEBUG) { cout << " \n   playerPos(" << this->_player->getPos().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl; };
   if(firing  && this->_timeElapsed.asSeconds() > 0.1f) {
     this->_bullet->fire(this->_player->getPos(), this->_player->_sprite.getGlobalBounds().width/2);
     firing = false;
@@ -203,7 +202,7 @@ void Game::update() {
 
   float boundsWidth = this->_player->_sprite.getGlobalBounds().width;
   float boundsHeight = this->_player->_sprite.getGlobalBounds().height;
-  cout << boundsWidth << " - boundsWidth \n" << boundsHeight << " - boundsHeight \n" << endl;
+  if(this->DEBUG) { cout << boundsWidth << " - boundsWidth \n" << boundsHeight << " - boundsHeight \n" << endl; };
 }
 
 void Game::render() {
