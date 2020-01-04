@@ -50,12 +50,12 @@ void Game::init() {
   this->_text02.setOutlineThickness(2.f);
 
   this->_text03.setFont(this->_font00);
-  this->_text03.setString("LEVEL COMPLETE"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
-  this->_text03.setCharacterSize(80);
-  this->_text03.setPosition((screenWidth/2)*0.30, screenHeight/2 - 200);
+  this->_text03.setString("LEVEL FINISHED"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
+  this->_text03.setCharacterSize(90);
+  this->_text03.setPosition((screenWidth/2)*0.40, screenHeight/2 - 100);
   this->_text03.setFillColor(sf::Color(178,250,245,130));
-  this->_text03.setOutlineColor(sf::Color::Black);
-  this->_text03.setOutlineThickness(1.2f);
+  this->_text03.setOutlineColor(sf::Color(0, 0, 0, 100));
+  this->_text03.setOutlineThickness(10.2f);
 
   this->_text00.setFont(this->_font00);
   this->_text00.setString("GAME OVER");
@@ -266,9 +266,7 @@ void Game::update() {
 
   this->_bullet->move(3.3f);
 
-  float boundsWidth = this->_player->_sprite.getGlobalBounds().width;
-  float boundsHeight = this->_player->_sprite.getGlobalBounds().height;
-  if(this->DEBUG) { cout << boundsWidth << " - boundsWidth \n" << boundsHeight << " - boundsHeight \n" << endl; };
+  if(this->DEBUG) { cout << this->_player->_sprite.getGlobalBounds().width << " - boundsWidth \n" << this->_player->_sprite.getGlobalBounds().height << " - boundsHeight \n" << endl; };
 }
 
 void Game::render() {

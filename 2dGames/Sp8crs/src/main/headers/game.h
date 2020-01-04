@@ -2,8 +2,6 @@
 #include <iostream>
 #include <ctime>
 
-
-
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
@@ -15,6 +13,13 @@
 #include "../controllers/collision.cpp"
 
 using namespace std;
+
+struct GameEnum {
+  int currLvl;
+  float currScore;
+  int currEnemies;
+  /* currAmmo @TODO */
+};
 
 class Game {
   const int screenWidth = 1280;
