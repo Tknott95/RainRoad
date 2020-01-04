@@ -83,13 +83,16 @@ void Enemy::update() {
     }
 
     /* @TODO refactor this as the text for enemy may need to be inside the vector for external calls on update */
-    // if(this->_enemies[_j].first < 67.f) {
-    //   this->_text00.setFillColor(sf::Color(60, 140, 40, 130));
-    // } else if(this->_enemies[_j].first < 33.f) {
-    //   this->_text00.setFillColor(sf::Color(140, 60, 40, 120));
-    // } else if(this->_enemies[_j].first < 10.f) {
-    //   this->_text00.setFillColor(sf::Color(240, 40, 40, 110));
-    // }
+    if(this->_enemies[_j].health < 67.f) {
+      this->_enemies[_j].text00.setFillColor(sf::Color(60, 140, 40, 130));
+    } else if(this->_enemies[_j].health < 33.f) {
+      this->_enemies[_j].text00.setFillColor(sf::Color(140, 60, 40, 120));
+      this->_enemies[_j].text00.setString("BIRD IS THE WORD");
+
+    } else if(this->_enemies[_j].health < 10.f) {
+      this->_enemies[_j].text00.setFillColor(sf::Color(240, 40, 40, 110));
+      /* @TODO why won't this work? Dynamic fill color? I have a struct? it should? or should it baha bja habjabkj */ 
+    }
   }
 }
 
@@ -101,11 +104,11 @@ void Enemy::render(sf::RenderTarget& target) {
   for(auto &_e : this->_enemies) {
     target.draw(_e.enemy);
 
-    this->_text00.setString(std::to_string(_e.health).substr(0, 5));
-    this->_text00.setCharacterSize(30);
-    this->_text00.setPosition(_e.enemy.getPosition().x, _e.enemy.getPosition().y - 30.f);
-    this->_text00.setFillColor(sf::Color(40, 240, 40, 150));
+    _e.text00.setString(std::to_string(_e.health).substr(0, 5));
+    _e.text00.setCharacterSize(22);
+    _e.text00.setPosition(_e.enemy.getPosition().x, _e.enemy.getPosition().y - 30.f);
+    _e.text00.setFillColor(sf::Color(240, 240, 240, 180));
 
-    target.draw(this->_text00);
+    target.draw(_e.text00);
   }
 }
