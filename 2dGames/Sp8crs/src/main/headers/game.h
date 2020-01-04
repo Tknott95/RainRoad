@@ -24,6 +24,8 @@ class Game {
     sf::VideoMode _videoMode;
     sf::Clock _clock;
     sf::Time _timeElapsed;
+    sf::Clock _trueClock;
+    sf::Time _trueElapsedTime;
     float _secondsPassed;
     float firingDelay = 0.2f;
     bool _isFirstRun = true;
@@ -38,6 +40,8 @@ class Game {
     sf::Text _text00; /* GAME OVER */
     sf::Text _text01; /* PLAY AGAIN */
     sf::Text _text02; /* LEVEL <#> - BEGIN IN <3... 2... 1...> @TODO */
+    sf::Text _text03; /* LEVEL 1 COMPLETE */
+    sf::Text _text04; /* GO TO NEXT LEVEL? */
 
     sf::Event _event;
     sf::Vector2i _mousePos;

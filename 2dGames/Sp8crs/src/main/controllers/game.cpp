@@ -11,7 +11,9 @@ void Game::init() {
   this->_window->setFramerateLimit(55);
 
   this->_clock.restart();
+  this->_trueClock.restart();
   this->_timeElapsed = this->_clock.getElapsedTime();
+  this->_trueElapsedTime = this->_trueClock.getElapsedTime();
 
   if (!this->_bgMusic.openFromFile("utils/audio/space_music.wav")) {
     std::cout << "ERROR: Could not load game - space_music.wav music file." << "\n";
@@ -46,6 +48,14 @@ void Game::init() {
   this->_text02.setFillColor(sf::Color(178,250,245,100));
   this->_text02.setOutlineColor(sf::Color::Black);
   this->_text02.setOutlineThickness(2.f);
+
+  this->_text03.setFont(this->_font00);
+  this->_text03.setString("LEVEL COMPLETE"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
+  this->_text03.setCharacterSize(80);
+  this->_text03.setPosition((screenWidth/2)*0.30, screenHeight/2 - 200);
+  this->_text03.setFillColor(sf::Color(178,250,245,130));
+  this->_text03.setOutlineColor(sf::Color::Black);
+  this->_text03.setOutlineThickness(1.2f);
 
   this->_text00.setFont(this->_font00);
   this->_text00.setString("GAME OVER");
@@ -232,6 +242,7 @@ void Game::fixedUpdate() {
 
 void Game::update() {
   this->_timeElapsed = this->_clock.getElapsedTime();
+  this->_trueElapsedTime = this->_trueClock.getElapsedTime();
   this->_player->update();
   this->_enemy->update();
   if(!this->DEBUG == true) {
@@ -241,9 +252,9 @@ void Game::update() {
   int _counter = 0;
   _counter++; 
   if(this->_timeElapsed.asSeconds() > this->firingDelay) {
-    this->_bgCloudsSprite.move(.001f, -0.0000001f);
+    this->_bgCloudsSprite.move(.01f, -0.00001f);
   } else if (_counter % 3 == 0) {
-    this->_bgCloudsSprite.move(-.001f, 0.0000001f);
+    this->_bgCloudsSprite.move(-.01f, 0.00001f);
   }
 
   if(!this->DEBUG) { cout << " \n   playerPos(" << this->_player->getPos().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl; };
@@ -264,7 +275,8 @@ void Game::render() {
   this->_window->clear(sf::Color::Black);
   this->setBackground();
 
-  if(introFinished) {
+
+  if(this->introFinished) {
     /* DRAW HERE */
     this->_player->render(*this->_window);
     this->_enemy->render(*this->_window);
@@ -272,6 +284,11 @@ void Game::render() {
   } else {
     /* for 3 secs */
     this->_window->draw(this->_text02);
+    if(this->_trueElapsedTime.asSeconds() > 2.0f) {this->introFinished = true;}
+  }
+
+  if(this->_enemy->_enemies.size() <= 0) {
+    this->_window->draw(this->_text03);
   }
   
 
