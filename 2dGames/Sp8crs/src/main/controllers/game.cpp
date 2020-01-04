@@ -39,6 +39,14 @@ void Game::init() {
  
   this->_bgMusic.play();
 
+  this->_text02.setFont(this->_font00);
+  this->_text02.setString("LEVEL 1"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
+  this->_text02.setCharacterSize(180);
+  this->_text02.setPosition((screenWidth/2)*0.40, screenHeight/2 - 200);
+  this->_text02.setFillColor(sf::Color(178,250,245,100));
+  this->_text02.setOutlineColor(sf::Color::Black);
+  this->_text02.setOutlineThickness(2.f);
+
   this->_text00.setFont(this->_font00);
   this->_text00.setString("GAME OVER");
   this->_text00.setCharacterSize(130);
@@ -174,7 +182,7 @@ void Game::fixedUpdate() {
   this->setMousePos();
 
   for(int k=0; k < this->_enemy->_enemies.size(); k++) {
-    this->_enemy->moveToPlayer(k, this->_player->getPos(), 0.64f);
+    this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.44f);
 
     if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_enemies[k].enemy.getGlobalBounds())){
       cout << "COLLIDED" << endl;
@@ -255,11 +263,17 @@ void Game::update() {
 void Game::render() {
   this->_window->clear(sf::Color::Black);
   this->setBackground();
+
+  if(introFinished) {
+    /* DRAW HERE */
+    this->_player->render(*this->_window);
+    this->_enemy->render(*this->_window);
+    this->_bullet->render(*this->_window);
+  } else {
+    /* for 3 secs */
+    this->_window->draw(this->_text02);
+  }
   
-  /* DRAW HERE */
-  this->_player->render(*this->_window);
-  this->_enemy->render(*this->_window);
-  this->_bullet->render(*this->_window);
 
   if(this->isGameOver()) {
     this->_clock.restart();

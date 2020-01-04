@@ -37,6 +37,7 @@ class Game {
     /* @TODO maybe use vector/array logic 4 readability */
     sf::Text _text00; /* GAME OVER */
     sf::Text _text01; /* PLAY AGAIN */
+    sf::Text _text02; /* LEVEL <#> - BEGIN IN <3... 2... 1...> @TODO */
 
     sf::Event _event;
     sf::Vector2i _mousePos;
@@ -51,6 +52,7 @@ class Game {
 
     bool firing = false;
     bool restartGame = false;
+    bool introFinished = false;
     const bool DEBUG = false;
     
     void init();

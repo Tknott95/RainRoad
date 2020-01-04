@@ -13,7 +13,7 @@ class Player {
     // sf::Clock clock;
     sf::Time elapsedTime;
 
-    float movementSpeed = 2.f;
+    float movementSpeed = 4.f;
 	  float attackWait;
     float bulletSpeed = 8.f;
 
