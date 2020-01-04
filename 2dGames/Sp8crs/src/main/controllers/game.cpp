@@ -60,7 +60,7 @@ const bool Game::isOpen() const {
 
 void Game::setBackground() {
   sf::Texture bgTexture;
-  bgTexture.loadFromFile("./utils/img/background.jpg");
+  bgTexture.loadFromFile("./utils/img/sines.png");
   sf::Vector2u size = bgTexture.getSize();
   this->_bgSprite.setTexture(bgTexture);
   this->_window->draw(this->_bgSprite);
@@ -152,9 +152,6 @@ void Game::fixedUpdate() {
     if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_enemies[k].enemy.getGlobalBounds())){
       cout << "COLLIDED" << endl;
       this->_player->takeDmg(0.93);
-      if(this->_player->curHealth <= 0) {
-        cout << "\n  PLAYER DEAD \n" << endl;
-      }
     }
   }
 
@@ -170,6 +167,14 @@ void Game::fixedUpdate() {
   }
   /* END AFTER GAME TEXT onHOVER() END */
 
+  for(int _i=0; _i < this->_enemy->_enemies.size(); _i++) {
+    if(this->_enemy->_enemies[_i].health <= 0.f) {
+      this->_enemy->delEnemy(_i);
+      this->_player->score += 33.3f;
+
+    }
+  }
+
   for(int k=0;k < this->_bullet->_bullets.size(); k++) {
     if(DEBUG == true) {
       cout << "\n  bullPosY(" << this->_bullet->_bullets[k].getPosition().y << ")  \n" << endl;
@@ -181,6 +186,7 @@ void Game::fixedUpdate() {
        cout << "\n ENEMY HIT BY BULLET \n" << endl;
        this->_enemy->takeDmg(j, 33.3);
        this->_bullet->erase(k);
+       this->_player->score += 5.5f;
       }
     }
 

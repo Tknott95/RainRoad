@@ -15,16 +15,17 @@ class Player {
 
     float movementSpeed = 2.f;
 	  float attackWait;
-
     float bulletSpeed = 8.f;
 
     void init();
 
   public:
     sf::Sprite _sprite;
-    sf::Font font;
-    sf::Text text;
+    sf::Font font00;
+    sf::Text text00; /* playerHealth text */
+    sf::Text text01; /* timeElapsed text */
     float curHealth = 100.f; /* REFACTOR TO PRIVATE W/ PUB CLASS  @TODO */
+    float score = 0.f;
     // float globalBounds; /*this->_player->_sprite.getGlobalBounds() */
     Player();
 	  virtual ~Player();

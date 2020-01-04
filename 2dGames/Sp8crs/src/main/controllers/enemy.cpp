@@ -37,8 +37,9 @@ Enemy::Enemy() {
   this->init();
   this->spawn(sf::Vector2f(600.f, 200.f));
   this->spawn(sf::Vector2f(1000.f, 200.f));
-  this->spawn(sf::Vector2f(000.f, 200.f));
+  this->spawn(sf::Vector2f(333.f, 100.f));
   this->spawn(sf::Vector2f(100.f, 000.f));
+  this->spawn(sf::Vector2f(555.f, 500.f));
 } /* @TODO MAKE GET POS() FUNCTION */
 
 Enemy::~Enemy() {
@@ -62,9 +63,9 @@ const bool Enemy::isDead() {
   return false;
 }
 
- void Enemy::delEnemy(int eId) {
-   this->_enemies.erase(this->_enemies.begin() + eId);
- }
+void Enemy::delEnemy(int eId) {
+  this->_enemies.erase(this->_enemies.begin() + eId);
+}
 
 void Enemy::takeDmg(int eId, float dmg) {
   this->_enemies[eId].health -= dmg;
@@ -78,9 +79,9 @@ void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) 
 
 void Enemy::update() {
   for(int _j=0;_j < this->_enemies.size();_j++) {
-    if(this->_enemies[_j].health <= 0.f) {
-      this->delEnemy(_j);
-    }
+    // if(this->_enemies[_j].health <= 0.f) {
+    //   this->delEnemy(_j);
+    // }
 
     /* @TODO refactor this as the text for enemy may need to be inside the vector for external calls on update */
     if(this->_enemies[_j].health < 67.f) {
