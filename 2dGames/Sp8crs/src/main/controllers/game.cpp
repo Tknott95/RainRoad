@@ -14,23 +14,29 @@ void Game::init() {
   this->_timeElapsed = this->_clock.getElapsedTime();
 
   if (!this->_bgMusic.openFromFile("utils/audio/space_music.wav")) {
-    std::cout << "ERROR: Could not load game space_music.wav music file." << "\n";
+    std::cout << "ERROR: Could not load game - space_music.wav music file." << "\n";
   }
   if (!this->_audio00.openFromFile("utils/audio/laser03.ogg")) {
-    std::cout << "ERROR: Could not load game laser03.ogg audio file." << "\n";
+    std::cout << "ERROR: Could not load game - laser03.ogg audio file." << "\n";
+  }
+
+  if(!this->_audio01.openFromFile("utils/audio/doomed_music.wav")) {
+    std::cout << "ERROR: Could not load game - doomed_music.wav audio file." << "\n";
   }
 
   if (!this->_font00.loadFromFile("utils/fonts/font00.ttf")) {
-    std::cout << "ERROR: Could not load game font00.ttf file." << "\n";
+    std::cout << "ERROR: Could not load game - font00.ttf file." << "\n";
   }
 
   this->_bgMusic.setPosition(0, 1, 10); // change its 3D position
   //this->_bgMusic.setPitch(2);
-  this->_bgMusic.setVolume(5);
+  this->_bgMusic.setVolume(12);
   this->_bgMusic.setLoop(true);
   this->_audio00.setPosition(0, 1, 4);
-  this->_audio00.setVolume(2);
-
+  this->_audio00.setVolume(15);
+  this->_audio01.setPosition(0, 1, 2);
+  this->_audio01.setVolume(20);
+ 
   this->_bgMusic.play();
 
   this->_text00.setFont(this->_font00);
@@ -76,7 +82,7 @@ const bool Game::isOpen() const {
 
 void Game::setBackground() {
   sf::Texture bgTexture;
-  bgTexture.loadFromFile("./utils/img/sines.png");
+  bgTexture.loadFromFile("./utils/img/background.jpg");
   sf::Vector2u size = bgTexture.getSize();
   this->_bgSprite.setTexture(bgTexture);
   this->_window->draw(this->_bgSprite);
@@ -176,9 +182,8 @@ void Game::fixedUpdate() {
   /* AFTER GAME TEXT onHOVER() */
   /* @TODO refactor this hack of onHOVER() */
   if(this->isGameOver() && this->_text01.getGlobalBounds().contains(this->_mousePos.x, this->_mousePos.y)) {
-    //while(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
     this->_text01.setFillColor(sf::Color(40, 40, 140, 180));
-    //}
+    this->_audio01.play();
   } else {
     this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
   }
@@ -214,6 +219,7 @@ void Game::fixedUpdate() {
 }
 
 void Game::update() {
+  
   this->_timeElapsed = this->_clock.getElapsedTime();
   this->_player->update();
   this->_enemy->update();
@@ -246,6 +252,8 @@ void Game::render() {
 
   if(this->isGameOver()) {
     this->_clock.restart();
+    this->_bgMusic.stop();
+
     this->_window->clear(sf::Color::White);
     this->_window->draw(this->_text00);
     this->_window->draw(this->_text01);

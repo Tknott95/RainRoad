@@ -39,7 +39,7 @@ Enemy::Enemy() {
   this->spawn(sf::Vector2f(1000.f, 200.f));
   this->spawn(sf::Vector2f(333.f, 100.f));
   this->spawn(sf::Vector2f(100.f, 000.f));
-  this->spawn(sf::Vector2f(555.f, 500.f));
+  this->spawn(sf::Vector2f(555.f, 300.f));
 } /* @TODO MAKE GET POS() FUNCTION */
 
 Enemy::~Enemy() {
