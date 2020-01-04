@@ -29,6 +29,7 @@ class Game {
     bool _isFirstRun = true;
 
     sf::Sprite _bgSprite;
+    sf::Music _bgMusic;
     sf::Font _font00;
     /* @TODO maybe use vector/array logic 4 readability */
     sf::Text _text00; /* GAME OVER */

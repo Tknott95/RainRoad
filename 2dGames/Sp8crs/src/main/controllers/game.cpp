@@ -13,9 +13,20 @@ void Game::init() {
   this->_clock.restart();
   this->_timeElapsed = this->_clock.getElapsedTime();
 
-  if (!this->_font00.loadFromFile("utils/fonts/font00.ttf")) {
-    std::cout << "ERROR: Could not load player font file." << "\n";
+  if (!this->_bgMusic.openFromFile("utils/audio/space_music.wav")) {
+    std::cout << "ERROR: Could not load game space_music.wav music file." << "\n";
   }
+
+  if (!this->_font00.loadFromFile("utils/fonts/font00.ttf")) {
+    std::cout << "ERROR: Could not load game font00.ttf file." << "\n";
+  }
+
+  this->_bgMusic.setPosition(0, 1, 10); // change its 3D position
+  //this->_bgMusic.setPitch(2);
+  this->_bgMusic.setVolume(30);
+  this->_bgMusic.setLoop(true);
+
+  this->_bgMusic.play();
 
   this->_text00.setFont(this->_font00);
   this->_text00.setString("GAME OVER");
