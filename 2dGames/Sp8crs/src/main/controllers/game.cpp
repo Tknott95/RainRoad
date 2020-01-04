@@ -159,14 +159,6 @@ void Game::fixedUpdate() {
   }
   /* END AFTER GAME TEXT onHOVER() END */
 
-  /* @TODO use this w/ iterator for dynamic del? or use other way which is working perfectly */
-  // for(auto &b : this->_bullet->_bullets) { 
-  //   if(collision.checkCollision(this->_enemy->_sprite.getGlobalBounds(), b.getGlobalBounds())) {
-  //    cout << "\n ENEMY HIT BY BULLET \n" << endl;
-  //   }
-  // }
-
-
   for(int k=0;k < this->_bullet->_bullets.size(); k++) {
     if(DEBUG == true) {
       cout << "\n  bullPosY(" << this->_bullet->_bullets[k].getPosition().y << ")  \n" << endl;
@@ -175,6 +167,7 @@ void Game::fixedUpdate() {
 
     if(collision.checkCollision(this->_enemy->_sprite.getGlobalBounds(), this->_bullet->_bullets[k].getGlobalBounds())) {
      cout << "\n ENEMY HIT BY BULLET \n" << endl;
+     this->_bullet->erase(k);
     }
 
     if(this->_bullet->_bullets[k].getPosition().y <= 100) {
