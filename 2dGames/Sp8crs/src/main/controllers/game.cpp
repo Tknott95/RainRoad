@@ -16,6 +16,9 @@ void Game::init() {
   if (!this->_bgMusic.openFromFile("utils/audio/space_music.wav")) {
     std::cout << "ERROR: Could not load game space_music.wav music file." << "\n";
   }
+  if (!this->_audio00.openFromFile("utils/audio/laser03.ogg")) {
+    std::cout << "ERROR: Could not load game laser03.ogg audio file." << "\n";
+  }
 
   if (!this->_font00.loadFromFile("utils/fonts/font00.ttf")) {
     std::cout << "ERROR: Could not load game font00.ttf file." << "\n";
@@ -23,8 +26,10 @@ void Game::init() {
 
   this->_bgMusic.setPosition(0, 1, 10); // change its 3D position
   //this->_bgMusic.setPitch(2);
-  this->_bgMusic.setVolume(30);
+  this->_bgMusic.setVolume(5);
   this->_bgMusic.setLoop(true);
+  this->_audio00.setPosition(0, 1, 4);
+  this->_audio00.setVolume(2);
 
   this->_bgMusic.play();
 
@@ -103,6 +108,7 @@ void Game::eventPolling() {
           if(this->DEBUG) { cout << "\n Space PRESSED \n" << endl; };
           // this->_bullet->fire(this->_player->_sprite.getPosition());
           this->firing = true;
+          this->_audio00.play();
           break;
         }
         break;

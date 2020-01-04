@@ -30,6 +30,7 @@ class Game {
 
     sf::Sprite _bgSprite;
     sf::Music _bgMusic;
+    sf::Music _audio00;
     sf::Font _font00;
     /* @TODO maybe use vector/array logic 4 readability */
     sf::Text _text00; /* GAME OVER */
