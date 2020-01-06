@@ -13,12 +13,14 @@ class Overlay {
     sf::Text _text02; /* LEVEL <#> - BEGIN IN <3... 2... 1...> @TODO */
     sf::Text _text03; /* LEVEL 1 COMPLETE */
     sf::Text _text04; /* GO TO NEXT LEVEL? */
-    void init(float, float);
+    
 
   public:
     Overlay();
     virtual ~Overlay();
 
-    void Update();
-    void Render(sf::RenderTarget& target, bool isGameOver);
+    void Init(float screenWidth, float screenHeight, int currLevel);
+    bool isMousePressedAndContains(sf::Vector2i mousePos);
+    void Update(bool isGameOver, sf::Vector2i mousePos);
+    void Render(sf::RenderTarget& target,bool introFinished, bool levelFinished, bool isGameOver);
 };

@@ -29,9 +29,9 @@ void Game::init() {
     std::cout << "ERROR: Could not load game - doomed_music.wav audio file." << "\n";
   }
 
-  if (!this->_font00.loadFromFile("utils/fonts/font00.ttf")) {
-    std::cout << "ERROR: Could not load game - font00.ttf file." << "\n";
-  }
+  // if (!this->_font00.loadFromFile("utils/fonts/font00.ttf")) {
+  //   std::cout << "ERROR: Could not load game - font00.ttf file." << "\n";
+  // }
 
   this->_bgMusic.setPosition(0, 1, 10); // change its 3D position
   //this->_bgMusic.setPitch(2);
@@ -44,45 +44,47 @@ void Game::init() {
  
   this->_bgMusic.play();
 
-  this->_text02.setFont(this->_font00);
-  this->_text02.setString("LEVEL " + to_string(this->_gameStruct.currLvl)); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
-  this->_text02.setCharacterSize(180);
-  this->_text02.setPosition((screenWidth/2)*0.40, screenHeight/2 - 200);
-  this->_text02.setFillColor(sf::Color(178,250,245,100));
-  this->_text02.setOutlineColor(sf::Color::Black);
-  this->_text02.setOutlineThickness(2.f);
+  // this->_text02.setFont(this->_font00);
+  // this->_text02.setString("LEVEL " + to_string(this->_gameStruct.currLvl)); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
+  // this->_text02.setCharacterSize(180);
+  // this->_text02.setPosition((screenWidth/2)*0.40, screenHeight/2 - 200);
+  // this->_text02.setFillColor(sf::Color(178,250,245,100));
+  // this->_text02.setOutlineColor(sf::Color::Black);
+  // this->_text02.setOutlineThickness(2.f);
 
-  this->_text03.setFont(this->_font00);
-  this->_text03.setString("LEVEL FINISHED"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
-  this->_text03.setCharacterSize(90);
-  this->_text03.setPosition((screenWidth/2)*0.40, screenHeight/2 - 100);
-  this->_text03.setFillColor(sf::Color(178,250,245,130));
-  this->_text03.setOutlineColor(sf::Color(0, 0, 0, 100));
-  this->_text03.setOutlineThickness(10.2f);
+  // this->_text03.setFont(this->_font00);
+  // this->_text03.setString("LEVEL FINISHED"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
+  // this->_text03.setCharacterSize(90);
+  // this->_text03.setPosition((screenWidth/2)*0.40, screenHeight/2 - 100);
+  // this->_text03.setFillColor(sf::Color(178,250,245,130));
+  // this->_text03.setOutlineColor(sf::Color(0, 0, 0, 100));
+  // this->_text03.setOutlineThickness(10.2f);
 
-  this->_text04.setFont(this->_font00);
-  this->_text04.setString("CONTINUE?"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
-  this->_text04.setCharacterSize(70);
-  this->_text04.setPosition((screenWidth/2)*0.50, screenHeight/2 + 50);
-  this->_text04.setFillColor(sf::Color(178, 200, 245, 120));
-  this->_text04.setOutlineThickness(10.2f);
+  // this->_text04.setFont(this->_font00);
+  // this->_text04.setString("CONTINUE?"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
+  // this->_text04.setCharacterSize(70);
+  // this->_text04.setPosition((screenWidth/2)*0.50, screenHeight/2 + 50);
+  // this->_text04.setFillColor(sf::Color(178, 200, 245, 120));
+  // this->_text04.setOutlineThickness(10.2f);
 
-  this->_text00.setFont(this->_font00);
-  this->_text00.setString("GAME OVER");
-  this->_text00.setCharacterSize(130);
-  this->_text00.setPosition((screenWidth/2)*0.25, screenHeight/2 - 200);
-  this->_text00.setFillColor(sf::Color(140, 40, 40, 210));
+  // this->_text00.setFont(this->_font00);
+  // this->_text00.setString("GAME OVER");
+  // this->_text00.setCharacterSize(130);
+  // this->_text00.setPosition((screenWidth/2)*0.25, screenHeight/2 - 200);
+  // this->_text00.setFillColor(sf::Color(140, 40, 40, 210));
 
-  this->_text01.setFont(this->_font00);
-  this->_text01.setString("PLAY AGAIN?");
-  this->_text01.setCharacterSize(100);
-  this->_text01.setPosition((screenWidth/2)*0.40, screenHeight/2);
-  this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
+  // this->_text01.setFont(this->_font00);
+  // this->_text01.setString("PLAY AGAIN?");
+  // this->_text01.setCharacterSize(100);
+  // this->_text01.setPosition((screenWidth/2)*0.40, screenHeight/2);
+  // this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
 
 
+  this->_overlay = new Overlay();
   this->_player = new Player();
   this->_enemy = new Enemy();
   this->_bullet = new Bullet();
+  this->_overlay->Init(this->screenWidth, this->screenHeight, this->_gameStruct.currLvl);
   this->_bullet->init(this->_player->getPos(), this->_player->_sprite.getGlobalBounds().width/2);
 }
 
@@ -154,17 +156,18 @@ void Game::eventPolling() {
         /* @TODO checkCollision with text01 for playAgain. Maybe inside external class for modularity to pull in. */
         if(this->_event.MouseLeft) {
           if(this->DEBUG) { cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl; };
-          if(this->isGameOver() && this->_text01.getGlobalBounds().contains(this->_mousePos.x, this->_mousePos.y)) {
-            this->_text01.setFillColor(sf::Color(40, 40, 140, 230));
+          if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos)) {
+            // @TODO fix this -> this->_text01.setFillColor(sf::Color(40, 40, 140, 230));
             this->restartGame = true;
           }
 
-          if(this->_text04.getGlobalBounds().contains(this->_mousePos.x, this->_mousePos.y)) {
+          if(this->_overlay->isMousePressedAndContains(this->_mousePos)) {
             this->_gameStruct.currLvl++;
 
             this->_window->clear(sf::Color::White);
-            this->_window->draw(this->_text00);
-            this->_window->draw(this->_text01);
+            // @TODO FIX BELOW
+            // @TODO FIX this->_window->draw(this->_text00);
+            // @TODO FIX this->_window->draw(this->_text01);
             delete this->_player; /* @TODO check if player exists instead of deleting him again to keep structs and such active w/ data */
             delete this->_enemy;
             delete this->_bullet;
@@ -219,6 +222,7 @@ void Game::eventPolling() {
 void Game::fixedUpdate() {
   this->eventPolling();
   this->setMousePos();
+  this->_overlay->Update(this->isGameOver(), this->_mousePos);
 
   for(int k=0; k < this->_enemy->_enemies.size(); k++) {
     this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.44f);
@@ -229,24 +233,6 @@ void Game::fixedUpdate() {
     }
   }
 
-
-  /* AFTER GAME TEXT onHOVER() */
-  /* @TODO refactor this hack of onHOVER() */
-  if(this->isGameOver() && this->_text01.getGlobalBounds().contains(this->_mousePos.x, this->_mousePos.y)) {
-    this->_text01.setFillColor(sf::Color(40, 40, 140, 180));
-    this->_audio01.play();
-  } else {
-    this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
-  }
-  /* END AFTER GAME TEXT onHOVER() END */
-
-  /* onHover() 2 needs refactor */
-  if(this->_text04.getGlobalBounds().contains(this->_mousePos.x, this->_mousePos.y)) {
-    this->_text04.setFillColor(sf::Color(178, 200, 255, 80));
-  } else {
-    this->_text04.setFillColor(sf::Color(178, 200, 245, 120));
-  }
-  /* end of onHOver() 2*/
 
   for(int _i=0; _i < this->_enemy->_enemies.size(); _i++) {
     if(this->_enemy->_enemies[_i].health <= 0.f) {
@@ -286,6 +272,10 @@ void Game::update() {
     cout << "\n   _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
   }
 
+  if(this->_enemy->_enemies.size() <= 0) {
+    this->_gameStruct.levelFinished = true;
+  }
+
   int _counter = 0;
   _counter++; 
   if(this->_timeElapsed.asSeconds() > this->firingDelay) {
@@ -309,6 +299,7 @@ void Game::update() {
 void Game::render() {
   this->_window->clear(sf::Color::Black);
   this->setBackground();
+  this->_overlay->Render(*this->_window,this->introFinished, this->_gameStruct.levelFinished, this->isGameOver());
 
 
   if(this->introFinished) {
@@ -318,24 +309,23 @@ void Game::render() {
     this->_bullet->render(*this->_window);
   } else {
     /* for 3 secs */
-    this->_window->draw(this->_text02);
     if(this->_trueElapsedTime.asSeconds() > 1.0f) {this->introFinished = true;}
   }
 
-  if(this->_enemy->_enemies.size() <= 0) {
-    this->_window->draw(this->_text03);
-    this->_window->draw(_text04);
-
-  }
+  // if(this->_enemy->_enemies.size() <= 0) {
+  //   this->_window->draw(this->_text03);
+  //   this->_window->draw(_text04);
+  // } 
+  /// @TODO if true make bool levelFinished = true
   
 
   if(this->isGameOver()) {
     this->_clock.restart();
     this->_bgMusic.stop();
 
-    this->_window->clear(sf::Color::White);
-    this->_window->draw(this->_text00);
-    this->_window->draw(this->_text01);
+    // this->_window->clear(sf::Color::White);
+    // this->_window->draw(this->_text00);
+    // this->_window->draw(this->_text01);
 
     if(restartGame) {
       delete this->_player;

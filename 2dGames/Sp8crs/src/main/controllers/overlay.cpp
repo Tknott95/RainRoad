@@ -1,12 +1,12 @@
-#include "./headers/overlay.h"
+#include "../headers/overlay.h"
 
-void Overlay::init(float screenWidth, float screenHeight) {
+void Overlay::Init(float screenWidth, float screenHeight, int currLevel) {
   if (!this->_font00.loadFromFile("utils/fonts/font00.ttf")) {
     cout << "ERROR: Could not load game - font00.ttf file." << "\n";
   }
 
   this->_text02.setFont(this->_font00);
-  this->_text02.setString("LEVEL " + to_string(this->_gameStruct.currLvl)); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
+  this->_text02.setString("LEVEL " + to_string(currLevel)); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
   this->_text02.setCharacterSize(180);
   this->_text02.setPosition((screenWidth/2)*0.40, screenHeight/2 - 200);
   this->_text02.setFillColor(sf::Color(178,250,245,100));
@@ -49,10 +49,47 @@ Overlay::~Overlay() {
 
 }
 
-void Overlay::Update() {
-
+bool Overlay::isMousePressedAndContains(sf::Vector2i mousePos) {
+  if(this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-void Overlay::Render(sf::RenderTarget& target, bool isGameOver) {
+void Overlay::Update(bool isGameOver, sf::Vector2i mousePos) {
+  /* AFTER GAME TEXT onHOVER() */
+  /* @TODO refactor this hack of onHOVER() */
+  if(isGameOver && this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+    this->_text01.setFillColor(sf::Color(40, 40, 140, 180));
+    // @TODO figure this out .. this->_audio01.play();
+  } else {
+    this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
+  }
+  /* END AFTER GAME TEXT onHOVER() END */
 
+  /* onHover() 2 needs refactor */
+  if(this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+    this->_text04.setFillColor(sf::Color(178, 200, 255, 80));
+  } else {
+    this->_text04.setFillColor(sf::Color(178, 200, 245, 120));
+  }
+  /* end of onHOver() 2*/
+}
+
+void Overlay::Render(sf::RenderTarget& target,bool introFinished, bool levelFinished, bool isGameOver) {
+  if(introFinished) { } else {
+    target.draw(this->_text02);
+  }
+
+  if(levelFinished) {
+    target.draw(this->_text03);
+    target.draw(_text04);
+  }
+
+  if(isGameOver) {
+    target.clear(sf::Color::White);
+    target.draw(this->_text00);
+    target.draw(this->_text01);
+  }
 }
