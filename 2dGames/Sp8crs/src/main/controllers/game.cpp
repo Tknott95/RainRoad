@@ -63,8 +63,8 @@ void Game::init() {
   this->_text04.setFont(this->_font00);
   this->_text04.setString("CONTINUE?"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
   this->_text04.setCharacterSize(70);
-  this->_text04.setPosition((screenWidth/2)*0.40, screenHeight/2 - 100);
-  this->_text04.setFillColor(sf::Color(178, 200, 245, 130));
+  this->_text04.setPosition((screenWidth/2)*0.50, screenHeight/2 + 50);
+  this->_text04.setFillColor(sf::Color(178, 200, 245, 120));
   this->_text04.setOutlineThickness(10.2f);
 
   this->_text00.setFont(this->_font00);
@@ -158,6 +158,25 @@ void Game::eventPolling() {
             this->_text01.setFillColor(sf::Color(40, 40, 140, 230));
             this->restartGame = true;
           }
+
+          if(this->_text04.getGlobalBounds().contains(this->_mousePos.x, this->_mousePos.y)) {
+            this->_gameStruct.currLvl++;
+
+            this->_window->clear(sf::Color::White);
+            this->_window->draw(this->_text00);
+            this->_window->draw(this->_text01);
+            delete this->_player; /* @TODO check if player exists instead of deleting him again to keep structs and such active w/ data */
+            delete this->_enemy;
+            delete this->_bullet;
+            this->init();
+            // @TODO REFACTOR
+            /* @TODO refactor Re-rendering on stages, death, etc */
+            this->_window->clear(sf::Color::Black);
+            this->setBackground();
+            this->_player->render(*this->_window);
+            this->_enemy->render(*this->_window);
+            this->_bullet->render(*this->_window);
+          }
         }
         break;
     }
@@ -220,6 +239,14 @@ void Game::fixedUpdate() {
     this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
   }
   /* END AFTER GAME TEXT onHOVER() END */
+
+  /* onHover() 2 needs refactor */
+  if(this->_text04.getGlobalBounds().contains(this->_mousePos.x, this->_mousePos.y)) {
+    this->_text04.setFillColor(sf::Color(178, 200, 255, 80));
+  } else {
+    this->_text04.setFillColor(sf::Color(178, 200, 245, 120));
+  }
+    /* end of onHOver() 2*/
 
   for(int _i=0; _i < this->_enemy->_enemies.size(); _i++) {
     if(this->_enemy->_enemies[_i].health <= 0.f) {
@@ -298,6 +325,8 @@ void Game::render() {
 
   if(this->_enemy->_enemies.size() <= 0) {
     this->_window->draw(this->_text03);
+    this->_window->draw(_text04);
+
   }
   
 
