@@ -53,6 +53,6 @@ void Overlay::Update() {
 
 }
 
-void Overlay::Render(sf::RenderTarget& target) {
+void Overlay::Render(sf::RenderTarget& target, bool isGameOver) {
 
 }

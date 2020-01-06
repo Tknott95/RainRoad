@@ -20,5 +20,5 @@ class Overlay {
     virtual ~Overlay();
 
     void Update();
-    void Render(sf::RenderTarget& target);
+    void Render(sf::RenderTarget& target, bool isGameOver);
 };
