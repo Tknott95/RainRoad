@@ -246,13 +246,12 @@ void Game::fixedUpdate() {
   } else {
     this->_text04.setFillColor(sf::Color(178, 200, 245, 120));
   }
-    /* end of onHOver() 2*/
+  /* end of onHOver() 2*/
 
   for(int _i=0; _i < this->_enemy->_enemies.size(); _i++) {
     if(this->_enemy->_enemies[_i].health <= 0.f) {
       this->_enemy->delEnemy(_i);
       this->_player->score += 33.3f;
-
     }
   }
 

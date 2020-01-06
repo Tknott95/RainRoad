@@ -10,7 +10,9 @@
 #include "player.h"
 #include "enemy.h"
 #include "bullet.h"
+#include "overlay.h"
 #include "../controllers/collision.cpp"
+
 
 using namespace std;
 

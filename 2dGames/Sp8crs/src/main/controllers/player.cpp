@@ -78,5 +78,4 @@ void Player::render(sf::RenderTarget& target) {
   target.draw(this->text01);
   target.draw(this->_sprite);
   target.draw(this->_bullet);
-	
 }
