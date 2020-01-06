@@ -64,7 +64,7 @@ void Game::init() {
   this->_text04.setString("CONTINUE?"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
   this->_text04.setCharacterSize(70);
   this->_text04.setPosition((screenWidth/2)*0.40, screenHeight/2 - 100);
-  this->_text04.setFillColor(sf::Color(178, 2000, 245, 130));
+  this->_text04.setFillColor(sf::Color(178, 200, 245, 130));
   this->_text04.setOutlineThickness(10.2f);
 
   this->_text00.setFont(this->_font00);
@@ -89,7 +89,7 @@ void Game::init() {
 const bool Game::isGameOver() { /* @TODO render text and black overlay opacity .5 after "dead" */
   if(this->_player->curHealth <= 0.f) {
     return true;
-  
+  }
   return false;
 }
 
