@@ -32,13 +32,17 @@ void Enemy::spawn(sf::Vector2f pos) {
   this->_enemies.emplace_back(e00); /* replaces push_back due to std::pair usage to track enemy currHealth */
 }
 
-Enemy::Enemy() {
-  this->init();
+void Enemy::spawner() {
   this->spawn(sf::Vector2f(600.f, 200.f));
   this->spawn(sf::Vector2f(1000.f, 200.f));
   this->spawn(sf::Vector2f(333.f, 100.f));
   this->spawn(sf::Vector2f(100.f, 000.f));
   this->spawn(sf::Vector2f(555.f, 300.f));
+}
+
+Enemy::Enemy() {
+  this->init();
+  this->spawner();
 } /* @TODO MAKE GET POS() FUNCTION */
 
 Enemy::~Enemy() {

@@ -40,6 +40,7 @@ class Enemy {
   public:
     std::vector<EnemyStruct> _enemies; /* health, _enemySprite */
     sf::Sprite _sprite;
+    void spawner();
     Enemy();
 	  virtual ~Enemy();
 	  const sf::Vector2f& getPos() const; /* @TODO why a const after the call again? Return value becoming one? Just more control? */

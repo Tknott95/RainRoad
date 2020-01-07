@@ -44,42 +44,6 @@ void Game::init() {
  
   this->_bgMusic.play();
 
-  // this->_text02.setFont(this->_font00);
-  // this->_text02.setString("LEVEL " + to_string(this->_gameStruct.currLvl)); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
-  // this->_text02.setCharacterSize(180);
-  // this->_text02.setPosition((screenWidth/2)*0.40, screenHeight/2 - 200);
-  // this->_text02.setFillColor(sf::Color(178,250,245,100));
-  // this->_text02.setOutlineColor(sf::Color::Black);
-  // this->_text02.setOutlineThickness(2.f);
-
-  // this->_text03.setFont(this->_font00);
-  // this->_text03.setString("LEVEL FINISHED"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
-  // this->_text03.setCharacterSize(90);
-  // this->_text03.setPosition((screenWidth/2)*0.40, screenHeight/2 - 100);
-  // this->_text03.setFillColor(sf::Color(178,250,245,130));
-  // this->_text03.setOutlineColor(sf::Color(0, 0, 0, 100));
-  // this->_text03.setOutlineThickness(10.2f);
-
-  // this->_text04.setFont(this->_font00);
-  // this->_text04.setString("CONTINUE?"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
-  // this->_text04.setCharacterSize(70);
-  // this->_text04.setPosition((screenWidth/2)*0.50, screenHeight/2 + 50);
-  // this->_text04.setFillColor(sf::Color(178, 200, 245, 120));
-  // this->_text04.setOutlineThickness(10.2f);
-
-  // this->_text00.setFont(this->_font00);
-  // this->_text00.setString("GAME OVER");
-  // this->_text00.setCharacterSize(130);
-  // this->_text00.setPosition((screenWidth/2)*0.25, screenHeight/2 - 200);
-  // this->_text00.setFillColor(sf::Color(140, 40, 40, 210));
-
-  // this->_text01.setFont(this->_font00);
-  // this->_text01.setString("PLAY AGAIN?");
-  // this->_text01.setCharacterSize(100);
-  // this->_text01.setPosition((screenWidth/2)*0.40, screenHeight/2);
-  // this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
-
-
   this->_overlay = new Overlay();
   this->_player = new Player();
   this->_enemy = new Enemy();
@@ -144,42 +108,43 @@ void Game::eventPolling() {
           this->_window->close();
           break;
         }
-        if (this->_event.key.code == sf::Keyboard::Space){
-          if(this->DEBUG) { cout << "\n Space PRESSED \n" << endl; };
-          // this->_bullet->fire(this->_player->_sprite.getPosition());
-          this->firing = true;
-          this->_audio00.play();
-          break;
-        }
         break;
       case sf::Event::MouseButtonPressed: /* @TODO refactor this as it is sloppy, maybe remove this case for one similar to while() statement */
         /* @TODO checkCollision with text01 for playAgain. Maybe inside external class for modularity to pull in. */
         if(this->_event.MouseLeft) {
           if(this->DEBUG) { cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl; };
-          if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos)) {
+          if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) {
             // @TODO fix this -> this->_text01.setFillColor(sf::Color(40, 40, 140, 230));
-            this->restartGame = true;
-          }
-
-          if(this->_overlay->isMousePressedAndContains(this->_mousePos)) {
+            // this->restartGame = true;
             this->_gameStruct.currLvl++;
-
-            this->_window->clear(sf::Color::White);
-            // @TODO FIX BELOW
-            // @TODO FIX this->_window->draw(this->_text00);
-            // @TODO FIX this->_window->draw(this->_text01);
-            delete this->_player; /* @TODO check if player exists instead of deleting him again to keep structs and such active w/ data */
-            delete this->_enemy;
-            delete this->_bullet;
-            this->init();
-            // @TODO REFACTOR
-            /* @TODO refactor Re-rendering on stages, death, etc */
-            this->_window->clear(sf::Color::Black);
-            this->setBackground();
-            this->_player->render(*this->_window);
-            this->_enemy->render(*this->_window);
-            this->_bullet->render(*this->_window);
+            this->_gameStruct.levelFinished = false;
           }
+
+          if(this->isLevelFinished() && this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) {
+            this->_gameStruct.currLvl++;
+            this->_gameStruct.levelFinished = false;
+            this->_enemy->spawner();
+          }
+          // if(this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) { // LOOK AT
+          //   this->_gameStruct.currLvl++;
+          //   this->_gameStruct.levelFinished = false;
+
+          //   this->_window->clear(sf::Color::White);
+          //   // @TODO FIX BELOW
+          //   // @TODO FIX this->_window->draw(this->_text00);
+          //   // @TODO FIX this->_window->draw(this->_text01);
+          //   delete this->_player; /* @TODO check if player exists instead of deleting him again to keep structs and such active w/ data */
+          //   delete this->_enemy;
+          //   delete this->_bullet;
+          //   this->init();
+          //   // @TODO REFACTOR
+          //   /* @TODO refactor Re-rendering on stages, death, etc */
+          //   this->_window->clear(sf::Color::Black);
+          //   this->setBackground();
+          //   this->_player->render(*this->_window);
+          //   this->_enemy->render(*this->_window);
+          //   this->_bullet->render(*this->_window);
+          // }
         }
         break;
     }
@@ -217,12 +182,19 @@ void Game::eventPolling() {
         this->_bullet->move(.3f);
     }
   }
+
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+    if(this->DEBUG) { cout << "\n Space PRESSED \n" << endl; };
+    // this->_bullet->fire(this->_player->_sprite.getPosition());
+    this->firing = true;
+    this->_audio00.play();
+  }
 }
 
 void Game::fixedUpdate() {
   this->eventPolling();
   this->setMousePos();
-  this->_overlay->Update(this->isGameOver(), this->_mousePos);
+  this->_overlay->Update(this->isGameOver(), this->_mousePos, this->_gameStruct.levelFinished);
 
   for(int k=0; k < this->_enemy->_enemies.size(); k++) {
     this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.44f);
@@ -296,20 +268,25 @@ void Game::update() {
   if(this->DEBUG) { cout << this->_player->_sprite.getGlobalBounds().width << " - boundsWidth \n" << this->_player->_sprite.getGlobalBounds().height << " - boundsHeight \n" << endl; };
 }
 
+const bool Game::isLevelFinished() {
+  return this->_gameStruct.levelFinished;
+}
+
 void Game::render() {
   this->_window->clear(sf::Color::Black);
   this->setBackground();
-  this->_overlay->Render(*this->_window,this->introFinished, this->_gameStruct.levelFinished, this->isGameOver());
+  this->_overlay->Render(*this->_window,this->introFinished, this->isLevelFinished(), this->isGameOver());
 
 
-  if(this->introFinished) {
+  if(this->introFinished && !isGameOver() && !isLevelFinished()) { // @TODO this made player del at window screen yet won't respawn after
     /* DRAW HERE */
     this->_player->render(*this->_window);
     this->_enemy->render(*this->_window);
     this->_bullet->render(*this->_window);
   } else {
     /* for 3 secs */
-    if(this->_trueElapsedTime.asSeconds() > 1.0f) {this->introFinished = true;}
+    if(this->_trueElapsedTime.asSeconds() > 1.0f) this->introFinished = true;
+    if(this->_gameStruct.levelFinished) this->introFinished = true;
   }
 
   // if(this->_enemy->_enemies.size() <= 0) {
@@ -317,15 +294,15 @@ void Game::render() {
   //   this->_window->draw(_text04);
   // } 
   /// @TODO if true make bool levelFinished = true
+
+  // if(this->_gameStruct.currLvl = 2) {
+
+  // }
   
 
   if(this->isGameOver()) {
     this->_clock.restart();
     this->_bgMusic.stop();
-
-    // this->_window->clear(sf::Color::White);
-    // this->_window->draw(this->_text00);
-    // this->_window->draw(this->_text01);
 
     if(restartGame) {
       delete this->_player;
@@ -342,6 +319,7 @@ void Game::render() {
       // @TODO REFACTOR
     }
   }
+  
   /* DRAW HERE */
 
   this->_window->display();

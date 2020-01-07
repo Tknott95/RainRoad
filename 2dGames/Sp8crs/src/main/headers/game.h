@@ -45,7 +45,7 @@ class Game {
     GameModeEnum _gameMode;
     GameStruct _gameStruct;
     float _secondsPassed;
-    float firingDelay = 0.2f;
+    float firingDelay = 0.18f;
     bool _isFirstRun = true;
 
     sf::Sprite _bgSprite;
@@ -94,5 +94,6 @@ class Game {
     void eventPolling();
     void fixedUpdate();
     void update();
+    const bool isLevelFinished();
     void render();
 };

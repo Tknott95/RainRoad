@@ -49,15 +49,23 @@ Overlay::~Overlay() {
 
 }
 
-bool Overlay::isMousePressedAndContains(sf::Vector2i mousePos) {
-  if(this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+bool Overlay::isMousePressedAndContains(sf::Vector2i mousePos, int type) {
+  if(type = 04 && this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
     return true;
   } else {
     return false;
   }
+  if(type = 01 && this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+    return true;
+  } else {
+    return  false;
+  }
 }
 
-void Overlay::Update(bool isGameOver, sf::Vector2i mousePos) {
+
+void Overlay::Update(bool isGameOver, sf::Vector2i mousePos, bool levelFinished) {
+  this->levelFinished = levelFinished;
+  this->isGameOver = isGameOver;
   /* AFTER GAME TEXT onHOVER() */
   /* @TODO refactor this hack of onHOVER() */
   if(isGameOver && this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
@@ -78,11 +86,13 @@ void Overlay::Update(bool isGameOver, sf::Vector2i mousePos) {
 }
 
 void Overlay::Render(sf::RenderTarget& target,bool introFinished, bool levelFinished, bool isGameOver) {
+  this->levelFinished = levelFinished; /* prob rmv lvlFinished in params, right meow to much todo */
+  this->isGameOver = isGameOver;
   if(introFinished) { } else {
     target.draw(this->_text02);
   }
 
-  if(levelFinished) {
+  if(this->levelFinished) {
     target.draw(this->_text03);
     target.draw(_text04);
   }
