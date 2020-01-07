@@ -4,9 +4,13 @@ void Overlay::Init(float screenWidth, float screenHeight, int currLevel) {
   if (!this->_font00.loadFromFile("utils/fonts/font00.ttf")) {
     cout << "ERROR: Could not load game - font00.ttf file." << "\n";
   }
+  if (!this->_font01.loadFromFile("utils/fonts/font01.ttf")) {
+    std::cout << "ERROR: Could not load player font file." << "\n";
+  }
+  this->currLvl = currLevel;
 
   this->_text02.setFont(this->_font00);
-  this->_text02.setString("LEVEL " + to_string(currLevel)); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
+  this->_text02.setString("LEVEL " + to_string(this->currLvl)); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
   this->_text02.setCharacterSize(180);
   this->_text02.setPosition((screenWidth/2)*0.40, screenHeight/2 - 200);
   this->_text02.setFillColor(sf::Color(178,250,245,100));
@@ -39,6 +43,13 @@ void Overlay::Init(float screenWidth, float screenHeight, int currLevel) {
   this->_text01.setCharacterSize(100);
   this->_text01.setPosition((screenWidth/2)*0.40, screenHeight/2);
   this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
+
+  this->_text05.setFont(this->_font01);
+  this->_text05.setString("Current Lvl:    "+std::to_string(this->currLvl));
+  this->_text05.setCharacterSize(18);
+  this->_text05.setFillColor(sf::Color(255, 255, 255, 175)); /* switch to rgba .4 opacity @TODO */
+  this->_text05.setOutlineColor(sf::Color::Black);
+  this->_text05.setPosition(50.f, 150.f);
 }
 
 Overlay::Overlay() {
@@ -63,9 +74,11 @@ bool Overlay::isMousePressedAndContains(sf::Vector2i mousePos, int type) {
 }
 
 
-void Overlay::Update(bool isGameOver, sf::Vector2i mousePos, bool levelFinished) {
+void Overlay::Update(bool isGameOver, sf::Vector2i mousePos, bool levelFinished, int currLevel) {
   this->levelFinished = levelFinished;
   this->isGameOver = isGameOver;
+  this->currLvl = currLevel;
+  this->_text05.setString("Current Lvl:    "+std::to_string(this->currLvl));
   /* AFTER GAME TEXT onHOVER() */
   /* @TODO refactor this hack of onHOVER() */
   if(isGameOver && this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
@@ -88,13 +101,18 @@ void Overlay::Update(bool isGameOver, sf::Vector2i mousePos, bool levelFinished)
 void Overlay::Render(sf::RenderTarget& target,bool introFinished, bool levelFinished, bool isGameOver) {
   this->levelFinished = levelFinished; /* prob rmv lvlFinished in params, right meow to much todo */
   this->isGameOver = isGameOver;
-  if(introFinished) { } else {
+  if(introFinished) { 
+  } else {
     target.draw(this->_text02);
   }
 
   if(this->levelFinished) {
     target.draw(this->_text03);
     target.draw(_text04);
+  }
+
+  if(introFinished && !this->levelFinished && !isGameOver) {
+    target.draw(this->_text05);
   }
 
   if(isGameOver) {

@@ -48,8 +48,12 @@ void Game::init() {
   this->_player = new Player();
   this->_enemy = new Enemy();
   this->_bullet = new Bullet();
-  this->_overlay->Init(this->screenWidth, this->screenHeight, this->_gameStruct.currLvl);
+  this->_overlay->Init(this->screenWidth, this->screenHeight, this->getCurrLvl());
   this->_bullet->init(this->_player->getPos(), this->_player->_sprite.getGlobalBounds().width/2);
+}
+
+const int Game::getCurrLvl() {
+   return this->_gameStruct.currLvl;
 }
 
 const bool Game::isGameOver() { /* @TODO render text and black overlay opacity .5 after "dead" */
@@ -116,12 +120,13 @@ void Game::eventPolling() {
           if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) {
             // @TODO fix this -> this->_text01.setFillColor(sf::Color(40, 40, 140, 230));
             // this->restartGame = true;
-            this->_gameStruct.currLvl++;
             this->_gameStruct.levelFinished = false;
           }
 
           if(this->isLevelFinished() && this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) {
             this->_gameStruct.currLvl++;
+            if(this->DEBUG) {cout << "\n        CURRENT LVL(" << this->getCurrLvl() << ")  \n" << endl; };
+
             this->_gameStruct.levelFinished = false;
             this->_enemy->spawner();
           }
@@ -194,7 +199,7 @@ void Game::eventPolling() {
 void Game::fixedUpdate() {
   this->eventPolling();
   this->setMousePos();
-  this->_overlay->Update(this->isGameOver(), this->_mousePos, this->_gameStruct.levelFinished);
+  this->_overlay->Update(this->isGameOver(), this->_mousePos, this->_gameStruct.levelFinished, this->_gameStruct.currLvl);
 
   for(int k=0; k < this->_enemy->_enemies.size(); k++) {
     this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.44f);

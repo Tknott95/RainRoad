@@ -79,6 +79,7 @@ class Game {
     const bool DEBUG = false;
     
     void init();
+    const int getCurrLvl();
     const bool isGameOver();  
 
   public:
