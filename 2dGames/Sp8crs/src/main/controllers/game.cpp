@@ -241,7 +241,8 @@ void Game::update() {
   }
 
   int _counter = 0;
-  _counter++; 
+  _counter++;
+  if(_counter > 2000) { _counter = 0; };
   if(this->_timeElapsed.asSeconds() > this->firingDelay) {
     this->_bgCloudsSprite.move(.01f, -0.00001f);
   } else if (_counter % 3 == 0) {
