@@ -23,7 +23,7 @@ void Bullet::fire(sf::Vector2f startingPos, float halfSprite) {
   this->_bullet.setRadius(5.f);
   this->_bullet.setOutlineColor(sf::Color(0,0,0,150));
   this->_bullet.setOutlineThickness(2.3f);
-  this->_bullet.setFillColor(sf::Color(230, 230, 190, 180));
+  this->_bullet.setFillColor(sf::Color(230, 230, 190, 140));
 
   this->_bullets.push_back(this->_bullet);
   // for(int j=0;j<2000;j++  && this->elapsedTime.asSeconds() > this->spawnDelay) { /* @TODO ADD AN OR W/ A TIME BOOLEAN LOGIC TO CREATE A LERPING STYLE MOVEMENT ON OWN TERMS, NOT FPS */

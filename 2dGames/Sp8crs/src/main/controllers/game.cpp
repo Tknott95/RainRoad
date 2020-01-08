@@ -47,6 +47,7 @@ void Game::init() {
   this->_overlay = new Overlay();
   this->_player = new Player();
   this->_enemy = new Enemy();
+  this->_enemy->spawner(this->getCurrLvl());
   this->_bullet = new Bullet();
   this->_overlay->Init(this->screenWidth, this->screenHeight, this->getCurrLvl());
   this->_bullet->init(this->_player->getPos(), this->_player->_sprite.getGlobalBounds().width/2);
@@ -128,7 +129,7 @@ void Game::eventPolling() {
             if(this->DEBUG) {cout << "\n        CURRENT LVL(" << this->getCurrLvl() << ")  \n" << endl; };
 
             this->_gameStruct.levelFinished = false;
-            this->_enemy->spawner();
+            this->_enemy->spawner(this->getCurrLvl());
           }
           // if(this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) { // LOOK AT
           //   this->_gameStruct.currLvl++;
@@ -244,7 +245,7 @@ void Game::update() {
   this->_trueElapsedTime = this->_trueClock.getElapsedTime();
   this->_gameStruct.currScore = this->_player->score;
   this->_player->update();
-  this->_enemy->update();
+  this->_enemy->update(this->getCurrLvl());
   if(!this->DEBUG == true) {
     cout << "\n   _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
   }

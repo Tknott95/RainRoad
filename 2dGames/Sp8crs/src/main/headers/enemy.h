@@ -9,7 +9,7 @@ enum EnemyType {
   kamikaze,
   wavey,
   druidic,
-  headless
+  jester
 };
 
 struct EnemyStruct {
@@ -29,18 +29,18 @@ class Enemy {
     // float maxHealth = 100.f;
     float movementSpeed = 2.f;
     float bulletSpeed = 8.f;
+    int currLvl = 1;
 
     void init();
     void spawn(sf::Vector2f pos);
 
     sf::Vector2f normalize(const sf::Vector2f&);
     const bool isDead();
-    
 
   public:
     std::vector<EnemyStruct> _enemies; /* health, _enemySprite */
     sf::Sprite _sprite;
-    void spawner();
+    void spawner(int currLvl);
     Enemy();
 	  virtual ~Enemy();
 	  const sf::Vector2f& getPos() const; /* @TODO why a const after the call again? Return value becoming one? Just more control? */
@@ -53,6 +53,6 @@ class Enemy {
     void takeDmg(int eId, float dmg);
     void delEnemy(int eId);
     void moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed);
-    void update();
+    void update(int currLvl);
     void render(sf::RenderTarget& target);
 };

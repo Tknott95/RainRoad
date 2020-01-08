@@ -32,17 +32,29 @@ void Enemy::spawn(sf::Vector2f pos) {
   this->_enemies.emplace_back(e00); /* replaces push_back due to std::pair usage to track enemy currHealth */
 }
 
-void Enemy::spawner() {
-  this->spawn(sf::Vector2f(600.f, 200.f));
-  this->spawn(sf::Vector2f(1000.f, 200.f));
-  this->spawn(sf::Vector2f(333.f, 100.f));
-  this->spawn(sf::Vector2f(100.f, 000.f));
-  this->spawn(sf::Vector2f(555.f, 300.f));
+void Enemy::spawner(int currLvl) {
+  if(currLvl == 1) {
+    this->spawn(sf::Vector2f(600.f, 200.f));
+    this->spawn(sf::Vector2f(1000.f, 200.f));
+    this->spawn(sf::Vector2f(333.f, 100.f));
+    this->spawn(sf::Vector2f(100.f, 000.f));
+    this->spawn(sf::Vector2f(555.f, 300.f));
+  } else if (currLvl == 2) {
+    this->spawn(sf::Vector2f(600.f, 200.f));
+    this->spawn(sf::Vector2f(1000.f, 200.f));
+    this->spawn(sf::Vector2f(333.f, 100.f));
+    this->spawn(sf::Vector2f(100.f, 000.f));
+    this->spawn(sf::Vector2f(555.f, 170.f));
+    this->spawn(sf::Vector2f(220.f, 150.f));
+    this->spawn(sf::Vector2f(1100.f, 130.f));
+    this->spawn(sf::Vector2f(1333.f, 100.f));
+    this->spawn(sf::Vector2f(340.f, 000.f));
+    this->spawn(sf::Vector2f(755.f, 000.f));
+  }
 }
 
 Enemy::Enemy() {
   this->init();
-  this->spawner();
 } /* @TODO MAKE GET POS() FUNCTION */
 
 Enemy::~Enemy() {
@@ -80,7 +92,8 @@ void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) 
   this->_enemies[enemyId].enemy.move(enemySpeed * direction);
 } /* @TODO refactor to make dynamic for _enemies vector, pass in position most likely */
 
-void Enemy::update() {
+void Enemy::update(int currLvl) {
+  this->currLvl = currLvl;
   for(int _j=0;_j < this->_enemies.size();_j++) {
     // if(this->_enemies[_j].health <= 0.f) {
     //   this->delEnemy(_j);
