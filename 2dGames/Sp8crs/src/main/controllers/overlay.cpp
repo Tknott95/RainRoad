@@ -52,26 +52,6 @@ void Overlay::Init(float screenWidth, float screenHeight, int currLevel) {
   this->_text05.setPosition(50.f, 150.f);
 }
 
-void Overlay::onHover() {
-  /* AFTER GAME TEXT onHOVER() */
-  /* @TODO refactor this hack of onHOVER() */
-  if(isGameOver && this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
-    this->_text01.setFillColor(sf::Color(40, 40, 140, 180));
-    // @TODO figure this out .. this->_audio01.play();
-  } else {
-    this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
-  }
-  /* END AFTER GAME TEXT onHOVER() END */
-
-  /* onHover() 2 needs refactor */
-  if(this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
-    this->_text04.setFillColor(sf::Color(178, 200, 255, 80));
-  } else {
-    this->_text04.setFillColor(sf::Color(178, 200, 245, 120));
-  }
-  /* end of onHOver() 2*/
-}
-
 Overlay::Overlay() {
 
 }
@@ -93,12 +73,29 @@ bool Overlay::isMousePressedAndContains(sf::Vector2i mousePos, int type) {
   }
 }
 
+
 void Overlay::Update(bool isGameOver, sf::Vector2i mousePos, bool levelFinished, int currLevel) {
   this->levelFinished = levelFinished;
   this->isGameOver = isGameOver;
   this->currLvl = currLevel;
   this->_text05.setString("Current Lvl:    "+std::to_string(this->currLvl));
-  onHover();
+  /* AFTER GAME TEXT onHOVER() */
+  /* @TODO refactor this hack of onHOVER() */
+  if(isGameOver && this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+    this->_text01.setFillColor(sf::Color(40, 40, 140, 180));
+    // @TODO figure this out .. this->_audio01.play();
+  } else {
+    this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
+  }
+  /* END AFTER GAME TEXT onHOVER() END */
+
+  /* onHover() 2 needs refactor */
+  if(this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+    this->_text04.setFillColor(sf::Color(178, 200, 255, 80));
+  } else {
+    this->_text04.setFillColor(sf::Color(178, 200, 245, 120));
+  }
+  /* end of onHOver() 2*/
 }
 
 void Overlay::Render(sf::RenderTarget& target,bool introFinished, bool levelFinished, bool isGameOver) {

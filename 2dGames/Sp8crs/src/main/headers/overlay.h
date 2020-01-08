@@ -18,8 +18,7 @@ class Overlay {
     bool levelFinished;
     bool isGameOver;
     int currLvl;
-
-    void onHover();
+    
 
   public:
     Overlay();
