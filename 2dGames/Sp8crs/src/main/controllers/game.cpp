@@ -86,6 +86,10 @@ void Game::setBackground() {
     bgTexture.loadFromFile("./utils/img/bg/bg00_bluemap.png");
   } else if(this->getCurrLvl() == 2) {
     bgTexture.loadFromFile("./utils/img/bg/bg00_bluemap_02.png");
+  } else if(this->getCurrLvl() == 3) {
+    bgTexture.loadFromFile("./utils/img/bg/bg00_bluemap_03.png");
+  } else {
+    bgTexture.loadFromFile("./utils/img/bg/bg00_bluemap_04.png");
   }
   cloudTexture.loadFromFile("./utils/img/bg/bg01_clouds.png");
   sf::Vector2u size = bgTexture.getSize();

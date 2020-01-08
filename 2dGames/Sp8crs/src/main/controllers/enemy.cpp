@@ -50,6 +50,22 @@ void Enemy::spawner(int currLvl) {
     this->spawn(sf::Vector2f(1333.f, 100.f));
     this->spawn(sf::Vector2f(340.f, 000.f));
     this->spawn(sf::Vector2f(755.f, 000.f));
+  } else if (currLvl == 3) { /* @TODO create new types of enemies w/ the enum made a few days prior */
+    this->spawn(sf::Vector2f(600.f, 200.f));
+    this->spawn(sf::Vector2f(1000.f, 200.f));
+    this->spawn(sf::Vector2f(333.f, 100.f));
+    this->spawn(sf::Vector2f(100.f, 000.f));
+    this->spawn(sf::Vector2f(555.f, 170.f));
+    this->spawn(sf::Vector2f(220.f, 150.f));
+    this->spawn(sf::Vector2f(1100.f, 130.f));
+    this->spawn(sf::Vector2f(1333.f, 100.f));
+    this->spawn(sf::Vector2f(340.f, 000.f));
+    this->spawn(sf::Vector2f(755.f, 000.f));
+    this->spawn(sf::Vector2f(600.f, 200.f));
+    this->spawn(sf::Vector2f(1000.f, 200.f));
+    this->spawn(sf::Vector2f(333.f, 100.f));
+    this->spawn(sf::Vector2f(100.f, 000.f));
+    this->spawn(sf::Vector2f(555.f, 300.f));
   }
 }
 
