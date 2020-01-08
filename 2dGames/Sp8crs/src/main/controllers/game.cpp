@@ -82,7 +82,11 @@ const bool Game::isOpen() const {
 void Game::setBackground() {
   sf::Texture bgTexture;
   sf::Texture cloudTexture;
-  bgTexture.loadFromFile("./utils/img/bg/bg00_bluemap.png");
+  if(this->getCurrLvl() == 1) {
+    bgTexture.loadFromFile("./utils/img/bg/bg00_bluemap.png");
+  } else if(this->getCurrLvl() == 2) {
+    bgTexture.loadFromFile("./utils/img/bg/bg00_bluemap_02.png");
+  }
   cloudTexture.loadFromFile("./utils/img/bg/bg01_clouds.png");
   sf::Vector2u size = bgTexture.getSize();
   this->_bgSprite.setTexture(bgTexture);
@@ -129,6 +133,7 @@ void Game::eventPolling() {
             if(this->DEBUG) {cout << "\n        CURRENT LVL(" << this->getCurrLvl() << ")  \n" << endl; };
 
             this->_gameStruct.levelFinished = false;
+            this->setBackground();
             this->_enemy->spawner(this->getCurrLvl());
           }
           // if(this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) { // LOOK AT
