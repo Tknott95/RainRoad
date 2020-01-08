@@ -127,8 +127,6 @@ void Game::eventPolling() {
         if(this->_event.MouseLeft) {
           if(this->DEBUG) { cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl; };
           if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) {
-            // @TODO fix this -> this->_text01.setFillColor(sf::Color(40, 40, 140, 230));
-            // this->restartGame = true;
             this->_gameStruct.levelFinished = false;
           }
 
@@ -140,26 +138,6 @@ void Game::eventPolling() {
             this->setBackground();
             this->_enemy->spawner(this->getCurrLvl());
           }
-          // if(this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) { // LOOK AT
-          //   this->_gameStruct.currLvl++;
-          //   this->_gameStruct.levelFinished = false;
-
-          //   this->_window->clear(sf::Color::White);
-          //   // @TODO FIX BELOW
-          //   // @TODO FIX this->_window->draw(this->_text00);
-          //   // @TODO FIX this->_window->draw(this->_text01);
-          //   delete this->_player; /* @TODO check if player exists instead of deleting him again to keep structs and such active w/ data */
-          //   delete this->_enemy;
-          //   delete this->_bullet;
-          //   this->init();
-          //   // @TODO REFACTOR
-          //   /* @TODO refactor Re-rendering on stages, death, etc */
-          //   this->_window->clear(sf::Color::Black);
-          //   this->setBackground();
-          //   this->_player->render(*this->_window);
-          //   this->_enemy->render(*this->_window);
-          //   this->_bullet->render(*this->_window);
-          // }
         }
         break;
     }
@@ -219,7 +197,6 @@ void Game::fixedUpdate() {
       this->_player->takeDmg(0.93);
     }
   }
-
 
   for(int _i=0; _i < this->_enemy->_enemies.size(); _i++) {
     if(this->_enemy->_enemies[_i].health <= 0.f) {
