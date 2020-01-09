@@ -126,8 +126,13 @@ void Game::eventPolling() {
         /* @TODO checkCollision with text01 for playAgain. Maybe inside external class for modularity to pull in. */
         if(this->_event.MouseLeft) {
           if(this->DEBUG) { cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl; };
-          if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) {
+          if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos, 01)) {
+            /* @TODO NOT EVEN USING THIS ANYWHERE IT SEEMS. FIND GAME OVER OVERLAY AND FIX DIS SHIZ */
             this->_gameStruct.levelFinished = false;
+            this->_gameStruct.currLvl = 1; /* @TODO del this and make a better way */
+            /* @TODO resetPlayer() function on newGame() */
+            this->_player->curHealth = 100;
+            this->_player->score = 0.f;
           }
 
           if(this->isLevelFinished() && this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) {
