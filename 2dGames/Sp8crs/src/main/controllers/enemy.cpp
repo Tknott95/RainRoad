@@ -66,12 +66,14 @@ void Enemy::spawner(int currLvl) {
     this->spawn(sf::Vector2f(333.f, 100.f));
     this->spawn(sf::Vector2f(100.f, 000.f));
     this->spawn(sf::Vector2f(555.f, 300.f));
+  } else {
+    currLvl = 1;
   }
 }
 
 Enemy::Enemy() {
   this->init();
-} /* @TODO MAKE GET POS() FUNCTION */
+}
 
 Enemy::~Enemy() {
 }
@@ -120,8 +122,6 @@ void Enemy::update(int currLvl) {
       this->_enemies[_j].text00.setFillColor(sf::Color(60, 140, 40, 130));
     } else if(this->_enemies[_j].health < 33.f) {
       this->_enemies[_j].text00.setFillColor(sf::Color(140, 60, 40, 120));
-      this->_enemies[_j].text00.setString("BIRD IS THE WORD");
-
     } else if(this->_enemies[_j].health < 10.f) {
       this->_enemies[_j].text00.setFillColor(sf::Color(240, 40, 40, 110));
       /* @TODO why won't this work? Dynamic fill color? I have a struct? it should? or should it baha bja habjabkj */ 
