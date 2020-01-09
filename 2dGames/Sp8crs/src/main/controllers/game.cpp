@@ -194,7 +194,10 @@ void Game::fixedUpdate() {
 
     if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_enemies[k].enemy.getGlobalBounds())){
       cout << "COLLIDED" << endl;
-      this->_player->takeDmg(0.93);
+      if(this->_enemy->_enemies[k].type == kamikaze) {
+        this->_enemy->delEnemy(k);
+        this->_player->takeDmg(33.3);
+      };
     }
   }
 

@@ -18,7 +18,7 @@ void Enemy::init() {
   this->_sprite.scale(1.4f, 1.4f);
 }
 
-void Enemy::spawn(sf::Vector2f pos) {
+void Enemy::spawn(sf::Vector2f pos, EnemyType eType) {
   if(&pos.x == NULL || &pos.y == NULL) {
     pos. x = 600.f;
     pos.y = 200.f;
@@ -29,43 +29,44 @@ void Enemy::spawn(sf::Vector2f pos) {
   e00.enemy = this->_sprite;
   e00.health = 100.f;
   e00.text00 = this->_text00;
+  e00.type = eType;
   this->_enemies.emplace_back(e00); /* replaces push_back due to std::pair usage to track enemy currHealth */
 }
 
 void Enemy::spawner(int currLvl) {
   if(currLvl == 1) {
-    this->spawn(sf::Vector2f(600.f, 200.f));
-    this->spawn(sf::Vector2f(1000.f, 200.f));
-    this->spawn(sf::Vector2f(333.f, 100.f));
-    this->spawn(sf::Vector2f(100.f, 000.f));
-    this->spawn(sf::Vector2f(555.f, 300.f));
+    this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
+    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(555.f, 300.f), kamikaze);
   } else if (currLvl == 2) {
-    this->spawn(sf::Vector2f(600.f, 200.f));
-    this->spawn(sf::Vector2f(1000.f, 200.f));
-    this->spawn(sf::Vector2f(333.f, 100.f));
-    this->spawn(sf::Vector2f(100.f, 000.f));
-    this->spawn(sf::Vector2f(555.f, 170.f));
-    this->spawn(sf::Vector2f(220.f, 150.f));
-    this->spawn(sf::Vector2f(1100.f, 130.f));
-    this->spawn(sf::Vector2f(1333.f, 100.f));
-    this->spawn(sf::Vector2f(340.f, 000.f));
-    this->spawn(sf::Vector2f(755.f, 000.f));
+    this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
+    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(555.f, 170.f), kamikaze);
+    this->spawn(sf::Vector2f(220.f, 150.f), kamikaze);
+    this->spawn(sf::Vector2f(1100.f, 130.f), kamikaze);
+    this->spawn(sf::Vector2f(1333.f, 100.f), kamikaze);
+    this->spawn(sf::Vector2f(340.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(755.f, 000.f), kamikaze);
   } else if (currLvl == 3) { /* @TODO create new types of enemies w/ the enum made a few days prior */
-    this->spawn(sf::Vector2f(600.f, 200.f));
-    this->spawn(sf::Vector2f(1000.f, 200.f));
-    this->spawn(sf::Vector2f(333.f, 100.f));
-    this->spawn(sf::Vector2f(100.f, 000.f));
-    this->spawn(sf::Vector2f(555.f, 170.f));
-    this->spawn(sf::Vector2f(220.f, 150.f));
-    this->spawn(sf::Vector2f(1100.f, 130.f));
-    this->spawn(sf::Vector2f(1333.f, 100.f));
-    this->spawn(sf::Vector2f(340.f, 000.f));
-    this->spawn(sf::Vector2f(755.f, 000.f));
-    this->spawn(sf::Vector2f(600.f, 200.f));
-    this->spawn(sf::Vector2f(1000.f, 200.f));
-    this->spawn(sf::Vector2f(333.f, 100.f));
-    this->spawn(sf::Vector2f(100.f, 000.f));
-    this->spawn(sf::Vector2f(555.f, 300.f));
+    this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
+    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(555.f, 170.f), kamikaze);
+    this->spawn(sf::Vector2f(220.f, 150.f), kamikaze);
+    this->spawn(sf::Vector2f(1100.f, 130.f), kamikaze);
+    this->spawn(sf::Vector2f(1333.f, 100.f), kamikaze);
+    this->spawn(sf::Vector2f(340.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(755.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
+    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(555.f, 300.f), kamikaze);
   } else {
     currLvl = 1;
   }
@@ -97,11 +98,16 @@ const bool Enemy::isDead() {
 }
 
 void Enemy::delEnemy(int eId) {
+  /* @TODO make destruction sound onDel() */
   this->_enemies.erase(this->_enemies.begin() + eId);
 }
 
 void Enemy::takeDmg(int eId, float dmg) {
   this->_enemies[eId].health -= dmg;
+}
+
+const EnemyType Enemy::getType(int eId) {
+  return this->_enemies[eId].type;
 }
 
 void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) {

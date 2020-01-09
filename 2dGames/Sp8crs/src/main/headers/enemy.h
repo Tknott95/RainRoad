@@ -32,7 +32,7 @@ class Enemy {
     int currLvl = 1;
 
     void init();
-    void spawn(sf::Vector2f pos);
+    void spawn(sf::Vector2f pos, EnemyType eType);
 
     sf::Vector2f normalize(const sf::Vector2f&);
     const bool isDead();
@@ -52,6 +52,7 @@ class Enemy {
     // void shoot();
     void takeDmg(int eId, float dmg);
     void delEnemy(int eId);
+    const EnemyType getType(int eId);
     void moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed);
     void update(int currLvl);
     void render(sf::RenderTarget& target);
