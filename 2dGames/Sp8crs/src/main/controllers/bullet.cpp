@@ -70,9 +70,14 @@ void Bullet::move(float ySpeed, BulletType bType) {
   }
 }
 
-void Bullet::erase(int i) {
-  this->_bullets.erase(this->_bullets.begin() + i);
-  std::cout << " \n   erasingBulletID(" << i << ") \n" << std::endl;
+void Bullet::erase(int i, BulletType type) {
+  if(type == player) {
+    this->playerBullets.erase(this->playerBullets.begin() + i);
+    std::cout << " \n   erasingPlayerBulletID(" << i << ") \n" << std::endl;
+  } else if(type == enemy) {
+    this->enemyBullets.erase(this->enemyBullets.begin() + i);
+    std::cout << " \n   erasingEnemyBulletID(" << i << ") \n" << std::endl;
+  }
 }
 
 void Bullet::render(sf::RenderTarget& target) {

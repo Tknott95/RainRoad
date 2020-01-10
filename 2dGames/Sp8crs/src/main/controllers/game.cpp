@@ -226,13 +226,13 @@ void Game::fixedUpdate() {
       if(collision.checkCollision(this->_enemy->_enemies[j].enemy.getGlobalBounds(), this->_bullet->playerBullets[k].bullet.getGlobalBounds())) {
        cout << "\n ENEMY HIT BY BULLET \n" << endl;
        this->_enemy->takeDmg(j, 33.3);
-       this->_bullet->erase(k);
+       this->_bullet->erase(k, player);
        this->_player->score += 5.5f;
       }
     }
 
     if(this->_bullet->playerBullets[k].bullet.getPosition().y <= 100) {
-      this->_bullet->erase(k);
+      this->_bullet->erase(k, player);
     }
   }
 }
