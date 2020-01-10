@@ -7,8 +7,7 @@
 
 enum EnemyType {
   kamikaze,
-  wavey,
-  druidic,
+  sheriff,
   jester
 };
 
@@ -44,7 +43,6 @@ class Enemy {
     Enemy();
 	  virtual ~Enemy();
 	  const sf::Vector2f& getPos() const; /* @TODO why a const after the call again? Return value becoming one? Just more control? */
-    
 
     // void move(const float x, const float y);
 	  // const bool canAttack();
@@ -53,6 +51,7 @@ class Enemy {
     void takeDmg(int eId, float dmg);
     void delEnemy(int eId);
     const EnemyType getType(int eId);
+    void lookAtPlayer(int enemyId, sf::Vector2f playerPos, int PlayerRot);
     void moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed);
     void update(int currLvl);
     void render(sf::RenderTarget& target);

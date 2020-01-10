@@ -49,8 +49,12 @@ void Player::update() {
   this->text01.setString("PlayerScore:    "+std::to_string(this->score).substr(0, 6));
 }
 
-const sf::Vector2f & Player::getPos() const {
+const sf::Vector2f& Player::getPos() const {
   return this->_sprite.getPosition();
+}
+
+const float Player::getRot() const {
+  return this->_sprite.getRotation();
 }
 
 void Player::move(const float x, const float y) {

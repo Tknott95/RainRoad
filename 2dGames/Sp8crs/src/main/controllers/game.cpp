@@ -195,7 +195,11 @@ void Game::fixedUpdate() {
   this->_overlay->Update(this->isGameOver(), this->_mousePos, this->_gameStruct.levelFinished, this->_gameStruct.currLvl);
 
   for(int k=0; k < this->_enemy->_enemies.size(); k++) {
-    this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.44f);
+    if(this->_enemy->_enemies[k].type == kamikaze) {
+      this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.44f);
+    } else if(this->_enemy->_enemies[k].type == sheriff) {
+      this->_enemy->lookAtPlayer(k, this->_player->getPos(), this->_player->getRot());
+    }
 
     if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_enemies[k].enemy.getGlobalBounds())){
       cout << "COLLIDED" << endl;
@@ -240,7 +244,7 @@ void Game::update() {
   this->_gameStruct.currScore = this->_player->score;
   this->_player->update();
   this->_enemy->update(this->getCurrLvl());
-  if(!this->DEBUG == true) {
+  if(this->DEBUG == true) {
     cout << "\n   _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
   }
 
@@ -257,7 +261,7 @@ void Game::update() {
     this->_bgCloudsSprite.move(-.01f, 0.00001f);
   }
 
-  if(!this->DEBUG) { cout << " \n   playerPos(" << this->_player->getPos().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl; };
+  if(this->DEBUG) { cout << " \n   playerPos(" << this->_player->getPos().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl; };
   if(firing  && this->_timeElapsed.asSeconds() > this->firingDelay) {
     this->_bullet->fire(this->_player->getPos(), this->_player->_sprite.getGlobalBounds().width/2);
     firing = false;

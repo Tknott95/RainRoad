@@ -35,11 +35,12 @@ void Enemy::spawn(sf::Vector2f pos, EnemyType eType) {
 
 void Enemy::spawner(int currLvl) {
   if(currLvl == 1) {
-    this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
-    this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
-    this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
-    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
-    this->spawn(sf::Vector2f(555.f, 300.f), kamikaze);
+    // this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
+    // this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
+    // this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
+    // this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(555.f, 300.f), sheriff); 
+    /* @TODO create lookAtPlayer() then a case/if statement to choose which to run regarding type */
   } else if (currLvl == 2) {
     this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
     this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
@@ -109,6 +110,23 @@ void Enemy::takeDmg(int eId, float dmg) {
 const EnemyType Enemy::getType(int eId) {
   return this->_enemies[eId].type;
 }
+
+void Enemy::lookAtPlayer(int enemyId, sf::Vector2f playerPos, int playerRot) {
+  sf::Vector2f enemyPos = this->_enemies[enemyId].enemy.getPosition();
+  // sf::Vector2f direction = this->normalize(playerPos - enemyPos);
+  // float rotation = sin(direction.y);
+  float eRot = this->_enemies[enemyId].enemy.getRotation();
+  float rotDiff = eRot - playerRot;
+
+  float myAngle = atan2(playerPos.y - enemyPos.y, playerPos.x - enemyPos.x) * 180 / 3.145;
+  this->_enemies[enemyId].enemy.setRotation(myAngle - 90);
+  std::cout << "\n   myAngle(" << myAngle << ")  \n" << std::endl;
+
+  // need to grab cross prod and such
+
+    // this->_enemies[enemyId].enemy.rotate(1.01);
+}
+  
 
 void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) {
   const sf::Vector2f enemyPos = this->_enemies[enemyId].enemy.getPosition();

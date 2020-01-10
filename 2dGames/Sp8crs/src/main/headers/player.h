@@ -31,6 +31,7 @@ class Player {
 	  virtual ~Player();
     void update();
 	  const sf::Vector2f& getPos() const;
+    const float getRot() const;
 
     void move(const float x, const float y);
     void takeDmg(const float amount);
