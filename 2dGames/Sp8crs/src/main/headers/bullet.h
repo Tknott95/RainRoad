@@ -31,10 +31,10 @@ class Bullet {
     std::vector <BulletStruct> playerBullets;
     std::vector <BulletStruct> enemyBullets;
     void init(sf::Vector2f, float);
-    void spawn(sf::Vector2f startingPos, BulletType bType, float xOffset);
+    void spawn(sf::Vector2f startingPos, BulletType bType, float xOffset, float angleToPlayer);
     Bullet();
 	  virtual ~Bullet();
-    void fire(sf::Vector2f, float);
+    void fire(sf::Vector2f, float halfSprite, float angleToPlayer, BulletType bType);
     void move(float, BulletType);
     void erase(int, BulletType);
     void render(sf::RenderTarget& target);

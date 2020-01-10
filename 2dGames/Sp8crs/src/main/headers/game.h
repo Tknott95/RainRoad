@@ -41,6 +41,8 @@ class Game {
     sf::Clock _clock;
     sf::Time _timeElapsed;
     sf::Clock _trueClock;
+    sf::Time _enemyTimeElapsed; /* for enemySpawning */
+    sf::Clock _enemyClock; /* for enemySpawning */
     sf::Time _trueElapsedTime;
     GameModeEnum _gameMode;
     GameStruct _gameStruct;

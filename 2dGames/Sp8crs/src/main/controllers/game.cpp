@@ -14,8 +14,10 @@ void Game::init() {
   this->_window->setFramerateLimit(55);
 
   this->_clock.restart();
+  this->_enemyClock.restart();
   this->_trueClock.restart();
   this->_timeElapsed = this->_clock.getElapsedTime();
+  this->_enemyTimeElapsed = this->_enemyClock.getElapsedTime();
   this->_trueElapsedTime = this->_trueClock.getElapsedTime();
 
   if (!this->_bgMusic.openFromFile("utils/audio/space_music.wav")) {
@@ -214,6 +216,13 @@ void Game::fixedUpdate() {
       this->_enemy->delEnemy(_i);
       this->_player->score += 33.3f;
     }
+
+    float angleToPlayer = this->_enemy->getAngleToPlayer(_i, this->_player->getPos());
+
+    if(this->_enemyTimeElapsed.asSeconds() > 0.3f) {
+      this->_bullet->fire(this->_enemy->_enemies[_i].enemy.getPosition(), this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, angleToPlayer, enemy);
+      this->_enemyClock.restart();
+    }
   }
 
   for(int k=0;k < this->_bullet->playerBullets.size(); k++) {
@@ -238,8 +247,9 @@ void Game::fixedUpdate() {
 }
 
 void Game::update() {
-  this->_timeElapsed = this->_clock.getElapsedTime();
+  this->_timeElapsed = this->_clock.getElapsedTime(); /* @TODO del clocks in init */
   this->_trueElapsedTime = this->_trueClock.getElapsedTime();
+  this->_enemyTimeElapsed = this->_enemyClock.getElapsedTime();
   this->_gameStruct.currScore = this->_player->score;
   this->_player->update();
   this->_enemy->update(this->getCurrLvl());
@@ -262,12 +272,13 @@ void Game::update() {
 
   if(this->DEBUG) { cout << " \n   playerPos(" << this->_player->getPos().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl; };
   if(firing  && this->_timeElapsed.asSeconds() > this->firingDelay) {
-    this->_bullet->fire(this->_player->getPos(), this->_player->_sprite.getGlobalBounds().width/2);
+    this->_bullet->fire(this->_player->getPos(), this->_player->_sprite.getGlobalBounds().width/2, 0, player);
     firing = false;
     this->_clock.restart();
   }
 
   this->_bullet->move(3.3f, player);
+  this->_bullet->move(3.3f, enemy);
 
   if(this->DEBUG) { cout << this->_player->_sprite.getGlobalBounds().width << " - boundsWidth \n" << this->_player->_sprite.getGlobalBounds().height << " - boundsHeight \n" << endl; };
 }

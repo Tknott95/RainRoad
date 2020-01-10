@@ -125,15 +125,30 @@ void Enemy::lookAtPlayer(int enemyId, sf::Vector2f playerPos) {
   float halfX = this->_enemies[enemyId].enemy.getGlobalBounds().width/2;
   float halfY = this->_enemies[enemyId].enemy.getGlobalBounds().height/2;
 
-  sf::Vector2f origin = this->_enemies[enemyId].enemy.getOrigin(); 
-  this->_enemies[enemyId].enemy.setOrigin(halfX, halfY);
+  /* @TODO rotateFromOrigin() currently not twerking /()()\ */
+  // sf::Vector2f origin = this->_enemies[enemyId].enemy.getOrigin(); 
+  // cout << "\n   Origin(" << origin.x << ", " << origin.y << ")  \n" << endl;
+  // this->_enemies[enemyId].enemy.setOrigin(origin.x, origin.y);
 
   /* @TODO dblCheck halfX, halfY logic */
   float myAngle = atan2(playerPos.y - (enemyPos.y - halfY), playerPos.x - (enemyPos.x - halfX)) * 180 / 3.145;
   this->_enemies[enemyId].enemy.setRotation(myAngle);
   if(true) cout << "\n   myAngle(" << myAngle << ")  \n" << endl;
 }
-  
+
+const float Enemy::getAngleToPlayer(int enemyId, sf::Vector2f playerPos) {
+  sf::Vector2f enemyPos = this->_enemies[enemyId].enemy.getPosition();
+  float halfX = this->_enemies[enemyId].enemy.getGlobalBounds().width/2;
+  float halfY = this->_enemies[enemyId].enemy.getGlobalBounds().height/2;
+
+  // sf::Vector2f origin = this->_enemies[enemyId].enemy.getOrigin(); 
+  // cout << "\n   Origin(" << origin.x << ", " << origin.y << ")  \n" << endl;
+  // this->_enemies[enemyId].enemy.setOrigin(origin.x, origin.y);
+
+  /* @TODO dblCheck halfX, halfY logic */
+  float myAngle = atan2(playerPos.y - enemyPos.y, playerPos.x - enemyPos.x) * 180 / 3.145;
+  return myAngle;
+}
 
 void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) {
   const sf::Vector2f enemyPos = this->_enemies[enemyId].enemy.getPosition();
@@ -158,16 +173,15 @@ void Enemy::update(int currLvl) {
         this->_enemies[_j].enemy.move(0.001f, 0.2f);
       }
     }
-
     /* @TODO refactor this as the text for enemy may need to be inside the vector for external calls on update */
-    if(this->_enemies[_j].health < 67.f) {
-      this->_enemies[_j].text00.setFillColor(sf::Color(60, 140, 40, 130));
-    } else if(this->_enemies[_j].health < 33.f) {
-      this->_enemies[_j].text00.setFillColor(sf::Color(140, 60, 40, 120));
-    } else if(this->_enemies[_j].health < 10.f) {
-      this->_enemies[_j].text00.setFillColor(sf::Color(240, 40, 40, 110));
-      /* @TODO why won't this work? Dynamic fill color? I have a struct? it should? or should it baha bja habjabkj */ 
-    }
+    // if(this->_enemies[_j].health < 67.f) {
+    //   this->_enemies[_j].text00.setFillColor(sf::Color(60, 140, 40, 130));
+    // } else if(this->_enemies[_j].health < 33.f) {
+    //   this->_enemies[_j].text00.setFillColor(sf::Color(140, 60, 40, 120));
+    // } else if(this->_enemies[_j].health < 10.f) {
+    //   this->_enemies[_j].text00.setFillColor(sf::Color(240, 40, 40, 110));
+    //   /* @TODO why won't this work? Dynamic fill color? I have a struct? it should? or should it baha bja habjabkj */ 
+    // }
   }
 }
 
@@ -177,19 +191,18 @@ const sf::Vector2f & Enemy::getPos() const {
 
 void Enemy::render(sf::RenderTarget& target) {
   for(auto &_e : this->_enemies) {
-    target.draw(_e.enemy);
-
     _e.text00.setString(to_string(_e.health).substr(0, 5));
     _e.text00.setCharacterSize(18);
-    if(_e.type == sheriff) {
-      _e.text00.setPosition(_e.enemy.getPosition().x - 50, _e.enemy.getPosition().y - 20.f);
-    } else {
-      _e.text00.setPosition(_e.enemy.getPosition().x, _e.enemy.getPosition().y - 20.f);
-    }
     _e.text00.setFillColor(sf::Color(255, 255, 255, 140));
     _e.text00.setOutlineColor(sf::Color::Black);
     _e.text00.setOutlineThickness(2.f);
+    if(_e.type == sheriff) {
+      // _e.text00.setPosition(_e.enemy.getPosition().x - 65, _e.enemy.getPosition().y - 20.f);
+    } else {
+      _e.text00.setPosition(_e.enemy.getPosition().x, _e.enemy.getPosition().y - 20.f);
+      target.draw(_e.text00);
+    }
 
-    target.draw(_e.text00);
+    target.draw(_e.enemy);
   }
 }

@@ -13,7 +13,7 @@ void Bullet::init(sf::Vector2f startingPos, float halfSprite) {
    }
 }
 
-void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset) {
+void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset, float angleToPlayer) {
   if(bType == player) {
     BulletStruct b;
     b.bullet.setTexture(this->_playerBulletTexture);
@@ -24,7 +24,8 @@ void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset) {
   } else if (bType == enemy) {
     BulletStruct b;
     b.bullet.setTexture(this->_enemyBulletTexture);
-    b.type = player;
+    b.bullet.setRotation(-angleToPlayer);
+    b.type = enemy;
     b.bullet.setPosition(startingPos.x + (xOffset-5) , startingPos.y - yOffset);
     b.bullet.scale(1.2f, 1.2f);
     this->enemyBullets.emplace_back(b);
@@ -41,10 +42,10 @@ Bullet::~Bullet() {
   /* @TODO look into destructors for bullets, is it stupid? */
 }
 
-void Bullet::fire(sf::Vector2f startingPos, float halfSprite) {
+void Bullet::fire(sf::Vector2f startingPos, float halfSprite, float angleToPlayer, BulletType bType) {
   this->elapsedTime = this->clock.getElapsedTime();
   std::cout << " \n  FIRING(" << startingPos.x << ", " << startingPos.y << ")" << std::endl;
-  this->spawn(startingPos, player, halfSprite);
+  this->spawn(startingPos, bType, halfSprite, angleToPlayer);
 }
 
 void Bullet::move(float ySpeed, BulletType bType) {
@@ -53,7 +54,7 @@ void Bullet::move(float ySpeed, BulletType bType) {
       b.bullet.move(0, 1.f * -ySpeed);
     }
   } else if(bType == enemy) {
-    for(auto &b : this->playerBullets) {
+    for(auto &b : this->enemyBullets) {
       b.bullet.move(0, 1.f * ySpeed);
     }
   }
