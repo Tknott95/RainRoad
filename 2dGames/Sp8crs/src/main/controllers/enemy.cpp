@@ -120,15 +120,15 @@ const EnemyType Enemy::getType(int eId) {
   return this->_enemies[eId].type;
 }
 
-void Enemy::lookAtPlayer(int enemyId, sf::Vector2f playerPos, int playerRot) {
+void Enemy::lookAtPlayer(int enemyId, sf::Vector2f playerPos) {
   sf::Vector2f enemyPos = this->_enemies[enemyId].enemy.getPosition();
-  float eRot = this->_enemies[enemyId].enemy.getRotation();
-  float rotDiff = eRot - playerRot;
+  float halfX = this->_enemies[enemyId].enemy.getGlobalBounds().width/2;
+  float halfY = this->_enemies[enemyId].enemy.getGlobalBounds().height/2;
 
-  float myAngle = atan2(playerPos.y - enemyPos.y, playerPos.x - enemyPos.x) * 180 / 3.145;
+  /* @TODO dblCheck halfX, halfY logic */
+  float myAngle = atan2(playerPos.y - (enemyPos.y - halfY), playerPos.x - (enemyPos.x - halfX)) * 180 / 3.145;
   this->_enemies[enemyId].enemy.setRotation(myAngle);
   if(true) cout << "\n   myAngle(" << myAngle << ")  \n" << endl;
-  // this->_enemies[enemyId].enemy.rotate(1.01);
 }
   
 
@@ -148,14 +148,6 @@ void Enemy::update(int currLvl) {
   
   const int newRand = (rand() % 20);
   for(int _j=0;_j < this->_enemies.size();_j++) {
-    // if(this->_enemies[_j].type == sheriff) {
-    //   if(!this->_texture.loadFromFile("utils/img/enemy/f1.png")) {
-    //     cout << "ERROR: Could not load enemy texture file." << "\n";
-    //   }
-
-    //   this->_enemies[_j].enemy.setTexture(this->_texture);
-    //   this->_enemies[_j].enemy.scale(1.8f, 1.8f);
-
     if(this->_enemies[_j].type == sheriff) {
       if(newRand % 4 == 0) {
         this->_enemies[_j].enemy.move(-0.1f, -0.4f);
@@ -186,7 +178,11 @@ void Enemy::render(sf::RenderTarget& target) {
 
     _e.text00.setString(to_string(_e.health).substr(0, 5));
     _e.text00.setCharacterSize(18);
-    _e.text00.setPosition(_e.enemy.getPosition().x, _e.enemy.getPosition().y - 20.f);
+    if(_e.type == sheriff) {
+      _e.text00.setPosition(_e.enemy.getPosition().x - 50, _e.enemy.getPosition().y - 20.f);
+    } else {
+      _e.text00.setPosition(_e.enemy.getPosition().x, _e.enemy.getPosition().y - 20.f);
+    }
     _e.text00.setFillColor(sf::Color(255, 255, 255, 140));
     _e.text00.setOutlineColor(sf::Color::Black);
     _e.text00.setOutlineThickness(2.f);

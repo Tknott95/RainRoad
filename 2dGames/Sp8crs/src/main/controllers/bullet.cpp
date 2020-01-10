@@ -43,27 +43,16 @@ Bullet::~Bullet() {
 
 void Bullet::fire(sf::Vector2f startingPos, float halfSprite) {
   this->elapsedTime = this->clock.getElapsedTime();
-  // this->_bullet.setPosition(startingPos.x + (halfSprite-5) /*+((this->_sprite.getGlobalBounds().width/2)-5)*/, startingPos.y + yOffset /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
   std::cout << " \n  FIRING(" << startingPos.x << ", " << startingPos.y << ")" << std::endl;
-  // this->_bullet.setRadius(5.f);
-  // this->_bullet.setOutlineColor(sf::Color(0,0,0,150));
-  // this->_bullet.setOutlineThickness(2.3f);
-  // this->_bullet.setFillColor(sf::Color(230, 230, 190, 140));
   this->spawn(startingPos, player, halfSprite);
-
-  // this->_bullets.push_back(this->_bullet);
-  // for(int j=0;j<2000;j++  && this->elapsedTime.asSeconds() > this->spawnDelay) { /* @TODO ADD AN OR W/ A TIME BOOLEAN LOGIC TO CREATE A LERPING STYLE MOVEMENT ON OWN TERMS, NOT FPS */
-  //   this->_bullet.move(0.f, -.03f);
-  //   std::cout << "\n   SECS ELAPSED (" << this->elapsedTime.asSeconds() << ") \n" << std::endl;
-  //   std::cout << "\n   (" << this->_bullet.getPosition().x << ", " << this->_bullet.getPosition().y << ") \n" << std::endl;
-  //   this->clock.restart();
-  // }
-
-  /* @TODO EXTRACT MOVEMENT TO ANOTHER FUNCTION AS IT SEEMS TO NOT WORK INTERNALLY WITH THE SAME FUNCTION INSTANTIATING THE SPRITE, MAY BE ME BEING A FUCKING STUPID FCUKI IDIOTLNDSKJKBVBVBBV */  
 }
 
 void Bullet::move(float ySpeed, BulletType bType) {
   if(bType == player) {
+    for(auto &b : this->playerBullets) {
+      b.bullet.move(0, 1.f * -ySpeed);
+    }
+  } else if(bType == enemy) {
     for(auto &b : this->playerBullets) {
       b.bullet.move(0, 1.f * ySpeed);
     }

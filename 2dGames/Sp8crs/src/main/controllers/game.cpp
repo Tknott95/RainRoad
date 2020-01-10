@@ -197,7 +197,7 @@ void Game::fixedUpdate() {
     if(this->_enemy->_enemies[k].type == kamikaze) {
       this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.44f);
     } else if(this->_enemy->_enemies[k].type == sheriff) {
-      this->_enemy->lookAtPlayer(k, this->_player->getPos(), this->_player->getRot());
+      this->_enemy->lookAtPlayer(k, this->_player->getPos());
     }
 
     if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_enemies[k].enemy.getGlobalBounds())){
@@ -267,7 +267,7 @@ void Game::update() {
     this->_clock.restart();
   }
 
-  this->_bullet->move(-3.3f, player);
+  this->_bullet->move(3.3f, player);
 
   if(this->DEBUG) { cout << this->_player->_sprite.getGlobalBounds().width << " - boundsWidth \n" << this->_player->_sprite.getGlobalBounds().height << " - boundsHeight \n" << endl; };
 }

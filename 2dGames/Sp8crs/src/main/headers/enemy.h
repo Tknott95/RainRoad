@@ -54,7 +54,7 @@ class Enemy {
     void takeDmg(int eId, float dmg);
     void delEnemy(int eId);
     const EnemyType getType(int eId);
-    void lookAtPlayer(int enemyId, sf::Vector2f playerPos, int PlayerRot);
+    void lookAtPlayer(int enemyId, sf::Vector2f playerPos);
     void moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed);
     void update(int currLvl);
     void render(sf::RenderTarget& target);
