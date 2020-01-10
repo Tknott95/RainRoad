@@ -4,24 +4,33 @@
 
 
 void Enemy::init() {
-  if(!this->_texture.loadFromFile("utils/img/enemy/e1.png")) {
-    std::cout << "ERROR: Could not load enemy texture file." << "\n";
-  }
 
   if (!this->_font00.loadFromFile("utils/fonts/font01.ttf")) {
-    std::cout << "ERROR: Could not load enemy font file." << "\n";
+    cout << "ERROR: Could not load enemy font file." << "\n";
   }
 
   this->_text00.setFont(this->_font00);
-
-  this->_sprite.setTexture(this->_texture);
-  this->_sprite.scale(1.4f, 1.4f);
 }
 
 void Enemy::spawn(sf::Vector2f pos, EnemyType eType) {
   if(&pos.x == NULL || &pos.y == NULL) {
     pos. x = 600.f;
     pos.y = 200.f;
+  }
+
+  if(eType == kamikaze) {
+    if(!this->_texture.loadFromFile("utils/img/enemy/e1.png")) {
+      cout << "ERROR: Could not load enemy texture file." << "\n";
+    }
+    this->_sprite.setTexture(this->_texture);
+    this->_sprite.scale(1.0f, 1.0f);
+  } else if(eType == sheriff) {
+    if(!this->_texture.loadFromFile("utils/img/enemy/e2.png")) {
+        cout << "ERROR: Could not load enemy texture file." << "\n";
+    }
+    this->_sprite.setTexture(this->_texture);
+    this->_sprite.scale(1.8f, 1.8f);
+    this->_sprite.setRotation(0);
   }
 
   this->_sprite.setPosition(pos.x, pos.y);
@@ -82,7 +91,7 @@ Enemy::~Enemy() {
 
 sf::Vector2f Enemy::normalize(const sf::Vector2f& j) {
   float mag = sqrt((j.x * j.x) + (j.y * j.y));
-  std::cout << "\n MAGNITUDE(" << mag << ") \n" << std::endl;
+  cout << "\n MAGNITUDE(" << mag << ") \n" << endl;
   if(mag != 0) {
     return sf::Vector2f(j.x / mag, j.y / mag);
   } else {
@@ -113,17 +122,12 @@ const EnemyType Enemy::getType(int eId) {
 
 void Enemy::lookAtPlayer(int enemyId, sf::Vector2f playerPos, int playerRot) {
   sf::Vector2f enemyPos = this->_enemies[enemyId].enemy.getPosition();
-  // sf::Vector2f direction = this->normalize(playerPos - enemyPos);
-  // float rotation = sin(direction.y);
   float eRot = this->_enemies[enemyId].enemy.getRotation();
   float rotDiff = eRot - playerRot;
 
   float myAngle = atan2(playerPos.y - enemyPos.y, playerPos.x - enemyPos.x) * 180 / 3.145;
-  this->_enemies[enemyId].enemy.setRotation(myAngle - 90);
-  if(true) std::cout << "\n   myAngle(" << myAngle << ")  \n" << std::endl;
-
-  // need to grab cross prod and such
-
+  this->_enemies[enemyId].enemy.setRotation(myAngle);
+  if(true) cout << "\n   myAngle(" << myAngle << ")  \n" << endl;
   // this->_enemies[enemyId].enemy.rotate(1.01);
 }
   
@@ -141,11 +145,24 @@ void Enemy::update(int currLvl) {
   } else if (this->currLvl == 2) {
     this->enemySpeedAmplifier = 1.5;
   }
-
+  
+  const int newRand = (rand() % 20);
   for(int _j=0;_j < this->_enemies.size();_j++) {
-    // if(this->_enemies[_j].health <= 0.f) {
-    //   this->delEnemy(_j);
-    // }
+    // if(this->_enemies[_j].type == sheriff) {
+    //   if(!this->_texture.loadFromFile("utils/img/enemy/f1.png")) {
+    //     cout << "ERROR: Could not load enemy texture file." << "\n";
+    //   }
+
+    //   this->_enemies[_j].enemy.setTexture(this->_texture);
+    //   this->_enemies[_j].enemy.scale(1.8f, 1.8f);
+
+    if(this->_enemies[_j].type == sheriff) {
+      if(newRand % 4 == 0) {
+        this->_enemies[_j].enemy.move(-0.1f, -0.4f);
+      } else if(newRand % 3 == 0) {
+        this->_enemies[_j].enemy.move(0.001f, 0.2f);
+      }
+    }
 
     /* @TODO refactor this as the text for enemy may need to be inside the vector for external calls on update */
     if(this->_enemies[_j].health < 67.f) {
@@ -167,7 +184,7 @@ void Enemy::render(sf::RenderTarget& target) {
   for(auto &_e : this->_enemies) {
     target.draw(_e.enemy);
 
-    _e.text00.setString(std::to_string(_e.health).substr(0, 5));
+    _e.text00.setString(to_string(_e.health).substr(0, 5));
     _e.text00.setCharacterSize(18);
     _e.text00.setPosition(_e.enemy.getPosition().x, _e.enemy.getPosition().y - 20.f);
     _e.text00.setFillColor(sf::Color(255, 255, 255, 140));

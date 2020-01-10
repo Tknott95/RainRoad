@@ -4,6 +4,8 @@
 #include<SFML/System.hpp>
 #include<iostream>
 
+using namespace std;
+
 class Player {
   private:
     sf::Texture _texture;

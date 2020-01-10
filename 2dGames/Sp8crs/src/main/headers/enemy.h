@@ -5,6 +5,8 @@
 #include<iostream>
 #include<math.h>
 
+using namespace std;
+
 enum EnemyType {
   kamikaze,
   sheriff,

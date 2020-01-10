@@ -4,21 +4,21 @@
 void Player::init() {
 
   if(!this->_texture.loadFromFile("utils/img/player/medfighter.png")) {
-    std::cout << "ERROR: Could not load player texture file." << "\n";
+    cout << "ERROR: Could not load player texture file. \n" << endl;
   }
   if (!this->font00.loadFromFile("utils/fonts/font01.ttf")) {
-    std::cout << "ERROR: Could not load player font file." << "\n";
+    cout << "ERROR: Could not load player font file. \n" << endl;
   }
 
   this->text00.setFont(font00);
-  this->text00.setString("PlayerHealth:    "+std::to_string(this->curHealth).substr(0, 6));
+  this->text00.setString("PlayerHealth:    "+to_string(this->curHealth).substr(0, 6));
   this->text00.setCharacterSize(18);
   this->text00.setFillColor(sf::Color(255, 255, 255, 175)); /* switch to rgba .4 opacity @TODO */
   this->text00.setOutlineColor(sf::Color::Black);
   this->text00.setPosition(50.f, 50.f);
 
   this->text01.setFont(font00);
-  this->text01.setString("PlayerScore:    "+std::to_string(this->score).substr(0, 6));
+  this->text01.setString("PlayerScore:    "+to_string(this->score).substr(0, 6));
   this->text01.setCharacterSize(18);
   this->text01.setFillColor(sf::Color(255, 255, 255, 175)); /* switch to rgba .4 opacity @TODO */
   this->text01.setOutlineColor(sf::Color::Black);
@@ -45,8 +45,8 @@ void Player::update() {
   if(this->curHealth <= 0.0) {
     this->curHealth = 0.0;
   }
-  this->text00.setString("PlayerHealth:    "+std::to_string(this->curHealth).substr(0, 6));
-  this->text01.setString("PlayerScore:    "+std::to_string(this->score).substr(0, 6));
+  this->text00.setString("PlayerHealth:    "+to_string(this->curHealth).substr(0, 6));
+  this->text01.setString("PlayerScore:    "+to_string(this->score).substr(0, 6));
 }
 
 const sf::Vector2f& Player::getPos() const {
