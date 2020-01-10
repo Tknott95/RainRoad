@@ -125,6 +125,9 @@ void Enemy::lookAtPlayer(int enemyId, sf::Vector2f playerPos) {
   float halfX = this->_enemies[enemyId].enemy.getGlobalBounds().width/2;
   float halfY = this->_enemies[enemyId].enemy.getGlobalBounds().height/2;
 
+  sf::Vector2f origin = this->_enemies[enemyId].enemy.getOrigin(); 
+  this->_enemies[enemyId].enemy.setOrigin(halfX, halfY);
+
   /* @TODO dblCheck halfX, halfY logic */
   float myAngle = atan2(playerPos.y - (enemyPos.y - halfY), playerPos.x - (enemyPos.x - halfX)) * 180 / 3.145;
   this->_enemies[enemyId].enemy.setRotation(myAngle);
