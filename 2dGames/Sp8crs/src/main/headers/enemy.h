@@ -28,6 +28,7 @@ class Enemy {
     // float maxHealth = 100.f;
     float movementSpeed = 2.f;
     float bulletSpeed = 8.f;
+    float enemySpeedAmplifier = 1.f;
     int currLvl = 1;
 
     void init();

@@ -120,22 +120,28 @@ void Enemy::lookAtPlayer(int enemyId, sf::Vector2f playerPos, int playerRot) {
 
   float myAngle = atan2(playerPos.y - enemyPos.y, playerPos.x - enemyPos.x) * 180 / 3.145;
   this->_enemies[enemyId].enemy.setRotation(myAngle - 90);
-  std::cout << "\n   myAngle(" << myAngle << ")  \n" << std::endl;
+  if(true) std::cout << "\n   myAngle(" << myAngle << ")  \n" << std::endl;
 
   // need to grab cross prod and such
 
-    // this->_enemies[enemyId].enemy.rotate(1.01);
+  // this->_enemies[enemyId].enemy.rotate(1.01);
 }
   
 
 void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) {
   const sf::Vector2f enemyPos = this->_enemies[enemyId].enemy.getPosition();
   sf::Vector2f direction = this->normalize(playerPos - enemyPos);
-  this->_enemies[enemyId].enemy.move(enemySpeed * direction);
+  this->_enemies[enemyId].enemy.move(enemySpeed * direction * this->enemySpeedAmplifier);
 } /* @TODO refactor to make dynamic for _enemies vector, pass in position most likely */
 
 void Enemy::update(int currLvl) {
   this->currLvl = currLvl;
+  if(this->currLvl == 2) {
+    this->enemySpeedAmplifier = 1.2;
+  } else if (this->currLvl == 2) {
+    this->enemySpeedAmplifier = 1.5;
+  }
+
   for(int _j=0;_j < this->_enemies.size();_j++) {
     // if(this->_enemies[_j].health <= 0.f) {
     //   this->delEnemy(_j);
