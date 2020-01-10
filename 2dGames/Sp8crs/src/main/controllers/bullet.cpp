@@ -38,7 +38,7 @@ void Bullet::fire(sf::Vector2f startingPos, float halfSprite) {
 
 void Bullet::move(float ySpeed) {
   for(auto &b : this->_bullets) {
-    b.move(0, -1.f * ySpeed);
+    b.move(0, 1.f * -ySpeed);
   }
 }
 
