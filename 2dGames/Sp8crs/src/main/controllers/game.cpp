@@ -177,7 +177,6 @@ void Game::eventPolling() {
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
     if(this->_player->getPos().y > 100) {
       this->_player->move(0.0, -this->playerSpeed);
-        this->_bullet->move(.3f);
     }
   }
 
@@ -217,14 +216,14 @@ void Game::fixedUpdate() {
     }
   }
 
-  for(int k=0;k < this->_bullet->_bullets.size(); k++) {
+  for(int k=0;k < this->_bullet->playerBullets.size(); k++) {
     if(DEBUG == true) {
-      cout << "\n  bullPosY(" << this->_bullet->_bullets[k].getPosition().y << ")  \n" << endl;
-      cout << "\n  bulletsVecSize(" << this->_bullet->_bullets.size() << ") \n" << endl;
+      cout << "\n  bullPosY(" << this->_bullet->playerBullets[k].bullet.getPosition().y << ")  \n" << endl;
+      cout << "\n  bulletsVecSize(" << this->_bullet->playerBullets.size() << ") \n" << endl;
     }
 
     for(int j=0; j < this->_enemy->_enemies.size(); j++) {
-      if(collision.checkCollision(this->_enemy->_enemies[j].enemy.getGlobalBounds(), this->_bullet->_bullets[k].getGlobalBounds())) {
+      if(collision.checkCollision(this->_enemy->_enemies[j].enemy.getGlobalBounds(), this->_bullet->playerBullets[k].bullet.getGlobalBounds())) {
        cout << "\n ENEMY HIT BY BULLET \n" << endl;
        this->_enemy->takeDmg(j, 33.3);
        this->_bullet->erase(k);
@@ -232,7 +231,7 @@ void Game::fixedUpdate() {
       }
     }
 
-    if(this->_bullet->_bullets[k].getPosition().y <= 100) {
+    if(this->_bullet->playerBullets[k].bullet.getPosition().y <= 100) {
       this->_bullet->erase(k);
     }
   }
@@ -268,7 +267,7 @@ void Game::update() {
     this->_clock.restart();
   }
 
-  this->_bullet->move(3.3f);
+  this->_bullet->move(-3.3f, player);
 
   if(this->DEBUG) { cout << this->_player->_sprite.getGlobalBounds().width << " - boundsWidth \n" << this->_player->_sprite.getGlobalBounds().height << " - boundsHeight \n" << endl; };
 }
