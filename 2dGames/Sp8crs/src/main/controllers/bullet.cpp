@@ -18,8 +18,8 @@ void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset) {
     BulletStruct b;
     b.bullet.setTexture(this->_playerBulletTexture);
     b.type = player;
-    b.bullet.setPosition(startingPos.x + (xOffset-5) , startingPos.y + yOffset);
-    b.bullet.scale(1.2f, 1.2f);
+    b.bullet.setPosition(startingPos.x + (xOffset-10) , startingPos.y + yOffset);
+    b.bullet.scale(1.4f, 1.2f);
     this->playerBullets.emplace_back(b);
   } else if (bType == enemy) {
     BulletStruct b;
