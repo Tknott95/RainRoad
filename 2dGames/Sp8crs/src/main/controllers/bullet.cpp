@@ -24,7 +24,7 @@ void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset, fl
   } else if (bType == enemy) {
     BulletStruct b;
     b.bullet.setTexture(this->_enemyBulletTexture);
-    b.bullet.setRotation(-angleToPlayer);
+    b.bullet.setRotation(angleToPlayer + 90);
     b.type = enemy;
     b.bullet.setPosition(startingPos.x + (xOffset-5) , startingPos.y - yOffset);
     b.bullet.scale(1.2f, 1.2f);
@@ -48,14 +48,14 @@ void Bullet::fire(sf::Vector2f startingPos, float halfSprite, float angleToPlaye
   this->spawn(startingPos, bType, halfSprite, angleToPlayer);
 }
 
-void Bullet::move(float ySpeed, BulletType bType) {
+void Bullet::move(float ySpeed, BulletType bType, float angleToPlayer) {
   if(bType == player) {
     for(auto &b : this->playerBullets) {
       b.bullet.move(0, 1.f * -ySpeed);
     }
   } else if(bType == enemy) {
     for(auto &b : this->enemyBullets) {
-      b.bullet.move(0, 1.f * ySpeed);
+      b.bullet.move(cos(angleToPlayer*3.145/180) * ySpeed, sin(angleToPlayer*3.145/180) * ySpeed);
     }
   }
 }
@@ -67,6 +67,16 @@ void Bullet::erase(int i, BulletType type) {
   } else if(type == enemy) {
     this->enemyBullets.erase(this->enemyBullets.begin() + i);
     std::cout << " \n   erasingEnemyBulletID(" << i << ") \n" << std::endl;
+  }
+}
+
+sf::Vector2f Bullet::normalize(const sf::Vector2f& j) {
+  float mag = sqrt((j.x * j.x) + (j.y * j.y));
+  std::cout << "\n MAGNITUDE(" << mag << ") \n" << std::endl;
+  if(mag != 0) {
+    return sf::Vector2f(j.x / mag, j.y / mag);
+  } else {
+    return j;
   }
 }
 

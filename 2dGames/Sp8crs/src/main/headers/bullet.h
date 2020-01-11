@@ -4,6 +4,7 @@
 #include<SFML/System.hpp>
 #include<iostream>
 #include<vector>
+#include<math.h>
 
 enum BulletType {
   player,
@@ -35,9 +36,10 @@ class Bullet {
     Bullet();
 	  virtual ~Bullet();
     void fire(sf::Vector2f, float halfSprite, float angleToPlayer, BulletType bType);
-    void move(float, BulletType);
+    void move(float, BulletType, float angleToPlaye);
     void erase(int, BulletType);
+
+    sf::Vector2f normalize(const sf::Vector2f& j);
+
     void render(sf::RenderTarget& target);
-
-
 };
