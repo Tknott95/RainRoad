@@ -3,14 +3,12 @@
 
 @TODO (01) || Sp8crs
 
-1)
-  - Fix Game Over Replay Screen.
-  (ISSUE) onClick() not triggering "re-render" of screen
+1) - Fix Game Over Replay Screen.
+     * (ISSUE) onClick() not triggering "re-render" of screen
 
 
+2) - float angle; in EnemyStruct; to save each angle for each bullet;
+     * (ISSUE) currently a bug which causes all bullets to move instead of curent one at angle to playerPos()
 
-
-
-2)
 3)
 4)

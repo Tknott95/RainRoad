@@ -39,7 +39,5 @@ class Bullet {
     void move(float, BulletType, float angleToPlaye);
     void erase(int, BulletType);
 
-    sf::Vector2f normalize(const sf::Vector2f& j);
-
     void render(sf::RenderTarget& target);
 };

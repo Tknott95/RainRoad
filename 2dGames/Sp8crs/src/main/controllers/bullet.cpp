@@ -70,16 +70,6 @@ void Bullet::erase(int i, BulletType type) {
   }
 }
 
-sf::Vector2f Bullet::normalize(const sf::Vector2f& j) {
-  float mag = sqrt((j.x * j.x) + (j.y * j.y));
-  std::cout << "\n MAGNITUDE(" << mag << ") \n" << std::endl;
-  if(mag != 0) {
-    return sf::Vector2f(j.x / mag, j.y / mag);
-  } else {
-    return j;
-  }
-}
-
 void Bullet::render(sf::RenderTarget& target) {
   for(auto &b : this->_bullets) {
     target.draw(b);
