@@ -20,7 +20,7 @@ void Game::init() {
   this->_enemyTimeElapsed = this->_enemyClock.getElapsedTime();
   this->_trueElapsedTime = this->_trueClock.getElapsedTime();
 
-  if (!this->_bgMusic.openFromFile("utils/audio/space_music.wav")) {
+  if (!this->_bgMusic.openFromFile("utils/audio/bg/DOS-88-Automatav2.ogg")) {
     std::cout << "ERROR: Could not load game - space_music.wav music file." << "\n";
   }
   if (!this->_audio00.openFromFile("utils/audio/laser03.ogg")) {
@@ -37,12 +37,12 @@ void Game::init() {
 
   this->_bgMusic.setPosition(0, 1, 10); // change its 3D position
   //this->_bgMusic.setPitch(2);
-  this->_bgMusic.setVolume(12);
+  this->_bgMusic.setVolume(18);
   this->_bgMusic.setLoop(true);
   this->_audio00.setPosition(0, 1, 4);
   this->_audio00.setVolume(15);
   this->_audio01.setPosition(0, 1, 2);
-  this->_audio01.setVolume(20);
+  this->_audio01.setVolume(15);
  
   this->_bgMusic.play();
 
