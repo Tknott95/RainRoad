@@ -306,30 +306,18 @@ void Game::render() {
 
 
   if(this->introFinished && !isGameOver() && !isLevelFinished()) { // @TODO this made player del at window screen yet won't respawn after
-    /* DRAW HERE */
     this->_bullet->render(*this->_window);
     this->_player->render(*this->_window);
     this->_enemy->render(*this->_window);
   } else {
-    /* for 3 secs */
-    if(this->_trueElapsedTime.asSeconds() > 1.0f) this->introFinished = true;
+    if(this->_trueElapsedTime.asSeconds() > 2.0f) this->introFinished = true;
     if(this->_gameStruct.levelFinished) this->introFinished = true;
   }
 
-  // if(this->_enemy->_enemies.size() <= 0) {
-  //   this->_window->draw(this->_text03);
-  //   this->_window->draw(_text04);
-  // } 
-  /// @TODO if true make bool levelFinished = true
-
-  // if(this->_gameStruct.currLvl = 2) {
-
-  // }
-  
-
   if(this->isGameOver()) {
     _clock.restart();
-    // this->_bgMusic.stop();
+    this->_bgMusic.stop();
+    this->_audio01.play();
 
     if(restartGame) {
       delete this->_player;
