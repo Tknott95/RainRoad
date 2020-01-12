@@ -14,6 +14,7 @@ enum BulletType {
 struct BulletStruct {
   BulletType type;
   sf::Sprite bullet;
+  float angle;
 };
 
 class Bullet {

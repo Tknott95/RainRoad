@@ -20,6 +20,7 @@ void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset, fl
     b.type = player;
     b.bullet.setPosition(startingPos.x + (xOffset-10) , startingPos.y + yOffset);
     b.bullet.scale(1.4f, 1.2f);
+    b.angle = angleToPlayer;
     this->playerBullets.emplace_back(b);
   } else if (bType == enemy) {
     BulletStruct b;
@@ -28,6 +29,7 @@ void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset, fl
     b.type = enemy;
     b.bullet.setPosition(startingPos.x + (xOffset-5) , startingPos.y - yOffset);
     b.bullet.scale(1.2f, 1.2f);
+    b.angle = angleToPlayer;
     this->enemyBullets.emplace_back(b);
   }
 }

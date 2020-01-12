@@ -221,7 +221,7 @@ void Game::fixedUpdate() {
 
     float angleToPlayer = this->_enemy->getAngleToPlayer(_i, this->_player->getPos());
 
-    if(this->_enemyTimeElapsed.asSeconds() > 0.3f) {
+    if(this->_enemyTimeElapsed.asSeconds() > 0.5f) {
       this->_bullet->fire(this->_enemy->_enemies[_i].enemy.getPosition(), this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, angleToPlayer, enemy);
       this->_enemyClock.restart();
     }
