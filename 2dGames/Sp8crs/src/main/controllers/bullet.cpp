@@ -27,7 +27,7 @@ void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset, fl
     b.bullet.setTexture(this->_enemyBulletTexture);
     b.bullet.setRotation(angleToPlayer + 90);
     b.type = enemy;
-    b.bullet.setPosition(startingPos.x + (xOffset-5) , startingPos.y - yOffset);
+    b.bullet.setPosition(startingPos.x - (xOffset-10) , startingPos.y + (yOffset + 50.f));
     b.bullet.scale(1.2f, 1.2f);
     b.angle = angleToPlayer;
     this->enemyBullets.emplace_back(b);

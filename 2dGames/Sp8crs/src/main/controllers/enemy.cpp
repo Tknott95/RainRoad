@@ -13,29 +13,29 @@ void Enemy::init() {
 }
 
 void Enemy::spawn(sf::Vector2f pos, EnemyType eType) {
+  EnemyStruct e00;
   if(&pos.x == NULL || &pos.y == NULL) {
     pos. x = 600.f;
     pos.y = 200.f;
   }
 
   if(eType == kamikaze) {
-    if(!this->_texture.loadFromFile("utils/img/enemy/e1.png")) {
+    if(!this->_texture00.loadFromFile("utils/img/enemy/e1.png")) {
       cout << "ERROR: Could not load enemy texture file." << "\n";
     }
-    this->_sprite.setTexture(this->_texture);
-    this->_sprite.scale(1.0f, 1.0f);
+    e00.enemy.setTexture(this->_texture00);
+    e00.enemy.scale(1.0f, 1.0f);
   } else if(eType == sheriff) {
-    if(!this->_texture.loadFromFile("utils/img/enemy/e2.png")) {
+    if(!this->_texture01.loadFromFile("utils/img/enemy/e2.png")) {
         cout << "ERROR: Could not load enemy texture file." << "\n";
     }
-    this->_sprite.setTexture(this->_texture);
-    this->_sprite.scale(1.8f, 1.8f);
-    this->_sprite.setRotation(0);
+    e00.enemy.scale(1.1f, 1.1f);
+    e00.enemy.setTexture(this->_texture01);
+    e00.enemy.setRotation(0);
   }
 
-  this->_sprite.setPosition(pos.x, pos.y);
-  EnemyStruct e00;
-  e00.enemy = this->_sprite;
+  e00.enemy.setPosition(pos.x, pos.y);
+
   e00.health = 100.f;
   e00.text00 = this->_text00;
   e00.type = eType;
@@ -47,20 +47,20 @@ void Enemy::spawner(int currLvl) {
     // this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
     // this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
     // this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
-    // this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
     this->spawn(sf::Vector2f(555.f, 300.f), sheriff); 
     /* @TODO create lookAtPlayer() then a case/if statement to choose which to run regarding type */
   } else if (currLvl == 2) {
     this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
     this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
-    this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
+    this->spawn(sf::Vector2f(333.f, 100.f), sheriff);
     this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
-    this->spawn(sf::Vector2f(555.f, 170.f), kamikaze);
+    this->spawn(sf::Vector2f(555.f, 170.f), sheriff);
     this->spawn(sf::Vector2f(220.f, 150.f), kamikaze);
-    this->spawn(sf::Vector2f(1100.f, 130.f), kamikaze);
-    this->spawn(sf::Vector2f(1333.f, 100.f), kamikaze);
-    this->spawn(sf::Vector2f(340.f, 000.f), kamikaze);
-    this->spawn(sf::Vector2f(755.f, 000.f), kamikaze);
+    // this->spawn(sf::Vector2f(1100.f, 130.f), kamikaze);
+    // this->spawn(sf::Vector2f(1333.f, 100.f), kamikaze);
+    // this->spawn(sf::Vector2f(340.f, 000.f), kamikaze);
+    // this->spawn(sf::Vector2f(755.f, 000.f), kamikaze);
   } else if (currLvl == 3) { /* @TODO create new types of enemies w/ the enum made a few days prior */
     this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
     this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);

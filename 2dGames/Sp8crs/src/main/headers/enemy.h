@@ -23,7 +23,8 @@ struct EnemyStruct {
 
 class Enemy {
   private:
-    sf::Texture _texture;
+    sf::Texture _texture00;
+    sf::Texture _texture01;
     sf::Text _text00;
     sf::Font _font00;
     // float currHealth = 100.f; /* will add to vec

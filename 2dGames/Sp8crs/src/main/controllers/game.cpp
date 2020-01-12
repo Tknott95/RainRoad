@@ -221,9 +221,13 @@ void Game::fixedUpdate() {
 
     float angleToPlayer = this->_enemy->getAngleToPlayer(_i, this->_player->getPos());
 
-    if(this->_enemyTimeElapsed.asSeconds() > 0.5f) {
-      this->_bullet->fire(this->_enemy->_enemies[_i].enemy.getPosition(), this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, angleToPlayer, enemy);
-      this->_enemyClock.restart();
+    if(
+      this->_enemyTimeElapsed.asSeconds() > 1.2f
+      &&
+      this->_enemy->_enemies[_i].type == sheriff
+      ) {
+        this->_bullet->fire(this->_enemy->_enemies[_i].enemy.getPosition(), this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, angleToPlayer, enemy);
+        this->_enemyClock.restart();
     }
   }
 
@@ -233,6 +237,9 @@ void Game::fixedUpdate() {
       this->_bullet->erase(_j, enemy);
     }
 
+    if(this->_bullet->enemyBullets[_j].bullet.getPosition().x > screenWidth || this->_bullet->enemyBullets[_j].bullet.getPosition().y > screenHeight) {
+      this->_bullet->erase(_j, enemy);
+    }
   }
 
   for(int k=0;k < this->_bullet->playerBullets.size(); k++) {
