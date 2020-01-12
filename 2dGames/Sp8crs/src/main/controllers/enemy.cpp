@@ -47,8 +47,8 @@ void Enemy::spawner(int currLvl) {
   if(currLvl == 1) {
     // this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
     // this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
-    // this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
-    // this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
+    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
     this->spawn(sf::Vector2f(555.f, 300.f), sheriff); 
     /* @TODO create lookAtPlayer() then a case/if statement to choose which to run regarding type */
   } else if (currLvl == 2) {
@@ -63,23 +63,37 @@ void Enemy::spawner(int currLvl) {
     // this->spawn(sf::Vector2f(340.f, 000.f), kamikaze);
     // this->spawn(sf::Vector2f(755.f, 000.f), kamikaze);
   } else if (currLvl == 3) { /* @TODO create new types of enemies w/ the enum made a few days prior */
-    this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(600.f, 200.f), sheriff);
     this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
     this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
-    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(100.f, 000.f), sheriff);
     this->spawn(sf::Vector2f(555.f, 170.f), kamikaze);
-    this->spawn(sf::Vector2f(220.f, 150.f), kamikaze);
+    this->spawn(sf::Vector2f(220.f, 150.f), sheriff);
     this->spawn(sf::Vector2f(1100.f, 130.f), kamikaze);
     this->spawn(sf::Vector2f(1333.f, 100.f), kamikaze);
     this->spawn(sf::Vector2f(340.f, 000.f), kamikaze);
     this->spawn(sf::Vector2f(755.f, 000.f), kamikaze);
     this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
     this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
-    this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
-    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
-    this->spawn(sf::Vector2f(555.f, 300.f), kamikaze);
+    // this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
+    // this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
+    // this->spawn(sf::Vector2f(555.f, 300.f), kamikaze);
   } else {
-    currLvl = 1;
+    this->spawn(sf::Vector2f(600.f, 200.f), sheriff);
+    this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
+    this->spawn(sf::Vector2f(100.f, 000.f), sheriff);
+    this->spawn(sf::Vector2f(555.f, 170.f), kamikaze);
+    this->spawn(sf::Vector2f(220.f, 150.f), sheriff);
+    this->spawn(sf::Vector2f(1100.f, 130.f), kamikaze);
+    this->spawn(sf::Vector2f(1333.f, 100.f), kamikaze);
+    this->spawn(sf::Vector2f(340.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(755.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(1000.f, 200.f), sheriff);
+    this->spawn(sf::Vector2f(333.f, 100.f), sheriff);
+    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(555.f, 300.f), sheriff);
   }
 }
 
@@ -92,7 +106,7 @@ Enemy::~Enemy() {
 
 sf::Vector2f Enemy::normalize(const sf::Vector2f& j) {
   float mag = sqrt((j.x * j.x) + (j.y * j.y));
-  cout << "\n MAGNITUDE(" << mag << ") \n" << endl;
+  if(!true) cout << "\n MAGNITUDE(" << mag << ") \n" << endl;
   if(mag != 0) {
     return sf::Vector2f(j.x / mag, j.y / mag);
   } else {
@@ -165,15 +179,15 @@ void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) 
 void Enemy::update(int currLvl) {
   this->currLvl = currLvl;
   if(this->currLvl == 2) {
+    this->enemySpeedAmplifier = .5;
+  } else if (this->currLvl == 3) {
     this->enemySpeedAmplifier = 1.2;
-  } else if (this->currLvl == 2) {
-    this->enemySpeedAmplifier = 1.5;
   }
   
   const int newRand = (rand() % 20);
   for(int _j=0;_j < this->_enemies.size();_j++) {
     if(this->_enemies[_j].type == sheriff) {
-      if(newRand % 4 == 0) {
+      if(newRand % 4 == 0 && this->_enemies[_j].enemy.getPosition().y < 100) { /* @TODO bring in screen size as sf::vector2f, possibly make one a var instead of 2 floats in game class */
         this->_enemies[_j].enemy.move(-0.1f, -0.4f);
       } else if(newRand % 3 == 0) {
         this->_enemies[_j].enemy.move(0.001f, 0.2f);
@@ -203,7 +217,8 @@ void Enemy::render(sf::RenderTarget& target) {
     _e.text00.setOutlineColor(sf::Color::Black);
     _e.text00.setOutlineThickness(2.f);
     if(_e.type == sheriff) {
-      // _e.text00.setPosition(_e.enemy.getPosition().x - 65, _e.enemy.getPosition().y - 20.f);
+      _e.text00.setPosition(_e.enemy.getPosition().x, _e.enemy.getPosition().y - 100.f);
+      target.draw(_e.text00);
     } else {
       _e.text00.setPosition(_e.enemy.getPosition().x, _e.enemy.getPosition().y - 20.f);
       target.draw(_e.text00);

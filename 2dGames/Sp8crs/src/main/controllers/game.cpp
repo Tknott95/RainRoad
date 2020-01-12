@@ -59,8 +59,8 @@ const int Game::getCurrLvl() {
    return this->_gameStruct.currLvl;
 }
 
-const bool Game::isGameOver() { /* @TODO render text and black overlay opacity .5 after "dead" */
-  if(this->_player->curHealth <= 0.f) {
+const bool Game::isGameOver() {
+  if(_player->curHealth <= 0.f) {
     return true;
   }
   return false;
@@ -328,20 +328,20 @@ void Game::render() {
   
 
   if(this->isGameOver()) {
-    this->_clock.restart();
-    this->_bgMusic.stop();
+    _clock.restart();
+    // this->_bgMusic.stop();
 
     if(restartGame) {
       delete this->_player;
       delete this->_enemy;
       delete this->_bullet;
-      this->init();
+      init();
        // @TODO REFACTOR
-      this->_window->clear(sf::Color::Black);
-      this->setBackground();
-      this->_bullet->render(*this->_window);
-      this->_player->render(*this->_window);
-      this->_enemy->render(*this->_window);
+      _window->clear(sf::Color::Black);
+      setBackground();
+      _bullet->render(*this->_window);
+      _player->render(*this->_window);
+      _enemy->render(*this->_window);
       restartGame = false;
       // @TODO REFACTOR
     }

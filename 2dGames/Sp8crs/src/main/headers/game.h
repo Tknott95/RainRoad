@@ -50,8 +50,10 @@ class Game {
     float firingDelay = 0.18f;
     bool _isFirstRun = true;
 
+    sf::Texture _gameOverTexture;
     sf::Sprite _bgSprite;
     sf::Sprite _bgCloudsSprite;
+    sf::Sprite _gameOverSprite;
     sf::Music _bgMusic;
     sf::Music _audio00; /* shooting - space_music.ogg */
     sf::Music _audio01; /* onDead - doomed_music.wav */

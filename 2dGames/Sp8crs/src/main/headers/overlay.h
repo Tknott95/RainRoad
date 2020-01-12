@@ -15,6 +15,8 @@ class Overlay {
     sf::Text _text03; /* LEVEL 1 COMPLETE */
     sf::Text _text04; /* GO TO NEXT LEVEL? */
     sf::Text _text05; /* CURRENT LVL */
+    sf::Texture _gameOverTexture;
+    sf::Sprite _gameOverSprite;
     bool levelFinished;
     bool isGameOver;
     int currLvl;

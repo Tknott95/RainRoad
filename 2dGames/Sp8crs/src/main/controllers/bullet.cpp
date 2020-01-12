@@ -29,7 +29,7 @@ void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset, fl
     b.type = enemy;
     b.bullet.setPosition(startingPos.x , startingPos.y + (yOffset));
     b.bullet.scale(1.2f, 1.2f);
-    b.angle = angleToPlayer; 
+    b.angle = angleToPlayer - 9; /* -9 toCenter onPlayer */ 
     std::string yS = std::to_string(startingPos.y + (yOffset));
     std::string myPos = "shotOrigin("+ std::to_string(startingPos.x)+", "+yS+") \n";
     std::cout << myPos << std::endl;
