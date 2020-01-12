@@ -57,7 +57,7 @@ void Bullet::move(float ySpeed, BulletType bType, float angleToPlayer) {
     }
   } else if(bType == enemy) {
     for(auto &b : this->enemyBullets) {
-      b.bullet.move(cos(angleToPlayer*3.145/180) * ySpeed, sin(angleToPlayer*3.145/180) * ySpeed);
+      b.bullet.move(cos(b.angle*3.145/180) * ySpeed, sin(b.angle*3.145/180) * ySpeed);
     }
   }
 }
