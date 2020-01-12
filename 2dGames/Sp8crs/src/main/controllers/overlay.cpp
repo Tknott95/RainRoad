@@ -11,11 +11,11 @@ void Overlay::Init(float screenWidth, float screenHeight, int currLevel) {
 
   this->_text02.setFont(this->_font00);
   this->_text02.setString("Sp8Crs"/*"LEVEL " + to_string(this->currLvl)*/); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
-  this->_text02.setCharacterSize(180);
-  this->_text02.setPosition((screenWidth/2)*0.40, screenHeight/2 - 200);
+  this->_text02.setCharacterSize(280);
+  this->_text02.setPosition((screenWidth/2)*0.30, screenHeight/2 - 50);
   this->_text02.setFillColor(sf::Color(178,250,245,100));
   this->_text02.setOutlineColor(sf::Color::Black);
-  this->_text02.setOutlineThickness(1.f);
+  this->_text02.setOutlineThickness(10.f);
 
   this->_text03.setFont(this->_font00);
   this->_text03.setString("LEVEL FINISHED"); /* @TODO make this dynamic w/ beginning timer from 3 -> 0 */
