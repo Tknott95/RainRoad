@@ -27,6 +27,7 @@ class Bullet {
     sf::Texture _playerBulletTexture;
     float spawnTimer;
     float spawnDelay;
+    float _pi = 3.14159;
 
   public:
     std::vector <sf::CircleShape> _bullets;

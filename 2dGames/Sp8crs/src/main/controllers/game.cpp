@@ -193,7 +193,7 @@ void Game::fixedUpdate() {
 
   for(int k=0; k < this->_enemy->_enemies.size(); k++) {
     if(this->_enemy->_enemies[k].type == kamikaze) {
-      this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.44f);
+      this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.84f);
     } else if(this->_enemy->_enemies[k].type == sheriff) {
       this->_enemy->lookAtPlayer(k, this->_player->getPos());
     }

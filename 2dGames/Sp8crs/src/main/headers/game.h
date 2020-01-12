@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <ctime>
-
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
@@ -57,13 +56,7 @@ class Game {
     sf::Music _bgMusic;
     sf::Music _audio00; /* shooting - space_music.ogg */
     sf::Music _audio01; /* onDead - doomed_music.wav */
-    // sf::Font _font00;
-    // /* @TODO maybe use vector/array logic 4 readability */
-    // sf::Text _text00; /* GAME OVER */
-    // sf::Text _text01; /* PLAY AGAIN */
-    // sf::Text _text02; /* LEVEL <#> - BEGIN IN <3... 2... 1...> @TODO */
-    // sf::Text _text03; /* LEVEL 1 COMPLETE */
-    // sf::Text _text04; /* GO TO NEXT LEVEL? */
+
 
     sf::Event _event;
     sf::Vector2i _mousePos;
