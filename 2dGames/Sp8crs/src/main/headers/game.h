@@ -80,7 +80,6 @@ class Game {
     bool firing = false;
     bool restartGame = false;
     bool introFinished = false;
-    const bool DEBUG = false;
     
     void init();
     const int getCurrLvl();

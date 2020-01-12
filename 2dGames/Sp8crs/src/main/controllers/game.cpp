@@ -105,7 +105,7 @@ void Game::setMousePos() {
   this->_mousePos = sf::Mouse::getPosition(*this->_window);
   this->_mouseCoords = this->_window->mapPixelToCoords(this->_mousePos);
   /* call *this->_window inside getPosition() for relative pos to _window */
-  if(this->DEBUG) {
+  if(true) {
     cout << "COORDS MOUSE POS: " << this->_mouseCoords.x << " " << this->_mouseCoords.y << "\n";
     cout << "MOUSE POS: " << this->_mousePos.x << " " << this->_mousePos.y << "\n";
   }
@@ -119,7 +119,7 @@ void Game::eventPolling() {
         break;
       case sf::Event::KeyPressed:
         if(this->_event.key.code == sf::Keyboard::Escape){
-          if(this->DEBUG) { cout << "\n CLOSING WINDOW \n" << endl; };
+          cout << "\n CLOSING WINDOW \n" << endl;
           this->_window->close();
           break;
         }
@@ -127,7 +127,7 @@ void Game::eventPolling() {
       case sf::Event::MouseButtonPressed: /* @TODO refactor this as it is sloppy, maybe remove this case for one similar to while() statement */
         /* @TODO checkCollision with text01 for playAgain. Maybe inside external class for modularity to pull in. */
         if(this->_event.MouseLeft) {
-          if(this->DEBUG) { cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl; };
+          if(true) cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl;
           if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos, 01)) {
             /* @TODO NOT EVEN USING THIS ANYWHERE IT SEEMS. FIND GAME OVER OVERLAY AND FIX DIS SHIZ */
             this->_isFirstRun = false;
@@ -136,7 +136,7 @@ void Game::eventPolling() {
 
           if(this->isLevelFinished() && this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) {
             this->_gameStruct.currLvl++;
-            if(this->DEBUG) {cout << "\n        CURRENT LVL(" << this->getCurrLvl() << ")  \n" << endl; };
+            if(true) cout << "\n        CURRENT LVL(" << this->getCurrLvl() << ")  \n" << endl;
 
             this->_gameStruct.levelFinished = false;
             this->setBackground();
@@ -157,7 +157,7 @@ void Game::eventPolling() {
     
     // cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
     if(playerRotation > leftClamp - 1 || playerRotation < rightClamp) {
-      if(this->DEBUG) { cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl; };
+      if(true) cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
       this->_player->_sprite.setRotation(this->_player->_sprite.getRotation() + 0.1f); /* needs clamp and lerp to orig on keyUP @TODO */
     }
   } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
@@ -165,7 +165,7 @@ void Game::eventPolling() {
       this->_player->move(-this->playerSpeed, 0.0);
     }
     if(playerRotation < rightClamp + 1 || playerRotation > leftClamp) {
-      if(this->DEBUG) { cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl; };
+      if(true) cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
       this->_player->_sprite.setRotation(this->_player->_sprite.getRotation() - 0.1f); /* needs clamp and lerp to orig on keyUP @TODO */
     }
   }
@@ -180,8 +180,7 @@ void Game::eventPolling() {
   }
 
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
-    if(this->DEBUG) { cout << "\n Space PRESSED \n" << endl; };
-    // this->_bullet->fire(this->_player->_sprite.getPosition());
+    if(true) cout << "\n Space PRESSED \n" << endl;
     this->firing = true;
     this->_audio00.play();
   }
@@ -238,7 +237,7 @@ void Game::fixedUpdate() {
   }
 
   for(int k=0;k < this->_bullet->playerBullets.size(); k++) {
-    if(DEBUG == true) {
+    if(true) {
       cout << "\n  bullPosY(" << this->_bullet->playerBullets[k].bullet.getPosition().y << ")  \n" << endl;
       cout << "\n  bulletsVecSize(" << this->_bullet->playerBullets.size() << ") \n" << endl;
     }
@@ -265,9 +264,7 @@ void Game::update() {
   this->_gameStruct.currScore = this->_player->score;
   this->_player->update();
   this->_enemy->update(this->getCurrLvl());
-  if(this->DEBUG == true) {
-    cout << "\n   _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
-  }
+  if(true) cout << "\n   _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
 
   if(this->_enemy->_enemies.size() <= 0) {
     this->_gameStruct.levelFinished = true;
@@ -282,7 +279,7 @@ void Game::update() {
     this->_bgCloudsSprite.move(-.01f, 0.00001f);
   }
 
-  if(this->DEBUG) { cout << " \n   playerPos(" << this->_player->getPos().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl; };
+  if(true) cout << " \n   playerPos(" << this->_player->getPos().x << ", " << this->_player->_sprite.getPosition().y << ") \n" << endl;
   if(firing  && this->_timeElapsed.asSeconds() > this->firingDelay) {
     this->_bullet->fire(this->_player->getPos(), this->_player->_sprite.getGlobalBounds().width/2, 0, player);
     firing = false;
@@ -292,7 +289,7 @@ void Game::update() {
   this->_bullet->move(3.3f, player, 0.f);
   
 
-  if(this->DEBUG) { cout << this->_player->_sprite.getGlobalBounds().width << " - boundsWidth \n" << this->_player->_sprite.getGlobalBounds().height << " - boundsHeight \n" << endl; };
+  if(true) cout << this->_player->_sprite.getGlobalBounds().width << " - boundsWidth \n" << this->_player->_sprite.getGlobalBounds().height << " - boundsHeight \n" << endl;
 }
 
 const bool Game::isLevelFinished() {
