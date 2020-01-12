@@ -29,9 +29,10 @@ void Enemy::spawn(sf::Vector2f pos, EnemyType eType) {
     if(!this->_texture01.loadFromFile("utils/img/enemy/e2.png")) {
         cout << "ERROR: Could not load enemy texture file." << "\n";
     }
-    e00.enemy.scale(1.1f, 1.1f);
-    e00.enemy.setTexture(this->_texture01);
-    e00.enemy.setRotation(0);
+    e00.enemy.scale(0.6f, 0.8f);
+    e00.enemy.setTexture(this->_texture01);     
+    const sf::Vector2f _orgn = {e00.enemy.getGlobalBounds().width/2, e00.enemy.getGlobalBounds().height/2 + 50};
+    e00.enemy.setOrigin(_orgn);
   }
 
   e00.enemy.setPosition(pos.x, pos.y);
@@ -47,7 +48,7 @@ void Enemy::spawner(int currLvl) {
     // this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
     // this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
     // this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
-    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
+    // this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
     this->spawn(sf::Vector2f(555.f, 300.f), sheriff); 
     /* @TODO create lookAtPlayer() then a case/if statement to choose which to run regarding type */
   } else if (currLvl == 2) {
@@ -124,6 +125,7 @@ void Enemy::lookAtPlayer(int enemyId, sf::Vector2f playerPos) {
   sf::Vector2f enemyPos = this->_enemies[enemyId].enemy.getPosition();
   float halfX = this->_enemies[enemyId].enemy.getGlobalBounds().width/2;
   float halfY = this->_enemies[enemyId].enemy.getGlobalBounds().height/2;
+  const float angleForwardOffset = 90; /* @TODO if adding another function call make this a param for dynamic sets */
 
   /* @TODO rotateFromOrigin() currently not twerking /()()\ */
   // sf::Vector2f origin = this->_enemies[enemyId].enemy.getOrigin(); 
@@ -132,8 +134,8 @@ void Enemy::lookAtPlayer(int enemyId, sf::Vector2f playerPos) {
 
   /* @TODO dblCheck halfX, halfY logic */
   float myAngle = atan2(playerPos.y - (enemyPos.y - halfY), playerPos.x - (enemyPos.x - halfX)) * 180 / 3.145;
-  this->_enemies[enemyId].enemy.setRotation(myAngle);
-  if(true) cout << "\n   myAngle(" << myAngle << ")  \n" << endl;
+  this->_enemies[enemyId].enemy.setRotation(myAngle + angleForwardOffset);
+  if(!true) cout << "\n   myAngle(" << myAngle << ")  \n" << endl;
 }
 
 const float Enemy::getAngleToPlayer(int enemyId, sf::Vector2f playerPos) {
@@ -148,6 +150,10 @@ const float Enemy::getAngleToPlayer(int enemyId, sf::Vector2f playerPos) {
   /* @TODO dblCheck halfX, halfY logic */
   float myAngle = atan2(playerPos.y - enemyPos.y, playerPos.x - enemyPos.x) * 180 / 3.145;
   return myAngle;
+}
+
+const sf::Vector2f Enemy::getPosById(int eId) {
+  return this->_enemies[eId].enemy.getPosition();
 }
 
 void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) {

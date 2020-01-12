@@ -130,11 +130,8 @@ void Game::eventPolling() {
           if(this->DEBUG) { cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl; };
           if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos, 01)) {
             /* @TODO NOT EVEN USING THIS ANYWHERE IT SEEMS. FIND GAME OVER OVERLAY AND FIX DIS SHIZ */
-            this->_gameStruct.levelFinished = false;
-            this->_gameStruct.currLvl = 1; /* @TODO del this and make a better way */
-            /* @TODO resetPlayer() function on newGame() */
-            this->_player->curHealth = 100;
-            this->_player->score = 0.f;
+            this->_isFirstRun = false;
+            this->init();
           }
 
           if(this->isLevelFinished() && this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) {
@@ -221,12 +218,10 @@ void Game::fixedUpdate() {
 
     float angleToPlayer = this->_enemy->getAngleToPlayer(_i, this->_player->getPos());
 
-    if(
-      this->_enemyTimeElapsed.asSeconds() > 1.2f
+    if(this->_enemyTimeElapsed.asSeconds() > 1.2f
       &&
-      this->_enemy->_enemies[_i].type == sheriff
-      ) {
-        this->_bullet->fire(this->_enemy->_enemies[_i].enemy.getPosition(), this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, angleToPlayer, enemy);
+      this->_enemy->_enemies[_i].type == sheriff) {
+        this->_bullet->fire(this->_enemy->getPosById(_i), this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, angleToPlayer, enemy);
         this->_enemyClock.restart();
     }
   }
@@ -312,9 +307,9 @@ void Game::render() {
 
   if(this->introFinished && !isGameOver() && !isLevelFinished()) { // @TODO this made player del at window screen yet won't respawn after
     /* DRAW HERE */
+    this->_bullet->render(*this->_window);
     this->_player->render(*this->_window);
     this->_enemy->render(*this->_window);
-    this->_bullet->render(*this->_window);
   } else {
     /* for 3 secs */
     if(this->_trueElapsedTime.asSeconds() > 1.0f) this->introFinished = true;
@@ -344,9 +339,9 @@ void Game::render() {
        // @TODO REFACTOR
       this->_window->clear(sf::Color::Black);
       this->setBackground();
+      this->_bullet->render(*this->_window);
       this->_player->render(*this->_window);
       this->_enemy->render(*this->_window);
-      this->_bullet->render(*this->_window);
       restartGame = false;
       // @TODO REFACTOR
     }
