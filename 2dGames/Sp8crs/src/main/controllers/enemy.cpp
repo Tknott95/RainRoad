@@ -31,7 +31,7 @@ void Enemy::spawn(sf::Vector2f pos, EnemyType eType) {
     }
     e00.enemy.scale(0.6f, 0.8f);
     e00.enemy.setTexture(this->_texture01);     
-    const sf::Vector2f _orgn = {e00.enemy.getGlobalBounds().width/2, e00.enemy.getGlobalBounds().height/2 + 50};
+    const sf::Vector2f _orgn = {50, 0};
     e00.enemy.setOrigin(_orgn);
   }
 
