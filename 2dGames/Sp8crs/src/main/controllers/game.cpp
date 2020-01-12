@@ -227,6 +227,14 @@ void Game::fixedUpdate() {
     }
   }
 
+  for(int _j=0;_j < this->_bullet->enemyBullets.size();_j++) {
+    if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_bullet->enemyBullets[_j].bullet.getGlobalBounds())) {
+      this->_player->takeDmg(10.f);
+      this->_bullet->erase(_j, enemy);
+    }
+
+  }
+
   for(int k=0;k < this->_bullet->playerBullets.size(); k++) {
     if(DEBUG == true) {
       cout << "\n  bullPosY(" << this->_bullet->playerBullets[k].bullet.getPosition().y << ")  \n" << endl;
