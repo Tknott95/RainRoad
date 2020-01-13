@@ -128,7 +128,6 @@ void Game::eventPolling() {
         if(this->_event.MouseLeft) {
           if(true) cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl;
           if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos, 01)) {
-            this->_isFirstRun = false;
             this->restartGame = true;
           }
 
@@ -315,6 +314,7 @@ void Game::render() {
     this->_audio01.play();
 
     if(restartGame) {
+      this->_isFirstRun = false;
       delete this->_player;
       delete this->_enemy;
       delete this->_bullet;
