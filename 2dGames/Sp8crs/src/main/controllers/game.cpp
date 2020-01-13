@@ -124,14 +124,12 @@ void Game::eventPolling() {
           break;
         }
         break;
-      case sf::Event::MouseButtonPressed: /* @TODO refactor this as it is sloppy, maybe remove this case for one similar to while() statement */
-        /* @TODO checkCollision with text01 for playAgain. Maybe inside external class for modularity to pull in. */
+      case sf::Event::MouseButtonPressed:
         if(this->_event.MouseLeft) {
           if(true) cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl;
           if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos, 01)) {
-            /* @TODO NOT EVEN USING THIS ANYWHERE IT SEEMS. FIND GAME OVER OVERLAY AND FIX DIS SHIZ */
             this->_isFirstRun = false;
-            this->init();
+            this->restartGame = true;
           }
 
           if(this->isLevelFinished() && this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) {
@@ -321,12 +319,6 @@ void Game::render() {
       delete this->_enemy;
       delete this->_bullet;
       init();
-       // @TODO REFACTOR
-      _window->clear(sf::Color::Black);
-      setBackground();
-      _bullet->render(*this->_window);
-      _player->render(*this->_window);
-      _enemy->render(*this->_window);
       restartGame = false;
       // @TODO REFACTOR
     }
