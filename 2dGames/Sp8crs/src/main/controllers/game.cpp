@@ -217,9 +217,8 @@ void Game::fixedUpdate() {
 
     float angleToPlayer = this->_enemy->getAngleToPlayer(_i, this->_player->getPos());
 
-    if(this->_enemyTimeElapsed.asSeconds() > 1.2f
-      &&
-      this->_enemy->_enemies[_i].type == sheriff) {
+    if(this->_enemyTimeElapsed.asSeconds() > 1.8f
+      && this->_enemy->_enemies[_i].type == sheriff) {
         this->_bullet->fire(this->_enemy->getPosById(_i), this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, angleToPlayer, enemy);
         this->_enemyClock.restart();
     }
