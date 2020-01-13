@@ -37,14 +37,14 @@ void Overlay::Init(float screenWidth, float screenHeight, int currLevel) {
   this->_text00.setCharacterSize(130);
   this->_text00.setOutlineColor(sf::Color::Black);
   this->_text00.setOutlineThickness(2.f);
-  this->_text00.setPosition((screenWidth/2)*0.25, screenHeight/2 - 200);
+  this->_text00.setPosition((screenWidth/2)*0.35, screenHeight/2 - 200);
   this->_text00.setFillColor(sf::Color(140, 40, 40, 210));
 
   this->_text01.setFont(this->_font00);
   this->_text01.setString("PLAY AGAIN?");
   this->_text01.setCharacterSize(100);
-  this->_text01.setPosition((screenWidth/2)*0.40, screenHeight/2);
-  this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
+  this->_text01.setPosition((screenWidth/2)*0.45, screenHeight/2);
+  this->_text01.setFillColor(sf::Color(100, 40, 40, 230));
 
   this->_text05.setFont(this->_font01);
   this->_text05.setString("Current Lvl:    "+std::to_string(this->currLvl));
