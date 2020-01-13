@@ -40,14 +40,11 @@ void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset, fl
 }
 
 Bullet::Bullet() {
-  /* @TODO look into constructors for bullets, is it stupid? */
   this->spawnDelay = 0.1f;
   this->clock.restart();
 }
 
-Bullet::~Bullet() {
-  /* @TODO look into destructors for bullets, is it stupid? */
-}
+Bullet::~Bullet() { }
 
 void Bullet::fire(sf::Vector2f startingPos, float halfSprite, float angleToPlayer, BulletType bType) {
   this->elapsedTime = this->clock.getElapsedTime();
