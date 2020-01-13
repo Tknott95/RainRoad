@@ -62,6 +62,7 @@ void Bullet::move(float ySpeed, BulletType bType) {
 }
 
 void Bullet::erase(int i, BulletType type) {
+  /* @TODO make impact anim (onDel() | onCol()) */
   if(type == player) {
     this->playerBullets.erase(this->playerBullets.begin() + i);
     std::cout << " \n   erasingPlayerBulletID(" << i << ") \n" << std::endl;

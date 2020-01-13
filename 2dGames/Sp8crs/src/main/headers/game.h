@@ -26,8 +26,7 @@ struct GameStruct {
 
 enum GameModeEnum {
   running,
-  paused,
-  guiOverlay
+  paused
 };
 
 
@@ -61,7 +60,6 @@ class Game {
     sf::Event _event;
     sf::Vector2i _mousePos;
     sf::Vector2f _mouseCoords; /* rel to screen size in float foramat */
-    // float score;
     Player* _player;
     Enemy* _enemy;
     Bullet* _bullet;

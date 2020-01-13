@@ -1,14 +1,8 @@
 
 
 
-@TODO (01) || Sp8crs
-
-1) - Fix Game Over Replay Screen.
-     * (ISSUE) onClick() not triggering "re-render" of screen
-
-
-2) - float angle; in EnemyStruct; to save each angle for each bullet;
-     * (ISSUE) currently a bug which causes all bullets to move instead of curent one at angle to playerPos()
-
-3)
-4)
+@TODO || Sp8crs
+1) make 3rd enemyType w/ shots at 0-360 in angle+=60 increments
+2) make bullet impact anim/etc
+3) make enemy destroy explosion
+4) make sprite sheet for player ship moving

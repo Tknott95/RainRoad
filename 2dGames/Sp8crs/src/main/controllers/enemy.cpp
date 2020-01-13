@@ -131,6 +131,7 @@ const bool Enemy::isDead() {
 
 void Enemy::delEnemy(int eId) {
   /* @TODO make destruction sound onDel() */
+  /* @TODO make explosion anim onDel() */
   this->_enemies.erase(this->_enemies.begin() + eId);
 }
 
