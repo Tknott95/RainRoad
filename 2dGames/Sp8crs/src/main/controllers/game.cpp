@@ -216,7 +216,7 @@ void Game::fixedUpdate() {
     }
 
     float angleToPlayer = this->_enemy->getAngleToPlayer(_i, this->_player->getPos());
-    float randomNumber = (rand() / static_cast <float> (RAND_MAX/10.8f));
+    const float randomNumber = (rand() / static_cast <float> (RAND_MAX/(10.8f-0.8f))); /* (HI#-LO#)) */
 
     if(this->_enemyTimeElapsed.asSeconds() > randomNumber /* was 1.8f */
       && this->_enemy->_enemies[_i].type == sheriff) {
