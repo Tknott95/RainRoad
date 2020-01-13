@@ -63,12 +63,12 @@ Overlay::~Overlay() {
 }
 
 bool Overlay::isMousePressedAndContains(sf::Vector2i mousePos, int type) {
-  if(type = 04 && this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+  if(type == 04 && this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
     return true;
   } else {
     return false;
   }
-  if(type = 01 && this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+  if(type == 01 && this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
     return true;
   } else {
     return  false;
@@ -94,8 +94,13 @@ void Overlay::Update(bool isGameOver, sf::Vector2i mousePos, bool levelFinished,
   /* onHover() 2 needs refactor */
   if(this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
     this->_text04.setFillColor(sf::Color(178, 200, 255, 80));
+    this->_text04.setOutlineColor(sf::Color(0,0,10,230));
+    this->_text04.setOutlineThickness(10.2f);
+
   } else {
     this->_text04.setFillColor(sf::Color(178, 200, 245, 120));
+    this->_text04.setOutlineColor(sf::Color::Black);
+    this->_text04.setOutlineThickness(10.2f);
   }
   /* end of onHOver() 2*/
 }

@@ -129,6 +129,7 @@ void Game::eventPolling() {
           if(true) cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl;
           if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos, 01)) {
             this->restartGame = true;
+            break;
           }
 
           if(this->isLevelFinished() && this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) {
@@ -138,6 +139,7 @@ void Game::eventPolling() {
             this->_gameStruct.levelFinished = false;
             this->setBackground();
             this->_enemy->spawner(this->getCurrLvl());
+            break;
           }
         }
         break;

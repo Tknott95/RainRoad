@@ -28,6 +28,7 @@ class Bullet {
     float spawnTimer;
     float spawnDelay;
     float _pi = 3.14159;
+    float yOffset = 10.f;
 
   public:
     std::vector <sf::CircleShape> _bullets;
