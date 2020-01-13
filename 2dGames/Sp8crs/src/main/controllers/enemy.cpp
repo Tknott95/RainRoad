@@ -58,23 +58,20 @@ void Enemy::spawner(int currLvl) {
     this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
     this->spawn(sf::Vector2f(755.f, 170.f), sheriff);
     this->spawn(sf::Vector2f(220.f, 150.f), kamikaze);
-  } else if (currLvl == 3) { /* @TODO create new types of enemies w/ the enum made a few days prior */
+  } else if (currLvl == 3) {
     this->spawn(sf::Vector2f(600.f, 200.f), sheriff);
     this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
     this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
     this->spawn(sf::Vector2f(100.f, 000.f), sheriff);
     this->spawn(sf::Vector2f(555.f, 170.f), kamikaze);
-    this->spawn(sf::Vector2f(220.f, 150.f), sheriff);
+    this->spawn(sf::Vector2f(1020.f, 150.f), sheriff);
     this->spawn(sf::Vector2f(1100.f, 130.f), kamikaze);
     this->spawn(sf::Vector2f(1333.f, 100.f), kamikaze);
     this->spawn(sf::Vector2f(340.f, 000.f), kamikaze);
     this->spawn(sf::Vector2f(755.f, 000.f), kamikaze);
     this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
     this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
-    // this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
-    // this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
-    // this->spawn(sf::Vector2f(555.f, 300.f), kamikaze);
-  } else if (currLvl == 3) {
+  } else if (currLvl == 4) {
     this->spawn(sf::Vector2f(600.f, 200.f), sheriff);
     this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
     this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
@@ -151,12 +148,6 @@ void Enemy::lookAtPlayer(int enemyId, sf::Vector2f playerPos) {
   float halfY = this->_enemies[enemyId].enemy.getGlobalBounds().height/2;
   const float angleForwardOffset = 90; /* @TODO if adding another function call make this a param for dynamic sets */
 
-  /* @TODO rotateFromOrigin() currently not twerking /()()\ */
-  // sf::Vector2f origin = this->_enemies[enemyId].enemy.getOrigin(); 
-  // cout << "\n   Origin(" << origin.x << ", " << origin.y << ")  \n" << endl;
-  // this->_enemies[enemyId].enemy.setOrigin(origin.x, origin.y);
-
-  /* @TODO dblCheck halfX, halfY logic */
   float myAngle = atan2(playerPos.y - (enemyPos.y - halfY), playerPos.x - (enemyPos.x - halfX)) * 180 / 3.145;
   this->_enemies[enemyId].enemy.setRotation(myAngle + angleForwardOffset);
   if(!true) cout << "\n   myAngle(" << myAngle << ")  \n" << endl;
@@ -167,11 +158,6 @@ const float Enemy::getAngleToPlayer(int enemyId, sf::Vector2f playerPos) {
   float halfX = this->_enemies[enemyId].enemy.getGlobalBounds().width/2;
   float halfY = this->_enemies[enemyId].enemy.getGlobalBounds().height/2;
 
-  // sf::Vector2f origin = this->_enemies[enemyId].enemy.getOrigin(); 
-  // cout << "\n   Origin(" << origin.x << ", " << origin.y << ")  \n" << endl;
-  // this->_enemies[enemyId].enemy.setOrigin(origin.x, origin.y);
-
-  /* @TODO dblCheck halfX, halfY logic */
   float myAngle = atan2(playerPos.y - enemyPos.y, playerPos.x - enemyPos.x) * 180 / 3.145;
   return myAngle;
 }
@@ -184,7 +170,7 @@ void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) 
   const sf::Vector2f enemyPos = this->_enemies[enemyId].enemy.getPosition();
   sf::Vector2f direction = this->normalize(playerPos - enemyPos);
   this->_enemies[enemyId].enemy.move(enemySpeed * direction * this->enemySpeedAmplifier);
-} /* @TODO refactor to make dynamic for _enemies vector, pass in position most likely */
+}
 
 void Enemy::update(int currLvl) {
   this->currLvl = currLvl;
@@ -203,15 +189,6 @@ void Enemy::update(int currLvl) {
         this->_enemies[_j].enemy.move(0.001f, 0.2f);
       }
     }
-    /* @TODO refactor this as the text for enemy may need to be inside the vector for external calls on update */
-    // if(this->_enemies[_j].health < 67.f) {
-    //   this->_enemies[_j].text00.setFillColor(sf::Color(60, 140, 40, 130));
-    // } else if(this->_enemies[_j].health < 33.f) {
-    //   this->_enemies[_j].text00.setFillColor(sf::Color(140, 60, 40, 120));
-    // } else if(this->_enemies[_j].health < 10.f) {
-    //   this->_enemies[_j].text00.setFillColor(sf::Color(240, 40, 40, 110));
-    //   /* @TODO why won't this work? Dynamic fill color? I have a struct? it should? or should it baha bja habjabkj */ 
-    // }
   }
 }
 
@@ -223,7 +200,11 @@ void Enemy::render(sf::RenderTarget& target) {
   for(auto &_e : this->_enemies) {
     _e.text00.setString(to_string(_e.health).substr(0, 5));
     _e.text00.setCharacterSize(18);
-    _e.text00.setFillColor(sf::Color(255, 255, 255, 140));
+    if(_e.health < 33.3f) {
+      _e.text00.setFillColor(sf::Color(240, 140, 140, 110));
+    } else {
+       _e.text00.setFillColor(sf::Color(255, 255, 255, 140));
+    }
     _e.text00.setOutlineColor(sf::Color::Black);
     _e.text00.setOutlineThickness(2.f);
     if(_e.type == sheriff) {
