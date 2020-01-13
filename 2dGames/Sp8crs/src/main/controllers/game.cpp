@@ -205,7 +205,7 @@ void Game::fixedUpdate() {
   }
 
   for(int _i=0; _i < this->_enemy->_enemies.size(); _i++) {
-    this->_bullet->move(3.3f, enemy, this->_enemy->getAngleToPlayer(_i ,this->_player->getPos()));
+    this->_bullet->move(3.3f, enemy);
 
     if(this->_enemy->_enemies[_i].health <= 0.f) {
       this->_enemy->delEnemy(_i);
@@ -283,7 +283,7 @@ void Game::update() {
     this->_clock.restart();
   }
 
-  this->_bullet->move(3.3f, player, 0.f);
+  this->_bullet->move(3.3f, player);
   
 
   if(true) cout << this->_player->_sprite.getGlobalBounds().width << " - boundsWidth \n" << this->_player->_sprite.getGlobalBounds().height << " - boundsHeight \n" << endl;

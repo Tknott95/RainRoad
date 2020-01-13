@@ -38,7 +38,7 @@ class Bullet {
     Bullet();
 	  virtual ~Bullet();
     void fire(sf::Vector2f, float halfSprite, float angleToPlayer, BulletType bType);
-    void move(float, BulletType, float angleToPlaye);
+    void move(float, BulletType);
     void erase(int, BulletType);
 
     void render(sf::RenderTarget& target);

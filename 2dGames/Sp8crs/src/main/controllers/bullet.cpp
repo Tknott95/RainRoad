@@ -55,7 +55,7 @@ void Bullet::fire(sf::Vector2f startingPos, float halfSprite, float angleToPlaye
   this->spawn(startingPos, bType, halfSprite, angleToPlayer);
 }
 
-void Bullet::move(float ySpeed, BulletType bType, float angleToPlayer) {
+void Bullet::move(float ySpeed, BulletType bType) {
   if(bType == player) {
     for(auto &b : this->playerBullets) {
       b.bullet.move(0, 1.f * -ySpeed);

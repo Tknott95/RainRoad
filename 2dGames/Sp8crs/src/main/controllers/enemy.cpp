@@ -189,9 +189,9 @@ void Enemy::moveToPlayer(int enemyId, sf::Vector2f playerPos, float enemySpeed) 
 void Enemy::update(int currLvl) {
   this->currLvl = currLvl;
   if(this->currLvl == 2) {
-    this->enemySpeedAmplifier = .5;
+    this->enemySpeedAmplifier = 0.3;
   } else if (this->currLvl == 3) {
-    this->enemySpeedAmplifier = 1.2;
+    this->enemySpeedAmplifier = 0.8;
   }
   
   const int newRand = (rand() % 20);
