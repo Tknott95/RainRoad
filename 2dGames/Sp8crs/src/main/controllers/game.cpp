@@ -284,8 +284,6 @@ void Game::update() {
   }
 
   this->_bullet->move(3.3f, player);
-  
-
   if(true) cout << this->_player->_sprite.getGlobalBounds().width << " - boundsWidth \n" << this->_player->_sprite.getGlobalBounds().height << " - boundsHeight \n" << endl;
 }
 
@@ -297,7 +295,6 @@ void Game::render() {
   this->_window->clear(sf::Color::Black);
   this->setBackground();
   this->_overlay->Render(*this->_window,this->introFinished, this->isLevelFinished(), this->isGameOver());
-
 
   if(this->introFinished && !isGameOver() && !isLevelFinished()) { // @TODO this made player del at window screen yet won't respawn after
     this->_bullet->render(*this->_window);
