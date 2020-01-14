@@ -47,6 +47,7 @@ class Game {
     float _secondsPassed;
     float firingDelay = 0.18f;
     bool _isFirstRun = true;
+    const bool DEBUG = false;
 
     sf::Texture _gameOverTexture;
     sf::Sprite _bgSprite;
