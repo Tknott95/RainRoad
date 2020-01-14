@@ -121,14 +121,6 @@ sf::Vector2f Enemy::normalize(const sf::Vector2f& j) {
   }
 }
 
-const bool Enemy::isDead() {
-  // if(this->currHealth <= 0.f) {
-  //   return true;
-  // }
-
-  return false;
-}
-
 void Enemy::delEnemy(int eId) {
   /* @TODO make destruction sound onDel() */
   /* @TODO make explosion anim onDel() */

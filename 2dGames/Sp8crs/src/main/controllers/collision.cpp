@@ -11,3 +11,6 @@ sf::Vector2f Collision::getSpriteSize(sf::Sprite& Object) {
 	sf::Vector2f Scale = Object.getScale();
 	return sf::Vector2f (OriginalSize.width*Scale.x, OriginalSize.height*Scale.y);
 }
+
+/* @TODO make system to move back sprites collided */
+/* use classical newtonian physics */

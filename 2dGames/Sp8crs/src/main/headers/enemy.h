@@ -27,8 +27,6 @@ class Enemy {
     sf::Texture _texture01;
     sf::Text _text00;
     sf::Font _font00;
-    // float currHealth = 100.f; /* will add to vec
-    // float maxHealth = 100.f;
     float movementSpeed = 2.f;
     float bulletSpeed = 8.f;
     float enemySpeedAmplifier = 1.f;
@@ -38,7 +36,6 @@ class Enemy {
     void spawn(sf::Vector2f pos, EnemyType eType);
 
     sf::Vector2f normalize(const sf::Vector2f&);
-    const bool isDead();
 
   public:
     std::vector<EnemyStruct> _enemies; /* health, _enemySprite */
