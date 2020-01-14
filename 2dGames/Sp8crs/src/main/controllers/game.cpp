@@ -319,7 +319,6 @@ void Game::render() {
       delete this->_bullet;
       init();
       restartGame = false;
-      // @TODO REFACTOR
     }
   }
   
