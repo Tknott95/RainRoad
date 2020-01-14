@@ -121,6 +121,15 @@ void Game::eventPolling() {
         if(this->_event.MouseLeft) {
           if(DEBUG) cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl;
           if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos, 01)) {
+            cout << "\n CLICKED \n" << endl;
+            cout << "\n CLICKED \n" << endl;
+            cout << "\n CLICKED \n" << endl;
+            cout << "\n CLICKED \n" << endl;
+            cout << "\n CLICKED \n" << endl;
+            cout << "\n CLICKED \n" << endl;
+            cout << "\n CLICKED \n" << endl;
+            cout << "\n CLICKED \n" << endl;
+            cout << "\n CLICKED \n" << endl;
             this->restartGame = true;
             break;
           }

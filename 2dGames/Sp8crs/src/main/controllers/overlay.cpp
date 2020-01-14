@@ -63,12 +63,12 @@ Overlay::~Overlay() {
 }
 
 bool Overlay::isMousePressedAndContains(sf::Vector2i mousePos, int type) {
-  if(type == 04 && this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+  if(type = 04 && this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
     return true;
   } else {
     return false;
   }
-  if(type == 01 && this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+  if(type = 01 && this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
     return true;
   } else {
     return  false;
@@ -119,8 +119,8 @@ void Overlay::Render(sf::RenderTarget& target,bool introFinished, bool levelFini
 
   if(isGameOver) {
     target.clear(sf::Color::White);
-    _gameOverTexture.loadFromFile("./utils/img/bg/game_over.png");
-    _gameOverSprite.setTexture(_gameOverTexture);
+    this->_gameOverTexture.loadFromFile("./utils/img/bg/game_over.png");
+    this->_gameOverSprite.setTexture(_gameOverTexture);
     target.draw(_gameOverSprite);
     target.draw(this->_text00);
     target.draw(this->_text01);
