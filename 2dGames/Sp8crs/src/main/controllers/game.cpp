@@ -31,11 +31,11 @@ void Game::init() {
     std::cout << "ERROR: Could not load game - doomed_music.wav audio file." << "\n";
   }
 
-  this->_bgMusic.setPosition(0, 1, 10);
-  this->_bgMusic.setVolume(18);
+  this->_bgMusic.setPosition(0, 1, 8);
+  this->_bgMusic.setVolume(22);
   this->_bgMusic.setLoop(true);
   this->_audio00.setPosition(0, 1, 4);
-  this->_audio00.setVolume(15);
+  this->_audio00.setVolume(25);
   this->_audio01.setPosition(0, 1, 2);
   this->_audio01.setVolume(15);
   this->_bgMusic.play();
@@ -173,8 +173,8 @@ void Game::eventPolling() {
 
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
     if(DEBUG) cout << "\n Space PRESSED \n" << endl;
-    this->firing = true;
     this->_audio00.play();
+    this->firing = true;
   }
 }
 
@@ -212,6 +212,7 @@ void Game::fixedUpdate() {
 
     if(this->_enemyTimeElapsed.asSeconds() > randomNumber /* was 1.8f */
       && this->_enemy->_enemies[_i].type == sheriff) {
+        /* @TODO make enemy firing sound */
         this->_bullet->fire(this->_enemy->getPosById(_i), this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, angleToPlayer, enemy);
         this->_enemyClock.restart();
     }
