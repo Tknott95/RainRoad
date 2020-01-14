@@ -45,10 +45,6 @@ class Enemy {
 	  virtual ~Enemy();
 	  const sf::Vector2f& getPos() const; /* @TODO why a const after the call again? Return value becoming one? Just more control? */
 
-    // void move(const float x, const float y);
-	  // const bool canAttack();
-
-    // void shoot();
     void takeDmg(int eId, float dmg);
     void delEnemy(int eId);
     const EnemyType getType(int eId);
