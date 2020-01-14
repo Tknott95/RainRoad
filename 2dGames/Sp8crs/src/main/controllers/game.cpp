@@ -31,19 +31,13 @@ void Game::init() {
     std::cout << "ERROR: Could not load game - doomed_music.wav audio file." << "\n";
   }
 
-  // if (!this->_font00.loadFromFile("utils/fonts/font00.ttf")) {
-  //   std::cout << "ERROR: Could not load game - font00.ttf file." << "\n";
-  // }
-
-  this->_bgMusic.setPosition(0, 1, 10); // change its 3D position
-  //this->_bgMusic.setPitch(2);
+  this->_bgMusic.setPosition(0, 1, 10);
   this->_bgMusic.setVolume(18);
   this->_bgMusic.setLoop(true);
   this->_audio00.setPosition(0, 1, 4);
   this->_audio00.setVolume(15);
   this->_audio01.setPosition(0, 1, 2);
   this->_audio01.setVolume(15);
- 
   this->_bgMusic.play();
 
   this->_overlay = new Overlay();
@@ -321,7 +315,6 @@ void Game::render() {
       restartGame = false;
     }
   }
-  
   /* DRAW HERE */
 
   this->_window->display();
