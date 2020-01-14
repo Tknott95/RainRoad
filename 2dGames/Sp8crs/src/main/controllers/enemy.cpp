@@ -182,10 +182,6 @@ void Enemy::update(int currLvl) {
   }
 }
 
-const sf::Vector2f & Enemy::getPos() const {
-  return this->_sprite.getPosition();
-}
-
 void Enemy::render(sf::RenderTarget& target) {
   for(auto &_e : this->_enemies) {
     _e.text00.setString(to_string(_e.health).substr(0, 5));
