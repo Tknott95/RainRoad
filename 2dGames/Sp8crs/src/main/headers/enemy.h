@@ -38,12 +38,11 @@ class Enemy {
     sf::Vector2f normalize(const sf::Vector2f&);
 
   public:
-    std::vector<EnemyStruct> _enemies; /* health, _enemySprite */
-    sf::Sprite _sprite;
+    std::vector<EnemyStruct> _enemies;
     void spawner(int currLvl);
     Enemy();
 	  virtual ~Enemy();
-	  const sf::Vector2f& getPos() const; /* @TODO why a const after the call again? Return value becoming one? Just more control? */
+	  const sf::Vector2f& getPos() const;
 
     void takeDmg(int eId, float dmg);
     void delEnemy(int eId);

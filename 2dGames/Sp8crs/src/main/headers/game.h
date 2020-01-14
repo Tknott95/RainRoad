@@ -59,7 +59,7 @@ class Game {
 
     sf::Event _event;
     sf::Vector2i _mousePos;
-    sf::Vector2f _mouseCoords; /* rel to screen size in float foramat */
+    sf::Vector2f _mouseCoords; /* rel to screen size */
     Player* _player;
     Enemy* _enemy;
     Bullet* _bullet;
