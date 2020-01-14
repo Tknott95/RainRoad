@@ -65,10 +65,6 @@ void Player::takeDmg(const float amount) {
   this->curHealth -= amount;
 }
 
-void Player::displayHealth() {
-  // this->curHealth;
-} 
-
 void Player::shoot() {
   this->_bullet.setPosition(this->_sprite.getPosition().x + ((this->_sprite.getGlobalBounds().width/2)-5), this->_sprite.getPosition().y /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
   this->_bullet.setRadius(5.f);

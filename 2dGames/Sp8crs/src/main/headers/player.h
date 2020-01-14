@@ -12,7 +12,6 @@ class Player {
     
     sf::CircleShape _bullet;
     sf::Clock _clock;
-    // sf::Clock clock;
     sf::Time elapsedTime;
 
     float movementSpeed = 4.f;
@@ -28,7 +27,6 @@ class Player {
     sf::Text text01; /* timeElapsed text */
     float curHealth = 100.f; /* REFACTOR TO PRIVATE W/ PUB CLASS  @TODO */
     float score = 0.f;
-    // float globalBounds; /*this->_player->_sprite.getGlobalBounds() */
     Player();
 	  virtual ~Player();
     void update();
