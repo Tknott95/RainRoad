@@ -6,6 +6,12 @@ void Enemy::init() {
     cout << "ERROR: Could not load enemy font file." << "\n";
   }
 
+  /* even smart to reinitialize vars, del here or in header??? */
+  this->movementSpeed = 1.f;
+  this->bulletSpeed = 8.f;
+  this->enemySpeedAmplifier = 1.f;
+  this->currLvl = 1;
+
   this->_text00.setFont(this->_font00);
 }
 
@@ -42,9 +48,9 @@ void Enemy::spawn(sf::Vector2f pos, EnemyType eType) {
 
 void Enemy::spawner(int currLvl) {
   if(currLvl == 1) {
-    // this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
+    // this->spawn(sf::Vector2f(600.f, 200.f), hexagon); /* was kamikaze */
     // this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
-    this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
+    // this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
     this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
     this->spawn(sf::Vector2f(555.f, 300.f), sheriff); 
     /* @TODO create lookAtPlayer() then a case/if statement to choose which to run regarding type */

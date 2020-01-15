@@ -10,6 +10,7 @@ using namespace std;
 enum EnemyType {
   kamikaze,
   sheriff,
+  hexagon,
   jester
 };
 
