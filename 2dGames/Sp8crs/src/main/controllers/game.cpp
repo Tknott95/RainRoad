@@ -230,8 +230,8 @@ void Game::fixedUpdate() {
         float sixerAngle = 0.0;
         for(int ijk=0; ijk < 6; ijk++) {
         sixerAngle += 60;
-        float exPos = this->_enemy->getPosById(_i).x + 10;
-        float eyPos = this->_enemy->getPosById(_i).y + 10;
+        float exPos = this->_enemy->getPosById(_i).x + 17;
+        float eyPos = this->_enemy->getPosById(_i).y + 21;
         this->_bullet->fire({exPos, eyPos}, this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, sixerAngle, enemy);        }
         this->_enemyClock.restart();
       }
