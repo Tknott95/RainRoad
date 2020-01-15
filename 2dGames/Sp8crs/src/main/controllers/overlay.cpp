@@ -62,7 +62,7 @@ Overlay::~Overlay() {
 
 }
 
-bool Overlay::isMousePressedAndContains(sf::Vector2i mousePos, int type) {
+bool Overlay::isMousePressedAndContains(sf::Vector2f mousePos, int type) {
   if(type = 4 && this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
     return true;
   } else {
@@ -76,7 +76,7 @@ bool Overlay::isMousePressedAndContains(sf::Vector2i mousePos, int type) {
 }
 
 
-void Overlay::Update(bool isGameOver, sf::Vector2i mousePos, bool levelFinished, int currLevel) {
+void Overlay::Update(bool isGameOver, sf::Vector2f mousePos, bool levelFinished, int currLevel) {
   this->levelFinished = levelFinished;
   this->isGameOver = isGameOver;
   this->currLvl = currLevel;

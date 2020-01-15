@@ -27,7 +27,7 @@ class Overlay {
     virtual ~Overlay();
 
     void Init(float screenWidth, float screenHeight, int currLevel);
-    bool isMousePressedAndContains(sf::Vector2i mousePos,int type);
-    void Update(bool isGameOver, sf::Vector2i mousePos, bool levelFinished, int currLevel);
+    bool isMousePressedAndContains(sf::Vector2f mousePos,int type);
+    void Update(bool isGameOver, sf::Vector2f mousePos, bool levelFinished, int currLevel);
     void Render(sf::RenderTarget& target,bool introFinished, bool levelFinished, bool isGameOver);
 };

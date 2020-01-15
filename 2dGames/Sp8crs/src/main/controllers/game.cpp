@@ -119,13 +119,13 @@ void Game::eventPolling() {
         break;
       case sf::Event::MouseButtonPressed:
         if(this->_event.MouseLeft) {
-          if(DEBUG) cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl;
-          if(this->_overlay->isMousePressedAndContains(this->_mousePos, 1) && this->isGameOver()) {
+          if(DEBUG) cout << "\n MouseButton PRESSED (" << this->_mouseCoords.x << ", " << this->_mouseCoords.y << ") \n" << endl;
+          if(this->_overlay->isMousePressedAndContains(this->_mouseCoords, 1) && this->isGameOver()) {
             this->restartGame = true;
             break;
           }
 
-          if(this->_overlay->isMousePressedAndContains(this->_mousePos, 4) && this->isLevelFinished()) {
+          if(this->_overlay->isMousePressedAndContains(this->_mouseCoords, 4) && this->isLevelFinished()) {
             this->_gameStruct.currLvl++;
             if(DEBUG) cout << "\n        CURRENT LVL(" << this->getCurrLvl() << ")  \n" << endl;
 
@@ -185,7 +185,7 @@ void Game::eventPolling() {
 void Game::fixedUpdate() {
   this->eventPolling();
   this->setMousePos();
-  this->_overlay->Update(this->isGameOver(), this->_mousePos, this->_gameStruct.levelFinished, this->_gameStruct.currLvl);
+  this->_overlay->Update(this->isGameOver(), this->_mouseCoords, this->_gameStruct.levelFinished, this->_gameStruct.currLvl);
 
   if(!isGameOver() && !isLevelFinished()) {
     for(int k=0; k < this->_enemy->_enemies.size(); k++) {

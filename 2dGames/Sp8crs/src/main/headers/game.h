@@ -81,8 +81,6 @@ class Game {
     Game();
     virtual ~Game();
 
-    
-    
     void setBackground();
     void setMousePos();
     const bool isOpen() const;
