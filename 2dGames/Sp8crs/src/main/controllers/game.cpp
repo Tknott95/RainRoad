@@ -193,6 +193,8 @@ void Game::fixedUpdate() {
         this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.84f);
       } else if(this->_enemy->_enemies[k].type == sheriff) {
         this->_enemy->lookAtPlayer(k, this->_player->getPos());
+      } else if(this->_enemy->_enemies[k].type == sixer) {
+
       }
 
       if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_enemies[k].enemy.getGlobalBounds())){
@@ -219,6 +221,18 @@ void Game::fixedUpdate() {
         && this->_enemy->_enemies[_i].type == sheriff) {
         /* @TODO make enemy firing sound */
         this->_bullet->fire(this->_enemy->getPosById(_i), this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, angleToPlayer, enemy);
+        this->_enemyClock.restart();
+      }
+
+      if(this->_enemyTimeElapsed.asSeconds() > randomNumber /* was 1.8f */
+        && this->_enemy->_enemies[_i].type == sixer) {
+        /* @TODO make enemy firing sound */
+        float sixerAngle = 0.0;
+        for(int ijk=0; ijk < 6; ijk++) {
+        sixerAngle += 60;
+        float exPos = this->_enemy->getPosById(_i).x + 10;
+        float eyPos = this->_enemy->getPosById(_i).y + 10;
+        this->_bullet->fire({exPos, eyPos}, this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, sixerAngle, enemy);        }
         this->_enemyClock.restart();
       }
     }
