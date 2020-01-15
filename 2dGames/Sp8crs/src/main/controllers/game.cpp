@@ -55,7 +55,6 @@ const int Game::getCurrLvl() {
 
 const bool Game::isGameOver() {
   if(_player->curHealth <= 0.f) {
-    this->_gameStruct.levelFinished = true;
     return true;
   }
   return false;
@@ -121,12 +120,12 @@ void Game::eventPolling() {
       case sf::Event::MouseButtonPressed:
         if(this->_event.MouseLeft) {
           if(DEBUG) cout << "\n MouseButton PRESSED (" << this->_mousePos.x << ", " << this->_mousePos.y << ") \n" << endl;
-          if(this->isGameOver() && this->_overlay->isMousePressedAndContains(this->_mousePos, 01)) {
+          if(this->_overlay->isMousePressedAndContains(this->_mousePos, 1) && this->isGameOver()) {
             this->restartGame = true;
             break;
           }
 
-          if(this->isLevelFinished() && this->_overlay->isMousePressedAndContains(this->_mousePos, 04)) {
+          if(this->_overlay->isMousePressedAndContains(this->_mousePos, 4) && this->isLevelFinished()) {
             this->_gameStruct.currLvl++;
             if(DEBUG) cout << "\n        CURRENT LVL(" << this->getCurrLvl() << ")  \n" << endl;
 
@@ -143,7 +142,7 @@ void Game::eventPolling() {
   float playerRotation = this->_player->_sprite.getRotation();
   int rightClamp = 2; /* 0->1 */
   int leftClamp = 357; /* 358<-360 */
-  if(!isGameOver() || !isLevelFinished()) {
+  if(!isGameOver() && !isLevelFinished()) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
       if(this->_player->getPos().x < this->screenWidth - 110) {
         this->_player->move(this->playerSpeed, 0.0);
@@ -188,7 +187,7 @@ void Game::fixedUpdate() {
   this->setMousePos();
   this->_overlay->Update(this->isGameOver(), this->_mousePos, this->_gameStruct.levelFinished, this->_gameStruct.currLvl);
 
-  if(!isGameOver() || !isLevelFinished()) {
+  if(!isGameOver() && !isLevelFinished()) {
     for(int k=0; k < this->_enemy->_enemies.size(); k++) {
       if(this->_enemy->_enemies[k].type == kamikaze) {
         this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.84f);
@@ -253,17 +252,15 @@ void Game::fixedUpdate() {
       if(this->_bullet->playerBullets[k].bullet.getPosition().y <= 100) {
         this->_bullet->erase(k, player);
       }
-    } 
+    }
   }
 }
 
 void Game::update() {
   this->_timeElapsed = this->_clock.getElapsedTime(); /* @TODO del clocks in init */
   this->_trueElapsedTime = this->_trueClock.getElapsedTime();
-  this->_enemyTimeElapsed = this->_enemyClock.getElapsedTime();
   this->_gameStruct.currScore = this->_player->score;
   this->_player->update();
-  this->_enemy->update(this->getCurrLvl());
   if(DEBUG) cout << "\n   _timeElapsed: | " << this->_timeElapsed.asSeconds() << " |" << endl;
 
   if(this->_enemy->_enemies.size() <= 0) {
@@ -271,6 +268,8 @@ void Game::update() {
   }
 
   if(!isGameOver() || !isLevelFinished()) {
+    this->_enemy->update(this->getCurrLvl());
+    this->_enemyTimeElapsed = this->_enemyClock.getElapsedTime();
     int _counter = 0;
     _counter++;
     if(_counter > 2000) { _counter = 0; };
@@ -315,13 +314,13 @@ void Game::render() {
     this->_bgMusic.stop();
     this->_audio01.play();
 
-    if(restartGame) {
+    if(this->restartGame) {
       this->_isFirstRun = false;
       delete this->_player;
       delete this->_enemy;
       delete this->_bullet;
       init();
-      restartGame = false;
+      this->restartGame = false;
     }
   }
   /* DRAW HERE */

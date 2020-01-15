@@ -63,12 +63,12 @@ Overlay::~Overlay() {
 }
 
 bool Overlay::isMousePressedAndContains(sf::Vector2i mousePos, int type) {
-  if(type = 04 && this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+  if(type = 4 && this->_text04.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
     return true;
   } else {
     return false;
   }
-  if(type = 01 && this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+  if(type = 1 && this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
     return true;
   } else {
     return  false;
