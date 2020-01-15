@@ -207,7 +207,7 @@ void Game::fixedUpdate() {
     }
 
     for(int _i=0; _i < this->_enemy->_enemies.size(); _i++) {
-      this->_bullet->move(3.3f, enemy);
+      this->_bullet->move(2.88f, enemy);
 
       if(this->_enemy->_enemies[_i].health <= 0.f) {
         this->_enemy->delEnemy(_i);

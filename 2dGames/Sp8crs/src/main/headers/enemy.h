@@ -26,6 +26,7 @@ class Enemy {
   private:
     sf::Texture _texture00;
     sf::Texture _texture01;
+    sf::Texture _texture02;
     sf::Text _text00;
     sf::Font _font00;
     float movementSpeed = 2.f;
