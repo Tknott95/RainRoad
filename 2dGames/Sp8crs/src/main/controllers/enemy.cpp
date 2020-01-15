@@ -36,6 +36,15 @@ void Enemy::spawn(sf::Vector2f pos, EnemyType eType) {
     e00.enemy.setTexture(this->_texture01);     
     const sf::Vector2f _orgn = {50, 0};
     e00.enemy.setOrigin(_orgn);
+  } else if(eType == sixer) {
+    if(!this->_texture01.loadFromFile("utils/img/enemy/e3.png")) {
+      cout << "ERROR: Could not load enemy texture file." << "\n";
+    }
+    e00.enemy.scale(0.4f, 0.4f);
+    e00.enemy.setRotation(180);
+    e00.enemy.setTexture(this->_texture01);     
+    const sf::Vector2f _orgn = {50, 0};
+    e00.enemy.setOrigin(_orgn);
   }
 
   e00.enemy.setPosition(pos.x, pos.y);
@@ -48,11 +57,11 @@ void Enemy::spawn(sf::Vector2f pos, EnemyType eType) {
 
 void Enemy::spawner(int currLvl) {
   if(currLvl == 1) {
-    // this->spawn(sf::Vector2f(600.f, 200.f), hexagon); /* was kamikaze */
+    this->spawn(sf::Vector2f(600.f, 200.f), sixer); /* was kamikaze */
     // this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
     // this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
-    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
-    this->spawn(sf::Vector2f(555.f, 300.f), sheriff); 
+    // this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
+    // this->spawn(sf::Vector2f(555.f, 300.f), sheriff); 
     /* @TODO create lookAtPlayer() then a case/if statement to choose which to run regarding type */
   } else if (currLvl == 2) {
     this->spawn(sf::Vector2f(80.f, 200.f), sheriff);
