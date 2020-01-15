@@ -192,70 +192,72 @@ void Game::fixedUpdate() {
   this->setMousePos();
   this->_overlay->Update(this->isGameOver(), this->_mousePos, this->_gameStruct.levelFinished, this->_gameStruct.currLvl);
 
-  for(int k=0; k < this->_enemy->_enemies.size(); k++) {
-    if(this->_enemy->_enemies[k].type == kamikaze) {
-      this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.84f);
-    } else if(this->_enemy->_enemies[k].type == sheriff) {
-      this->_enemy->lookAtPlayer(k, this->_player->getPos());
-    }
-
-    if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_enemies[k].enemy.getGlobalBounds())){
-      cout << "COLLIDED" << endl;
+  if(!isGameOver()) {
+    for(int k=0; k < this->_enemy->_enemies.size(); k++) {
       if(this->_enemy->_enemies[k].type == kamikaze) {
-        this->_enemy->delEnemy(k);
-        this->_player->takeDmg(33.3);
-      };
-    }
-  }
+        this->_enemy->moveToPlayer(k, this->_player->getPos(), 1.84f);
+      } else if(this->_enemy->_enemies[k].type == sheriff) {
+        this->_enemy->lookAtPlayer(k, this->_player->getPos());
+      }
 
-  for(int _i=0; _i < this->_enemy->_enemies.size(); _i++) {
-    this->_bullet->move(3.3f, enemy);
-
-    if(this->_enemy->_enemies[_i].health <= 0.f) {
-      this->_enemy->delEnemy(_i);
-      this->_player->score += 33.3f;
-    }
-
-    float angleToPlayer = this->_enemy->getAngleToPlayer(_i, this->_player->getPos());
-    const float randomNumber = (rand() / static_cast <float> (RAND_MAX/(10.8f-0.8f))); /* (HI#-LO#)) */
-
-    if(this->_enemyTimeElapsed.asSeconds() > randomNumber /* was 1.8f */
-      && this->_enemy->_enemies[_i].type == sheriff) {
-        /* @TODO make enemy firing sound */
-        this->_bullet->fire(this->_enemy->getPosById(_i), this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, angleToPlayer, enemy);
-        this->_enemyClock.restart();
-    }
-  }
-
-  for(int _j=0;_j < this->_bullet->enemyBullets.size();_j++) {
-    if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_bullet->enemyBullets[_j].bullet.getGlobalBounds())) {
-      this->_player->takeDmg(10.f);
-      this->_bullet->erase(_j, enemy);
-    }
-
-    if(this->_bullet->enemyBullets[_j].bullet.getPosition().x > screenWidth || this->_bullet->enemyBullets[_j].bullet.getPosition().y > screenHeight) {
-      this->_bullet->erase(_j, enemy);
-    }
-  }
-
-  for(int k=0;k < this->_bullet->playerBullets.size(); k++) {
-    if(DEBUG) {
-      cout << "\n  bullPosY(" << this->_bullet->playerBullets[k].bullet.getPosition().y << ")  \n" << endl;
-      cout << "\n  bulletsVecSize(" << this->_bullet->playerBullets.size() << ") \n" << endl;
-    }
-
-    for(int j=0; j < this->_enemy->_enemies.size(); j++) {
-      if(collision.checkCollision(this->_enemy->_enemies[j].enemy.getGlobalBounds(), this->_bullet->playerBullets[k].bullet.getGlobalBounds())) {
-       cout << "\n ENEMY HIT BY BULLET \n" << endl;
-       this->_enemy->takeDmg(j, 33.3);
-       this->_bullet->erase(k, player);
-       this->_player->score += 5.5f;
+      if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_enemy->_enemies[k].enemy.getGlobalBounds())){
+        cout << "COLLIDED" << endl;
+        if(this->_enemy->_enemies[k].type == kamikaze) {
+          this->_enemy->delEnemy(k);
+          this->_player->takeDmg(33.3);
+        };
       }
     }
 
-    if(this->_bullet->playerBullets[k].bullet.getPosition().y <= 100) {
-      this->_bullet->erase(k, player);
+    for(int _i=0; _i < this->_enemy->_enemies.size(); _i++) {
+      this->_bullet->move(3.3f, enemy);
+
+      if(this->_enemy->_enemies[_i].health <= 0.f) {
+        this->_enemy->delEnemy(_i);
+        this->_player->score += 33.3f;
+      }
+
+      float angleToPlayer = this->_enemy->getAngleToPlayer(_i, this->_player->getPos());
+      const float randomNumber = (rand() / static_cast <float> (RAND_MAX/(10.8f-0.8f))); /* (HI#-LO#)) */
+
+      if(this->_enemyTimeElapsed.asSeconds() > randomNumber /* was 1.8f */
+        && this->_enemy->_enemies[_i].type == sheriff) {
+        /* @TODO make enemy firing sound */
+        this->_bullet->fire(this->_enemy->getPosById(_i), this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, angleToPlayer, enemy);
+        this->_enemyClock.restart();
+      }
     }
+
+    for(int _j=0;_j < this->_bullet->enemyBullets.size();_j++) {
+      if(collision.checkCollision(this->_player->_sprite.getGlobalBounds(), this->_bullet->enemyBullets[_j].bullet.getGlobalBounds())) {
+        this->_player->takeDmg(10.f);
+        this->_bullet->erase(_j, enemy);
+      }
+
+      if(this->_bullet->enemyBullets[_j].bullet.getPosition().x > screenWidth || this->_bullet->enemyBullets[_j].bullet.getPosition().y > screenHeight) {
+        this->_bullet->erase(_j, enemy);
+      }
+    }
+
+    for(int k=0;k < this->_bullet->playerBullets.size(); k++) {
+      if(DEBUG) {
+        cout << "\n  bullPosY(" << this->_bullet->playerBullets[k].bullet.getPosition().y << ")  \n" << endl;
+        cout << "\n  bulletsVecSize(" << this->_bullet->playerBullets.size() << ") \n" << endl;
+      }
+
+      for(int j=0; j < this->_enemy->_enemies.size(); j++) {
+        if(collision.checkCollision(this->_enemy->_enemies[j].enemy.getGlobalBounds(), this->_bullet->playerBullets[k].bullet.getGlobalBounds())) {
+          cout << "\n ENEMY HIT BY BULLET \n" << endl;
+          this->_enemy->takeDmg(j, 33.3);
+          this->_bullet->erase(k, player);
+          this->_player->score += 5.5f;
+        }
+      }
+
+      if(this->_bullet->playerBullets[k].bullet.getPosition().y <= 100) {
+        this->_bullet->erase(k, player);
+      }
+    } 
   }
 }
 

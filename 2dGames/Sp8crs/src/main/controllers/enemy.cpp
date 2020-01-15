@@ -186,7 +186,7 @@ void Enemy::render(sf::RenderTarget& target) {
   for(auto &_e : this->_enemies) {
     _e.text00.setString(to_string(_e.health).substr(0, 5));
     _e.text00.setCharacterSize(18);
-    if(_e.health < 33.3f) {
+    if(_e.health < 40.f) {
       _e.text00.setFillColor(sf::Color(240, 140, 140, 110));
     } else {
        _e.text00.setFillColor(sf::Color(255, 255, 255, 140));
