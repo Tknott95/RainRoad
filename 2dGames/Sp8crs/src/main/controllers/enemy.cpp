@@ -41,7 +41,6 @@ void Enemy::spawn(sf::Vector2f pos, EnemyType eType) {
       cout << "ERROR: Could not load enemy texture file." << "\n";
     }
     e00.enemy.scale(0.4f, 0.4f);
-    // e00.enemy.setRotation(180);
     e00.enemy.setTexture(this->_texture02);     
     const sf::Vector2f _orgn = {50, 0};
     e00.enemy.setOrigin(_orgn);
