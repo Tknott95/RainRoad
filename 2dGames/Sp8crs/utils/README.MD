@@ -19,5 +19,5 @@
 8) parralax type system after lvl 1-5 is complete? 
 9) 1-5 is an *intro*
 10) move bullet sound into bullet class
-
+11) Classic mode (currently how it is) - and survival mode (parallax space w/ random spawns via. controlled start-end params)
 
