@@ -5,6 +5,7 @@
 #include<iostream>
 #include<vector>
 #include<math.h>
+/* @TODO move bullet sound into bullet class */
 
 enum BulletType {
   player,

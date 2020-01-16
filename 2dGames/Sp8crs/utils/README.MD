@@ -17,5 +17,6 @@
 7) rocket enemies that fly horizontal?
 8) parralax type system after lvl 1-5 is complete? 
 9) 1-5 is an *intro*
+10) move bullet sound into bullet class
 
 
