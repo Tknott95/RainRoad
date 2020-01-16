@@ -45,7 +45,7 @@ Bullet::~Bullet() { }
 
 void Bullet::fire(sf::Vector2f startingPos, float halfSprite, float angleToPlayer, BulletType bType) {
   this->elapsedTime = this->clock.getElapsedTime();
-  std::cout << " \n  FIRING(" << startingPos.x << ", " << startingPos.y << ")" << std::endl;
+  if(DEBUG) std::cout << " \n  FIRING(" << startingPos.x << ", " << startingPos.y << ")" << std::endl;
   this->spawn(startingPos, bType, halfSprite, angleToPlayer);
 }
 
