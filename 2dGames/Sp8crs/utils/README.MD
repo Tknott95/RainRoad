@@ -1,5 +1,10 @@
 #TheArchitectureProject
 
+@FONTS
+* font00.ttf -> Dark-Crystal
+* font01.ttf -> Orbitron-Bold
+
+
 @TODO || Sp8crs
 1) make 3rd enemyType w/ shots at 0-360 in angle+=60 increments
 2) make bullet impact anim/etc
@@ -12,4 +17,5 @@
 7) rocket enemies that fly horizontal?
 8) parralax type system after lvl 1-5 is complete? 
 9) 1-5 is an *intro*
+
 

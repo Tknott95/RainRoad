@@ -1,5 +1,0 @@
-UTILS MANUAL PAGE
-
-@FONTS
-* font00.ttf -> Dark-Crystal
-* font01.ttf -> Orbitron-Bold
