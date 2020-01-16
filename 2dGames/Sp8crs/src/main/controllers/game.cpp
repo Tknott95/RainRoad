@@ -250,14 +250,8 @@ void Game::fixedUpdate() {
     }
 
     for(int k=0;k < this->_bullet->playerBullets.size(); k++) {
-      if(DEBUG) {
-        cout << "\n  bullPosY(" << this->_bullet->playerBullets[k].bullet.getPosition().y << ")  \n" << endl;
-        cout << "\n  bulletsVecSize(" << this->_bullet->playerBullets.size() << ") \n" << endl;
-      }
-
       for(int j=0; j < this->_enemy->_enemies.size(); j++) {
         if(collision.checkCollision(this->_enemy->_enemies[j].enemy.getGlobalBounds(), this->_bullet->playerBullets[k].bullet.getGlobalBounds())) {
-          cout << "\n ENEMY HIT BY BULLET \n" << endl;
           this->_enemy->takeDmg(j, 33.3);
           this->_bullet->erase(k, player);
           this->_player->score += 5.5f;
