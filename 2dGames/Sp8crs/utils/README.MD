@@ -3,6 +3,7 @@
 @FONTS
 * font00.ttf -> Dark-Crystal
 * font01.ttf -> Orbitron-Bold
+* font02.ttf -> Forgotten
 
 
 @TODO || Sp8crs
