@@ -80,20 +80,20 @@ void Enemy::spawner(int currLvl) {
     this->spawn(sf::Vector2f(1100.f, 130.f), kamikaze);
     this->spawn(sf::Vector2f(1333.f, 100.f), kamikaze);
     this->spawn(sf::Vector2f(340.f, 000.f), kamikaze);
-    this->spawn(sf::Vector2f(755.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(755.f, 000.f), sixer);
     this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
-    this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(1000.f, 200.f), sixer);
   } else if (currLvl == 4) {
     this->spawn(sf::Vector2f(600.f, 200.f), sheriff);
-    this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
+    this->spawn(sf::Vector2f(1000.f, 200.f), sixer);
     this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
     this->spawn(sf::Vector2f(100.f, 000.f), sheriff);
     this->spawn(sf::Vector2f(555.f, 170.f), kamikaze);
     this->spawn(sf::Vector2f(220.f, 150.f), sheriff);
     this->spawn(sf::Vector2f(1100.f, 130.f), kamikaze);
-    this->spawn(sf::Vector2f(1333.f, 100.f), kamikaze);
+    this->spawn(sf::Vector2f(1333.f, 100.f), sixer);
     this->spawn(sf::Vector2f(340.f, 000.f), kamikaze);
-    this->spawn(sf::Vector2f(755.f, 000.f), kamikaze);
+    this->spawn(sf::Vector2f(755.f, 000.f), sixer);
     this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
     this->spawn(sf::Vector2f(1000.f, 200.f), sheriff);
     this->spawn(sf::Vector2f(333.f, 100.f), sheriff);
@@ -102,17 +102,8 @@ void Enemy::spawner(int currLvl) {
     this->spawn(sf::Vector2f(1000.f, 200.f), kamikaze);
     this->spawn(sf::Vector2f(333.f, 100.f), kamikaze);
     this->spawn(sf::Vector2f(100.f, 000.f), sheriff);
-    this->spawn(sf::Vector2f(555.f, 170.f), kamikaze);
+    this->spawn(sf::Vector2f(555.f, 170.f), sixer);
     this->spawn(sf::Vector2f(220.f, 150.f), sheriff);
-    this->spawn(sf::Vector2f(1100.f, 130.f), kamikaze);
-    this->spawn(sf::Vector2f(1333.f, 100.f), kamikaze);
-    this->spawn(sf::Vector2f(340.f, 000.f), kamikaze);
-    this->spawn(sf::Vector2f(755.f, 000.f), kamikaze);
-    this->spawn(sf::Vector2f(600.f, 200.f), kamikaze);
-    this->spawn(sf::Vector2f(1000.f, 200.f), sheriff);
-    this->spawn(sf::Vector2f(333.f, 100.f), sheriff);
-    this->spawn(sf::Vector2f(100.f, 000.f), kamikaze);
-    this->spawn(sf::Vector2f(555.f, 300.f), sheriff);
   }
 }
 
