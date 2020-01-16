@@ -65,10 +65,10 @@ void Bullet::erase(int i, BulletType type) {
   /* @TODO make impact anim (onDel() | onCol()) */
   if(type == player) {
     this->playerBullets.erase(this->playerBullets.begin() + i);
-    std::cout << " \n   erasingPlayerBulletID(" << i << ") \n" << std::endl;
+    if(DEBUG) std::cout << " \n   erasingPlayerBulletID(" << i << ") \n" << std::endl;
   } else if(type == enemy) {
     this->enemyBullets.erase(this->enemyBullets.begin() + i);
-    std::cout << " \n   erasingEnemyBulletID(" << i << ") \n" << std::endl;
+    if(DEBUG) std::cout << " \n   erasingEnemyBulletID(" << i << ") \n" << std::endl;
   }
 }
 
