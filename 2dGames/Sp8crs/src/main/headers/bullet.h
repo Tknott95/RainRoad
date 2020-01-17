@@ -27,6 +27,7 @@ class Bullet {
     const bool DEBUG = false;
     sf::CircleShape _bullet;
     sf::Music _eShotSound;
+    sf::Music _eShotDelSound;
     sf::Clock clock;
     sf::Time elapsedTime;
     sf::Texture _enemyBulletTexture;

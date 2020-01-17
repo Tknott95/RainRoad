@@ -4,12 +4,15 @@ void Bullet::init(sf::Vector2f startingPos, float halfSprite) {
   this->_bullet.setPosition(startingPos.x + (halfSprite-5) /*+((this->_sprite.getGlobalBounds().width/2)-5)*/, startingPos.y + yOffset /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
   if(!this->_playerBulletTexture.loadFromFile("utils/img/player/b1.png")) cout << "ERROR: Could not load utils/img/player/b1.png texture file. \n" << endl;
   if(!this->_enemyBulletTexture.loadFromFile("utils/img/enemy/b2.png")) cout << "ERROR: Could not load utils/img/enemy/b2.png texture file. \n" << endl;
-  if(!this->_eShotSound.openFromFile("utils/audio/bullet/l2.wav")) cout << "ERROR: Could not load utils/audio/bullet/l2.wav audio file." << "\n" << endl;
+  if(!this->_eShotSound.openFromFile("utils/audio/bullet/l2.ogg")) cout << "ERROR: Could not load utils/audio/bullet/l2.wav audio file." << "\n" << endl;
+  if(!this->_eShotDelSound.openFromFile("utils/audio/bullet/d2.ogg")) cout << "ERROR: Could not load utils/audio/bullet/d2.ogg audio file." << "\n" << endl;
+
   /* @TODO make an audio class - code needs way less lines each file, so, abstraction */
-  this->_eShotSound.setVolume(10);
+  this->_eShotSound.setVolume(5); /* @TODO each enemy needs own sound */
   /* @TODO need global class for volume setting via. settings screen */
   this->_eShotSound.setPosition(0,0,8);
-  
+  this->_eShotDelSound.setVolume(3);
+  this->_eShotDelSound.setPosition(0,0,9);
 }
 
 void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset, float angleToPlayer) {
@@ -69,6 +72,7 @@ void Bullet::move(const float ySpeed, BulletType bType) {
 void Bullet::erase(int i, BulletType type) {
   /* @TODO make impact anim (onDel() | onCol()) */
   if(type == player) {
+    this->_eShotDelSound.play();
     this->playerBullets.erase(this->playerBullets.begin() + i);
     if(this->DEBUG) cout << " \n   erasingPlayerBulletID(" << i << ") \n" << endl;
   } else if(type == enemy) {

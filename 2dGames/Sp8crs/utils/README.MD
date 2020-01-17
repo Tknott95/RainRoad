@@ -20,4 +20,5 @@
 9) 1-5 is an *intro*
 10) move bullet sound into bullet class
 11) Classic mode (currently how it is) - and survival mode (parallax space w/ random spawns via. controlled start-end params)
+12) add rand() % 3 to shot on player to make some miss, hence better ai
 
