@@ -23,23 +23,17 @@ void Enemy::spawn(sf::Vector2f pos, EnemyType eType) {
   }
 
   if(eType == kamikaze) {
-    if(!this->_texture00.loadFromFile("utils/img/enemy/e1.png")) {
-      cout << "ERROR: Could not load enemy texture file." << "\n";
-    }
+    if(!this->_texture00.loadFromFile("utils/img/enemy/e1.png"))  cout << "ERROR: Could not load utils/img/enemy/e1.png" << "\n";
     e00.enemy.setTexture(this->_texture00);
     e00.enemy.scale(1.3f, 1.28f);
   } else if(eType == sheriff) {
-    if(!this->_texture01.loadFromFile("utils/img/enemy/e2.png")) {
-        cout << "ERROR: Could not load enemy texture file." << "\n";
-    }
+    if(!this->_texture01.loadFromFile("utils/img/enemy/e2.png"))  cout << "ERROR: Could not load utils/img/enemy/e2.png" << "\n";
     e00.enemy.scale(0.58f, 0.74f);
     e00.enemy.setTexture(this->_texture01);     
     const sf::Vector2f _orgn = {50, 0};
     e00.enemy.setOrigin(_orgn);
   } else if(eType == sixer) {
-    if(!this->_texture02.loadFromFile("utils/img/enemy/e3.png")) {
-      cout << "ERROR: Could not load enemy texture file." << "\n";
-    }
+    if(!this->_texture02.loadFromFile("utils/img/enemy/e3.png"))  cout << "ERROR: Could not load utils/img/enemy/e3.png" << "\n";
     e00.enemy.scale(0.4f, 0.4f);
     e00.enemy.setTexture(this->_texture02);     
     const sf::Vector2f _orgn = {50, 0};
@@ -51,7 +45,7 @@ void Enemy::spawn(sf::Vector2f pos, EnemyType eType) {
   e00.health = 100.f;
   e00.text00 = this->_text00;
   e00.type = eType;
-  this->_enemies.emplace_back(e00); /* replaces push_back due to std::pair usage to track enemy currHealth */
+  this->_enemies.emplace_back(e00);
 }
 
 void Enemy::spawner(int currLvl) {
@@ -124,8 +118,8 @@ sf::Vector2f Enemy::normalize(const sf::Vector2f& j) {
 }
 
 void Enemy::delEnemy(int eId) {
-  /* @TODO make destruction sound onDel() */
-  /* @TODO make explosion anim onDel() */
+  /* @TODO make destruction sound onDel() - make AudioClass */
+  /* @TODO make explosion anim onDel() - make AudioClass */
   this->_enemies.erase(this->_enemies.begin() + eId);
 }
 
