@@ -178,7 +178,7 @@ void Enemy::update(int currLvl) {
   const int newRand = (rand() % 20);
   for(int _j=0;_j < this->_enemies.size();_j++) {
     if(this->_enemies[_j].type == sheriff) {
-      if(newRand % 4 == 0 && this->_enemies[_j].enemy.getPosition().y < 100) { /* @TODO bring in screen size as sf::vector2f, possibly make one a var instead of 2 floats in game class */
+      if(newRand % 4 == 0 && this->_enemies[_j].enemy.getPosition().y < 100) {
         this->_enemies[_j].enemy.move(-0.1f, -0.4f);
       } else if(newRand % 3 == 0) {
         this->_enemies[_j].enemy.move(0.001f, 0.2f);
