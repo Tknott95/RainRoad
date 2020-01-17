@@ -1,12 +1,8 @@
 #include "../headers/overlay.h"
 
 void Overlay::Init(float screenWidth, float screenHeight, int currLevel) {
-  if (!this->_font00.loadFromFile("utils/fonts/font02.ttf")) {
-    cout << "ERROR: Could not load game - font00.ttf file." << "\n";
-  }
-  if (!this->_font01.loadFromFile("utils/fonts/font01.ttf")) {
-    std::cout << "ERROR: Could not load player font file." << "\n";
-  }
+  if (!this->_font00.loadFromFile("utils/fonts/font02.ttf"))  std::cout << "ERROR: Could not load game - font00.ttf file. \n" << std::endl;
+  if (!this->_font01.loadFromFile("utils/fonts/font01.ttf"))  std::cout << "ERROR: Could not load player font file. \n" << std::endl;
   this->currLvl = currLevel;
 
   this->_text02.setFont(this->_font00);
@@ -49,7 +45,7 @@ void Overlay::Init(float screenWidth, float screenHeight, int currLevel) {
   this->_text05.setFont(this->_font01);
   this->_text05.setString("Current Lvl:    "+std::to_string(this->currLvl));
   this->_text05.setCharacterSize(18);
-  this->_text05.setFillColor(sf::Color(255, 255, 255, 175)); /* switch to rgba .4 opacity @TODO */
+  this->_text05.setFillColor(sf::Color(255, 255, 255, 175));
   this->_text05.setOutlineColor(sf::Color::Black);
   this->_text05.setPosition(50.f, 150.f);
 }
@@ -101,7 +97,7 @@ void Overlay::Update(bool isGameOver, sf::Vector2f mousePos, bool levelFinished,
 }
 
 void Overlay::Render(sf::RenderTarget& target,bool introFinished, bool levelFinished, bool isGameOver) {
-  this->levelFinished = levelFinished; /* prob rmv lvlFinished in params, right meow to much todo */
+  this->levelFinished = levelFinished;
   this->isGameOver = isGameOver;
   if(introFinished) { 
   } else {
