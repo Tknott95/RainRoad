@@ -5,6 +5,9 @@
 * font01.ttf -> Orbitron-Bold
 * font02.ttf -> Forgotten
 
+@DEVOPS
+ 1) Convert to .ogg
+   * sox <file>.ending <file>.ogg
 
 @TODO || Sp8crs
 1) make 3rd enemyType w/ shots at 0-360 in angle+=60 increments

@@ -20,16 +20,9 @@ void Game::init() {
   this->_enemyTimeElapsed = this->_enemyClock.getElapsedTime();
   this->_trueElapsedTime = this->_trueClock.getElapsedTime();
 
-  if (!this->_bgMusic.openFromFile("utils/audio/bg/DOS-88-Automatav2.ogg")) {
-    std::cout << "ERROR: Could not load game - space_music.wav music file." << "\n";
-  }
-  if (!this->_audio00.openFromFile("utils/audio/laser03.ogg")) {
-    std::cout << "ERROR: Could not load game - laser03.ogg audio file." << "\n";
-  }
-
-  if(!this->_audio01.openFromFile("utils/audio/doomed_music.wav")) {
-    std::cout << "ERROR: Could not load game - doomed_music.wav audio file." << "\n";
-  }
+  if (!this->_bgMusic.openFromFile("utils/audio/bg/DOS-88-Automatav2.ogg"))  cout << "ERROR: Could not load game - utils/audio/bg/DOS-88-Automatav2.ogg file." << "\n" << endl;
+  if (!this->_audio00.openFromFile("utils/audio/laser03.ogg"))  cout << "ERROR: Could not load game - utils/audio/laser03.ogg audio file." << "\n" << endl;
+  if(!this->_audio01.openFromFile("utils/audio/doomed_music.wav"))  cout << "ERROR: Could not load game - utils/audio/doomed_music.wav file." << "\n" << endl;
 
   this->_bgMusic.setPosition(0, 1, 8);
   this->_bgMusic.setVolume(22);

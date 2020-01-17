@@ -49,7 +49,6 @@ Bullet::Bullet() {
 Bullet::~Bullet() { }
 
 void Bullet::fire(sf::Vector2f startingPos, float halfSprite, float angleToPlayer, BulletType bType) {
-  // this->elapsedTime = this->clock.getElapsedTime();
   if(this->DEBUG) cout << " \n  FIRING(" << startingPos.x << ", " << startingPos.y << ")" << endl;
   this->spawn(startingPos, bType, halfSprite, angleToPlayer);
   if(bType == enemy) {
