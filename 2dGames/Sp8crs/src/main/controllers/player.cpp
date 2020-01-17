@@ -3,12 +3,8 @@
 
 void Player::init() {
 
-  if(!this->_texture.loadFromFile("utils/img/player/medfighter.png")) {
-    cout << "ERROR: Could not load player texture file. \n" << endl;
-  }
-  if (!this->font00.loadFromFile("utils/fonts/font01.ttf")) {
-    cout << "ERROR: Could not load player font file. \n" << endl;
-  }
+  if(!this->_texture.loadFromFile("utils/img/player/medfighter.png"))  cout << "ERROR: Could not load player texture file. \n" << endl;
+  if (!this->font00.loadFromFile("utils/fonts/font01.ttf"))  cout << "ERROR: Could not load player font file. \n" << endl;
 
   this->text00.setFont(font00);
   this->text00.setString("PlayerHealth:    "+to_string(this->curHealth).substr(0, 6));
