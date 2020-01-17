@@ -11,7 +11,7 @@ void Bullet::init(sf::Vector2f startingPos, float halfSprite) {
   this->_eShotSound.setVolume(5); /* @TODO each enemy needs own sound */
   /* @TODO need global class for volume setting via. settings screen */
   this->_eShotSound.setPosition(0,0,8);
-  this->_eShotDelSound.setVolume(3);
+  this->_eShotDelSound.setVolume(3); /* this is fking dumb, holy earRape */
   this->_eShotDelSound.setPosition(0,0,9);
 }
 
