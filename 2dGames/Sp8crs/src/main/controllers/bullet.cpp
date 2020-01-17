@@ -2,12 +2,14 @@
 
 void Bullet::init(sf::Vector2f startingPos, float halfSprite) {
   this->_bullet.setPosition(startingPos.x + (halfSprite-5) /*+((this->_sprite.getGlobalBounds().width/2)-5)*/, startingPos.y + yOffset /* this->_sprite.getPosition().x, this->_sprite.getPosition().y - 50 */);
-   if(!this->_playerBulletTexture.loadFromFile("utils/img/player/b1.png")) {
-      std::cout << "ERROR: Could not load utils/img/player/b1.png texture file. \n" << std::endl;
-   }
-   if(!this->_enemyBulletTexture.loadFromFile("utils/img/enemy/b2.png")) {
-      std::cout << "ERROR: Could not load utils/img/enemy/b2.png texture file. \n" << std::endl;
-   }
+  if(!this->_playerBulletTexture.loadFromFile("utils/img/player/b1.png")) cout << "ERROR: Could not load utils/img/player/b1.png texture file. \n" << endl;
+  if(!this->_enemyBulletTexture.loadFromFile("utils/img/enemy/b2.png")) cout << "ERROR: Could not load utils/img/enemy/b2.png texture file. \n" << endl;
+  if(!this->_eShotSound.openFromFile("utils/audio/bullet/l2.wav")) cout << "ERROR: Could not load utils/audio/bullet/l2.wav audio file." << "\n" << endl;
+  /* @TODO make an audio class - code needs way less lines each file, so, abstraction */
+  this->_eShotSound.setVolume(10);
+  /* @TODO need global class for volume setting via. settings screen */
+  this->_eShotSound.setPosition(0,0,8);
+  
 }
 
 void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset, float angleToPlayer) {
@@ -27,10 +29,10 @@ void Bullet::spawn(sf::Vector2f startingPos, BulletType bType, float xOffset, fl
     b.bullet.setPosition(startingPos.x+2.5 , startingPos.y + (yOffset));
     b.bullet.scale(1.7f, 1.7f);
     b.angle = angleToPlayer - 9; /* -9 toCenter onPlayer */ 
-    std::string yS = std::to_string(startingPos.y + (yOffset));
+    string yS = to_string(startingPos.y + (yOffset));
     if(!true){
-      std::string myPos = "shotOrigin("+ std::to_string(startingPos.x)+", "+yS+") \n";
-      std::cout << myPos << std::endl;
+      string myPos = "shotOrigin("+ to_string(startingPos.x)+", "+yS+") \n";
+      cout << myPos << endl;
     }
     this->enemyBullets.emplace_back(b);
   }
@@ -44,9 +46,12 @@ Bullet::Bullet() {
 Bullet::~Bullet() { }
 
 void Bullet::fire(sf::Vector2f startingPos, float halfSprite, float angleToPlayer, BulletType bType) {
-  this->elapsedTime = this->clock.getElapsedTime();
-  if(DEBUG) std::cout << " \n  FIRING(" << startingPos.x << ", " << startingPos.y << ")" << std::endl;
+  // this->elapsedTime = this->clock.getElapsedTime();
+  if(this->DEBUG) cout << " \n  FIRING(" << startingPos.x << ", " << startingPos.y << ")" << endl;
   this->spawn(startingPos, bType, halfSprite, angleToPlayer);
+  if(bType == enemy) {
+    this->_eShotSound.play();
+  }
 }
 
 void Bullet::move(const float ySpeed, BulletType bType) {
@@ -65,10 +70,10 @@ void Bullet::erase(int i, BulletType type) {
   /* @TODO make impact anim (onDel() | onCol()) */
   if(type == player) {
     this->playerBullets.erase(this->playerBullets.begin() + i);
-    if(DEBUG) std::cout << " \n   erasingPlayerBulletID(" << i << ") \n" << std::endl;
+    if(this->DEBUG) cout << " \n   erasingPlayerBulletID(" << i << ") \n" << endl;
   } else if(type == enemy) {
     this->enemyBullets.erase(this->enemyBullets.begin() + i);
-    if(DEBUG) std::cout << " \n   erasingEnemyBulletID(" << i << ") \n" << std::endl;
+    if(this->DEBUG) cout << " \n   erasingEnemyBulletID(" << i << ") \n" << endl;
   }
 }
 

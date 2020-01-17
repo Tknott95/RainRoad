@@ -2,10 +2,13 @@
 
 #include<SFML/Graphics.hpp>
 #include<SFML/System.hpp>
+#include<SFML/Audio.hpp>
 #include<iostream>
 #include<vector>
 #include<math.h>
 /* @TODO move bullet sound into bullet class */
+
+using namespace std;
 
 enum BulletType {
   player,
@@ -23,6 +26,7 @@ class Bullet {
     const float bulletSpeed = 5.f;
     const bool DEBUG = false;
     sf::CircleShape _bullet;
+    sf::Music _eShotSound;
     sf::Clock clock;
     sf::Time elapsedTime;
     sf::Texture _enemyBulletTexture;
