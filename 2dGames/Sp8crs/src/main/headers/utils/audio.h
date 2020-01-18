@@ -6,4 +6,6 @@ class Audio {
   private:
   public:
     void init();
+    void playerMoving();
+    void playerShooting();
 };
