@@ -9,6 +9,7 @@ class Overlay {
     sf::Font _font00;
     sf::Font _font01;
     /* @TODO maybe use vector/array logic 4 readability */
+    // vector<sf::Text> myText;//  ??? */
     sf::Text _text00; /* GAME OVER */
     sf::Text _text01; /* PLAY AGAIN */
     sf::Text _text02; /* LEVEL <#> - BEGIN IN <3... 2... 1...> @TODO */
