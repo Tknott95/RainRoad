@@ -30,7 +30,7 @@ void Game::init() {
   /* @TODO move bullet sound into bullet class */
   this->_audio00.setPosition(0, 1, 4);
   this->_audio00.setVolume(25);
-  this->_audio01.setPosition(0, 1, 2);
+  this->_audio01.setPosition(0, 1, 4);
   this->_audio01.setVolume(15);
   this->_bgMusic.play();
 
