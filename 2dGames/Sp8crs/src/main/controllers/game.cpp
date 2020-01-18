@@ -222,10 +222,11 @@ void Game::fixedUpdate() {
         /* @TODO make enemy firing sound */
         float sixerAngle = 0.0;
         for(int ijk=0; ijk < 6; ijk++) {
-        sixerAngle += 60;
-        float exPos = this->_enemy->getPosById(_i).x + 17;
-        float eyPos = this->_enemy->getPosById(_i).y + 32;
-        this->_bullet->fire({exPos, eyPos}, this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, sixerAngle, enemy);        }
+          sixerAngle += 60;
+          float exPos = this->_enemy->getPosById(_i).x + 17;
+          float eyPos = this->_enemy->getPosById(_i).y + 32;
+          this->_bullet->fire({exPos, eyPos}, this->_enemy->_enemies[_i].enemy.getGlobalBounds().width/2, sixerAngle, enemy);
+        }
         this->_enemyClock.restart();
       }
     }
