@@ -5,4 +5,5 @@ using namespace std;
 class Audio {
   private:
   public:
+    void init();
 };

@@ -115,7 +115,7 @@ void Overlay::Render(sf::RenderTarget& target,bool introFinished, bool levelFini
 
   if(isGameOver) {
     target.clear(sf::Color::White);
-    if(!this->_gameOverTexture.loadFromFile("./utils/img/bg/game_over.png")) std::cout << "ERROR: Could not load game - /utils/img/bg/game_over.png bg. \n" << std::endl;
+    if(!this->_gameOverTexture.loadFromFile("./utils/img/bg/game_over.png")) std::cout << "ERROR: Could not load game - /utils/img/bg/game_over.png \n" << std::endl;
     this->_gameOverSprite.setTexture(_gameOverTexture);
     target.draw(_gameOverSprite);
     target.draw(this->_text00);
