@@ -1,4 +1,4 @@
-#include "../headers/overlay.h"
+#include "../../headers/utils/overlay.h"
 
 void Overlay::Init(float screenWidth, float screenHeight, int currLevel) {
   if (!this->_font00.loadFromFile("utils/fonts/font02.ttf"))  std::cout << "ERROR: Could not load game - font00.ttf file. \n" << std::endl;
