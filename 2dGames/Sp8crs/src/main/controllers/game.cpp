@@ -142,7 +142,6 @@ void Game::eventPolling() {
         this->_player->move(this->playerSpeed, 0.0);
       }
       
-      // cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
       if(playerRotation > leftClamp - 1 || playerRotation < rightClamp) {
         if(DEBUG) cout << "\n   ROTATION(" << this->_player->_sprite.getRotation() << ") \n" << endl;
         this->_player->_sprite.setRotation(this->_player->_sprite.getRotation() + 0.1f); /* needs clamp and lerp to orig on keyUP @TODO */
