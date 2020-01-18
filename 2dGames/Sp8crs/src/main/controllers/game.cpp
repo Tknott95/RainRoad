@@ -219,7 +219,6 @@ void Game::fixedUpdate() {
 
       if(this->_enemyTimeElapsed.asSeconds() > randomNumber /* was 1.8f */
         && this->_enemy->_enemies[_i].type == sixer) {
-        /* @TODO make enemy firing sound */
         float sixerAngle = 0.0;
         for(int ijk=0; ijk < 6; ijk++) {
           sixerAngle += 60;
@@ -302,7 +301,7 @@ void Game::render() {
   this->setBackground();
   this->_overlay->Render(*this->_window,this->introFinished, this->isLevelFinished(), this->isGameOver());
 
-  if(this->introFinished && !isGameOver() && !isLevelFinished()) { // @TODO this made player del at window screen yet won't respawn after
+  if(this->introFinished && !isGameOver() && !isLevelFinished()) {
     this->_bullet->render(*this->_window);
     this->_player->render(*this->_window);
     this->_enemy->render(*this->_window);
@@ -325,7 +324,6 @@ void Game::render() {
       this->restartGame = false;
     }
   }
-  /* DRAW HERE */
 
   this->_window->display();
 }
