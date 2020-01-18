@@ -5,7 +5,7 @@ void Audio::init() {
 }
 
 void Audio::playerMoving() {
- /* MOVING SOUND */
+  /* MOVING SOUND */
 }
 
 void Audio::playerShooting() {

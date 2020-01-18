@@ -1,4 +1,4 @@
-#include "../headers/collision.h"
+#include "../../headers/utils/collision.h"
 #include <SFML/Graphics.hpp>
 
 bool Collision::checkCollision(sf::FloatRect j, sf::FloatRect k) {

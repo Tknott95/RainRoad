@@ -10,8 +10,8 @@
 #include "enemy.h"
 #include "bullet.h"
 #include "utils/overlay.h"
-// #include "utils/audio.h"
-#include "../controllers/collision.cpp"
+#include "utils/audio.h"
+#include "../controllers/utils/collision.cpp"
 
 using namespace std;
 
