@@ -4,7 +4,7 @@
 ``` chmod +x ./zrv.sh ```
 ./zrv.sh main
 ./zrv.sh <#OfExample>
-./zrv.sh main >> output.txt  *to see temrinal output in file for grep debugging
+./zrv.sh main >> output.txt  #to see terminal output in file for grep debugging
 
 * 2dGraphics
  -> churchWindows
