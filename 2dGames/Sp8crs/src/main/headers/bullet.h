@@ -6,7 +6,7 @@
 #include<iostream>
 #include<vector>
 #include<math.h>
-/* @TODO move bullet sound into bullet class */
+/* @TODO move bullet sound into bullet/audio class */
 
 using namespace std;
 
