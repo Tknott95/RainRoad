@@ -25,7 +25,7 @@ class Player {
     sf::Font font00;
     sf::Text text00; /* playerHealth text */
     sf::Text text01; /* timeElapsed text */
-    float curHealth = 100.f; /* REFACTOR TO PRIVATE W/ PUB CLASS  @TODO */
+    float curHealth = 100.f; /* @TODO REFACTOR TO PRIVATE W/ PUB CLASS  @TODO */
     float score = 0.f;
     Player();
 	  virtual ~Player();
