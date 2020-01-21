@@ -19,3 +19,6 @@ void Audio::playerShooting() {
 * 4) ship del sound
 * 5) wanting movement sound (vrrhrhrhhrrghrrrh) -______-
 */
+
+  /* @TODO make destruction sound onDel() - move to AudioClass <- from bullet.cpp */
+  /* @TODO make explosion anim onDel() - move to AudioClass  <- from bullet.cpp */

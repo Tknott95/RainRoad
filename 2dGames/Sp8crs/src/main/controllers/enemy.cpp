@@ -117,8 +117,8 @@ sf::Vector2f Enemy::normalize(const sf::Vector2f& j) {
 }
 
 void Enemy::delEnemy(int eId) {
-  /* @TODO make destruction sound onDel() - make AudioClass */
-  /* @TODO make explosion anim onDel() - make AudioClass */
+  /* @TODO make destruction sound onDel() - move to AudioClass */
+  /* @TODO make explosion anim onDel() - move to AudioClass */
   this->_enemies.erase(this->_enemies.begin() + eId);
 }
 
