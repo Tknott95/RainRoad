@@ -12,6 +12,14 @@ void Audio::playerShooting() {
   /* SHOOTING SOUND */
 }
 
+void Audio::shipDestroyed() {
+
+}
+
+void Audio::enemyShooting() {
+  /* possibly make this and the player shooting class one class with a type param? */
+}
+
 /*
 * 1) bgMusic
 * 2) player shot sound
