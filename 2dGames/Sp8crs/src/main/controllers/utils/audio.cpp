@@ -14,7 +14,6 @@ void Audio::init() {
   this->_audio01.setPosition(0, 1, 4);
   this->_audio01.setVolume(15);
   this->_bgMusic.play();
-
 }
 
 void Audio::playerMoving() {

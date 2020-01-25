@@ -24,15 +24,17 @@ void Game::init() {
   if (!this->_audio00.openFromFile("utils/audio/laser03.ogg"))  cout << "ERROR: Could not load game - utils/audio/laser03.ogg audio file." << "\n" << endl;
   if(!this->_audio01.openFromFile("utils/audio/doomed_music.wav"))  cout << "ERROR: Could not load game - utils/audio/doomed_music.wav file." << "\n" << endl;
 
-  this->_bgMusic.setPosition(0, 1, 8);
-  this->_bgMusic.setVolume(22);
-  this->_bgMusic.setLoop(true);
+  // this->_bgMusic.setPosition(0, 1, 8);
+  // this->_bgMusic.setVolume(22);
+  // this->_bgMusic.setLoop(true);
   /* @TODO move bullet sound into bullet class */
-  this->_audio00.setPosition(0, 1, 4);
-  this->_audio00.setVolume(25);
+  // this->_audio00.setPosition(0, 1, 4);
+  // this->_audio00.setVolume(25);
   this->_audio01.setPosition(0, 1, 4);
   this->_audio01.setVolume(15);
-  this->_bgMusic.play();
+  // this->_bgMusic.play();
+
+  audio.init();
 
   this->_overlay = new Overlay();
   this->_player = new Player();
