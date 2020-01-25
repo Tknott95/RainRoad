@@ -10,8 +10,9 @@
 #include "enemy.h"
 #include "bullet.h"
 #include "utils/overlay.h"
-#include "utils/audio.h"
+// #include "utils/audio.h"
 #include "../controllers/utils/collision.cpp"
+#include "../controllers/utils/audio.cpp"
 
 using namespace std;
 
@@ -57,7 +58,6 @@ class Game {
     sf::Music _audio00; /* shooting - space_music.ogg */
     sf::Music _audio01; /* onDead - doomed_music.wav */
 
-
     sf::Event _event;
     sf::Vector2i _mousePos;
     sf::Vector2f _mouseCoords; /* rel to screen size */
@@ -67,6 +67,7 @@ class Game {
     Overlay* _overlay;
 
     Collision collision;
+    Audio audio;
     float playerSpeed = 3.0;
 
     bool firing = false;

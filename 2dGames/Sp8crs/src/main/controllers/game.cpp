@@ -168,7 +168,8 @@ void Game::eventPolling() {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
       if(!isGameOver() || !isLevelFinished()) {
         if(DEBUG) cout << "\n Space PRESSED \n" << endl;
-        this->_audio00.play();
+        audio.playerShooting();
+        //this->_audio00.play();
         this->firing = true;
       }
     }
