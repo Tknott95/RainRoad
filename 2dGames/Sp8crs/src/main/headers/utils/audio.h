@@ -14,4 +14,5 @@ class Audio {
     void playerShooting();
     void shipDestroyed();
     void enemyShooting(); /* might make this and playerShooting one shooting class with type param */
+    void gameOver();
 };

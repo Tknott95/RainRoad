@@ -31,6 +31,12 @@ void Audio::shipDestroyed() {
 
 void Audio::enemyShooting() {
   /* possibly make this and the player shooting class one class with a type param? */
+   this->_audio00.play();
+}
+
+void Audio::gameOver() {
+  this->_bgMusic.stop();
+   this->_audio01.play();
 }
 
 /*

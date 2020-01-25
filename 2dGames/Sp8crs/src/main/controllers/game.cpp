@@ -315,8 +315,8 @@ void Game::render() {
 
   if(this->isGameOver()) {
     _clock.restart();
-    this->_bgMusic.stop();
-    this->_audio01.play();
+    // this->_bgMusic.stop();
+    // this->_audio01.play();
 
     if(this->restartGame) {
       this->_isFirstRun = false;
