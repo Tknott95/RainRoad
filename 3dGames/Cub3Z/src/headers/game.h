@@ -30,6 +30,8 @@ class Game {
     GameModeEnum _gameMode;
     GameStruct _gameStruct;
 
+    sf::RenderWindow *_window;
+
     void init();
 
   public:
