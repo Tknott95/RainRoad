@@ -31,6 +31,7 @@ class Game {
     GameStruct _gameStruct;
 
     sf::RenderWindow *_window;
+    sf::ContextSettings _contextSettings;
 
     void init();
 
