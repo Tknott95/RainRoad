@@ -43,13 +43,14 @@ void Game::EventPolling() {
           this->_window->close();
           break;
         }
-        break;
+      break;
     }
   }
 }
 
 void Game::Update() {
   this->EventPolling();
+  this->_overlay->Update();
 }
 
 void Game::Render() {
