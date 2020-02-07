@@ -7,6 +7,8 @@
 #include <SFML/Network.hpp>
 #include <SFML/Audio.hpp>
 
+#include "utils/overlay.h"
+
 using namespace std;
 
 struct GameStruct {
@@ -15,7 +17,6 @@ struct GameStruct {
   int currEnemies;
   int maxEnemies;
   bool levelFinished = false;
-  /* currAmmo @TODO */
 };
 
 enum GameModeEnum {
@@ -32,11 +33,13 @@ class Game {
 
     sf::RenderWindow *_window;
     sf::ContextSettings _contextSettings;
+    Overlay* _overlay;
 
     void init();
 
   public:
     Game();
     virtual ~Game();
-
+    void Update();
+    void Render();
 };
