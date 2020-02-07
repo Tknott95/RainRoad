@@ -14,6 +14,8 @@ void Game::init() {
   this->_window->setVerticalSyncEnabled(true);
   this->_window->setActive(true);
   // this->_window = new sf::RenderWindow(sf::VideoMode(this->screenWidth, this->screenHeight, 64), "Cub3Z");
+
+  this->_overlay = new Overlay();
 }
 
 Game::Game() {
@@ -32,7 +34,7 @@ void Game::Render() {
   while(this->_window->isOpen()) {
     this->_window->display();
 
-    // this->_overlay->Init(this->screenWidth, this->screenHeight);
-    // this->_overlay->Render(*this->_window);
+    this->_overlay->Init(this->screenWidth, this->screenHeight);
+    this->_overlay->Render(*this->_window);
   }
 }
