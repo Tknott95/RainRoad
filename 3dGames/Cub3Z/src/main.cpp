@@ -5,8 +5,10 @@ int main() {
   cout << "\n App Initialized... \n" << endl;
 
   Game game;
-  game.Update();
-  game.Render();
+  while(game.IsOpen()) {
+    game.Update();
+    game.Render();
+  }
 
   return 0;
 }

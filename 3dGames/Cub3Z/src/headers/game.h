@@ -33,6 +33,7 @@ class Game {
 
     sf::RenderWindow *_window;
     sf::ContextSettings _contextSettings;
+    sf::Event _event;
     Overlay* _overlay;
 
     void init();
@@ -40,6 +41,8 @@ class Game {
   public:
     Game();
     virtual ~Game();
+    const bool IsOpen() const;
+    void EventPolling();
     void Update();
     void Render();
 };
