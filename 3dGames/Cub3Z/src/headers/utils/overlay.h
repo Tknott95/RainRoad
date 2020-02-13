@@ -12,6 +12,8 @@ class Overlay {
     sf::Font _font01;
     sf::Text _text00; /* GAME OVER */
     sf::Text _text01; /* PLAY AGAIN */
+    sf::Clock _clock00;
+    sf::Time _timeElapsed00;
   public:
     Overlay();
     virtual ~Overlay();
