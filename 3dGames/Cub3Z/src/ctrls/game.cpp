@@ -46,6 +46,18 @@ void Game::EventPolling() {
       break;
     }
   }
+
+  if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+    cout << "movingLeft, bitch" << endl;
+  } else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+    cout << "movingRight, bitch" << endl;
+  }
+
+  if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+    cout << "movingUp, bitch" << endl;
+  } else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+    cout << "movingDown, bitch" << endl;
+  }
 }
 
 void Game::Update() {
