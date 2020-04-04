@@ -54,8 +54,9 @@ void Game::Update() {
 }
 
 void Game::Render() {
-  this->_window->display();
 
   this->_overlay->Init(this->screenWidth, this->screenHeight);
   this->_overlay->Render(*this->_window);
+  this->_window->display();
+
 }

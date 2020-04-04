@@ -14,6 +14,7 @@ class Overlay {
     sf::Text _text01; /* PLAY AGAIN */
     sf::Clock _clock00;
     sf::Time _timeElapsed00;
+    string timer;
   public:
     Overlay();
     virtual ~Overlay();

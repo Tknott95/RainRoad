@@ -15,11 +15,11 @@ void Overlay::Init(float screenWidth, float screenHeight) {
   this->_text00.setFillColor(sf::Color(40, 140, 240, 110));
 
   this->_text01.setFont(this->_font00);
-  // this->_text01.setString("TimeElapsed:    "+std::to_string(this->_timeElapsed00.asSeconds()));
   this->_text01.setCharacterSize(12);
   this->_text01.setPosition(20, screenHeight-50);
   // this->_text01.setPosition((screenWidth/2)*0.45, screenHeight/2);
   this->_text01.setFillColor(sf::Color(40, 140, 240, 10));
+  
 }
 
 Overlay::Overlay() {
@@ -33,8 +33,9 @@ Overlay::~Overlay() {
 
 void Overlay::Update() {
   this->_timeElapsed00 = this->_clock00.getElapsedTime();
-  std::cout << "\n FRAME HIT \n" << this->_timeElapsed00.asSeconds() << std::endl;
-  this->_text01.setString("TimeElapsed: "+ std::to_string(this->_timeElapsed00.asSeconds()));
+  std::cout << "\n FRAME HIT(" << this->_timeElapsed00.asSeconds() << ")\n" << std::endl;
+  this->_text01.setString(/*"TimeElapsed: "+ std::to_string(this->_timeElapsed00.asSeconds())*/ "nil, bitch");
+
 }
 
 void Overlay::Render(sf::RenderTarget& target) {
