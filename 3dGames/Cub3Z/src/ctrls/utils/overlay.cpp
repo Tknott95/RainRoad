@@ -4,8 +4,7 @@ void Overlay::Init(float screenWidth, float screenHeight) {
   if (!this->_font00.loadFromFile("utils/fonts/font01.ttf"))  std::cout << "ERROR: Could not load game - font00.ttf file. \n" << std::endl;
   if (!this->_font01.loadFromFile("utils/fonts/font01.ttf"))  std::cout << "ERROR: Could not load player font file. \n" << std::endl;
 
-  this->_clock00.restart();
-  this->_timeElapsed00 = this->_clock00.getElapsedTime();
+  
   this->_text00.setFont(this->_font00);
   this->_text00.setString("Cub3Z");
   this->_text00.setCharacterSize(12);
@@ -24,7 +23,8 @@ void Overlay::Init(float screenWidth, float screenHeight) {
 }
 
 Overlay::Overlay() {
-
+  this->_clock00.restart();
+  // this->_timeElapsed00 = this->_clock00.getElapsedTime();
 }
 
 Overlay::~Overlay() {
