@@ -9,11 +9,10 @@ void Game::init() {
   this->_contextSettings.antialiasingLevel = 4;
   this->_contextSettings.majorVersion = 3;
   this->_contextSettings.minorVersion = 0;
+  
   this->_window = new sf::RenderWindow(sf::VideoMode(this->screenWidth, this->screenHeight), "Cub3Z", sf::Style::Default, this->_contextSettings);
-
   this->_window->setVerticalSyncEnabled(true);
   this->_window->setActive(true);
-  // this->_window = new sf::RenderWindow(sf::VideoMode(this->screenWidth, this->screenHeight, 64), "Cub3Z");
 
   this->_overlay = new Overlay();
 }
