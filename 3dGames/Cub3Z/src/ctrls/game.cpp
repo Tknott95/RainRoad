@@ -10,7 +10,7 @@ void Game::init() {
   this->_contextSettings.majorVersion = 3;
   this->_contextSettings.minorVersion = 0;
   
-  this->_window = new sf::RenderWindow(sf::VideoMode(this->screenWidth, this->screenHeight), "Cub3Z", sf::Style::Default, this->_contextSettings);
+  this->_window = new sf::RenderWindow(sf::VideoMode(this->screenWidth, this->screenHeight), "Cub3Z",  sf::Style::Titlebar | sf::Style::Close | sf::Style::Resize, this->_contextSettings);
   this->_window->setVerticalSyncEnabled(true);
   this->_window->setActive(true);
 
