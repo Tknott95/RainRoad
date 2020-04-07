@@ -77,8 +77,9 @@ void Overlay::Update(bool isGameOver, sf::Vector2f mousePos, bool levelFinished,
   this->isGameOver = isGameOver;
   this->currLvl = currLevel;
   this->_text05.setString("Current Lvl:    "+std::to_string(this->currLvl));
+  /* @TODO FIX_THIS */
   
-  if(isGameOver && this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+  if(this->isGameOver &&  this->_text01.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
     this->_text01.setFillColor(sf::Color(40, 40, 140, 180));
   } else {
     this->_text01.setFillColor(sf::Color(100, 40, 40, 210));
