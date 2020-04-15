@@ -81,7 +81,8 @@ void Game::Render() {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glViewport(0, 0, this->_window->getSize().x, this->_window->getSize().y);
   glMatrixMode(GL_PROJECTION); 
-  glLoadIdentity(); 
+  glLoadIdentity();
+  glRotatef(45, 0, 0, 0);
 	glMatrixMode(GL_MODELVIEW); 
 	glLoadIdentity();
 
@@ -93,7 +94,7 @@ void Game::Render() {
     glRotatef(ang*10.5,-1.3*ang,3*i,1.3*i);
     glTranslatef(.10, 0.14, -0.10);
     glScalef(0.7314, 0.8314, 1.0014);
-		Draw_Triangle(0.44,0.44,0.14);
+		Draw_Cuboid(0.44,0.44,0.14);
 	} 
   this->_window->pushGLStates();
   glEnd();
