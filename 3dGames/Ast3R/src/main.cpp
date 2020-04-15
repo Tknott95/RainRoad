@@ -3,7 +3,6 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
-
 using namespace std;
 
 int main() {
@@ -13,8 +12,6 @@ int main() {
     return -1;
   }
 
-  if(glfwInit()) {
-    cout << "fuckYEah" << endl;
-  }
+  glfwInit();
   return 0;
 }
