@@ -1,9 +1,20 @@
 #include <iostream>
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+
 
 using namespace std;
 
 int main() {
-  cout << "\n asterInitialized... \n" << endl;
+  cout << "\n   appInitialized...\n" << endl;
+  if(!glfwInit()) {
+    printf("\n glfwInit() FAILED\n");
+    return -1;
+  }
+
+  if(glfwInit()) {
+    cout << "fuckYEah" << endl;
+  }
   return 0;
-} 
-       
+}
