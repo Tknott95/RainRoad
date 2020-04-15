@@ -1,5 +1,5 @@
 #include <iostream>
-#define GLEW_STATIC
+// #define GLEW_STATIC replaced w/ cli:  -DGLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
@@ -36,18 +36,23 @@ int main() {
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
   glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-  GLFWwindow* window = glfwCreateWindow(900, 700, "OpenGL", nullptr, nullptr); // Windowed
+  GLFWwindow* window = glfwCreateWindow(900, 700, "Ast3R", nullptr, nullptr); // Windowed
   // GLFWwindow* window = glfwCreateWindow(800, 600, "OpenGL", glfwGetPrimaryMonitor(), nullptr); // Fullscreen
   glewExperimental = GL_TRUE;
-  if(!glewInit()) printf("\nGlewInit FAILED\n");
-  glewInit();
+  if(!glewInit()) { printf("\nGlewInit FAILED\n"); return -1;}
   glfwMakeContextCurrent(window);
+  glewInit();
+  GLuint vertexBuffer;
+  glGenBuffers(1, &vertexBuffer);
+  printf("%u\n", vertexBuffer);
+
 
   while(!glfwWindowShouldClose(window)) {
     glfwSwapBuffers(window);
     glfwPollEvents();
 
     keyPolling(window);
+  
   }
 
   return 0;
