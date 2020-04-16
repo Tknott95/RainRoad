@@ -42,9 +42,18 @@ int main() {
   if(!glewInit()) { printf("\nGlewInit FAILED\n"); return -1;}
   glfwMakeContextCurrent(window);
   glewInit();
-  GLuint vertexBuffer;
-  glGenBuffers(1, &vertexBuffer);
-  printf("%u\n", vertexBuffer);
+
+  float vertices[] = {
+    0.0f, 0.5f, // Vertex 1 (X, Y)
+    0.5f, -0.5f, // Vertex 2 (X, Y)
+    -0.5f, -0.5f // Vertex 3 (X, Y)
+  };
+
+  GLuint vBuff;
+  glGenBuffers(1, &vBuff);
+  printf("%u\n", vBuff);
+  glBindBuffer(GL_ARRAY_BUFFER, vBuff);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 
   while(!glfwWindowShouldClose(window)) {
