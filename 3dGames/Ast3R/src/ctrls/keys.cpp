@@ -7,9 +7,9 @@ void Keys::keyPolling(GLFWwindow* window) {
     }
 
     if (glfwGetKey(window, GLFW_KEY_Z) == GLFW_PRESS) {
-      printf("\n  zPressed, bitch");
+      printf("\n  z, zPressed");
     }
     if (glfwGetKey(window, GLFW_KEY_X) == GLFW_PRESS) {
-      printf("\n  xPressed, bitch");
+      printf("\n  x, xPressed");
     }
 }
