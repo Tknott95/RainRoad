@@ -13,6 +13,11 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 GLFWwindow* window;
 const unsigned int WIDTH = 900;
 const unsigned int HEIGHT = 700;
+int shaderProgram;
+int fragmentShader;
+GLuint vertexShader;
+unsigned int vao, vbo, ebo;
+
 
 void initWindow() {
   cout << "\n appInitialized...\n" << endl;
@@ -39,21 +44,25 @@ void initWindow() {
 
 const char* vertexSource = R"glsl(
   #version 330 core
-  in vec2 position;
+  layout (location = 0) in vec2 position; // has attrib pos: 0
+  out vec4 vertexColor;
   void main() {
     gl_Position = vec4(position, 0.0, 1.0);
+    vertexColor = vec4(0.5f, 0.0f, 0.1f, 1.0f);
   }
   )glsl";
 
   const char* fragmentSource = R"glsl(
   #version 330 core
+  in vec4 vertexColor;
   out vec4 outColor;
   void main() {
-    outColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);    }
+    outColor = vertexColor;
+  }
   )glsl";
 
 void glInit() {
-  GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+  vertexShader = glCreateShader(GL_VERTEX_SHADER);
   glShaderSource(vertexShader, 1, &vertexSource, NULL);
   glCompileShader(vertexShader);
 
@@ -64,11 +73,11 @@ void glInit() {
 
   // fragmentShader
   // @TODO double check glsl for frag shader
-  int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+  fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
   glShaderSource(fragmentShader, 1, &fragmentSource, NULL);
   glCompileShader(fragmentShader);
 
-  int shaderProgram = glCreateProgram();
+  shaderProgram = glCreateProgram();
   glAttachShader(shaderProgram, vertexShader);
   glAttachShader(shaderProgram, fragmentShader);
   glBindFragDataLocation(shaderProgram, 0, "outColor");
@@ -86,7 +95,7 @@ void glInit() {
     1, 2, 3    // second triangle
   }; 
 
-  unsigned int vao, vbo, ebo; // vertexArrayObject
+  // unsigned int vao, vbo, ebo; // vertexArrayObject
   glGenVertexArrays(1, &vao);
   glGenBuffers(1, &vbo);
   glGenBuffers(1, &ebo);
@@ -103,15 +112,16 @@ void glInit() {
   glVertexAttribPointer(posAttrib, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
   glEnableVertexAttribArray(posAttrib);
 
-  if(glfwWindowShouldClose(window)) {
-    glDeleteProgram(shaderProgram);
-    glDeleteShader(fragmentShader);
-    glDeleteShader(vertexShader);
-    glDeleteBuffers(1, &vbo);
-    glDeleteVertexArrays(1, &vao);
-    glDeleteBuffers(1, &ebo);
-    glfwTerminate();
-  }
+  // if(glfwWindowShouldClose(window)) {
+  //   glDeleteProgram(shaderProgram);
+  //   glDeleteShader(fragmentShader);
+  //   glDeleteShader(vertexShader);
+  //   glDeleteBuffers(1, &vbo);
+  //   glDeleteVertexArrays(1, &vao);
+  //   glDeleteBuffers(1, &ebo);
+  //   glfwTerminate();
+  //   printf("\n DeAllocation \n");
+  // }
 }
 
 int main() {
@@ -128,8 +138,16 @@ int main() {
 
     glfwSwapBuffers(window);
     glfwPollEvents();
-
   }
+
+  glDeleteProgram(shaderProgram);
+  glDeleteShader(fragmentShader);
+  glDeleteShader(vertexShader);
+  glDeleteBuffers(1, &vbo);
+  glDeleteVertexArrays(1, &vao);
+  glDeleteBuffers(1, &ebo);
+  glfwTerminate();
+  printf("\n DeAllocation \n");
 
   return 0;
 }
