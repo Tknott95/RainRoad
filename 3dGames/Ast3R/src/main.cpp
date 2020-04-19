@@ -48,6 +48,21 @@ int main() {
   glBindBuffer(GL_ARRAY_BUFFER, vBuff);
   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
+  const char* vertexSource = R"glsl(
+    #version 150 core
+    in vec2 position;
+    void main()
+    {
+      gl_Position = vec4(position, 0.0, 1.0);
+    }
+  )glsl";
+
+  GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+  glShaderSource(vertexShader, 1, &vertexSource, NULL);
+  glCompileShader(vertexShader);
+  GLint status;
+  glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &status);
+
   while(!glfwWindowShouldClose(window)) {
     glfwSwapBuffers(window);
     glfwPollEvents();
