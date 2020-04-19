@@ -36,10 +36,6 @@ void initWindow() {
 int main() {
   initWindow();
 
-  while(!glfwWindowShouldClose(window)) {
-    glfwSwapBuffers(window);
-    glfwPollEvents();
-
   float vertices[] = {
     0.0f, 0.5f,
     0.5f, -0.5f,
@@ -98,6 +94,9 @@ int main() {
     /* Drawing */
   glDrawArrays(GL_TRIANGLES, 0, 3);
 
+  while(!glfwWindowShouldClose(window)) {
+    glfwSwapBuffers(window);
+    glfwPollEvents();
 
     Keys keys;
     keys.keyPolling(window);
