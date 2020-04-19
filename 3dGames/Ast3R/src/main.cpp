@@ -8,11 +8,13 @@
 
 using namespace std;
 
-int main() {
+GLFWwindow* window;
+
+void initWindow() {
   cout << "\n appInitialized...\n" << endl;
   if(!glfwInit()) {
     printf("\n glfwInit() FAILED\n");
-    return -1;
+    /* return -1; - @TODO: replace w/ panicCall */
   }
 
   glfwInit();
@@ -23,12 +25,16 @@ int main() {
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
   glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-  GLFWwindow* window = glfwCreateWindow(900, 700, "Ast3R", nullptr, nullptr); // Windowed
+  window = glfwCreateWindow(900, 700, "Ast3R", nullptr, nullptr); // Windowed
   // GLFWwindow* window = glfwCreateWindow(800, 600, "OpenGL", glfwGetPrimaryMonitor(), nullptr); // Fullscreen
   glewExperimental = GL_TRUE;
-  if(!glewInit()) { printf("\nGlewInit FAILED\n"); return -1;}
+  if(!glewInit()) { printf("\nGlewInit FAILED\n"); /* return -1 */;}
   glfwMakeContextCurrent(window);
   glewInit();
+};
+
+int main() {
+  initWindow();
 
   float vertices[] = {
     0.0f, 0.5f,
@@ -41,7 +47,6 @@ int main() {
   printf("%u\n", vBuff);
   glBindBuffer(GL_ARRAY_BUFFER, vBuff);
   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
 
   while(!glfwWindowShouldClose(window)) {
     glfwSwapBuffers(window);
