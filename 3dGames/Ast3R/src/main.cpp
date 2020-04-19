@@ -58,9 +58,10 @@ void glInit() {
   glCompileShader(vertexShader);
 
   GLint status;
-  // glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &status);
-  // char buffer[512];
-  // glGetShaderInfoLog(vertexShader, 512, NULL, buffer);
+  char buffer[512];
+  glGetShaderInfoLog(vertexShader, 512, NULL, buffer);
+  glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &status);
+
   // fragmentShader
   // @TODO double check glsl for frag shader
   int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
@@ -119,6 +120,7 @@ int main() {
   
   while(!glfwWindowShouldClose(window)) {
     // glDrawArrays(GL_TRIANGLES, 0, 3);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); /* if wanting wireframe view */
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     glfwSwapBuffers(window);
     glfwPollEvents();
