@@ -120,13 +120,15 @@ int main() {
   
   while(!glfwWindowShouldClose(window)) {
     // glDrawArrays(GL_TRIANGLES, 0, 3);
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); /* if wanting wireframe view */
+    Keys keys;
+    keys.keyPolling(window);
+
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); /*  GL_LINE if wanting wireframe view */
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
     glfwSwapBuffers(window);
     glfwPollEvents();
 
-    Keys keys;
-    keys.keyPolling(window);  
   }
 
   return 0;
