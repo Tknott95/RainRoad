@@ -19,7 +19,6 @@ void initWindow() {
 
   glfwInit();
   // this_thread::sleep_for(chrono::seconds(1));
-
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -57,11 +56,11 @@ void glInit() {
     -0.5f, -0.5f
   };
 
-  GLuint vao; // creating a vertexArrayObject
+  GLuint vao; // vertexArrayObject
   glGenVertexArrays(1, &vao);
   glBindVertexArray(vao);
 
-  GLuint vbo;
+  GLuint vbo; // vertexBufferObject
   glGenBuffers(1, &vbo);
   glBindBuffer(GL_ARRAY_BUFFER, vbo);
   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
@@ -90,6 +89,14 @@ void glInit() {
   GLint posAttrib = glGetAttribLocation(shaderProgram, "position");
   glEnableVertexAttribArray(posAttrib);
   glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
+
+  if(glfwWindowShouldClose(window)) {
+    glDeleteProgram(shaderProgram);
+    glDeleteShader(fragmentShader);
+    glDeleteShader(vertexShader);
+    glDeleteBuffers(1, &vbo);
+    glDeleteVertexArrays(1, &vao);
+  }
 }
 
 int main() {
@@ -103,8 +110,7 @@ int main() {
     glfwPollEvents();
 
     Keys keys;
-    keys.keyPolling(window);
-  
+    keys.keyPolling(window);  
   }
 
   return 0;
