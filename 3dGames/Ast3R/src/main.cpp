@@ -70,9 +70,9 @@ void glInit() {
   glShaderSource(vertexShader, 1, &vertexSource, NULL);
   glCompileShader(vertexShader);
 
-  // GLint status;
+  GLint status;
   // glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &status);
-  // grabbing compile log
+  // // grabbing compile log
   // char buffer[512];
   // glGetShaderInfoLog(vertexShader, 512, NULL, buffer);
   // fragmentShader
@@ -95,7 +95,6 @@ void glInit() {
 int main() {
   initWindow();
   glInit();
-
   
   while(!glfwWindowShouldClose(window)) {
     glDrawArrays(GL_TRIANGLES, 0, 3);
