@@ -85,16 +85,17 @@ void Game::Render() {
   glRotatef(45, 0, 0, 0);
 	glMatrixMode(GL_MODELVIEW); 
 	glLoadIdentity();
+  glEnable(GL_DEPTH_TEST);
 
   static float ang=0.0;
 	ang+=0.0314f;
 
   // Draw_Cuboid(0.10,0,0);
-	for (int i=0; i < 4; i++) {
-    glRotatef(ang*10.5,-1.3*ang,3*i,1.3*i);
+	for (int i=0; i < 1444; i++) {
+    glRotatef(ang*20.5,-7.3*ang,-7*i,7.3*i);
     glTranslatef(.10, 0.14, -0.10);
-    glScalef(0.7314, 0.8314, 1.0014);
-		Draw_Cuboid(0.44,0.44,0.14);
+    glScalef(0.8314, 0.8314, 1.0014);
+		Draw_Cuboid(0.44,0.44,0.44);
 	} 
   this->_window->pushGLStates();
   glEnd();
