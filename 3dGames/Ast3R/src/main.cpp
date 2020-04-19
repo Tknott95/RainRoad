@@ -8,7 +8,11 @@
 
 using namespace std;
 
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+
 GLFWwindow* window;
+const unsigned int WIDTH = 900;
+const unsigned int HEIGHT = 700;
 
 void initWindow() {
   cout << "\n appInitialized...\n" << endl;
@@ -24,11 +28,12 @@ void initWindow() {
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
   glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-  window = glfwCreateWindow(900, 700, "Ast3R", nullptr, nullptr); // Windowed
+  window = glfwCreateWindow(WIDTH, HEIGHT, "Ast3R", nullptr, nullptr); // Windowed
   // GLFWwindow* window = glfwCreateWindow(800, 600, "OpenGL", glfwGetPrimaryMonitor(), nullptr); // Fullscreen
   glewExperimental = GL_TRUE;
   if(!glewInit()) { printf("\nGlewInit FAILED\n"); /* return -1 */;}
   glfwMakeContextCurrent(window);
+  glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); /* is this + theFunc really needed? */
   glewInit();
 };
 
@@ -123,4 +128,8 @@ int main() {
   }
 
   return 0;
+}
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+    glViewport(0, 0, width, height);
 }
