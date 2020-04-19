@@ -33,22 +33,7 @@ void initWindow() {
   glewInit();
 };
 
-int main() {
-  initWindow();
-
-  float vertices[] = {
-    0.0f, 0.5f,
-    0.5f, -0.5f,
-    -0.5f, -0.5f
-  };
-
-  GLuint vBuff;
-  glGenBuffers(1, &vBuff);
-  printf("%u\n", vBuff);
-  glBindBuffer(GL_ARRAY_BUFFER, vBuff);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-  const char* vertexSource = R"glsl(
+const char* vertexSource = R"glsl(
     #version 150 core
     in vec2 position;
     void main()
@@ -57,23 +42,41 @@ int main() {
     }
   )glsl";
 
-  GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-  glShaderSource(vertexShader, 1, &vertexSource, NULL);
-  glCompileShader(vertexShader);
-  GLint status;
-  glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &status);
-  // grabbing compile log
-  char buffer[512];
-  glGetShaderInfoLog(vertexShader, 512, NULL, buffer);
-  // fragmentShader
-  // @TODO double check glsl for frag shader
   const char* fragmentSource = R"glsl(
-   #version 150 core
+  #version 150 core
   out vec4 outColor;
   void main()
   {
-    outColor = vec4(1.0, 1.0, 1.0, 1.0);    }
+    outColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);    }
   )glsl";
+
+void glInit() {
+  float vertices[] = {
+    0.0f, 0.5f,
+    0.5f, -0.5f,
+    -0.5f, -0.5f
+  };
+
+  GLuint vao; // creating a vertexArrayObject
+  glGenVertexArrays(1, &vao);
+  glBindVertexArray(vao);
+
+  GLuint vbo;
+  glGenBuffers(1, &vbo);
+  glBindBuffer(GL_ARRAY_BUFFER, vbo);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+  GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+  glShaderSource(vertexShader, 1, &vertexSource, NULL);
+  glCompileShader(vertexShader);
+
+  // GLint status;
+  // glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &status);
+  // grabbing compile log
+  // char buffer[512];
+  // glGetShaderInfoLog(vertexShader, 512, NULL, buffer);
+  // fragmentShader
+  // @TODO double check glsl for frag shader
   GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
   glShaderSource(fragmentShader, 1, &fragmentSource, NULL);
   glCompileShader(fragmentShader);
@@ -85,16 +88,18 @@ int main() {
   glLinkProgram(shaderProgram);
   glUseProgram(shaderProgram);
   GLint posAttrib = glGetAttribLocation(shaderProgram, "position");
-  glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
   glEnableVertexAttribArray(posAttrib);
+  glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
+}
 
-  GLuint vao; // creating a vertexArrayObject
-  glGenVertexArrays(1, &vao);
-  glBindVertexArray(vao);
-    /* Drawing */
-  glDrawArrays(GL_TRIANGLES, 0, 3);
+int main() {
+  initWindow();
+  glInit();
 
+  
   while(!glfwWindowShouldClose(window)) {
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+
     glfwSwapBuffers(window);
     glfwPollEvents();
 
