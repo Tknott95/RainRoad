@@ -123,6 +123,8 @@ void glInit() {
 
   /* TEXTURE INIT HERE */
 
+  /* endTextureInit */
+
   glUseProgram(shaderProgram);
 
   // if(glfwWindowShouldClose(window)) {
