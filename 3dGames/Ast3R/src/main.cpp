@@ -5,6 +5,8 @@
 #include <glm/glm.hpp>
 #include <thread>
 #include "headers/keys.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "headers/stb_image.h"
 
 using namespace std;
 
@@ -91,7 +93,7 @@ void glInit() {
   /* FIGURE OUT WHERE TO DYNMAN CHANGE THIS SHADER @TODO */
   
   float vertices[] = {
-    0.5f,  0.5f, 0.0f,  1.0f, 0.0f, 0.0f, 0.5f, 0.5f,  // top right
+    0.5f,  0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   0.5f, 0.5f,  // top right
     0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   0.5f, -0.5f, // bottom right
     -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,  -0.5f, -0.5f,   // bottom left
     -0.5f,  0.5f, 0.0f,  1.0f, 1.0f, 1.0f,  -0.5f, 0.5f // top left 
@@ -99,7 +101,7 @@ void glInit() {
   unsigned int indices[] = {  // note that we start from 0!
     0, 1, 3,   // first triangle
     1, 2, 3    // second triangle
-  }; 
+  };
 
   // unsigned int vao, vbo, ebo; // vertexArrayObject
   glGenVertexArrays(1, &vao);
@@ -113,19 +115,17 @@ void glInit() {
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-
   // position attribute
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
   glEnableVertexAttribArray(0);
   // color attribute
   glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
   glEnableVertexAttribArray(1);
-
+  // texture attribute
   glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
   glEnableVertexAttribArray(2);
 
   glUseProgram(shaderProgram);
-
 
   // if(glfwWindowShouldClose(window)) {
   //   glDeleteProgram(shaderProgram);
