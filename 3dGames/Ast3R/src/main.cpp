@@ -4,9 +4,6 @@
 // #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <thread>
-#include <string>
-#include <fstream>
-#include <sstream>
 #include "headers/keys.h"
 
 using namespace std;
@@ -74,8 +71,6 @@ void glInit() {
   glGetShaderInfoLog(vertexShader, 512, NULL, buffer);
   glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &status);
 
-  // fragmentShader
-  // @TODO double check glsl for frag shader
   fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
   glShaderSource(fragmentShader, 1, &fragmentSource, NULL);
   glCompileShader(fragmentShader);
@@ -126,6 +121,7 @@ void glInit() {
   glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
   glEnableVertexAttribArray(2);
 
+  /* TEXTURE INIT HERE */
 
   glUseProgram(shaderProgram);
 
