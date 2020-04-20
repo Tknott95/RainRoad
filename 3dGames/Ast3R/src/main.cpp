@@ -82,12 +82,19 @@ void glInit() {
   glAttachShader(shaderProgram, fragmentShader);
   // glBindFragDataLocation(shaderProgram, 0, "outColor");
   glLinkProgram(shaderProgram);
+
+  /* FIGURE OUT WHERE TO DYNMAN CHANGE THIS SHADER @TODO */
+  // float timeVal = glfwGetTime();
+  // float greenVal = sin(timeVal) / 2.0f + 0.5f;
+  // int vertexColorLoc = glGetUniformLocation(shaderProgram, "fragColor");
+  // glUniform4f(vertexColorLoc, 0.0f, greenVal, 0.0f, 1.0f);
+  /* FIGURE OUT WHERE TO DYNMAN CHANGE THIS SHADER @TODO */
   
   float vertices[] = {
-    0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f,  // top right
-    0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f,  // bottom right
-    -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f,  // bottom left
-    -0.5f,  0.5f, 0.0f, 1.0f, 1.0f, 1.0f  // top left 
+    0.5f,  0.5f, 0.0f,  1.0f, 0.0f, 0.0f, 0.5f, 0.5f,  // top right
+    0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   0.5f, -0.5f, // bottom right
+    -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,  -0.5f, -0.5f,   // bottom left
+    -0.5f,  0.5f, 0.0f,  1.0f, 1.0f, 1.0f,  -0.5f, 0.5f // top left 
   };
   unsigned int indices[] = {  // note that we start from 0!
     0, 1, 3,   // first triangle
@@ -108,11 +115,15 @@ void glInit() {
 
 
   // position attribute
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
   glEnableVertexAttribArray(0);
-    // color attribute
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+  // color attribute
+  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
   glEnableVertexAttribArray(1);
+
+  glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+  glEnableVertexAttribArray(2);
+
   glUseProgram(shaderProgram);
 
 
@@ -128,6 +139,17 @@ void glInit() {
   // }
 }
 
+void deAllocate() {
+  glDeleteProgram(shaderProgram);
+  glDeleteShader(fragmentShader);
+  glDeleteShader(vertexShader);
+  glDeleteBuffers(1, &vbo);
+  glDeleteVertexArrays(1, &vao);
+  glDeleteBuffers(1, &ebo);
+  glfwTerminate();
+  cout << "\n DeAllocation \n" << endl;
+}
+
 int main() {
   initWindow();
   glInit();
@@ -137,21 +159,14 @@ int main() {
     Keys keys;
     keys.keyPolling(window);
 
-    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); /*  GL_LINE if wanting wireframe view */
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); /*  GL_LINE if wanting wireframe view */
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
     glfwSwapBuffers(window);
     glfwPollEvents();
   }
 
-  glDeleteProgram(shaderProgram);
-  glDeleteShader(fragmentShader);
-  glDeleteShader(vertexShader);
-  glDeleteBuffers(1, &vbo);
-  glDeleteVertexArrays(1, &vao);
-  glDeleteBuffers(1, &ebo);
-  glfwTerminate();
-  printf("\n DeAllocation \n");
+  deAllocate();
 
   return 0;
 }
