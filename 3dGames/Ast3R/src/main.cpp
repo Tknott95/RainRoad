@@ -105,9 +105,9 @@ void glInit() {
   /* FIGURE OUT WHERE TO DYNMAN CHANGE THIS SHADER @TODO */
   
   float vertices[] = {
-    0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   0.75f,  0.0f,  // top right
+    0.5f,  0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.75f,  0.0f,  // top right
     0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   0.75f, 0.75f, // bottom right
-    -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,   0.0f, 0.75f,   // bottom left
+    -0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   0.0f, 0.75f,   // bottom left
     -0.5f,  0.5f, 0.0f,  1.0f, 0.8f, 1.0f,   0.0f, 0.0f // top left 
   };
   unsigned int indices[] = {  // note that we start from 0!
@@ -209,6 +209,7 @@ int main() {
     // glBindTexture(GL_TEXTURE_2D, texture);
     // glBindVertexArray(vao);
     glUseProgram(shaderProgram);
+    glUniform1i(glGetUniformLocation(shaderProgram, "texture0"), 0); // grabs uniform from shader, bby
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture0);
     glBindVertexArray(vao);
