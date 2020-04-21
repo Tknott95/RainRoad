@@ -20,7 +20,7 @@ int shaderProgram;
 int fragmentShader;
 GLuint vertexShader;
 unsigned int vao, vbo, ebo;
-unsigned int texture1;
+unsigned int texture0;
 
 
 void initWindow() {
@@ -67,13 +67,13 @@ const char *fragmentSource =
     "in vec2 TexCoord;\n"
 
     // texture sampler
-    "uniform sampler2D texture1;\n"
+    "uniform sampler2D texture0;\n"
 
     "void main()\n"
     "{\n"
-    "    FragColor = texture(texture1, TexCoord) * vec4(ourColor, 1.0);\n"
+    "    FragColor = texture(texture0, TexCoord) * vec4(ourColor, 1.0);\n"
     //FragColor = vec4(ourColor, TexCoord);\n"
-    // vec4(texture1, TexCoord) * vec4(ourColor, 1.0);\n"
+    // vec4(texture0, TexCoord) * vec4(ourColor, 1.0);\n"
 
     "}\n\0";
 
@@ -147,8 +147,8 @@ void glInit() {
     // resources/textures/container.jpg
     unsigned char *data = stbi_load("resources/textures/pepe.png", &width, &height, &nrChannels, 0);
     // unsigned int texture; MADE GLOBAL
-    glGenTextures(1, &texture1);
-    glBindTexture(GL_TEXTURE_2D, texture1); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
+    glGenTextures(1, &texture0);
+    glBindTexture(GL_TEXTURE_2D, texture0); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
     // set the texture wrapping parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -208,10 +208,10 @@ int main() {
 
     // glBindTexture(GL_TEXTURE_2D, texture);
     // glBindVertexArray(vao);
-      glUseProgram(shaderProgram);
-  glActiveTexture(GL_TEXTURE0);
-  glBindTexture(GL_TEXTURE_2D, texture1);
-  glBindVertexArray(vao);
+    glUseProgram(shaderProgram);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture0);
+    glBindVertexArray(vao);
 
 
     // glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); /*  GL_LINE if wanting wireframe view */
