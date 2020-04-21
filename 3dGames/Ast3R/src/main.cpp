@@ -12,6 +12,7 @@ using namespace std;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
+
 GLFWwindow* window;
 const unsigned int WIDTH = 900;
 const unsigned int HEIGHT = 700;
@@ -19,6 +20,7 @@ int shaderProgram;
 int fragmentShader;
 GLuint vertexShader;
 unsigned int vao, vbo, ebo;
+unsigned int texture;
 
 
 void initWindow() {
@@ -47,23 +49,33 @@ void initWindow() {
 const char *vertexSource ="#version 330 core\n"
     "layout (location = 0) in vec3 aPos;\n"
     "layout (location = 1) in vec3 aColor;\n"
+    "layout (location = 2) in vec2 aTexCoord;\n"
     "out vec3 ourColor;\n"
+    "out vec2 TexCoord;\n"
     "void main()\n"
     "{\n"
     "   gl_Position = vec4(aPos, 1.0);\n"
     "   ourColor = aColor;\n"
+    "   TexCoord = vec2(aTexCoord.x, aTexCoord.y);\n"
     "}\0";
 
 const char *fragmentSource = "#version 330 core\n"
     "out vec4 FragColor;\n"
     "in vec3 ourColor;\n"
+    "in vec2 TexCoord;\n"
+
+    // texture sampler
+    "uniform sampler2D texture1;\n"
+
     "void main()\n"
     "{\n"
-    "   FragColor = vec4(ourColor, 1.0f);\n"
+    "    FragColor = vec4(ourColor, 1.0);\n"
+    //FragColor = vec4(ourColor, TexCoord);\n"
+    // vec4(texture1, TexCoord) * vec4(ourColor, 1.0);\n"
+
     "}\n\0";
 
 void glInit() {
-
   vertexShader = glCreateShader(GL_VERTEX_SHADER);
   glShaderSource(vertexShader, 1, &vertexSource, NULL);
   glCompileShader(vertexShader);
@@ -91,10 +103,10 @@ void glInit() {
   /* FIGURE OUT WHERE TO DYNMAN CHANGE THIS SHADER @TODO */
   
   float vertices[] = {
-    0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   0.5f, 0.5f,  // top right
-    0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   0.5f, -0.5f, // bottom right
-    -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,   -0.5f, -0.5f,   // bottom left
-    -0.5f,  0.5f, 0.0f,  1.0f, 1.0f, 1.0f,   -0.5f, 0.5f // top left 
+    0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   0.5f,  0.5f,  // top right
+    0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // bottom right
+    -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // bottom left
+    -0.5f,  0.5f, 0.0f,  1.0f, 0.8f, 1.0f,   0.0f, 1.0f // top left 
   };
   unsigned int indices[] = {  // note that we start from 0!
     0, 1, 3,   // first triangle
@@ -124,6 +136,16 @@ void glInit() {
   glEnableVertexAttribArray(2);
 
   /* TEXTURE INIT HERE */
+
+  // unsigned int texture; MADE GLOBAL
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
+    // set the texture wrapping parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    // set texture filtering parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
   int width, height, nrChannels;
     // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
@@ -172,11 +194,17 @@ int main() {
   glInit();
   
   while(!glfwWindowShouldClose(window)) {
-    // glDrawArrays(GL_TRIANGLES, 0, 3);
     Keys keys;
     keys.keyPolling(window);
+  
+    glClearColor(0.0f, 0.0f, 0.1f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
 
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); /*  GL_LINE if wanting wireframe view */
+    glBindTexture(GL_TEXTURE_2D, texture);
+    // glBindVertexArray(vao);
+
+
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); /*  GL_LINE if wanting wireframe view */
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
     glfwSwapBuffers(window);
