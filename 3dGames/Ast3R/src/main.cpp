@@ -69,7 +69,7 @@ const char *fragmentSource = "#version 330 core\n"
 
     "void main()\n"
     "{\n"
-    "    FragColor = texture(texture1, TexCoord);\n"
+    "    FragColor = texture(texture1, TexCoord) * vec4(ourColor, 1.0);\n"
     //FragColor = vec4(ourColor, TexCoord);\n"
     // vec4(texture1, TexCoord) * vec4(ourColor, 1.0);\n"
 
@@ -103,10 +103,10 @@ void glInit() {
   /* FIGURE OUT WHERE TO DYNMAN CHANGE THIS SHADER @TODO */
   
   float vertices[] = {
-    0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   0.5f,  0.5f,  // top right
-    0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // bottom right
-    -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // bottom left
-    -0.5f,  0.5f, 0.0f,  1.0f, 0.8f, 1.0f,   0.0f, 1.0f // top left 
+    0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   0.0f,  1.0f,  // top right
+    0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   0.0f, 0.0f, // bottom right
+    -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,   0.0f, 1.0f,   // bottom left
+    -0.5f,  0.5f, 0.0f,  1.0f, 0.8f, 1.0f,   1.0f, 1.0f // top left 
   };
   unsigned int indices[] = {  // note that we start from 0!
     0, 1, 3,   // first triangle
