@@ -105,10 +105,10 @@ void glInit() {
   /* FIGURE OUT WHERE TO DYNMAN CHANGE THIS SHADER @TODO */
   
   float vertices[] = {
-    0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   0.0f,  1.0f,  // top right
-    0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   0.0f, 0.0f, // bottom right
-    -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,   0.0f, 1.0f,   // bottom left
-    -0.5f,  0.5f, 0.0f,  1.0f, 0.8f, 1.0f,   1.0f, 1.0f // top left 
+    0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   0.75f,  0.0f,  // top right
+    0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   0.75f, 0.75f, // bottom right
+    -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,   0.0f, 0.75f,   // bottom left
+    -0.5f,  0.5f, 0.0f,  1.0f, 0.8f, 1.0f,   0.0f, 0.0f // top left 
   };
   unsigned int indices[] = {  // note that we start from 0!
     0, 1, 3,   // first triangle
@@ -145,7 +145,7 @@ void glInit() {
   int width, height, nrChannels;
     // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
     // resources/textures/container.jpg
-    unsigned char *data = stbi_load("resources/textures/wall.jpg", &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load("resources/textures/pepe.png", &width, &height, &nrChannels, 0);
     // unsigned int texture; MADE GLOBAL
     glGenTextures(1, &texture1);
     glBindTexture(GL_TEXTURE_2D, texture1); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
