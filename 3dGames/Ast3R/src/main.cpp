@@ -20,7 +20,7 @@ int shaderProgram;
 int fragmentShader;
 GLuint vertexShader;
 unsigned int vao, vbo, ebo;
-unsigned int texture;
+unsigned int texture1;
 
 
 void initWindow() {
@@ -69,7 +69,7 @@ const char *fragmentSource = "#version 330 core\n"
 
     "void main()\n"
     "{\n"
-    "    FragColor = vec4(ourColor, 1.0);\n"
+    "    FragColor = texture(texture1, TexCoord);\n"
     //FragColor = vec4(ourColor, TexCoord);\n"
     // vec4(texture1, TexCoord) * vec4(ourColor, 1.0);\n"
 
@@ -137,20 +137,22 @@ void glInit() {
 
   /* TEXTURE INIT HERE */
 
-  // unsigned int texture; MADE GLOBAL
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
+
+
+  glBindVertexArray(0);
+  int width, height, nrChannels;
+    // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
+    // resources/textures/container.jpg
+    unsigned char *data = stbi_load("resources/textures/wall.jpg", &width, &height, &nrChannels, 0);
+    // unsigned int texture; MADE GLOBAL
+    glGenTextures(1, &texture1);
+    glBindTexture(GL_TEXTURE_2D, texture1); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
     // set the texture wrapping parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     // set texture filtering parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-  int width, height, nrChannels;
-    // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-    // resources/textures/container.jpg
-    unsigned char *data = stbi_load("resources/textures/wall.jpg", &width, &height, &nrChannels, 0);
     if (data)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -165,6 +167,8 @@ void glInit() {
   /* endTextureInit */
 
   glUseProgram(shaderProgram);
+  // glActiveTexture(GL_TEXTURE0);
+  // glBindTexture(GL_TEXTURE_2D, texture);
 
   // if(glfwWindowShouldClose(window)) {
   //   glDeleteProgram(shaderProgram);
@@ -200,8 +204,12 @@ int main() {
     glClearColor(0.0f, 0.0f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    glBindTexture(GL_TEXTURE_2D, texture);
+    // glBindTexture(GL_TEXTURE_2D, texture);
     // glBindVertexArray(vao);
+      glUseProgram(shaderProgram);
+  glActiveTexture(GL_TEXTURE0);
+  glBindTexture(GL_TEXTURE_2D, texture1);
+  glBindVertexArray(vao);
 
 
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); /*  GL_LINE if wanting wireframe view */
