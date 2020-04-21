@@ -5,6 +5,8 @@
 #include <glm/glm.hpp>
 #include <thread>
 #include "headers/keys.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "headers/third_party/stb_image.h"
 
 using namespace std;
 
@@ -89,10 +91,10 @@ void glInit() {
   /* FIGURE OUT WHERE TO DYNMAN CHANGE THIS SHADER @TODO */
   
   float vertices[] = {
-    0.5f,  0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   0.5f, 0.5f,  // top right
-    0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   0.5f, -0.5f, // bottom right
-    -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,  -0.5f, -0.5f,   // bottom left
-    -0.5f,  0.5f, 0.0f,  1.0f, 1.0f, 1.0f,  -0.5f, 0.5f // top left 
+    0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   0.5f, 0.5f,  // top right
+    0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   0.5f, -0.5f, // bottom right
+    -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,   -0.5f, -0.5f,   // bottom left
+    -0.5f,  0.5f, 0.0f,  1.0f, 1.0f, 1.0f,   -0.5f, 0.5f // top left 
   };
   unsigned int indices[] = {  // note that we start from 0!
     0, 1, 3,   // first triangle
@@ -122,6 +124,21 @@ void glInit() {
   glEnableVertexAttribArray(2);
 
   /* TEXTURE INIT HERE */
+
+  int width, height, nrChannels;
+    // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
+    // resources/textures/container.jpg
+    unsigned char *data = stbi_load("resources/textures/wall.jpg", &width, &height, &nrChannels, 0);
+    if (data)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else
+    {
+        std::cout << "Failed to load texture" << std::endl;
+    }
+    stbi_image_free(data);
 
   /* endTextureInit */
 
