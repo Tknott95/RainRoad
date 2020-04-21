@@ -46,7 +46,8 @@ void initWindow() {
   glewInit();
 };
 
-const char *vertexSource ="#version 330 core\n"
+const char *vertexSource =
+    "#version 440 core\n"
     "layout (location = 0) in vec3 aPos;\n"
     "layout (location = 1) in vec3 aColor;\n"
     "layout (location = 2) in vec2 aTexCoord;\n"
@@ -59,7 +60,8 @@ const char *vertexSource ="#version 330 core\n"
     "   TexCoord = vec2(aTexCoord.x, aTexCoord.y);\n"
     "}\0";
 
-const char *fragmentSource = "#version 330 core\n"
+const char *fragmentSource =
+    "#version 440 core\n"
     "out vec4 FragColor;\n"
     "in vec3 ourColor;\n"
     "in vec2 TexCoord;\n"
