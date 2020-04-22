@@ -237,7 +237,7 @@ int main() {
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture0);
 
-    // if(timeRot > 2) glfwSetTime(0);
+    // if(timeRot > 2) glfwSetTime(0);  oscillate speed
     // timeRot = (float)glfwGetTime() * .00085;
     float rotSpeed = 0.001f;
 
