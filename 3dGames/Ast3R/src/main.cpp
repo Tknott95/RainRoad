@@ -213,7 +213,6 @@ int main() {
   vec = trans * vec;
   cout << " (" << vec.x << ", " << vec.y <<  ", " << vec.z << ") \n" << endl;
   
-  trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
   // trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));  
 
   while(!glfwWindowShouldClose(window)) {
@@ -230,11 +229,12 @@ int main() {
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture0);
 
-    
-   unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
-   glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+    float timeRot = (float)glfwGetTime() * .00085;
+    trans = glm::rotate(trans,  timeRot, glm::vec3(1.0, 1.0, 1.0));
+    unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
+    glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
-   glBindVertexArray(vao);
+    glBindVertexArray(vao);
 
 
     // glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); /*  GL_LINE if wanting wireframe view */
