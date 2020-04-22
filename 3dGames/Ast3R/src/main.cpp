@@ -275,7 +275,7 @@ int main() {
 
     // if(timeRot > 2) glfwSetTime(0);  oscillate speed
     // timeRot = (float)glfwGetTime() * .00085;
-    float rotSpeed = 0.001f;
+    float rotSpeed = 0.005f;
 
 
     unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
