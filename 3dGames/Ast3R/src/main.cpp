@@ -207,13 +207,15 @@ int main() {
   glInit();
 
 
-  glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
-  glm::mat4 trans = glm::mat4(1.0f);
+  // glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
   // trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));
-  vec = trans * vec;
-  cout << " (" << vec.x << ", " << vec.y <<  ", " << vec.z << ") \n" << endl;
-  
-  // trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));  
+  // vec = trans * vec;
+  // cout << " (" << vec.x << ", " << vec.y <<  ", " << vec.z << ") \n" << endl;
+  // trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5)); 
+   
+  float timeRot;
+  glm::mat4 trans = glm::mat4(1.0f);
+
 
   while(!glfwWindowShouldClose(window)) {
     Keys keys;
@@ -229,7 +231,9 @@ int main() {
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture0);
 
-    float timeRot = (float)glfwGetTime() * .00085;
+    if(timeRot > 2) glfwSetTime(0);
+    timeRot = (float)glfwGetTime() * .00085;
+   
     trans = glm::rotate(trans,  timeRot, glm::vec3(1.0, 1.0, 1.0));
     unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
     glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
