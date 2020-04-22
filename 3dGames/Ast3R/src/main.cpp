@@ -37,14 +37,14 @@ void initWindow() {
 
   glfwInit();
   // this_thread::sleep_for(chrono::seconds(1));
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
   glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-  window = glfwCreateWindow(WIDTH, HEIGHT, "Ast3R", nullptr, nullptr); // Windowed
+  window = glfwCreateWindow(WIDTH, HEIGHT, "Ast3R", nullptr, nullptr);
   // GLFWwindow* window = glfwCreateWindow(800, 600, "OpenGL", glfwGetPrimaryMonitor(), nullptr); // Fullscreen
-  glewExperimental = GL_TRUE;
+  // glewExperimental = GL_TRUE;
   if(!glewInit()) { printf("\nGlewInit FAILED\n"); /* return -1 */;}
   glfwMakeContextCurrent(window);
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); /* is this + theFunc really needed? */
@@ -198,6 +198,7 @@ void glInit() {
   
   /* TEXTURE INIT HERE */
   int width, height, nrChannels;
+  stbi_set_flip_vertically_on_load(true);
   unsigned char *data = stbi_load("resources/textures/marble.jpg", &width, &height, &nrChannels, 0);
   glGenTextures(1, &texture0);
   glBindTexture(GL_TEXTURE_2D, texture0); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
@@ -251,15 +252,17 @@ int main() {
   // trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5)); 
 
   float timeRot;
-  glm::mat4 trans = glm::mat4(1.0f);
+  glm::mat4 trans0 = glm::mat4(1.0f);
+  glm::mat4 proj0 = glm::mat4(1.0f);
+  glm::mat4 view0 = glm::mat4(1.0f);
+
 
   // glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
-  glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
+  proj0 = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
   glm::mat4 model = glm::mat4(1.0f);
-  model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+  model = glm::rotate(model, glm::radians(20.0f), glm::vec3(1.0f, 0.3f, 0.3f));
 
-  glm::mat4 view = glm::mat4(1.0f);
-  view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f)); 
+  view0 = glm::translate(view0, glm::vec3(0.0f, 0.0f, -3.0f)); 
   // glm::mat4 projection;
   // projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
   // glUseProgram(shaderProgram);
@@ -268,8 +271,8 @@ int main() {
     Keys keys;
     keys.keyPolling(window);
   
-    glClearColor(0.0f, 0.0f, 0.1f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClearColor(0.0f, 0.0f, 0.2f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glUniform1i(glGetUniformLocation(shaderProgram, "texture0"), 0); // grabs uniform from shader, bby
     glActiveTexture(GL_TEXTURE0);
@@ -282,13 +285,13 @@ int main() {
     unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
     glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
     unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
-    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view0));
     unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
-    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj0));
    
-    trans = glm::rotate(trans, rotSpeed, glm::vec3(1.0, 1.0, 1.0));
+    trans0 = glm::rotate(trans0, rotSpeed, glm::vec3(1.0, 1.0, 1.0));
     unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
-    glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+    glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans0));
 
     glBindVertexArray(vao);
 
