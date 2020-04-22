@@ -60,9 +60,14 @@ const char *vertexSource =
     "out vec2 TexCoord;\n"
 
     "uniform mat4 transform;\n"
+    "uniform mat4 model;\n"
+    "uniform mat4 view;\n"
+    "uniform mat4 projection;\n"
+
     "void main()\n"
     "{\n"
-    "   gl_Position = transform * vec4(aPos, 1.0);\n"
+    "   gl_Position = projection * view * model * vec4(aPos, 1.0);\n"
+    // transform * vec4(aPos, 1.0)
     "   ourColor = aColor;\n"
     "   TexCoord = vec2(aTexCoord.x, aTexCoord.y);\n"
     "}\0";
@@ -206,10 +211,17 @@ int main() {
    
   float timeRot;
   glm::mat4 trans = glm::mat4(1.0f);
-  // glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
-  // glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
-  // glm::mat4 model = glm::mat4(1.0f);
-  // model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+
+  glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
+  glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
+  glm::mat4 model = glm::mat4(1.0f);
+  model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+  glm::mat4 view = glm::mat4(1.0f);
+  // note that we're translating the scene in the reverse direction of where we want to move
+  view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f)); 
+  glm::mat4 projection;
+  projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+
 
 
   while(!glfwWindowShouldClose(window)) {
@@ -228,10 +240,17 @@ int main() {
 
     if(timeRot > 2) glfwSetTime(0);
     timeRot = (float)glfwGetTime() * .00085;
+
+    unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
+    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+    unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+    unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
+    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
    
-    trans = glm::rotate(trans, timeRot, glm::vec3(1.0, 1.0, 1.0));
-    unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
-    glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+    // trans = glm::rotate(trans, timeRot, glm::vec3(1.0, 1.0, 1.0));
+    // unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
+    // glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
     glBindVertexArray(vao);
 
