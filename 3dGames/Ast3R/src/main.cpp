@@ -68,7 +68,7 @@ const char *vertexSource =
     "{\n"
     "   gl_Position = projection * view * model * transform * vec4(aPos, 1.0);\n"
     "   ourColor = aColor;\n"
-    "   TexCoord = vec2(aTexCoord.x, aTexCoord.y);\n"
+    "   TexCoord = vec2(aTexCoord.x, 1.0 - aTexCoord.y);\n"
     "}\0";
 
 const char *fragmentSource =
@@ -115,28 +115,76 @@ void glInit() {
   // glUniform4f(vertexColorLoc, 0.0f, greenVal, 0.0f, 1.0f);
   /* FIGURE OUT WHERE TO DYNMAN CHANGE THIS SHADER @TODO */
   
+  // float vertices[] = {
+  //   0.5f,  0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.75f,  0.0f,  // top right
+  //   0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   0.75f, 0.75f, // bottom right
+  //   -0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   0.0f, 0.75f,   // bottom left
+  //   -0.5f,  0.5f, 0.0f,  1.0f, 0.8f, 1.0f,   0.0f, 0.0f // top left 
+  // };
+
+  // 1.0f, 1.0f, 1.0f,
+  // glEnable(GL_DEPTH_TEST);
+
   float vertices[] = {
-    0.5f,  0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.75f,  0.0f,  // top right
-    0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   0.75f, 0.75f, // bottom right
-    -0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   0.0f, 0.75f,   // bottom left
-    -0.5f,  0.5f, 0.0f,  1.0f, 0.8f, 1.0f,   0.0f, 0.0f // top left 
+    -0.5f, -0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f,
+     0.5f, -0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
+    -0.5f,  0.5f, -0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 0.0f,
+
+    -0.5f, -0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.0f, 0.0f,
+
+    -0.5f,  0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    1.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,    1.0f, 0.8f, 1.0f,    0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,    1.0f, 0.0f,
+
+     0.5f,  0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,    1.0f, 0.8f, 1.0f,    0.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,    1.0f, 0.0f,
+
+    -0.5f, -0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 1.0f,
+
+    -0.5f,  0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 1.0f
   };
-  unsigned int indices[] = {  // note that we start from 0!
-    0, 1, 3,   // first triangle
-    1, 2, 3    // second triangle
-  };
+  /* @TODO make this dynamic for checking size, 36 right meow */
+  // unsigned int indices[] = {  // note that we start from 0!
+  //   0, 1, 3,   // first triangle
+  //   1, 2, 3    // second triangle
+  // };
 
   // unsigned int vao, vbo, ebo; // vertexArrayObject
   glGenVertexArrays(1, &vao);
   glGenBuffers(1, &vbo);
-  glGenBuffers(1, &ebo);
+  // glGenBuffers(1, &ebo);
   glBindVertexArray(vao);
 
   glBindBuffer(GL_ARRAY_BUFFER, vbo);
   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+  // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+  // glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
   // position attribute
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
@@ -147,17 +195,14 @@ void glInit() {
   // texture attribute
   glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
   glEnableVertexAttribArray(2);
-
+  
   /* TEXTURE INIT HERE */
   int width, height, nrChannels;
   unsigned char *data = stbi_load("resources/textures/marble.jpg", &width, &height, &nrChannels, 0);
-    // unsigned int texture; MADE GLOBAL
   glGenTextures(1, &texture0);
   glBindTexture(GL_TEXTURE_2D, texture0); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
-    // set the texture wrapping parameters
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // set texture filtering parameters
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
   if (data) {
@@ -166,9 +211,7 @@ void glInit() {
   } else {
     cout << "Failed to load texture" << endl;
   }
-  stbi_image_free(data);
-
-  /* endTextureInit */
+  stbi_image_free(data); /* endTextureInit */
 
   glUseProgram(shaderProgram);
   // glActiveTexture(GL_TEXTURE0);
@@ -192,7 +235,7 @@ void deAllocate() {
   glDeleteShader(vertexShader);
   glDeleteBuffers(1, &vbo);
   glDeleteVertexArrays(1, &vao);
-  glDeleteBuffers(1, &ebo);
+  // glDeleteBuffers(1, &ebo);
   glfwTerminate();
   cout << "\n DeAllocation \n" << endl;
 }
@@ -201,27 +244,25 @@ int main() {
   initWindow();
   glInit();
 
-
   // glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
   // trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));
   // vec = trans * vec;
   // cout << " (" << vec.x << ", " << vec.y <<  ", " << vec.z << ") \n" << endl;
   // trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5)); 
-   
+
   float timeRot;
   glm::mat4 trans = glm::mat4(1.0f);
 
-  glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
-  glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
+  // glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
+  glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
   glm::mat4 model = glm::mat4(1.0f);
   model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+
   glm::mat4 view = glm::mat4(1.0f);
-  // note that we're translating the scene in the reverse direction of where we want to move
   view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f)); 
-  glm::mat4 projection;
-  projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
-
-
+  // glm::mat4 projection;
+  // projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+  // glUseProgram(shaderProgram);
 
   while(!glfwWindowShouldClose(window)) {
     Keys keys;
@@ -230,9 +271,6 @@ int main() {
     glClearColor(0.0f, 0.0f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    // glBindTexture(GL_TEXTURE_2D, texture);
-    // glBindVertexArray(vao);
-    glUseProgram(shaderProgram);
     glUniform1i(glGetUniformLocation(shaderProgram, "texture0"), 0); // grabs uniform from shader, bby
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture0);
@@ -254,7 +292,8 @@ int main() {
 
     glBindVertexArray(vao);
 
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+    // glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); @REMOVED_ebo or elementBufferObject
+    glDrawArrays(GL_TRIANGLES, 0, 36); // @TODO Make vertices check dynamic, the 36
 
     glfwSwapBuffers(window);
     glfwPollEvents();
