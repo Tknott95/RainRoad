@@ -28,16 +28,16 @@ unsigned int texture0;
 
 float vertices[] = {
   -0.5f, -0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f,
-  0.5f, -0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 0.0f,
-  0.5f,  0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
-  0.5f,  0.5f, -0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
+  0.5f, -0.5f, -0.5f,     0.0f, 1.0f, 0.0f,    1.0f, 0.0f,
+  0.5f,  0.5f, -0.5f,     1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
+  0.5f,  0.5f, -0.5f,     1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
   -0.5f,  0.5f, -0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 1.0f,
   -0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 0.0f,
 
   -0.5f, -0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f,
-  0.5f, -0.5f,  0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 0.0f,
-  0.5f,  0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
-  0.5f,  0.5f,  0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
+  0.5f, -0.5f,  0.5f,     0.0f, 1.0f, 0.0f,    1.0f, 0.0f,
+  0.5f,  0.5f,  0.5f,     1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
+  0.5f,  0.5f,  0.5f,     1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
   -0.5f,  0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 1.0f,
   -0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.0f, 0.0f,
 
@@ -48,24 +48,24 @@ float vertices[] = {
   -0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
   -0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,    1.0f, 0.0f,
 
-  0.5f,  0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    1.0f, 0.0f,
-  0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
-  0.5f, -0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    0.0f, 1.0f,
-  0.5f, -0.5f, -0.5f,    1.0f, 0.8f, 1.0f,    0.0f, 1.0f,
-  0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
-  0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,    1.0f, 0.0f,
+  0.5f,  0.5f,  0.5f,     0.0f, 0.0f, 1.0f,    1.0f, 0.0f,
+  0.5f,  0.5f, -0.5f,     0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
+  0.5f, -0.5f, -0.5f,     1.0f, 0.0f, 0.0f,    0.0f, 1.0f,
+  0.5f, -0.5f, -0.5f,     1.0f, 0.8f, 1.0f,    0.0f, 1.0f,
+  0.5f, -0.5f,  0.5f,     0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
+  0.5f,  0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    1.0f, 0.0f,
 
   -0.5f, -0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 1.0f,
-  0.5f, -0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
-  0.5f, -0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 0.0f,
-  0.5f, -0.5f,  0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 0.0f,
+  0.5f, -0.5f, -0.5f,     0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
+  0.5f, -0.5f,  0.5f,     1.0f, 0.0f, 0.0f,    1.0f, 0.0f,
+  0.5f, -0.5f,  0.5f,     1.0f, 0.8f, 1.0f,    1.0f, 0.0f,
   -0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
   -0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 1.0f,
 
   -0.5f,  0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 1.0f,
-  0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
-  0.5f,  0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 0.0f,
-  0.5f,  0.5f,  0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 0.0f,
+  0.5f,  0.5f, -0.5f,     0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
+  0.5f,  0.5f,  0.5f,     1.0f, 0.0f, 0.0f,    1.0f, 0.0f,
+  0.5f,  0.5f,  0.5f,     1.0f, 0.8f, 1.0f,    1.0f, 0.0f,
   -0.5f,  0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
   -0.5f,  0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 1.0f
 };
@@ -93,7 +93,7 @@ void initWindow() {
   glfwInit();
   // this_thread::sleep_for(chrono::seconds(1));
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
   glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
@@ -137,7 +137,7 @@ const char *fragmentSource =
 
     "void main()\n"
     "{\n"
-    "    FragColor = texture(texture0, TexCoord) * vec4(ourColor, 1.0);\n"
+    "    FragColor = texture(texture0, TexCoord)* vec4(ourColor, 1.0);\n"
     //FragColor = vec4(ourColor, TexCoord);\n"
     // vec4(texture0, TexCoord) * vec4(ourColor, 1.0);\n"
 
@@ -255,9 +255,7 @@ int main() {
   glm::mat4 view0 = glm::mat4(1.0f);
 
   // glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
-  proj0 = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
 
-  view0 = glm::translate(view0, glm::vec3(0.0f, 0.0f, -3.0f)); 
   // glm::mat4 projection;
   // projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
   // glUseProgram(shaderProgram);
@@ -265,6 +263,8 @@ int main() {
   while(!glfwWindowShouldClose(window)) {
     Keys keys;
     keys.keyPolling(window);
+    proj0 = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
+    view0 = glm::translate(view0, glm::vec3(0.0f, 0.0f, -0.002f));
   
     glClearColor(0.0f, 0.0f, 0.2f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
