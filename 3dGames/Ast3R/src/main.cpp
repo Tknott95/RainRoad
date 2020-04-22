@@ -206,6 +206,10 @@ int main() {
    
   float timeRot;
   glm::mat4 trans = glm::mat4(1.0f);
+  // glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
+  // glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
+  // glm::mat4 model = glm::mat4(1.0f);
+  // model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 
 
   while(!glfwWindowShouldClose(window)) {
@@ -225,7 +229,7 @@ int main() {
     if(timeRot > 2) glfwSetTime(0);
     timeRot = (float)glfwGetTime() * .00085;
    
-    trans = glm::rotate(trans,  timeRot, glm::vec3(1.0, 1.0, 1.0));
+    trans = glm::rotate(trans, timeRot, glm::vec3(1.0, 1.0, 1.0));
     unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
     glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
