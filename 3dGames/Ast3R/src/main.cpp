@@ -15,7 +15,6 @@ using namespace std;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
-
 /* @TODO make game.cpp & game.h to get rid of this global shit */
 GLFWwindow* window;
 const unsigned int WIDTH = 900;
@@ -27,6 +26,62 @@ unsigned int vao, vbo, ebo;
 unsigned int texture0;
 /* @TODO make game.cpp & game.h to get rid of this global shit */
 
+float vertices[] = {
+  -0.5f, -0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f,
+  0.5f, -0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 0.0f,
+  0.5f,  0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
+  0.5f,  0.5f, -0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
+  -0.5f,  0.5f, -0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 1.0f,
+  -0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 0.0f,
+
+  -0.5f, -0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f,
+  0.5f, -0.5f,  0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 0.0f,
+  0.5f,  0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
+  0.5f,  0.5f,  0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
+  -0.5f,  0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 1.0f,
+  -0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.0f, 0.0f,
+
+  -0.5f,  0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    1.0f, 0.0f,
+  -0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
+  -0.5f, -0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    0.0f, 1.0f,
+  -0.5f, -0.5f, -0.5f,    1.0f, 0.8f, 1.0f,    0.0f, 1.0f,
+  -0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
+  -0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,    1.0f, 0.0f,
+
+  0.5f,  0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    1.0f, 0.0f,
+  0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
+  0.5f, -0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    0.0f, 1.0f,
+  0.5f, -0.5f, -0.5f,    1.0f, 0.8f, 1.0f,    0.0f, 1.0f,
+  0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
+  0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,    1.0f, 0.0f,
+
+  -0.5f, -0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 1.0f,
+  0.5f, -0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
+  0.5f, -0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 0.0f,
+  0.5f, -0.5f,  0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 0.0f,
+  -0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
+  -0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 1.0f,
+
+  -0.5f,  0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 1.0f,
+  0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
+  0.5f,  0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 0.0f,
+  0.5f,  0.5f,  0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 0.0f,
+  -0.5f,  0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
+  -0.5f,  0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 1.0f
+};
+
+glm::vec3 cubePos[] = {
+  glm::vec3( 0.0f,  0.0f,  0.0f),
+  glm::vec3( 2.0f,  5.0f, -15.0f),
+  glm::vec3(-1.5f, -2.2f, -2.5f),
+  glm::vec3(-3.8f, -2.0f, -12.3f),
+  glm::vec3( 2.4f, -0.4f, -3.5f),
+  glm::vec3(-1.7f,  3.0f, -7.5f),
+  glm::vec3( 1.3f, -2.0f, -2.5f),
+  glm::vec3( 1.5f,  2.0f, -2.5f),
+  glm::vec3( 1.5f,  0.2f, -1.5f),
+  glm::vec3(-1.3f,  1.0f, -1.5f)
+};
 
 void initWindow() {
   cout << "\n appInitialized...\n" << endl;
@@ -68,7 +123,7 @@ const char *vertexSource =
     "{\n"
     "   gl_Position = projection * view * model * transform * vec4(aPos, 1.0);\n"
     "   ourColor = aColor;\n"
-    "   TexCoord = vec2(aTexCoord.x, 1.0 - aTexCoord.y);\n"
+    "   TexCoord = vec2(aTexCoord.x, aTexCoord.y);\n"
     "}\0";
 
 const char *fragmentSource =
@@ -125,49 +180,6 @@ void glInit() {
   // 1.0f, 1.0f, 1.0f,
   glEnable(GL_DEPTH_TEST);
 
-  float vertices[] = {
-    -0.5f, -0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f,
-     0.5f, -0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 0.0f,
-     0.5f,  0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
-     0.5f,  0.5f, -0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
-    -0.5f,  0.5f, -0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 0.0f,
-
-    -0.5f, -0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f,
-     0.5f, -0.5f,  0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
-     0.5f,  0.5f,  0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
-    -0.5f,  0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 1.0f,
-    -0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.0f, 0.0f,
-
-    -0.5f,  0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    1.0f, 0.0f,
-    -0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,    1.0f, 0.8f, 1.0f,    0.0f, 1.0f,
-    -0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
-    -0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,    1.0f, 0.0f,
-
-     0.5f,  0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    1.0f, 0.0f,
-     0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    0.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,    1.0f, 0.8f, 1.0f,    0.0f, 1.0f,
-     0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,    1.0f, 0.0f,
-
-    -0.5f, -0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
-     0.5f, -0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 0.0f,
-     0.5f, -0.5f,  0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 0.0f,
-    -0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
-    -0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 1.0f,
-
-    -0.5f,  0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 1.0f,
-     0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
-     0.5f,  0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    1.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,    1.0f, 0.8f, 1.0f,    1.0f, 0.0f,
-    -0.5f,  0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
-    -0.5f,  0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 1.0f
-  };
   /* @TODO make this dynamic for checking size, 36 right meow */
   // unsigned int indices[] = {  // note that we start from 0!
   //   0, 1, 3,   // first triangle
@@ -256,11 +268,8 @@ int main() {
   glm::mat4 proj0 = glm::mat4(1.0f);
   glm::mat4 view0 = glm::mat4(1.0f);
 
-
   // glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
   proj0 = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
-  glm::mat4 model = glm::mat4(1.0f);
-  model = glm::rotate(model, glm::radians(20.0f), glm::vec3(1.0f, 0.3f, 0.3f));
 
   view0 = glm::translate(view0, glm::vec3(0.0f, 0.0f, -3.0f)); 
   // glm::mat4 projection;
@@ -282,8 +291,7 @@ int main() {
     // timeRot = (float)glfwGetTime() * .00085;
     float rotSpeed = 0.001f;
 
-    unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
-    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
     unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view0));
     unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
@@ -294,9 +302,18 @@ int main() {
     glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans0));
 
     glBindVertexArray(vao);
+    for(unsigned int i=0; i < 10; i++) {
+      glm::mat4 model = glm::mat4(1.0f);
+      model = glm::translate(model, glm::vec3(1.7f, 1.0f, 1.0f) * cubePos[i]);
+      model = glm::rotate(model, glm::radians(20.0f), glm::vec3(1.0f, 0.3f, 0.3f));
+      unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
+      glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+      glDrawArrays(GL_TRIANGLES, 0, 36);
+    }
 
     // glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); @REMOVED_ebo or elementBufferObject
-    glDrawArrays(GL_TRIANGLES, 0, 36); // @TODO Make vertices check dynamic, the 36
+     // @TODO Make vertices check dynamic, the 36
 
     glfwSwapBuffers(window);
     glfwPollEvents();
