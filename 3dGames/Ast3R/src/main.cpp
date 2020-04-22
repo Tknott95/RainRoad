@@ -170,21 +170,7 @@ void glInit() {
   // glUniform4f(vertexColorLoc, 0.0f, greenVal, 0.0f, 1.0f);
   /* FIGURE OUT WHERE TO DYNMAN CHANGE THIS SHADER @TODO */
   
-  // float vertices[] = {
-  //   0.5f,  0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.75f,  0.0f,  // top right
-  //   0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   0.75f, 0.75f, // bottom right
-  //   -0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   0.0f, 0.75f,   // bottom left
-  //   -0.5f,  0.5f, 0.0f,  1.0f, 0.8f, 1.0f,   0.0f, 0.0f // top left 
-  // };
-
-  // 1.0f, 1.0f, 1.0f,
   glEnable(GL_DEPTH_TEST);
-
-  /* @TODO make this dynamic for checking size, 36 right meow */
-  // unsigned int indices[] = {  // note that we start from 0!
-  //   0, 1, 3,   // first triangle
-  //   1, 2, 3    // second triangle
-  // };
 
   // unsigned int vao, vbo, ebo; // vertexArrayObject
   glGenVertexArrays(1, &vao);
