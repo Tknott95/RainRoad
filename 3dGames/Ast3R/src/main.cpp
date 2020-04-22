@@ -3,6 +3,9 @@
 // #include <GL/glew.h>
 // #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include <thread>
 #include "headers/keys.h"
 #define STB_IMAGE_IMPLEMENTATION
@@ -13,6 +16,7 @@ using namespace std;
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
 
+/* @TODO make game.cpp & game.h to get rid of this global shit */
 GLFWwindow* window;
 const unsigned int WIDTH = 900;
 const unsigned int HEIGHT = 700;
@@ -21,6 +25,7 @@ int fragmentShader;
 GLuint vertexShader;
 unsigned int vao, vbo, ebo;
 unsigned int texture0;
+/* @TODO make game.cpp & game.h to get rid of this global shit */
 
 
 void initWindow() {
@@ -53,9 +58,11 @@ const char *vertexSource =
     "layout (location = 2) in vec2 aTexCoord;\n"
     "out vec3 ourColor;\n"
     "out vec2 TexCoord;\n"
+
+    "uniform mat4 transform;\n"
     "void main()\n"
     "{\n"
-    "   gl_Position = vec4(aPos, 1.0);\n"
+    "   gl_Position = transform * vec4(aPos, 1.0);\n"
     "   ourColor = aColor;\n"
     "   TexCoord = vec2(aTexCoord.x, aTexCoord.y);\n"
     "}\0";
@@ -141,11 +148,11 @@ void glInit() {
 
 
 
-  glBindVertexArray(0);
-  int width, height, nrChannels;
+  // glBindVertexArray(0);
+    int width, height, nrChannels;
     // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
     // resources/textures/container.jpg
-    unsigned char *data = stbi_load("resources/textures/pepe.png", &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load("resources/textures/wall.png", &width, &height, &nrChannels, 0);
     // unsigned int texture; MADE GLOBAL
     glGenTextures(1, &texture0);
     glBindTexture(GL_TEXTURE_2D, texture0); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
@@ -198,7 +205,17 @@ void deAllocate() {
 int main() {
   initWindow();
   glInit();
+
+
+  glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
+  glm::mat4 trans = glm::mat4(1.0f);
+  // trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));
+  vec = trans * vec;
+  cout << " (" << vec.x << ", " << vec.y <<  ", " << vec.z << ") \n" << endl;
   
+  trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
+  // trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));  
+
   while(!glfwWindowShouldClose(window)) {
     Keys keys;
     keys.keyPolling(window);
@@ -212,7 +229,12 @@ int main() {
     glUniform1i(glGetUniformLocation(shaderProgram, "texture0"), 0); // grabs uniform from shader, bby
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture0);
-    glBindVertexArray(vao);
+
+    
+   unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
+   glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+
+   glBindVertexArray(vao);
 
 
     // glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); /*  GL_LINE if wanting wireframe view */
