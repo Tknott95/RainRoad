@@ -66,8 +66,7 @@ const char *vertexSource =
 
     "void main()\n"
     "{\n"
-    "   gl_Position = projection * view * model * vec4(aPos, 1.0);\n"
-    // transform * vec4(aPos, 1.0)
+    "   gl_Position = projection * view * model * transform * vec4(aPos, 1.0);\n"
     "   ourColor = aColor;\n"
     "   TexCoord = vec2(aTexCoord.x, aTexCoord.y);\n"
     "}\0";
@@ -238,8 +237,9 @@ int main() {
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture0);
 
-    if(timeRot > 2) glfwSetTime(0);
-    timeRot = (float)glfwGetTime() * .00085;
+    // if(timeRot > 2) glfwSetTime(0);
+    // timeRot = (float)glfwGetTime() * .00085;
+    float rotSpeed = 0.001f;
 
     unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
     glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -248,9 +248,9 @@ int main() {
     unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
    
-    // trans = glm::rotate(trans, timeRot, glm::vec3(1.0, 1.0, 1.0));
-    // unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
-    // glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+    trans = glm::rotate(trans, rotSpeed, glm::vec3(1.0, 1.0, 1.0));
+    unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
+    glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
     glBindVertexArray(vao);
 
