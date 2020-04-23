@@ -15,9 +15,9 @@ using namespace std;
 
 const unsigned int WIDTH = 1280;
 const unsigned int HEIGHT = 800;
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-// void mouse_callback(GLFWwindow* window, double xpos, double ypos);
-// void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+void framebufferSizeCallback(GLFWwindow* window, int width, int height);
+void mouseCallback(GLFWwindow* window, double xpos, double ypos);
+void scrollCallback(GLFWwindow* window, double xoffset, double yoffset);
 /* @TODO bring this into keys class */
 // void processInput(GLFWwindow *window);
 /* @TODO bring this into keys class */
@@ -41,8 +41,8 @@ unsigned int texture0;
 float deltaTime = 0.0f;	// time between current frame and last frame
 float lastFrame = 0.0f;
 /* @TODO refactor this */
-// float lastX = WIDTH / 2.0f;
-// float lastY = HEIGHT / 2.0f;
+float lastX = WIDTH / 2.0f;
+float lastY = HEIGHT / 2.0f;
 bool firstMouse = true;
 /* @TODO refactor this */
 
@@ -122,9 +122,9 @@ void initWindow() {
   // glewExperimental = GL_TRUE;
   if(!glewInit()) { printf("\nGlewInit FAILED\n"); /* return -1 */;}
   glfwMakeContextCurrent(window);
-  glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); /* is this + theFunc really needed? */
-  // glfwSetCursorPosCallback(window, camera->MouseCallback);
-  // glfwSetScrollCallback(window, camera->ScrollCallback);
+  glfwSetFramebufferSizeCallback(window, framebufferSizeCallback); /* is this + theFunc really needed? */
+  glfwSetCursorPosCallback(window, mouseCallback);
+  glfwSetScrollCallback(window, scrollCallback);
 
   glewInit();
 };
@@ -364,25 +364,25 @@ int main() {
   return 0;
 }
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+void framebufferSizeCallback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
 }
 
 // /* @TODO pull into keys class */
-// void mouse_callback(GLFWwindow* window, double xpos, double ypos){
-//   if (firstMouse) {
-//     lastX = xpos;
-//     lastY = ypos;
-//     firstMouse = false;
-//   }
-//   float xoffset = xpos - lastX;
-//   float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
-//   lastX = xpos;
-//   lastY = ypos;
-//   camera->ProcessMouseMovement(xoffset, yoffset, firstMouse);
-// }
+void mouseCallback(GLFWwindow* window, double xpos, double ypos){
+  if (firstMouse) {
+    lastX = xpos;
+    lastY = ypos;
+    firstMouse = false;
+  }
+  float xoffset = xpos - lastX;
+  float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
+  lastX = xpos;
+  lastY = ypos;
+  camera->ProcessMouseMovement(xoffset, yoffset, firstMouse);
+}
 
-// /* @TODO pull into keys class? */
-// void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
-//     camera->ProcessMouseScroll(yoffset);
-// }
+/* @TODO pull into keys class? */
+void scrollCallback(GLFWwindow* window, double xoffset, double yoffset) {
+    camera->ProcessMouseScroll(yoffset);
+}
