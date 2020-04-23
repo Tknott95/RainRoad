@@ -2,18 +2,21 @@
 // #define GLEW_STATIC replaced w/ cli:  -DGLEW_STATIC
 // #include <GL/glew.h>
 // #include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
+// #include <glm/glm.hpp>
+// #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 #include <thread>
 #include "headers/keys.h"
+#include "headers/camera.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "headers/third_party/stb_image.h"
 
 using namespace std;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+
 
 /* @TODO make game.cpp & game.h to get rid of this global shit */
 GLFWwindow* window;
@@ -260,12 +263,14 @@ int main() {
   glm::mat4 view0 = glm::mat4(1.0f);
 
   /* camera Init() */
-  glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);  
+  glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
+  glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+  glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f); 
   glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
   glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
   glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f); 
   glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
-  glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);
+  // glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);
   glm::mat4 view;
   view = glm::lookAt(
     glm::vec3(0.0f, 0.0f, 3.0f), 
@@ -287,7 +292,8 @@ int main() {
     const float radius = 10.0f;
     float camX = sin(glfwGetTime()) * radius;
     float camZ = cos(glfwGetTime()) * radius;
-    view0 = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));  
+    // rotates cam view0 = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
+    view0 = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
   
     glClearColor(0.0f, 0.0f, 0.2f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
