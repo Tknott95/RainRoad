@@ -1,18 +1,14 @@
 #include <iostream>
-// #define GLEW_STATIC replaced w/ cli:  -DGLEW_STATIC
-// #include <GL/glew.h>
-// #include <GLFW/glfw3.h>
-// #include <glm/glm.hpp>
-// #include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-
 #include <thread>
+#include <glm/gtc/type_ptr.hpp>
 #include "headers/keys.h"
 #include "headers/shader.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "headers/third_party/stb_image.h"
-
 using namespace std;
+
+/* @TODO refactor into Game class -  main is not to hold all code - this is shit */
+
 
 const unsigned int WIDTH = 1280;
 const unsigned int HEIGHT = 800;
