@@ -17,8 +17,13 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
 /* @TODO make game.cpp & game.h to get rid of this global shit */
 GLFWwindow* window;
-const unsigned int WIDTH = 900;
-const unsigned int HEIGHT = 700;
+const unsigned int WIDTH = 1024;
+const unsigned int HEIGHT = 576;
+/*
+ 16:10 1280×800, 1440×900, 1680×1050, 1920×1200, 2560×1600.
+ 16:9 1024×576, 1152×648,  1280×720, 1366×768, 1600×900,
+      1920×1080, 2560×1440 and 3840×2160
+ */
 int shaderProgram;
 int fragmentShader;
 GLuint vertexShader;
