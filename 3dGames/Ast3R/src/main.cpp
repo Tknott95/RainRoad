@@ -24,8 +24,8 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 /* @TODO make game.cpp & game.h to get rid of this global shit */
 GLFWwindow* window;
 Camera* camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f));
-const unsigned int WIDTH = 1024;
-const unsigned int HEIGHT = 576;
+const unsigned int WIDTH = 1280;
+const unsigned int HEIGHT = 800;
 /*
  16:10 1280×800, 1440×900, 1680×1050, 1920×1200, 2560×1600.
  16:9 1024×576, 1152×648,  1280×720, 1366×768, 1600×900,
