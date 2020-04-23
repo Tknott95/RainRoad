@@ -125,6 +125,9 @@ void initWindow() {
   glfwSetFramebufferSizeCallback(window, framebufferSizeCallback); /* is this + theFunc really needed? */
   glfwSetCursorPosCallback(window, mouseCallback);
   glfwSetScrollCallback(window, scrollCallback);
+  glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+  if (glfwRawMouseMotionSupported()) glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
 
   glewInit();
 };
