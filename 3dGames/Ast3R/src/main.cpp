@@ -259,6 +259,20 @@ int main() {
   glm::mat4 proj0 = glm::mat4(1.0f);
   glm::mat4 view0 = glm::mat4(1.0f);
 
+  /* camera Init() */
+  glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);  
+  glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
+  glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
+  glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f); 
+  glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
+  glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);
+  glm::mat4 view;
+  view = glm::lookAt(
+    glm::vec3(0.0f, 0.0f, 3.0f), 
+    glm::vec3(0.0f, 0.0f, 0.0f), 
+  	glm::vec3(0.0f, 1.0f, 0.0f));
+
+
   // glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
 
   // glm::mat4 projection;
@@ -269,7 +283,11 @@ int main() {
     Keys keys;
     keys.keyPolling(window);
     proj0 = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
-    view0 = glm::translate(view0, glm::vec3(0.0f, 0.0f, -0.002f));
+    // view0 = glm::translate(view0, glm::vec3(0.0f, 0.0f, -0.002f));
+    const float radius = 10.0f;
+    float camX = sin(glfwGetTime()) * radius;
+    float camZ = cos(glfwGetTime()) * radius;
+    view0 = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));  
   
     glClearColor(0.0f, 0.0f, 0.2f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
