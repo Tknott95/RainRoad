@@ -8,8 +8,7 @@
 using namespace std;
 
 /* @TODO refactor into Game class -  main is not to hold all code - this is shit */
-
-
+/* @TODO refactor <  > into a Window class */
 const unsigned int WIDTH = 1280;
 const unsigned int HEIGHT = 800;
 void framebufferSizeCallback(GLFWwindow* window, int width, int height);
