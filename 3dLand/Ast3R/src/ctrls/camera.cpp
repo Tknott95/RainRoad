@@ -1,4 +1,5 @@
 #include "../headers/camera.h"
+#include <GLFW/glfw3.h>
 
 // Camera::Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = YAW, float pitch = PITCH) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM) {
 //   Position = position;
@@ -48,11 +49,28 @@ void Camera::ProcessMouseScroll(float yoffset) {
 }
 
 void Camera::updateCameraVectors() {
-    glm::vec3 front;
-    front.x = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));
-    front.y = sin(glm::radians(Pitch));
-    front.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
-    Front = glm::normalize(front);
-    Right = glm::normalize(glm::cross(Front, WorldUp));  // Normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
-    Up    = glm::normalize(glm::cross(Right, Front));
-  }
+  glm::vec3 front;
+  front.x = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));
+  front.y = sin(glm::radians(Pitch));
+  front.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
+  Front = glm::normalize(front);
+  Right = glm::normalize(glm::cross(Front, WorldUp));  // Normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
+  Up    = glm::normalize(glm::cross(Right, Front));
+}
+
+/* @TODO pull into keys class */
+// void Camera::ScrollCallback(GLFWwindow* window, double xoffset, double yoffset) {
+//   ProcessMouseScroll(yoffset);
+// }
+// void Camera::MouseCallback(GLFWwindow* window, double xpos, double ypos, bool firstMouse){
+//   if (firstMouse) {
+//     lastX = xpos;
+//     lastY = ypos;
+//     firstMouse = false;
+//   }
+//   float xoffset = xpos - lastX;
+//   float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
+//   lastX = xpos;
+//   lastY = ypos;
+//   ProcessMouseMovement(xoffset, yoffset, firstMouse);
+// }

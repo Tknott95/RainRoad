@@ -13,19 +13,18 @@
 
 using namespace std;
 
+const unsigned int WIDTH = 1280;
+const unsigned int HEIGHT = 800;
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-
-void mouse_callback(GLFWwindow* window, double xpos, double ypos);
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+// void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+// void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 /* @TODO bring this into keys class */
 // void processInput(GLFWwindow *window);
 /* @TODO bring this into keys class */
 
 /* @TODO make game.cpp & game.h to get rid of this global shit */
 GLFWwindow* window;
-Camera* camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f));
-const unsigned int WIDTH = 1280;
-const unsigned int HEIGHT = 800;
+Camera* camera = new Camera(WIDTH, HEIGHT, glm::vec3(0.0f, 0.0f, 3.0f));
 /*
  16:10 1280×800, 1440×900, 1680×1050, 1920×1200, 2560×1600.
  16:9 1024×576, 1152×648,  1280×720, 1366×768, 1600×900,
@@ -42,8 +41,8 @@ unsigned int texture0;
 float deltaTime = 0.0f;	// time between current frame and last frame
 float lastFrame = 0.0f;
 /* @TODO refactor this */
-float lastX = WIDTH / 2.0f;
-float lastY = HEIGHT / 2.0f;
+// float lastX = WIDTH / 2.0f;
+// float lastY = HEIGHT / 2.0f;
 bool firstMouse = true;
 /* @TODO refactor this */
 
@@ -60,7 +59,7 @@ float vertices[] = {
   0.5f,  0.5f,  0.5f,     1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
   0.5f,  0.5f,  0.5f,     1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
   -0.5f,  0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 1.0f,
-  -0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,     0.0f, 0.0f,
+  -0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 0.0f,
 
   -0.5f,  0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    1.0f, 0.0f,
   -0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
@@ -124,8 +123,8 @@ void initWindow() {
   if(!glewInit()) { printf("\nGlewInit FAILED\n"); /* return -1 */;}
   glfwMakeContextCurrent(window);
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); /* is this + theFunc really needed? */
-  glfwSetCursorPosCallback(window, mouse_callback);
-  glfwSetScrollCallback(window, scroll_callback);
+  // glfwSetCursorPosCallback(window, camera->MouseCallback);
+  // glfwSetScrollCallback(window, camera->ScrollCallback);
 
   glewInit();
 };
@@ -342,7 +341,8 @@ int main() {
     glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans0));
 
     glBindVertexArray(vao);
-    for(unsigned int i=0; i < 10; i++) {
+    
+    for(unsigned int i=0; i < 10; i++) { /* sizeOf(cubePos); */
       glm::mat4 model = glm::mat4(1.0f);
       model = glm::translate(model, glm::vec3(1.7f, 1.0f, 1.0f) * cubePos[i]);
       model = glm::rotate(model, glm::radians(20.0f), glm::vec3(1.0f, 0.3f, 0.3f));
@@ -368,21 +368,21 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
 }
 
-/* @TODO pull into keys class */
-void mouse_callback(GLFWwindow* window, double xpos, double ypos){
-  if (firstMouse) {
-    lastX = xpos;
-    lastY = ypos;
-    firstMouse = false;
-  }
-  float xoffset = xpos - lastX;
-  float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
-  lastX = xpos;
-  lastY = ypos;
-  camera->ProcessMouseMovement(xoffset, yoffset, firstMouse);
-}
+// /* @TODO pull into keys class */
+// void mouse_callback(GLFWwindow* window, double xpos, double ypos){
+//   if (firstMouse) {
+//     lastX = xpos;
+//     lastY = ypos;
+//     firstMouse = false;
+//   }
+//   float xoffset = xpos - lastX;
+//   float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
+//   lastX = xpos;
+//   lastY = ypos;
+//   camera->ProcessMouseMovement(xoffset, yoffset, firstMouse);
+// }
 
-/* @TODO pull into keys class */
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
-    camera->ProcessMouseScroll(yoffset);
-}
+// /* @TODO pull into keys class? */
+// void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
+//     camera->ProcessMouseScroll(yoffset);
+// }
