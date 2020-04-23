@@ -8,21 +8,22 @@
 
 #include <thread>
 #include "headers/keys.h"
-#include "headers/camera.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "headers/third_party/stb_image.h"
 
 using namespace std;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 /* @TODO bring this into keys class */
-void processInput(GLFWwindow *window);
+// void processInput(GLFWwindow *window);
 /* @TODO bring this into keys class */
 
 /* @TODO make game.cpp & game.h to get rid of this global shit */
 GLFWwindow* window;
+Camera* camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f));
 const unsigned int WIDTH = 1024;
 const unsigned int HEIGHT = 576;
 /*
@@ -37,7 +38,6 @@ unsigned int vao, vbo, ebo;
 unsigned int texture0;
 /* @TODO make game.cpp & game.h to get rid of this global shit */
 
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 
 float deltaTime = 0.0f;	// time between current frame and last frame
 float lastFrame = 0.0f;
@@ -303,11 +303,10 @@ int main() {
 
   while(!glfwWindowShouldClose(window)) {
     Keys keys;
-    keys.keyPolling(window);
-    processInput(window);
+    keys.keyPolling(window, camera, deltaTime);
 
-    glm::mat4 proj0= glm::perspective(glm::radians(camera.Zoom), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);
-    glm::mat4 view0 = camera.GetViewMatrix();
+    glm::mat4 proj0= glm::perspective(glm::radians(camera->Zoom), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);
+    glm::mat4 view0 = camera->GetViewMatrix();
 
     float currentFrame = glfwGetTime();
     deltaTime = currentFrame - lastFrame;
@@ -375,14 +374,14 @@ void processInput(GLFWwindow *window)
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        camera.ProcessKeyboard(FORWARD, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        camera.ProcessKeyboard(BACKWARD, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        camera.ProcessKeyboard(LEFT, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        camera.ProcessKeyboard(RIGHT, deltaTime);
+    // if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+    //     camera->ProcessKeyboard(FORWARD, deltaTime);
+    // if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+    //     camera->ProcessKeyboard(BACKWARD, deltaTime);
+    // if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+    //     camera->ProcessKeyboard(LEFT, deltaTime);
+    // if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+    //     camera->ProcessKeyboard(RIGHT, deltaTime);
 }
 /* @TODO bring this into keys class */
 
@@ -397,10 +396,10 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos){
     float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
     lastX = xpos;
     lastY = ypos;
-    camera.ProcessMouseMovement(xoffset, yoffset);
+    camera->ProcessMouseMovement(xoffset, yoffset);
 }
 
 
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
-    camera.ProcessMouseScroll(yoffset);
+    camera->ProcessMouseScroll(yoffset);
 }
