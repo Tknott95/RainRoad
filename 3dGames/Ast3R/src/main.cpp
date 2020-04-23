@@ -368,6 +368,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
 }
 
+/* @TODO pull into keys class */
 void mouse_callback(GLFWwindow* window, double xpos, double ypos){
   if (firstMouse) {
     lastX = xpos;
@@ -381,6 +382,7 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos){
   camera->ProcessMouseMovement(xoffset, yoffset, firstMouse);
 }
 
+/* @TODO pull into keys class */
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
     camera->ProcessMouseScroll(yoffset);
 }
