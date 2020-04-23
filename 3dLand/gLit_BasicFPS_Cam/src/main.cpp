@@ -18,9 +18,6 @@ const unsigned int HEIGHT = 800;
 void framebufferSizeCallback(GLFWwindow* window, int width, int height);
 void mouseCallback(GLFWwindow* window, double xpos, double ypos);
 void scrollCallback(GLFWwindow* window, double xoffset, double yoffset);
-/* @TODO bring this into keys class */
-// void processInput(GLFWwindow *window);
-/* @TODO bring this into keys class */
 
 /* @TODO make game.cpp & game.h to get rid of this global shit */
 GLFWwindow* window;
@@ -125,6 +122,9 @@ void initWindow() {
   glfwSetFramebufferSizeCallback(window, framebufferSizeCallback); /* is this + theFunc really needed? */
   glfwSetCursorPosCallback(window, mouseCallback);
   glfwSetScrollCallback(window, scrollCallback);
+
+  glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+  if (glfwRawMouseMotionSupported()) glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
 
   glewInit();
 };
