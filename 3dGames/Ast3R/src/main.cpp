@@ -15,8 +15,11 @@
 using namespace std;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
-
+void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+/* @TODO bring this into keys class */
+void processInput(GLFWwindow *window);
+/* @TODO bring this into keys class */
 
 /* @TODO make game.cpp & game.h to get rid of this global shit */
 GLFWwindow* window;
@@ -33,6 +36,16 @@ GLuint vertexShader;
 unsigned int vao, vbo, ebo;
 unsigned int texture0;
 /* @TODO make game.cpp & game.h to get rid of this global shit */
+
+Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+
+float deltaTime = 0.0f;	// time between current frame and last frame
+float lastFrame = 0.0f;
+/* @TODO refactor this */
+float lastX = WIDTH / 2.0f;
+float lastY = HEIGHT / 2.0f;
+bool firstMouse = true;
+/* @TODO refactor this */
 
 float vertices[] = {
   -0.5f, -0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f,
@@ -111,6 +124,9 @@ void initWindow() {
   if(!glewInit()) { printf("\nGlewInit FAILED\n"); /* return -1 */;}
   glfwMakeContextCurrent(window);
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); /* is this + theFunc really needed? */
+  glfwSetCursorPosCallback(window, mouse_callback);
+  glfwSetScrollCallback(window, scroll_callback);
+
   glewInit();
 };
 
@@ -259,8 +275,9 @@ int main() {
 
   float timeRot;
   glm::mat4 trans0 = glm::mat4(1.0f);
-  glm::mat4 proj0 = glm::mat4(1.0f);
-  glm::mat4 view0 = glm::mat4(1.0f);
+  // glm::mat4 proj0 = glm::mat4(1.0f);
+  // glm::mat4 view0 = glm::mat4(1.0f);
+
 
   /* camera Init() */
   glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
@@ -271,11 +288,11 @@ int main() {
   glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f); 
   glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
   // glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);
-  glm::mat4 view;
-  view = glm::lookAt(
-    glm::vec3(0.0f, 0.0f, 3.0f), 
-    glm::vec3(0.0f, 0.0f, 0.0f), 
-  	glm::vec3(0.0f, 1.0f, 0.0f));
+  // glm::mat4 view;
+  // view = glm::lookAt(
+  //   glm::vec3(0.0f, 0.0f, 3.0f), 
+  //   glm::vec3(0.0f, 0.0f, 0.0f), 
+  // 	glm::vec3(0.0f, 1.0f, 0.0f));
 
 
   // glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
@@ -287,13 +304,22 @@ int main() {
   while(!glfwWindowShouldClose(window)) {
     Keys keys;
     keys.keyPolling(window);
+    processInput(window);
+
+    glm::mat4 proj0= glm::perspective(glm::radians(camera.Zoom), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);
+    glm::mat4 view0 = camera.GetViewMatrix();
+
+    float currentFrame = glfwGetTime();
+    deltaTime = currentFrame - lastFrame;
+    lastFrame = currentFrame;
+    
     proj0 = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
     // view0 = glm::translate(view0, glm::vec3(0.0f, 0.0f, -0.002f));
     const float radius = 10.0f;
     float camX = sin(glfwGetTime()) * radius;
     float camZ = cos(glfwGetTime()) * radius;
     // rotates cam view0 = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
-    view0 = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+    // view0 = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
   
     glClearColor(0.0f, 0.0f, 0.2f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -341,4 +367,40 @@ int main() {
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
+}
+
+/* @TODO bring this into keys class */
+void processInput(GLFWwindow *window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        camera.ProcessKeyboard(FORWARD, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        camera.ProcessKeyboard(BACKWARD, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        camera.ProcessKeyboard(LEFT, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        camera.ProcessKeyboard(RIGHT, deltaTime);
+}
+/* @TODO bring this into keys class */
+
+
+void mouse_callback(GLFWwindow* window, double xpos, double ypos){
+    if (firstMouse) {
+        lastX = xpos;
+        lastY = ypos;
+        firstMouse = false;
+    }
+    float xoffset = xpos - lastX;
+    float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
+    lastX = xpos;
+    lastY = ypos;
+    camera.ProcessMouseMovement(xoffset, yoffset);
+}
+
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
+    camera.ProcessMouseScroll(yoffset);
 }
