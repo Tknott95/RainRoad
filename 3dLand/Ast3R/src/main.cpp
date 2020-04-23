@@ -8,6 +8,7 @@
 
 #include <thread>
 #include "headers/keys.h"
+#include "headers/shader.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "headers/third_party/stb_image.h"
 
@@ -30,9 +31,6 @@ Camera* camera = new Camera(WIDTH, HEIGHT, glm::vec3(0.0f, 0.0f, 3.0f));
  16:9 1024×576, 1152×648,  1280×720, 1366×768, 1600×900,
       1920×1080, 2560×1440 and 3840×2160
  */
-int shaderProgram;
-int fragmentShader;
-GLuint vertexShader;
 unsigned int vao, vbo, ebo;
 unsigned int texture0;
 /* @TODO make game.cpp & game.h to get rid of this global shit */
@@ -132,71 +130,21 @@ void initWindow() {
   glewInit();
 };
 
-const char *vertexSource =
-    "#version 440 core\n"
-    "layout (location = 0) in vec3 aPos;\n"
-    "layout (location = 1) in vec3 aColor;\n"
-    "layout (location = 2) in vec2 aTexCoord;\n"
-    "out vec3 ourColor;\n"
-    "out vec2 TexCoord;\n"
+void deAllocate() {
+  glDeleteBuffers(1, &vbo); /* @TIP - may not need to do */
+  glDeleteVertexArrays(1, &vao); /* @TIP - may not need to do */
+  // glDeleteBuffers(1, &ebo);
+  glfwTerminate();
+  cout << "\n DeAllocation \n" << endl;
+}
 
-    "uniform mat4 transform;\n"
-    "uniform mat4 model;\n"
-    "uniform mat4 view;\n"
-    "uniform mat4 projection;\n"
-
-    "void main()\n"
-    "{\n"
-    "   gl_Position = projection * view * model * transform * vec4(aPos, 1.0);\n"
-    "   ourColor = aColor;\n"
-    "   TexCoord = vec2(aTexCoord.x, aTexCoord.y);\n"
-    "}\0";
-
-const char *fragmentSource =
-    "#version 440 core\n"
-    "out vec4 FragColor;\n"
-    "in vec3 ourColor;\n"
-    "in vec2 TexCoord;\n"
-
-    // texture sampler
-    "uniform sampler2D texture0;\n"
-
-    "void main()\n"
-    "{\n"
-    "    FragColor = texture(texture0, TexCoord)* vec4(ourColor, 1.0);\n"
-    //FragColor = vec4(ourColor, TexCoord);\n"
-    // vec4(texture0, TexCoord) * vec4(ourColor, 1.0);\n"
-
-    "}\n\0";
-
-void glInit() {
-  vertexShader = glCreateShader(GL_VERTEX_SHADER);
-  glShaderSource(vertexShader, 1, &vertexSource, NULL);
-  glCompileShader(vertexShader);
-
-  GLint status;
-  char buffer[512];
-  glGetShaderInfoLog(vertexShader, 512, NULL, buffer);
-  glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &status);
-
-  fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-  glShaderSource(fragmentShader, 1, &fragmentSource, NULL);
-  glCompileShader(fragmentShader);
-
-  shaderProgram = glCreateProgram();
-  glAttachShader(shaderProgram, vertexShader);
-  glAttachShader(shaderProgram, fragmentShader);
-  // glBindFragDataLocation(shaderProgram, 0, "outColor");
-  glLinkProgram(shaderProgram);
-
-  /* FIGURE OUT WHERE TO DYNMAN CHANGE THIS SHADER @TODO */
-  // float timeVal = glfwGetTime();
-  // float greenVal = sin(timeVal) / 2.0f + 0.5f;
-  // int vertexColorLoc = glGetUniformLocation(shaderProgram, "fragColor");
-  // glUniform4f(vertexColorLoc, 0.0f, greenVal, 0.0f, 1.0f);
-  /* FIGURE OUT WHERE TO DYNMAN CHANGE THIS SHADER @TODO */
-  
+int main() {
+  initWindow();
+  Shader shader("resources/shaders/gl.vs", "resources/shaders/gl.frag");
+  // glInit(); @TODO reuse once modularized/refactored for a header file - was a custom function
   glEnable(GL_DEPTH_TEST);
+
+
 
   // unsigned int vao, vbo, ebo; // vertexArrayObject
   glGenVertexArrays(1, &vao);
@@ -238,37 +186,6 @@ void glInit() {
   }
   stbi_image_free(data); /* endTextureInit */
 
-  glUseProgram(shaderProgram);
-  // glActiveTexture(GL_TEXTURE0);
-  // glBindTexture(GL_TEXTURE_2D, texture);
-
-  // if(glfwWindowShouldClose(window)) {
-  //   glDeleteProgram(shaderProgram);
-  //   glDeleteShader(fragmentShader);
-  //   glDeleteShader(vertexShader);
-  //   glDeleteBuffers(1, &vbo);
-  //   glDeleteVertexArrays(1, &vao);
-  //   glDeleteBuffers(1, &ebo);
-  //   glfwTerminate();
-  //   printf("\n DeAllocation \n");
-  // }
-}
-
-void deAllocate() {
-  glDeleteProgram(shaderProgram);
-  glDeleteShader(fragmentShader);
-  glDeleteShader(vertexShader);
-  glDeleteBuffers(1, &vbo);
-  glDeleteVertexArrays(1, &vao);
-  // glDeleteBuffers(1, &ebo);
-  glfwTerminate();
-  cout << "\n DeAllocation \n" << endl;
-}
-
-int main() {
-  initWindow();
-  glInit();
-
   // glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
   // trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));
   // vec = trans * vec;
@@ -279,7 +196,6 @@ int main() {
   glm::mat4 trans0 = glm::mat4(1.0f);
   // glm::mat4 proj0 = glm::mat4(1.0f);
   // glm::mat4 view0 = glm::mat4(1.0f);
-
 
   /* camera Init() */
   glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
@@ -295,17 +211,17 @@ int main() {
   //   glm::vec3(0.0f, 0.0f, 3.0f), 
   //   glm::vec3(0.0f, 0.0f, 0.0f), 
   // 	glm::vec3(0.0f, 1.0f, 0.0f));
-
-
   // glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
 
-  // glm::mat4 projection;
-  // projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
-  // glUseProgram(shaderProgram);
+  shader.use();
+  shader.setInt("texture0", 0);
 
   while(!glfwWindowShouldClose(window)) {
     Keys keys;
     keys.keyPolling(window, camera, deltaTime);
+
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture0);
 
     glm::mat4 proj0= glm::perspective(glm::radians(camera->Zoom), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);
     glm::mat4 view0 = camera->GetViewMatrix();
@@ -325,23 +241,29 @@ int main() {
     glClearColor(0.0f, 0.0f, 0.2f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    glUniform1i(glGetUniformLocation(shaderProgram, "texture0"), 0); // grabs uniform from shader, bby
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, texture0);
-
     // if(timeRot > 2) glfwSetTime(0);  oscillate speed
     // timeRot = (float)glfwGetTime() * .00085;
     float rotSpeed = 0.005f;
 
+    glm::mat4 viewLoc = glm::mat4(1.0f);
+    glm::mat4 projLoc = glm::mat4(1.0f);
+    glm::mat4 transformLoc = glm::mat4(1.0f);
 
-    unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
-    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view0));
-    unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
-    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj0));
+    shader.use();
+
+    /* REPLACED BY SHADER CLASS */
+    // unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
+    // glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view0));
+    // unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
+    // glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj0));
    
     trans0 = glm::rotate(trans0, rotSpeed, glm::vec3(1.0, 1.0, 1.0));
-    unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
-    glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans0));
+    // unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
+    // glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans0));
+
+    shader.setMat4("view", view0);
+    shader.setMat4("projection", proj0);
+    shader.setMat4("transform", trans0);
 
     glBindVertexArray(vao);
     
@@ -349,8 +271,9 @@ int main() {
       glm::mat4 model = glm::mat4(1.0f);
       model = glm::translate(model, glm::vec3(1.7f, 1.0f, 1.0f) * cubePos[i]);
       model = glm::rotate(model, glm::radians(20.0f), glm::vec3(1.0f, 0.3f, 0.3f));
-      unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
-      glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+      // unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
+      // glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+      shader.setMat4("model", model);
 
       glDrawArrays(GL_TRIANGLES, 0, 36);
     }
