@@ -91,7 +91,7 @@ void Game::Render() {
 	ang+=0.0314f;
 
   // Draw_Cuboid(0.10,0,0);
-	for (int i=0; i < 1444; i++) {
+	for (int i=0; i < 144; i++) {
     glRotatef(ang*20.5,-7.3*ang,-7*i,7.3*i);
     glTranslatef(.10, 0.14, -0.10);
     glScalef(0.8314, 0.8314, 1.0014);
