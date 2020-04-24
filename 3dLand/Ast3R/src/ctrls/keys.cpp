@@ -6,7 +6,6 @@ void Keys::keyPolling(GLFWwindow* window, Camera* camera, float deltaTime) {
     glfwSetWindowShouldClose(window, GL_TRUE);
   }
 
-
   if (glfwGetKey(window, GLFW_KEY_Z) == GLFW_PRESS) {
     printf("\n  z, zPressed");
   }

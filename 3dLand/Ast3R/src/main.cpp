@@ -31,7 +31,6 @@ unsigned int vao, vbo, ebo;
 unsigned int texture0;
 /* @TODO make game.cpp & game.h to get rid of this global shit */
 
-
 float deltaTime = 0.0f;	// time between current frame and last frame
 float lastFrame = 0.0f;
 /* @TODO refactor this */
@@ -67,7 +66,7 @@ void initWindow() {
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-  glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+  glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
   window = glfwCreateWindow(WIDTH, HEIGHT, "Ast3R", nullptr, nullptr);
   // GLFWwindow* window = glfwCreateWindow(800, 600, "OpenGL", glfwGetPrimaryMonitor(), nullptr); // Fullscreen
   // glewExperimental = GL_TRUE;
@@ -97,7 +96,6 @@ int main() {
   // glInit(); @TODO reuse once modularized/refactored for a header file - was a custom function
   glEnable(GL_DEPTH_TEST);
   glEnable(GL_BLEND);
-
   // glEnable(GL_STENCIL_TEST); maybe will use for fun little effects such as edge detection
 
   // unsigned int vao, vbo, ebo; // vertexArrayObject
@@ -108,7 +106,6 @@ int main() {
 
   glBindBuffer(GL_ARRAY_BUFFER, vbo);
   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
   // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
   // glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
@@ -146,7 +143,6 @@ int main() {
   // cout << " (" << vec.x << ", " << vec.y <<  ", " << vec.z << ") \n" << endl;
   // trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5)); 
 
-  float timeRot;
   glm::mat4 trans0 = glm::mat4(1.0f);
   // glm::mat4 proj0 = glm::mat4(1.0f);
   // glm::mat4 view0 = glm::mat4(1.0f);
@@ -195,13 +191,7 @@ int main() {
     glClearColor(0.0f, 0.0f, 0.2f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    // if(timeRot > 2) glfwSetTime(0);  oscillate speed
-    // timeRot = (float)glfwGetTime() * .00085;
     float rotSpeed = 0.005f;
-
-    glm::mat4 viewLoc = glm::mat4(1.0f);
-    glm::mat4 projLoc = glm::mat4(1.0f);
-    glm::mat4 transformLoc = glm::mat4(1.0f);
 
     shader.use();
 
@@ -239,6 +229,8 @@ int main() {
 
       glDrawArrays(GL_TRIANGLES, 0, 36);
     }
+
+    glDrawArrays(GL_TRIANGLES, 0, 36);
 
     // glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); @REMOVED_ebo or elementBufferObject
     // @TODO Make vertices check dynamic, the 36
