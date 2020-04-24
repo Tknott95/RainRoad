@@ -3,6 +3,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include "headers/keys.h"
 #include "headers/shader.h"
+#include "headers/utils/cube_vertices.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "headers/third_party/stb_image.h"
 using namespace std;
@@ -39,50 +40,7 @@ float lastY = HEIGHT / 2.0f;
 bool firstMouse = true;
 /* @TODO refactor this */
 
-float vertices[] = {
-  -0.5f, -0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f,
-  0.5f, -0.5f, -0.5f,     0.0f, 1.0f, 0.0f,    1.0f, 0.0f,
-  0.5f,  0.5f, -0.5f,     1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
-  0.5f,  0.5f, -0.5f,     1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
-  -0.5f,  0.5f, -0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 1.0f,
-  -0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 0.0f,
-
-  -0.5f, -0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f,
-  0.5f, -0.5f,  0.5f,     0.0f, 1.0f, 0.0f,    1.0f, 0.0f,
-  0.5f,  0.5f,  0.5f,     1.0f, 0.0f, 0.0f,    1.0f, 1.0f,
-  0.5f,  0.5f,  0.5f,     1.0f, 0.8f, 1.0f,    1.0f, 1.0f,
-  -0.5f,  0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 1.0f,
-  -0.5f, -0.5f,  0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 0.0f,
-
-  -0.5f,  0.5f,  0.5f,    0.0f, 0.0f, 1.0f,    1.0f, 0.0f,
-  -0.5f,  0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
-  -0.5f, -0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    0.0f, 1.0f,
-  -0.5f, -0.5f, -0.5f,    1.0f, 0.8f, 1.0f,    0.0f, 1.0f,
-  -0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
-  -0.5f,  0.5f,  0.5f,    1.0f, 1.0f, 1.0f,    1.0f, 0.0f,
-
-  0.5f,  0.5f,  0.5f,     0.0f, 0.0f, 1.0f,    1.0f, 0.0f,
-  0.5f,  0.5f, -0.5f,     0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
-  0.5f, -0.5f, -0.5f,     1.0f, 0.0f, 0.0f,    0.0f, 1.0f,
-  0.5f, -0.5f, -0.5f,     1.0f, 0.8f, 1.0f,    0.0f, 1.0f,
-  0.5f, -0.5f,  0.5f,     0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
-  0.5f,  0.5f,  0.5f,     1.0f, 1.0f, 1.0f,    1.0f, 0.0f,
-
-  -0.5f, -0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 1.0f,
-  0.5f, -0.5f, -0.5f,     0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
-  0.5f, -0.5f,  0.5f,     1.0f, 0.0f, 0.0f,    1.0f, 0.0f,
-  0.5f, -0.5f,  0.5f,     1.0f, 0.8f, 1.0f,    1.0f, 0.0f,
-  -0.5f, -0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
-  -0.5f, -0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 1.0f,
-
-  -0.5f,  0.5f, -0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 1.0f,
-  0.5f,  0.5f, -0.5f,     0.0f, 1.0f, 0.0f,    1.0f, 1.0f,
-  0.5f,  0.5f,  0.5f,     1.0f, 0.0f, 0.0f,    1.0f, 0.0f,
-  0.5f,  0.5f,  0.5f,     1.0f, 0.8f, 1.0f,    1.0f, 0.0f,
-  -0.5f,  0.5f,  0.5f,    0.2f, 0.3f, 0.4f,    0.0f, 0.0f,
-  -0.5f,  0.5f, -0.5f,    1.0f, 1.0f, 1.0f,    0.0f, 1.0f
-};
-
+int totalCubes = 10; // sizeOf(cubePos) causes an extra cube render bug
 glm::vec3 cubePos[] = {
   glm::vec3( 0.0f,  0.0f,  0.0f),
   glm::vec3( 2.0f,  5.0f, -15.0f),
@@ -260,10 +218,20 @@ int main() {
     shader.setMat4("transform", trans0);
 
     glBindVertexArray(vao);
+
+    // for(int j=0; j < 50; j++) {
+    //   if(j % 2 == 0) {
+    //     cubePos[j] = glm::vec3(j, 2, 1);
+    //   } else if(j % 3 == 0) {
+    //     cubePos[j] = glm::vec3(j, 1, 1);
+    //   } else {
+    //     cubePos[j] = glm::vec3(j, 3, 1);
+    //   }
+    // }
     
-    for(unsigned int i=0; i < 10; i++) { /* sizeOf(cubePos); */
+    for(unsigned int i=0; i < totalCubes; i++) { /* sizeOf(cubePos); */
       glm::mat4 model = glm::mat4(1.0f);
-      model = glm::translate(model, glm::vec3(1.7f, 1.0f, 1.0f) * cubePos[i]);
+      model = glm::translate(model, glm::vec3(1.0f, 1.0f, 1.0f) * cubePos[i]);
       model = glm::rotate(model, glm::radians(20.0f), glm::vec3(1.0f, 0.3f, 0.3f));
       // unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
       // glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
