@@ -119,6 +119,7 @@ int main() {
   glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
   glEnableVertexAttribArray(2);
   
+  
   /* TEXTURE INIT HERE */
   int width, height, nrChannels;
   stbi_set_flip_vertically_on_load(true);
@@ -148,13 +149,13 @@ int main() {
   // glm::mat4 view0 = glm::mat4(1.0f);
 
   /* camera Init() */
-  glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
-  glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
-  glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f); 
-  glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
-  glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
-  glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f); 
-  glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
+  // glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
+  // glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+  // glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f); 
+  // glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
+  // glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
+  // glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f); 
+  // glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
   // glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);
   // glm::mat4 view;
   // view = glm::lookAt(
@@ -191,7 +192,7 @@ int main() {
     glClearColor(0.0f, 0.0f, 0.2f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    float rotSpeed = 0.005f;
+    float rotSpeed = 0.0009f;
 
     shader.use();
 
@@ -201,7 +202,7 @@ int main() {
     // unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
     // glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj0));
    
-    trans0 = glm::rotate(trans0, rotSpeed, glm::vec3(1.0, 1.0, 1.0));
+    trans0 = glm::rotate(trans0, rotSpeed, glm::vec3(0.0, 0.0, 1.0) * .80f);
     // unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
     // glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans0));
 
@@ -223,15 +224,14 @@ int main() {
     
     for(unsigned int i=0; i < totalCubes; i++) { /* sizeOf(cubePos); */
       glm::mat4 model = glm::mat4(1.0f);
-      model = glm::translate(model, glm::vec3(1.0f, 1.0f, 1.0f) * cubePos[i]);
+      model = glm::translate(model, glm::vec3(2.0f, -1.0f, 2.0f) * cubePos[i]);
+      model = glm::scale(model, glm::vec3(1.f, 1.0f, 1.f) * 0.5f);
+      // for planes       model = glm::scale(model, glm::vec3(10.f, 0.05f, 10.f));
       // model = glm::rotate(model, glm::radians(20.0f), glm::vec3(1.0f, 0.3f, 0.3f));
       shader.setMat4("model", model);
 
       glDrawArrays(GL_TRIANGLES, 0, 36);
     }
-
-    glDrawArrays(GL_TRIANGLES, 0, 36);
-
     // glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); @REMOVED_ebo or elementBufferObject
     // @TODO Make vertices check dynamic, the 36
 
