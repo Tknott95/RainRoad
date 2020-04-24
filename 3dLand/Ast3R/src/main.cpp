@@ -138,8 +138,7 @@ int main() {
   Shader shader("resources/shaders/gl.vs", "resources/shaders/gl.frag");
   // glInit(); @TODO reuse once modularized/refactored for a header file - was a custom function
   glEnable(GL_DEPTH_TEST);
-
-
+  // glEnable(GL_STENCIL_TEST); maybe will use for fun little effects such as edge detection
 
   // unsigned int vao, vbo, ebo; // vertexArrayObject
   glGenVertexArrays(1, &vao);
