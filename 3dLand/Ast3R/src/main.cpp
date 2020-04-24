@@ -96,6 +96,8 @@ int main() {
   Shader shader("resources/shaders/gl.vs", "resources/shaders/gl.frag");
   // glInit(); @TODO reuse once modularized/refactored for a header file - was a custom function
   glEnable(GL_DEPTH_TEST);
+  glEnable(GL_BLEND);
+
   // glEnable(GL_STENCIL_TEST); maybe will use for fun little effects such as edge detection
 
   // unsigned int vao, vbo, ebo; // vertexArrayObject
@@ -232,7 +234,7 @@ int main() {
     for(unsigned int i=0; i < totalCubes; i++) { /* sizeOf(cubePos); */
       glm::mat4 model = glm::mat4(1.0f);
       model = glm::translate(model, glm::vec3(1.0f, 1.0f, 1.0f) * cubePos[i]);
-      model = glm::rotate(model, glm::radians(20.0f), glm::vec3(1.0f, 0.3f, 0.3f));
+      // model = glm::rotate(model, glm::radians(20.0f), glm::vec3(1.0f, 0.3f, 0.3f));
       shader.setMat4("model", model);
 
       glDrawArrays(GL_TRIANGLES, 0, 36);
