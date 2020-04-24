@@ -233,8 +233,6 @@ int main() {
       glm::mat4 model = glm::mat4(1.0f);
       model = glm::translate(model, glm::vec3(1.0f, 1.0f, 1.0f) * cubePos[i]);
       model = glm::rotate(model, glm::radians(20.0f), glm::vec3(1.0f, 0.3f, 0.3f));
-      // unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
-      // glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
       shader.setMat4("model", model);
 
       glDrawArrays(GL_TRIANGLES, 0, 36);
