@@ -1,7 +1,7 @@
 #include "../headers/shader.h"
 
 /* @TODO - clean this shit up, make a switch and single function? Will it slow down speed? */
-Shader::Shader(const char* vertexPath, const char* fragmentPath) {
+void Shader::init(const char* vertexPath, const char* fragmentPath) {
   const char* geometryPath = nullptr;
   std::string vertexCode;
   std::string fragmentCode;

@@ -8,7 +8,7 @@
 class Shader {
   public:
     unsigned int ID;
-    Shader(const char* vertexPath, const char* fragmentPath);
+    void init(const char* vertexPath, const char* fragmentPath);
     void use();
     /* @TODO make this a switch statement with parameter as ENUM type, this code is sloppy shit */
     void setBool(const std::string &name, bool value) const;
