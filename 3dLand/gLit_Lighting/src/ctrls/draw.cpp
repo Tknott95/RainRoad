@@ -2,6 +2,7 @@
 #include "../headers/utils/cube_vertices.h"
 
 void Draw::init() {
+  /* @TODO possibly make constructor/destructor for deallocating, is it needed? */
   shader0.compile("src/shaders/basic/gl.vs", "src/shaders/basic/gl.fs");
 
   glGenVertexArrays(1, &vao);
