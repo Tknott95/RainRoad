@@ -1,8 +1,9 @@
 #include "../headers/draw.h"
 #include "../headers/utils/cube_vertices.h"
 
-// Draw::Draw() {
-  // materialShader.init("src/shaders/material/material.vs", "src/shaders/material/material.fs");
+void Draw::init() {
+  // Shader matShader("src/shaders/material/material.vs", "src/shaders/material/material.fs");
+  this->matShader->compile("src/shaders/material/material.vs", "src/shaders/material/material.fs");
   // lightShader.init("src/shaders/light/light.vs", "src/shaders/light/light.fs");
 
   // glGenVertexArrays(1, &cubeVAO);
@@ -24,7 +25,7 @@
   // glEnableVertexAttribArray(0);
 
   // lightPos = glm::vec3(1.2f, 1.0f, 2.0f);
-// }
+}
 
 void Draw::update() {
   // materialShader.use();

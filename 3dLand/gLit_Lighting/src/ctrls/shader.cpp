@@ -1,65 +1,65 @@
 #include "../headers/shader.h"
 
 /* @TODO - clean this shit up, make a switch and single function? Will it slow down speed? */
-Shader::Shader(const char* vertPath, const char* fragPath) {
-  const char* geometryPath = nullptr;
-  std::string vertexCode, fragmentCode, geometryCode;
-  std::ifstream vShaderFile, fShaderFile, gShaderFile;
-  try {
-    vShaderFile.open(vertPath);
-    fShaderFile.open(fragPath);
-    std::stringstream vShaderStream, fShaderStream;
-    vShaderStream << vShaderFile.rdbuf();
-    fShaderStream << fShaderFile.rdbuf();		
-    vShaderFile.close();
-    fShaderFile.close();
+void Shader::compile(const char* vertPath, const char* fragPath, const char* geometrySource) {
+  // const char* geometryPath = nullptr;
+  // std::string vertexCode, fragmentCode, geometryCode;
+  // std::ifstream vShaderFile, fShaderFile, gShaderFile;
+  // try {
+  //   vShaderFile.open(vertPath);
+  //   fShaderFile.open(fragPath);
+  //   std::stringstream vShaderStream, fShaderStream;
+  //   vShaderStream << vShaderFile.rdbuf();
+  //   fShaderStream << fShaderFile.rdbuf();		
+  //   vShaderFile.close();
+  //   fShaderFile.close();
 
-    vertexCode = vShaderStream.str();
-    fragmentCode = fShaderStream.str();
+  //   vertexCode = vShaderStream.str();
+  //   fragmentCode = fShaderStream.str();
 
-    if(geometryPath != nullptr) {
-      gShaderFile.open(geometryPath);
-      std::stringstream gShaderStream;
-      gShaderStream << gShaderFile.rdbuf();
-      gShaderFile.close();
-      geometryCode = gShaderStream.str();
-    }
-  } catch (std::ifstream::failure& e) {
-    printf("\n\e[0;31;40m SHADER FILE NOT READ \e[0m");
-  }
+  //   if(geometryPath != nullptr) {
+  //     gShaderFile.open(geometryPath);
+  //     std::stringstream gShaderStream;
+  //     gShaderStream << gShaderFile.rdbuf();
+  //     gShaderFile.close();
+  //     geometryCode = gShaderStream.str();
+  //   }
+  // } catch (std::ifstream::failure& e) {
+  //   printf("\n\e[0;31;40m SHADER FILE NOT READ \e[0m");
+  // }
 
-  const char* vShaderCode = vertexCode.c_str();
-  const char * fShaderCode = fragmentCode.c_str();
-  unsigned int vertex, fragment, geometry;
+  // const char* vShaderCode = vertexCode.c_str();
+  // const char * fShaderCode = fragmentCode.c_str();
+  // unsigned int vertex, fragment, geometry;
 
-  vertex = glCreateShader(GL_VERTEX_SHADER);
-  glShaderSource(vertex, 1, &vShaderCode, NULL);
-  glCompileShader(vertex);
-  checkCompileErrors(vertex, "VERTEX");
+  // vertex = glCreateShader(GL_VERTEX_SHADER);
+  // glShaderSource(vertex, 1, &vShaderCode, NULL);
+  // glCompileShader(vertex);
+  // checkCompileErrors(vertex, "VERTEX");
 
-  fragment = glCreateShader(GL_FRAGMENT_SHADER);
-  glShaderSource(fragment, 1, &fShaderCode, NULL);
-  glCompileShader(fragment);
-  checkCompileErrors(fragment, "FRAGMENT");
+  // fragment = glCreateShader(GL_FRAGMENT_SHADER);
+  // glShaderSource(fragment, 1, &fShaderCode, NULL);
+  // glCompileShader(fragment);
+  // checkCompileErrors(fragment, "FRAGMENT");
 
-  if(geometryPath != nullptr) {
-    const char * gShaderCode = geometryCode.c_str();
-    geometry = glCreateShader(GL_GEOMETRY_SHADER);
-    glShaderSource(geometry, 1, &gShaderCode, NULL);
-    glCompileShader(geometry);
-    checkCompileErrors(geometry, "GEOMETRY");
-  }
-  ID = glCreateProgram();
-  glAttachShader(ID, vertex);
-  glAttachShader(ID, fragment);
-  if(geometryPath != nullptr)
-      glAttachShader(ID, geometry);
-  glLinkProgram(ID);
-  checkCompileErrors(ID, "PROGRAM");
-  // delete the shaders as they're linked into our program now and no longer necessery
-  glDeleteShader(vertex);
-  glDeleteShader(fragment);
-  if(geometryPath != nullptr) glDeleteShader(geometry);
+  // if(geometryPath != nullptr) {
+  //   const char * gShaderCode = geometryCode.c_str();
+  //   geometry = glCreateShader(GL_GEOMETRY_SHADER);
+  //   glShaderSource(geometry, 1, &gShaderCode, NULL);
+  //   glCompileShader(geometry);
+  //   checkCompileErrors(geometry, "GEOMETRY");
+  // }
+  // ID = glCreateProgram();
+  // glAttachShader(ID, vertex);
+  // glAttachShader(ID, fragment);
+  // if(geometryPath != nullptr)
+  //     glAttachShader(ID, geometry);
+  // glLinkProgram(ID);
+  // checkCompileErrors(ID, "PROGRAM");
+  // // delete the shaders as they're linked into our program now and no longer necessery
+  // glDeleteShader(vertex);
+  // glDeleteShader(fragment);
+  // if(geometryPath != nullptr) glDeleteShader(geometry);
 }
 void Shader::use() { 
   glUseProgram(ID); 

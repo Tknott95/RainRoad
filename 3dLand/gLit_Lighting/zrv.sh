@@ -2,4 +2,4 @@
 _S="./src"
 _C="$_S/ctrls"
 
-g++ $_S/$1.cpp $_C/window.cpp $_C/keys.cpp $_C/shader.cpp $_C/camera.cpp $_C/draw.cpp -o ./runtime/$1 -lglfw -lGLEW -DGLEW_STATIC -lGL && ./runtime/$1
+g++ $_S/$1.cpp $_C/window.cpp $_C/keys.cpp $_C/camera.cpp $_C/draw.cpp $_C/shader.cpp -o ./runtime/$1 -lglfw -lGLEW -DGLEW_STATIC -lGL && ./runtime/$1
