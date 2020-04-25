@@ -5,18 +5,13 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <string>
 
-#include "shader.h"
+// #include "shader.h"
 
 class Draw {
   private:
-    unsigned int vbo, cubeVAO, lightVAO;
-    glm::vec3 lightPos;
-
-    Shader lightShader;
-    Shader materialShader;
+    // unsigned int vbo, cubeVAO, lightVAO;
+    // glm::vec3 lightPos;
 
   public:
-    Draw();
-
     void update();
 };
