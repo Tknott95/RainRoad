@@ -9,7 +9,7 @@ class Window {
     GLFWwindow* _window;
     Camera* _camera;
     Keys keys;
-    Draw draw;
+    Draw* draw;
 
     int _screenWidth = 800/*1280*/;
     int _screenHeight = 600/*800*/;

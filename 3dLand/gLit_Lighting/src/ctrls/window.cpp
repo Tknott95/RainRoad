@@ -17,6 +17,8 @@ Window::Window() {
   this->_camera = new Camera(_screenWidth, _screenHeight, glm::vec3(0.0f, 0.0f, 3.0f));
 
   glewInit();
+
+  this->draw = new Draw();
 };
 
 Window::~Window() {

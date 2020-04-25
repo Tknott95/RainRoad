@@ -2,9 +2,8 @@
 #include "../headers/utils/cube_vertices.h"
 
 void Draw::init() {
-  // Shader matShader("src/shaders/material/material.vs", "src/shaders/material/material.fs");
-  this->matShader->compile("src/shaders/material/material.vs", "src/shaders/material/material.fs");
-  // lightShader.init("src/shaders/light/light.vs", "src/shaders/light/light.fs");
+  this->matShader.compile("src/shaders/material/material.vs", "src/shaders/material/material.fs");
+  this->lightShader.compile("src/shaders/light/light.vs", "src/shaders/light/light.fs");
 
   // glGenVertexArrays(1, &cubeVAO);
   // glGenBuffers(1, &vbo);

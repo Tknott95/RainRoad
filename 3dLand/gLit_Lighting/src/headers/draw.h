@@ -5,7 +5,8 @@ class Draw {
   private:
     // unsigned int vbo, cubeVAO, lightVAO;
     // glm::vec3 lightPos;
-    Shader* matShader;
+    Shader matShader;
+    Shader lightShader;
 
   public:
     void init();
