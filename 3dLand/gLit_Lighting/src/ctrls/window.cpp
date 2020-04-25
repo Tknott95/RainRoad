@@ -5,7 +5,6 @@ Window::Window() {
   if(!glewInit()) printf("\n\e[0;31;40m GlewInit FAILED \e[0m\n");
 
   glfwInit();
-  glewInit();
 
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -16,6 +15,8 @@ Window::Window() {
   glfwMakeContextCurrent(this->_window);
 
   this->_camera = new Camera(_screenWidth, _screenHeight, glm::vec3(0.0f, 0.0f, 3.0f));
+
+  glewInit();
 };
 
 Window::~Window() {
