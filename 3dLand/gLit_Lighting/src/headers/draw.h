@@ -1,14 +1,15 @@
 // #include <string>
+// #include <GLFW/glfw3.h>
+#include <iostream>
+#include <GL/glew.h>
 #include "shader.h"
-#include <GLFW/glfw3.h>
 
 /* @TODO hand make shaders for lighting then create iwn shader class w/ own methodology */
 class Draw {
   private:
-    unsigned int vbo, cubeVAO, lightVAO;
-    glm::vec3 lightPos;
-    Shader matShader;
-    Shader lightShader;
+    // unsigned int cubeVAO, lightVAO;
+    GLuint vao, vbo; 
+    Shader shader0;
 
   public:
     void init();

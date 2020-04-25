@@ -2,69 +2,74 @@
 #include "../headers/utils/cube_vertices.h"
 
 void Draw::init() {
-  this->matShader.compile("src/shaders/material/material.vs", "src/shaders/material/material.fs");
-  this->lightShader.compile("src/shaders/light/light.vs", "src/shaders/light/light.fs");
+  // const char* vertexSource = R"glsl(
+  //   #version 150 core
+  //   in vec2 position;
+  //   void main()
+  //   {
+  //     gl_Position = vec4(position, 0.0, 1.0);
+  //   }
+  // )glsl";
 
-  glGenVertexArrays(1, &cubeVAO);
+  // const char* fragmentSource = R"glsl(
+  // #version 150 core
+  // out vec4 outColor;
+  // void main()
+  // {
+  //   outColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);    }
+  // )glsl";
+
+  shader0.compile("src/shaders/basic/gl.vs", "src/shaders/basic/gl.fs");
+
+  float vertices[] = {
+    0.0f, 0.5f,
+    0.5f, -0.5f,
+    -0.5f, -0.5f
+  };
+
+  // creating a vertexArrayObject
+  glGenVertexArrays(1, &vao);
   glGenBuffers(1, &vbo);
-  glBindBuffer(GL_ARRAY_BUFFER, vbo);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), cubeVertices, GL_STATIC_DRAW);
-  glBindVertexArray(cubeVAO);
-
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-  glEnableVertexAttribArray(0);
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-  glEnableVertexAttribArray(1);
-
-  glGenVertexArrays(1, &lightVAO);
-  glBindVertexArray(lightVAO);
+  glBindVertexArray(vao);
 
   glBindBuffer(GL_ARRAY_BUFFER, vbo);
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+  
+  glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
   glEnableVertexAttribArray(0);
 
-  lightPos = glm::vec3(1.2f, 1.0f, 2.0f);
+  // GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+  // glShaderSource(vertexShader, 1, &vertexSource, NULL);
+  // glCompileShader(vertexShader);
+
+  // GLint status;
+  // // glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &status);
+  // // // grabbing compile log
+  // // char buffer[512];
+  // // glGetShaderInfoLog(vertexShader, 512, NULL, buffer);
+  // // fragmentShader
+  // // @TODO double check glsl for frag shader
+  // GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+  // glShaderSource(fragmentShader, 1, &fragmentSource, NULL);
+  // glCompileShader(fragmentShader);
+
+  // shader0.use();
+  // shader0.setMat4("position", )
+
+
+  // GLuint shaderProgram = glCreateProgram();
+  // glAttachShader(shaderProgram, vertexShader);
+  // glAttachShader(shaderProgram, fragmentShader);
+  // glBindFragDataLocation(shaderProgram, 0, "outColor");
+  // glLinkProgram(shaderProgram);
+  // glUseProgram(shaderProgram);
+  // GLint posAttrib = glGetAttribLocation(shaderProgram, "position");
+  // glEnableVertexAttribArray(posAttrib);
+  // glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
 }
 
 void Draw::update() {
-  matShader.use();
-  matShader.setVec3("light.position", lightPos);
-  //matShader.setVec3("viewPos", camera.Position);
-
-  glm::vec3 lightColor;
-  lightColor.x = sin(glfwGetTime() * 2.0f);
-  lightColor.y = sin(glfwGetTime() * 0.7f);
-  lightColor.z = sin(glfwGetTime() * 1.3f);
-  glm::vec3 diffuseColor = lightColor   * glm::vec3(0.5f);
-  glm::vec3 ambientColor = diffuseColor * glm::vec3(0.2f);
-  matShader.setVec3("light.ambient", ambientColor);
-  matShader.setVec3("light.diffuse", diffuseColor);
-  matShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
-
-  matShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
-  matShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
-  matShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-  matShader.setFloat("material.shininess", 32.0f);
-
-  glm::mat4 projection = glm::mat4(1.0f); //= glm::perspective(glm::radians(camera.Zoom), (float)_screenWidth / (float)_screenHeight, 0.1f, 100.0f);
-  glm::mat4 view = glm::mat4(1.0f); //camera.GetViewMatrix();
-  matShader.setMat4("projection", projection);
-  matShader.setMat4("view", view);
-
-  glm::mat4 model = glm::mat4(1.0f);
-  matShader.setMat4("model", model);
-
-  glBindVertexArray(cubeVAO);
-  glDrawArrays(GL_TRIANGLES, 0, 36);
-
-  lightShader.use();
-  lightShader.setMat4("projection", projection);
-  lightShader.setMat4("view", view);
-  model = glm::mat4(1.0f);
-  // model = glm::translate(model, lightPos);
-  // model = glm::scale(model, glm::vec3(0.2f));
-  lightShader.setMat4("model", model);
-
-  glBindVertexArray(lightVAO);
-  glDrawArrays(GL_TRIANGLES, 0, 36);
+  shader0.use();
+  glBindVertexArray(vao);
+  glDrawArrays(GL_TRIANGLES, 0, 3);
 }

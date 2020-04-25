@@ -18,7 +18,7 @@ Window::Window() {
 
   glewInit();
 
-  this->draw = new Draw();
+  this->draw.init();
 };
 
 Window::~Window() {
@@ -39,6 +39,8 @@ void Window::update() {
 
     glClearColor(0.3f, 0.3f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
+
+    draw.update();
 
     glfwSwapBuffers(this->_window);
     glfwPollEvents();
