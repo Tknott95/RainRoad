@@ -11,7 +11,7 @@ int main() {
 
   Window window;
 
-  Shader shader("src/shaders/material/material.vs", "src/shaders/material/material.fs");
+  // Shader shader("src/shaders/material/material.vs", "src/shaders/material/material.fs");
 
   while(window.isOpen) {
     window.render();
