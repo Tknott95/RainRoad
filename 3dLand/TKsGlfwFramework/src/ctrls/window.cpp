@@ -5,7 +5,6 @@ Window::Window() {
   if(!glewInit()) printf("\n\e[0;31;40m GlewInit FAILED \e[0m\n");
 
   glfwInit();
-  glewInit();
 
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -15,6 +14,7 @@ Window::Window() {
   this->_window = glfwCreateWindow(_screenWidth, _screenHeight, "LitLighting", nullptr, nullptr);
 
   glfwMakeContextCurrent(_window);
+  glewInit();
 };
 
 Window::~Window() {
