@@ -5,7 +5,6 @@ void Shader::compile(const char* vertPath, const char* fragPath, const char* geo
   const char* geometryPath = nullptr;
   std::string vertexCode, fragmentCode, geometryCode;
   std::ifstream vShaderFile, fShaderFile, gShaderFile;
-  std::cout << "    \n\e[96;40m    Shader Compiled\e[0m\n" << std::endl;
 
   try {
     vShaderFile.open(vertPath);
@@ -63,7 +62,7 @@ void Shader::compile(const char* vertPath, const char* fragPath, const char* geo
   glDeleteShader(vertex);
   glDeleteShader(fragment);
   if(geometryPath != nullptr) glDeleteShader(geometry);
-  printf("    \n\e[96;40m    Shader Compiled\e[0m\n");
+  printf("    \n\e[96;40m    Shader(%d) Compiled\e[0m\n", ID);
 }
 void Shader::use() { 
   glUseProgram(ID); 
