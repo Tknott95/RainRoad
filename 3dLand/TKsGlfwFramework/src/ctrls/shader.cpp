@@ -1,21 +1,14 @@
 #include "../headers/shader.h"
 
 /* @TODO - clean this shit up, make a switch and single function? Will it slow down speed? */
-Shader::Shader(const char* vertexPath, const char* fragmentPath) {
+void Shader::compile(const char* vertPath, const char* fragPath, const char* geometrySource) {
   const char* geometryPath = nullptr;
-  std::string vertexCode;
-  std::string fragmentCode;
-  std::string geometryCode;
-  std::ifstream vShaderFile;
-  std::ifstream fShaderFile;
-  std::ifstream gShaderFile;
-  // debug to check ifstream objects can throw exceptions:
-  vShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
-  fShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
-  gShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
+  std::string vertexCode, fragmentCode, geometryCode;
+  std::ifstream vShaderFile, fShaderFile, gShaderFile;
+
   try {
-    vShaderFile.open(vertexPath);
-    fShaderFile.open(fragmentPath);
+    vShaderFile.open(vertPath);
+    fShaderFile.open(fragPath);
     std::stringstream vShaderStream, fShaderStream;
     vShaderStream << vShaderFile.rdbuf();
     fShaderStream << fShaderFile.rdbuf();		
@@ -23,7 +16,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
     fShaderFile.close();
 
     vertexCode = vShaderStream.str();
-    fragmentCode = fShaderStream.str();			
+    fragmentCode = fShaderStream.str();
 
     if(geometryPath != nullptr) {
       gShaderFile.open(geometryPath);
@@ -33,8 +26,10 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
       geometryCode = gShaderStream.str();
     }
   } catch (std::ifstream::failure& e) {
-    std::cout << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ" << std::endl;
+    printf("\n\e[0;31;40m SHADER FILE NOT READ \e[0m");
   }
+  
+
   const char* vShaderCode = vertexCode.c_str();
   const char * fShaderCode = fragmentCode.c_str();
   unsigned int vertex, fragment, geometry;
@@ -56,7 +51,6 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
     glCompileShader(geometry);
     checkCompileErrors(geometry, "GEOMETRY");
   }
-  // shader Program
   ID = glCreateProgram();
   glAttachShader(ID, vertex);
   glAttachShader(ID, fragment);
@@ -68,6 +62,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
   glDeleteShader(vertex);
   glDeleteShader(fragment);
   if(geometryPath != nullptr) glDeleteShader(geometry);
+  printf("    \n\e[96;40m    Shader(%d) Compiled\e[0m\n", ID);
 }
 void Shader::use() { 
   glUseProgram(ID); 
@@ -116,13 +111,13 @@ void Shader::checkCompileErrors(GLuint shader, std::string type) {
     glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
     if(!success) {
       glGetShaderInfoLog(shader, 1024, NULL, infoLog);
-      std::cout << "ERROR::SHADER_COMPILATION_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
+      std::cout << "\n\e[0;31;40m SHADER COMPILING ERROR: " << type << "\n" << infoLog << "\e[0m" << std::endl;
     }
   } else {
     glGetProgramiv(shader, GL_LINK_STATUS, &success);
     if(!success) {
       glGetProgramInfoLog(shader, 1024, NULL, infoLog);
-      std::cout << "ERROR::PROGRAM_LINKING_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
+      std::cout << "\n\e[0;31;40m LINKING PROGRAM ERROR: " << type << "\n" << infoLog << "\e[0m" << std::endl;
     }
   }
 }
