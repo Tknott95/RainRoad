@@ -39,19 +39,19 @@ float lastY = HEIGHT / 2.0f;
 bool firstMouse = true;
 /* @TODO refactor this */
 
-int totalCubes = 10; // sizeOf(cubePos) causes an extra cube render bug
-glm::vec3 cubePos[] = {
-  glm::vec3( 0.0f,  0.0f,  0.0f),
-  glm::vec3( 2.0f,  5.0f, -15.0f),
-  glm::vec3(-1.5f, -2.2f, -2.5f),
-  glm::vec3(-3.8f, -2.0f, -12.3f),
-  glm::vec3( 2.4f, -0.4f, -3.5f),
-  glm::vec3(-1.7f,  3.0f, -7.5f),
-  glm::vec3( 1.3f, -2.0f, -2.5f),
-  glm::vec3( 1.5f,  2.0f, -2.5f),
-  glm::vec3( 1.5f,  0.2f, -1.5f),
-  glm::vec3(-1.3f,  1.0f, -1.5f)
-};
+// int totalCubes = 10; // sizeOf(cubePos) causes an extra cube render bug
+// glm::vec3 cubePos[] = {
+//   glm::vec3( 0.0f,  0.0f,  0.0f),
+//   glm::vec3( 2.0f,  5.0f, -15.0f),
+//   glm::vec3(-1.5f, -2.2f, -2.5f),
+//   glm::vec3(-3.8f, -2.0f, -12.3f),
+//   glm::vec3( 2.4f, -0.4f, -3.5f),
+//   glm::vec3(-1.7f,  3.0f, -7.5f),
+//   glm::vec3( 1.3f, -2.0f, -2.5f),
+//   glm::vec3( 1.5f,  2.0f, -2.5f),
+//   glm::vec3( 1.5f,  0.2f, -1.5f),
+//   glm::vec3(-1.3f,  1.0f, -1.5f)
+// };
 
 void initWindow() {
   cout << "\n appInitialized...\n" << endl;
@@ -92,7 +92,7 @@ void deAllocate() {
 
 int main() {
   initWindow();
-  Shader shader("resources/shaders/gl.vs", "resources/shaders/gl.frag");
+  Shader cubeShader("resources/shaders/cube.vs", "resources/shaders/cube.fs");
   // glInit(); @TODO reuse once modularized/refactored for a header file - was a custom function
   glEnable(GL_DEPTH_TEST);
   glEnable(GL_BLEND);
@@ -118,7 +118,6 @@ int main() {
   // texture attribute
   glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
   glEnableVertexAttribArray(2);
-  
   
   /* TEXTURE INIT HERE */
   int width, height, nrChannels;
@@ -164,8 +163,8 @@ int main() {
   // 	glm::vec3(0.0f, 1.0f, 0.0f));
   // glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
 
-  shader.use();
-  shader.setInt("texture0", 0);
+  cubeShader.use();
+  cubeShader.setInt("texture0", 0);
 
   while(!glfwWindowShouldClose(window)) {
     Keys keys;
@@ -194,7 +193,7 @@ int main() {
 
     float rotSpeed = 0.0009f;
 
-    shader.use();
+    cubeShader.use();
 
     /* REPLACED BY SHADER CLASS */
     // unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
@@ -202,13 +201,13 @@ int main() {
     // unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
     // glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj0));
    
-    trans0 = glm::rotate(trans0, rotSpeed, glm::vec3(0.0, 0.0, 1.0) * .80f);
+    // trans0 = glm::rotate(trans0, rotSpeed, glm::vec3(1.0, 1.0, 1.0) * .10f);
     // unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
     // glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans0));
 
-    shader.setMat4("view", view0);
-    shader.setMat4("projection", proj0);
-    shader.setMat4("transform", trans0);
+    cubeShader.setMat4("view", view0);
+    cubeShader.setMat4("projection", proj0);
+    cubeShader.setMat4("transform", trans0);
 
     glBindVertexArray(vao);
 
@@ -222,13 +221,13 @@ int main() {
     //   }
     // }
     
-    for(unsigned int i=0; i < totalCubes; i++) { /* sizeOf(cubePos); */
+    for(size_t i=0; i < 1; i++) { /* sizeOf(cubePos); */
       glm::mat4 model = glm::mat4(1.0f);
-      model = glm::translate(model, glm::vec3(2.0f, -1.0f, 2.0f) * cubePos[i]);
-      model = glm::scale(model, glm::vec3(1.f, 1.0f, 1.f) * 0.5f);
+      model = glm::translate(model, glm::vec3(0.f, -1.f, 0.f));/*cubePos[i]*/
+      model = glm::scale(model, glm::vec3(1.f, 1.f, 1.f) * glm::vec3(10.f, 0.02f, 10.f)); //* 0.5f);
       // for planes       model = glm::scale(model, glm::vec3(10.f, 0.05f, 10.f));
       // model = glm::rotate(model, glm::radians(20.0f), glm::vec3(1.0f, 0.3f, 0.3f));
-      shader.setMat4("model", model);
+      cubeShader.setMat4("model", model);
 
       glDrawArrays(GL_TRIANGLES, 0, 36);
     }
