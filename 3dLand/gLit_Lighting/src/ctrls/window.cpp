@@ -13,7 +13,6 @@ Window::Window() {
   glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
   this->_window = glfwCreateWindow(_screenWidth, _screenHeight, "LitLighting", nullptr, nullptr);
-
   glfwMakeContextCurrent(this->_window);
 
   this->_camera = new Camera(_screenWidth, _screenHeight, glm::vec3(0.0f, 0.0f, 3.0f));
