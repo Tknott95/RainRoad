@@ -1,23 +1,19 @@
 #include <iostream>
 #include <thread>
-#include <thread>
-#include <iostream>
-#include <glm/gtc/type_ptr.hpp>
 
 #include "keys.h"
-#include "shader.h"
+#include "draw.h"
 
 class Window {
   private:
     GLFWwindow* _window;
-    Camera* _camera; /* @TIP -  Will need to instantiate via: new in constructor */
+    Camera* _camera;
     Keys keys;
 
-    int _screenWidth = 1280;
-    int _screenHeight = 800;
+    int _screenWidth = 800/*1280*/;
+    int _screenHeight = 600/*800*/;
 
-    float _deltaTime = 0.0f;
-    float _lastFrame = 0.0f;
+    float _deltaTime, _lastFrame = 0.0f;
 
   public:
     bool isOpen;
