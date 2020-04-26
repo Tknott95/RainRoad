@@ -40,7 +40,6 @@ void Draw::init() {
 }
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
-  // shader0.use();
   materialShader.use();
   materialShader.setVec3("light.position", lightPos);
   materialShader.setVec3("viewPos", camera->Position);
@@ -67,9 +66,9 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.setMat4("view", view);
   materialShader.setMat4("tranform", transform);
 
-  mat4 model = mat4(1.0f);
-  materialShader.setMat4("model", model);
-  model = scale(model, vec3(1.0f));
+  mat4 model0 = mat4(1.0f);
+  materialShader.setMat4("model", model0);
+  model0 = scale(model0, vec3(1.0f));
   
   glBindVertexArray(cubeVAO);
   glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -77,7 +76,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   lampShader.use();
   lampShader.setMat4("projection", projection);
   lampShader.setMat4("view", view);
-  model = mat4(1.0f);
+  mat4 model = mat4(1.0f);
   model = translate(model, lightPos);
   model = scale(model, vec3(0.2f));
   lampShader.setMat4("model", model);
