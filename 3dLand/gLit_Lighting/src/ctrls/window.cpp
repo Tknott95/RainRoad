@@ -60,7 +60,7 @@ void Window::update() {
     float currentFrame = glfwGetTime();
     _deltaTime = currentFrame - _lastFrame;
     _lastFrame = currentFrame;
-    std::cout << "\e[0;33;40m dTime(" << _deltaTime << "\e[0m" << std::endl;
+    std::cout << "\e[0;33;40m dTime(" << _deltaTime << ")\e[0m" << std::endl;
     keys.keyPolling(_window, _camera, _deltaTime);
 
     glClearColor(0.f, 0.f, 0.3f, 1.0f);
