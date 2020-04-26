@@ -18,7 +18,8 @@ Window::Window() {
 
   glewInit();
 
-  this->draw.init();
+  this->draw = new Draw();
+  this->draw->init();
 };
 
 Window::~Window() {
@@ -34,13 +35,13 @@ void Window::update() {
   while(!glfwWindowShouldClose(_window)) {
     keys.keyPolling(_window, _camera, _deltaTime);
     float currentFrame = glfwGetTime();
-    _deltaTime = currentFrame - _lastFrame;
     _lastFrame = currentFrame;
+    _deltaTime = currentFrame - _lastFrame;
 
     glClearColor(0.3f, 0.3f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    draw.update();
+    this->draw->update();
 
     glfwSwapBuffers(this->_window);
     glfwPollEvents();

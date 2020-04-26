@@ -6,9 +6,12 @@
 
 class Draw {
   private:
+    Shader lampShader;
+    Shader materialShader;
     // unsigned int cubeVAO, lightVAO;
-    GLuint vao, vbo; 
-    Shader shader0;
+    GLuint VBO, cubeVAO, lightVAO;
+    // Shader shader0;
+    // Shader lightShader;
 
   public:
     void init();
