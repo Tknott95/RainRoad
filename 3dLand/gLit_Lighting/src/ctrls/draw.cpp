@@ -52,8 +52,13 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
     "\e[0;30;42m " << lightColor.x <<
     "\e[0;30;43m " << lightColor.y <<
     "\e[0;30;45m " << lightColor.z << "\e[0m" << std::endl;
+
   vec3 diffuseColor = lightColor * vec3(0.5f);
   vec3 ambientColor = diffuseColor * vec3(0.2f);
+  materialShader.setVec3("light.ambient", ambientColor);
+  materialShader.setVec3("light.diffuse", diffuseColor);
+  materialShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
+
   materialShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
   materialShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
   materialShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
@@ -78,7 +83,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   lampShader.setMat4("view", view);
   model = mat4(1.0f);
   model = translate(model, lightPos);
-  model = scale(model, vec3(1.0f));
+  model = scale(model, vec3(0.2f));
   lampShader.setMat4("model", model);
 
   glBindVertexArray(lightVAO);
