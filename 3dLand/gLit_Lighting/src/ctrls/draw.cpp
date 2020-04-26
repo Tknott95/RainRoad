@@ -12,6 +12,10 @@
 
 void Draw::init() {
   lightPos = glm::vec3(1.2f, 1.0f, 2.0f);
+  // lightColor = glm::vec3(0.9f, 0.8f, 0.1f);
+  lightColor.x = sin(glfwGetTime() * 2.0f);
+  lightColor.y = sin(glfwGetTime() * 0.7f);
+  lightColor.z = sin(glfwGetTime() * 1.3f);
   /* @TODO possibly make constructor/destructor for deallocating, is it needed? */
   // shader0.compile("src/shaders/basic/gl.vs", "src/shaders/basic/gl.fs");
   materialShader.compile("src/shaders/material/material.vs", "src/shaders/material/material.fs");

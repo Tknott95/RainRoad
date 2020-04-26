@@ -38,7 +38,7 @@ void Window::update() {
     _lastFrame = currentFrame;
     _deltaTime = currentFrame - _lastFrame;
 
-    glClearColor(0.3f, 0.3f, 1.0f, 1.0f);
+    glClearColor(0.f, 0.f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     this->draw->update(_camera);
