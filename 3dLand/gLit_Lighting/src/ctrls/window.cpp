@@ -1,5 +1,8 @@
 #include "../headers/window.h"
 
+void framebufferSizeCallback(GLFWwindow* window, int width, int height) { glViewport(0, 0, width, height); }
+
+
 Window::Window() {
   if(!glfwInit()) printf("\n\e[0;31;40m glfwInit() FAILED \e[0m\n");
   if(!glewInit()) printf("\n\e[0;31;40m GlewInit FAILED \e[0m\n");
@@ -9,10 +12,13 @@ Window::Window() {
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-  glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+  glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+  glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
   this->_window = glfwCreateWindow(screenSize.x, screenSize.y, "LitLighting", nullptr, nullptr);
   glfwMakeContextCurrent(this->_window);
+  glfwSetFramebufferSizeCallback(_window, framebufferSizeCallback);
+  
 
   this->_camera = new Camera(screenSize.x, screenSize.y, glm::vec3(0.0f, 0.0f, 3.0f));
 
@@ -49,3 +55,4 @@ void Window::update() {
 
   isOpen = false;
 };
+

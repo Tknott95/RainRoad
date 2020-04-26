@@ -18,6 +18,8 @@ class Window {
 
     float _deltaTime, _lastFrame = 0.0f;
 
+    // void framebufferSizeCallback(GLFWwindow* window, int width, int height);
+
   public:
     bool isOpen;
 
