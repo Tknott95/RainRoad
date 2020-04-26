@@ -30,7 +30,7 @@ void Draw::init() {
 void Draw::update() {
   // shader0.use();
   materialShader.use();
-  // materialShader.setVec3("light.position", lightPos);
+  materialShader.setVec3("light.position", lightPos);
   //glBindVertexArray(vao);
   // glDrawArrays(GL_TRIANGLES, 0, 36);
 }
