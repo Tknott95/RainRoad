@@ -41,13 +41,14 @@ void Draw::init() {
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
   // shader0.use();
-  lightColor.x = sin(glfwGetTime() * 2.0f);
-  lightColor.y = sin(glfwGetTime() * 0.7f);
-  lightColor.z = sin(glfwGetTime() * 1.3f);
   materialShader.use();
   materialShader.setVec3("light.position", lightPos);
   materialShader.setVec3("viewPos", camera->Position);
 
+  lightColor.x = sin(glfwGetTime() * 2.0f);
+  lightColor.y = sin(glfwGetTime() * 0.7f);
+  lightColor.z = sin(glfwGetTime() * 1.3f);
+  std::cout << "\e[1:40;32m " << lightColor.x << "\e[0m" << std::endl;
   vec3 diffuseColor = lightColor * vec3(0.5f);
   vec3 ambientColor = diffuseColor * vec3(0.2f);
   materialShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
