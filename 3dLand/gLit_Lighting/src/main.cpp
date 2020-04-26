@@ -3,6 +3,7 @@
   Reset='\e[0m'
   BlackBG_BoldGreen='\e[1;32;40m'
   BlackBG_Red='\e[0;31;40m'
+  BlackBG_Yellow='\e[0;33;40m'
 ***************************/
 
 int main() {

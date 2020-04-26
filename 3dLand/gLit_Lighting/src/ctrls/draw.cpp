@@ -48,10 +48,6 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   lightColor.x = sin(glfwGetTime() * 2.0f);
   lightColor.y = sin(glfwGetTime() * 0.7f);
   lightColor.z = sin(glfwGetTime() * 1.3f);
-  std::cout << 
-    "\e[0;30;42m " << lightColor.x <<
-    "\e[0;30;43m " << lightColor.y <<
-    "\e[0;30;45m " << lightColor.z << "\e[0m" << std::endl;
 
   vec3 diffuseColor = lightColor * vec3(0.5f);
   vec3 ambientColor = diffuseColor * vec3(0.2f);
