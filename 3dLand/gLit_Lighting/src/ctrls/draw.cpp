@@ -51,7 +51,15 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
   materialShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f); // specular lighting doesn't have full effect on this object's material
   materialShader.setFloat("material.shininess", 32.0f);
+
+  mat4 projection = glm::perspective(glm::radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.0f);
+  mat4 view = camera->GetViewMatrix();
+  materialShader.setMat4("projection", projection);
+  materialShader.setMat4("view", view);
+
+  mat4 model = glm::mat4(1.0f);
+  materialShader.setMat4("model", model);
   
-  //glBindVertexArray(vao);
-  // glDrawArrays(GL_TRIANGLES, 0, 36);
+  glBindVertexArray(cubeVAO);
+  glDrawArrays(GL_TRIANGLES, 0, 36);
 }
