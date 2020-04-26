@@ -36,8 +36,8 @@ void Draw::init() {
   glBindVertexArray(lightVAO);
 
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  // glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-  // glEnableVertexAttribArray(0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+  glEnableVertexAttribArray(0);
 }
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
@@ -45,11 +45,12 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.use();
   materialShader.setVec3("light.position", lightPos);
   materialShader.setVec3("viewPos", camera->Position);
+
   vec3 diffuseColor = lightColor * vec3(0.5f);
   vec3 ambientColor = diffuseColor * vec3(0.2f);
   materialShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
   materialShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
-  materialShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f); // specular lighting doesn't have full effect on this object's material
+  materialShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
   materialShader.setFloat("material.shininess", 32.0f);
 
   mat4 projection = glm::perspective(glm::radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.0f);
@@ -61,5 +62,17 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.setMat4("model", model);
   
   glBindVertexArray(cubeVAO);
+  glDrawArrays(GL_TRIANGLES, 0, 36);
+
+         // also draw the lamp object
+  lampShader.use();
+  lampShader.setMat4("projection", projection);
+  lampShader.setMat4("view", view);
+  model = glm::mat4(1.0f);
+  model = glm::translate(model, lightPos);
+  model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
+  lampShader.setMat4("model", model);
+
+  glBindVertexArray(lightVAO);
   glDrawArrays(GL_TRIANGLES, 0, 36);
 }
