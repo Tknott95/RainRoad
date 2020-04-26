@@ -28,7 +28,7 @@ void Draw::init() {
 
 void Draw::update() {
   // shader0.use();
-  // materialShader.use();
-  // glBindVertexArray(vao);
+  materialShader.use();
+  //glBindVertexArray(vao);
   // glDrawArrays(GL_TRIANGLES, 0, 36);
 }
