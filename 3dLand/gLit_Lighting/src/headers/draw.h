@@ -5,6 +5,8 @@
 #include "shader.h"
 #include "camera.h"
 
+using namespace glm;
+
 class Draw {
   private:
     Shader lampShader;

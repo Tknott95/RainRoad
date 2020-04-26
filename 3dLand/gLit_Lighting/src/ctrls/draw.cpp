@@ -11,7 +11,7 @@
  * ***********************************/
 
 void Draw::init() {
-  lightPos = glm::vec3(1.2f, 1.0f, 2.0f);
+  lightPos = vec3(1.2f, 1.0f, 2.0f);
   // lightColor = glm::vec3(0.9f, 0.8f, 0.1f);
   lightColor.x = sin(glfwGetTime() * 2.0f);
   lightColor.y = sin(glfwGetTime() * 0.7f);
@@ -45,6 +45,13 @@ void Draw::update(Camera* camera) {
   materialShader.use();
   materialShader.setVec3("light.position", lightPos);
   materialShader.setVec3("viewPos", camera->Position);
+  vec3 diffuseColor = lightColor * vec3(0.5f);
+  vec3 ambientColor = diffuseColor * vec3(0.2f);
+  materialShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
+  materialShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
+  materialShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f); // specular lighting doesn't have full effect on this object's material
+  materialShader.setFloat("material.shininess", 32.0f);
+  
   //glBindVertexArray(vao);
   // glDrawArrays(GL_TRIANGLES, 0, 36);
 }
