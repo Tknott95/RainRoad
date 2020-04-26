@@ -11,10 +11,10 @@ Window::Window() {
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-  this->_window = glfwCreateWindow(_screenWidth, _screenHeight, "LitLighting", nullptr, nullptr);
+  this->_window = glfwCreateWindow(screenSize.x, screenSize.y, "LitLighting", nullptr, nullptr);
   glfwMakeContextCurrent(this->_window);
 
-  this->_camera = new Camera(_screenWidth, _screenHeight, glm::vec3(0.0f, 0.0f, 3.0f));
+  this->_camera = new Camera(screenSize.x, screenSize.y, glm::vec3(0.0f, 0.0f, 3.0f));
 
   glewInit();
 
@@ -41,7 +41,7 @@ void Window::update() {
     glClearColor(0.f, 0.f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    this->draw->update(_camera);
+    this->draw->update(_camera, screenSize);
 
     glfwSwapBuffers(this->_window);
     glfwPollEvents();

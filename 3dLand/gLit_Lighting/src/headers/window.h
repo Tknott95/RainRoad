@@ -11,8 +11,10 @@ class Window {
     Keys keys;
     Draw* draw;
 
-    int _screenWidth = 500/*1280*/;
-    int _screenHeight = 400/*800*/;
+    ivec2 screenSize = ivec2(500, 400);
+
+    // int _screenWidth = 500/*1280*/;
+    // int _screenHeight = 400/*800*/;
 
     float _deltaTime, _lastFrame = 0.0f;
 

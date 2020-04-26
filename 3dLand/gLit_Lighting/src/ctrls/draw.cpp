@@ -40,7 +40,7 @@ void Draw::init() {
   // glEnableVertexAttribArray(0);
 }
 
-void Draw::update(Camera* camera) {
+void Draw::update(Camera* camera, ivec2 screenSize) {
   // shader0.use();
   materialShader.use();
   materialShader.setVec3("light.position", lightPos);
