@@ -2,6 +2,7 @@
 #include "../headers/utils/cube_vertices.h"
 
 void Draw::init() {
+  lightPos = glm::vec3(1.2f, 1.0f, 2.0f);
   /* @TODO possibly make constructor/destructor for deallocating, is it needed? */
   // shader0.compile("src/shaders/basic/gl.vs", "src/shaders/basic/gl.fs");
   materialShader.compile("src/shaders/material/material.vs", "src/shaders/material/material.fs");
@@ -29,6 +30,7 @@ void Draw::init() {
 void Draw::update() {
   // shader0.use();
   materialShader.use();
+  // materialShader.setVec3("light.position", lightPos);
   //glBindVertexArray(vao);
   // glDrawArrays(GL_TRIANGLES, 0, 36);
 }

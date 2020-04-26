@@ -10,6 +10,7 @@ class Draw {
     Shader materialShader;
     // unsigned int cubeVAO, lightVAO;
     GLuint VBO, cubeVAO, lightVAO;
+    glm::vec3 lightPos;
     // Shader shader0;
     // Shader lightShader;
 
