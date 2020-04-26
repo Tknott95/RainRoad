@@ -1,6 +1,15 @@
 #include "../headers/draw.h"
 #include "../headers/utils/cube_vertices.h"
 
+/*************************************
+ * 
+ *   glDeleteVertexArrays(1, &cubeVAO);
+ *   glDeleteVertexArrays(1, &lightVAO);
+ *   glDeleteBuffers(1, &VBO);
+ * 
+ *    @TODO create a con/de(structor)
+ * ***********************************/
+
 void Draw::init() {
   lightPos = glm::vec3(1.2f, 1.0f, 2.0f);
   /* @TODO possibly make constructor/destructor for deallocating, is it needed? */
@@ -27,10 +36,11 @@ void Draw::init() {
   // glEnableVertexAttribArray(0);
 }
 
-void Draw::update() {
+void Draw::update(Camera* camera) {
   // shader0.use();
   materialShader.use();
   materialShader.setVec3("light.position", lightPos);
+  // materialShader.setVec3("viewPos", /*camera.Position*/)
   //glBindVertexArray(vao);
   // glDrawArrays(GL_TRIANGLES, 0, 36);
 }

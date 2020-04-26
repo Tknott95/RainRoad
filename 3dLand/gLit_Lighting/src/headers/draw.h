@@ -3,6 +3,7 @@
 #include <iostream>
 #include <GL/glew.h>
 #include "shader.h"
+#include "camera.h"
 
 class Draw {
   private:
@@ -16,5 +17,5 @@ class Draw {
 
   public:
     void init();
-    void update();
+    void update(Camera* camera);
 };

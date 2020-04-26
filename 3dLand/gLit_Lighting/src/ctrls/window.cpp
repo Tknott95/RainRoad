@@ -41,7 +41,7 @@ void Window::update() {
     glClearColor(0.3f, 0.3f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    this->draw->update();
+    this->draw->update(_camera);
 
     glfwSwapBuffers(this->_window);
     glfwPollEvents();
