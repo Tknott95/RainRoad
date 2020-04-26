@@ -1,6 +1,22 @@
 #include "../headers/window.h"
 
 void framebufferSizeCallback(GLFWwindow* window, int width, int height) { glViewport(0, 0, width, height); }
+// void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
+//     if (firstMouse)
+//     {
+//         lastX = xpos;
+//         lastY = ypos;
+//         firstMouse = false;
+//     }
+
+//     float xoffset = xpos - lastX;
+//     float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
+
+//     lastX = xpos;
+//     lastY = ypos;
+
+//     camera.ProcessMouseMovement(xoffset, yoffset);
+// }
 
 
 Window::Window() {
@@ -24,6 +40,8 @@ Window::Window() {
 
   glewInit();
 
+  glEnable(GL_DEPTH_TEST);
+
   this->draw = new Draw();
   this->draw->init();
 };
@@ -34,18 +52,18 @@ Window::~Window() {
 };
 
 void Window::render() {
-  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  
 };
 
 void Window::update() {
   while(!glfwWindowShouldClose(_window)) {
-    keys.keyPolling(_window, _camera, _deltaTime);
     float currentFrame = glfwGetTime();
     _lastFrame = currentFrame;
     _deltaTime = currentFrame - _lastFrame;
+    keys.keyPolling(_window, _camera, _deltaTime);
 
     glClearColor(0.f, 0.f, 0.3f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     this->draw->update(_camera, screenSize);
 
