@@ -58,8 +58,9 @@ void Window::render() {
 void Window::update() {
   while(!glfwWindowShouldClose(_window)) {
     float currentFrame = glfwGetTime();
-    _lastFrame = currentFrame;
     _deltaTime = currentFrame - _lastFrame;
+    _lastFrame = currentFrame;
+    std::cout << "\e[1;39m dTime(" << _deltaTime << std::endl;
     keys.keyPolling(_window, _camera, _deltaTime);
 
     glClearColor(0.f, 0.f, 0.3f, 1.0f);

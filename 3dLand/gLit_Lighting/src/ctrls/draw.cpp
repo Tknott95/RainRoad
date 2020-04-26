@@ -13,9 +13,6 @@
 void Draw::init() {
   lightPos = vec3(1.2f, 1.0f, 2.0f);
   // lightColor = glm::vec3(0.9f, 0.8f, 0.1f);
-  lightColor.x = sin(glfwGetTime() * 2.0f);
-  lightColor.y = sin(glfwGetTime() * 0.7f);
-  lightColor.z = sin(glfwGetTime() * 1.3f);
   /* @TODO possibly make constructor/destructor for deallocating, is it needed? */
   // shader0.compile("src/shaders/basic/gl.vs", "src/shaders/basic/gl.fs");
   materialShader.compile("src/shaders/material/material.vs", "src/shaders/material/material.fs");
@@ -44,6 +41,9 @@ void Draw::init() {
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
   // shader0.use();
+  lightColor.x = sin(glfwGetTime() * 2.0f);
+  lightColor.y = sin(glfwGetTime() * 0.7f);
+  lightColor.z = sin(glfwGetTime() * 1.3f);
   materialShader.use();
   materialShader.setVec3("light.position", lightPos);
   materialShader.setVec3("viewPos", camera->Position);
@@ -57,12 +57,14 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
 
   mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.0f);
   mat4 view = camera->GetViewMatrix();
+  mat4 transform = mat4(1.0f);
   materialShader.setMat4("projection", projection);
   materialShader.setMat4("view", view);
+  materialShader.setMat4("tranform", transform);
 
   mat4 model = mat4(1.0f);
   materialShader.setMat4("model", model);
-  model = scale(model, vec3(1.5f));
+  model = scale(model, vec3(1.0f));
   
   glBindVertexArray(cubeVAO);
   glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -72,7 +74,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   lampShader.setMat4("view", view);
   model = mat4(1.0f);
   model = translate(model, lightPos);
-  model = scale(model, vec3(0.2f));
+  model = scale(model, vec3(1.0f));
   lampShader.setMat4("model", model);
 
   glBindVertexArray(lightVAO);
