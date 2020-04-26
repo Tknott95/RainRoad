@@ -40,7 +40,7 @@ void Draw::update(Camera* camera) {
   // shader0.use();
   materialShader.use();
   materialShader.setVec3("light.position", lightPos);
-  // materialShader.setVec3("viewPos", /*camera.Position*/)
+  materialShader.setVec3("viewPos", camera->Position);
   //glBindVertexArray(vao);
   // glDrawArrays(GL_TRIANGLES, 0, 36);
 }
