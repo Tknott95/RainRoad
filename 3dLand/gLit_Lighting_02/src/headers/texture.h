@@ -5,5 +5,5 @@
 
 class Texture {
   public:
-    unsigned int load(const char *path);
+    unsigned int load(const char* path);
 };
