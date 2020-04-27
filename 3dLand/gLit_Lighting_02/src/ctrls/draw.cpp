@@ -26,25 +26,35 @@ void Draw::init() {
 
   glBindVertexArray(cubeVAO);
   
+  /* Material Shader */
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
   glEnableVertexAttribArray(1);
   glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
   glEnableVertexAttribArray(2);
+
   
+  /* Lamp Shader */
   glGenVertexArrays(1, &lightVAO);
   glBindVertexArray(lightVAO);
 
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
   glEnableVertexAttribArray(0);
 
   diffuseMap = texture.load("assets/textures/box_diffuse.png");
   specMap = texture.load("assets/textures/box_specular.png");
+
+  materialShader.use();
+  materialShader.setInt("material.diffuse", 0);
+  materialShader.setInt("material.specular", 1);
+
+
 }
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
+
   materialShader.use();
   materialShader.setVec3("light.position", lightPos);
   materialShader.setVec3("viewPos", camera->Position);
@@ -53,16 +63,14 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   lightColor.y = sin(glfwGetTime() * 0.7f);
   lightColor.z = sin(glfwGetTime() * 1.3f);
 
-  vec3 diffuseColor = lightColor * vec3(0.5f);
-  vec3 ambientColor = diffuseColor * vec3(0.2f);
-  materialShader.setVec3("light.ambient", ambientColor);
-  materialShader.setVec3("light.diffuse", diffuseColor);
+  materialShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
+  materialShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
   materialShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 
-  materialShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
-  materialShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
-  materialShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-  materialShader.setFloat("material.shininess", 32.0f);
+  // materialShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
+  // materialShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
+  // materialShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
+  materialShader.setFloat("material.shininess", 64.0f);
 
   mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.0f);
   mat4 view = camera->GetViewMatrix();
@@ -74,17 +82,22 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   mat4 model0 = mat4(1.0f);
   materialShader.setMat4("model", model0);
   model0 = scale(model0, vec3(1.0f));
-  
+
+  glActiveTexture(GL_TEXTURE0);
+  glBindTexture(GL_TEXTURE_2D, diffuseMap);
+  glActiveTexture(GL_TEXTURE1);
+  glBindTexture(GL_TEXTURE_2D, specMap);
+
   glBindVertexArray(cubeVAO);
   glDrawArrays(GL_TRIANGLES, 0, 36);
 
   lampShader.use();
   lampShader.setMat4("projection", projection);
   lampShader.setMat4("view", view);
-  mat4 model = mat4(1.0f);
-  model = translate(model, lightPos);
-  model = scale(model, vec3(0.2f));
-  lampShader.setMat4("model", model);
+  mat4 model1 = mat4(1.0f);
+  model1 = translate(model1, lightPos);
+  model1 = scale(model1, vec3(0.2f));
+  lampShader.setMat4("model", model1);
 
   glBindVertexArray(lightVAO);
   glDrawArrays(GL_TRIANGLES, 0, 36);

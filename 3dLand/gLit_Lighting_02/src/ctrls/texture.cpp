@@ -1,10 +1,8 @@
 #include "../headers/texture.h"
-#include <glad/glad.h>
 
-unsigned int Texture::load(const char* path) {
+unsigned int Texture::load(const char *path) {
   unsigned int textureID;
-  textureID = 0;
-  // glGenTextures(1, &textureID);
+  glGenTextures(1, &textureID);
 
   // int width, height, nrComponents;
   // unsigned char *data = stbi_load(path, &width, &height, &nrComponents, 0);
