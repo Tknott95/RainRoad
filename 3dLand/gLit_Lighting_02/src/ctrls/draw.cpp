@@ -9,13 +9,19 @@
  * 
  *    @TODO create a con/de(structor)
  * ***********************************/
+vec3 cubePos[] = {
+  vec3(0.0f,  0.0f,  0.0f),
+  vec3(1.0f,  1.0f, -2.0f),
+  vec3(-1.4f, 0.6f, -0.5f),
+};
 
 void Draw::init() {
   lightPos = vec3(0.5f, 0.6f, 2.0f);
+
   /* @TODO possibly make constructor/destructor for deallocating, is it needed? */
   materialShader.compile("src/shaders/material/material.vs", "src/shaders/material/material.fs");
   lampShader.compile("src/shaders/light/light.vs", "src/shaders/light/light.fs");
-
+  
   glGenVertexArrays(1, &cubeVAO);
   glGenBuffers(1, &VBO);
 
@@ -81,9 +87,8 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.setMat4("tranform", transform);
 
 
-  mat4 model0 = mat4(1.0f);
-  materialShader.setMat4("model", model0);
-  model0 = scale(model0, vec3(1.0f));
+ 
+  // model0 = scale(model0, vec3(1.0f));
 
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, diffuseMap);
@@ -93,7 +98,18 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glBindTexture(GL_TEXTURE_2D, emissionMap);
 
   glBindVertexArray(cubeVAO);
-  glDrawArrays(GL_TRIANGLES, 0, 36);
+  
+  float rotTime = sin(glfwGetTime() * 1.3f);
+  
+
+  for(size_t i=0; i < 3; i++) {
+    mat4 model0 = mat4(1.0f);
+    model0 = translate(model0, cubePos[i] * vec3(1.10f));
+    model0 = rotate(model0, rotTime, vec3(1.0f, 0.3f, 0.3f));
+    materialShader.setMat4("model", model0);
+    glDrawArrays(GL_TRIANGLES, 0, 36);
+  }
+
 
   lampShader.use();
   lampShader.setMat4("projection", projection);

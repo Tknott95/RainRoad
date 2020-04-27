@@ -11,8 +11,8 @@ class Draw {
     Shader materialShader;
     Texture texture;
     GLuint VBO, cubeVAO, lightVAO;
-    glm::vec3 lightPos;
-    glm::vec3 lightColor;
+    vec3 lightPos;
+    vec3 lightColor;
     unsigned int diffuseMap, specMap, emissionMap;
 
   public:
