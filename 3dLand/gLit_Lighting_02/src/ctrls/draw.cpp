@@ -48,6 +48,7 @@ void Draw::init() {
   materialShader.use();
   materialShader.setInt("material.diffuse", 0);
   materialShader.setInt("material.specular", 1);
+  // materialShader.setInt("material.specular", 2);/* makes matrix come from light if 2 instead of emission */
   materialShader.setInt("material.emission", 2);
 
 }
