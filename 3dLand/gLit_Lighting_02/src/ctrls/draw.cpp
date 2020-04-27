@@ -46,9 +46,9 @@ void Draw::init() {
   emissionMap = texture.load("assets/textures/matrix.jpg");
 
   materialShader.use();
-  materialShader.setInt("material.ambient", 0);
-  materialShader.setInt("material.diffuse", 1);
-  materialShader.setInt("material.specular", 2);
+  materialShader.setInt("material.diffuse", 0);
+  materialShader.setInt("material.specular", 1);
+  materialShader.setInt("material.emission", 2);
 
 }
 
