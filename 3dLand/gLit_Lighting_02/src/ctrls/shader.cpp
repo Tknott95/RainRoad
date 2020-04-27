@@ -62,8 +62,9 @@ void Shader::compile(const char* vertPath, const char* fragPath, const char* geo
   glDeleteShader(vertex);
   glDeleteShader(fragment);
   if(geometryPath != nullptr) glDeleteShader(geometry);
-  printf("    \n\e[96;40m    Shader(%d) Compiled\e[0m\n", ID);
+  printf("\n  \e[96;40m  Shader(%d) Compiled \e[0m\n", ID);
 }
+
 void Shader::use() { 
   glUseProgram(ID); 
 }
