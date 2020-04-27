@@ -43,11 +43,12 @@ void Draw::init() {
 
   diffuseMap = texture.load("assets/textures/box_diffuse.png");
   specMap = texture.load("assets/textures/box_specular.png");
+  emissionMap = texture.load("assets/textures/matrix.jpg");
 
   materialShader.use();
   materialShader.setInt("material.diffuse", 0);
   materialShader.setInt("material.specular", 1);
-
+  materialShader.setInt("material.specular", 2);
 
 }
 
@@ -68,7 +69,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
   materialShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
   materialShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-  materialShader.setFloat("material.shininess", 64.0f);
+  materialShader.setFloat("material.shininess", 32.0f);
 
   mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.0f);
   mat4 view = camera->GetViewMatrix();
@@ -76,6 +77,8 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.setMat4("projection", projection);
   materialShader.setMat4("view", view);
   materialShader.setMat4("tranform", transform);
+
+  materialShader.setFloat("time", glfwGetTime());
 
   mat4 model0 = mat4(1.0f);
   materialShader.setMat4("model", model0);
@@ -85,6 +88,8 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glBindTexture(GL_TEXTURE_2D, diffuseMap);
   glActiveTexture(GL_TEXTURE1);
   glBindTexture(GL_TEXTURE_2D, specMap);
+  glActiveTexture(GL_TEXTURE2);
+  glBindTexture(GL_TEXTURE_2D, emissionMap);
 
   glBindVertexArray(cubeVAO);
   glDrawArrays(GL_TRIANGLES, 0, 36);
