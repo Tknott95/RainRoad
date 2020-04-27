@@ -1,23 +1,27 @@
 #include "../headers/window.h"
 
 void framebufferSizeCallback(GLFWwindow* window, int width, int height) { glViewport(0, 0, width, height); }
-// void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
-//     if (firstMouse)
-//     {
-//         lastX = xpos;
-//         lastY = ypos;
-//         firstMouse = false;
-//     }
+/* @TIP HATE_CALLBACKS, REMOVE THIS SHIT Hack together my own way w/ out callbacks, this is shit */
+/* Using SFML next time because callback are dogshit */
+// void Window::mouseCallback(GLFWwindow* window, double xpos, double ypos) {
+//   if (mouse.initMove) {
+//     mouse.lastX = xpos;
+//     mouse.lastY = ypos;
+//     mouse.initMove = false;
+//   }
 
-//     float xoffset = xpos - lastX;
-//     float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
+//   float xoffset = xpos - mouse.lastX;
+//   float yoffset = mouse.lastY - ypos; // reversed since y-coordinates go from bottom to top
 
-//     lastX = xpos;
-//     lastY = ypos;
+//   mouse.lastX = xpos;
+//   mouse.lastY = ypos;
 
-//     camera.ProcessMouseMovement(xoffset, yoffset);
+//   this->_camera->ProcessMouseMovement(xoffset, yoffset, true);
 // }
-
+/* GETTING RID OF CALLBACKS OTHER THEN framebufferCallback
+   WILL USE glfwGetCursorPos(window, &xpos, &ypos); for mouse fps cam 
+   || WILL DO THIS IN MY FRAMEWORK PROJECT b4 Implementation here ||
+*/
 
 Window::Window() {
   if(!glfwInit()) printf("\n\e[0;31;40m glfwInit() FAILED \e[0m\n");
@@ -31,10 +35,12 @@ Window::Window() {
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
   glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
-  this->_window = glfwCreateWindow(screenSize.x, screenSize.y, "LitLighting", nullptr, nullptr);
+  this->_window = glfwCreateWindow(screenSize.x, screenSize.y, "LitLighting02", nullptr, nullptr);
   glfwMakeContextCurrent(this->_window);
   glfwSetFramebufferSizeCallback(_window, framebufferSizeCallback);
-  
+
+  mouse.lastX = screenSize.x /2;
+  mouse.lastY = screenSize.y /2;  
 
   this->_camera = new Camera(screenSize.x, screenSize.y, glm::vec3(0.0f, 0.0f, 3.0f));
 
@@ -52,7 +58,7 @@ Window::~Window() {
 };
 
 void Window::render() {
-  
+
 };
 
 void Window::update() {
