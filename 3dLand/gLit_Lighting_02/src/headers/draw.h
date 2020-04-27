@@ -1,9 +1,7 @@
-// #include <string>
-// #include <GLFW/glfw3.h>
 #include <iostream>
-#include <GL/glew.h>
 #include "shader.h"
 #include "camera.h"
+#include "texture.h"
 
 using namespace glm;
 
@@ -11,12 +9,11 @@ class Draw {
   private:
     Shader lampShader;
     Shader materialShader;
-    // unsigned int cubeVAO, lightVAO;
+    Texture texture;
     GLuint VBO, cubeVAO, lightVAO;
     glm::vec3 lightPos;
     glm::vec3 lightColor;
-    // Shader shader0;
-    // Shader lightShader;
+    unsigned int diffusemap, specMap;
 
   public:
     void init();
