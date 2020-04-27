@@ -41,7 +41,7 @@ void Draw::init() {
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
   glEnableVertexAttribArray(0);
 
-  diffuseMap = texture.load("assets/textures/box_diffuse.png");
+  diffuseMap = texture.load("assets/textures/box_cloud.png");
   specMap = texture.load("assets/textures/box_specular.png");
   emissionMap = texture.load("assets/textures/matrix.jpg");
 
@@ -58,6 +58,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.use();
   materialShader.setVec3("light.position", lightPos);
   materialShader.setVec3("viewPos", camera->Position);
+  materialShader.setFloat("time", glfwGetTime());
 
   // lightColor.x = sin(glfwGetTime() * 2.0f);
   // lightColor.y = sin(glfwGetTime() * 0.7f);
@@ -65,7 +66,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
 
   materialShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
   materialShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
-  materialShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
+  materialShader.setVec3("light.specular", 1.50f, 1.5f, 1.5f);
 
   materialShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
   materialShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
