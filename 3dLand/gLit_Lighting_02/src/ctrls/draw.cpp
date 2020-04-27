@@ -57,17 +57,17 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.setVec3("light.position", lightPos);
   materialShader.setVec3("viewPos", camera->Position);
 
-  lightColor.x = sin(glfwGetTime() * 2.0f);
-  lightColor.y = sin(glfwGetTime() * 0.7f);
-  lightColor.z = sin(glfwGetTime() * 1.3f);
+  // lightColor.x = sin(glfwGetTime() * 2.0f);
+  // lightColor.y = sin(glfwGetTime() * 0.7f);
+  // lightColor.z = sin(glfwGetTime() * 1.3f);
 
   materialShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
   materialShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
   materialShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 
-  // materialShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
-  // materialShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
-  // materialShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
+  materialShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
+  materialShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
+  materialShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
   materialShader.setFloat("material.shininess", 64.0f);
 
   mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.0f);
