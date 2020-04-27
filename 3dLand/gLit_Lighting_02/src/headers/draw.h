@@ -13,7 +13,7 @@ class Draw {
     GLuint VBO, cubeVAO, lightVAO;
     glm::vec3 lightPos;
     glm::vec3 lightColor;
-    unsigned int diffusemap, specMap;
+    unsigned int diffuseMap, specMap;
 
   public:
     void init();

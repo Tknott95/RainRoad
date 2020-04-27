@@ -37,6 +37,9 @@ void Draw::init() {
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
   glEnableVertexAttribArray(0);
+
+  diffuseMap = texture.load("assets/textures/box_diffuse.png");
+  specMap = texture.load("assets/textures/box_specular.png");
 }
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
