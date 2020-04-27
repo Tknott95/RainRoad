@@ -11,7 +11,7 @@
  * ***********************************/
 
 void Draw::init() {
-  lightPos = vec3(1.2f, 1.0f, 2.0f);
+  lightPos = vec3(0.5f, 0.6f, 2.0f);
   /* @TODO possibly make constructor/destructor for deallocating, is it needed? */
   materialShader.compile("src/shaders/material/material.vs", "src/shaders/material/material.fs");
   lampShader.compile("src/shaders/light/light.vs", "src/shaders/light/light.fs");
@@ -46,8 +46,8 @@ void Draw::init() {
   emissionMap = texture.load("assets/textures/matrix.jpg");
 
   materialShader.use();
-  materialShader.setInt("material.diffuse", 0);
-  materialShader.setInt("material.specular", 1);
+  materialShader.setInt("material.ambient", 0);
+  materialShader.setInt("material.diffuse", 1);
   materialShader.setInt("material.specular", 2);
 
 }
@@ -69,7 +69,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.setVec3("material.ambient", 1.0f, 0.5f, 0.31f);
   materialShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
   materialShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-  materialShader.setFloat("material.shininess", 32.0f);
+  materialShader.setFloat("material.shininess", 64.0f);
 
   mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.0f);
   mat4 view = camera->GetViewMatrix();
@@ -78,7 +78,6 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.setMat4("view", view);
   materialShader.setMat4("tranform", transform);
 
-  materialShader.setFloat("time", glfwGetTime());
 
   mat4 model0 = mat4(1.0f);
   materialShader.setMat4("model", model0);
