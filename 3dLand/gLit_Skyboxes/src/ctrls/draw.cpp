@@ -30,7 +30,6 @@ uint Draw::loadSkybox(std::vector<std::string> _sbFaces) {
 }
 
 void Draw::init() {
-
   std::vector<std::string> sbFaces = {
     "assets/skybox/right.jpg",
     "assets/skybox/left.jpg",
