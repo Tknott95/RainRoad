@@ -64,7 +64,7 @@ void Window::update() {
     _lastFrame = currentFrame;
     keys.keyPolling(_window, _camera, _deltaTime);
 
-    glClearColor(0.f, 0.f, 0.3f, 1.0f);
+    glClearColor(0.f, 0.f, 0.14f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     this->draw->update(_camera, screenSize);

@@ -1,14 +1,6 @@
 #include "../headers/draw.h"
-#include "../headers/utils/cube_vertices.h"
+#include "../headers/utils/cube_data.h"
 
-/*************************************
- * 
- *   glDeleteVertexArrays(1, &cubeVAO);
- *   glDeleteVertexArrays(1, &lightVAO);
- *   glDeleteBuffers(1, &VBO);
- * 
- *    @TODO create a con/de(structor)
- * ***********************************/
 vec3 cubePos[] = {
   vec3(0.0f,  0.0f,  0.0f),
   vec3(1.0f,  1.0f, -2.0f),
@@ -98,6 +90,8 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
 
   glBindVertexArray(cubeVAO);  
   float rotTime = sin(glfwGetTime() * 1.3f);
+  // float lightX = sin(glfwGetTime() * 0.8f);
+  // float lightY =  sin(glfwGetTime() * 0.3f);
 
   for(size_t i=0; i < 9; i++) {
     mat4 model0 = mat4(1.0f);
@@ -112,11 +106,10 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   lampShader.setMat4("projection", projection);
   lampShader.setMat4("view", view);
   mat4 model1 = mat4(1.0f);
-  model1 = translate(model1, lightPos);
+  model1 = translate(model1, lightPos); /*  vec3(lightX, lightY, 1.0f) */
   model1 = scale(model1, vec3(0.044f));
   lampShader.setMat4("model", model1);
 
-  
   glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 
