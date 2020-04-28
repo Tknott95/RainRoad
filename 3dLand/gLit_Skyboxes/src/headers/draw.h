@@ -8,8 +8,11 @@ using namespace glm;
 
 class Draw {
   private:
-    Texture texture;
     uint sbTexID;
+    uint skyboxVAO, skyboxVBO, cubeVAO, cubeVBO;
+    Shader skyboxShader;
+
+    uint loadSkybox(std::vector<std::string> _sbFaces);
 
   public:
     void init();
