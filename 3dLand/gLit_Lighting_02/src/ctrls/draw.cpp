@@ -44,7 +44,6 @@ void Draw::init() {
   glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
   glEnableVertexAttribArray(2);
 
-  
   /* Lamp Shader */
   glGenVertexArrays(1, &lightVAO);
   glBindVertexArray(lightVAO);
@@ -74,10 +73,6 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.setVec3("viewPos", camera->Position);
   materialShader.setFloat("time", glfwGetTime());
 
-  // lightColor.x = sin(glfwGetTime() * 2.0f);
-  // lightColor.y = sin(glfwGetTime() * 0.7f);
-  // lightColor.z = sin(glfwGetTime() * 1.3f);
-
   materialShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
   materialShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
   materialShader.setVec3("light.specular", 1.50f, 1.5f, 1.5f);
@@ -93,8 +88,6 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.setMat4("projection", projection);
   materialShader.setMat4("view", view);
   materialShader.setMat4("tranform", transform);
- 
-  // model0 = scale(model0, vec3(1.0f));
 
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, diffuseMap);
@@ -103,10 +96,8 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glActiveTexture(GL_TEXTURE2);
   glBindTexture(GL_TEXTURE_2D, emissionMap);
 
-  glBindVertexArray(cubeVAO);
-  
+  glBindVertexArray(cubeVAO);  
   float rotTime = sin(glfwGetTime() * 1.3f);
-  
 
   for(size_t i=0; i < 9; i++) {
     mat4 model0 = mat4(1.0f);
@@ -116,15 +107,21 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
     glDrawArrays(GL_TRIANGLES, 0, 36);
   }
 
-
+  glBindVertexArray(lightVAO);
   lampShader.use();
   lampShader.setMat4("projection", projection);
   lampShader.setMat4("view", view);
   mat4 model1 = mat4(1.0f);
   model1 = translate(model1, lightPos);
-  model1 = scale(model1, vec3(0.04f));
+  model1 = scale(model1, vec3(0.044f));
   lampShader.setMat4("model", model1);
 
-  glBindVertexArray(lightVAO);
+  
   glDrawArrays(GL_TRIANGLES, 0, 36);
+}
+
+void Draw::deallocate() {
+  glDeleteVertexArrays(1, &cubeVAO);
+  glDeleteVertexArrays(1, &lightVAO);
+  glDeleteBuffers(1, &VBO);
 }

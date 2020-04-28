@@ -18,4 +18,5 @@ class Draw {
   public:
     void init();
     void update(Camera* camera, ivec2 screenSize);
+    void deallocate();
 };
