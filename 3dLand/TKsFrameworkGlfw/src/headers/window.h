@@ -1,0 +1,35 @@
+#include <iostream>
+#include <thread>
+
+#include "keys.h"
+#include "draw.h"
+
+class Window {
+  private:
+    struct Mouse {
+      bool initMove = false;
+      float lastX;
+      float lastY;
+    };
+
+    GLFWwindow* _window;
+    Mouse mouse;
+    Camera* _camera;
+    Keys keys;
+    Draw* draw;
+
+    ivec2 screenSize = ivec2(1280, 800);
+    float _deltaTime, _lastFrame = 0.0f;
+    double xpos, ypos;
+
+    void mousePolling(double xpos, double ypos);
+
+  public:
+    bool isOpen;
+
+    Window();
+    virtual ~Window(); /* @TIP - Using this for dynamic deAllocation of buffers */
+
+    void render();
+    void update();
+};
