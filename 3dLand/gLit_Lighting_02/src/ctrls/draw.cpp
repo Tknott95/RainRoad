@@ -13,6 +13,12 @@ vec3 cubePos[] = {
   vec3(0.0f,  0.0f,  0.0f),
   vec3(1.0f,  1.0f, -2.0f),
   vec3(-1.4f, 0.6f, -0.5f),
+  vec3(0.0f,  0.0f, -4.0f),
+  vec3(1.0f,  1.0f, -6.0f),
+  vec3(-1.4f, 0.6f, -4.5f),
+  vec3(3.0f,  0.0f, -0.0f),
+  vec3(-3.0f, -1.0f, -1.0f),
+  vec3(-4.4f, -0.6f, -2.5f),
 };
 
 void Draw::init() {
@@ -102,7 +108,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   float rotTime = sin(glfwGetTime() * 1.3f);
   
 
-  for(size_t i=0; i < 3; i++) {
+  for(size_t i=0; i < 9; i++) {
     mat4 model0 = mat4(1.0f);
     model0 = translate(model0, cubePos[i] * vec3(1.10f));
     model0 = rotate(model0, rotTime, vec3(1.0f, 0.3f, 0.3f));
