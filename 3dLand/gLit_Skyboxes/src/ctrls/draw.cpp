@@ -3,6 +3,7 @@
 #include "../headers/utils/skybox_data.h"
 
 uint Draw::loadSkybox(std::vector<std::string> _sbFaces) {
+  /* @TODO move into my texture class */
   uint texID;
   glGenTextures(1, &texID);
   glBindTexture(GL_TEXTURE_CUBE_MAP, texID);
