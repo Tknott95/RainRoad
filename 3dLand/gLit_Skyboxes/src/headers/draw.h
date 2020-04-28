@@ -10,9 +10,8 @@ class Draw {
   private:
     uint sbTexID;
     uint skyboxVAO, skyboxVBO;
+    Texture texture;
     Shader skyboxShader;
-
-    uint loadSkybox(std::vector<std::string> _sbFaces);
 
   public:
     void init();
