@@ -9,7 +9,7 @@ using namespace glm;
 class Draw {
   private:
     uint sbTexID;
-    uint skyboxVAO, skyboxVBO, cubeVAO, cubeVBO;
+    uint skyboxVAO, skyboxVBO;
     Shader skyboxShader;
 
     uint loadSkybox(std::vector<std::string> _sbFaces);

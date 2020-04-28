@@ -40,6 +40,8 @@ void Draw::init() {
     "assets/skybox/back.jpg"
   };
 
+  skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
+
   glGenVertexArrays(1, &skyboxVAO);
   glGenBuffers(1, &skyboxVBO);
   glBindVertexArray(skyboxVAO);
@@ -53,11 +55,29 @@ void Draw::init() {
   glDepthMask(GL_FALSE);
   skyboxShader.use();
   skyboxShader.setInt("skybox", 0);
-
 }
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
+  // glDepthFunc(GL_LEQUAL);
+  glDepthMask(GL_FALSE);
+  skyboxShader.use();
+
+  mat4 view = mat4(1.0f);
+  mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
+  view = mat4(mat3(camera->GetViewMatrix()));
+  skyboxShader.setMat4("view", view);
+  skyboxShader.setMat4("projection", projection);
+
+  glBindVertexArray(skyboxVAO);
+  glActiveTexture(GL_TEXTURE0);
+  glBindTexture(GL_TEXTURE_CUBE_MAP, sbTexID);
+  glDrawArrays(GL_TRIANGLES, 0, 36);
+  glBindVertexArray(0);
+  // glDepthFunc(GL_LESS);
+  glDepthMask(GL_TRUE);
 }
 
 void Draw::deallocate() {
+  glDeleteVertexArrays(1, &skyboxVAO);
+  glDeleteBuffers(1, &skyboxVBO);
 }
