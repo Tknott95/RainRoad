@@ -4,6 +4,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <vector>
 #include <GLFW/glfw3.h>
+/*@TODO rename for project conventions once tested w/ actual scene via: view, perspective, etc transformations */
 
 enum Camera_Movement {
   FORWARD,
@@ -30,18 +31,14 @@ public:
   float MovementSpeed;
   float MouseSensitivity;
   float Zoom;
-  float lastX; //= screenWidth / 2.0f;
-  float lastY; // = screenHeight / 2.0f;
 
-//   Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = YAW, float pitch = PITCH) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM) {};
-//   Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM) {};
+  //   Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = YAW, float pitch = PITCH) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM) {};
+  //   Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM) {};
   Camera(float screenWidth, float screenHeight, glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = YAW, float pitch = PITCH) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM) {
     Position = position;
     WorldUp = up;
     Yaw = yaw;
     Pitch = pitch;
-    float lastX = screenWidth / 2.0f; // prob don't need this yety coding safe for mvp then will pull out
-    float lastY = screenHeight / 2.0f; // prob don't need this yety coding safe for mvp then will pull out
 
     updateCameraVectors();
   };
@@ -50,8 +47,7 @@ public:
     WorldUp = glm::vec3(upX, upY, upZ);
     Yaw = yaw;
     Pitch = pitch;
-     float lastX = screenWidth / 2.0f; // prob don't need this yety coding safe for mvp then will pull out
-    float lastY = screenHeight / 2.0f; // prob don't need this yety coding safe for mvp then will pull out
+
     updateCameraVectors();
   };
 
@@ -59,8 +55,6 @@ public:
   void ProcessKeyboard(Camera_Movement direction, float deltaTime);
   void ProcessMouseMovement(float xoffset, float yoffset, bool constrainPitch);
   void ProcessMouseScroll(float yoffset);
-  //   void ScrollCallback(GLFWwindow* window, double xoffset, double yoffset);
-  //   void MouseCallback(GLFWwindow* window, double xpos, double ypos, bool firstMouse);
 
 private:
   void updateCameraVectors();
