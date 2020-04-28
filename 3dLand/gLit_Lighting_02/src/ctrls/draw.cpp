@@ -51,7 +51,7 @@ void Draw::init() {
   // diffuseMap = texture.load("assets/textures/box_cloud.png");
 
   specMap = texture.load("assets/textures/box_specular.png");
-  emissionMap = texture.load("assets/textures/matrix.jpg");
+  emissionMap = texture.load("assets/textures/matrix2.jpg");
 
   materialShader.use();
   materialShader.setInt("material.diffuse", 0);
@@ -87,8 +87,6 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   materialShader.setMat4("projection", projection);
   materialShader.setMat4("view", view);
   materialShader.setMat4("tranform", transform);
-
-
  
   // model0 = scale(model0, vec3(1.0f));
 
@@ -118,7 +116,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   lampShader.setMat4("view", view);
   mat4 model1 = mat4(1.0f);
   model1 = translate(model1, lightPos);
-  model1 = scale(model1, vec3(0.2f));
+  model1 = scale(model1, vec3(0.04f));
   lampShader.setMat4("model", model1);
 
   glBindVertexArray(lightVAO);

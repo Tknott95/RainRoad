@@ -1,27 +1,22 @@
 #include "../headers/window.h"
 
 void framebufferSizeCallback(GLFWwindow* window, int width, int height) { glViewport(0, 0, width, height); }
-/* @TIP HATE_CALLBACKS, REMOVE THIS SHIT Hack together my own way w/ out callbacks, this is shit */
-/* Using SFML next time because callback are dogshit */
-// void Window::mouseCallback(GLFWwindow* window, double xpos, double ypos) {
-//   if (mouse.initMove) {
-//     mouse.lastX = xpos;
-//     mouse.lastY = ypos;
-//     mouse.initMove = false;
-//   }
 
-//   float xoffset = xpos - mouse.lastX;
-//   float yoffset = mouse.lastY - ypos; // reversed since y-coordinates go from bottom to top
+void Window::mousePolling(double xpos, double ypos) {
+  if (mouse.initMove) {
+    mouse.lastX = xpos;
+    mouse.lastY = ypos;
+    mouse.initMove = false;
+  }
 
-//   mouse.lastX = xpos;
-//   mouse.lastY = ypos;
+  float xoffset = xpos - mouse.lastX;
+  float yoffset = mouse.lastY - ypos;
 
-//   this->_camera->ProcessMouseMovement(xoffset, yoffset, true);
-// }
-/* GETTING RID OF CALLBACKS OTHER THEN framebufferCallback
-   WILL USE glfwGetCursorPos(window, &xpos, &ypos); for mouse fps cam 
-   || WILL DO THIS IN MY FRAMEWORK PROJECT b4 Implementation here ||
-*/
+  mouse.lastX = xpos;
+  mouse.lastY = ypos;
+
+  this->_camera->ProcessMouseMovement(xoffset, yoffset, true);
+}
 
 Window::Window() {
   if(!glfwInit()) printf("\n\e[0;31;40m glfwInit() FAILED \e[0m\n");
@@ -38,11 +33,12 @@ Window::Window() {
   this->_window = glfwCreateWindow(screenSize.x, screenSize.y, "LitLighting02", nullptr, nullptr);
   glfwMakeContextCurrent(this->_window);
   glfwSetFramebufferSizeCallback(_window, framebufferSizeCallback);
+  glfwSetInputMode(_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
   mouse.lastX = screenSize.x /2;
   mouse.lastY = screenSize.y /2;  
 
-  this->_camera = new Camera(screenSize.x, screenSize.y, glm::vec3(0.0f, 0.0f, 3.0f));
+  this->_camera = new Camera(screenSize.x, screenSize.y, glm::vec3(0.0f, 0.0f, 2.4f));
 
   glewInit();
 
@@ -72,6 +68,12 @@ void Window::update() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     this->draw->update(_camera, screenSize);
+    
+    glfwGetCursorPos(_window, &xpos, &ypos);
+    /* for debugging pos
+      std::cout << "\e[0;33;40m  xPos(" << xpos << ") yPos(" << ypos << ") \e[0m" << std::endl;
+    */
+    mousePolling(xpos, ypos);
 
     glfwSwapBuffers(this->_window);
     glfwPollEvents();

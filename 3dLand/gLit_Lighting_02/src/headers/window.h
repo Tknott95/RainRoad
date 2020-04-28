@@ -31,6 +31,9 @@ class Window {
 
     ivec2 screenSize = ivec2(1280, 800);
     float _deltaTime, _lastFrame = 0.0f;
+    double xpos, ypos;
+
+    void mousePolling(double xpos, double ypos);
 
   public:
     bool isOpen;
