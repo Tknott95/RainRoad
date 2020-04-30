@@ -11,5 +11,7 @@ ObjStruct ObjectLoader::load(const char* objPath) {
     printf("\n  \e[1;33;40m    %d \e[0m", j);
   }
 
+  printf("\n  \e[1;33;40m  Object Loaded\e[0m\n");
+
   return objData;
 };
