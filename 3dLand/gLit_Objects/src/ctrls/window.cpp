@@ -83,4 +83,3 @@ void Window::update() {
 
   isOpen = false;
 };
-

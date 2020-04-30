@@ -6,7 +6,7 @@ uint Texture::load(const char* path) {
 
   int width, height, numChannels;
   unsigned char *data = stbi_load(path, &width, &height, &numChannels, 0);
-  if (data) {
+  if(data) {
     GLenum format;
     if (numChannels == 1) format = GL_RED;
     else if (numChannels == 3) format = GL_RGB;

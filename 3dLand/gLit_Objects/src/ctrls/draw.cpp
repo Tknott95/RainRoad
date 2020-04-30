@@ -12,6 +12,8 @@ void Draw::init() {
     "assets/skybox/back.jpg"
   };
 
+  objData = objLoader.load("assets/objects/rock.obj");
+
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
 
   glGenVertexArrays(1, &skyboxVAO);
