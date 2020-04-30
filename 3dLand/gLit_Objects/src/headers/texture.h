@@ -7,6 +7,6 @@
 
 class Texture {
   public:
-    uint load(const char *path);
+    uint load(const char* path);
     uint loadSkybox(std::vector<std::string>);
 };

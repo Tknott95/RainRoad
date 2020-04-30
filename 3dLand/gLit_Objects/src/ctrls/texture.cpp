@@ -1,6 +1,6 @@
 #include "../headers/texture.h"
 
-uint Texture::load(const char *path) {
+uint Texture::load(const char* path) {
   uint texID;
   glGenTextures(1, &texID);
 
