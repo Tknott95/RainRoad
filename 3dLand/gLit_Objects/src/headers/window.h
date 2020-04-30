@@ -12,15 +12,15 @@ class Window {
       float lastY;
     };
 
+    ivec2 screenSize = ivec2(1280, 800);
+    float _deltaTime, _lastFrame = 0.0f;
+    double xpos, ypos;
+
     GLFWwindow* _window;
     Mouse mouse;
     Camera* _camera;
     Keys keys;
     Draw* draw;
-
-    ivec2 screenSize = ivec2(1280, 800);
-    float _deltaTime, _lastFrame = 0.0f;
-    double xpos, ypos;
 
     void mousePolling(double xpos, double ypos);
 
