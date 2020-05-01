@@ -10,12 +10,13 @@ using namespace glm;
 class Draw {
   private:
     uint sbTexID;
-    uint skyboxVAO, skyboxVBO;
+    uint skyboxVAO, skyboxVBO, objVAO, objVBO, objEBO;
 
     ObjStruct objData;
     ObjectLoader objLoader;
     Texture texture;
     Shader skyboxShader;
+    Shader objShader;
 
   public:
     void init();

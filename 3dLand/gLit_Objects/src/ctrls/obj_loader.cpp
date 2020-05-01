@@ -26,7 +26,7 @@ ObjStruct ObjectLoader::load(const char* objPath) {
       if(dataAmt != 9) printf("\n\e[0;31;40m OBJ(face) DATA TOO LARGE(!9)\e[0m");
       vIndices.push_back(vIndex[0]);
       vIndices.push_back(vIndex[1]);
-      vIndices.push_back(vIndex[2]);
+      vIndices.push_back(vIndex[2]);  
       uvIndices.push_back(uvIndex[0]);
       uvIndices.push_back(uvIndex[1]);
       uvIndices.push_back(uvIndex[2]);
@@ -34,8 +34,8 @@ ObjStruct ObjectLoader::load(const char* objPath) {
       normIndices.push_back(normIndex[1]);
       normIndices.push_back(normIndex[2]);
 
-       /* Faces Debuggine  ************************************
-        * printf("\n\e[0;39;49m  faces(%d)  \e[0m", dataAmt); */
+      /* Faces Debuggine  ************************************
+       * printf("\n\e[0;39;49m  faces(%d)  \e[0m", dataAmt); */
     }
   }
 
