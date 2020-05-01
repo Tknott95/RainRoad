@@ -12,7 +12,7 @@ void Draw::init() {
     "assets/skybox/back.jpg"
   };
 
-  objData = objLoader.load("assets/objects/rock.obj");
+  objData = objLoader.load("assets/objects/oddShape.obj");
 
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
 
