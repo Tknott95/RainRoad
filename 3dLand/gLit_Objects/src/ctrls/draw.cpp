@@ -12,7 +12,7 @@ void Draw::init() {
     "assets/skybox/back.jpg"
   };
 
-  objData = objLoader.load("assets/objects/oddShape.obj");
+  objData = objLoader.load("assets/objects/oddShape.obj"); /* oddShape.obj */
 
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
   objShader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
@@ -27,6 +27,7 @@ void Draw::init() {
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(objData.vertIndices), &objData.vertIndices, GL_STATIC_DRAW);
   std::cout << objData.vertices.size() << std::endl;
+  std::cout << objData.vertIndices.size() << std::endl;
   // glBindVertexArray(objVAO);
 
   glGenVertexArrays(1, &skyboxVAO);
@@ -60,7 +61,12 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glDrawArrays(GL_TRIANGLES, 0, 36);
   glBindVertexArray(0);
 
+
   objShader.use();
+  glm::mat4 model = glm::mat4(1.0f);
+  objShader.setMat4("model", model);
+  objShader.setMat4("view", view);
+  objShader.setMat4("projection", projection);
   // mat4 objColor = mat4(1.0f, 1.0f, 1.0f, 1.0f);
   // objShader.setMat4("ourColor", objColor);
   glBindVertexArray(objVAO); //objData.vertices.size()-1
