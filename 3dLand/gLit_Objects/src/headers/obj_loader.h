@@ -1,6 +1,7 @@
 #include <vector>
 #include <cstdio>
 #include <iostream>
+#include <cstring>
 #include "glm/glm.hpp"
 
 struct ObjStruct { /* this will have to be an external header OR created twice */
@@ -12,6 +13,7 @@ struct ObjStruct { /* this will have to be an external header OR created twice *
 class ObjectLoader {
   private:
     ObjStruct objData;
+    std::vector<uint> vIndices, uvIndices, normIndices;
   public:
     ObjStruct load(const char*);
 };
