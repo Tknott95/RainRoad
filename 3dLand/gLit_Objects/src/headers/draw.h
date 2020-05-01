@@ -9,7 +9,7 @@ using namespace glm;
 
 class Draw {
   private:
-    uint sbTexID;
+    uint sbTexID, objTexID;
     uint skyboxVAO, skyboxVBO, objVAO, objVBO, objEBO;
 
     ObjStruct objData;
