@@ -33,6 +33,9 @@ ObjStruct ObjectLoader::load(const char* objPath) {
       normIndices.push_back(normIndex[0]);
       normIndices.push_back(normIndex[1]);
       normIndices.push_back(normIndex[2]);
+
+       /* Faces Debuggine  ************************************
+        * printf("\n\e[0;39;49m  faces(%d)  \e[0m", dataAmt); */
     }
   }
 
