@@ -12,7 +12,7 @@ void Draw::init() {
     "assets/skybox/back.jpg"
   };
 
-  objData = objLoader.load("assets/objects/oddShape.obj"); /* oddShape.obj */
+  objData = objLoader.load("assets/objects/oddShape.obj"); /* star.obj */
 
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
   objShader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
