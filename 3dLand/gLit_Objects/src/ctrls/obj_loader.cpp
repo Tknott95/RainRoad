@@ -33,7 +33,7 @@ ObjStruct ObjectLoader::load(const char* objPath) {
       // normIndices.push_back(normIndex[0]);
       // normIndices.push_back(normIndex[1]);
       // normIndices.push_back(normIndex[2]);
-      // objData.vertIndices.push_back(glm::vec3(vIndex[0], vIndex[1], vIndex[2]));
+      // objData.vertIndices.push_back(glm::vec3(vIndex[0], vIndex[1], vIndex[2])); Can't pass a vec3 must be uint
       objData.vertIndices.push_back(vIndex[0]);
       objData.vertIndices.push_back(vIndex[1]);
       objData.vertIndices.push_back(vIndex[2]);
