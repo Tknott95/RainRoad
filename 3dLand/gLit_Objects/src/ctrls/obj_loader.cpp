@@ -33,20 +33,23 @@ ObjStruct ObjectLoader::load(const char* objPath) {
       // normIndices.push_back(normIndex[0]);
       // normIndices.push_back(normIndex[1]);
       // normIndices.push_back(normIndex[2]);
+      // objData.vertIndices.push_back(glm::vec3(vIndex[0], vIndex[1], vIndex[2]));
       objData.vertIndices.push_back(vIndex[0]);
       objData.vertIndices.push_back(vIndex[1]);
       objData.vertIndices.push_back(vIndex[2]);
+      /* EACH of the vertexIndices needs to be an x,y,x coord */
 
        /* Faces Debuggine  ************************************
         * printf("\n\e[0;39;49m  faces(%d)  \e[0m", dataAmt); */
+      // std::cout << vIndex[0] << std::endl;
     }
   }
 
   //std::cout << objData.vertices.size() << std::endl;
   //std::cout << objData.vertIndices.size() << std::endl;
 
-  printf("\n  \e[0;94;40m  Object Loaded: \e[0;33;40m %s v(%d) vIndices(%d) \e[0m\n",
-   objPath, objData.vertices.size(), objData.vertIndices.size());
+  printf("\n  \e[0;94;40m  Object Loaded: \e[0;33;40m %s \n    v(%d) vIndices(%d) \e[0m\n",
+    objPath, objData.vertices.size(), objData.vertIndices.size());
 
   return objData;
 };

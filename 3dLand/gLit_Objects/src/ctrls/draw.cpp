@@ -12,23 +12,21 @@ void Draw::init() {
     "assets/skybox/back.jpg"
   };
 
-  objData = objLoader.load("assets/objects/oddShape.obj"); /* star.obj */
+  objData = objLoader.load("assets/objects/oddShape.obj"); /* star.obj | oddShape.obj */
 
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
   objShader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
 
   glGenVertexArrays(1, &objVAO);
   glGenBuffers(1, &objVBO);
+  glGenBuffers(1, &objEBO);
   glBindVertexArray(objVAO);
   glBindBuffer(GL_ARRAY_BUFFER, objVBO); //  * sizeof(glm::vec3)
   glBufferData(GL_ARRAY_BUFFER, objData.vertices.size(), &objData.vertices[0], GL_STATIC_DRAW);
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-  // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
-  // glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(objData.vertIndices), &objData.vertIndices, GL_STATIC_DRAW);
-  // std::cout << objData.vertices.size() << std::endl;
-  // std::cout << objData.vertIndices.size() << std::endl;
-  // glBindVertexArray(objVAO);
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
+  glBufferData(GL_ELEMENT_ARRAY_BUFFER, objData.vertIndices.size() * sizeof(uint), &objData.vertIndices[0], GL_STATIC_DRAW);
 
   glGenVertexArrays(1, &skyboxVAO);
   glGenBuffers(1, &skyboxVBO);
@@ -68,22 +66,24 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   objShader.use();
   mat4 model = mat4(1.0f);
   mat4 transform = mat4(1.0f);
+  transform = translate(transform, glm::vec3(0.0f, 1.0f, 0.0f));
   objShader.setMat4("model", model);
   objShader.setMat4("view", view);
   objShader.setMat4("projection", projection);
   objShader.setMat4("transform", transform);
   // mat4 objColor = mat4(1.0f, 1.0f, 1.0f, 1.0f);
   // objShader.setMat4("ourColor", objColor);
-  glBindVertexArray(objVAO); //objData.vertices.size()-1
+  glBindVertexArray(objVAO);
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
+
+  // glBindBuffer(objEBO);
   /* @TODO need texture coordinates imported in */
   glActiveTexture(GL_TEXTURE1);
   glBindTexture(GL_TEXTURE1, objTexID);
-  uint objVertSize =  objData.vertices.size();
-  uint objIndicesSize =  sizeof(objData.vertIndices);
-  glDrawArrays(GL_TRIANGLES, 0 , objVertSize);
-  // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
-  // glDrawElements(GL_TRIANGLES, objIndicesSize, GL_UNSIGNED_INT, 0);
-  
+
+  // glDrawArrays(GL_TRIANGLES, 0 , objData.vertices.size());
+  glDrawElements(GL_TRIANGLES, objData.vertIndices.size(), GL_UNSIGNED_INT, 0);
+
   glBindVertexArray(0);
   glDepthFunc(GL_LESS);
 }
