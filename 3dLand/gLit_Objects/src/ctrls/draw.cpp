@@ -6,6 +6,7 @@
  * 
  * @TODO bring in normal coords
  * @TODO bring in texture coords
+ * @TODO bind texture coords & use them
  * @TODO add cullface after normals in
  * 
  * 
