@@ -1,5 +1,4 @@
 #include "../headers/draw.h"
-#include "../headers/utils/cube_data.h"
 #include "../headers/utils/skybox_data.h"
 
 void Draw::init() {
