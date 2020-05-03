@@ -71,7 +71,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   // mat4 objColor = mat4(1.0f, 1.0f, 1.0f, 1.0f);
   // objShader.setMat4("ourColor", objColor);
   glBindVertexArray(objVAO);
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
+  // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
   /* @TODO need texture coordinates imported in */
   glActiveTexture(GL_TEXTURE1);
   glBindTexture(GL_TEXTURE1, objTexID);
