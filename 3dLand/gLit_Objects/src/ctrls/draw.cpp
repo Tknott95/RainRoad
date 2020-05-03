@@ -12,6 +12,7 @@ void Draw::init() {
     "assets/skybox/back.jpg"
   };
 
+  glEnable(GL_DEPTH_TEST);
   objData = objLoader.load("assets/objects/oddShape.obj"); /* star.obj | oddShape.obj */
 
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
@@ -47,27 +48,14 @@ void Draw::init() {
 }
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
-  // glDepthFunc(GL_LEQUAL);
-  glDepthMask(GL_FALSE);
-  skyboxShader.use();
-
-  mat4 skyBoxView = mat4(mat3(camera->GetViewMatrix()));
-  mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
-  // view = mat4(mat3(camera->GetViewMatrix()));
-  skyboxShader.setMat4("view", skyBoxView);
-  skyboxShader.setMat4("projection", projection);
-
-  glBindVertexArray(skyboxVAO);
-  glActiveTexture(GL_TEXTURE0);
-  glBindTexture(GL_TEXTURE_CUBE_MAP, sbTexID);
-  glDrawArrays(GL_TRIANGLES, 0, 36);
-  glDepthMask(GL_TRUE);
-
+  /************* OBJ DRAWING START **********************/
   objShader.use();
   mat4 model = mat4(1.0f);
   mat4 transform = mat4(1.0f);
+  mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
   mat4 view = camera->GetViewMatrix();
   transform = translate(transform, glm::vec3(0.0f, 5.0f, 5.0f));
+
   objShader.setMat4("model", model);
   objShader.setMat4("view", view);
   objShader.setMat4("projection", projection);
@@ -76,17 +64,30 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   // objShader.setMat4("ourColor", objColor);
   glBindVertexArray(objVAO);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
-
-  // glBindBuffer(objEBO);
   /* @TODO need texture coordinates imported in */
   glActiveTexture(GL_TEXTURE1);
   glBindTexture(GL_TEXTURE1, objTexID);
-
   // glDrawArrays(GL_TRIANGLES, 0 , objData.vertices.size());
   glDrawElements(GL_TRIANGLES, objData.vertIndices.size(), GL_UNSIGNED_INT, 0);
+  glBindVertexArray(0);
+  /************* OBJ DRAWING FINISHED **********************/
 
+  /************* SKYBOX DRAWING START **********************/
+  glDepthFunc(GL_LEQUAL);
+  skyboxShader.use();
+ 
+  /* mat4(mat3) conversion of skybox view */
+  view = mat4(mat3(camera->GetViewMatrix()));
+  skyboxShader.setMat4("view", view);
+  skyboxShader.setMat4("projection", projection);
+
+  glBindVertexArray(skyboxVAO);
+  glActiveTexture(GL_TEXTURE0);
+  glBindTexture(GL_TEXTURE_CUBE_MAP, sbTexID);
+  glDrawArrays(GL_TRIANGLES, 0, 36);
   glBindVertexArray(0);
   glDepthFunc(GL_LESS);
+  /************* SKYBOX DRAWING FINISHED **********************/
 }
 
 void Draw::deallocate() {
