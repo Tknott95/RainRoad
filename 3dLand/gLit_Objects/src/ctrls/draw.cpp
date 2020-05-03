@@ -41,13 +41,14 @@ void Draw::init() {
   sbTexID = texture.loadSkybox(sbFaces);
   objTexID = texture.load("assets/textures/box_weave.png");
 
-  glDepthMask(GL_FALSE);
+  // glDepthMask(GL_FALSE);
   skyboxShader.use();
   skyboxShader.setInt("skybox", 0);
 }
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
-  glDepthFunc(GL_LEQUAL);
+  // glDepthFunc(GL_LEQUAL);
+  glDepthMask(GL_FALSE);
   skyboxShader.use();
 
   mat4 view = mat4(mat3(camera->GetViewMatrix()));
@@ -60,6 +61,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_CUBE_MAP, sbTexID);
   glDrawArrays(GL_TRIANGLES, 0, 36);
+  glDepthMask(GL_TRUE);
   glBindVertexArray(0);
 
 
