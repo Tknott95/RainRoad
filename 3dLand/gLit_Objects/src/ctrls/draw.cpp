@@ -83,7 +83,6 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glDepthFunc(GL_LEQUAL);
   skyboxShader.use();
  
-  /* mat4(mat3) conversion of skybox view */
   view = mat4(mat3(camera->GetViewMatrix()));
   skyboxShader.setMat4("view", view);
   skyboxShader.setMat4("projection", projection);
