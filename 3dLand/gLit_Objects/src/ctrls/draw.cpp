@@ -3,10 +3,13 @@
 
 /***********************************************
  * 
- * 
+ * @HOTBOX
  * @TODO bring in normal coords
  * @TODO bring in texture coords
+ * @TODO bring in uv coords
  * @TODO bind texture coords & use them
+ * 
+ * @ICEBOX
  * @TODO add cullface after normals in
  * @TODO get adv objects working
  * @TODO do adv changes after gLit_Mesh proj is finished
