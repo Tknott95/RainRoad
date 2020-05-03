@@ -8,8 +8,8 @@
  * @TODO bring in texture coords
  * @TODO bind texture coords & use them
  * @TODO add cullface after normals in
- * 
- * 
+ * @TODO get adv objects working
+ * @TODO do adv changes after gLit_Mesh proj is finished
  * 
  * **********************************************/
 
