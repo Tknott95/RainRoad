@@ -31,7 +31,7 @@ void Draw::init() {
     3, /* size */
     GL_FLOAT, /* type */
     GL_FALSE, /* isNormalized? */
-    3 * sizeof(float), /* stride, matches my data xyz|3 */
+    3 * sizeof(float), /* stride, matches my data xyz|3*/
     (void*)0 /* array buffer offset */
   );
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
