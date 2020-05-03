@@ -64,7 +64,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   mat4 transform = mat4(1.0f);
   mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
   mat4 view = camera->GetViewMatrix();
-  transform = translate(transform, glm::vec3(0.0f, 2.0f, 3.0f));
+  transform = translate(transform, glm::vec3(1.0f, 1.8f, -1.0f));
 
   objShader.setMat4("model", model);
   objShader.setMat4("view", view);
