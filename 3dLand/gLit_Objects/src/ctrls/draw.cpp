@@ -1,6 +1,17 @@
 #include "../headers/draw.h"
 #include "../headers/utils/skybox_data.h"
 
+/***********************************************
+ * 
+ * 
+ * @TODO bring in normal coords
+ * @TODO bring in texture coords
+ * @TODO add cullface after normals in
+ * 
+ * 
+ * 
+ * **********************************************/
+
 void Draw::init() {
   std::vector<std::string> sbFaces = {
     "assets/skybox/right.jpg",
