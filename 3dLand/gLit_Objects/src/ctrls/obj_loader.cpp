@@ -32,6 +32,9 @@ ObjStruct ObjectLoader::load(const char* objPath) {
       uint vIndex[3], uvIndex[3], normIndex[3];
       int dataAmt = fscanf(data, "%d/%d/%d %d/%d/%d %d/%d/%d\n", &vIndex[0], &uvIndex[0], &normIndex[0], &vIndex[1], &uvIndex[1], &normIndex[1], &vIndex[2], &uvIndex[2], &normIndex[2]);
       if(dataAmt != 9) printf("\n\e[0;31;40m OBJ(face) DATA TOO LARGE(!9)\e[0m");
+      // vIndices.push_back(vIndex[0]);
+      // vIndices.push_back(vIndex[1]);
+      // vIndices.push_back(vIndex[2]);
       // uvIndices.push_back(uvIndex[0]);
       // uvIndices.push_back(uvIndex[1]);
       // uvIndices.push_back(uvIndex[2]);
