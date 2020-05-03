@@ -13,7 +13,7 @@ void Draw::init() {
   };
 
   glEnable(GL_DEPTH_TEST);
-  objData = objLoader.load("assets/objects/oddShape.obj"); /* star.obj | oddShape.obj */
+  objData = objLoader.load("assets/objects/col.obj"); /* star.obj | oddShape.obj */
 
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
   objShader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
@@ -24,14 +24,17 @@ void Draw::init() {
   glGenBuffers(1, &objEBO);
   glBindVertexArray(objVAO);
   glBindBuffer(GL_ARRAY_BUFFER, objVBO); //  * sizeof(glm::vec3)
-  glBufferData(GL_ARRAY_BUFFER, objData.vertices.size(), &objData.vertices[0], GL_STATIC_DRAW);
+  glBufferData(GL_ARRAY_BUFFER, objData.vertices.size() * sizeof(vec3), &objData.vertices[0], GL_STATIC_DRAW);
+  /*
+    Naturally the sizeof operator can also be used on the struct for the appropriate size in bytes. This should be 32 bytes (8 floats * 4 bytes each).
+  */
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(
     0, /* matches layout in hader */
     3, /* size */
     GL_FLOAT, /* type */
     GL_FALSE, /* isNormalized? */
-    3 * sizeof(float), /* stride, matches my data xyz|3*/
+    sizeof(vec3), /* stride, matches my data xyz|3*/
     (void*)0 /* array buffer offset */
   );
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
