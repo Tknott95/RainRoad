@@ -1,7 +1,7 @@
 #include "../headers/draw.h"
 #include "../headers/utils/skybox_data.h"
 
-/***********************************************
+/*************************************************
  * 
  * @HOTBOX
  * @TODO bring in normal coords
@@ -14,7 +14,7 @@
  * @TODO get adv objects working
  * @TODO do adv changes after gLit_Mesh proj is finished
  * 
- * **********************************************/
+ *************************************************/
 
 void Draw::init() {
   std::vector<std::string> sbFaces = {
