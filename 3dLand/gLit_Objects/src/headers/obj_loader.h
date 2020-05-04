@@ -7,6 +7,12 @@
 /*****************************************
 * make vec5 for verticesData then uv's
 * x y z u v
+*
+* @TODO
+* - make objStruct w/ out indices
+* - make indices struct
+* - use obj struct as my data pass in instead of objStruct.vertices
+*   ^ this  will dynam load other data ^
 *****************************************/
 
 struct ObjStruct { /* this will have to be an external header OR created twice */
