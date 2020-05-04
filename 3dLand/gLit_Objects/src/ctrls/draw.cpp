@@ -51,11 +51,11 @@ void Draw::init() {
   */
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(
-    0, /* matches layout in hader */
+    0, /* matches layout in header */
     3, /* size */
     GL_FLOAT, /* type */
     GL_FALSE, /* isNormalized? */
-    sizeof(vec3), /* stride, matches my data xyz|vec3*/
+    sizeof(vec3), /*  or 3 * sizeof(float) | stride, matches my data xyz|vec3*/
     (void*)0 /* array buffer offset */
   );
   // glEnableVertexAttribArray(1);
