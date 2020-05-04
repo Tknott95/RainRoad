@@ -6,8 +6,8 @@ in vec4 VertexColor;
 // in vec3 Position;
 in vec2 TexCoords;
 
-uniform sampler2D texture0;
+uniform sampler2D myTexture;
 
 void main() {
-  FragColor = texture(texture0, TexCoords); //VertexColor;
+  FragColor = texture(myTexture, TexCoords); //VertexColor;
 }

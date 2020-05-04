@@ -63,7 +63,7 @@ void Draw::init() {
   );
   glEnableVertexAttribArray(1);
   glBindBuffer(GL_ARRAY_BUFFER, objUVBO);
-  glBufferData(GL_ARRAY_BUFFER, objData.uvs.size() * sizeof(vec3), &objData.uvs[0], GL_STATIC_DRAW);
+  glBufferData(GL_ARRAY_BUFFER, objData.uvs.size() * sizeof(vec2), &objData.uvs[0], GL_STATIC_DRAW);
   glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, objLoader.vertIndices.size() * sizeof(uint), &objLoader.vertIndices[0], GL_STATIC_DRAW);
@@ -83,7 +83,7 @@ void Draw::init() {
   objTexID = texture.load("assets/textures/box_weave.png");
 
   objShader.use();
-  objShader.setInt("texture0", 0);
+  objShader.setInt("myTexture", 0);
 
   skyboxShader.use();
   skyboxShader.setInt("skybox", 0);
@@ -106,8 +106,8 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
 
   glBindVertexArray(objVAO);
   /* @TODO need texture coordinates imported in */
-  glActiveTexture(GL_TEXTURE1);
-  glBindTexture(GL_TEXTURE1, objTexID);
+  glActiveTexture(GL_TEXTURE0);
+  glBindTexture(GL_TEXTURE0, objTexID);
   glDrawElements(GL_TRIANGLES, objLoader.vertIndices.size(), GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);
   /************* OBJ DRAWING FINISHED **********************/
