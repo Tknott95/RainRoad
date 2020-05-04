@@ -22,6 +22,10 @@ struct ObjStruct { /* this will have to be an external header OR created twice *
   std::vector<uint> vertIndices; /* pull out of objStruct so i can call sizeof(objStruct)? */
 };
 
+// struct ObjIndices {
+//   std::vector<uint> vIndices;
+// };
+
 class ObjectLoader {
   private:
     ObjStruct objData;
