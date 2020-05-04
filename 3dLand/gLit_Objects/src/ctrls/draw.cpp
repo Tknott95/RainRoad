@@ -107,7 +107,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glBindVertexArray(objVAO);
   /* @TODO need texture coordinates imported in */
   glActiveTexture(GL_TEXTURE0);
-  glBindTexture(GL_TEXTURE0, objTexID);
+  glBindTexture(GL_TEXTURE_2D, objTexID);
   glDrawElements(GL_TRIANGLES, objLoader.vertIndices.size(), GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);
   /************* OBJ DRAWING FINISHED **********************/
