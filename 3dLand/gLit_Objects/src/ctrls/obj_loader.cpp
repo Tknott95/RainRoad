@@ -50,6 +50,9 @@ ObjStruct ObjectLoader::load(const char* objPath) {
        /* Faces Debuggine  ************************************
         * printf("\n\e[0;39;49m  faces(%d)  \e[0m", dataAmt); */
       // std::cout << vIndex[0] << std::endl;
+
+
+      /* LOOP THROUGH VERTS vec3 each line add UVS vec for a | x y x u v | */
     }
   }
 
