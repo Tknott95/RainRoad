@@ -27,7 +27,13 @@ void Draw::init() {
   };
 
   glEnable(GL_DEPTH_TEST);
-  objData = objLoader.load("assets/objects/col.obj"); /* star.obj | oddShape.obj */
+  /***********
+  * star.obj
+  * oddShape.obj
+  * col.obj
+  * col_lg.obj
+  *************/
+  objData = objLoader.load("assets/objects/col.obj"); 
 
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
   objShader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
