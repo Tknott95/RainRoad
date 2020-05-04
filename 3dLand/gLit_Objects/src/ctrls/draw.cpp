@@ -42,6 +42,7 @@ void Draw::init() {
   glGenVertexArrays(1, &objVAO);
   glGenBuffers(1, &objVBO);
   glGenBuffers(1, &objEBO);
+  glGenBuffers(1, &objUVBO);
   glBindVertexArray(objVAO);
   glBindBuffer(GL_ARRAY_BUFFER, objVBO); //  * sizeof(glm::vec3)
   glBufferData(GL_ARRAY_BUFFER, objData.vertices.size() * sizeof(vec3), &objData.vertices[0], GL_STATIC_DRAW); /* here is where final data w/ pos and texturedata goes */
@@ -49,6 +50,8 @@ void Draw::init() {
     Naturally the sizeof operator can also be used on the struct for the appropriate size in bytes.
     This should be 32 bytes (8 floats * 4 bytes each).
   */
+  glActiveTexture(GL_TEXTURE0);
+  glBindTexture(GL_TEXTURE_2D, objTexID);
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(
     0, /* matches layout in header */
@@ -59,6 +62,8 @@ void Draw::init() {
     (void*)0 /* array buffer offset */
   );
   glEnableVertexAttribArray(1);
+  glBindBuffer(GL_ARRAY_BUFFER, objUVBO);
+  glBufferData(GL_ARRAY_BUFFER, objData.uvs.size() * sizeof(vec3), &objData.uvs[0], GL_STATIC_DRAW);
   glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, objLoader.vertIndices.size() * sizeof(uint), &objLoader.vertIndices[0], GL_STATIC_DRAW);
@@ -77,6 +82,9 @@ void Draw::init() {
   sbTexID = texture.loadSkybox(sbFaces);
   objTexID = texture.load("assets/textures/box_weave.png");
 
+  objShader.use();
+  objShader.setInt("texture0", 0);
+
   skyboxShader.use();
   skyboxShader.setInt("skybox", 0);
 }
@@ -94,6 +102,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   objShader.setMat4("view", view);
   objShader.setMat4("projection", projection);
   objShader.setMat4("transform", transform);
+
 
   glBindVertexArray(objVAO);
   /* @TODO need texture coordinates imported in */

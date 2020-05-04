@@ -10,7 +10,8 @@ using namespace glm;
 class Draw {
   private:
     uint sbTexID, objTexID;
-    uint skyboxVAO, skyboxVBO, objVAO, objVBO, objEBO;
+    uint skyboxVAO, skyboxVBO;
+    uint objVAO, objVBO, objEBO, objUVBO;
 
     ObjStruct objData;
     ObjectLoader objLoader;
