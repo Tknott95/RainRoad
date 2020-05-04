@@ -1,6 +1,20 @@
 #include "../headers/draw.h"
-#include "../headers/utils/cube_data.h"
 #include "../headers/utils/skybox_data.h"
+
+/*************************************************
+ * 
+ * @HOTBOX
+ * @TODO bring in normal coords
+ * @TODO bring in texture coords
+ * @TODO bring in uv coords
+ * @TODO bind texture coords & use them
+ * 
+ * @ICEBOX
+ * @TODO add cullface after normals in
+ * @TODO get adv objects working
+ * @TODO do adv changes after gLit_Mesh proj is finished
+ * 
+ *************************************************/
 
 void Draw::init() {
   std::vector<std::string> sbFaces = {
@@ -34,7 +48,7 @@ void Draw::init() {
     3, /* size */
     GL_FLOAT, /* type */
     GL_FALSE, /* isNormalized? */
-    sizeof(vec3), /* stride, matches my data xyz|3*/
+    sizeof(vec3), /* stride, matches my data xyz|vec3*/
     (void*)0 /* array buffer offset */
   );
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
@@ -65,16 +79,14 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   mat4 transform = mat4(1.0f);
   mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
   mat4 view = camera->GetViewMatrix();
-  transform = translate(transform, glm::vec3(0.0f, 2.0f, 3.0f));
+  transform = translate(transform, glm::vec3(1.0f, 1.8f, -1.0f));
 
   objShader.setMat4("model", model);
   objShader.setMat4("view", view);
   objShader.setMat4("projection", projection);
   objShader.setMat4("transform", transform);
-  // mat4 objColor = mat4(1.0f, 1.0f, 1.0f, 1.0f);
-  // objShader.setMat4("ourColor", objColor);
+
   glBindVertexArray(objVAO);
-  // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
   /* @TODO need texture coordinates imported in */
   glActiveTexture(GL_TEXTURE1);
   glBindTexture(GL_TEXTURE1, objTexID);
@@ -86,7 +98,6 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glDepthFunc(GL_LEQUAL);
   skyboxShader.use();
  
-  /* mat4(mat3) conversion of skybox view */
   view = mat4(mat3(camera->GetViewMatrix()));
   skyboxShader.setMat4("view", view);
   skyboxShader.setMat4("projection", projection);
