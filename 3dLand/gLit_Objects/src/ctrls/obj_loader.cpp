@@ -2,10 +2,10 @@
 
 /******************************
   USING
-    v
-    vt
+    v - vertices - x y z
+    vt - uvs - x y
     vn
-    f
+    f - vIndices, uvIndices, texIndices - x/y/z x/y/z x/y/z
 *******************************/
 
 ObjStruct ObjectLoader::load(const char* objPath) {
