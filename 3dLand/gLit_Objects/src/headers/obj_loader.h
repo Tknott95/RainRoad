@@ -31,6 +31,6 @@ class ObjectLoader {
     ObjStruct objData;
     std::vector<uint> vIndices, uvIndices, normIndices;
   public:
-    ObjStruct load(const char*);
     std::vector<uint> vertIndices;
+    ObjStruct load(const char*);
 };
