@@ -42,9 +42,9 @@ ObjStruct ObjectLoader::load(const char* objPath) {
       // normIndices.push_back(normIndex[1]);
       // normIndices.push_back(normIndex[2]);
       // objData.vertIndices.push_back(glm::vec3(vIndex[0], vIndex[1], vIndex[2])); Can't pass a vec3 must be uint
-      objData.vertIndices.push_back(vIndex[0]);
-      objData.vertIndices.push_back(vIndex[1]);
-      objData.vertIndices.push_back(vIndex[2]);
+      vertIndices.push_back(vIndex[0]);
+      vertIndices.push_back(vIndex[1]);
+      vertIndices.push_back(vIndex[2]);
       /* EACH of the vertexIndices needs to be an x,y,x coord */
 
        /* Faces Debuggine  ************************************
@@ -57,7 +57,7 @@ ObjStruct ObjectLoader::load(const char* objPath) {
   }
 
   printf("\n  \e[0;94;40m  Object Loaded: \e[0;33;40m %s \n    v(%d) vIndices(%d) \e[0m\n",
-    objPath, objData.vertices.size(), objData.vertIndices.size());
+    objPath, objData.vertices.size(), vertIndices.size());
 
   return objData;
 };

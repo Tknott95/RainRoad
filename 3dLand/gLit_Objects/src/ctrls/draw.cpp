@@ -61,7 +61,7 @@ void Draw::init() {
   glEnableVertexAttribArray(1);
   glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, objData.vertIndices.size() * sizeof(uint), &objData.vertIndices[0], GL_STATIC_DRAW);
+  glBufferData(GL_ELEMENT_ARRAY_BUFFER, objLoader.vertIndices.size() * sizeof(uint), &objLoader.vertIndices[0], GL_STATIC_DRAW);
 
   /******** binding skybox attribs *******/
   glGenVertexArrays(1, &skyboxVAO);
@@ -99,7 +99,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   /* @TODO need texture coordinates imported in */
   glActiveTexture(GL_TEXTURE1);
   glBindTexture(GL_TEXTURE1, objTexID);
-  glDrawElements(GL_TRIANGLES, objData.vertIndices.size(), GL_UNSIGNED_INT, 0);
+  glDrawElements(GL_TRIANGLES, objLoader.vertIndices.size(), GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);
   /************* OBJ DRAWING FINISHED **********************/
 

@@ -19,7 +19,7 @@ struct ObjStruct { /* this will have to be an external header OR created twice *
   std::vector<glm::vec3> vertices;
   std::vector<glm::vec2> uvs;
   // std::vector<glm::vec3> normals;
-  std::vector<uint> vertIndices; /* pull out of objStruct so i can call sizeof(objStruct)? */
+  // std::vector<uint> vertIndices; /* pull out of objStruct so i can call sizeof(objStruct)? */
 };
 
 // struct ObjIndices {
@@ -32,4 +32,5 @@ class ObjectLoader {
     std::vector<uint> vIndices, uvIndices, normIndices;
   public:
     ObjStruct load(const char*);
+    std::vector<uint> vertIndices;
 };
