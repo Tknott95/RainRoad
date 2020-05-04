@@ -56,9 +56,6 @@ ObjStruct ObjectLoader::load(const char* objPath) {
     }
   }
 
-  //std::cout << objData.vertices.size() << std::endl;
-  //std::cout << objData.vertIndices.size() << std::endl;
-
   printf("\n  \e[0;94;40m  Object Loaded: \e[0;33;40m %s \n    v(%d) vIndices(%d) \e[0m\n",
     objPath, objData.vertices.size(), objData.vertIndices.size());
 

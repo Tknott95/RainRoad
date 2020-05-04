@@ -46,7 +46,8 @@ void Draw::init() {
   glBindBuffer(GL_ARRAY_BUFFER, objVBO); //  * sizeof(glm::vec3)
   glBufferData(GL_ARRAY_BUFFER, objData.vertices.size() * sizeof(vec3), &objData.vertices[0], GL_STATIC_DRAW);
   /*
-    Naturally the sizeof operator can also be used on the struct for the appropriate size in bytes. This should be 32 bytes (8 floats * 4 bytes each).
+    Naturally the sizeof operator can also be used on the struct for the appropriate size in bytes.
+    This should be 32 bytes (8 floats * 4 bytes each).
   */
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(
@@ -57,6 +58,8 @@ void Draw::init() {
     sizeof(vec3), /* stride, matches my data xyz|vec3*/
     (void*)0 /* array buffer offset */
   );
+  // glEnableVertexAttribArray(1);
+  // glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, objData.vertIndices.size() * sizeof(uint), &objData.vertIndices[0], GL_STATIC_DRAW);
 
@@ -69,10 +72,7 @@ void Draw::init() {
   glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
   glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
   glEnableVertexAttribArray(0);
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0); /* 5 */
-
-  glEnableVertexAttribArray(1);
-  glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0); /* 5 */
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 
   sbTexID = texture.loadSkybox(sbFaces);
   objTexID = texture.load("assets/textures/box_weave.png");
