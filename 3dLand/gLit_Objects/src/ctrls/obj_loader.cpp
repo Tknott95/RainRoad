@@ -24,9 +24,9 @@ ObjStruct ObjectLoader::load(const char* objPath) {
       objData.vertices.push_back(vertex);
     }
     if(strcmp(header, "vt") == 0) {
-      glm::vec2 texCoords;
-      fscanf(data, "%f %f \n", &texCoords.x, &texCoords.y);
-      objData.texCoords.push_back(texCoords);
+      glm::vec2 uvs;
+      fscanf(data, "%f %f \n", &uvs.x, &uvs.y);
+      objData.uvs.push_back(uvs);
     }
     if(strcmp(header, "f") == 0) {
       uint vIndex[3], uvIndex[3], normIndex[3];
