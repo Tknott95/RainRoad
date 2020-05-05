@@ -28,6 +28,7 @@ void Draw::init() {
 
   glEnable(GL_DEPTH_TEST);
   /***********
+  * @BUG LAST OF THE INDICES IS CAUSING A BUG where last tri drawing to mid point
   * star.obj
   * oddShape.obj
   * col.obj
@@ -64,7 +65,7 @@ void Draw::init() {
   glEnableVertexAttribArray(1);
   glBindBuffer(GL_ARRAY_BUFFER, objUVBO);
   glBufferData(GL_ARRAY_BUFFER, objData.uvs.size() * sizeof(vec2), &objData.uvs[0], GL_STATIC_DRAW);
-  glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+  glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(vec2), (void*)0);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, objLoader.vertIndices.size() * sizeof(uint), &objLoader.vertIndices[0], GL_STATIC_DRAW);
 
@@ -108,6 +109,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   /* @TODO need texture coordinates imported in */
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, objTexID);
+  // glDrawArrays(GL_TRIANGLES, 0, objData.vertices.size());
   glDrawElements(GL_TRIANGLES, objLoader.vertIndices.size(), GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);
   /************* OBJ DRAWING FINISHED **********************/
