@@ -13,6 +13,15 @@
 
 using namespace std;
 
+/**************************
+ * 
+ *  FIXED mousecallback in other class
+ * 
+ * 
+ * 
+ * 
+ *************************/
+
 const unsigned int WIDTH = 1280;
 const unsigned int HEIGHT = 800;
 void framebufferSizeCallback(GLFWwindow* window, int width, int height);
