@@ -2,6 +2,8 @@
 #include <cstdio>
 #include <iostream>
 #include <cstring>
+
+#include "structs/encodedObj.h"
 #include "glm/glm.hpp"
 
 using namespace std;
@@ -35,5 +37,5 @@ class ObjectLoader {
     vector<uint> vIndices, uvIndices, normIndices;
   public:
     vector<uint> vertIndices;
-    ObjStruct load(const char*);
+    ObjStruct load(const char*); /* return a vector of <ObjStruct> ? @TODO */
 };

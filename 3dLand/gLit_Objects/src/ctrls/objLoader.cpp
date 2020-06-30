@@ -1,4 +1,4 @@
-#include "../headers/obj_loader.h"
+#include "../headers/objLoader.h"
 
 /******************************
   USING
@@ -6,6 +6,7 @@
     vt - uvs - x y
     vn
     f - vIndices, uvIndices, texIndices - x/y/z x/y/z x/y/z
+  @TODO -> read below for indexing
   @TODO -> NEEDS INDEXING FOR VERTICES - starting at 1 not 0 as obj files start at 1 unlike matematicuhh bruhh
   @INTERESTING || so the position is temp_vertices[ vertexIndex-1 ] (there is a -1 because C++ indexing starts at 0 and OBJ indexing starts at 1, remember ?) :
 *******************************/
@@ -61,6 +62,8 @@ ObjStruct ObjectLoader::load(const char* objPath) {
       /* LOOP THROUGH VERTS vec3 each line add UVS vec for a | x y x u v | */
     }
   }
+
+  /* @TODO build objData here possibly instead for indexing? */
 
   printf("\n  \e[0;94;40m  Object Loaded: \e[0;33;40m %s \n    v(%d) vIndices(%d) \e[0m\n",
     objPath, objData.vertices.size(), vertIndices.size());

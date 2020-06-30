@@ -3,7 +3,7 @@
 #include "shader.h"
 #include "camera.h"
 #include "texture.h"
-#include "obj_loader.h"
+#include "objLoader.h"
 
 using namespace glm;
 
