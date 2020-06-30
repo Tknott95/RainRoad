@@ -58,6 +58,12 @@ ObjStruct ObjectLoader::load(const char* objPath, EncodedObj outObj) {
     }
   }
 
+  for(uint i=0; i<vertIndices.size(); i++) {
+    uint currVertexIndex = vertIndices[i];
+    glm::vec3 newVertex = tempVertices[currVertexIndex-1];
+    encodedObj.Vertices.push_back(newVertex);
+  }
+
   /* @TODO build objData here possibly instead for indexing? */
 
   printf("\n  \e[0;94;40m  Object Loaded: \e[0;33;40m %s \n    v(%d) vIndices(%d) \e[0m\n",
