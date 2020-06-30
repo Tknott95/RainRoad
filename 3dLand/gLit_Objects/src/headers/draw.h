@@ -4,6 +4,7 @@
 #include "camera.h"
 #include "texture.h"
 #include "objLoader.h"
+#include "structs/encodedObj.h"
 
 using namespace glm;
 
@@ -14,6 +15,7 @@ class Draw {
     uint objVAO, objVBO, objEBO, objUVBO;
 
     ObjStruct objData;
+    EncodedObj encodedObj;
     ObjectLoader objLoader;
     Texture texture;
     Shader skyboxShader;
