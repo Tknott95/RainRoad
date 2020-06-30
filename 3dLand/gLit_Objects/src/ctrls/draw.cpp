@@ -26,7 +26,7 @@ void Draw::init() {
     "assets/skybox/back.jpg"
   };
 
-  glEnable(GL_DEPTH_TEST);
+  // glEnable(GL_DEPTH_TEST);
   /***********
   * @BUG LAST OF THE INDICES IS CAUSING A BUG where last tri drawing to mid point
   * star.obj
@@ -34,7 +34,7 @@ void Draw::init() {
   * col.obj
   * col_lg.obj
   *************/
-  encodedObj = objLoader.load("assets/objects/col_lg.obj", encodedObj); 
+  encodedObj = objLoader.load("assets/objects/col.obj"); 
 
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
   objShader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
@@ -58,7 +58,7 @@ void Draw::init() {
     0, /* matches layout in header */
     3, /* size */
     GL_FLOAT, /* type */
-    GL_FALSE, /* isNormalized? */
+    GL_TRUE, /* isNormalized? */
     sizeof(vec3), /*  or 3 * sizeof(float) | stride, matches my data xyz|vec3*/
     (void*)0 /* array buffer offset */
   );
@@ -103,7 +103,8 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   objShader.setMat4("view", view);
   objShader.setMat4("projection", projection);
   objShader.setMat4("transform", transform);
-
+  glEnable(GL_DEPTH_TEST);  
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
   glBindVertexArray(objVAO);
   /* @TODO need texture coordinates imported in */

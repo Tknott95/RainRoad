@@ -36,5 +36,5 @@ class ObjectLoader {
     EncodedObj encodedObj;
   public:
     vector<uint> vertIndices;
-    EncodedObj load(const char*, EncodedObj); /* return a vector of <ObjStruct> ? @TODO */
+    EncodedObj load(const char*); /* return a vector of <ObjStruct> ? @TODO */
 };
