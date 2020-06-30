@@ -35,6 +35,13 @@ class ObjectLoader {
   private:
     ObjStruct objData;
     vector<uint> vIndices, uvIndices, normIndices;
+
+    /* @NEW prep-work */
+    vector<vec3> 
+      tempVertices,
+      tempUVs/*mightNotUse*/, 
+      tempNormals/*mightNotUse*/;
+    EncodedObj encodedObj;
   public:
     vector<uint> vertIndices;
     ObjStruct load(const char*); /* return a vector of <ObjStruct> ? @TODO */
