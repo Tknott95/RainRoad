@@ -20,20 +20,12 @@ using namespace glm;
 *   ^ this  will dynam load other data ^
 *****************************************/
 
-struct ObjStruct { /* this will have to be an external header OR created twice */
-  vector<vec3> vertices;
-  vector<vec2> uvs;
-  vector<vec3> normals;
-  // std::vector<uint> vertIndices; /* pull out of objStruct so i can call sizeof(objStruct)? */
-};
-
 // struct ObjIndices {
 //   std::vector<uint> vIndices;
 // };
 
 class ObjectLoader {
   private:
-    ObjStruct objData;
     vector<uint> vIndices, uvIndices, normIndices;
 
     /* @NEW prep-work */
@@ -44,5 +36,5 @@ class ObjectLoader {
     EncodedObj encodedObj;
   public:
     vector<uint> vertIndices;
-    bool load(const char*, EncodedObj); /* return a vector of <ObjStruct> ? @TODO */
+    EncodedObj load(const char*, EncodedObj); /* return a vector of <ObjStruct> ? @TODO */
 };

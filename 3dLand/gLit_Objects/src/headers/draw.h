@@ -14,9 +14,8 @@ class Draw {
     uint skyboxVAO, skyboxVBO;
     uint objVAO, objVBO, objEBO, objUVBO;
 
-    ObjStruct objData;
-    EncodedObj encodedObj;
     ObjectLoader objLoader;
+    EncodedObj encodedObj;
     Texture texture;
     Shader skyboxShader;
     Shader objShader;
