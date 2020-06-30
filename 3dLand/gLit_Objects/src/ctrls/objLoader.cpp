@@ -11,7 +11,7 @@
   @INTERESTING || so the position is temp_vertices[ vertexIndex-1 ] (there is a -1 because C++ indexing starts at 0 and OBJ indexing starts at 1, remember ?) :
 *******************************/
 
-ObjStruct ObjectLoader::load(const char* objPath, EncodedObj _myReturnObj) {
+ObjStruct ObjectLoader::load(const char* objPath, EncodedObj outObj) {
   FILE *data = fopen(objPath, "r");
   if(!data) printf("\n\e[0;31;40m OBJECT NOT LOADING\e[0m"); /* change this to be under the return of the if(data) as it is da waay */
 
