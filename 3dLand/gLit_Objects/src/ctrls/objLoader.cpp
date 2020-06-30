@@ -25,6 +25,7 @@ ObjStruct ObjectLoader::load(const char* objPath, EncodedObj outObj) {
       vec3 vertex;
       fscanf(data, "%f %f %f \n", &vertex.x, &vertex.y, &vertex.z);
       objData.vertices.push_back(vertex);
+      tempVertices.push_back(vertex);
     }
     if(strcmp(header, "vt") == 0) {
       vec2 uvs;
@@ -51,15 +52,9 @@ ObjStruct ObjectLoader::load(const char* objPath, EncodedObj outObj) {
       normIndices.push_back(normIndex[0]);
       normIndices.push_back(normIndex[1]);
       normIndices.push_back(normIndex[2]);
-
-      /* EACH of the vertexIndices needs to be an x,y,x coord */
-
-       /* Faces Debuggine  ************************************
-        * printf("\n\e[0;39;49m  faces(%d)  \e[0m", dataAmt); */
-      // cout << vIndex[0] << endl;
-
-
-      /* LOOP THROUGH VERTS vec3 each line add UVS vec for a | x y x u v | */
+      /* *********** Faces Debuggine  **************
+      ** printf("\n\e[0;39;49m  faces(%d)  \e[0m", dataAmt);
+      */
     }
   }
 
