@@ -16,7 +16,7 @@ class RefactorMe {
       // South side towards ME on Zedd Axis
       cubeMesh.tris = { 
         /*
-           - Coords in order, w/ 2 tris each, of -
+           - Coords in order, w/ 2 tris each a face, of (x,y,z) in clockwise tri order -
           South
           East
           North
@@ -46,6 +46,8 @@ class RefactorMe {
 };
 
 int main() {
+  printf("\n  App Initialized() ... \n");
+
   RefactorMe refactorMe;
   refactorMe.onInit();
 
@@ -55,8 +57,6 @@ int main() {
     printf("{(%.2f, %.2f, %.2f),  (%.2f, %.2f, %.2f),  (%.2f, %.2f, %.2f)} \n", tri.coord[0].x, tri.coord[0].y, tri.coord[0].z, tri.coord[1].x, tri.coord[1].y, tri.coord[1].z, tri.coord[2].x, tri.coord[2].y, tri.coord[2].z);
   }
   printf("\n");
-  
-  cout << " \n App Initialized() ... \n" << endl;
 
   return 0;
 }
