@@ -11,7 +11,7 @@
   @INTERESTING || so the position is temp_vertices[ vertexIndex-1 ] (there is a -1 because C++ indexing starts at 0 and OBJ indexing starts at 1, remember ?) :
 *******************************/
 
-ObjStruct ObjectLoader::load(const char* objPath, EncodedObj outObj) {
+/*ObjStruct*/bool ObjectLoader::load(const char* objPath, EncodedObj outObj) {
   FILE *data = fopen(objPath, "r");
   if(!data) printf("\n\e[0;31;40m OBJECT NOT LOADING\e[0m"); /* change this to be under the return of the if(data) as it is da waay */
 
@@ -21,23 +21,31 @@ ObjStruct ObjectLoader::load(const char* objPath, EncodedObj outObj) {
     // printf("\n  \e[1;33;40m    %d \e[0m", reader);
     if(reader == EOF) break;
 
-    if(strcmp(header, "v") == 0) {
+    if(strcmp(header, "#") == 0 || strcmp(header, "mtllib") == 0) {
+      // IGNORE
+    }
+    else if(strcmp(header, "o") == 0) {
+      /* ObjName from file for prefab type creation */
+    }
+    else if(strcmp(header, "v") == 0) {
       vec3 vertex;
       fscanf(data, "%f %f %f \n", &vertex.x, &vertex.y, &vertex.z);
-      objData.vertices.push_back(vertex);
       tempVertices.push_back(vertex);
+      objData.vertices.push_back(vertex);
     }
-    if(strcmp(header, "vt") == 0) {
+    else if(strcmp(header, "vt") == 0) {
       vec2 uvs;
       fscanf(data, "%f %f \n", &uvs.x, &uvs.y);
       objData.uvs.push_back(uvs);
+      encodedObj.uvs.push_back(uvs);
     }
-    if(strcmp(header, "vn") == 0) {
+    else if(strcmp(header, "vn") == 0) {
       vec3 vertexNormal;
       fscanf(data, "%f %f %f \n", &vertexNormal.x, &vertexNormal.y, &vertexNormal.z);
       objData.normals.push_back(vertexNormal);
+      encodedObj.norms.push_back(vertexNormal);
     }
-    if(strcmp(header, "f") == 0) {
+    else if(strcmp(header, "f") == 0) {
       uint vIndex[3], uvIndex[3], normIndex[3];
       int dataAmt = fscanf(data, "%d/%d/%d %d/%d/%d %d/%d/%d\n", &vIndex[0], &uvIndex[0], &normIndex[0], &vIndex[1], &uvIndex[1], &normIndex[1], &vIndex[2], &uvIndex[2], &normIndex[2]);
       if(dataAmt != 9) printf("\n\e[0;31;40m OBJ(face) DATA TOO LARGE(!9)\e[0m");
@@ -58,10 +66,12 @@ ObjStruct ObjectLoader::load(const char* objPath, EncodedObj outObj) {
     }
   }
 
-  for(uint i=0; i<vertIndices.size(); i++) {
-    uint currVertexIndex = vertIndices[i];
-    glm::vec3 newVertex = tempVertices[currVertexIndex-1];
-    encodedObj.Vertices.push_back(newVertex);
+  /* @TODO compare for(uint) to for(size_t) in book */
+  for(size_t i=0; i<vertIndices.size(); i++) {
+    uint currVertexIndex = vertIndices[i]-1;
+    // glm::vec3 newVertex = tempVertices[currVertexIndex-1];
+    printf("Indice[%i](%f, %f, %f)\n", i, tempVertices[currVertexIndex].x, tempVertices[currVertexIndex].y, tempVertices[currVertexIndex].z);
+    encodedObj.vertices.push_back(tempVertices[currVertexIndex]);
   }
 
   /* @TODO build objData here possibly instead for indexing? */
@@ -69,5 +79,5 @@ ObjStruct ObjectLoader::load(const char* objPath, EncodedObj outObj) {
   printf("\n  \e[0;94;40m  Object Loaded: \e[0;33;40m %s \n    v(%d) vIndices(%d) \e[0m\n",
     objPath, objData.vertices.size(), vertIndices.size());
 
-  return objData;
+  return true; //objData;
 };

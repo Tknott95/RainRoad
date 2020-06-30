@@ -4,7 +4,7 @@
 #include <glm/glm.hpp>
 
 struct EncodedObj {
-  std::vector<glm::vec3> Vertices;
-  std::vector<glm::vec2> UVs;
-  std::vector<glm::vec3> Norms;
+  std::vector<glm::vec3> vertices;
+  std::vector<glm::vec2> uvs;
+  std::vector<glm::vec3> norms;
 };
