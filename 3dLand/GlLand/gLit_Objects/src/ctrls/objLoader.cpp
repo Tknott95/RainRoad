@@ -49,7 +49,7 @@ EncodedObj ObjectLoader::load(const char* objPath) {
       int dataAmt = fscanf(data, "%d/%d/%d %d/%d/%d %d/%d/%d\n", &vIndex[0], &uvIndex[0], &normIndex[0], &vIndex[1], &uvIndex[1], &normIndex[1], &vIndex[2], &uvIndex[2], &normIndex[2]);
       if(dataAmt != 9) printf("\n\e[0;31;40m OBJ(face) DATA TOO LARGE(!9)\e[0m");
 
-      objFileForLogger << "i-ces 1(" << vIndex[0] << ") 2(" << vIndex[1] << ") 3(" << vIndex[2] <<") \n";
+      objFileForLogger << "i-ces 1(" << vIndex[0]-1 << ") 2(" << vIndex[1]-1 << ") 3(" << vIndex[2]-1 <<") \n";
 
       /*
       ** @NOTE 
