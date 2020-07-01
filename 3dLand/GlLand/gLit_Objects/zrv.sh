@@ -8,7 +8,7 @@ _CPPs="
 echo "    - Logger Init() -"
 FILE=/etc/resolv.conf
 if test -f "$_LOGGER_FILE_PATH"; then
-  echo "    - Cleaning logger files at: $_LOGGER_FILE_PATH"
+  echo "    - Cleaning logger files at: $_LOGGER_FILE_PATH\n"
   rm -f assets/logs/encodedObjLogger.txt
 fi
 
