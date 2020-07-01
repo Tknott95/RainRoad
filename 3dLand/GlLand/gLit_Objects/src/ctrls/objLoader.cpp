@@ -51,15 +51,20 @@ EncodedObj ObjectLoader::load(const char* objPath) {
 
       objFileForLogger << "i-ces 1(" << vIndex[0] << ") 2(" << vIndex[1] << ") 3(" << vIndex[2] <<") \n";
 
+      /*
+      ** @NOTE 
+      **  - indexing starting at 1 for indices so subtracting prior
+      ** to store for correct values via. the math world. 
+      **/
       vertIndices.push_back(vIndex[0]-1);
       vertIndices.push_back(vIndex[1]-1);
       vertIndices.push_back(vIndex[2]-1);
-      // uvIndices.push_back(uvIndex[0]);
-      // uvIndices.push_back(uvIndex[1]);
-      // uvIndices.push_back(uvIndex[2]);
-      // normIndices.push_back(normIndex[0]);
-      // normIndices.push_back(normIndex[1]);
-      // normIndices.push_back(normIndex[2]);
+      uvIndices.push_back(uvIndex[0]-1);
+      uvIndices.push_back(uvIndex[1]-1);
+      uvIndices.push_back(uvIndex[2]-1);
+      normIndices.push_back(normIndex[0]-1);
+      normIndices.push_back(normIndex[1]-1);
+      normIndices.push_back(normIndex[2]-1);
       /* *********** Faces Debuggine  **************
       ** printf("\n\e[0;39;49m  faces(%d)  \e[0m", dataAmt);
       */
