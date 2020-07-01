@@ -33,7 +33,7 @@ void Draw::init() {
   * col.obj
   * col_lg.obj
   *************/
-  encodedObj = objLoader.load("assets/objects/sqr.obj"); 
+  encodedObj = objLoader.load("assets/objects/col.obj"); 
 
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
   objShader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
