@@ -2,6 +2,7 @@
 #include <fstream>
 /******************************
   USING
+  - Have an active logger at v step and 1/3of f step 
     v - vertices - x y z
     vt - uvs - x y
     vn
@@ -16,17 +17,14 @@ EncodedObj ObjectLoader::load(const char* objPath) {
   if(!data) printf("\n\e[0;31;40m OBJECT NOT LOADING\e[0m"); /* change this to be under the return of the if(data) as it is da waay */
 
   ofstream objFileForLogger;
-  objFileForLogger.open ("assets/logs/encodedObjLogger.txt");
+  objFileForLogger.open("assets/logs/encodedObjLogger.txt");
   while(data) { /* while so it reads every lang rather then an if */
     char header[256];
     int reader = fscanf(data, "%s", header);
     // printf("\n  \e[1;33;40m    %d \e[0m", reader);
     if(reader == EOF) break;
 
-    if(strcmp(header, "#") == 0 || strcmp(header, "mtllib") == 0) {
-      // IGNORE
-    }
-    else if(strcmp(header, "o") == 0) {
+    if(strcmp(header, "o") == 0) {
       /* ObjName from file for prefab type creation */
     }
     else if(strcmp(header, "v") == 0) {
