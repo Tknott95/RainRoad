@@ -29,30 +29,31 @@ EncodedObj ObjectLoader::load(const char* objPath) {
     }
     else if(strcmp(header, "v") == 0) {
       vec3 vertex;
-      fscanf(data, "%f %f %f \n", &vertex.x, &vertex.y, &vertex.z);
+      fscanf(data, "%f %f %f\n", &vertex.x, &vertex.y, &vertex.z);
       objFileForLogger << "v " << vertex.x << ", " << vertex.y << ", " << vertex.z <<"\n";
       encodedObj.vertices.push_back(vertex);
+      // temp_vertices.push_back(vertex);
     }
     else if(strcmp(header, "vt") == 0) {
       vec2 uvs;
-      fscanf(data, "%f %f \n", &uvs.x, &uvs.y);
+      fscanf(data, "%f %f\n", &uvs.x, &uvs.y);
       encodedObj.uvs.push_back(uvs);
     }
     else if(strcmp(header, "vn") == 0) {
       vec3 vertexNormal;
-      fscanf(data, "%f %f %f \n", &vertexNormal.x, &vertexNormal.y, &vertexNormal.z);
+      fscanf(data, "%f %f %f\n", &vertexNormal.x, &vertexNormal.y, &vertexNormal.z);
       encodedObj.norms.push_back(vertexNormal);
     }
     else if(strcmp(header, "f") == 0) {
       uint vIndex[3], uvIndex[3], normIndex[3];
-      int dataAmt = fscanf(data, "%i/%i/%i %i/%i/%i %i/%i/%i\n", &vIndex[0], &uvIndex[0], &normIndex[0], &vIndex[1], &uvIndex[1], &normIndex[1], &vIndex[2], &uvIndex[2], &normIndex[2]);
+      int dataAmt = fscanf(data, "%d/%d/%d %d/%d/%d %d/%d/%d\n", &vIndex[0], &uvIndex[0], &normIndex[0], &vIndex[1], &uvIndex[1], &normIndex[1], &vIndex[2], &uvIndex[2], &normIndex[2]);
       if(dataAmt != 9) printf("\n\e[0;31;40m OBJ(face) DATA TOO LARGE(!9)\e[0m");
 
       objFileForLogger << "i-ces 1(" << vIndex[0] << ") 2(" << vIndex[1] << ") 3(" << vIndex[2] <<") \n";
 
-      vertIndices.push_back(vIndex[0]);
-      vertIndices.push_back(vIndex[1]);
-      vertIndices.push_back(vIndex[2]);
+      vertIndices.push_back(vIndex[0]-1);
+      vertIndices.push_back(vIndex[1]-1);
+      vertIndices.push_back(vIndex[2]-1);
       // uvIndices.push_back(uvIndex[0]);
       // uvIndices.push_back(uvIndex[1]);
       // uvIndices.push_back(uvIndex[2]);

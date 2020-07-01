@@ -29,12 +29,11 @@ void Draw::init() {
   // glEnable(GL_DEPTH_TEST);
   /***********
   * @BUG LAST OF THE INDICES IS CAUSING A BUG where last tri drawing to mid point
-  * star.obj
-  * oddShape.obj
+  * sqr.obj
   * col.obj
   * col_lg.obj
   *************/
-  encodedObj = objLoader.load("assets/objects/col.obj"); 
+  encodedObj = objLoader.load("assets/objects/sqr.obj"); 
 
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
   objShader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
@@ -58,7 +57,7 @@ void Draw::init() {
     0, /* matches layout in header */
     3, /* size */
     GL_FLOAT, /* type */
-    GL_TRUE, /* isNormalized? */
+    GL_FALSE, /* isNormalized? */
     sizeof(vec3), /*  or 3 * sizeof(float) | stride, matches my data xyz|vec3*/
     (void*)0 /* array buffer offset */
   );
@@ -66,6 +65,7 @@ void Draw::init() {
   glBindBuffer(GL_ARRAY_BUFFER, objUVBO);
   glBufferData(GL_ARRAY_BUFFER, encodedObj.uvs.size() * sizeof(vec2), &encodedObj.uvs[0], GL_STATIC_DRAW);
   glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(vec2), (void*)0);
+  glEnableVertexAttribArray(2);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, objLoader.vertIndices.size() * sizeof(uint), &objLoader.vertIndices[0], GL_STATIC_DRAW);
 
@@ -103,14 +103,14 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   objShader.setMat4("view", view);
   objShader.setMat4("projection", projection);
   objShader.setMat4("transform", transform);
-  glEnable(GL_DEPTH_TEST);  
+  // glEnable(GL_DEPTH_TEST);  
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
   glBindVertexArray(objVAO);
   /* @TODO need texture coordinates imported in */
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, objTexID);
-  // glDrawArrays(GL_TRIANGLES, 0, encodedObj.vertices.size());
+  glDrawArrays(GL_TRIANGLES, 0, encodedObj.vertices.size() * sizeof(vec3));
   // printf("vertIndicesSize(%i)", objLoader.vertIndices.size());
   glDrawElements(GL_TRIANGLES, objLoader.vertIndices.size(), GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);
