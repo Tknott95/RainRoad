@@ -103,7 +103,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   objShader.setMat4("view", view);
   objShader.setMat4("projection", projection);
   objShader.setMat4("transform", transform);
-  // glEnable(GL_DEPTH_TEST);  
+  glEnable(GL_DEPTH_TEST);  
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
   glBindVertexArray(objVAO);
