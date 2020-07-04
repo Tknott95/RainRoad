@@ -110,9 +110,9 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   /* @TODO need texture coordinates imported in */
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, objTexID);
-  glDrawArrays(GL_TRIANGLES, 0, encodedObj.vertices.size() * sizeof(vec3));
+  // glDrawArrays(GL_TRIANGLES, 0, encodedObj.vertices.size() * sizeof(vec3));
   // printf("vertIndicesSize(%i)", objLoader.vertIndices.size());
-  glDrawElements(GL_TRIANGLES, objLoader.vertIndices.size(), GL_UNSIGNED_INT, 0);
+  glDrawElements(GL_TRIANGLES, objLoader.vertIndices.size()* sizeof(vec3), GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);
   /************* OBJ DRAWING FINISHED **********************/
 
