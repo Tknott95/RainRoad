@@ -15,11 +15,11 @@ struct v2 {
     return v2(x*r, y*r); 
   }
 
-  v2 operator + (const v2 other) { /* Do I want this as a const? I am returning a new obj so prob */
+  v2 operator + (const v2 other) {
     return v2(this->x + other.x, this->y + other.y);
   }
   
-  v2 operator - (const v2 other) { /* Do I want this as a const? I am returning a new obj so prob */
+  v2 operator - (const v2 other) {
     return v2(this->x - other.x, this->y - other.y);
   }
 
@@ -41,9 +41,6 @@ struct v2 {
 
 
 
-
-
-/* WILL FINISH THIS ONCE v2 IS FINISHED */
 template<class T>
 struct v3 {
   T x,y,z;
