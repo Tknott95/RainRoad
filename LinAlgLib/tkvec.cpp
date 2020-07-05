@@ -33,6 +33,11 @@ struct v2 {
 };
 
 
+
+
+
+
+
 /* WILL FINISH THIS ONCE v2 IS FINISHED */
 template<class T>
 struct v3 {
@@ -43,10 +48,12 @@ struct v3 {
 
 
 int main() {
-  v2<int> v00;
+  v2<float> v00;
   v2<float> v01 = {1.0f, 1.0f};
 
-  printf("v00(%i, %i)\n", v00.x, v00.y);
+  v00 = v00 + v01 + v01 + v01;
+
+  printf("v00(%f, %f)\n", v00.x, v00.y);
   printf("v01(%f, %f)\n", v01.x, v01.y);
 
   return 0;
