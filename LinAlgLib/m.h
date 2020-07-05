@@ -5,7 +5,7 @@
 ** @EMAIL      - tk@trevorknott.io
 ** @ABSTRACT   - Linear Algebra Library to rid third party libs, 
 */
-
+WATCH AFTER REBOOT BRUV https://www.youtube.com/watch?v=4EJay-6Bioo
 template<class T>
 struct m2x2 {
   // T x1,y1, x2, y2;
