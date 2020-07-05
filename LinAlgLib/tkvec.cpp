@@ -14,7 +14,6 @@ struct v2 {
     return v2(x*r, y*r); 
   }
 
-  /* other should be rightHandSide param in arithmetics */
   v2 operator + (const v2 other) { /* Do I want this as a const? I am returning a new obj so prob */
     return v2(this->x + other.x, this->y + other.y);
   }
@@ -23,7 +22,13 @@ struct v2 {
     return v2(this->x - other.x, this->y - other.y);
   }
 
-  v2 operator * (const T& other)
+  v2 operator * (const T& other) {
+    return v2(this->x * other, this->y * other)
+  }
+
+  v2 operator / (const T& other) {
+    return v2(this->x / other, this->y / other)
+  }
 };
 
 
