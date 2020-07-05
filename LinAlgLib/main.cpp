@@ -46,8 +46,8 @@ int main() {
   float test = weights.val[0].val[0];
   printf("\n\n weigths[0][0]: %.2f", test);
   // i = i * w[0];
-  printf("\n\n output[0]: %f", output.val[0]);
-  printf("\n output[1]: %f", output.val[1]);
+  printf("\n\n output[0]: %.1f", output.val[0]);
+  printf("\n output[1]: %.1f", output.val[1]);
 
   return 0;
 }
