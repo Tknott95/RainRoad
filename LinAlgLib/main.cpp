@@ -16,12 +16,12 @@ int main() {
   m2x2<float> m01 = {5.f, 7.f, 6.f, 8.f};
   m2x2<float> m02 = {1.f, 2.f, 3.f, 4.f};
 
-  // printf("\n\n - b4 dotProd() \n");
-  // printf("m01[\n[%f, %f],\n[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
-  // printf("\nm02[\n[%f, %f],\n[%f, %f])\n", m02.x[0], m02.y[0], m02.x[1], m02.y[1]);
+  printf("\n\n   !! b4 dotProd() \n");
+  printf(" <> m1 2x2 array\n <> [[%f, %f],[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
+  printf(" <> m2 2x2 array\n <> [[%f, %f],[%f, %f])\n", m02.x[0], m02.y[0], m02.x[1], m02.y[1]);
   // m01 = m01 * m02; /* dotProd() order does matter */
-  // printf("\n  - after dotProd()");
-  // printf("\nm01[\n[%f, %f],\n[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
+  printf("\n   !! after dotProd() \n");
+  printf("\nm01[\n[%f, %f],\n[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
 
 
 
