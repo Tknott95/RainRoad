@@ -29,7 +29,7 @@ int main() {
   printf("m01[\n[%f, %f],\n[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
   printf("\nm02[\n[%f, %f],\n[%f, %f])\n", m02.x[0], m02.y[0], m02.x[1], m02.y[1]);
 
-  m01 = m01 * m02;
+  m01 = m01 * m02; /* dotProd() order does matter */
 
   printf("\n AFTER MULTIPLY");
   printf("\nm01[\n[%f, %f],\n[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
