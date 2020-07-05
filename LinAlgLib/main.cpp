@@ -54,6 +54,6 @@ int main() {
   m3x3_02 += m3x3_00;
   printf("\n3x3_01\n  [\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f]\n  ]\n",m3x3_02.val[0], m3x3_02.val[1], m3x3_02.val[2],m3x3_02.val[3],m3x3_02.val[4],m3x3_02.val[5],m3x3_02.val[6],m3x3_02.val[7],m3x3_02.val[8]);
  
- std::cout <<  m3x3_02.x[0] << std::endl;
+  std::cout <<  m3x3_00.getVal.at("x0") << std::endl;
   return 0;
 }
