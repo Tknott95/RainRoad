@@ -13,16 +13,16 @@ struct v2 {
 
   v2() : val{0, 0} {}
   v2(T _x, T _y) : val{_x, _y} {
-    x = val[0];
-    y = val[1];
+    x = _x;
+    y = _y;
   }
 
   T mag() { return sqrt(x*x + y*y); };
 
-  // v2 norm() {
-  //   T r = 1 / mag();
-  //   return v2(x*r, y*r); 
-  // }
+  v2 norm() {
+    T r = 1 / mag();
+    return v2(x*r, y*r); 
+  }
 
   v2 operator + (const v2 other) {
     return v2(this->x + other.x, this->y + other.y);

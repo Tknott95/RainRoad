@@ -4,10 +4,10 @@
 int main() {
 /* - ################   v2 testing   ################# - */
   v2<float> v00;
-  v2<float> v01 = {1.0f, 1.0f};
+  v2<float> v01 = {1.f, 1.f};
 
-  printf("v00(%f, %f)\n", v00.x, v00.y);
-  v00 = v00 + v01 + v01 + v01;
+  printf("v00(%.2f, %.2f)\n", v00.x, v00.y);
+
   v00 += v01 += v01 *= v01 /= {1.0, 1.0};
   v01 += v01;
   printf("v00(%f, %f)\n", v00.x, v00.y);
