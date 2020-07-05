@@ -33,7 +33,7 @@ void Draw::init() {
   * col.obj
   * col_lg.obj
   *************/
-  encodedObj = objLoader.load("assets/objects/col_lg.obj"); 
+  encodedObj = objLoader.load("assets/objects/plane.obj"); 
 
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
   objShader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
@@ -97,7 +97,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   mat4 transform = mat4(1.0f);
   mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
   mat4 view = camera->GetViewMatrix();
-  transform = translate(transform, glm::vec3(1.0f, 1.8f, -1.0f));
+  transform = translate(transform, glm::vec3(1.0f, -1.0f, 0.0f));
 
   objShader.setMat4("model", model);
   objShader.setMat4("view", view);
@@ -112,7 +112,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glBindTexture(GL_TEXTURE_2D, objTexID);
   // glDrawArrays(GL_TRIANGLES, 0, encodedObj.vertices.size() * sizeof(vec3));
   // printf("vertIndicesSize(%i)", objLoader.vertIndices.size());
-  glDrawElements(GL_TRIANGLES, objLoader.vertIndices.size()* sizeof(vec3), GL_UNSIGNED_INT, 0);
+  glDrawElements(GL_TRIANGLES, sizeof(objLoader.vertIndices), GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);
   /************* OBJ DRAWING FINISHED **********************/
 
