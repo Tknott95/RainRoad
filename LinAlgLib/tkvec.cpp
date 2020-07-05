@@ -10,8 +10,7 @@ struct v2 {
   float mag() { return sqrt(x*x + y*y); }; /* mag() returns float */
 
   v2 norm() {
-    /* check if dyn T needs to be done in a few places @TODO */
-    r = 1 / mag();
+    T r = 1 / mag();
     return v2(x*r, y*r); 
   }
 
@@ -23,6 +22,8 @@ struct v2 {
   v2 operator - (const v2 other) { /* Do I want this as a const? I am returning a new obj so prob */
     return v2(this->x - other.x, this->y - other.y);
   }
+
+  v2 operator * (const T& other)
 };
 
 
