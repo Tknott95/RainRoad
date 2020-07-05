@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 
 /*
 ** @AUTHOR     - Trevor Knott
@@ -86,35 +87,36 @@ struct v3 {
 
 template<class T>
 struct v4 {
-  T x,y,z,w;
+  //std::vector<T> x;
+  T x[4];
 
-  v4() : x(0), y(0), z(0), w(0) {}
-  v4(T _x, T _y, T _z, T _w) : x(_x), y(_y), z(_z), w(_w) {}
+  v4() : x({0,0,0,0}) {}
+  v4(T _x[4]) : x{_x[0], _x[1], _x[2], _x[3]} {}
 
-  v4 operator + (const v4 other) {
-    return v4(this->x + other.x, this->y + other.y, this->z + other.z, this->w + other.w);
-  }
-  v4 operator - (const v4 other) {
-    return v4(this->x - other.x, this->y - other.y, this->z - other.z, this->w - other.w);
-  }
-  v4 operator * (const v4 other) {
-    return v4(this->x * other.x, this->y * other.y, this->z * other.z, this->w * other.w);
-  }
-  v4 operator / (const v4 other) {
-    return v4(this->x / other.x, this->y / other.y, this->z / other.z, this->w / other.w);
-  }
+  // v4 operator + (const v4 other) {
+  //   return v4(this->x + other.x, this->y + other.y, this->z + other.z, this->w + other.w);
+  // }
+  // v4 operator - (const v4 other) {
+  //   return v4(this->x - other.x, this->y - other.y, this->z - other.z, this->w - other.w);
+  // }
+  // v4 operator * (const v4 other) {
+  //   return v4(this->x * other.x, this->y * other.y, this->z * other.z, this->w * other.w);
+  // }
+  // v4 operator / (const v4 other) {
+  //   return v4(this->x / other.x, this->y / other.y, this->z / other.z, this->w / other.w);
+  // }
   
 
-  v4& operator += (const v4& other) {
-    this->x += other.x; this->y += other.y; this->z += other.z; this->w += other.w; return *this;
-  }
-  v4& operator -= (const v4& other) {
-    this->x -= other.x; this->y -= other.y; this->z -= other.z; this->w -= other.w; return *this;
-  }
-  v4& operator *= (const v4& other) {
-    this->x *= other.x; this->y *= other.y; this->z *= other.z; this->w *= other.w; return *this;
-  }
-  v4& operator /= (const v4& other) {
-    this->x /= other.x; this->y /= other.y; this->z /= other.z; this->w /= other.w; return *this;
-  }
+  // v4& operator += (const v4& other) {
+  //   this->x += other.x; this->y += other.y; this->z += other.z; this->w += other.w; return *this;
+  // }
+  // v4& operator -= (const v4& other) {
+  //   this->x -= other.x; this->y -= other.y; this->z -= other.z; this->w -= other.w; return *this;
+  // }
+  // v4& operator *= (const v4& other) {
+  //   this->x *= other.x; this->y *= other.y; this->z *= other.z; this->w *= other.w; return *this;
+  // }
+  // v4& operator /= (const v4& other) {
+  //   this->x /= other.x; this->y /= other.y; this->z /= other.z; this->w /= other.w; return *this;
+  // }
 };
