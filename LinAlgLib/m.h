@@ -4,6 +4,7 @@
 ** @AUTHOR     - Trevor Knott
 ** @EMAIL      - tk@trevorknott.io
 ** @ABSTRACT   - Linear Algebra Library to rid third party libs
+** @TYPES      - m2x2. m3x3
 */
 
 template<class T>
