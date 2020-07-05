@@ -54,8 +54,8 @@ template<class T>
 struct v3 {
   T x,y,z;
 
-  v3() : x(0), y(0), z(0) {}
-  v3(T _x, T _y, T _z) : x(_x), y(_y), z(_z) {}
+  v3() : x({0,0,0}) {}
+  v3(T _x, T _y, T _z) : x{_x, _y, _z} {}
 
   v3 operator + (const v3 other) {
     return v3(this->x + other.x, this->y + other.y, this->z + other.z);
