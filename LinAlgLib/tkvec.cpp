@@ -44,9 +44,6 @@ struct v2 {
 };
 
 
-
-
-
 template<class T>
 struct v3 {
   T x,y,z;
@@ -67,7 +64,6 @@ struct v3 {
     return v3(this->x / other.x, this->y / other.y, this->z / other.z);
   }
   
-  
 
   v3& operator += (const v3& other) {
     this->x += other.x; this->y += other.y; this->z += other.z; return *this;
@@ -80,6 +76,32 @@ struct v3 {
   }
   v3& operator /= (const v3& other) {
     this->x /= other.x; this->y /= other.y; this->z /= other.z; return *this;
+  }
+};
+
+template<class T>
+struct v4 {
+  T x,y,z,w;
+
+  v4() : x(0), y(0), z(0), w(0) {}
+  v4(T _x, T _y, T _z, T _w) : x(_x), y(_y), z(_z), w(_w) {}
+
+  v4 operator + (const v4 other) {
+    return v4(this->x + other.x, this->y + other.y, this->z + other.z, this->w + other.w);
+  }
+  v4 operator - (const v4 other) {
+    return v4(this->x - other.x, this->y - other.y, this->z - other.z, this->w - other.w);
+  }
+  v4 operator * (const v4 other) {
+    return v4(this->x * other.x, this->y * other.y, this->z * other.z, this->w * other.w);
+  }
+  v4 operator / (const v4 other) {
+    return v4(this->x / other.x, this->y / other.y, this->z / other.z, this->w / other.w);
+  }
+  
+
+  v4& operator += (const v4& other) {
+    this->x += other.x; this->y += other.y; this->z += other.z; this->w += other.w; return *this;
   }
 };
 
