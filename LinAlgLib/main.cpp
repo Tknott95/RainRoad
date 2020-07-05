@@ -44,7 +44,7 @@ int main() {
   v4<float> w[2][1] = {w1, w2};
   float b[] = {0.2, 0.4};
 
-  printf("\n i[0]: %i \n i[1]: %i \n i[2]: %i\n i[3]: %i", i.x[0], i.x[1],  i.x[2], i.x[3]);
+  printf("\n i[0]: %i \n i[1]: %i \n i[2]: %i\n i[3]: %i", i.val[0], i.val[1],  i.val[2], i.val[3]);
   // v2<float> output = {{i[0]*w[0][0] + i[1]*w[0][1] + i[2]*w[0][2] + i[3]*w[0][3] + b[0]}, {i[0]*w[1][0] + i[1]*w[1][1] + i[2]*w[1][2] + i[3]*w[1][3] + b[1]}};
 
 //  float output[2][1] = {
