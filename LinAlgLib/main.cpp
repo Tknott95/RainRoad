@@ -36,7 +36,16 @@ int main() {
 
   printf("\n\n weights[0][*]: { %.2f, %.2f, %.2f, %.2f}\n weights[1][*]: { %.2f, %.2f, %.2f, %.2f}\n", weights.val[0].val[0],weights.val[0].val[1], weights.val[0].val[2], weights.val[0].val[3], weights.val[1].val[0],weights.val[1].val[1], weights.val[1].val[2], weights.val[1].val[3]);
   printf("\n\n output[0]: %.1f", output.val[0]);
-  printf("\n output[1]: %.1f", output.val[1]);
+  printf("\n output[1]: %.1f\n", output.val[1]);
+
+
+
+  /* - ################   m3x3 testing   ################# - */
+  m3x3<float> m3x3_00 = {1.37f, 1.37f, 1.37f, 3.14f, 3.14f, 3.14f, 7.28f, 7.28f, 7.28f};;
+  // m3x3<float> m3x3_01 = {1.37f, 1.37f, 1.37f, 3.14f, 3.14f, 3.14f, 7.28f, 7.28f, 7.28f};
+
+  printf("\n\n3x3\n [\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f]\n ]\n", m3x3_00.val[0], m3x3_00.val[1], m3x3_00.val[2], m3x3_00.val[3], m3x3_00.val[4], m3x3_00.val[5], m3x3_00.val[6], m3x3_00.val[7], m3x3_00.val[8], m3x3_00.val[9]);
+  // printf("\n\n3x3_01\n  [\n    [%.3f, %.3f, %.3f],\n    [%.3f, %.3f, %.3f],\n    [%.3f, %.3f, %.3f]\n  ]\n", m3x3_01.val[0], m3x3_01.val[1], m3x3_01.val[2], m3x3_01.val[3], m3x3_01.val[4], m3x3_01.val[5], m3x3_01.val[6], m3x3_01.val[7], m3x3_01.val[8], m3x3_01.val[9]);
 
   return 0;
 }
