@@ -1,5 +1,10 @@
 #include<iostream>
 
+/*
+** @AUTHOR     - Trevor Knott
+** @EMAIL      - tk@trevorknott.io
+** @ABSTRACT   - Linear Algebra Library to rid third party libs, 
+*/
 
 template<class T>
 struct v2 {
