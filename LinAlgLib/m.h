@@ -24,7 +24,7 @@ struct m2x2 {
   }
 
   /* @TODO Update these for matrices w. dimensionality   * 
-   *  - Multiplies in a "transpoe type cross fashion"    */
+   *  - Does the dotProduct  */
   m2x2 operator * (const m2x2 other) {
     float x[2] = {this->x[0] * other.x[0] + this->y[0] * other.x[1], this->x[1] * other.x[0] + this->y[1] * other.x[1]};
     float y[2] = {(this->x[0] * other.y[0] + this->y[0] * other.y[1]), this->x[1] * other.y[0] + this->y[1] * other.y[1]};
