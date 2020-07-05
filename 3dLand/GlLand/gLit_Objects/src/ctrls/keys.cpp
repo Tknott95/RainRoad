@@ -22,4 +22,7 @@ void Keys::keyPolling(GLFWwindow* window, Camera* camera, float deltaTime) {
   if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS);
   if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS);
   if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS);
+  if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
+    if(camera->Position.y <= 0) camera->Position.y += 0.4f;
+  }
 }
