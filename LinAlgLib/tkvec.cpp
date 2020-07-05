@@ -39,3 +39,13 @@ struct v3 {
 
   v3(T _x, T_y, T _z) : x(_x), y(_y), z(_z) {}
 };
+
+
+int main() {
+  v2 00;
+  v2 01 = {1.0, 1.0};
+
+  printf("myv2_01(%f, %f)\n", 01.x, 01.y);
+
+  return 0;
+}
