@@ -96,7 +96,7 @@ struct v4 {
   //std::vector<T> x;
   T val[4], x,y,z,w;
 
-  v4() : val({0,0,0,0}) {}
+  v4() : val{0,0,0,0} {}
   v4(T _x, T _y, T _z, T _w) : val{_x, _y, _z, _w} {
     x = val[0];
     y = val[1];

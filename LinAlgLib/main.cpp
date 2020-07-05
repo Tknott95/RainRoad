@@ -39,7 +39,10 @@ int main() {
 
  /* - ##################################### - */
   v4<int> inputs = {1,2,3,4};
-  v4<float> weights[2] = {{-0.4f, 0.7f, 0.2f, 0.4f}, {1.4, -0.8, -0.4, 0.4}};
+  v4<float> v2_00= {-0.4f, 0.7f, 0.2f, 0.4f};
+  v4<float> v2_01= {1.4, -0.8, -0.4, 0.4};
+
+  v2<v4<float>> weights = {v2_00, v2_01};
   float biases[] = {0.2, 0.4};
 
   printf("\n i[0]: %i \n i[1]: %i \n i[2]: %i\n i[3]: %i", inputs.val[0], inputs.val[1],  inputs.val[2], inputs.val[3]);
@@ -50,6 +53,8 @@ int main() {
 //     {i[0]*w[1][0] + i[1]*w[1][1] + i[2]*w[1][2] + i[3]*w[1][3] + b[1]}
 //   };
 
+  // float test = weights[0].val[0];
+  // printf("\n\n weigths[0][0]: %d", test);
   // i = i * w[0];
   // printf("\n\n output[0][0]: %f", output[0][0]);
   // printf("\n output[1][0]: %f", output[1][0]);
