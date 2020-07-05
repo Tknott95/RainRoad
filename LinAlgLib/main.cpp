@@ -41,7 +41,7 @@ int main() {
   v4<int> i = {1,2,3,4};
   v4<float> w1 =  {-0.4f, 0.7f, 0.2f, 0.4f};
   v4<float> w2 = {1.4, -0.8, -0.4, 0.4};
-  v4<float> w[2][1] = {w1, w2};
+  v4<float> weights[2] = {w1, w2};
   float b[] = {0.2, 0.4};
 
   printf("\n i[0]: %i \n i[1]: %i \n i[2]: %i\n i[3]: %i", i.val[0], i.val[1],  i.val[2], i.val[3]);
