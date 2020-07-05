@@ -46,11 +46,11 @@ int main() {
   float biases[] = {0.2, 0.4};
 
   printf("\n i[0]: %i \n i[1]: %i \n i[2]: %i\n i[3]: %i", inputs.val[0], inputs.val[1],  inputs.val[2], inputs.val[3]);
-  // v2<float> output = {{i[0]*w[0][0] + i[1]*w[0][1] + i[2]*w[0][2] + i[3]*w[0][3] + b[0]}, {i[0]*w[1][0] + i[1]*w[1][1] + i[2]*w[1][2] + i[3]*w[1][3] + b[1]}};
+  v2<float> output = {{inputs.val[0]*weights.val[0].val[0] + inputs.val[1]*weights.val[0].val[1]+ inputs.val[2]*weights.val[0].val[2] + inputs.val[3]*weights.val[0].val[3] + biases[0]}, {inputs.val[0]*weights.val[1].val[0] + inputs.val[1]*weights.val[1].val[1] + inputs.val[2]*weights.val[1].val[2] + inputs.val[3]*weights.val[1].val[3] + biases[1]}};
 
 //  float output[2][1] = {
-//     {i[0]*w[0][0] + i[1]*w[0][1] + i[2]*w[0][2] + i[3]*w[0][3] + b[0]},
-//     {i[0]*w[1][0] + i[1]*w[1][1] + i[2]*w[1][2] + i[3]*w[1][3] + b[1]}
+//     {inputs.val[0]*w[0][0] + inputs.val[1]*w[0][1] + inputs.val[2]*w[0][2] + inputs.val[3]*w[0][3] + biases[0]},
+//     {inputs.val[0]*w[1][0] + inputs.val[1]*w[1][1] + inputs.val[2]*w[1][2] + inputs.val[3]*w[1][3] + biases[1]}
 //   };
 
   float test = weights.val[0].val[0];
