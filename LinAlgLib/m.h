@@ -12,7 +12,7 @@ struct m2x2 {
   T x[2],y[2];
 
   m2x2() : x{0.f, 1.f}, y{0.f, 1.f} {}
-  m2x2(T _x[2], T _y[2]) : x(_x), y(_y) {}
+  m2x2(T _x[2], T _y[2]) : x{_x[0], _x[1]}, y{_y[0], _y[1]} {}
 
   // T mag() { return sqrt(x*x + y*y); };
 
