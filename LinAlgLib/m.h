@@ -30,9 +30,6 @@ struct m2x2 {
     float y[2] = {(this->x[0] * other.y[0] + this->y[0] * other.y[1]), this->x[1] * other.y[0] + this->y[1] * other.y[1]};
     return m2x2(x,y);
   }
-  // m2x2 operator / (const m2x2 other) {
-  //   return m2x2(this->x[0] / other.x[0], this->y[0] / other.y[0], this->x[1] / other.x[1], this->y[1] / other.y[1]);
-  // }
 
   m2x2& operator += (const m2x2& other) { /* maybe loop? */
     this->x[0] += other.x[0]; this->y[0] += other.y[0]; this->x[1] += other.x[1]; this->y[1] += other.y[1]; return *this;
@@ -40,10 +37,4 @@ struct m2x2 {
   m2x2& operator -= (const m2x2& other) { /* maybe loop? */
     this->x[0] -= other.x[0]; this->y[0] -= other.y[0]; this->x[1] -= other.x[1]; this->y[1] -= other.y[1]; return *this;
   }
-  // m2x2& operator *= (const m2x2& other) { /* maybe loop? */
-  //   this->x[0] *= other.x[0]; this->y[0] *= other.y[0]; this->x[1] *= other.x[1]; this->y[1] *= other.y[1]; return *this;
-  // }
-  // m2x2& operator /= (const m2x2& other) { /* maybe loop? */
-  //   this->x[0] /= other.x[0]; this->y[0] /= other.y[0]; this->x[1] /= other.x[1]; this->y[1] /= other.y[1]; return *this;
-  // }
 };
