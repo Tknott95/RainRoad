@@ -69,8 +69,8 @@ void Window::update() {
 
     this->draw->update(_camera, screenSize);
 
-    if(this->_camera->yPos >= 0) {
-      this->_camera->yPos -= 0.2f;
+    if(this->_camera->Position.y >= 0) {
+      this->_camera->Position.y -= 0.2f;
     }
     
     glfwGetCursorPos(_window, &xpos, &ypos);
