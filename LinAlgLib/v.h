@@ -19,10 +19,10 @@ struct v2 {
 
   T mag() { return sqrt(x*x + y*y); };
 
-  v2 norm() {
-    T r = 1 / mag();
-    return v2(x*r, y*r); 
-  }
+  // v2 norm() {
+  //   T r = 1 / mag();
+  //   return v2(x*r, y*r); 
+  // }
 
   v2 operator + (const v2 other) {
     return v2(this->x + other.x, this->y + other.y);
@@ -76,7 +76,6 @@ struct v3 {
     return v3(this->x / other.x, this->y / other.y, this->z / other.z);
   }
   
-
   v3& operator += (const v3& other) {
     this->x += other.x; this->y += other.y; this->z += other.z; return *this;
   }
@@ -93,7 +92,6 @@ struct v3 {
 
 template<class T>
 struct v4 {
-  //std::vector<T> x;
   T val[4], x,y,z,w;
 
   v4() : val{0,0,0,0} {}

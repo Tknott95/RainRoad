@@ -3,7 +3,6 @@
 
 int main() {
 /* - ################   v2 testing   ################# - */
-
   v2<float> v00;
   v2<float> v01 = {1.0f, 1.0f};
 
@@ -20,11 +19,11 @@ int main() {
   m2x2<float> m02 = {1.f, 2.f, 3.f, 4.f};
 
   printf("\n\n   !! b4 dotProd() \n");
-  printf(" <> m1 2x2 array\n <> [[%f, %f],[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
-  printf(" <> m2 2x2 array\n <> [[%f, %f],[%f, %f])\n", m02.x[0], m02.y[0], m02.x[1], m02.y[1]);
+  printf("  m1 2x2 array\n  -> [[%f, %f],[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
+  printf("  m2 2x2 array\n  -> [[%f, %f],[%f, %f])\n", m02.x[0], m02.y[0], m02.x[1], m02.y[1]);
   m01 = m01 * m02;
   printf("\n   !! after dotProd() \n");
-  printf(" <> m1 2x2 array\n <> [[%f, %f],[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
+  printf("  m1 2x2 array\n  -> [[%f, %f],[%f, %f])\n\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
 
 
 /* - ################   AI mock data dotProd() testing   ################# - */
@@ -32,10 +31,10 @@ int main() {
   v2<v4<float>> weights = {{-0.4f, 0.7f, 0.2f, 0.4f}, {1.4, -0.8, -0.4, 0.4}};
   v2<float> biases = {0.2, 0.4};
 
-  printf("\n i{%i, %i, %i, %i}", inputs.val[0], inputs.val[1],  inputs.val[2], inputs.val[3]);
+  printf("\n i{%i, %i, %i, %i}\n", inputs.val[0], inputs.val[1],  inputs.val[2], inputs.val[3]);
   v2<float> output = {{inputs.val[0]*weights.val[0].val[0] + inputs.val[1]*weights.val[0].val[1]+ inputs.val[2]*weights.val[0].val[2] + inputs.val[3]*weights.val[0].val[3] + biases.val[0]}, {inputs.val[0]*weights.val[1].val[0] + inputs.val[1]*weights.val[1].val[1] + inputs.val[2]*weights.val[1].val[2] + inputs.val[3]*weights.val[1].val[3] + biases.val[1]}};
 
-  printf("\n\n weights[0][*]: { %.2f, %.2f, %.2f, %.2f}\n weights[1][*]: { %.2f, %.2f, %.2f, %.2f}", weights.val[0].val[0],weights.val[0].val[1], weights.val[0].val[2], weights.val[0].val[3], weights.val[1].val[0],weights.val[1].val[1], weights.val[1].val[2], weights.val[1].val[3]);
+  printf("\n\n weights[0][*]: { %.2f, %.2f, %.2f, %.2f}\n weights[1][*]: { %.2f, %.2f, %.2f, %.2f}\n", weights.val[0].val[0],weights.val[0].val[1], weights.val[0].val[2], weights.val[0].val[3], weights.val[1].val[0],weights.val[1].val[1], weights.val[1].val[2], weights.val[1].val[3]);
   printf("\n\n output[0]: %.1f", output.val[0]);
   printf("\n output[1]: %.1f", output.val[1]);
 
