@@ -57,20 +57,3 @@ void Camera::updateCameraVectors() {
   Right = glm::normalize(glm::cross(Front, WorldUp));  // Normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
   Up    = glm::normalize(glm::cross(Right, Front));
 }
-
-/* @TODO pull into keys class */
-// void Camera::ScrollCallback(GLFWwindow* window, double xoffset, double yoffset) {
-//   ProcessMouseScroll(yoffset);
-// }
-// void Camera::MouseCallback(GLFWwindow* window, double xpos, double ypos, bool firstMouse){
-//   if (firstMouse) {
-//     lastX = xpos;
-//     lastY = ypos;
-//     firstMouse = false;
-//   }
-//   float xoffset = xpos - lastX;
-//   float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
-//   lastX = xpos;
-//   lastY = ypos;
-//   ProcessMouseMovement(xoffset, yoffset, firstMouse);
-// }

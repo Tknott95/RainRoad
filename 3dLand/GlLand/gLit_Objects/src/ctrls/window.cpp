@@ -68,6 +68,10 @@ void Window::update() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     this->draw->update(_camera, screenSize);
+
+    if(this->_camera->yPos >= 0) {
+      this->_camera->yPos -= 0.2f;
+    }
     
     glfwGetCursorPos(_window, &xpos, &ypos);
     /* for debugging pos
