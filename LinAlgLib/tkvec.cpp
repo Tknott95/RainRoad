@@ -8,7 +8,7 @@ struct v2 {
   v2() : x(0), y(0) {}
   v2(T _x, T _y) : x(_x), y(_y) {}
 
-  float mag() { return sqrt(x*x + y*y); }; /* mag() returns float */
+  T mag() { return sqrt(x*x + y*y); };
 
   v2 norm() {
     T r = 1 / mag();
@@ -57,7 +57,29 @@ template<class T>
 struct v3 {
   T x,y,z;
 
+  v3() : x(0), y(0), z(0) {}
   v3(T _x, T _y, T _z) : x(_x), y(_y), z(_z) {}
+
+  v3 operator + (const v3 other) {
+    return v3(this->x + other.x, this->y + other.y, this->z + other.z);
+  }
+  v3 operator - (const v3 other) {
+    return v3(this->x - other.x, this->y - other.y, this->z - other.z);
+  }
+  v3 operator * (const v3 other) {
+    return v3(this->x * other.x, this->y * other.y, this->z * other.z);
+  }
+  v3 operator / (const v3 other) {
+    return v3(this->x / other.x, this->y / other.y, this->z / other.z);
+  }
+  
+  
+
+  v3& operator += (const v3& other) {
+    this->x += other.x; this->y += other.y; this->z += other.z; return *this;
+  }
+
+  
 };
 
 
