@@ -40,9 +40,7 @@ int main() {
   printf("\n i[0]: %i \n i[1]: %i \n i[2]: %i\n i[3]: %i", inputs.val[0], inputs.val[1],  inputs.val[2], inputs.val[3]);
   v2<float> output = {{inputs.val[0]*weights.val[0].val[0] + inputs.val[1]*weights.val[0].val[1]+ inputs.val[2]*weights.val[0].val[2] + inputs.val[3]*weights.val[0].val[3] + biases.val[0]}, {inputs.val[0]*weights.val[1].val[0] + inputs.val[1]*weights.val[1].val[1] + inputs.val[2]*weights.val[1].val[2] + inputs.val[3]*weights.val[1].val[3] + biases.val[1]}};
 
-  float test = weights.val[0].val[0];
-  printf("\n\n weigths[0][0]: %.2f", test);
-  // i = i * w[0];
+  printf("\n\n weigths[0][0]: %.2f", weights.val[0].val[0]);
   printf("\n\n output[0]: %.1f", output.val[0]);
   printf("\n output[1]: %.1f", output.val[1]);
 
