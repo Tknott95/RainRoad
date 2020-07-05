@@ -18,15 +18,12 @@ struct v2 {
   v2 operator + (const v2 other) {
     return v2(this->x + other.x, this->y + other.y);
   }
-  
   v2 operator - (const v2 other) {
     return v2(this->x - other.x, this->y - other.y);
   }
-
   v2 operator * (const T& other) {
     return v2(this->x * other, this->y * other);
   }
-
   v2 operator / (const T& other) {
     return v2(this->x / other, this->y / other);
   }
@@ -34,15 +31,12 @@ struct v2 {
   v2& operator += (const v2& other) {
     this->x += other.x; this->y += other.y; return *this;
   }
-
   v2& operator -= (const v2& other) {
     this->x -= other.x; this->y -= other.y; return *this;
   }
-
   v2& operator *= (const v2& other) {
     this->x *= other.x; this->y *= other.y; return *this;
   }
-
   v2& operator /= (const v2& other) {
     this->x /= other.x; this->y /= other.y; return *this;
   }
@@ -78,8 +72,15 @@ struct v3 {
   v3& operator += (const v3& other) {
     this->x += other.x; this->y += other.y; this->z += other.z; return *this;
   }
-
-  
+  v3& operator -= (const v3& other) {
+    this->x -= other.x; this->y -= other.y; this->z -= other.z; return *this;
+  }
+  v3& operator *= (const v3& other) {
+    this->x *= other.x; this->y *= other.y; this->z *= other.z; return *this;
+  }
+  v3& operator /= (const v3& other) {
+    this->x /= other.x; this->y /= other.y; this->z /= other.z; return *this;
+  }
 };
 
 
