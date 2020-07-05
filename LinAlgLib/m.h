@@ -43,7 +43,6 @@ struct m3x3 {
 
   m3x3() : val{0, 0, 0, 1, 1, 1, 2, 2, 2} {}
   m3x3(T _x1, T _y1, T _z1, T _x2, T _y2, T _z2, T _x3, T _y3, T _z3) : val{_x1, _y1, _z1, _x2, _y2, _z2, _x3, _y3, _z3} {
-
     getVal = { 
       {"x0", val[0]},
       {"y0", val[1]},
@@ -63,7 +62,6 @@ struct m3x3 {
   m3x3 operator - (const m3x3 other) {
     return m3x3(this->val[0] - other.val[0], this->val[1] - other.val[1], this->val[2] - other.val[2], this->val[3] + other.val[3], this->val[4] + other.val[4], this->val[5] + other.val[5], this->val[6] + other.val[6], this->val[7] + other.val[7], this->val[8] + other.val[8]);
   }
-
 
   m3x3& operator += (const m3x3& other) { /* loop? */
     this->val[0] += other.val[0]; this->val[1] += other.val[1]; this->val[2] += other.val[2]; this->val[3] += other.val[3]; this->val[4] += other.val[4]; this->val[5] += other.val[5]; this->val[6] += other.val[6]; this->val[7] += other.val[7]; this->val[8] += other.val[8];  return *this;
