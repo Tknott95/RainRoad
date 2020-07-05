@@ -8,11 +8,15 @@
 
 template<class T>
 struct m2x2 {
-  // T x1,y1, x2, y2;
-  T x[2],y[2];
+  T val[4], x[2], y[2];
 
-  m2x2() : x{0.f, 1.f}, y{0.f, 1.f} {}
-  m2x2(T _x[2], T _y[2]) : x{_x[0], _x[1]}, y{_y[0], _y[1]} {}
+  m2x2() : val{0.f, 0.f, 1.f, 1.f} {}
+  m2x2(T _x1, T _y1, T _x2, T _y2) : val{_x1, _y1, _x2, _y2} {
+    x[0] = val[0];
+    y[0] = val[1];
+    x[1] = val[2];
+    y[1] = val[3];
+  }
 
   m2x2 operator + (const m2x2 other) {
     float x[2] = {this->x[0] + other.x[0], this->x[1] + other.x[1]};

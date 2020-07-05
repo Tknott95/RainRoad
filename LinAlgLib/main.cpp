@@ -13,21 +13,19 @@ int main() {
   printf("v01(%f, %f)\n", v01.x, v01.y);
 
   m2x2<float> m00;
-  float m01_x[2] = {5.f, 7.f};
-  float m01_y[2] = {6.f, 8.f};
-  m2x2<float> m01 = {m01_x, m01_y};
+  //m2x2<float> m01 = {{5.f, 7.f}, {6.f, 8.f}};
 
-  float m02_x[2] = {1.f, 3.f};
-  float m02_y[2] = {2.f, 4.f};
-  m2x2<float> m02 = {m02_x, m02_y};
+  // float m02_x[2] = {1.f, 3.f};
+  // float m02_y[2] = {2.f, 4.f};
+  // m2x2<float> m02 = {m02_x, m02_y};
 
 
-  printf("\n\n - b4 dotProd() \n");
-  printf("m01[\n[%f, %f],\n[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
-  printf("\nm02[\n[%f, %f],\n[%f, %f])\n", m02.x[0], m02.y[0], m02.x[1], m02.y[1]);
-  m01 = m01 * m02; /* dotProd() order does matter */
-  printf("\n  - after dotProd()");
-  printf("\nm01[\n[%f, %f],\n[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
+  // printf("\n\n - b4 dotProd() \n");
+  // printf("m01[\n[%f, %f],\n[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
+  // printf("\nm02[\n[%f, %f],\n[%f, %f])\n", m02.x[0], m02.y[0], m02.x[1], m02.y[1]);
+  // m01 = m01 * m02; /* dotProd() order does matter */
+  // printf("\n  - after dotProd()");
+  // printf("\nm01[\n[%f, %f],\n[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
 
 
 
@@ -40,7 +38,7 @@ int main() {
   printf("\n i[0]: %i \n i[1]: %i \n i[2]: %i\n i[3]: %i", inputs.val[0], inputs.val[1],  inputs.val[2], inputs.val[3]);
   v2<float> output = {{inputs.val[0]*weights.val[0].val[0] + inputs.val[1]*weights.val[0].val[1]+ inputs.val[2]*weights.val[0].val[2] + inputs.val[3]*weights.val[0].val[3] + biases.val[0]}, {inputs.val[0]*weights.val[1].val[0] + inputs.val[1]*weights.val[1].val[1] + inputs.val[2]*weights.val[1].val[2] + inputs.val[3]*weights.val[1].val[3] + biases.val[1]}};
 
-  printf("\n\n weigths[0][0]: %.2f", weights.val[0].val[0]);
+  printf("\n\n weights[0][0]: %.2f", weights.val[0].val[0]);
   printf("\n\n output[0]: %.1f", output.val[0]);
   printf("\n output[1]: %.1f", output.val[1]);
 
