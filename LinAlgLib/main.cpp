@@ -12,13 +12,9 @@ int main() {
   printf("v00(%f, %f)\n", v00.x, v00.y);
   printf("v01(%f, %f)\n", v01.x, v01.y);
 
-  m2x2<float> m00;
-  //m2x2<float> m01 = {{5.f, 7.f}, {6.f, 8.f}};
-
-  // float m02_x[2] = {1.f, 3.f};
-  // float m02_y[2] = {2.f, 4.f};
-  // m2x2<float> m02 = {m02_x, m02_y};
-
+  m2x2<float> m00;  /* {x1, y1, x2, y2} */
+  m2x2<float> m01 = {5.f, 7.f, 6.f, 8.f};
+  m2x2<float> m02 = {1.f, 2.f, 3.f, 4.f};
 
   // printf("\n\n - b4 dotProd() \n");
   // printf("m01[\n[%f, %f],\n[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
