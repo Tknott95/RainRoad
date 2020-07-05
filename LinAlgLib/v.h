@@ -91,7 +91,7 @@ struct v4 {
   T x[4];
 
   v4() : x({0,0,0,0}) {}
-  v4(T _x[4]) : x{_x[0], _x[1], _x[2], _x[3]} {}
+  v4(T _x, T _y, T _z, T _w) : x{_x, _y, _z, _w} {}
 
   // v4 operator + (const v4 other) {
   //   return v4(this->x + other.x, this->y + other.y, this->z + other.z, this->w + other.w);
