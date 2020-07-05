@@ -5,6 +5,7 @@ template<class T>
 struct v2 {
   T x,y;
 
+  v2() : x(0), y(0) {}
   v2(T _x, T _y) : x(_x), y(_y) {}
 
   float mag() { return sqrt(x*x + y*y); }; /* mag() returns float */
@@ -42,10 +43,11 @@ struct v3 {
 
 
 int main() {
-  // v2 00;
+  v2<int> v00;
   v2<float> v01 = {1.0f, 1.0f};
 
-  printf("myv2_01(%f, %f)\n", v01.x, v01.y);
+  printf("v00(%i, %i)\n", v00.x, v00.y);
+  printf("v01(%f, %f)\n", v01.x, v01.y);
 
   return 0;
 }
