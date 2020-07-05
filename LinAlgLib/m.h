@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include<map>
 /*
 ** @AUTHOR     - Trevor Knott
 ** @EMAIL      - tk@trevorknott.io
@@ -40,7 +40,7 @@ template<class T>
 struct m3x3 {
   T val[9], x[3], y[3], z[3];
 
-  m3x3() : val{0.f, 0.f, 0.f, 1.f, 1.f, 1.f, 2.f, 2.f, 2.f} {}
+  m3x3() : val{0, 0, 0, 1, 1, 1, 2, 2, 2} {}
   m3x3(T _x1, T _y1, T _z1, T _x2, T _y2, T _z2, T _x3, T _y3, T _z3) : val{_x1, _y1, _z1, _x2, _y2, _z2, _x3, _y3, _z3} {
     x[0] = val[0];
     y[0] = val[1];
@@ -51,6 +51,18 @@ struct m3x3 {
     x[2] = val[6];
     y[2] = val[7];
     z[2] = val[8];
+
+    // std::map<char, T> myMap = { 
+    //   {"x1", val[0]},
+    //   // {"y1", val[1]},
+    //   // {"z1", val[2]},
+    //   // {"x2", val[3]},
+    //   // {"y2", val[4]},
+    //   // {"z2", val[5]},
+    //   // {"x3", val[6]},
+    //   // {"y3", val[7]},
+    //   // {"z3", val[8]}
+    // };
   }
 
   m3x3 operator + (const m3x3 other) {
@@ -59,13 +71,18 @@ struct m3x3 {
   m3x3 operator - (const m3x3 other) {
     return m3x3(this->x[0] - other.x[0], this->y[0] - other.y[0], this->z[0] - other.z[0], this->x[1] - other.x[1], this->y[1] - other.y[1], this->z[1] - other.z[1], this->x[2] - other.x[2], this->y[2] - other.y[2], this->z[2] - other.z[2]);
   }
-  // m2x2 operator * (const m2x2 other) { /* grabs dotProd() */
-  //   return m2x2(this->x[0] * other.x[0] + this->y[0] * other.x[1], this->x[0] * other.y[0] + this->y[0] * other.y[1],  this->x[1] * other.x[0] + this->y[1] * other.x[1] , this->x[1] * other.y[0] + this->y[1] * other.y[1]);
-  // }
+
+
   m3x3& operator += (const m3x3& other) { /* loop? */
-    this->x[0] += other.x[0]; this->y[0] += other.y[0]; this->z[0] += other.z[0]; this->x[1] += other.x[1]; this->y[1] += other.y[1]; this->z[1] += other.z[1];  return *this;
+    this->val[0] += other.val[0]; this->val[1] += other.val[1]; this->val[2] += other.val[2]; this->val[3] += other.val[3]; this->val[4] += other.val[4]; this->val[5] += other.val[5]; this->val[6] += other.val[6]; this->val[7] += other.val[7]; this->val[8] += other.val[8];  return *this;
   }
   m3x3& operator -= (const m3x3& other) {
-    this->x[0] += other.x[0]; this->y[0] -= other.y[0]; this->z[0] -= other.z[0]; this->x[1] -= other.x[1]; this->y[1] -= other.y[1]; this->z[1] -= other.z[1];  return *this;
+    this->val[0] -= other.val[0]; this->val[1] -= other.val[1]; this->val[2] -= other.val[2]; this->val[3] -= other.val[3]; this->val[4] -= other.val[4]; this->val[5] -= other.val[5]; this->val[6] -= other.val[6]; this->val[7] -= other.val[7]; this->val[8] -= other.val[8];  return *this;
   }
+  //   m3x3& operator += (const m3x3& other) { /* loop? */
+  //     this->x[0] += other.x[0]; this->y[0] += other.y[0]; this->z[0] += other.z[0]; this->x[1] += other.x[1]; this->y[1] += other.y[1]; this->z[1] += other.z[1]; this->x[2] += other.x[2]; this->y[2] += other.y[2]; this->z[2] += other.z[2];  return *this;
+  //   }
+  //   m3x3& operator -= (const m3x3& other) {
+  //     this->x[0] -= other.x[0]; this->y[0] -= other.y[0]; this->z[0] -= other.z[0]; this->x[1] -= other.x[1]; this->y[1] -= other.y[1]; this->z[1] -= other.z[1];  return *this;
+  //   }
 };
