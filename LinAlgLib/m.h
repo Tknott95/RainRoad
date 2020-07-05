@@ -14,29 +14,22 @@ struct m2x2 {
   m2x2() : x{0.f, 1.f}, y{0.f, 1.f} {}
   m2x2(T _x[2], T _y[2]) : x{_x[0], _x[1]}, y{_y[0], _y[1]} {}
 
-  // T mag() { return sqrt(x*x + y*y); };
+  m2x2 operator + (const m2x2 other) {
+    return m2x2(this->x[0] + other.x[0], this->y[0] + other.y[0], this->x[1] + other.x[1], this->y[1] + other.y[1]);
+  }
+  m2x2 operator - (const m2x2 other) {
+    return m2x2(this->x[0] - other.x[0], this->y[0] - other.y[0], this->x[1] - other.x[1], this->y[1] - other.y[1]);
+  }
+  m2x2 operator * (const m2x2 other) {
+    return m2x2(this->x[0] * other.x[0], this->y[0] * other.y[0], this->x[1] * other.x[1], this->y[1] * other.y[1]);
+  }
+ m2x2 operator / (const m2x2 other) {
+    return m2x2(this->x[0] / other.x[0], this->y[0] / other.y[0], this->x[1] / other.x[1], this->y[1] / other.y[1]);
+  }
 
-  // v2 norm() {
-  //   T r = 1 / mag();
-  //   return v2(x*r, y*r); 
-  // }
-
-  // v2 operator + (const v2 other) {
-  //   return v2(this->x + other.x, this->y + other.y);
-  // }
-  // v2 operator - (const v2 other) {
-  //   return v2(this->x - other.x, this->y - other.y);
-  // }
-  // v2 operator * (const T& other) {
-  //   return v2(this->x * other, this->y * other);
-  // }
-  // v2 operator / (const T& other) {
-  //   return v2(this->x / other, this->y / other);
-  // }
-
-  // v2& operator += (const v2& other) {
-  //   this->x += other.x; this->y += other.y; return *this;
-  // }
+  m2x2& operator += (const m2x2& other) { /* maybe loop? */
+    this->x[0] += other.x[0]; this->y[0] += other.y[0]; this->x[1] += other.x[1]; this->y[1] += other.y[1]; return *this;
+  }
   // v2& operator -= (const v2& other) {
   //   this->x -= other.x; this->y -= other.y; return *this;
   // }
