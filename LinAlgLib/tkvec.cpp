@@ -5,7 +5,7 @@ template<class T>
 struct v2 {
   T x,y;
 
-  v2(T _x, T_y) : x(_x), y(_y) {}
+  v2(T _x, T _y) : x(_x), y(_y) {}
 
   float mag() { return sqrt(x*x + y*y); }; /* mag() returns float */
 
@@ -23,11 +23,11 @@ struct v2 {
   }
 
   v2 operator * (const T& other) {
-    return v2(this->x * other, this->y * other)
+    return v2(this->x * other, this->y * other);
   }
 
   v2 operator / (const T& other) {
-    return v2(this->x / other, this->y / other)
+    return v2(this->x / other, this->y / other);
   }
 };
 
@@ -37,15 +37,15 @@ template<class T>
 struct v3 {
   T x,y,z;
 
-  v3(T _x, T_y, T _z) : x(_x), y(_y), z(_z) {}
+  v3(T _x, T _y, T _z) : x(_x), y(_y), z(_z) {}
 };
 
 
 int main() {
-  v2 00;
-  v2 01 = {1.0, 1.0};
+  // v2 00;
+  v2<float> v01 = {1.0f, 1.0f};
 
-  printf("myv2_01(%f, %f)\n", 01.x, 01.y);
+  printf("myv2_01(%f, %f)\n", v01.x, v01.y);
 
   return 0;
 }
