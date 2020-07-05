@@ -5,7 +5,7 @@
 ** @EMAIL      - tk@trevorknott.io
 ** @ABSTRACT   - Linear Algebra Library to rid third party libs, 
 */
-WATCH AFTER REBOOT BRUV https://www.youtube.com/watch?v=4EJay-6Bioo
+
 template<class T>
 struct m2x2 {
   // T x1,y1, x2, y2;
@@ -15,17 +15,24 @@ struct m2x2 {
   m2x2(T _x[2], T _y[2]) : x{_x[0], _x[1]}, y{_y[0], _y[1]} {}
 
   m2x2 operator + (const m2x2 other) {
-    return m2x2(this->x[0] + other.x[0], this->y[0] + other.y[0], this->x[1] + other.x[1], this->y[1] + other.y[1]);
+    float x[2] = {this->x[0] + other.x[0], this->x[1] + other.x[1]};
+    float y[2] = {this->y[0] + other.y[0], this->y[1] + other.y[1]};
+    return m2x2(x, y);
   }
   m2x2 operator - (const m2x2 other) {
     return m2x2(this->x[0] - other.x[0], this->y[0] - other.y[0], this->x[1] - other.x[1], this->y[1] - other.y[1]);
   }
+
+  /* @TODO Update these for matrices w. dimensionality   * 
+   *  - Multiplies in a "transpoe type cross fashion"    */
   m2x2 operator * (const m2x2 other) {
-    return m2x2(this->x[0] * other.x[0], this->y[0] * other.y[0], this->x[1] * other.x[1], this->y[1] * other.y[1]);
+    float x[2] = {this->x[0] * other.x[0] + this->y[0] * other.x[1], this->x[1] * other.x[0] + this->y[1] * other.x[1]};
+    float y[2] = {(this->x[0] * other.y[0] + this->y[0] * other.y[1]), this->x[1] * other.y[0] + this->y[1] * other.y[1]};
+    return m2x2(x,y);
   }
-  m2x2 operator / (const m2x2 other) {
-    return m2x2(this->x[0] / other.x[0], this->y[0] / other.y[0], this->x[1] / other.x[1], this->y[1] / other.y[1]);
-  }
+  // m2x2 operator / (const m2x2 other) {
+  //   return m2x2(this->x[0] / other.x[0], this->y[0] / other.y[0], this->x[1] / other.x[1], this->y[1] / other.y[1]);
+  // }
 
   m2x2& operator += (const m2x2& other) { /* maybe loop? */
     this->x[0] += other.x[0]; this->y[0] += other.y[0]; this->x[1] += other.x[1]; this->y[1] += other.y[1]; return *this;
@@ -33,10 +40,10 @@ struct m2x2 {
   m2x2& operator -= (const m2x2& other) { /* maybe loop? */
     this->x[0] -= other.x[0]; this->y[0] -= other.y[0]; this->x[1] -= other.x[1]; this->y[1] -= other.y[1]; return *this;
   }
-  m2x2& operator *= (const m2x2& other) { /* maybe loop? */
-    this->x[0] *= other.x[0]; this->y[0] *= other.y[0]; this->x[1] *= other.x[1]; this->y[1] *= other.y[1]; return *this;
-  }
-  m2x2& operator /= (const m2x2& other) { /* maybe loop? */
-    this->x[0] /= other.x[0]; this->y[0] /= other.y[0]; this->x[1] /= other.x[1]; this->y[1] /= other.y[1]; return *this;
-  }
+  // m2x2& operator *= (const m2x2& other) { /* maybe loop? */
+  //   this->x[0] *= other.x[0]; this->y[0] *= other.y[0]; this->x[1] *= other.x[1]; this->y[1] *= other.y[1]; return *this;
+  // }
+  // m2x2& operator /= (const m2x2& other) { /* maybe loop? */
+  //   this->x[0] /= other.x[0]; this->y[0] /= other.y[0]; this->x[1] /= other.x[1]; this->y[1] /= other.y[1]; return *this;
+  // }
 };
