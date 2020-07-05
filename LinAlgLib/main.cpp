@@ -53,8 +53,8 @@ int main() {
 //     {i[0]*w[1][0] + i[1]*w[1][1] + i[2]*w[1][2] + i[3]*w[1][3] + b[1]}
 //   };
 
-  // float test = weights[0].val[0];
-  // printf("\n\n weigths[0][0]: %d", test);
+  float test = weights.val[0].val[0];
+  printf("\n\n weigths[0][0]: %.2f", test);
   // i = i * w[0];
   // printf("\n\n output[0][0]: %f", output[0][0]);
   // printf("\n output[1][0]: %f", output[1][0]);
