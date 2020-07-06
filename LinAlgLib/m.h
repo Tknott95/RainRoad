@@ -6,17 +6,21 @@
 ** @ABSTRACT   - Linear Algebra Library to rid third party libs
 ** @TYPES      - m2x2. m3x3
 */
+using namespace std;
 
 template<class T>
 struct m2x2 {
-  T val[4], x[2], y[2];
+  T val[2][2];
+  map<string, T> getVal;
 
   m2x2() : val{0.f, 0.f, 1.f, 1.f} {}
   m2x2(T _x1, T _y1, T _x2, T _y2) : val{_x1, _y1, _x2, _y2} {
-    x[0] = val[0];
-    y[0] = val[1];
-    x[1] = val[2];
-    y[1] = val[3];
+   getVal = { 
+      {"x0", val[0][0]},
+      {"y0", val[0][1]},
+      {"x1", val[1][0]},
+      {"y1", val[1][1]}
+    };
   }
 
   m2x2 operator + (const m2x2 other) {
@@ -39,7 +43,7 @@ struct m2x2 {
 template<class T>
 struct m3x3 {
   T val[3][3];
-  std::map<std::string, T> getVal;
+  map<string, T> getVal;
 
   m3x3() : val{0, 0, 0, 1, 1, 1, 2, 2, 2} {}
   m3x3(T _x1, T _y1, T _z1, T _x2, T _y2, T _z2, T _x3, T _y3, T _z3) : val{_x1, _y1, _z1, _x2, _y2, _z2, _x3, _y3, _z3} {
@@ -87,7 +91,7 @@ struct m3x3 {
 template<class T>
 struct m3x4 {
   T val[3][4];
-  std::map<std::string, T> getVal;
+  map<string, T> getVal;
 
   m3x4() : val{0, 0, 0, 0,  1, 1, 1, 1,  2, 2, 2, 2} {}
   m3x4(T _x1, T _y1, T _z1, T _w1, T _x2, T _y2, T _z2, T _w2, T _x3, T _y3, T _z3, T _w3) : val{{_x1, _y1, _z1, _w1}, {_x2, _y2, _z2, _w2}, {_x3, _y3, _z3, _w3}} {
