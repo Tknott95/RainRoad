@@ -145,9 +145,12 @@ struct m3x4 {
     this->val[2][0] += other.val[2][0]; this->val[2][1] += other.val[2][1]; this->val[2][2] += other.val[2][2];
     return *this;
   }
-  // m3x3& operator -= (const m3x3& other) {
-  //   this->val[0] -= other.val[0]; this->val[1] -= other.val[1]; this->val[2] -= other.val[2]; this->val[3] -= other.val[3]; this->val[4] -= other.val[4]; this->val[5] -= other.val[5]; this->val[6] -= other.val[6]; this->val[7] -= other.val[7]; this->val[8] -= other.val[8];  return *this;
-  // }
+  m3x4& operator -= (const m3x4& other) { /* loop? */
+    this->val[0][0] -= other.val[0][0]; this->val[0][1] -= other.val[0][1]; this->val[0][2] -= other.val[0][2];
+    this->val[1][0] -= other.val[1][0]; this->val[1][1] -= other.val[1][1]; this->val[1][2] -= other.val[1][2];
+    this->val[2][0] -= other.val[2][0]; this->val[2][1] -= other.val[2][1]; this->val[2][2] -= other.val[2][2];
+    return *this;
+  }
 };
 
 // template<class T>
