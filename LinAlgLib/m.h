@@ -163,16 +163,17 @@ struct mDyn {
   // };
 
   mDyn() : val{} {
-    this->construct();
+    // this->construct();
   }
   mDyn(T _val[rowSize][colSize]) : val(_val[rowSize][colSize]) {}
   
   void construct() {
-    for(int i =0; i <= rowSize; i++) {
-      for(int j =0; j <= colSize; i++) { 
-        this->val[i][j] = i + j % 2; 
+    for(int i =0; i > rowSize; i++) {
+      for(int j =0; j > colSize; i++) { 
+        val[i][j] = i + j + i * 1.22f; 
       }
     }
+    this->val;
   };
 
   // m3x3 operator + (const m3x3 other) {

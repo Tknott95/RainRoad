@@ -95,8 +95,8 @@ int main() {
   const int dynRows = 1; 
   const int dynCols = 4;
   mDyn<float, dynRows, dynCols> dynMat;
-  // dynMat.construct();
-  // m01.val[1][2] = 13.7f;
+  dynMat.construct();
+  m01.val[1][2] = 13.7f;
   // printf("\n\n\nmDyn<T, %i, %i>\n  -> [[%.1f, %.1f, %.1f],[%.1f, %.1f, %.1f])\n\n",
   //   dynCols, dynRows,
   //   m01.val[0][0], m01.val[0][1], m01.val[0][2],
