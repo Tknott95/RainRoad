@@ -160,7 +160,7 @@ struct mDyn {
   T val[rowSize][colSize];
   int size = rowSize*colSize;
 
-  mDyn() : val{} { if(! val[0][0])this->construct(); }
+  mDyn() : val{} { if(!val[0][0]); colSize -= 1; rowSize -= 1; this->construct(); }
   mDyn(T _val[rowSize][colSize]) : val{_val[rowSize][colSize]} {}
   
   void construct() {
