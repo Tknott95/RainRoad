@@ -85,34 +85,37 @@ int main() {
     inputs3x4.val[2][0], inputs3x4.val[2][1], inputs3x4.val[2][2], inputs3x4.val[2][3]
   );
 
-  printf("\nweights3x4\n  [\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f]\n  ]\n",
+  printf("\nweights3x4\n  [\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f]\n  ]\n\n\n",
     weights3x4.val[0][0], weights3x4.val[0][1], weights3x4.val[0][2], weights3x4.val[0][3],
     weights3x4.val[1][0], weights3x4.val[1][1], weights3x4.val[1][2], weights3x4.val[1][3],
     weights3x4.val[2][0], weights3x4.val[2][1], weights3x4.val[2][2], weights3x4.val[2][3]
   );
 
  
-  const int dynRows = 7; 
-  const int dynCols = 7;
+  const int dynRows = 1; 
+  const int dynCols = 4;
   mDyn<float, dynRows, dynCols> dynMat;
   dynMat.construct();
   m01.val[1][2] = 13.7f;
-  printf("\n\n\nmDyn<T, %i, %i>\n  -> [[%.1f, %.1f, %.1f],[%.1f, %.1f, %.1f])\n\n",
-    dynCols, dynRows,
-    m01.val[0][0], m01.val[0][1], m01.val[0][2],
-    m01.val[1][0], m01.val[1][1], m01.val[1][2]
-  );
+  // printf("\n\n\nmDyn<T, %i, %i>\n  -> [[%.1f, %.1f, %.1f],[%.1f, %.1f, %.1f])\n\n",
+  //   dynCols, dynRows,
+  //   m01.val[0][0], m01.val[0][1], m01.val[0][2],
+  //   m01.val[1][0], m01.val[1][1], m01.val[1][2]
+  // );
 
+  cout << "[\n";
   for(int j=0; j <= dynRows; j++) {
-    cout << "\n[\n";
+    cout << "  [\n";
     for(int k=0; k <= dynCols; k++) {
       cout 
-        << "  dynRows[" << j
+        << "   dynRows[" << j
         << "],  dynCols["
         << k << "],  val - " << dynMat.val[j][k] << "" << endl; 
     }
-    cout << "]" << endl;
+    cout << "  ]" << endl;
   }
+  cout << "]" << endl;
+
 
   return 0;
 }
