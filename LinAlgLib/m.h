@@ -168,8 +168,8 @@ struct mDyn {
   mDyn(T _val[rowSize][colSize]) : val(_val[rowSize][colSize]) {}
   
   void construct() {
-    for(int i =0; i >= rowSize; i++) {
-      for(int j =0; j >= colSize; i++) { 
+    for(int i =0; i <= rowSize; i++) {
+      for(int j =0; j <= colSize; i++) { 
         this->val[i][j] = i + j % 2; 
       }
     }
