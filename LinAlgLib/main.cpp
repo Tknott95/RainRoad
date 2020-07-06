@@ -19,11 +19,11 @@ int main() {
   m2x2<float> m02 = {1.f, 2.f, 3.f, 4.f};
 
   printf("\n\n   !! b4 dotProd() \n");
-  printf("  m1 2x2 array\n  -> [[%f, %f],[%f, %f])\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
-  printf("  m2 2x2 array\n  -> [[%f, %f],[%f, %f])\n", m02.x[0], m02.y[0], m02.x[1], m02.y[1]);
+  printf("  m1 2x2 array\n  -> [[%f, %f],[%f, %f])\n", m01.getVal.at("x0"), m01.getVal.at("y0"), m01.getVal.at("x1"), m01.getVal.at("y1"));
+  printf("  m2 2x2 array\n  -> [[%f, %f],[%f, %f])\n", m02.getVal.at("x0"), m02.getVal.at("y0"), m02.getVal.at("x1"), m02.getVal.at("y1"));
   m01 = m01 * m02;
   printf("\n   !! after dotProd() \n");
-  printf("  m1 2x2 array\n  -> [[%f, %f],[%f, %f])\n\n", m01.x[0], m01.y[0], m01.x[1], m01.y[1]);
+  printf("  m1 2x2 array\n  -> [[%f, %f],[%f, %f])\n\n", m01.getVal.at("x0"), m01.getVal.at("y0"), m01.getVal.at("x1"), m01.getVal.at("y1"));
 
 
 /* - ################   AI mock data dotProd() testing   ################# - */
