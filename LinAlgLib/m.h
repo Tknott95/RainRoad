@@ -160,17 +160,16 @@ struct mDyn {
   T val[rowSize][colSize];
   int size = rowSize*colSize;
 
-  mDyn() : val{} { this->construct(); }
+  mDyn() : val{} { if(! val[0][0])this->construct(); }
   mDyn(T _val[rowSize][colSize]) : val{_val[rowSize][colSize]} {}
   
   void construct() {
-    if(! val[0][0]) {
-      for(int i=0; i <= rowSize; i++) {
-        for(int j=0; j <= colSize; j++) { 
-          val[i][j] = i + j; 
-          printf("Constructing [%i][%i] value.", i, j);
-        }
+    for(int i=0; i <= rowSize; i++) {
+      for(int j=0; j <= colSize; j++) { 
+         val[i][j] = i + j; 
+        printf("Constructing [%i][%i] value.", i, j);
       }
     }
-  };
+  }
 };
+

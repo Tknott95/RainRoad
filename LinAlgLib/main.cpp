@@ -101,20 +101,17 @@ int main() {
     -1.33f, 2.22f, 1.44f, -1.88f
   };
   mDyn<float, dynRows, dynCols> dynMat02 = dynamicMatVals;
-    //  {1.8f, 2.1f, -1.2f, -1.77f},
-    //  {1.75f, -3.3f, 2.1f, -1.37f},
-    //  {-1.33f, 2.22f, 1.44f, -1.88f}
+ 
 
 
   cout << "[\n";
   for(int j=0; j <= dynRows; j++) {
     cout << "  [\n";
     for(int k=0; k <= dynCols; k++) {
-      cout 
-        << "   dynRows[" << j
-        << "],  dynCols["
-        << k << "],  val - " << dynMat.val[j][k] << "" << endl; 
-    }
+      cout << "   [" << j << "]["
+        << k << "], " << printf("val = %.1f", dynMat02.val[j][k]);
+      cout << "" << endl; 
+      }
     cout << "  ]" << endl;
   }
   cout << "]" << endl;
