@@ -169,8 +169,9 @@ struct mDyn {
   
   void construct() {
     for(int i =0; i > rowSize; i++) {
-      for(int j =0; j > colSize; i++) { 
-        val[i][j] = i + j + i * 1.22f; 
+      for(int j =0; j > colSize; j++) { 
+        val[i][j] = 1.f; 
+        printf("Constructing [%i][%i] value.", i, j);
       }
     }
     this->val;
