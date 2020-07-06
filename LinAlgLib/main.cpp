@@ -55,5 +55,23 @@ int main() {
  
   std::cout <<  m3x3_00.getVal.at("x0") << std::endl;
   printf("\n\n  [\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f]\n  ]\n", m3x3_00.getVal.at("x0"), m3x3_00.getVal.at("y0"), m3x3_00.getVal.at("z0"), m3x3_00.getVal.at("x1"), m3x3_00.getVal.at("y1"), m3x3_00.getVal.at("z1"), m3x3_00.getVal.at("x2"), m3x3_00.getVal.at("y2"), m3x3_00.getVal.at("z2"));
+  
+  
+  /* - ################   m3x4 testing   ################# - */
+  m3x4<float> m3x4_01;
+  m3x4<float> inputs3x4 = {
+     1.8f, 2.1f, -1.2f, -1.77f,
+     1.75f, -3.33f, 2.13f, -1.37f,
+    -1.33f, 2.22f, 1.44f, -1.88f
+  };
+
+    printf("\ninputs3x4\n  [\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.3f]\n  ]\n",
+      m3x4_01.val[0], m3x4_01.val[1], m3x4_01.val[2], m3x4_01.val[3],
+      m3x4_01.val[4], m3x4_01.val[5], m3x4_01.val[6], m3x4_01.val[7],
+      m3x4_01.val[8], m3x4_01.val[9], m3x4_01.val[10], m3x4_01.val[11]);
+
+  
+  
+  
   return 0;
 }
