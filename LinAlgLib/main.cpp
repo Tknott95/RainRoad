@@ -95,19 +95,21 @@ int main() {
   const int dynRows = 3; 
   const int dynCols = 4;
   mDyn<float, dynRows, dynCols> dynMat;
-  float dynamicMatVals[dynRows][dynCols] = {{1.8f, 0.1f, -1.2f, -1.77f}, {1.75f, -3.3f, 2.1f, -1.37f}, {-1.33f, 2.22f, 1.44f, -1.88f}};
-  float dynVals[dynRows*dynCols] = {1.8f, 0.1f, -1.2f, -1.77f, 1.75f, -3.3f, 2.1f, -1.37f, -1.33f, 2.22f, 1.44f, -1.88f}; 
-  mDyn<float, dynRows, dynCols> dynMat02 = dynVals; // dynamicMatVals;
- 
+  float dynVals[dynRows][dynCols] = {
+    {-0.4, 0.7, 0.2, -0.43},
+    {0.45, -0.82, -0.44, 0.38},
+    {-0.88, -0.75, 0.91, 0.11}
+  };
+  mDyn<float, dynRows, dynCols> dynMat02 = dynVals;
 
 
   cout << "[\n";
   for(int j=0; j <= dynRows; j++) {
     cout << "  [\n";
     for(int k=0; k <= dynCols; k++) {
-      dynMat02.val[j][k] = dynamicMatVals[j][k];
+      // dynMat02.val[j][k] = dynamicMatVals[j][k];
       cout << "   [" << j << "]["
-        << k << "], " << printf("val = %.2f", dynamicMatVals[j][k]);
+        << k << "], " << printf("val = %.2f", dynVals[j*k]);
       cout << "" << endl; 
       }
     cout << "  ]" << endl;
@@ -115,13 +117,12 @@ int main() {
   cout << "]" << endl;
 
   cout << "[\n";
-  for(int j=0; j <= dynRows; j++) {
+  for(size_t j=0; j <= dynRows*dynCols; j++) {
     cout << "  [\n";
-    for(int k=0; k <= dynCols; k++) {
-      cout << "   [" << j << "]["
-        << k << "], " << printf("val = %.2f", dynMat02.val[j][k]);
-      cout << "" << endl; 
-      }
+    // for(int k=0; k <= dynCols; k++) {
+       cout << "   [" << j << " " << printf("val = %f", dynMat02.val[j]);
+    //   cout << "" << endl; 
+    //   }
     cout << "  ]" << endl;
   }
   cout << "]" << endl;
