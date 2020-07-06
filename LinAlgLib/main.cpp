@@ -104,12 +104,14 @@ int main() {
   );
 
   for(int j=0; j <= dynRows; j++) {
+    cout << "\n[\n";
     for(int k=0; k <= dynCols; k++) {
       cout 
-        << "\n dynRows[" << j
-        << "]\n dynCols["
-        << k << "]\n dynVal - (" << dynMat.val[j][k] << ") \n\n" << endl; 
+        << "  dynRows[" << j
+        << "],  dynCols["
+        << k << "],  val - " << dynMat.val[j][k] << "" << endl; 
     }
+    cout << "]" << endl;
   }
 
   return 0;
