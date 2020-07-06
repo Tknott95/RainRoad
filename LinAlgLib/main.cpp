@@ -95,12 +95,9 @@ int main() {
   const int dynRows = 3; 
   const int dynCols = 4;
   mDyn<float, dynRows, dynCols> dynMat;
-  float dynamicMatVals[dynRows][dynCols] = {
-     {1.8f, 0.1f, -1.2f, -1.77f},
-     {1.75f, -3.3f, 2.1f, -1.37f},
-     {-1.33f, 2.22f, 1.44f, -1.88f}
-  };
-  mDyn<float, dynRows, dynCols> dynMat02 = dynamicMatVals;
+  float dynamicMatVals[dynRows][dynCols] = {{1.8f, 0.1f, -1.2f, -1.77f}, {1.75f, -3.3f, 2.1f, -1.37f}, {-1.33f, 2.22f, 1.44f, -1.88f}};
+  float dynVals[dynRows*dynCols] = {1.8f, 0.1f, -1.2f, -1.77f, 1.75f, -3.3f, 2.1f, -1.37f, -1.33f, 2.22f, 1.44f, -1.88f}; 
+  mDyn<float, dynRows, dynCols> dynMat02 = dynVals; // dynamicMatVals;
  
 
 

@@ -157,11 +157,11 @@ struct m3x4 {
 
 template<class T, int rowSize, int colSize>
 struct mDyn {
-  T val[rowSize][colSize];
+  T val[rowSize-1][colSize-1];
   // int size = rowSize*colSize;
 
-  mDyn() : val{} { if(!val[0][0]); this->construct(); }
-  mDyn(T _val[rowSize][colSize]) : val{_val[rowSize][colSize]} {}
+  mDyn() : val{} { this->construct(); }
+  mDyn(T _vals[12]) : val{_vals[12]} {}
   
   void construct() {
     for(int i=0; i <= rowSize; i++) {
