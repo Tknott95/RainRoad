@@ -92,40 +92,40 @@ int main() {
   );
 
  
-  const int dynRows = 3; 
-  const int dynCols = 4;
-  mDyn<float, dynRows, dynCols> dynMat;
-  float dynVals[dynRows][dynCols] = {
-    {-0.4, 0.7, 0.2, -0.43},
-    {0.45, -0.82, -0.44, 0.38},
-    {-0.88, -0.75, 0.91, 0.11}
-  };
-  mDyn<float, dynRows, dynCols> dynMat02 = dynVals;
+//   const int dynRows = 3; 
+//   const int dynCols = 4;
+//   mDyn<float, dynRows, dynCols> dynMat;
+//   float dynVals[dynRows][dynCols] = {
+//     {-0.4, 0.7, 0.2, -0.43},
+//     {0.45, -0.82, -0.44, 0.38},
+//     {-0.88, -0.75, 0.91, 0.11}
+//   };
+//   mDyn<float, dynRows, dynCols> dynMat02 = dynVals;
 
 
-  cout << "[\n";
-  for(int j=0; j <= dynRows; j++) {
-    cout << "  [\n";
-    for(int k=0; k <= dynCols; k++) {
-      // dynMat02.val[j][k] = dynamicMatVals[j][k];
-      cout << "   [" << j << "]["
-        << k << "], " << printf("val = %.2f", dynVals[j*k]);
-      cout << "" << endl; 
-      }
-    cout << "  ]" << endl;
-  }
-  cout << "]" << endl;
+//   cout << "[\n";
+//   for(int j=0; j <= dynRows; j++) {
+//     cout << "  [\n";
+//     for(int k=0; k <= dynCols; k++) {
+//       // dynMat02.val[j][k] = dynamicMatVals[j][k];
+//       cout << "   [" << j << "]["
+//         << k << "], " << printf("val = %.2f", dynVals[j*k]);
+//       cout << "" << endl; 
+//       }
+//     cout << "  ]" << endl;
+//   }
+//   cout << "]" << endl;
 
-  cout << "[\n";
-  for(size_t j=0; j <= dynRows*dynCols; j++) {
-    cout << "  [\n";
-    // for(int k=0; k <= dynCols; k++) {
-       cout << "   [" << j << " " << printf("val = %f", dynMat02.val[j]);
-    //   cout << "" << endl; 
-    //   }
-    cout << "  ]" << endl;
-  }
-  cout << "]" << endl;
+//   cout << "[\n";
+//   for(size_t j=0; j <= dynRows*dynCols; j++) {
+//     cout << "  [\n";
+//     // for(int k=0; k <= dynCols; k++) {
+//        cout << "   [" << j << " " << printf("val = %f", dynMat02.val[j]);
+//     //   cout << "" << endl; 
+//     //   }
+//     cout << "  ]" << endl;
+//   }
+//   cout << "]" << endl;
 
 
   return 0;
