@@ -95,8 +95,10 @@ int main() {
   const int dynRows = 3; 
   const int dynCols = 3;
   mDyn<int, dynRows, dynCols> dynMat;
-  printf("\n\n\nmDyn<int, 2, 2>\n  -> [[%f, %f],[%f, %f])\n\n",
-     m01.val[0][0], m01.val[0][1], m01.val[1][0], m01.val[1][1]
+  printf("\n\n\nmDyn<int, %i, %i>\n  -> [[%f, %f, %f],[%f, %f, %f])\n\n",
+    dynCols, dynRows,
+    m01.val[0][0], m01.val[0][1], m01.val[0][2],
+    m01.val[1][0], m01.val[1][1], m01.val[1][2]
   );
 
   return 0;
