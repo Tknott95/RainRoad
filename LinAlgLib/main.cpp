@@ -94,8 +94,9 @@ int main() {
  
   const int dynRows = 3; 
   const int dynCols = 3;
-  mDyn<int, dynRows, dynCols> dynMat;
-  printf("\n\n\nmDyn<int, %i, %i>\n  -> [[%f, %f, %f],[%f, %f, %f])\n\n",
+  mDyn<float, dynRows, dynCols> dynMat;
+  m01.val[1][2] = 13.7f;
+  printf("\n\n\nmDyn<T, %i, %i>\n  -> [[%.1f, %.1f, %.1f],[%.1f, %.1f, %.1f])\n\n",
     dynCols, dynRows,
     m01.val[0][0], m01.val[0][1], m01.val[0][2],
     m01.val[1][0], m01.val[1][1], m01.val[1][2]
