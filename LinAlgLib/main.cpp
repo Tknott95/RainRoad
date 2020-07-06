@@ -92,16 +92,19 @@ int main() {
   );
 
  
-  const int dynRows = 1; 
+  const int dynRows = 3; 
   const int dynCols = 4;
   mDyn<float, dynRows, dynCols> dynMat;
-  dynMat.construct();
-  m01.val[1][2] = 13.7f;
-  // printf("\n\n\nmDyn<T, %i, %i>\n  -> [[%.1f, %.1f, %.1f],[%.1f, %.1f, %.1f])\n\n",
-  //   dynCols, dynRows,
-  //   m01.val[0][0], m01.val[0][1], m01.val[0][2],
-  //   m01.val[1][0], m01.val[1][1], m01.val[1][2]
-  // );
+  float dynamicMatVals[dynRows][dynCols] = {
+     1.8f, 2.1f, -1.2f, -1.77f,
+     1.75f, -3.3f, 2.1f, -1.37f,
+    -1.33f, 2.22f, 1.44f, -1.88f
+  };
+  mDyn<float, dynRows, dynCols> dynMat02 = dynamicMatVals;
+    //  {1.8f, 2.1f, -1.2f, -1.77f},
+    //  {1.75f, -3.3f, 2.1f, -1.37f},
+    //  {-1.33f, 2.22f, 1.44f, -1.88f}
+
 
   cout << "[\n";
   for(int j=0; j <= dynRows; j++) {

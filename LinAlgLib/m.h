@@ -153,21 +153,24 @@ struct m3x4 {
   }
 };
 
+#include<vector>
+
 template<class T, int rowSize, int colSize>
 struct mDyn {
   T val[rowSize][colSize];
   int size = rowSize*colSize;
 
   mDyn() : val{} { this->construct(); }
-  mDyn(T _val[rowSize][colSize]) : val(_val[rowSize][colSize]) {}
+  mDyn(T _val[rowSize][colSize]) : val{_val[rowSize][colSize]} {}
   
   void construct() {
-    for(int i=0; i <= rowSize; i++) {
-      for(int j=0; j <= colSize; j++) { 
-        val[i][j] = i + j; 
-        printf("Constructing [%i][%i] value.", i, j);
+    if(! val[0][0]) {
+      for(int i=0; i <= rowSize; i++) {
+        for(int j=0; j <= colSize; j++) { 
+          val[i][j] = i + j; 
+          printf("Constructing [%i][%i] value.", i, j);
+        }
       }
     }
-    this->val;
   };
 };
