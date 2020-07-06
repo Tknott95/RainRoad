@@ -91,5 +91,13 @@ int main() {
     weights3x4.val[2][0], weights3x4.val[2][1], weights3x4.val[2][2], weights3x4.val[2][3]
   );
 
+ 
+  const int dynRows = 3; 
+  const int dynCols = 3;
+  mDyn<int, dynRows, dynCols> dynMat;
+  printf("\n\n\nmDyn<int, 2, 2>\n  -> [[%f, %f],[%f, %f])\n\n",
+     m01.val[0][0], m01.val[0][1], m01.val[1][0], m01.val[1][1]
+  );
+
   return 0;
 }
