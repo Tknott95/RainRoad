@@ -71,12 +71,23 @@ int main() {
     -0.88, -0.75, 0.91, 0.11
   };
 
-    printf("\ninputs3x4\n  [\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f]\n  ]\n",
-      m3x4_01.val[0][0], m3x4_01.val[0][1], m3x4_01.val[0][2], m3x4_01.val[0][3],
-      m3x4_01.val[1][0], m3x4_01.val[1][1], m3x4_01.val[1][2], m3x4_01.val[1][3],
-      m3x4_01.val[2][0], m3x4_01.val[2][1], m3x4_01.val[2][2], m3x4_01.val[2][3]
-    );
+  printf("\nm3x4_01\n  [\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f]\n  ]\n",
+    m3x4_01.val[0][0], m3x4_01.val[0][1], m3x4_01.val[0][2], m3x4_01.val[0][3],
+    m3x4_01.val[1][0], m3x4_01.val[1][1], m3x4_01.val[1][2], m3x4_01.val[1][3],
+    m3x4_01.val[2][0], m3x4_01.val[2][1], m3x4_01.val[2][2], m3x4_01.val[2][3]
+  );
   
-  
+  printf("\ninputs3x4\n  [\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f]\n  ]\n",
+    inputs3x4.val[0][0], inputs3x4.val[0][1], inputs3x4.val[0][2], inputs3x4.val[0][3],
+    inputs3x4.val[1][0], inputs3x4.val[1][1], inputs3x4.val[1][2], inputs3x4.val[1][3],
+    inputs3x4.val[2][0], inputs3x4.val[2][1], inputs3x4.val[2][2], inputs3x4.val[2][3]
+  );
+
+  printf("\nweights3x4\n  [\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f]\n  ]\n",
+    weights3x4.val[0][0], weights3x4.val[0][1], weights3x4.val[0][2], weights3x4.val[0][3],
+    weights3x4.val[1][0], weights3x4.val[1][1], weights3x4.val[1][2], weights3x4.val[1][3],
+    weights3x4.val[2][0], weights3x4.val[2][1], weights3x4.val[2][2], weights3x4.val[2][3]
+  );
+
   return 0;
 }
