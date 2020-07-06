@@ -166,7 +166,7 @@ struct mDyn {
   void construct() {
     for(int i=0; i <= rowSize; i++) {
       for(int j=0; j <= colSize; j++) { 
-         val[i][j] = i + j; 
+        if(! val[0][0]) val[i][j] = i + j; 
         printf("Constructing [%i][%i] value.", i, j);
       }
     }
