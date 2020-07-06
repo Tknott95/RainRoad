@@ -60,14 +60,21 @@ struct m3x3 {
     return m3x3(this->getVal.at("x0") + other.getVal.at("x0"), this->getVal.at("y0") + other.getVal.at("y0"), this->getVal.at("z0") + other.getVal.at("z0"), this->getVal.at("x1") + other.getVal.at("x1"), this->val[1][1] + other.val[1][1], this->val[1][2] + other.val[1][2], this->val[2][0] + other.val[2][0], this->val[2][1] + other.val[2][1], this->val[2][2] + other.val[2][2]);
   }
   m3x3 operator - (const m3x3 other) {
-    return m3x3(this->val[0][0] - other.val[0][0], this->val[0][1] - other.val[0][1], this->val[0][2] - other.val[0][2], this->val[1][0] - other.val[1][0], this->val[1][1] - other.val[1][1], this->val[1][2] - other.val[1][2], this->val[2][0] - other.val[2][0], this->val[2][1] - other.val[2][1], this->val[2][2] - other.val[2][2]);
+    return m3x3(
+      this->val[0][0] - other.val[0][0], this->val[0][1] - other.val[0][1], this->val[0][2] - other.val[0][2], this->val[1][0] - other.val[1][0], this->val[1][1] - other.val[1][1], this->val[1][2] - other.val[1][2], this->val[2][0] - other.val[2][0], this->val[2][1] - other.val[2][1], this->val[2][2] - other.val[2][2]);
   }
 
   m3x3& operator += (const m3x3& other) { /* loop? */
-    this->val[0][0] += other.val[0][0]; this->val[0][1] += other.val[0][1]; this->val[0][2] += other.val[0][2]; this->val[1][0] += other.val[1][0]; this->val[1][1] += other.val[1][1]; this->val[1][2] += other.val[1][2]; this->val[2][0] += other.val[2][0]; this->val[2][1] += other.val[2][1]; this->val[2][2] += other.val[2][2];  return *this;
+    this->val[0][0] += other.val[0][0]; this->val[0][1] += other.val[0][1]; this->val[0][2] += other.val[0][2];
+    this->val[1][0] += other.val[1][0]; this->val[1][1] += other.val[1][1]; this->val[1][2] += other.val[1][2];
+    this->val[2][0] += other.val[2][0]; this->val[2][1] += other.val[2][1]; this->val[2][2] += other.val[2][2];  
+    return *this;
   }
   m3x3& operator -= (const m3x3& other) {
-    this->val[0][0] -= other.val[0][0]; this->val[0][1] -= other.val[0][1]; this->val[0][2] -= other.val[0][2]; this->val[1][0] -= other.val[1][0]; this->val[1][1] -= other.val[1][1]; this->val[1][2] -= other.val[1][2]; this->val[2][0] -= other.val[2][0]; this->val[2][1] -= other.val[2][1]; this->val[2][2] -= other.val[2][2];  return *this;
+    this->val[0][0] -= other.val[0][0]; this->val[0][1] -= other.val[0][1]; this->val[0][2] -= other.val[0][2];
+    this->val[1][0] -= other.val[1][0]; this->val[1][1] -= other.val[1][1]; this->val[1][2] -= other.val[1][2];
+    this->val[2][0] -= other.val[2][0]; this->val[2][1] -= other.val[2][1]; this->val[2][2] -= other.val[2][2];
+    return *this;
   }
 };
 
