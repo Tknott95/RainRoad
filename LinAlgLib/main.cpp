@@ -101,7 +101,13 @@ int main() {
     {-0.88, -0.75, 0.91, 0.11}
   };
   mDyn<float, dynRows, dynCols> dynMat02;
-  dynMat02.val[0][2] = dynVals[0][2];
+  
+  for(int _rows=0;_rows < dynRows; _rows++) {
+    for(int _cols=0;_cols < dynRows; _cols++) // {
+      dynMat02.val[_rows][_cols] = dynVals[_rows][_cols];
+      // printf("\n dynVals[%i][%i]: %f", _rows, _cols, dynVals[_rows][_cols]);};
+  };
+
   printf("\n\n dynMat02 val[0][0]: %.2f", dynMat02.val[0][2]);
 
 
