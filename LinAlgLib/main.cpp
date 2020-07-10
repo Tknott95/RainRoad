@@ -2,12 +2,19 @@
 #include "m.h"
 
 template<class T, int _rows, int _cols>
-mDyn<T, _rows, _cols> setDynMat(mDyn<T, _rows, _cols> target, T other[][_cols]) {
-  for(int i=0;i < _rows; i++) {
-    for(int j=0;j < _cols; j++) {
-     target.val[i][j] = other[i][j];
+mDyn<T, _rows, _cols> setDynMat(
+  mDyn<T, _rows, _cols> target,
+  T other[][_cols],
+  bool debug=false){
+    for(int i=0;i < _rows; i++) {
+      for(int j=0;j < _cols; j++) {
+        target.val[i][j] = other[i][j];
+        if(debug) {
+          printf("\n other        [%i][%i]: %.2f", i, j, other[i][j]);
+          printf("\n target   .val[%i][%i]: %.2f\n", i, j,  target.val[i][j]);
+        }
+      };
     };
-  };
   return target;
 };
 
@@ -126,6 +133,7 @@ int main() {
   dynMat02 = setDynMat<float, dynRows, dynCols>(
     dynMat02,
     dynVals
+    /* true */
   );
 
   printf("\n\n dynMat02 val[0][2]: %.2f", dynMat02.val[0][2]);
