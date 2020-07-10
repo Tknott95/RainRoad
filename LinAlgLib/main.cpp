@@ -144,30 +144,6 @@ int main() {
     dynMat03, dynVals03, true
   );
 
-//   cout << "[\n";
-//   for(int j=0; j <= dynRows; j++) {
-//     cout << "  [\n";
-//     for(int k=0; k <= dynCols; k++) {
-//       // dynMat02.val[j][k] = dynamicMatVals[j][k];
-//       cout << "   [" << j << "]["
-//         << k << "], " << printf("val = %.2f", dynVals[j*k]);
-//       cout << "" << endl; 
-//       }
-//     cout << "  ]" << endl;
-//   }
-//   cout << "]" << endl;
-
-//   cout << "[\n";
-//   for(size_t j=0; j <= dynRows*dynCols; j++) {
-//     cout << "  [\n";
-//     // for(int k=0; k <= dynCols; k++) {
-//        cout << "   [" << j << " " << printf("val = %f", dynMat02.val[j]);
-//     //   cout << "" << endl; 
-//     //   }
-//     cout << "  ]" << endl;
-//   }
-//   cout << "]" << endl;
-
 
   return 0;
 }
