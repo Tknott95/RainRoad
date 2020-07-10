@@ -130,7 +130,7 @@ int main() {
 
   const int dynRows03 = 6; 
   const int dynCols03 = 5;
-  // mDyn<float, dynRows03, dynCols03> dynMat03;
+  // mDyn<float, dynRows03, dynCols03> dynMat03; WORKS BOTH WAYS
   float dynVals03[dynRows03][dynCols03] = {
     {-0.00, 0.01, 0.02, -0.03, 0.04},
     {0.10, -0.11, -0.12, 0.13, -0.14},
