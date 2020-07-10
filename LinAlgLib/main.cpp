@@ -2,7 +2,7 @@
 #include "m.h"
 
 template<class T, int _rows, int _cols>
-void setDynMat(T target[_rows][_cols], T other[_rows][_cols]) {
+void setDynMat(T target[][], T other[][]) {
   for(int i=0;i < _rows; i++) {
     for(int j=0;j < _cols; j++) {
       target[_rows][_cols] = other[_rows][_cols];
@@ -112,15 +112,20 @@ int main() {
   mDyn<float, dynRows, dynCols> dynMat02;
   
   printf("\n\n\n");
-  for(int _rows=0;_rows < dynRows; _rows++) {
-    for(int _cols=0;_cols < dynCols; _cols++) {
-      dynMat02.val[_rows][_cols] = dynVals[_rows][_cols];
-      /* IF DEBUG
-      ** printf("\n dynVals        [%i][%i]: %.2f", _rows, _cols, dynVals[_rows][_cols]);
-      ** printf("\n dynMat02   .val[%i][%i]: %.2f\n", _rows, _cols, dynMat02.val[_rows][_cols]);
-      */
-    };
-  };
+  // for(int _rows=0;_rows < dynRows; _rows++) {
+  //   for(int _cols=0;_cols < dynCols; _cols++) {
+  //     dynMat02.val[_rows][_cols] = dynVals[_rows][_cols];
+  //     /* IF DEBUG
+  //     ** printf("\n dynVals        [%i][%i]: %.2f", _rows, _cols, dynVals[_rows][_cols]);
+  //     ** printf("\n dynMat02   .val[%i][%i]: %.2f\n", _rows, _cols, dynMat02.val[_rows][_cols]);
+  //     */
+  //   };
+  // };
+
+  setDynMat<float, dynRows, dynCols>(
+    dynMat02.val[dynRows][dynCols],
+    dynVals[dynRows][dynCols]
+  );
 
   printf("\n\n dynMat02 val[0][0]: %.2f", dynMat02.val[0][2]);
 
