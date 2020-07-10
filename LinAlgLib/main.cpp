@@ -102,10 +102,14 @@ int main() {
   };
   mDyn<float, dynRows, dynCols> dynMat02;
   
+  printf("\n\n\n");
   for(int _rows=0;_rows < dynRows; _rows++) {
-    for(int _cols=0;_cols < dynRows; _cols++) // {
+    for(int _cols=0;_cols < dynRows; _cols++) {
+      // printf("dynMat02 val[%i][%i]: %.2f", _rows, _cols, dynMat02.val[_rows][_cols]);
       dynMat02.val[_rows][_cols] = dynVals[_rows][_cols];
-      // printf("\n dynVals[%i][%i]: %f", _rows, _cols, dynVals[_rows][_cols]);};
+      printf("\n dynVals        [%i][%i]: %.2f", _rows, _cols, dynVals[_rows][_cols]);
+      printf("\n dynMat02   .val[%i][%i]: %.2f\n", _rows, _cols, dynMat02.val[_rows][_cols]);
+    };
   };
 
   printf("\n\n dynMat02 val[0][0]: %.2f", dynMat02.val[0][2]);
