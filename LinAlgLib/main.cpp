@@ -2,13 +2,13 @@
 #include "m.h"
 
 template<class T, int _rows, int _cols>
-void setDynMat(mDyn<T, _rows, _cols> target, T other[][_cols]) {
+mDyn<T, _rows, _cols> setDynMat(mDyn<T, _rows, _cols> target, T other[][_cols]) {
   for(int i=0;i < _rows; i++) {
     for(int j=0;j < _cols; j++) {
-     target.val[_rows][_cols] = other[_rows][_cols];
+     target.val[i][j] = other[i][j];
     };
   };
-  // delete other;
+  return target;
 };
 
 int main() {
@@ -123,7 +123,7 @@ int main() {
   //   };
   // };
 
-  setDynMat<float, dynRows, dynCols>(
+  dynMat02 = setDynMat<float, dynRows, dynCols>(
     dynMat02,
     dynVals
   );
