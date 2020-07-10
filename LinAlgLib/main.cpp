@@ -92,15 +92,15 @@ int main() {
   );
 
  
-//   const int dynRows = 3; 
-//   const int dynCols = 4;
-//   mDyn<float, dynRows, dynCols> dynMat;
-//   float dynVals[dynRows][dynCols] = {
-//     {-0.4, 0.7, 0.2, -0.43},
-//     {0.45, -0.82, -0.44, 0.38},
-//     {-0.88, -0.75, 0.91, 0.11}
-//   };
-//   mDyn<float, dynRows, dynCols> dynMat02 = dynVals;
+  const int dynRows = 3; 
+  const int dynCols = 4;
+  mDyn<float, dynRows, dynCols> dynMat;
+  // float dynVals[dynRows][dynCols] = {
+  //   {-0.4, 0.7, 0.2, -0.43},
+  //   {0.45, -0.82, -0.44, 0.38},
+  //   {-0.88, -0.75, 0.91, 0.11}
+  // };
+ //  mDyn<float, dynRows, dynCols> dynMat02 = dynVals;
 
 
 //   cout << "[\n";
