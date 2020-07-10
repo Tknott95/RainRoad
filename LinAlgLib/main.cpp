@@ -1,9 +1,11 @@
 #include "v.h"
 #include "m.h"
 
-void setDynMat(int dynRows) {
-  for(int _rows=0;_rows < dynRows; _rows++) {
-    for(int _cols=0;_cols < dynRows; _cols++) {
+template<class T, int _rows, int _cols>
+void setDynMat(T target[_rows][_cols], T other[_rows][_cols]) {
+  for(int i=0;i < _rows; i++) {
+    for(int j=0;j < _cols; j++) {
+      target[_rows][_cols] = other[_rows][_cols];
     };
   };
 };
