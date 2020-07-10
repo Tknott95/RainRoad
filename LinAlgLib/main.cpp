@@ -105,10 +105,11 @@ int main() {
   printf("\n\n\n");
   for(int _rows=0;_rows < dynRows; _rows++) {
     for(int _cols=0;_cols < dynRows; _cols++) {
-      // printf("dynMat02 val[%i][%i]: %.2f", _rows, _cols, dynMat02.val[_rows][_cols]);
       dynMat02.val[_rows][_cols] = dynVals[_rows][_cols];
-      printf("\n dynVals        [%i][%i]: %.2f", _rows, _cols, dynVals[_rows][_cols]);
-      printf("\n dynMat02   .val[%i][%i]: %.2f\n", _rows, _cols, dynMat02.val[_rows][_cols]);
+      /* IF DEBUG
+      ** printf("\n dynVals        [%i][%i]: %.2f", _rows, _cols, dynVals[_rows][_cols]);
+      ** printf("\n dynMat02   .val[%i][%i]: %.2f\n", _rows, _cols, dynMat02.val[_rows][_cols]);
+      */
     };
   };
 
