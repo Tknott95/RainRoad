@@ -116,7 +116,7 @@ int main() {
   float dynVals[dynRows][dynCols] = {
     {-0.4, 0.7, 0.2, -0.43},
     {0.45, -0.82, -0.44, 0.38},
-    {-0.88, -0.75, 0.91, 0.11}
+    {-0.88, -0.75, 0.91, 0.11},
   };
   mDyn<float, dynRows, dynCols> dynMat02;
   
@@ -128,6 +128,21 @@ int main() {
 
   printf("\n\n dynMat02 val[0][2]: %.2f", dynMat02.val[0][2]);
 
+  const int dynRows03 = 6; 
+  const int dynCols03 = 5;
+  mDyn<float, dynRows03, dynCols03> dynMat03;
+  float dynVals03[dynRows03][dynCols03] = {
+    {-0.4, 0.7, 0.2, -0.43, 0.33},
+    {0.45, -0.82, -0.44, 0.38, -0.33},
+    {-0.88, -0.75, 0.91, 0.11, -0.13},
+    {-0.4, 0.7, 0.2, -0.43, 0.77},
+    {0.45, -0.82, -0.44, 0.38, -0.77},
+    {-0.88, -0.75, 0.91, 0.11, 0.44}
+  };
+
+  dynMat03 = setDynMat<float, dynRows03, dynCols03>(
+    dynMat03, dynVals03, true
+  );
 
 //   cout << "[\n";
 //   for(int j=0; j <= dynRows; j++) {
