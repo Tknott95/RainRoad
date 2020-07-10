@@ -1,6 +1,13 @@
 #include "v.h"
 #include "m.h"
 
+void setDynMat(int dynRows) {
+  for(int _rows=0;_rows < dynRows; _rows++) {
+    for(int _cols=0;_cols < dynRows; _cols++) {
+    };
+  };
+};
+
 int main() {
 /* - ################   v2 testing   ################# - */
   v2<float> v00;
@@ -104,7 +111,7 @@ int main() {
   
   printf("\n\n\n");
   for(int _rows=0;_rows < dynRows; _rows++) {
-    for(int _cols=0;_cols < dynRows; _cols++) {
+    for(int _cols=0;_cols < dynCols; _cols++) {
       dynMat02.val[_rows][_cols] = dynVals[_rows][_cols];
       /* IF DEBUG
       ** printf("\n dynVals        [%i][%i]: %.2f", _rows, _cols, dynVals[_rows][_cols]);
