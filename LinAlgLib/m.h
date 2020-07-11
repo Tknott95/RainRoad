@@ -13,10 +13,8 @@ struct mDyn {
   int size = rowSize*colSize;
 
   mDyn() : val{} { this->constructEmpty(); }
-  mDyn(T _vals[][colSize]) : val{_vals[rowSize][colSize]} {
-    this->set(_vals);
-  }
-  
+  mDyn(T _vals[][colSize]) : val{_vals[rowSize][colSize]} { this->set(_vals); }
+
   void constructEmpty() {
     if(debug)  printf("\n\n\n\n\n\n ############################## \n");
     for(int i=0; i < rowSize; i++) {
