@@ -21,15 +21,17 @@ mDyn<T, _rows, _cols> setDynMat(
 
 int main() {
 /* - ################   v2 testing   ################# - */
-  v2<float> v00;
-  v2<float> v01 = {1.f, 1.f};
+  // v2<float> v00;
+  // v2<float> v01 = {1.f, 1.f};
 
-  printf("v00(%.2f, %.2f)\n", v00.x, v00.y);
+  // printf("v00(%.2f, %.2f)\n", v00.x, v00.y);
 
-  v00 += v01 += v01 *= v01 /= {1.0, 1.0};
-  v01 += v01;
-  printf("v00(%f, %f)\n", v00.x, v00.y);
-  printf("v01(%f, %f)\n", v01.x, v01.y);
+  // v00 += v01 += v01 *= v01 /= {1.0, 1.0};
+  // v01 += v01;
+  // printf("v00(%f, %f)\n", v00.x, v00.y);
+  // printf("v01(%f, %f)\n", v01.x, v01.y);
+
+
 
 // /* - ################   m2x2 testing   ################# - */
 //   m2x2<float> m00;  /* {x1, y1, x2, y2} */
@@ -45,16 +47,16 @@ int main() {
 
 
 /* - ################   AI mock data dotProd() testing   ################# - */
-  v4<int> inputs = {1,2,3,4};
-  v2<v4<float>> weights = {{-0.4f, 0.7f, 0.2f, 0.4f}, {1.4, -0.8, -0.4, 0.4}};
-  v2<float> biases = {0.2, 0.4};
+  // v4<int> inputs = {1,2,3,4};
+  // v2<v4<float>> weights = {{-0.4f, 0.7f, 0.2f, 0.4f}, {1.4, -0.8, -0.4, 0.4}};
+  // v2<float> biases = {0.2, 0.4};
 
-  printf("\n i{%i, %i, %i, %i}\n", inputs.val[0], inputs.val[1],  inputs.val[2], inputs.val[3]);
-  v2<float> output = {{inputs.val[0]*weights.val[0].val[0] + inputs.val[1]*weights.val[0].val[1]+ inputs.val[2]*weights.val[0].val[2] + inputs.val[3]*weights.val[0].val[3] + biases.val[0]}, {inputs.val[0]*weights.val[1].val[0] + inputs.val[1]*weights.val[1].val[1] + inputs.val[2]*weights.val[1].val[2] + inputs.val[3]*weights.val[1].val[3] + biases.val[1]}};
+  // printf("\n i{%i, %i, %i, %i}\n", inputs.val[0], inputs.val[1],  inputs.val[2], inputs.val[3]);
+  // v2<float> output = {{inputs.val[0]*weights.val[0].val[0] + inputs.val[1]*weights.val[0].val[1]+ inputs.val[2]*weights.val[0].val[2] + inputs.val[3]*weights.val[0].val[3] + biases.val[0]}, {inputs.val[0]*weights.val[1].val[0] + inputs.val[1]*weights.val[1].val[1] + inputs.val[2]*weights.val[1].val[2] + inputs.val[3]*weights.val[1].val[3] + biases.val[1]}};
 
-  printf("\n\n weights[0][*]: { %.2f, %.2f, %.2f, %.2f}\n weights[1][*]: { %.2f, %.2f, %.2f, %.2f}\n", weights.val[0].val[0],weights.val[0].val[1], weights.val[0].val[2], weights.val[0].val[3], weights.val[1].val[0],weights.val[1].val[1], weights.val[1].val[2], weights.val[1].val[3]);
-  printf("\n\n output[0]: %.1f", output.val[0]);
-  printf("\n output[1]: %.1f\n", output.val[1]);
+  // printf("\n\n weights[0][*]: { %.2f, %.2f, %.2f, %.2f}\n weights[1][*]: { %.2f, %.2f, %.2f, %.2f}\n", weights.val[0].val[0],weights.val[0].val[1], weights.val[0].val[2], weights.val[0].val[3], weights.val[1].val[0],weights.val[1].val[1], weights.val[1].val[2], weights.val[1].val[3]);
+  // printf("\n\n output[0]: %.1f", output.val[0]);
+  // printf("\n output[1]: %.1f\n", output.val[1]);
 
 
   // /* - ################   m3x3 testing   ################# - */
@@ -89,7 +91,8 @@ int main() {
   //   -0.88, -0.75, 0.91, 0.11
   // };
 
-  v3<float> biasesv3 = {0.2, 0.4, 2};
+  //v3<float> biasesv3 = {0.2, 0.4, 2};
+
 
   // printf("\nm3x4_01\n  [\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f]\n  ]\n",
   //   m3x4_01.val[0][0], m3x4_01.val[0][1], m3x4_01.val[0][2], m3x4_01.val[0][3],
@@ -145,6 +148,16 @@ int main() {
   };
   
 
+  const int vDynSize00 = 5;
+  float vDynVals00[] = {-0.00, 0.10, 0.20, -0.30, 0.40};
+  vDyn<float, vDynSize00> vDyn00;
+
+  printf("\n\n\n");
+  if(! vDyn00.val[0]) {
+    for(int k=0;k<vDynSize00;k++) {
+      printf("vDyn[%i]: %.2f\n", k, vDyn00.val[k]);
+    };
+  }
 
   return 0;
 }
