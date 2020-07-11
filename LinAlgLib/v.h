@@ -144,6 +144,28 @@ struct vDyn {
     }
   }
 
+  vDyn<T, size> operator + (const vDyn<T, size> other) {
+    vDyn<T, size> tempV;
+    for(int i=0;i<size;i++) tempV.val[i] = this->val[i] + other.val[i];
+    return tempV;
+  }
+  vDyn<T, size> operator - (const vDyn<T, size> other) {
+    vDyn<T, size> tempV;
+    for(int i=0;i<size;i++) tempV.val[i] = this->val[i] - other.val[i];
+    return tempV;
+  }
+  vDyn<T, size> operator * (const vDyn<T, size> other) {
+    vDyn<T, size> tempV;
+    for(int i=0;i<size;i++) tempV.val[i] = this->val[i] * other.val[i];
+    return tempV;
+  }
+  vDyn<T, size> operator / (const vDyn<T, size> other) {
+    vDyn<T, size> tempV;
+    for(int i=0;i<size;i++) tempV.val[i] = this->val[i] / other.val[i];
+    return tempV;
+  }
+  
+
   vDyn<T, size> operator += (const vDyn<T, size> other) {
     for(int i=0;i<size;i++) this->val[i] += other.val[i];
     return *this;
