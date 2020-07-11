@@ -139,8 +139,8 @@ struct vDyn {
   }
 
   void constructEmpty() {
-    for(int i=0; i < size; i++) { 
-      if(sizeof(val) != size) this->val[i] = 0; 
+    for(int j=0;j<size;j++) { 
+      this->val[j] = 0; 
     }
   }
 
