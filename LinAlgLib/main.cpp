@@ -59,23 +59,6 @@ int main() {
   // printf("\n output[1]: %.1f\n", output.val[1]);
 
 
-  // /* - ################   m3x3 testing   ################# - */
-  // m3x3<float> m3x3_01;
-  // m3x3<float> m3x3_00 = {1.37f, 1.37f, 1.37f, 3.14f, 3.14f, 3.14f, 7.28f, 7.28f, 7.28f};
-
-  
-
-  // printf("\n\n3x3\n [\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f]\n ]\n", m3x3_00.val[0], m3x3_00.val[1], m3x3_00.val[2], m3x3_00.val[3], m3x3_00.val[4], m3x3_00.val[5], m3x3_00.val[6], m3x3_00.val[7], m3x3_00.val[8]);
-  // printf("\n\n3x3_01\n  [\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f]\n  ]\n", m3x3_01.val[0], m3x3_01.val[1], m3x3_01.val[2], m3x3_01.val[3], m3x3_01.val[4], m3x3_01.val[5], m3x3_01.val[6], m3x3_01.val[7], m3x3_01.val[8]);
- 
-  // printf(" \n   !! Adding both 3x3's");
-  // m3x3<float> m3x3_02;
-  // m3x3_02 += m3x3_00;
-  // printf("\n3x3_01\n  [\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f]\n  ]\n",m3x3_02.val[0], m3x3_02.val[1], m3x3_02.val[2],m3x3_02.val[3],m3x3_02.val[4],m3x3_02.val[5],m3x3_02.val[6],m3x3_02.val[7],m3x3_02.val[8]);
- 
-  // printf("\nm3x3_00.getVal.at('x0'): %.2f\n",  m3x3_00.getVal.at("x0"));
-  // printf("\n\n\nm3x3_00\n  [\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f]\n  ]\n", m3x3_00.getVal.at("x0"), m3x3_00.getVal.at("y0"), m3x3_00.getVal.at("z0"), m3x3_00.getVal.at("x1"), m3x3_00.getVal.at("y1"), m3x3_00.getVal.at("z1"), m3x3_00.getVal.at("x2"), m3x3_00.getVal.at("y2"), m3x3_00.getVal.at("z2"));
-  
   
   /* - ################   m3x4 testing   ################# - */
   // m3x4<float> m3x4_01;
@@ -94,25 +77,11 @@ int main() {
   //v3<float> biasesv3 = {0.2, 0.4, 2};
 
 
-  // printf("\nm3x4_01\n  [\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f]\n  ]\n",
-  //   m3x4_01.val[0][0], m3x4_01.val[0][1], m3x4_01.val[0][2], m3x4_01.val[0][3],
-  //   m3x4_01.val[1][0], m3x4_01.val[1][1], m3x4_01.val[1][2], m3x4_01.val[1][3],
-  //   m3x4_01.val[2][0], m3x4_01.val[2][1], m3x4_01.val[2][2], m3x4_01.val[2][3]
-  // );
-  
-  // printf("\ninputs3x4\n  [\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f]\n  ]\n",
-  //   inputs3x4.val[0][0], inputs3x4.val[0][1], inputs3x4.val[0][2], inputs3x4.val[0][3],
-  //   inputs3x4.val[1][0], inputs3x4.val[1][1], inputs3x4.val[1][2], inputs3x4.val[1][3],
-  //   inputs3x4.val[2][0], inputs3x4.val[2][1], inputs3x4.val[2][2], inputs3x4.val[2][3]
-  // );
 
-  // printf("\nweights3x4\n  [\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f],\n    [%.2f, %.2f, %.2f, %.2f]\n  ]\n\n\n",
-  //   weights3x4.val[0][0], weights3x4.val[0][1], weights3x4.val[0][2], weights3x4.val[0][3],
-  //   weights3x4.val[1][0], weights3x4.val[1][1], weights3x4.val[1][2], weights3x4.val[1][3],
-  //   weights3x4.val[2][0], weights3x4.val[2][1], weights3x4.val[2][2], weights3x4.val[2][3]
-  // );
+
 
  
+  /* #### mDyn ##### */
   const int dynRows = 3; 
   const int dynCols = 4;
   mDyn<float, dynRows, dynCols> dynMat();
@@ -158,11 +127,6 @@ int main() {
   transMatTest00 = transMatTest00.transpose();
   transMatTest00.log("After Transpose");
 
-
-  const int vDynSize00 = 5;
-  float vDynVals00[] = {-0.00, 0.10, 0.20, -0.30, 0.40};
-  vDyn<float, vDynSize00> vDyn00(vDynVals00);
-
   
   const int testRows01 = 3;
   const int testCols01 = 4;
@@ -172,7 +136,20 @@ int main() {
     {9, 10, 11, 12}
   };
 
+  mDyn<float, testRows01, testCols01> testMat01(testVals01);
 
+  testMat01.log("Before Transpose");
+  
+
+  mDyn<float, testCols01, testRows01> afterTestMat01 = testMat01.transpose();
+  afterTestMat01.log("After Transpose");
+
+
+  
+  /* #### vDyn ##### */
+  const int vDynSize00 = 5;
+  float vDynVals00[] = {-0.00, 0.10, 0.20, -0.30, 0.40};
+  vDyn<float, vDynSize00> vDyn00(vDynVals00);
 
   printf("\n\n\n");
   if(! vDyn00.val[0]) {
