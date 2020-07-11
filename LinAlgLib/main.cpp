@@ -120,11 +120,7 @@ int main() {
   };
   mDyn<float, dynRows, dynCols> dynMat02;
   
-  dynMat02 = setDynMat<float, dynRows, dynCols>(
-    dynMat02,
-    dynVals
-    /* true */
-  );
+  dynMat02.set<float, dynRows, dynCols>(dynVals, true);
 
 
   const int dynRows03 = 6; 
@@ -138,10 +134,6 @@ int main() {
     {0.40, -0.41, -0.42, 0.43, -0.44},
     {-0.50, -0.51, 0.52, 0.53, 0.54}
   };
-
-  // mDyn<float, dynRows03, dynCols03> dynMat03 = setDynMat<float, dynRows03, dynCols03>(
-  //   dynMat03, dynVals03, true
-  // );
 
   dynMat03.set<float, dynRows03, dynCols03>(dynVals03, true);
   
