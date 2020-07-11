@@ -134,7 +134,7 @@ struct vDyn {
   T val[size];
 
   vDyn() : val{} { this->constructEmpty(); }
-  vDyn(T _val[size] = NULL) : val{_val[size]} {
+  vDyn(T _val[size]) : val{_val[size]} {
     for(int i=0;i<size;i++) this->val[i] = _val[i];
   }
 
