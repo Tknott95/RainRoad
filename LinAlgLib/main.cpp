@@ -81,12 +81,15 @@ int main() {
 
 
   float toMultiplyByVals[1][4] = {{0.5, 0.5, 0.5, 0.5}};
-  mDyn<float, 1, 4> toMultiplyBy(toMultiplyByVals);
+  float toTestOperators[1][4] = {{1, 1, 1, 1}};
+  mDyn<float, 1, 4> testingOperators00(toTestOperators);
+  testingOperators00.log("Before * operator");
+  testingOperators00 = testingOperators00 * toMultiplyByVals;
+  testingOperators00.log("After * operator");
 
-  float dotMatInputVals00[1][4] = {{1, 1, 1, 1}};
-  mDyn<float, 1, 4> inputsDotMat00(dotMatInputVals00);
 
-  inputsDotMat00 = inputsDotMat00 * toMultiplyBy;
+  // float dotMatInputVals00[1][4] = {{1, 1, 1, 1}};
+  // mDyn<float, 1, 4> inputsDotMat00(dotMatInputVals00);
   //float dotMatInputVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
   //mDyn<float, 2, 4> inputsDotMat00(dotMatInputVals00);
 
@@ -94,7 +97,8 @@ int main() {
   // mDyn<float, 2, 4> weightsDotMat00(dotMatWeightVals00);
   // mDyn<float, 2, 1> dotOutputMat00 = weightsDotMat00.dot<1>(inputsDotMat00);
 
-  inputsDotMat00.log("Inputs for DotProd");
+  
+  //inputsDotMat00.log("Inputs for DotProd");
   // weightsDotMat00.log("Weights for DotProd");
   // dotOutputMat00.log("After DotProd");
 
