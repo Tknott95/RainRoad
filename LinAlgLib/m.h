@@ -41,7 +41,7 @@ struct mDyn {
 
 
   /* wasn't returning pointer below prior */
-  mDyn<T, rowSize, colSize> operator + (const mDyn<T, rowSize, colSize> other) {
+  mDyn<T, rowSize, colSize> operator += (const mDyn<T, rowSize, colSize> other) {
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
         this->val[i][j] += other.val[i][j];
@@ -49,7 +49,7 @@ struct mDyn {
     };
     return *this;
   }
-  mDyn<T, rowSize, colSize> operator - (const mDyn<T, rowSize, colSize> other) {
+  mDyn<T, rowSize, colSize> operator -=(const mDyn<T, rowSize, colSize> other) {
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
         this->val[i][j] -= other.val[i][j];
