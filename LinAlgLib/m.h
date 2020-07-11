@@ -7,17 +7,18 @@
 */
 using namespace std;
 
-template<class T, int rowSize, int colSize>
+template<class T, int rowSize, int colSize, bool debug=false>
 struct mDyn {
   T val[rowSize][colSize];
   int size = rowSize*colSize;
 
   mDyn() : val{} { this->constructEmpty(); }
-  mDyn(T _vals[rowSize][colSize]) : val{_vals[rowSize][colSize]} {
-    this->val[rowSize][colSize] = _vals[rowSize][colSize]; /* waste of bytes... */
+  mDyn(T _vals[][colSize]) : val{_vals[rowSize][colSize]} {
+    this->set(_vals);
+    //this->val[rowSize][colSize] = _vals[rowSize][colSize]; /* waste of bytes... */
   }
   
-  void constructEmpty(bool debug=false) {
+  void constructEmpty() {
     if(debug)  printf("\n\n\n\n\n\n ############################## \n");
     for(int i=0; i < rowSize; i++) {
       for(int j=0; j < colSize; j++) { 
@@ -27,7 +28,7 @@ struct mDyn {
     }
   }
 
-  void set(T other[][colSize], bool debug=false){
+  void set(T other[][colSize]){
     if(debug)  printf("\n\n\n");
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
@@ -40,9 +41,8 @@ struct mDyn {
     };
   };
 
-
   /* wasn't returning pointer below prior */
-  mDyn<T, rowSize, colSize> operator += (const mDyn<T, rowSize, colSize> other) {
+  mDyn<T, rowSize, colSize, debug> operator += (const mDyn<T, rowSize, colSize, debug> other) {
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
         this->val[i][j] += other.val[i][j];
@@ -50,7 +50,7 @@ struct mDyn {
     };
     return *this;
   }
-  mDyn<T, rowSize, colSize> operator -= (const mDyn<T, rowSize, colSize> other) {
+  mDyn<T, rowSize, colSize, debug> operator -= (const mDyn<T, rowSize, colSize, debug> other) {
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
         this->val[i][j] -= other.val[i][j];
