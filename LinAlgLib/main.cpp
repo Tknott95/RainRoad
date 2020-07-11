@@ -123,35 +123,33 @@ int main() {
   };
   mDyn<float, i3, i3> transMatTest00(testVals00);
 
+  printf("\n\n\n\n");
   transMatTest00.log("Before Transpose");
   transMatTest00 = transMatTest00.transpose();
   transMatTest00.log("After Transpose");
 
   
   const int testRows01 = 3;
-  const int testCols01 = 4;
+  const int testCols01 = 6;
   float testVals01[testRows01][testCols01] = {
-    {1, 2,  3,  4},
-    {5, 6,  7,  8},
-    {9, 10, 11, 12}
+    {1, 2,  3,  4, 5 ,6},
+    {7, 8, 9, 10, 11, 12},
+    {13, 14, 15, 16, 17, 18}
   };
 
   mDyn<float, testRows01, testCols01> testMat01(testVals01);
-
-  testMat01.log("Before Transpose");
   
-
+  printf("\n\n\n\n");
+  testMat01.log("Before Transpose");
   mDyn<float, testCols01, testRows01> afterTestMat01 = testMat01.transpose();
   afterTestMat01.log("After Transpose");
-
-
   
   /* #### vDyn ##### */
   const int vDynSize00 = 5;
   float vDynVals00[] = {-0.00, 0.10, 0.20, -0.30, 0.40};
   vDyn<float, vDynSize00> vDyn00(vDynVals00);
 
-  printf("\n\n\n");
+  printf("\n\n\n\n\n\n");
   if(! vDyn00.val[0]) {
     for(int k=0;k<vDynSize00;k++) {
       printf("vDyn[%i]: %.2f\n", k, vDyn00.val[k]);

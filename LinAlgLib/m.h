@@ -48,7 +48,7 @@ struct mDyn {
       };
       printf("] ");
     };
-    printf("\n]\n");
+    printf("\n]");
   };
 
   /* reversing return on size for transpose */
