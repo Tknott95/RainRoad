@@ -7,7 +7,7 @@
 */
 using namespace std;
 
-template<class T, int rowSize, int colSize, bool debug=false>
+template<class T, int rowSize, int colSize>
 struct mDyn {
   T val[rowSize][colSize];
 
@@ -15,24 +15,17 @@ struct mDyn {
   mDyn(T _vals[][colSize]) : val{_vals[rowSize][colSize]} { this->set(_vals); }
 
   void constructEmpty() {
-    if(debug)  printf("\n\n\n\n\n\n ############################## \n");
     for(int i=0; i < rowSize; i++) {
       for(int j=0; j < colSize; j++) { 
         if(sizeof(val) != (rowSize*colSize)) this->val[i][j] = 0; 
-        if(debug) printf("\nConstructing [%i][%i] value.", i, j);
       };
     };
   };
 
   void set(T other[][colSize]){
-    if(debug)  printf("\n\n\n");
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
         this->val[i][j] = other[i][j];
-        if(debug) {
-          printf("\n other        [%i][%i]: %.2f", i, j, other[i][j]);
-          printf("\n target   .val[%i][%i]: %.2f\n", i, j,  this->val[i][j]);
-        }
       };
     };
   };
@@ -49,8 +42,8 @@ struct mDyn {
     printf("\n]");
   };
 
-  mDyn<T, colSize, rowSize, debug> transpose() {
-    mDyn<T, colSize, rowSize, debug> transposedMatrix;
+  mDyn<T, colSize, rowSize> transpose() {
+    mDyn<T, colSize, rowSize> transposedMatrix;
     for(int i=0;i<rowSize;i++) { 
       for(int j=0;j<colSize;j++) {
         transposedMatrix.val[j][i] = this->val[i][j];
@@ -60,8 +53,8 @@ struct mDyn {
   };
 
   template<int otherRowSize>
-  mDyn<T, rowSize, 1, debug> dot(mDyn<T, otherRowSize, colSize, debug> other) {
-    mDyn<T, rowSize, 1, debug> returnMat;
+  mDyn<T, rowSize, 1> dot(mDyn<T, otherRowSize, colSize> other) {
+    mDyn<T, rowSize, 1> returnMat;
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
         printf("\n %i", j);
@@ -75,8 +68,8 @@ struct mDyn {
     return returnMat;
   };
 
-  mDyn<T, rowSize, colSize, debug> operator + (const mDyn<T, rowSize, colSize, debug> other) {
-    mDyn<T, rowSize, colSize, debug> returnMat;
+  mDyn<T, rowSize, colSize> operator + (const mDyn<T, rowSize, colSize> other) {
+    mDyn<T, rowSize, colSize> returnMat;
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
         returnMat[i][j] = this->val[i][j] + other.val[i][j];
@@ -84,7 +77,7 @@ struct mDyn {
     };
     return returnMat;
   }
-  mDyn<T, rowSize, colSize, debug> operator += (const mDyn<T, rowSize, colSize, debug> other) {
+  mDyn<T, rowSize, colSize> operator += (const mDyn<T, rowSize, colSize> other) {
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
         this->val[i][j] += other.val[i][j];
@@ -92,7 +85,7 @@ struct mDyn {
     };
     return *this;
   }
-  mDyn<T, rowSize, colSize, debug> operator -= (const mDyn<T, rowSize, colSize, debug> other) {
+  mDyn<T, rowSize, colSize> operator -= (const mDyn<T, rowSize, colSize> other) {
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
         this->val[i][j] -= other.val[i][j];

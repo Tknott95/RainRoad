@@ -1,24 +1,6 @@
 #include "v.h"
 #include "m.h"
 
-template<class T, int _rows, int _cols>
-mDyn<T, _rows, _cols> setDynMat(
-  mDyn<T, _rows, _cols> target,
-  T other[][_cols],
-  bool debug=false){
-    if(debug)  printf("\n\n\n");
-    for(int i=0;i < _rows; i++) {
-      for(int j=0;j < _cols; j++) {
-        target.val[i][j] = other[i][j];
-        if(debug) {
-          printf("\n other        [%i][%i]: %.2f", i, j, other[i][j]);
-          printf("\n target   .val[%i][%i]: %.2f\n", i, j,  target.val[i][j]);
-        }
-      };
-    };
-  return target;
-};
-
 int main() {  
   /* - ################   m3x4 testing   ################# - */
   // m3x4<float> m3x4_01;
