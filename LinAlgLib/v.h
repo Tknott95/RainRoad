@@ -138,9 +138,9 @@ struct vDyn {
     for(int i=0;i<size;i++) this->val[i] = _val[i];
   }
 
-  void constructEmpty(bool debug=false) {
+  void constructEmpty() {
     for(int i=0; i < size; i++) { 
-      if(! this->val[0]) this->val[i] = 0; 
+      if(sizeof(val) != size) this->val[i] = 0; 
     }
   }
 

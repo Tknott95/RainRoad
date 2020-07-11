@@ -105,7 +105,7 @@ int main() {
   /* #### vDyn ##### */
   const int vDynSize00 = 5;
   float vDynVals00[] = {2.0, 2.0, 2.0, 2.0, 2.0};
-  vDyn<float, vDynSize00> vDyn00(vDynVals00);
+  vDyn<float, vDynSize00> vDyn00;
 
   // vDyn00.dot(vDyn00);
 
