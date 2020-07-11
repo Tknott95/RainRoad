@@ -20,13 +20,13 @@ class Mesh {
     EncodedObj encodedObj;
     ObjectLoader objLoader;
     Texture texture;
-    Shader shader;
 
     Mesh() {};
     void init();
 
   public:
     uint VAO;
+    Shader shader;
 
     void Draw(Shader &shader);
 };
