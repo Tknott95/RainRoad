@@ -4,6 +4,8 @@ Mesh::Mesh() {
     /* Pass path down prob via: param to call ub draw class dynamically down the stack */
     encodedObj = objLoader.load("assets/objects/plane.obj");
 
+    shader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
+
     this->init();
 
 };
@@ -17,6 +19,9 @@ void Mesh::init() {
 
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
   glBufferData(GL_ARRAY_BUFFER, encodedObj.vertices.size() * sizeof(vec3), &encodedObj.vertices[0], GL_STATIC_DRAW);
+
+  glActiveTexture(GL_TEXTURE0);
+  glBindTexture(GL_TEXTURE_2D, textureID);
 
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(
@@ -36,6 +41,9 @@ void Mesh::init() {
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, objLoader.vertIndices.size() * sizeof(uint), &objLoader.vertIndices[0], GL_STATIC_DRAW);
 
   this->textureID = texture.load("assets/objects/plane.obj");
+
+  shader.use();
+  shader.setInt("myTexture", 0);
 };
 
 void Mesh::Draw(Shader &shader) {
