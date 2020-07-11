@@ -160,9 +160,6 @@ int main() {
   weightsDotMat00.log("Weights for DotProd");
   dotOutputMat00.log("After DotProd");
 
-
-
-
   
   /* #### vDyn ##### */
   const int vDynSize00 = 5;
