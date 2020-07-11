@@ -107,7 +107,8 @@ int main() {
   float vDynVals00[] = {2.0, 2.0, 2.0, 2.0, 2.0};
   vDyn<float, vDynSize00> vDyn00(vDynVals00);
 
-  // vDyn00.dot(vDyn00);
+  vDyn<float, 1> vTempDot(vDyn00.dot(vDyn00));
+  cout << vTempDot.val[0] << endl;
 
   printf("\n\n\n\n\n\n");
     printf("\n [ ");
