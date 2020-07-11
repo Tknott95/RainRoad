@@ -140,7 +140,7 @@ struct vDyn {
 
   void constructEmpty(bool debug=false) {
     for(int i=0; i < size; i++) { 
-      if(! this->val[0]) this->val[i] = i; 
+      if(! this->val[0]) this->val[i] = 0; 
     }
   }
 

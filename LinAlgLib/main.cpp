@@ -62,7 +62,6 @@ int main() {
   transMatTest00.log("Before Transpose");
   transMatTest00 = transMatTest00.transpose();
   transMatTest00.log("After Transpose");
-
   
   const int testRows01 = 3;
   const int testCols01 = 6;
