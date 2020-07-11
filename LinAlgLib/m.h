@@ -58,10 +58,20 @@ struct mDyn {
     for(int i=0;i<rowSize;i++) { 
       for(int j=0;j<colSize;j++) {
         transposedMatrix.val[j][i] = this->val[i][j];
+      };
+    };
+    return transposedMatrix;
+  };
+
+  mDyn<T, rowSize, 1, debug> dot(mDyn<T, rowSize, colSize, debug> other) {
+    mDyn<T, rowSize, 1, debug> returnMat;
+    for(int i=0;i < rowSize; i++) {
+      for(int j=0;j < colSize; j++) {
+        returnMat.val[i][0] += this->val[i][j];
       }
     }
-    return transposedMatrix;
-  }
+    return returnMat;
+  };
 
 
   /* #### OPERATOR FUNCS #### */
