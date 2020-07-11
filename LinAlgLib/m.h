@@ -15,15 +15,16 @@ struct mDyn {
   mDyn() : val{} { this->constructEmpty(); }
   mDyn(T _vals[][colSize]) : val{_vals[rowSize][colSize]} { this->set(_vals); }
 
+  /* #### HELPER FUNCS #### */
   void constructEmpty() {
     if(debug)  printf("\n\n\n\n\n\n ############################## \n");
     for(int i=0; i < rowSize; i++) {
       for(int j=0; j < colSize; j++) { 
         if(sizeof(val) != size) this->val[i][j] = i + 1.f; 
         if(debug) printf("\nConstructing [%i][%i] value.", i, j);
-      }
-    }
-  }
+      };
+    };
+  };
 
   void set(T other[][colSize]){
     if(debug)  printf("\n\n\n");
@@ -37,6 +38,19 @@ struct mDyn {
       };
     };
   };
+
+  void log(int _rows, int _cols, string name = "anonymous matrix") {
+    printf("\n\n\n\n  - %s - \n[", name.c_str());
+    for(int i=0;i<_rows; i++) {
+      printf("\n  [");
+      for(int j=0;j<_cols;j++) {
+        printf("%.2f ",this->val[i][j]);
+      };
+      printf("] ");
+    };
+    printf("\n]\n");
+  };
+
   /* reversing return on size for transpose */
   /* normally rowxcol */
   mDyn<T, colSize, rowSize, debug> transpose() {
@@ -48,6 +62,7 @@ struct mDyn {
     }
     return transposedMatrix;
   }
+
 
   /* #### OPERATOR FUNCS #### */
   /* wasn't returning pointer below prior */

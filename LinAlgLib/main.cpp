@@ -153,15 +153,16 @@ int main() {
     {7,8,9}
   };
   mDyn<float, i3, i3> transMatTest00(testVals00);
-  printf("\n\n\n\n  - Before Transpose - \n[");
-  for(int i=0;i<i3; i++) {
-    printf("\n  [");
-    for(int j=0;j<i3;j++) {
-      printf("%.2f ",transMatTest00.val[i][j]);
-    };
-    printf("] ");
-  };
-  printf("\n]\n");
+  transMatTest00.log(i3, i3, "Before Transpose");
+  // printf("\n\n\n\n  - Before Transpose - \n[");
+  // for(int i=0;i<i3; i++) {
+  //   printf("\n  [");
+  //   for(int j=0;j<i3;j++) {
+  //     printf("%.2f ",transMatTest00.val[i][j]);
+  //   };
+  //   printf("] ");
+  // };
+  // printf("\n]\n");
 
   transMatTest00 = transMatTest00.transpose();
 
@@ -176,14 +177,6 @@ int main() {
   };
   printf("\n]\n");
 
-  
-
-
-
-
-
-
-  
 
   const int vDynSize00 = 5;
   float vDynVals00[] = {-0.00, 0.10, 0.20, -0.30, 0.40};
