@@ -22,9 +22,14 @@ using namespace std;
 */
 class Mesh {
   private:
+    EncodedObj encodedObj;
+    ObjectLoader objLoader;
+    uint objVAO, objVBO, objEBO, objUVBO;
+
     Mesh() {};
 
   public:
+    void Draw();
 };
 
 #endif
