@@ -14,7 +14,7 @@ struct mDyn {
 
   mDyn() : val{} { this->constructEmpty(); }
   mDyn(T _vals[rowSize][colSize]) : val{_vals[rowSize][colSize]} {
-    this->val[rowSize][colSize] = _vals[rowSize][colSize];
+    this->val[rowSize][colSize] = _vals[rowSize][colSize]; /* waste of bytes... */
   }
   
   void constructEmpty(bool debug=false) {
