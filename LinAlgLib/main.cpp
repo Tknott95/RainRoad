@@ -163,13 +163,23 @@ int main() {
   float vDynVals00[] = {-0.00, 0.10, 0.20, -0.30, 0.40};
   vDyn<float, vDynSize00> vDyn00(vDynVals00);
 
+  
+  const int testRows01 = 3;
+  const int testCols01 = 4;
+  float testVals01[testRows01][testCols01] = {
+    {1, 2,  3,  4},
+    {5, 6,  7,  8},
+    {9, 10, 11, 12}
+  };
+
+
+
   printf("\n\n\n");
   if(! vDyn00.val[0]) {
     for(int k=0;k<vDynSize00;k++) {
       printf("vDyn[%i]: %.2f\n", k, vDyn00.val[k]);
     };
   }
-
   
 
   return 0;
