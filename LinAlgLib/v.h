@@ -133,9 +133,9 @@ template<class T, int size>
 struct vDyn {
   T val[size];
 
-  vDyn() : val{} { this->constructEmpty(true); }
+  vDyn() : val{} { this->constructEmpty(); }
   vDyn(T _val[size] = NULL) : val{_val[size]} {
-    if(! _val[0]) for(int i=0;i<size;i++) val[i] = _val[i];
+    for(int i=0;i<size;i++) this->val[i] = _val[i];
   }
 
   void constructEmpty(bool debug=false) {
@@ -146,7 +146,7 @@ struct vDyn {
 
   vDyn<T, 1> dot(vDyn<T, size> other) {
     vDyn<T, 1> tempV;
-    for(int i=0;i<size;i++) tempV[0] += (this->val[i] * other.val[i]);
+    for(int i=0;i<size;i++) tempV.val[0] += (this->val[i] * other.val[i]);
     return tempV;
   }
 

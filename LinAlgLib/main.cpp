@@ -104,14 +104,18 @@ int main() {
 
   /* #### vDyn ##### */
   const int vDynSize00 = 5;
-  float vDynVals00[] = {-0.00, 0.10, 0.20, -0.30, 0.40};
+  float vDynVals00[] = {2.0, 2.0, 2.0, 2.0, 2.0};
   vDyn<float, vDynSize00> vDyn00(vDynVals00);
 
+  // vDyn00.dot(vDyn00);
+
   printf("\n\n\n\n\n\n");
-  if(! vDyn00.val[0]) {
+  if(vDyn00.val[0]) {
+    printf("\n [ ");
     for(int k=0;k<vDynSize00;k++) {
-      printf("vDyn[%i]: %.2f\n", k, vDyn00.val[k]);
+      printf("%.2f ", k, vDyn00.val[k]);
     };
+    printf("]\n");
   }
   
 
