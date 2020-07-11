@@ -145,6 +145,44 @@ int main() {
       printf("\n dynMat03[%i][%i]: %.2f", i, j, dynMat03.val[i][j]);
     };
   };
+
+  const int i3 = 3;
+  float testVals00[i3][i3] = {
+    {1,2,3},
+    {4,5,6},
+    {7,8,9}
+  };
+  mDyn<float, i3, i3> transMatTest00(testVals00);
+  printf("\n\n\n\n  - Before Transpose - \n[");
+  for(int i=0;i<i3; i++) {
+    printf("\n  [");
+    for(int j=0;j<i3;j++) {
+      printf("%.2f ",transMatTest00.val[i][j]);
+    };
+    printf("] ");
+  };
+  printf("\n]\n");
+
+  transMatTest00 = transMatTest00.transpose();
+
+
+  printf("\n\n  - After Transpose - \n[");
+  for(int k=0;k<i3; k++) {
+    printf("\n  [");
+    for(int l=0;l<i3;l++) {
+      printf("%.2f ",transMatTest00.val[k][l]);
+    };
+    printf("] ");
+  };
+  printf("\n]\n");
+
+  
+
+
+
+
+
+
   
 
   const int vDynSize00 = 5;
@@ -157,6 +195,8 @@ int main() {
       printf("vDyn[%i]: %.2f\n", k, vDyn00.val[k]);
     };
   }
+
+  
 
   return 0;
 }

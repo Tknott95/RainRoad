@@ -37,7 +37,19 @@ struct mDyn {
       };
     };
   };
+  /* reversing return on size for transpose */
+  /* normally rowxcol */
+  mDyn<T, colSize, rowSize, debug> transpose() {
+    mDyn<T, colSize, rowSize, debug> transposedMatrix;
+    for(int i=0;i<rowSize;i++) { 
+      for(int j=0;j<colSize;j++) {
+        transposedMatrix.val[j][i] = this->val[i][j];
+      }
+    }
+    return transposedMatrix;
+  }
 
+  /* #### OPERATOR FUNCS #### */
   /* wasn't returning pointer below prior */
   mDyn<T, rowSize, colSize, debug> operator += (const mDyn<T, rowSize, colSize, debug> other) {
     for(int i=0;i < rowSize; i++) {
