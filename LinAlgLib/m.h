@@ -16,6 +16,7 @@ struct mDyn {
   mDyn(T _vals[rowSize*colSize]) : val{_vals[rowSize][colSize]} {}
   
   void constructEmpty(bool debug=false) {
+    if(debug) printf("\n\n\n\n\n\n ############################## \n");
     for(int i=0; i <= rowSize; i++) {
       for(int j=0; j <= colSize; j++) { 
         if(! val[0][0]) val[i][j] = i + j; 

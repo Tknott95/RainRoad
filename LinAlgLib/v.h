@@ -139,7 +139,7 @@ struct vDyn {
   }
 
   void constructEmpty(bool debug=false) {
-    printf("\n\n\n ############################## \n");
+    if(debug) printf("\n\n\n\n\n\n ############################## \n");
     for(int i=0; i < size; i++) { 
       if(! this->val[0]) this->val[i] = i; 
       if(debug) printf("\nConstructing [%i] value: %.2f", i, this->val[i]);
