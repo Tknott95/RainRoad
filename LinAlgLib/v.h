@@ -134,16 +134,13 @@ struct vDyn {
   T val[size];
 
   vDyn() : val{} { this->constructEmpty(true); }
-  /* std::initializer_list<T> _val | ! this->val[0] && sizeof(_vList) >= 1 */
   vDyn(T _val[size] = NULL) : val{_val[size]} {
     if(! _val[0]) for(int i=0;i<size;i++) val[i] = _val[i];
   }
 
   void constructEmpty(bool debug=false) {
-    if(debug) printf("\n\n\n\n\n\n ############################## \n");
     for(int i=0; i < size; i++) { 
       if(! this->val[0]) this->val[i] = i; 
-      if(debug) printf("\nConstructing [%i] value: %.2f", i, this->val[i]);
     }
   }
 

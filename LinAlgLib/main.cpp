@@ -80,22 +80,24 @@ int main() {
   afterTestMat01.log("After Transpose");
 
 
+  float toMultiplyByVals[1][4] = {{0.5, 0.5, 0.5, 0.5}};
+  mDyn<float, 1, 4> toMultiplyBy(toMultiplyByVals);
+
   float dotMatInputVals00[1][4] = {{1, 1, 1, 1}};
   mDyn<float, 1, 4> inputsDotMat00(dotMatInputVals00);
+
+  inputsDotMat00 = inputsDotMat00 * toMultiplyBy;
   //float dotMatInputVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
   //mDyn<float, 2, 4> inputsDotMat00(dotMatInputVals00);
 
-  float dotMatWeightVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
-  mDyn<float, 2, 4> weightsDotMat00(dotMatWeightVals00);
-
-
-  mDyn<float, 2, 1> dotOutputMat00 = weightsDotMat00.dot<1>(inputsDotMat00);
+  // float dotMatWeightVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
+  // mDyn<float, 2, 4> weightsDotMat00(dotMatWeightVals00);
+  // mDyn<float, 2, 1> dotOutputMat00 = weightsDotMat00.dot<1>(inputsDotMat00);
 
   inputsDotMat00.log("Inputs for DotProd");
-  weightsDotMat00.log("Weights for DotProd");
-  dotOutputMat00.log("After DotProd");
+  // weightsDotMat00.log("Weights for DotProd");
+  // dotOutputMat00.log("After DotProd");
 
-  
   /* #### vDyn ##### */
   const int vDynSize00 = 5;
   float vDynVals00[] = {-0.00, 0.10, 0.20, -0.30, 0.40};

@@ -72,7 +72,34 @@ struct mDyn {
     mDyn<T, rowSize, colSize> returnMat;
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
-        returnMat[i][j] = this->val[i][j] + other.val[i][j];
+        returnMat.val[i][j] = this->val[i][j] + other.val[i][j];
+      };
+    };
+    return returnMat;
+  }
+  mDyn<T, rowSize, colSize> operator - (const mDyn<T, rowSize, colSize> other) {
+    mDyn<T, rowSize, colSize> returnMat;
+    for(int i=0;i < rowSize; i++) {
+      for(int j=0;j < colSize; j++) {
+        returnMat.val[i][j] = this->val[i][j] - other.val[i][j];
+      };
+    };
+    return returnMat;
+  }
+  mDyn<T, rowSize, colSize> operator / (const mDyn<T, rowSize, colSize> other) {
+    mDyn<T, rowSize, colSize> returnMat;
+    for(int i=0;i < rowSize; i++) {
+      for(int j=0;j < colSize; j++) {
+        returnMat.val[i][j] = this->val[i][j] / other.val[i][j];
+      };
+    };
+    return returnMat;
+  }
+  mDyn<T, rowSize, colSize> operator * (const mDyn<T, rowSize, colSize> other) {
+    mDyn<T, rowSize, colSize> returnMat;
+    for(int i=0;i < rowSize; i++) {
+      for(int j=0;j < colSize; j++) {
+        returnMat.val[i][j] = this->val[i][j] * other.val[i][j];
       };
     };
     return returnMat;
