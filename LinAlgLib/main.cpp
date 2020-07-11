@@ -90,10 +90,10 @@ int main() {
 
   float dotMatInputVals00[1][4] = {{1, 1, 1, 1}};
   mDyn<float, 1, 4> inputsDotMat00(dotMatInputVals00);
-  /* - WORKS WITH BOTH MULTI_ROWS OR ONLY ONE */
+  /* - WORKS WITH BOTH MULTI_ROWS OR ONLY ONE
   ** float dotMatInputVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
   **  mDyn<float, 2, 4> inputsDotMat00(dotMatInputVals00);
-
+  */
   float dotMatWeightVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
   mDyn<float, 2, 4> weightsDotMat00(dotMatWeightVals00);
   mDyn<float, 2, 1> dotOutputMat00 = weightsDotMat00.dot<1>(inputsDotMat00);
