@@ -190,7 +190,7 @@ struct mDyn {
     // return mDyn<T, rowSize, colSize>(
       for(int i=0;i < rowSize; i++) {
         for(int j=0;j < colSize; j++) {
-          this->val[i][j] = other.val[i][j];
+          this->val[i][j] + other.val[i][j];
         };
       };
     return *this; /* pointer retrun dumb? not the way prior */
