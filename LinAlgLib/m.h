@@ -66,7 +66,7 @@ struct mDyn {
   mDyn<T, rowSize, 1, debug> dot(mDyn<T, rowSize, colSize, debug> other) {
     mDyn<T, rowSize, 1, debug> returnMat;
     for(int i=0;i < rowSize; i++) {
-      for(int j=0;j < colSize-1; j++) {
+      for(int j=0;j < colSize; j++) {
         printf("\n %i", i);
         returnMat.val[i][0] += (this->val[i][j] * other.val[i][j]);
       }
