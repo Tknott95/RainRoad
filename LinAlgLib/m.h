@@ -187,12 +187,20 @@ struct mDyn {
 
 
   mDyn<T, rowSize, colSize> operator + (const mDyn<T, rowSize, colSize> other) {
-    // return mDyn<T, rowSize, colSize>(
-      for(int i=0;i < rowSize; i++) {
-        for(int j=0;j < colSize; j++) {
-          this->val[i][j] += other.val[i][j];
-        };
+    for(int i=0;i < rowSize; i++) {
+      for(int j=0;j < colSize; j++) {
+        this->val[i][j] += other.val[i][j];
       };
+    };
+    return *this; /* pointer retrun dumb? not the way prior */
+  }
+
+  mDyn<T, rowSize, colSize> operator - (const mDyn<T, rowSize, colSize> other) {
+    for(int i=0;i < rowSize; i++) {
+      for(int j=0;j < colSize; j++) {
+        this->val[i][j] -= other.val[i][j];
+      };
+    };
     return *this; /* pointer retrun dumb? not the way prior */
   }
 };
