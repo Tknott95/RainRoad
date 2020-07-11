@@ -17,6 +17,23 @@ void Mesh::init() {
 
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
   glBufferData(GL_ARRAY_BUFFER, encodedObj.vertices.size() * sizeof(vec3), &encodedObj.vertices[0], GL_STATIC_DRAW);
+
+  glEnableVertexAttribArray(0);
+  glVertexAttribPointer(
+    0, /* matches layout in header */
+    3, /* size */
+    GL_FLOAT, /* type */
+    GL_FALSE, /* isNormalized? */
+    sizeof(vec3), /*  or 3 * sizeof(float) | stride, matches my data xyz|vec3*/
+    (void*)0 /* array buffer offset */
+  );
+  glEnableVertexAttribArray(1);
+  glBindBuffer(GL_ARRAY_BUFFER, UVBO);
+  glBufferData(GL_ARRAY_BUFFER, encodedObj.uvs.size() * sizeof(vec2), &encodedObj.uvs[0], GL_STATIC_DRAW);
+  glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(vec2), (void*)0);
+  glEnableVertexAttribArray(2);
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+  glBufferData(GL_ELEMENT_ARRAY_BUFFER, objLoader.vertIndices.size() * sizeof(uint), &objLoader.vertIndices[0], GL_STATIC_DRAW);
 };
 
 void Mesh::loadObjects() {
