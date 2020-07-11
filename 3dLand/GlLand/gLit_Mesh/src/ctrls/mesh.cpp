@@ -3,11 +3,9 @@
 Mesh::Mesh() {
     /* Pass path down prob via: param to call ub draw class dynamically down the stack */
     encodedObj = objLoader.load("assets/objects/plane.obj");
-
     shader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
 
     this->init();
-
 };
 
 void Mesh::init() {
@@ -44,8 +42,4 @@ void Mesh::init() {
 
   shader.use();
   shader.setInt("myTexture", 0);
-};
-
-void Mesh::Draw(Shader &shader) {
-
 };
