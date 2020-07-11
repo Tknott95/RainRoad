@@ -18,7 +18,7 @@ struct mDyn {
   }
   
   void constructEmpty(bool debug=false) {
-    if(debug) printf("\n\n\n\n\n\n ############################## \n");
+    if(debug)  printf("\n\n\n\n\n\n ############################## \n");
     for(int i=0; i < rowSize; i++) {
       for(int j=0; j < colSize; j++) { 
         if(sizeof(val) != size) this->val[i][j] = i + 1.f; 
