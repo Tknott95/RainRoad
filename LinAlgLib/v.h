@@ -129,13 +129,13 @@
 //   }
 // };
 
-template<class T2, int size>
+template<class T, int size>
 struct vDyn {
-  T2 val[size];
+  T val[size];
 
   vDyn() : val{} { this->constructEmpty(true); }
-  /* std::initializer_list<T2> _val | ! this->val[0] && sizeof(_vList) >= 1 */
-  vDyn(T2 _val[size] = NULL) : val{_val[size]} {
+  /* std::initializer_list<T> _val | ! this->val[0] && sizeof(_vList) >= 1 */
+  vDyn(T _val[size] = NULL) : val{_val[size]} {
     if(! _val[0]) for(int i=0;i<size;i++) val[i] = _val[i];
   }
 
@@ -145,5 +145,14 @@ struct vDyn {
       if(! this->val[0]) this->val[i] = i; 
       if(debug) printf("\nConstructing [%i] value: %.2f", i, this->val[i]);
     }
+  }
+
+  vDyn<T, size> operator += (const vDyn<T, size> other) {
+    for(int i=0;i<size;i++) this->val[i] += other.val[i];
+    return *this;
+  }
+  vDyn<T, size> operator -= (const vDyn<T, size> other) {
+    for(int i=0;i<size;i++) this->val[i] -= other.val[i];
+    return *this;
   }
 };

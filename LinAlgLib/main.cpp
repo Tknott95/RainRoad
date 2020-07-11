@@ -137,9 +137,11 @@ int main() {
     {-0.50, -0.51, 0.52, 0.53, 0.54}
   };
 
+
+
   dynMat03.set<float, dynRows03, dynCols03>(dynVals03/*, true*/);
 
-  dynMat03 = dynMat03 += dynMat03 += dynMat03;
+  // dynMat03 = dynMat03 += dynMat03 += dynMat03;
 
   for(int i=0;i<dynRows03; i++) {
     for(int j=0;j<dynCols03;j++) {

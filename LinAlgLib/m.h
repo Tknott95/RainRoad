@@ -13,13 +13,15 @@ struct mDyn {
   int size = rowSize*colSize;
 
   mDyn() : val{} { this->constructEmpty(); }
-  mDyn(T _vals[rowSize*colSize]) : val{_vals[rowSize][colSize]} {}
+  mDyn(T _vals[rowSize][colSize]) : val{_vals[rowSize][colSize]} {
+    this->val[rowSize][colSize] = _vals[rowSize][colSize];
+  }
   
   void constructEmpty(bool debug=false) {
     if(debug) printf("\n\n\n\n\n\n ############################## \n");
-    for(int i=0; i <= rowSize; i++) {
-      for(int j=0; j <= colSize; j++) { 
-        if(! val[0][0]) val[i][j] = i + j; 
+    for(int i=0; i < rowSize; i++) {
+      for(int j=0; j < colSize; j++) { 
+        if(sizeof(val) != size) this->val[i][j] = i + 1.f; 
         if(debug) printf("\nConstructing [%i][%i] value.", i, j);
       }
     }
@@ -49,7 +51,7 @@ struct mDyn {
     };
     return *this;
   }
-  mDyn<T, rowSize, colSize> operator -=(const mDyn<T, rowSize, colSize> other) {
+  mDyn<T, rowSize, colSize> operator -= (const mDyn<T, rowSize, colSize> other) {
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
         this->val[i][j] -= other.val[i][j];
