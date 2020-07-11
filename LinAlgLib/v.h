@@ -134,7 +134,8 @@ struct vDyn {
   T2 val[size];
 
   vDyn() : val{} { this->constructEmpty(true); }
-  vDyn(T2 _val[size]) : val{_val[size]} {
+  /* std::initializer_list<T2> _val | ! this->val[0] && sizeof(_vList) >= 1 */
+  vDyn(T2 _val[size] = NULL) : val{_val[size]} {
     if(! _val[0]) for(int i=0;i<size;i++) val[i] = _val[i];
   }
 

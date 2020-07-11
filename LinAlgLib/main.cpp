@@ -150,7 +150,7 @@ int main() {
 
   const int vDynSize00 = 5;
   float vDynVals00[] = {-0.00, 0.10, 0.20, -0.30, 0.40};
-  vDyn<float, vDynSize00> vDyn00;
+  vDyn<float, vDynSize00> vDyn00(vDynVals00);
 
   printf("\n\n\n");
   if(! vDyn00.val[0]) {
