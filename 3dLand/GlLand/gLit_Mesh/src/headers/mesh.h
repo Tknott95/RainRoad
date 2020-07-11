@@ -9,17 +9,26 @@ using namespace std;
 // #include <glm/glm.hpp>
 // #include <glm/gtc/matrix_transform.hpp>
 
+#include "texture.h" /* loads in images as "textures", etc */
 #include "shader.h"
 #include "objLoader.h"
 #include "structs/encodedObj.h"
 
 
+/* Temp hack struct @TODO remove this w/ proper conventions */
+// struct ITexture {
+//     unsigned int id;
+//     string type;
+//     string path;
+// };
 
 class Mesh {
   private:
+    uint VBO, EBO, UVBO, textureID;
     EncodedObj encodedObj;
     ObjectLoader objLoader;
-    uint VBO, EBO, UVBO;
+    Texture texture;
+    Shader shader;
 
     Mesh() {};
     void init();
