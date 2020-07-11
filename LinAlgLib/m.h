@@ -186,6 +186,7 @@ struct mDyn {
   };
 
 
+  /* SHOULD IT BE += annd -= ? Rehotric of it makes sense */
   mDyn<T, rowSize, colSize> operator + (const mDyn<T, rowSize, colSize> other) {
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
