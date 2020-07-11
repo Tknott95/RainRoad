@@ -170,5 +170,20 @@ struct mDyn {
       }
     }
   }
+
+  template<class T2, int _rows, int _cols>
+  void set(T2 other[][_cols], bool debug=false){
+      if(debug)  printf("\n\n\n");
+      for(int i=0;i < _rows; i++) {
+        for(int j=0;j < _cols; j++) {
+          this->val[i][j] = other[i][j];
+          if(debug) {
+            printf("\n other        [%i][%i]: %.2f", i, j, other[i][j]);
+            printf("\n target   .val[%i][%i]: %.2f\n", i, j,  this->val[i][j]);
+          }
+        };
+      };
+    // return target;
+  };
 };
 

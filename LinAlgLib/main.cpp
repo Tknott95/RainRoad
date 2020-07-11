@@ -126,11 +126,10 @@ int main() {
     /* true */
   );
 
-  printf("\n\n dynMat02 val[0][2]: %.2f", dynMat02.val[0][2]);
 
   const int dynRows03 = 6; 
   const int dynCols03 = 5;
-  // mDyn<float, dynRows03, dynCols03> dynMat03; WORKS BOTH WAYS
+  mDyn<float, dynRows03, dynCols03> dynMat03; // WORKS BOTH WAYS
   float dynVals03[dynRows03][dynCols03] = {
     {-0.00, 0.01, 0.02, -0.03, 0.04},
     {0.10, -0.11, -0.12, 0.13, -0.14},
@@ -140,9 +139,12 @@ int main() {
     {-0.50, -0.51, 0.52, 0.53, 0.54}
   };
 
-  mDyn<float, dynRows03, dynCols03> dynMat03 = setDynMat<float, dynRows03, dynCols03>(
-    dynMat03, dynVals03, true
-  );
+  // mDyn<float, dynRows03, dynCols03> dynMat03 = setDynMat<float, dynRows03, dynCols03>(
+  //   dynMat03, dynVals03, true
+  // );
+
+  dynMat03.set<float, dynRows03, dynCols03>(dynVals03, true);
+  
 
 
   return 0;
