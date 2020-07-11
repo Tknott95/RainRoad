@@ -27,11 +27,10 @@ struct mDyn {
     }
   }
 
-  template<class T2, int _rows, int _cols>
-  void set(T2 other[][_cols], bool debug=false){
+  void set(T other[][colSize], bool debug=false){
     if(debug)  printf("\n\n\n");
-    for(int i=0;i < _rows; i++) {
-      for(int j=0;j < _cols; j++) {
+    for(int i=0;i < rowSize; i++) {
+      for(int j=0;j < colSize; j++) {
         this->val[i][j] = other[i][j];
         if(debug) {
           printf("\n other        [%i][%i]: %.2f", i, j, other[i][j]);
