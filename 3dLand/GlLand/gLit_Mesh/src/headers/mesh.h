@@ -9,13 +9,22 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include "objLoader.h"
+#include "structs/encodedObj.h"
 
 using namespace std;
-using namespace glm;
+/*
+  struct EncodedObj {
+    std::vector<glm::vec3> vertices;
+    std::vector<glm::vec2> uvs;
+    std::vector<glm::vec3> norms;
+  };
+*/
+class Mesh {
+  private:
+    Mesh() {};
 
-struct Vertex {
-  glm::vec3 Position;
-  glm::vec3 Normal;
-  glm::vec3 Tangent;
-  glm::vec3 BitTangent;
+  public:
 };
+
+#endif
