@@ -37,7 +37,7 @@ class Mesh {
   public:
     uint VAO;
 
-    void Draw();
+    void Draw(Shader &shader);
 };
 
 #endif

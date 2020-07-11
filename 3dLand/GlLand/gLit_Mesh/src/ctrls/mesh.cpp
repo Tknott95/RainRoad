@@ -34,12 +34,14 @@ void Mesh::init() {
   glEnableVertexAttribArray(2);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, objLoader.vertIndices.size() * sizeof(uint), &objLoader.vertIndices[0], GL_STATIC_DRAW);
+
+  this->textureID = texture.load("assets/objects/plane.obj");
 };
 
 void Mesh::loadObjects() {
 
 };
 
-void Mesh::Draw() {
+void Mesh::Draw(Shader &shader) {
 
 };
