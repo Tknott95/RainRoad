@@ -145,14 +145,18 @@ int main() {
   afterTestMat01.log("After Transpose");
 
 
-  float dotMatInputVals00[2][4] = {{1, 2, 3, 4},{1, 2, 3, 4}};
+  float dotMatInputVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
   mDyn<float, 2, 4> inputsDotMat00(dotMatInputVals00);
 
-  float dotMatWeightVals00[2][4] = {{1, 2, 3, 4},{1, 2, 3, 4}};
+  float dotMatWeightVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
   mDyn<float, 2, 4> weightsDotMat00(dotMatWeightVals00);
 
 
   mDyn<float, 2, 1> dotOutputMat00 = inputsDotMat00.dot(weightsDotMat00);
+
+  inputsDotMat00.log("Inputs for DotProd");
+  weightsDotMat00.log("Weights for DotProd");
+  dotOutputMat00.log("After DotProd");
 
 
 
