@@ -88,19 +88,20 @@ int main() {
   testingOperators00.log("After * operator");
 
 
-  // float dotMatInputVals00[1][4] = {{1, 1, 1, 1}};
-  // mDyn<float, 1, 4> inputsDotMat00(dotMatInputVals00);
-  //float dotMatInputVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
-  //mDyn<float, 2, 4> inputsDotMat00(dotMatInputVals00);
+  float dotMatInputVals00[1][4] = {{1, 1, 1, 1}};
+  mDyn<float, 1, 4> inputsDotMat00(dotMatInputVals00);
+  /* - WORKS WITH BOTH MULTI_ROWS OR ONLY ONE */
+  ** float dotMatInputVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
+  **  mDyn<float, 2, 4> inputsDotMat00(dotMatInputVals00);
 
-  // float dotMatWeightVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
-  // mDyn<float, 2, 4> weightsDotMat00(dotMatWeightVals00);
-  // mDyn<float, 2, 1> dotOutputMat00 = weightsDotMat00.dot<1>(inputsDotMat00);
+  float dotMatWeightVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
+  mDyn<float, 2, 4> weightsDotMat00(dotMatWeightVals00);
+  mDyn<float, 2, 1> dotOutputMat00 = weightsDotMat00.dot<1>(inputsDotMat00);
 
   
-  //inputsDotMat00.log("Inputs for DotProd");
-  // weightsDotMat00.log("Weights for DotProd");
-  // dotOutputMat00.log("After DotProd");
+  inputsDotMat00.log("Inputs for DotProd");
+  weightsDotMat00.log("Weights for DotProd");
+  dotOutputMat00.log("After DotProd");
 
   /* #### vDyn ##### */
   const int vDynSize00 = 5;
