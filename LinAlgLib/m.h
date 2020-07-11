@@ -20,7 +20,7 @@ struct mDyn {
     if(debug)  printf("\n\n\n\n\n\n ############################## \n");
     for(int i=0; i < rowSize; i++) {
       for(int j=0; j < colSize; j++) { 
-        if(sizeof(val) != size) this->val[i][j] = i + 1.f; 
+        if(sizeof(val) != size) this->val[i][j] = 0; 
         if(debug) printf("\nConstructing [%i][%i] value.", i, j);
       };
     };
@@ -65,9 +65,10 @@ struct mDyn {
 
   mDyn<T, rowSize, 1, debug> dot(mDyn<T, rowSize, colSize, debug> other) {
     mDyn<T, rowSize, 1, debug> returnMat;
-    for(int i=0;i <= rowSize; i++) {
-      for(int j=0;j <= colSize; j++) {
-        returnMat.val[i][0] += this->val[i][j];
+    for(int i=0;i < rowSize; i++) {
+      for(int j=0;j < colSize-1; j++) {
+        printf("\n %i", i);
+        returnMat.val[i][0] += (this->val[i][j] * other.val[i][j]);
       }
     }
     return returnMat;
