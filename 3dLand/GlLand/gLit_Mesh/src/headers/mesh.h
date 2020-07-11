@@ -24,11 +24,15 @@ class Mesh {
   private:
     EncodedObj encodedObj;
     ObjectLoader objLoader;
-    uint objVAO, objVBO, objEBO, objUVBO;
+    uint VBO, EBO, UVBO;
 
     Mesh() {};
+    void init();
+    void loadObjects();
 
   public:
+    uint VAO;
+
     void Draw();
 };
 
