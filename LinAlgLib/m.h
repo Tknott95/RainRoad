@@ -39,11 +39,11 @@ struct mDyn {
     };
   };
 
-  void log(int _rows, int _cols, string name = "anonymous matrix") {
+  void log(string name = "Anonymous Matrix") {
     printf("\n\n\n\n  - %s - \n[", name.c_str());
-    for(int i=0;i<_rows; i++) {
+    for(int i=0; i<rowSize;i++) {
       printf("\n  [");
-      for(int j=0;j<_cols;j++) {
+      for(int j=0;j<colSize;j++) {
         printf("%.2f ",this->val[i][j]);
       };
       printf("] ");
