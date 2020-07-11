@@ -14,14 +14,6 @@ using namespace std;
 #include "objLoader.h"
 #include "structs/encodedObj.h"
 
-
-/* Temp hack struct @TODO remove this w/ proper conventions */
-// struct ITexture {
-//     unsigned int id;
-//     string type;
-//     string path;
-// };
-
 class Mesh {
   private:
     uint VBO, EBO, UVBO, textureID;
@@ -32,7 +24,6 @@ class Mesh {
 
     Mesh() {};
     void init();
-    void loadObjects();
 
   public:
     uint VAO;

@@ -38,10 +38,6 @@ void Mesh::init() {
   this->textureID = texture.load("assets/objects/plane.obj");
 };
 
-void Mesh::loadObjects() {
-
-};
-
 void Mesh::Draw(Shader &shader) {
 
 };
