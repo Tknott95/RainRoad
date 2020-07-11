@@ -19,47 +19,7 @@ mDyn<T, _rows, _cols> setDynMat(
   return target;
 };
 
-int main() {
-/* - ################   v2 testing   ################# - */
-  // v2<float> v00;
-  // v2<float> v01 = {1.f, 1.f};
-
-  // printf("v00(%.2f, %.2f)\n", v00.x, v00.y);
-
-  // v00 += v01 += v01 *= v01 /= {1.0, 1.0};
-  // v01 += v01;
-  // printf("v00(%f, %f)\n", v00.x, v00.y);
-  // printf("v01(%f, %f)\n", v01.x, v01.y);
-
-
-
-// /* - ################   m2x2 testing   ################# - */
-//   m2x2<float> m00;  /* {x1, y1, x2, y2} */
-//   m2x2<float> m01 = {5.f, 6.f, 7.f, 8.f};
-//   m2x2<float> m02 = {1.f, 2.f, 3.f, 4.f};
-
-//   printf("\n\n   !! b4 dotProd() \n");
-//   printf("  m1 2x2 array\n  -> [[%f, %f],[%f, %f])\n", m01.getVal.at("x0"), m01.getVal.at("y0"), m01.getVal.at("x1"), m01.getVal.at("y1"));
-//   printf("  m2 2x2 array\n  -> [[%f, %f],[%f, %f])\n", m02.getVal.at("x0"), m02.getVal.at("y0"), m02.getVal.at("x1"), m02.getVal.at("y1"));
-//   m01 = m01 * m02;
-//   printf("\n   !! after dotProd() \n");
-//   printf("  m1 2x2 array\n  -> [[%f, %f],[%f, %f])\n\n", m01.getVal.at("x0"), m01.getVal.at("y0"), m01.getVal.at("x1"), m01.getVal.at("y1"));
-
-
-/* - ################   AI mock data dotProd() testing   ################# - */
-  // v4<int> inputs = {1,2,3,4};
-  // v2<v4<float>> weights = {{-0.4f, 0.7f, 0.2f, 0.4f}, {1.4, -0.8, -0.4, 0.4}};
-  // v2<float> biases = {0.2, 0.4};
-
-  // printf("\n i{%i, %i, %i, %i}\n", inputs.val[0], inputs.val[1],  inputs.val[2], inputs.val[3]);
-  // v2<float> output = {{inputs.val[0]*weights.val[0].val[0] + inputs.val[1]*weights.val[0].val[1]+ inputs.val[2]*weights.val[0].val[2] + inputs.val[3]*weights.val[0].val[3] + biases.val[0]}, {inputs.val[0]*weights.val[1].val[0] + inputs.val[1]*weights.val[1].val[1] + inputs.val[2]*weights.val[1].val[2] + inputs.val[3]*weights.val[1].val[3] + biases.val[1]}};
-
-  // printf("\n\n weights[0][*]: { %.2f, %.2f, %.2f, %.2f}\n weights[1][*]: { %.2f, %.2f, %.2f, %.2f}\n", weights.val[0].val[0],weights.val[0].val[1], weights.val[0].val[2], weights.val[0].val[3], weights.val[1].val[0],weights.val[1].val[1], weights.val[1].val[2], weights.val[1].val[3]);
-  // printf("\n\n output[0]: %.1f", output.val[0]);
-  // printf("\n output[1]: %.1f\n", output.val[1]);
-
-
-  
+int main() {  
   /* - ################   m3x4 testing   ################# - */
   // m3x4<float> m3x4_01;
   // m3x4<float> inputs3x4 = {
@@ -74,14 +34,10 @@ int main() {
   //   -0.88, -0.75, 0.91, 0.11
   // };
 
-  //v3<float> biasesv3 = {0.2, 0.4, 2};
+  // v3<float> biasesv3 = {0.2, 0.4, 2};
 
 
-
-
-
- 
-  /* #### mDyn ##### */
+ /* #### mDyn ##### */
   const int dynRows = 3; 
   const int dynCols = 4;
   mDyn<float, dynRows, dynCols> dynMat();
@@ -90,10 +46,8 @@ int main() {
     {0.45, -0.82, -0.44, 0.38},
     {-0.88, -0.75, 0.91, 0.11},
   };
-  mDyn<float, dynRows, dynCols> dynMat02;
+  mDyn<float, dynRows, dynCols> dynMat02(dynVals);
   
-  dynMat02.set(dynVals);
-
   const int dynRows03 = 6; 
   const int dynCols03 = 5;
   float dynVals03[dynRows03][dynCols03] = {
@@ -105,8 +59,7 @@ int main() {
     {-0.50, -0.51, 0.52, 0.53, 0.54}
   };
 
-  mDyn<float, dynRows03, dynCols03> dynMat03(dynVals03); // WORKS BOTH WAYS
-  // dynMat03.set(dynVals03/*, true*/);
+  mDyn<float, dynRows03, dynCols03> dynMat03(dynVals03);
   dynMat03 = dynMat03 += dynMat03 += dynMat03;
 
   for(int i=0;i<dynRows03; i++) {
