@@ -63,17 +63,21 @@ struct mDyn {
     return transposedMatrix;
   };
 
-  mDyn<T, rowSize, 1, debug> dot(mDyn<T, rowSize, colSize, debug> other) {
+  template<int otherRowSize>
+  mDyn<T, rowSize, 1, debug> dot(mDyn<T, otherRowSize, colSize, debug> other) {
     mDyn<T, rowSize, 1, debug> returnMat;
     for(int i=0;i < rowSize; i++) {
       for(int j=0;j < colSize; j++) {
-        printf("\n %i", i);
-        returnMat.val[i][0] += (this->val[i][j] * other.val[i][j]);
+        printf("\n %i", j);
+        if(otherRowSize == 1) {
+          returnMat.val[i][0] += (this->val[i][j] * other.val[0][j]);
+        } else {
+          returnMat.val[i][0] += (this->val[i][j] * other.val[i][j]);
+        }
       }
     }
     return returnMat;
   };
-
 
   /* #### OPERATOR FUNCS #### */
   /* wasn't returning pointer below prior */
