@@ -3,23 +3,23 @@
 
 template<class T, int dataSize> 
 void merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _secondArray) {
-  int firstArraySize = sizeof(_firstArray.val)/sizeof(_firstArray.val[0]);
-  int secondArraySize = sizeof(_secondArray.val)/sizeof(_secondArray.val[0]);
+  const int firstArraySize = dataSize; //sizeof(_firstArray.val)/sizeof(_firstArray.val[0]);
+  const int secondArraySize = dataSize; //sizeof(_secondArray.val)/sizeof(_secondArray.val[0]);
 
   int tempArr[dataSize];  
   int indexVal;
 
-  while(firstArraySize > 0 && secondArraySize > 0) {
+  // while(firstArraySize > 0 && secondArraySize > 0) {
     for(int j=0;j<firstArraySize;j++) for(int k=0;k<secondArraySize;k++) {
         if (j == 0 || k == 0) indexVal = j + k;
         else indexVal = j*k;
-      if(_firstArray.val[0] < _secondArray.val[0]) {
-        tempArr[indexVal] = _firstArray.val[0];
-      } else if(_secondArray.val[0] <= _firstArray.val[0]) {
-        tempArr[indexVal] = _secondArray.val[0];
+      if(_firstArray.val[j] < _secondArray.val[k]) {
+        tempArr[indexVal] = _firstArray.val[j];
+      } else if(_firstArray.val[j] >= _secondArray.val[k]) {
+        // tempArr[indexVal] = _secondArray.val[k]; SEGMANT DEFAUKT 
       };
     };
-  };
+  // };
 
   // vDyn<T, dataSize> returnArray(tempArr);
   // return returnArray;
@@ -40,6 +40,8 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int low, int high) {
   for(int i=0;i<arraySize;i++) {
     if(i<halfArraySize) leftArray.val[i] = data.val[i];
     else if(i>halfArraySize-1) rightArray.val[i-halfArraySize] = data.val[i];
+
+    merge(leftArray, rightArray);
 
       //    /* merge hack-ish */
       // for(int j=0;j<halfArraySize;j++) for(int k=0;k<halfArraySize;k++) {
