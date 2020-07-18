@@ -2,38 +2,32 @@
 #include "m.h"
 
 template<class T, int dataSize> 
-void merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _secondArray) {
+vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _secondArray) {
   // const int firstArraySize = dataSize; //sizeof(_firstArray.val)/sizeof(_firstArray.val[0]);
   // const int secondArraySize = dataSize; //sizeof(_secondArray.val)/sizeof(_secondArray.val[0]);
 
   int tempArr[dataSize];  
   int indexVal;
-  vDyn<T, dataSize> returnArray;
+  vDyn<T, dataSize*2> returnArray;
 
-  // while(firstArraySize > 0 && secondArraySize > 0) {
-    for(int j=0;j<dataSize;j++) for(int k=0;k<dataSize;k++) {
-      int counter = 0;
-      counter++;
-      // if (j == 0 || k == 0) indexVal = j + k;
-      // else indexVal = j * k;
+  for(int j=0;j<dataSize;j++) for(int k=0;k<dataSize;k++) {
+    int counter = 0;
+    printf("\n\n j(%i) k(%i) \n", j, k);
+   
+    if(_firstArray.val[j] < _secondArray.val[k]) {
+      returnArray.val[counter] = _firstArray.val[j];
+    }
+    if(_firstArray.val[j] >= _secondArray.val[k]) {
+      returnArray.val[counter] = _secondArray.val[k]; 
+    }
+    counter++;
+  };
 
-      // printf("\n\n\n\n\n ############ indexVal: %i\n\n", indexVal);
-
-      if(_firstArray.val[j] < _secondArray.val[k]) {
-        returnArray.val[counter] = _firstArray.val[j];
-      }
-      if(_firstArray.val[j] > _secondArray.val[k]) {
-        returnArray.val[counter] = _secondArray.val[k]; 
-      }
-    };
-  // };
-
-  
-  // return returnArray;
+  return returnArray;
 };
 
 template<class T, const int arraySize>
-vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int low, int high) {
+vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data) {
   if(arraySize == 1) return data;
   const int halfArraySize = arraySize/2;
   
@@ -41,40 +35,13 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int low, int high) {
   vDyn<T, halfArraySize> rightArray;
   vDyn<T, arraySize> returnArray;
 
-  int leftArraySize = sizeof(leftArray.val)/sizeof(leftArray.val[0]);
-  int rightArraySize = sizeof(rightArray.val)/sizeof(rightArray.val[0]);
-
   for(int i=0;i<arraySize;i++) {
     if(i<halfArraySize) leftArray.val[i] = data.val[i];
     else if(i>halfArraySize-1) rightArray.val[i-halfArraySize] = data.val[i];
+  };
 
-    
-    merge<int, halfArraySize>(leftArray, rightArray);
+  returnArray = merge<int, halfArraySize>(leftArray, rightArray);
 
-      //    /* merge hack-ish */
-      // for(int j=0;j<halfArraySize;j++) for(int k=0;k<halfArraySize;k++) {
-      //   //if(leftArray.val[j] < rightArray.val[k]){
-      //   //   returnArray.val[j*k] = leftArray.val[j];
-      //   //   returnArray.val[(j*k)+1] = rightArray.val[k];
-      //   // };
-      //   // } else if (leftArray.val[j] < rightArray.val[k]){
-      //   //   returnArray.val[j*k] = rightArray.val[j];
-      //   //   returnArray.val[(j*k)+1] = leftArray.val[k];
-      //   // };
-      //   int currVal;
-      //   // if(j == 0 || k == 0) currVal = j + k;
-      //   // else currVal = j*k;
-
-      //   if(leftArray.val[j] < rightArray.val[k])          returnArray.val[j+k] = leftArray.val[j];
-      //   else if (leftArray.val[j] >= rightArray.val[k])   returnArray.val[j+k] = rightArray.val[k];
-      //   //else if(leftArray.val[j] > rightArray.val[k]) {
-      //   //  returnArray.val[j] = rightArray.val[j];
-      //   //};
-      // };
-    
-
-    // returnArray.val[i] = data.val[i];
-  }
 
   // if(low < high) {
   //   int mid;
@@ -89,6 +56,7 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int low, int high) {
   leftArray.log("Left Array");
   rightArray.log("Right Array");
   printf("\n");
+
   returnArray.log("Return Array");
   return returnArray;
 };
@@ -96,15 +64,12 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int low, int high) {
 void mergeSortInit() {
   /* ################################################## SORTING ALGO'S ##################################################*/
   const int mergeSortArraySize = 6;
-  int mergeSortVals[] = {9,0,2,4,8,1};
-  /* temp solutionw/ low and high */
-  int low = 0;
-  int high = mergeSortArraySize-1;
+  int mergeSortVals[] = {1,2,3,4,5,6};
 
   vDyn<int, mergeSortArraySize> mergeSortVec(mergeSortVals);
-  mergeSortVec.log("Before Merge Sort");
 
-  mergeSortVec = mergeSort(mergeSortVec, low, high);
+  mergeSortVec.log("Before Merge Sort");
+  mergeSortVec = mergeSort(mergeSortVec);
 };
 
 void dotProdInit() {
