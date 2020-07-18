@@ -27,8 +27,8 @@ vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _seco
 };
 
 template<class T, const int arraySize>
-vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
-  if(arraySize == 1) return data;
+/*vDyn<T, arraySize> */void mergeSort(vDyn<T, arraySize> data, int start, int end) {
+  if(arraySize == 1) return; // data;
   const int halfArraySize = arraySize/2;
   vDyn<T, arraySize> returnArray;
   vDyn<T, halfArraySize> leftArray;
@@ -48,7 +48,6 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
 
 
   
-
     data.log("\n\n\n\n\nStarting Array");
 
     leftArray.log("Left Array");
@@ -56,7 +55,7 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
   }
   printf("\n");
   returnArray.log("Return Array");
-  return returnArray;
+  //return returnArray;
 };
 
 void mergeSortInit() {
@@ -67,7 +66,7 @@ void mergeSortInit() {
   vDyn<int, mergeSortArraySize> mergeSortVec(mergeSortVals);
 
   mergeSortVec.log("Before Merge Sort");
-  mergeSortVec = mergeSort<int, mergeSortArraySize>(mergeSortVec, 0, mergeSortArraySize);
+  mergeSort<int, mergeSortArraySize>(mergeSortVec, 0, mergeSortArraySize);
 };
 
 void dotProdInit() {
