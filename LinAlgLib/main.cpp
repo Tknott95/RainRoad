@@ -110,12 +110,18 @@ int main() {
   vDyn<float, 1> vTempDot(vDyn00.dot(vDyn00));
   cout << vTempDot.val[0] << endl;
 
-  printf("\n\n\n\n\n\n");
-    printf("\n [ ");
-    for(int k=0;k<vDynSize00;k++) {
-      printf("%.2f ", k, vDyn00.val[k]);
-    };
-    printf("]\n");
+
+  int mergeSortVals[] = {9,0,0,5,7,3,4,2,8,1};
+  vDyn<int, 10> mergeSortVec(mergeSortVals);
+  mergeSortVec.log("Before Merge Sort");
+  
+
+  // printf("\n\n\n\n\n\n");
+  //   printf("\n [ ");
+  //   for(int k=0;k<vDynSize00;k++) {
+  //     printf("%.2f ", k, vDyn00.val[k]);
+  //   };
+  //   printf("]\n");
   
 
   return 0;

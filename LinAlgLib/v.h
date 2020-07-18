@@ -1,11 +1,11 @@
 #include<iostream>
-#include<vector>
-
 /*
 ** @AUTHOR     - Trevor Knott
 ** @EMAIL      - tk@trevorknott.io
 ** @ABSTRACT   - Linear Algebra Library to rid third party libs, 
 */
+using namespace std;
+
 
 template<class T, int size>
 struct vDyn {
@@ -21,6 +21,14 @@ struct vDyn {
       this->val[j] = 0; 
     }
   }
+
+  void log(string name = "Anonymous Matrix") {
+    printf("\n\n\n\n  - %s - \n[", name.c_str());
+    for(int i=0; i<size;i++) {
+      printf(" %i ", this->val[i]);
+    };
+    printf("]\n");
+  };
 
   vDyn<T, 1> dot(vDyn<T, size> other) {
     vDyn<T, 1> tempV;
