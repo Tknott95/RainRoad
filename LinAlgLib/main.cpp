@@ -16,8 +16,7 @@ vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _seco
    
     if(_firstArray.val[j] < _secondArray.val[k]) {
       returnArray.val[counter] = _firstArray.val[j];
-    }
-    if(_firstArray.val[j] >= _secondArray.val[k]) {
+    } else if(_firstArray.val[j] >= _secondArray.val[k]) {
       returnArray.val[counter] = _secondArray.val[k]; 
     }
     counter++;
