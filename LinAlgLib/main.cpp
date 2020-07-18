@@ -32,9 +32,8 @@ template<class T, const int arraySize>
   const int halfArraySize = arraySize/2;
   vDyn<T, arraySize> returnArray;
   vDyn<T, halfArraySize> leftArray;
+  vDyn<T, halfArraySize> tempLeftArray;
   vDyn<T, halfArraySize> rightArray;
-  vDyn<T, arraySize> rrr;
-
 
   if(start < end) {
 
@@ -42,13 +41,15 @@ template<class T, const int arraySize>
       if(i<halfArraySize) leftArray.val[i] = data.val[i];
       else if(i>halfArraySize-1) rightArray.val[i-halfArraySize] = data.val[i];
 
-      // rrr = mergeSort<int, arraySize>(leftArray, start, end);
-      returnArray = merge<int, halfArraySize>(leftArray, rightArray);
+      // mergeSort<int, halfArraySize>(rightArray, halfArraySize+1, end);
+      returnArray = merge<T, halfArraySize>(leftArray, rightArray);
     };
 
+    // mergeSort<T, halfArraySize>(rightArray, 0, halfArraySize);
 
   
     data.log("\n\n\n\n\nStarting Array");
+
 
     leftArray.log("Left Array");
     rightArray.log("Right Array");
