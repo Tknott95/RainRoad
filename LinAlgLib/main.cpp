@@ -8,7 +8,7 @@ vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _seco
   vDyn<T, dataSize*2> returnArray;
 
   int counter = 0;
-  for(int j=0;j<1;j++) for(int k=0;k<dataSize;k++) {
+  for(int j=0;j<dataSize;j++) for(int k=0;k<dataSize;k++) {
     printf("\n\n 1j(%i): %i    2k(%i): %i   \n", j, _firstArray.val[j], k, _secondArray.val[k]);
 
     _firstArray.log("_first array");
