@@ -7,31 +7,61 @@ vDyn<int, 6> mergeSort(vDyn<int, 6> data) {
   vDyn<int, 6> returnArray;
 
   for(int i=0;i<6;i++) {
-    if(i<3) {
-      printf(" i: %i|%i", i, data.val[i]);
+    const int halfOf = 3;
+    if(i<halfOf) {
       leftArray.val[i] = data.val[i];
-    } else if(i>2) {
-      // printf(" i: %i|%i", i, data.val[i]);
-      rightArray.val[i] = data.val[i];
-      printf("\n i: %i|%i", i, rightArray.val[i]);
-
-    }
+    } else if(i>2) rightArray.val[i-halfOf] = data.val[i];
 
     returnArray.val[i] = data.val[i];
   }
 
-    leftArray.log("Left Array");
-    /* Right array logging blank? w/ built in method */
-    printf("\n\n\n\n  - %s - \n[", "Right Array");
-    for(int j=0; j<6;j++) {
-      // rightArray.val[j] = data.val[j];
-      if(j>2) { rightArray.val[j] = data.val[j]; printf(" %i ", rightArray.val[j]); };
-    };
-    printf("]\n");
+  data.log("\n\n\n\n\nStarting Array");
 
-  data.log("Starting Array");
+  
+  leftArray.log("Left Array");
+  rightArray.log("Right Array .log()");
+
   returnArray.log("Return Array");
   return returnArray;
+};
+
+void mergeSortInit() {
+  /* ################################################## SORTING ALGO'S ##################################################*/
+  const int mergeSortArraySize = 6;
+  int mergeSortVals[] = {9,0,2,4,8,1};
+  /* temp solutionw/ low and high */
+  int low = 0;
+  int high = mergeSortArraySize-1;
+
+  vDyn<int, mergeSortArraySize> mergeSortVec(mergeSortVals);
+  mergeSortVec.log("Before Merge Sort");
+
+  mergeSortVec = mergeSort(mergeSortVec);
+};
+
+void dotProdInit() {
+    float dotMatInputVals00[1][4] = {{1, 1, 1, 1}};
+  mDyn<float, 1, 4> inputsDotMat00(dotMatInputVals00);
+  /* - WORKS WITH BOTH MULTI_ROWS OR ONLY ONE
+  ** float dotMatInputVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
+  **  mDyn<float, 2, 4> inputsDotMat00(dotMatInputVals00);
+  */
+  float dotMatWeightVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
+  mDyn<float, 2, 4> weightsDotMat00(dotMatWeightVals00);
+  mDyn<float, 2, 1> dotOutputMat00 = weightsDotMat00.dot<1>(inputsDotMat00);
+
+  
+  inputsDotMat00.log("Inputs for DotProd");
+  weightsDotMat00.log("Weights for DotProd");
+  dotOutputMat00.log("After DotProd");
+
+  /* #### vDyn ##### */
+  const int vDynSize00 = 5;
+  float vDynVals00[] = {2.0, 2.0, 2.0, 2.0, 2.0};
+  vDyn<float, vDynSize00> vDyn00(vDynVals00);
+
+  vDyn<float, 1> vTempDot(vDyn00.dot(vDyn00));
+  cout << vTempDot.val[0] << endl;
 };
 
 int main() {  
@@ -120,48 +150,12 @@ int main() {
   testingOperators00.log("After * operator");
 
 
-  float dotMatInputVals00[1][4] = {{1, 1, 1, 1}};
-  mDyn<float, 1, 4> inputsDotMat00(dotMatInputVals00);
-  /* - WORKS WITH BOTH MULTI_ROWS OR ONLY ONE
-  ** float dotMatInputVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
-  **  mDyn<float, 2, 4> inputsDotMat00(dotMatInputVals00);
-  */
-  float dotMatWeightVals00[2][4] = {{1, 1, 1, 1},{1, 1, 1, 1}};
-  mDyn<float, 2, 4> weightsDotMat00(dotMatWeightVals00);
-  mDyn<float, 2, 1> dotOutputMat00 = weightsDotMat00.dot<1>(inputsDotMat00);
+  dotProdInit();
 
-  
-  inputsDotMat00.log("Inputs for DotProd");
-  weightsDotMat00.log("Weights for DotProd");
-  dotOutputMat00.log("After DotProd");
+  mergeSortInit();
 
-  /* #### vDyn ##### */
-  const int vDynSize00 = 5;
-  float vDynVals00[] = {2.0, 2.0, 2.0, 2.0, 2.0};
-  vDyn<float, vDynSize00> vDyn00(vDynVals00);
-
-  vDyn<float, 1> vTempDot(vDyn00.dot(vDyn00));
-  cout << vTempDot.val[0] << endl;
-
-
-  int mergeSortVals[] = {9,0,2,4,8,1};
-  vDyn<int, 6> mergeSortVec(mergeSortVals);
-  mergeSortVec.log("Before Merge Sort");
-
-  mergeSortVec = mergeSort(mergeSortVec);
-
-
-
-  
-
-  // printf("\n\n\n\n\n\n");
-  //   printf("\n [ ");
-  //   for(int k=0;k<vDynSize00;k++) {
-  //     printf("%.2f ", k, vDyn00.val[k]);
-  //   };
-  //   printf("]\n");
-
-  
 
   return 0;
 }
+
+

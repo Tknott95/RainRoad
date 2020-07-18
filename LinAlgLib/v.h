@@ -23,7 +23,7 @@ struct vDyn {
   }
 
   void log(string name = "Anonymous Matrix") {
-    printf("\n\n\n\n  - %s - \n[", name.c_str());
+    printf("\n - %s - \n[", name.c_str());
     for(int i=0; i<size;i++) {
       printf(" %i ", this->val[i]);
     };
