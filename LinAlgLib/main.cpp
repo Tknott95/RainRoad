@@ -1,6 +1,39 @@
 #include "v.h"
 #include "m.h"
 
+vDyn<int, 6> mergeSort(vDyn<int, 6> data) {
+  vDyn<int, 3> leftArray;
+  vDyn<int, 3> rightArray;
+  vDyn<int, 6> returnArray;
+
+  for(int i=0;i<6;i++) {
+    if(i<3) {
+      printf(" i: %i|%i", i, data.val[i]);
+      leftArray.val[i] = data.val[i];
+    } else if(i>2) {
+      // printf(" i: %i|%i", i, data.val[i]);
+      rightArray.val[i] = data.val[i];
+      printf("\n i: %i|%i", i, rightArray.val[i]);
+
+    }
+
+    returnArray.val[i] = data.val[i];
+  }
+
+    leftArray.log("Left Array");
+    /* Right array logging blank? w/ built in method */
+    printf("\n\n\n\n  - %s - \n[", "Right Array");
+    for(int j=0; j<6;j++) {
+      // rightArray.val[j] = data.val[j];
+      if(j>2) { rightArray.val[j] = data.val[j]; printf(" %i ", rightArray.val[j]); };
+    };
+    printf("]\n");
+
+  data.log("Starting Array");
+  returnArray.log("Return Array");
+  return returnArray;
+};
+
 int main() {  
   /* - ################   m3x4 testing   ################# - */
   // m3x4<float> m3x4_01;
@@ -111,9 +144,14 @@ int main() {
   cout << vTempDot.val[0] << endl;
 
 
-  int mergeSortVals[] = {9,0,2,8,1};
-  vDyn<int, 5> mergeSortVec(mergeSortVals);
+  int mergeSortVals[] = {9,0,2,4,8,1};
+  vDyn<int, 6> mergeSortVec(mergeSortVals);
   mergeSortVec.log("Before Merge Sort");
+
+  mergeSortVec = mergeSort(mergeSortVec);
+
+
+
   
 
   // printf("\n\n\n\n\n\n");
@@ -122,6 +160,7 @@ int main() {
   //     printf("%.2f ", k, vDyn00.val[k]);
   //   };
   //   printf("]\n");
+
   
 
   return 0;
