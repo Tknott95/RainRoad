@@ -63,7 +63,7 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data) {
 void mergeSortInit() {
   /* ################################################## SORTING ALGO'S ##################################################*/
   const int mergeSortArraySize = 6;
-  int mergeSortVals[] = {1,2,3,4,5,6};
+  int mergeSortVals[] = {1,2,3,4,0,6};
 
   vDyn<int, mergeSortArraySize> mergeSortVec(mergeSortVals);
 
@@ -104,15 +104,12 @@ int main() {
   //    1.75f, -3.33f, 2.13f, -1.37f,
   //   -1.33f, 2.22f, 1.44f, -1.88f
   // };
-
   // m3x4<float> weights3x4 = {
   //   -0.4, 0.7, 0.2, -0.43,
   //   0.45, -0.82, -0.44, 0.38,
   //   -0.88, -0.75, 0.91, 0.11
   // };
-
   // v3<float> biasesv3 = {0.2, 0.4, 2};
-
 
  /* #### mDyn ##### */
   const int dynRows = 3; 
