@@ -1,35 +1,78 @@
 #include "v.h"
 #include "m.h"
 
-// template<class T, int dataSize> 
-// void merge(vDyn<T, dataSize> _data, int _low, int _high, int _mid) {
-//   int low = _low;
-//   int mid = _mid+1;
-//   int high = _high;
-// };
+template<class T, int dataSize> 
+void merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _secondArray) {
+  int firstArraySize = sizeof(_firstArray.val)/sizeof(_firstArray.val[0]);
+  int secondArraySize = sizeof(_secondArray.val)/sizeof(_secondArray.val[0]);
+
+  int tempArr[dataSize];  
+  int indexVal;
+
+  while(firstArraySize > 0 && secondArraySize > 0) {
+    for(int j=0;j<firstArraySize;j++) for(int k=0;k<secondArraySize;k++) {
+        if (j == 0 || k == 0) indexVal = j + k;
+        else indexVal = j*k;
+      if(_firstArray.val[0] < _secondArray.val[0]) {
+        tempArr[indexVal] = _firstArray.val[0];
+      } else if(_secondArray.val[0] <= _firstArray.val[0]) {
+        tempArr[indexVal] = _secondArray.val[0];
+      };
+    };
+  };
+
+  // vDyn<T, dataSize> returnArray(tempArr);
+  // return returnArray;
+};
 
 template<class T, const int arraySize>
 vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int low, int high) {
+  if(arraySize == 1) return data;
   const int halfArraySize = arraySize/2;
   
   vDyn<T, halfArraySize> leftArray;
   vDyn<T, halfArraySize> rightArray;
   vDyn<T, arraySize> returnArray;
 
+  int leftArraySize = sizeof(leftArray.val)/sizeof(leftArray.val[0]);
+  int rightArraySize = sizeof(rightArray.val)/sizeof(rightArray.val[0]);
+
   for(int i=0;i<arraySize;i++) {
     if(i<halfArraySize) leftArray.val[i] = data.val[i];
     else if(i>halfArraySize-1) rightArray.val[i-halfArraySize] = data.val[i];
 
-    returnArray.val[i] = data.val[i];
+      //    /* merge hack-ish */
+      // for(int j=0;j<halfArraySize;j++) for(int k=0;k<halfArraySize;k++) {
+      //   //if(leftArray.val[j] < rightArray.val[k]){
+      //   //   returnArray.val[j*k] = leftArray.val[j];
+      //   //   returnArray.val[(j*k)+1] = rightArray.val[k];
+      //   // };
+      //   // } else if (leftArray.val[j] < rightArray.val[k]){
+      //   //   returnArray.val[j*k] = rightArray.val[j];
+      //   //   returnArray.val[(j*k)+1] = leftArray.val[k];
+      //   // };
+      //   int currVal;
+      //   // if(j == 0 || k == 0) currVal = j + k;
+      //   // else currVal = j*k;
+
+      //   if(leftArray.val[j] < rightArray.val[k])          returnArray.val[j+k] = leftArray.val[j];
+      //   else if (leftArray.val[j] >= rightArray.val[k])   returnArray.val[j+k] = rightArray.val[k];
+      //   //else if(leftArray.val[j] > rightArray.val[k]) {
+      //   //  returnArray.val[j] = rightArray.val[j];
+      //   //};
+      // };
+    
+
+    // returnArray.val[i] = data.val[i];
   }
 
-  if(low < high) {
-    int mid;
-    mid = (low + high)/2;
-    mergeSort<T, arraySize>(data, low, mid);
-    mergeSort<T, arraySize>(data, mid+1, high);
-    // merge<int, 6>()
-  };
+  // if(low < high) {
+  //   int mid;
+  //   mid = (low + high)/2;
+  //   // mergeSort<T, arraySize>(data, low, mid);
+  //   // mergeSort<T, arraySize>(data, mid+1, high);
+  //   // merge<int, 6>()
+  // };
 
   data.log("\n\n\n\n\nStarting Array");
 
