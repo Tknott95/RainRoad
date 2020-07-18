@@ -28,11 +28,12 @@ vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _seco
 
 template<class T, const int arraySize>
 vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
-  // if(arraySize == 1) return data;
+  if(arraySize == 1) return data;
   const int halfArraySize = arraySize/2;
   vDyn<T, arraySize> returnArray;
   vDyn<T, halfArraySize> leftArray;
   vDyn<T, halfArraySize> rightArray;
+  vDyn<T, arraySize> rrr;
 
 
   if(start < end) {
@@ -41,7 +42,7 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
       if(i<halfArraySize) leftArray.val[i] = data.val[i];
       else if(i>halfArraySize-1) rightArray.val[i-halfArraySize] = data.val[i];
 
-      // leftArray = mergeSort<int, halfArraySize>(leftArray, 0, halfArraySize);
+      // rrr = mergeSort<int, arraySize>(leftArray, start, end);
       returnArray = merge<int, halfArraySize>(leftArray, rightArray);
     };
 
@@ -60,8 +61,8 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
 
 void mergeSortInit() {
   /* ################################################## SORTING ALGO'S ##################################################*/
-  const int mergeSortArraySize = 6;
-  int mergeSortVals[] = {10,9,3,4,0,6};
+  const int mergeSortArraySize = 8;
+  int mergeSortVals[] = {8,10,9,3,4,0,6,7};
 
   vDyn<int, mergeSortArraySize> mergeSortVec(mergeSortVals);
 
