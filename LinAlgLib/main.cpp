@@ -3,26 +3,26 @@
 
 template<class T, int dataSize> 
 vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _secondArray) {
-  // const int firstArraySize = dataSize; //sizeof(_firstArray.val)/sizeof(_firstArray.val[0]);
-  // const int secondArraySize = dataSize; //sizeof(_secondArray.val)/sizeof(_secondArray.val[0]);
-
-  int tempArr[dataSize];  
+  // int tempArr[dataSize];  
   int indexVal;
   vDyn<T, dataSize*2> returnArray;
 
-  for(int j=0;j<dataSize;j++) for(int k=0;k<dataSize;k++) {
+  for(int j=0;j<dataSize;j++) { for(int k=0;k<dataSize;k++) {
     int counter = 0;
-    printf("\n\n j(%i) k(%i) \n", j, k);
+    printf("\n\n 1j(%i): %i    2k(%i): %i   \n", j, _firstArray.val[j], k, _secondArray.val[k]);
+
+    _firstArray.log("_first array");
+    _secondArray.log("_second array");
    
     if(_firstArray.val[j] < _secondArray.val[k]) {
       returnArray.val[counter] = _firstArray.val[j];
     }
-    if(_firstArray.val[j] >= _secondArray.val[k]) {
-      returnArray.val[counter] = _secondArray.val[k]; 
-    }
+    // if(_firstArray.val[j] >= _secondArray.val[k]) {
+    //   returnArray.val[counter] = _secondArray.val[k]; 
+    // }
     counter++;
   };
-
+  };
   return returnArray;
 };
 
