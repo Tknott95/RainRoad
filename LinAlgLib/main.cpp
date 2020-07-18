@@ -3,11 +3,10 @@
 
 template<class T, int dataSize> 
 vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _secondArray) {
-  // int tempArr[dataSize];  
-  int indexVal;
   vDyn<T, dataSize*2> returnArray;
 
-  int c1=0,c2=0,counter = 0;
+  int c1=0,c2=0;
+  int counter=0;
   //for(int j=0;j<dataSize;j++) for(int k=0;k<dataSize;k++) {
   // printf("\n\n 1j(%i): %i    2k(%i): %i   \n", j, _firstArray.val[j], k, _secondArray.val[k]);
 
@@ -21,8 +20,8 @@ vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _seco
 
   while(c1<dataSize) returnArray.val[counter++] = _firstArray.val[c1++];
   while(c2<dataSize) returnArray.val[counter++] = _secondArray.val[c2++];
+  /* @TODO only merging the two arrays, needs sorting */
 
-  // returnArray.log("  -- returnArray");
 
   return returnArray;
 };
@@ -41,16 +40,9 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data) {
     else if(i>halfArraySize-1) rightArray.val[i-halfArraySize] = data.val[i];
   };
 
+
   returnArray = merge<int, halfArraySize>(leftArray, rightArray);
-
-
-  // if(low < high) {
-  //   int mid;
-  //   mid = (low + high)/2;
-  //   // mergeSort<T, arraySize>(data, low, mid);
-  //   // mergeSort<T, arraySize>(data, mid+1, high);
-  //   // merge<int, 6>()
-  // };
+ 
 
   data.log("\n\n\n\n\nStarting Array");
 
