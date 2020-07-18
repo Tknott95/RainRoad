@@ -7,20 +7,22 @@ vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _seco
   int indexVal;
   vDyn<T, dataSize*2> returnArray;
 
-  int c1,c2,counter = 0;
+  int c1=0,c2=0,counter = 0;
   //for(int j=0;j<dataSize;j++) for(int k=0;k<dataSize;k++) {
-    // printf("\n\n 1j(%i): %i    2k(%i): %i   \n", j, _firstArray.val[j], k, _secondArray.val[k]);
+  // printf("\n\n 1j(%i): %i    2k(%i): %i   \n", j, _firstArray.val[j], k, _secondArray.val[k]);
 
-  _firstArray.log("_first array");
-  _secondArray.log("_second array");
-   
+
   while(c1<dataSize && c2<dataSize) {
     if(_firstArray.val[c1] < _secondArray.val[c2]) returnArray.val[counter++] = _firstArray.val[c1++];
     else returnArray.val[counter++] = _secondArray.val[c2++]; 
+
+    printf("count: %i\n", counter);
   };
 
   while(c1<dataSize) returnArray.val[counter++] = _firstArray.val[c1++];
   while(c2<dataSize) returnArray.val[counter++] = _secondArray.val[c2++];
+
+  // returnArray.log("  -- returnArray");
 
   return returnArray;
 };
