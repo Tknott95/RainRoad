@@ -32,7 +32,6 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
   const int halfArraySize = arraySize/2;
   vDyn<T, arraySize> returnArray;
   vDyn<T, halfArraySize> leftArray;
-  vDyn<T, halfArraySize> tempLeftArray;
   vDyn<T, halfArraySize> rightArray;
 
   if(start < end) {
@@ -41,11 +40,11 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
       if(i<halfArraySize) leftArray.val[i] = data.val[i];
       else if(i>halfArraySize-1) rightArray.val[i-halfArraySize] = data.val[i];
 
-      // mergeSort<int, halfArraySize>(rightArray, halfArraySize+1, end);
       returnArray = merge<T, halfArraySize>(leftArray, rightArray);
     };
 
     // mergeSort<T, halfArraySize>(rightArray, 0, halfArraySize);
+    // rightArray = mergeSort<T, arraySize/2>(rightArray, halfArraySize+1, end);
 
   
     data.log("\n\n\n\n\nStarting Array");
