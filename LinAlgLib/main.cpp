@@ -28,28 +28,32 @@ vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _seco
 
 template<class T, const int arraySize>
 vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
-  if(arraySize == 1) return data;
+  // if(arraySize == 1) return data;
   const int halfArraySize = arraySize/2;
-  
+  vDyn<T, arraySize> returnArray;
   vDyn<T, halfArraySize> leftArray;
   vDyn<T, halfArraySize> rightArray;
-  vDyn<T, arraySize> returnArray;
 
-  for(int i=0;i<arraySize;i++) {
-    if(i<halfArraySize) leftArray.val[i] = data.val[i];
-    else if(i>halfArraySize-1) rightArray.val[i-halfArraySize] = data.val[i];
-  };
 
-  // leftArray = mergeSort<int, halfArraySize>(leftArray);
-  returnArray = merge<int, halfArraySize>(leftArray, rightArray);
- 
+  if(start < end) {
 
-  data.log("\n\n\n\n\nStarting Array");
+    for(int i=0;i<arraySize;i++) {
+      if(i<halfArraySize) leftArray.val[i] = data.val[i];
+      else if(i>halfArraySize-1) rightArray.val[i-halfArraySize] = data.val[i];
 
-  leftArray.log("Left Array");
-  rightArray.log("Right Array");
+      // leftArray = mergeSort<int, halfArraySize>(leftArray, 0, halfArraySize);
+      returnArray = merge<int, halfArraySize>(leftArray, rightArray);
+    };
+
+
+  
+
+    data.log("\n\n\n\n\nStarting Array");
+
+    leftArray.log("Left Array");
+    rightArray.log("Right Array");
+  }
   printf("\n");
-
   returnArray.log("Return Array");
   return returnArray;
 };
