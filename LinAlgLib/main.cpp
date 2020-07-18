@@ -111,8 +111,8 @@ int main() {
   cout << vTempDot.val[0] << endl;
 
 
-  int mergeSortVals[] = {9,0,0,5,7,3,4,2,8,1};
-  vDyn<int, 10> mergeSortVec(mergeSortVals);
+  int mergeSortVals[] = {9,0,2,8,1};
+  vDyn<int, 5> mergeSortVec(mergeSortVals);
   mergeSortVec.log("Before Merge Sort");
   
 
