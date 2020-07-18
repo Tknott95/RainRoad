@@ -65,12 +65,12 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data) {
 void mergeSortInit() {
   /* ################################################## SORTING ALGO'S ##################################################*/
   const int mergeSortArraySize = 6;
-  int mergeSortVals[] = {1,2,3,4,0,6};
+  int mergeSortVals[] = {10,9,3,4,0,6};
 
   vDyn<int, mergeSortArraySize> mergeSortVec(mergeSortVals);
 
   mergeSortVec.log("Before Merge Sort");
-  mergeSortVec = mergeSort(mergeSortVec);
+  mergeSortVec = mergeSort<int, mergeSortArraySize>(mergeSortVec);
 };
 
 void dotProdInit() {
