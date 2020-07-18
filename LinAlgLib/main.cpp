@@ -3,25 +3,32 @@
 
 template<class T, int dataSize> 
 void merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _secondArray) {
-  const int firstArraySize = dataSize; //sizeof(_firstArray.val)/sizeof(_firstArray.val[0]);
-  const int secondArraySize = dataSize; //sizeof(_secondArray.val)/sizeof(_secondArray.val[0]);
+  // const int firstArraySize = dataSize; //sizeof(_firstArray.val)/sizeof(_firstArray.val[0]);
+  // const int secondArraySize = dataSize; //sizeof(_secondArray.val)/sizeof(_secondArray.val[0]);
 
   int tempArr[dataSize];  
   int indexVal;
+  vDyn<T, dataSize> returnArray;
 
   // while(firstArraySize > 0 && secondArraySize > 0) {
-    for(int j=0;j<firstArraySize;j++) for(int k=0;k<secondArraySize;k++) {
-        if (j == 0 || k == 0) indexVal = j + k;
-        else indexVal = j*k;
+    for(int j=0;j<dataSize;j++) for(int k=0;k<dataSize;k++) {
+      int counter = 0;
+      counter++;
+      // if (j == 0 || k == 0) indexVal = j + k;
+      // else indexVal = j * k;
+
+      // printf("\n\n\n\n\n ############ indexVal: %i\n\n", indexVal);
+
       if(_firstArray.val[j] < _secondArray.val[k]) {
-        tempArr[indexVal] = _firstArray.val[j];
-      } else if(_firstArray.val[j] >= _secondArray.val[k]) {
-        // tempArr[indexVal] = _secondArray.val[k]; SEGMANT DEFAUKT 
-      };
+        returnArray.val[counter] = _firstArray.val[j];
+      }
+      if(_firstArray.val[j] > _secondArray.val[k]) {
+        returnArray.val[counter] = _secondArray.val[k]; 
+      }
     };
   // };
 
-  // vDyn<T, dataSize> returnArray(tempArr);
+  
   // return returnArray;
 };
 
@@ -41,7 +48,8 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int low, int high) {
     if(i<halfArraySize) leftArray.val[i] = data.val[i];
     else if(i>halfArraySize-1) rightArray.val[i-halfArraySize] = data.val[i];
 
-    merge(leftArray, rightArray);
+    
+    merge<int, halfArraySize>(leftArray, rightArray);
 
       //    /* merge hack-ish */
       // for(int j=0;j<halfArraySize;j++) for(int k=0;k<halfArraySize;k++) {
