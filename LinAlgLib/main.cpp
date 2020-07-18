@@ -46,8 +46,9 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
     };
 
     leftArray = mergeSort<int, halfArraySize>(leftArray, 0, halfArraySize/2);
-    rightArray = mergeSort<int, halfArraySize>(rightArray, halfArraySize/2, end);
-    // returnArray = merge<T, halfArraySize>(leftArray, rightArray);
+    rightArray = mergeSort<int, halfArraySize>(rightArray, halfArraySize/2+1, end);
+    const int newSize = sizeof(leftArray.val)/sizeof(leftArray.val[0]);
+    // returnArray = merge<T, newSize>(leftArray, rightArray);
     // mergeSort<T, halfArraySize>(rightArray, 0, halfArraySize);
     // rightArray = mergeSort<T, arraySize/2>(rightArray, halfArraySize+1, end);
 
