@@ -21,6 +21,7 @@ class Draw {
     Texture texture;
     Shader skyboxShader;
     Shader objShader;
+    Mesh mesh;
 
   public:
     void init();

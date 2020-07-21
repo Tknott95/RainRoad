@@ -16,13 +16,14 @@ class Mesh {
     EncodedObj encodedObj;
     ObjectLoader objLoader;
     Texture texture;
-
-    Mesh();
-    void init();
+  
 
   public:
     uint VAO;
     Shader shader;
+
+    Mesh();
+    void init();
 };
 
 #endif

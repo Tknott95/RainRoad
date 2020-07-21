@@ -2,8 +2,8 @@
 
 Mesh::Mesh() {
     /* Pass path down prob via: param to call ub draw class dynamically down the stack */
-    encodedObj = objLoader.load("assets/objects/plane.obj");
     shader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
+    encodedObj = objLoader.load("assets/objects/plane.obj"); 
 
     this->init();
 };
@@ -43,7 +43,7 @@ void Mesh::init() {
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, objLoader.vertIndices.size() * sizeof(uint), &objLoader.vertIndices[0], GL_STATIC_DRAW);
 
-  this->textureID = texture.load("assets/objects/plane.obj");
+  this->textureID = texture.load("assets/textures/box_weave.png");
 
   shader.use();
   shader.setInt("myTexture", 0);
