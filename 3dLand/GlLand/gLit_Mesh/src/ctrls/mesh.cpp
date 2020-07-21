@@ -50,8 +50,8 @@ void Mesh::init() {
   glEnable(GL_DEPTH_TEST);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   /* @NOTE - CALLING SHADER EXTERNALLY FOR BETTER ABSTRACTION */
-  // shader.use();
-  // shader.setInt("myTexture", 0);
+  shader.use();
+  shader.setInt("myTexture", 0);
 };
 
 void Mesh::draw() {
