@@ -61,7 +61,7 @@ void Mesh::draw(Camera* camera, ivec2 screenSize) {
   sP.transform = mat4(1.0f);
   sP.projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
   sP.view = camera->GetViewMatrix();
-  sP.transform = translate(transform, glm::vec3(1.0f, -1.0f, 0.0f));
+  sP.transform = translate(sP.transform, glm::vec3(1.0f, -1.0f, 0.0f));
 
   shader.setMat4("model", sP.model);
   shader.setMat4("view", sP.view);
