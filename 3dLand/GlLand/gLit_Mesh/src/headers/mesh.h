@@ -9,6 +9,7 @@ using namespace std;
 #include "texture.h"
 #include "objLoader.h"
 #include "structs/encodedObj.h"
+#include "camera.h"
 
 class Mesh {
   private:
@@ -23,7 +24,7 @@ class Mesh {
 
     Mesh();
     void init();
-    void draw();
+    void draw(Camera* camera, ivec2 screenSize);
 };
 
 #endif

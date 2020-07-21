@@ -33,25 +33,16 @@ void Draw::init() {
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
   /************* OBJ DRAWING START **********************/
-  mesh.shader.use();
-  mat4 model = mat4(1.0f);
-  mat4 transform = mat4(1.0f);
-  mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
-  mat4 view = camera->GetViewMatrix();
-  transform = translate(transform, glm::vec3(1.0f, -1.0f, 0.0f));
-
-  mesh.shader.setMat4("model", model);
-  mesh.shader.setMat4("view", view);
-  mesh.shader.setMat4("projection", projection);
-  mesh.shader.setMat4("transform", transform);
-
-  mesh.draw();
+  // mesh.shader.use();
+  mesh.draw(camera, screenSize);
   /************* OBJ DRAWING FINISHED **********************/
-
+ 
   /************* SKYBOX DRAWING START **********************/
   glDepthFunc(GL_LEQUAL);
   skyboxShader.use();
  
+  mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
+  mat4 view = camera->GetViewMatrix();
   view = mat4(mat3(camera->GetViewMatrix()));
   skyboxShader.setMat4("view", view);
   skyboxShader.setMat4("projection", projection);

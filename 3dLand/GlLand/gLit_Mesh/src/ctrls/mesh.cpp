@@ -49,12 +49,24 @@ void Mesh::init() {
 
   glEnable(GL_DEPTH_TEST);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  /* @NOTE - CALLING SHADER EXTERNALLY FOR BETTER ABSTRACTION */
+
   shader.use();
   shader.setInt("myTexture", 0);
 };
 
-void Mesh::draw() {
+void Mesh::draw(Camera* camera, ivec2 screenSize) {
+  shader.use();
+  glm::mat4 model = mat4(1.0f);
+  glm::mat4 transform = mat4(1.0f);
+  glm::mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
+  glm::mat4 view = camera->GetViewMatrix();
+  transform = translate(transform, glm::vec3(1.0f, -1.0f, 0.0f));
+
+  shader.setMat4("model", model);
+  shader.setMat4("view", view);
+  shader.setMat4("projection", projection);
+  shader.setMat4("transform", transform);
+
   glBindVertexArray(VAO);
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, textureID);
