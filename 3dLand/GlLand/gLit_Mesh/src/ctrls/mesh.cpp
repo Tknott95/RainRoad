@@ -9,14 +9,12 @@ Mesh::Mesh(bool _isSkybox) : isSkybox(_isSkybox) {
       encodedObj = objLoader.load("assets/objects/plane.obj");
     } else {
       shader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
-      // encodedObj = objLoader.load("assets/objects/plane.obj");
     };
 
     this->init();
 };
 
 Mesh::~Mesh() {
-  /* deallocate */
   glDeleteBuffers(1, &VBO);
   glDeleteBuffers(1, &EBO);
   glDeleteBuffers(1, &UVBO);
@@ -86,7 +84,6 @@ void Mesh::init() {
     shader.use();
     shader.setInt("skybox", 0); /* @NOTE - will make myTexture later for less code w/ this dynamic way */
   };
-
 };
 
 void Mesh::draw(Camera* camera, ivec2 screenSize) {

@@ -30,7 +30,7 @@ Window::Window() {
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
   glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
-  this->_window = glfwCreateWindow(screenSize.x, screenSize.y, "LitLighting02", nullptr, nullptr);
+  this->_window = glfwCreateWindow(screenSize.x, screenSize.y, "gLit_Mesh", nullptr, nullptr);
   glfwMakeContextCurrent(this->_window);
   glfwSetFramebufferSizeCallback(_window, framebufferSizeCallback);
   glfwSetInputMode(_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
@@ -45,7 +45,6 @@ Window::Window() {
   glEnable(GL_DEPTH_TEST);
 
   this->draw = new Draw();
-  this->draw->init();
 };
 
 Window::~Window() {
