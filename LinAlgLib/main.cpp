@@ -4,12 +4,10 @@
 template<class T, int dataSize> 
 vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _secondArray) {
   vDyn<T, dataSize*2> returnArray;
+  if(dataSize == 0) return returnArray;
 
-  int c1=0,c2=0;
-  int counter=0;
-  //for(int j=0;j<dataSize;j++) for(int k=0;k<dataSize;k++) {
-  // printf("\n\n 1j(%i): %i    2k(%i): %i   \n", j, _firstArray.val[j], k, _secondArray.val[k]);
-
+  int counter=0,
+      c1=0,c2=0;
 
   while(c1<dataSize && c2<dataSize) {
     if(_firstArray.val[c1] < _secondArray.val[c2]) returnArray.val[counter++] = _firstArray.val[c1++];
@@ -20,15 +18,13 @@ vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _seco
 
   while(c1<dataSize) returnArray.val[counter++] = _firstArray.val[c1++];
   while(c2<dataSize) returnArray.val[counter++] = _secondArray.val[c2++];
-  /* @TODO only merging the two arrays, needs sorting */
-
 
   return returnArray;
 };
 
 template<class T, const int arraySize>
 vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
-  if(arraySize == 1) return data;
+  if(arraySize == 0 || arraySize == 1) return data;
   const int halfArraySize = arraySize/2;
   vDyn<T, arraySize> returnArray;
   vDyn<T, halfArraySize> leftArray;
@@ -37,28 +33,28 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
 
 
   if(start < end) {
-
     for(int i=0;i<arraySize;i++) {
       if(i<halfArraySize) leftArray.val[i] = data.val[i];
       else if(i>halfArraySize-1) rightArray.val[i-halfArraySize] = data.val[i];
-
-      //returnArray = merge<T, halfArraySize>(leftArray, rightArray);
     };
 
-    leftArray = mergeSort<int, halfArraySize>(leftArray, 0, halfArraySize/2);
-    rightArray = mergeSort<int, halfArraySize>(rightArray, halfArraySize/2+1, end);
-    const int newSize = sizeof(leftArray.val)/sizeof(leftArray.val[0]);
-    // returnArray = merge<T, newSize>(leftArray, rightArray);
-    // mergeSort<T, halfArraySize>(rightArray, 0, halfArraySize);
-    // rightArray = mergeSort<T, arraySize/2>(rightArray, halfArraySize+1, end);
+    //if(halfArraySize > 0) {
+      leftArray = mergeSort<int, halfArraySize>(leftArray, 0, halfArraySize/2);
+      rightArray = mergeSort<int, halfArraySize>(rightArray, halfArraySize/2+1, end);
+      const int newSize = sizeof(leftArray.val)/sizeof(leftArray.val[0]);
+      const int newSizeTwo = sizeof(rightArray.val)/sizeof(rightArray.val[0]);
 
+      // if(halfArraySize != 0) leftArray = mergeSort<T, halfArraySize>(leftArray, 0, halfArraySize);
+      // rightArray = mergeSort<T, halfArraySize>(rightArray, 0, halfArraySize);
   
     data.log("\n\n\n\n\nStarting Array");
 
 
     leftArray.log("Left Array");
     rightArray.log("Right Array");
-  }
+
+    start++;
+  };
   printf("\n");
   returnArray.log("Return Array");
   return returnArray;
