@@ -11,7 +11,7 @@ vDyn<T, dataSize*2> merge(vDyn<T, dataSize> _firstArray, vDyn<T, dataSize> _seco
 
   while(c1<dataSize && c2<dataSize) {
     if(_firstArray.val[c1] < _secondArray.val[c2]) returnArray.val[counter++] = _firstArray.val[c1++];
-    else returnArray.val[counter++] = _secondArray.val[c2++]; 
+    else returnArray.val[counter++] = _secondArray.val[c2++];
 
     printf("count: %i\n", counter);
   };
