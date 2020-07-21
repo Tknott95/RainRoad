@@ -1,10 +1,12 @@
 #include <iostream>
 #include <vector>
-#include "shader.h"
+// #include "shader.h"
+#include "mesh.h"
+
 #include "camera.h"
-#include "texture.h"
-#include "objLoader.h"
-#include "structs/encodedObj.h"
+// #include "texture.h"
+// #include "objLoader.h"
+// #include "structs/encodedObj.h"
 
 using namespace glm;
 

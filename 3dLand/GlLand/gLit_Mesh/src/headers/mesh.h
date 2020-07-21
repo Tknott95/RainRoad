@@ -9,8 +9,9 @@ using namespace std;
 // #include <glm/glm.hpp>
 // #include <glm/gtc/matrix_transform.hpp>
 
-#include "texture.h" /* loads in images as "textures", etc */
 #include "shader.h"
+#include "texture.h" /* loads in images as "textures", etc */
+
 #include "objLoader.h"
 #include "structs/encodedObj.h"
 
@@ -21,7 +22,7 @@ class Mesh {
     ObjectLoader objLoader;
     Texture texture;
 
-    Mesh() {};
+    Mesh();
     void init();
 
   public:
