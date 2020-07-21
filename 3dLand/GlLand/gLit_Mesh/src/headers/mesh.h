@@ -21,6 +21,8 @@ struct ShaderParams { /* will tweak this just better if ctrl have "knobs" */
 class Mesh {
   private:
     uint VBO, EBO, UVBO, textureID;
+    bool isSkybox{false};
+
     ShaderParams sP;
     EncodedObj encodedObj;
     ObjectLoader objLoader;
@@ -30,7 +32,7 @@ class Mesh {
     uint VAO;
     Shader shader;
 
-    Mesh();
+    Mesh(bool _isSkybox=false);
     void init();
     void draw(Camera* camera, ivec2 screenSize);
 };

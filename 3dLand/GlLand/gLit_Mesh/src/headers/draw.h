@@ -17,7 +17,7 @@ class Draw {
     Texture texture;
     Shader skyboxShader;
     Shader objShader;
-    Mesh mesh;
+    Mesh mesh; /* make a class to make vecs of mesh(es) in order to make algo's for proper clipping/chunking */ 
 
   public:
     void init();

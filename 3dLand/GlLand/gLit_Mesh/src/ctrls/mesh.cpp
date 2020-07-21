@@ -1,6 +1,6 @@
 #include "../headers/mesh.h"
 
-Mesh::Mesh() {
+Mesh::Mesh(bool _isSkybox) : isSkybox(_isSkybox) {
     /* Pass path down prob via: param to call ub draw class dynamically down the stack */
     shader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
     encodedObj = objLoader.load("assets/objects/plane.obj"); 
@@ -30,7 +30,7 @@ void Mesh::init() {
     GL_FLOAT, /* type */
     GL_FALSE, /* isNormalized? */
     sizeof(vec3), /*  or 3 * sizeof(float) | stride, matches my data xyz|vec3*/
-    (void*)0 /* array buffer offset */
+    (void*)0 /* array buffer offset @TODO offset others proper via: 3, 6, etc. Offset of <n, n, n(i) ...>*/
   );
   glEnableVertexAttribArray(1);
 
