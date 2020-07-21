@@ -5,13 +5,8 @@
 #include <vector>
 using namespace std;
 
-// #include <glad/glad.h>
-// #include <glm/glm.hpp>
-// #include <glm/gtc/matrix_transform.hpp>
-
 #include "shader.h"
-#include "texture.h" /* loads in images as "textures", etc */
-
+#include "texture.h"
 #include "objLoader.h"
 #include "structs/encodedObj.h"
 
