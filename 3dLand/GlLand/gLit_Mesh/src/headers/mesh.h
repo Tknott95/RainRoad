@@ -16,7 +16,6 @@ class Mesh {
     EncodedObj encodedObj;
     ObjectLoader objLoader;
     Texture texture;
-  
 
   public:
     uint VAO;
