@@ -43,8 +43,20 @@ void Mesh::init() {
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, objLoader.vertIndices.size() * sizeof(uint), &objLoader.vertIndices[0], GL_STATIC_DRAW);
 
-  this->textureID = texture.load("assets/textures/box_weave.png");
+  glBindVertexArray(0); /* may not need */
 
+  this->textureID = texture.load("assets/textures/box_weave.png");
+  
   shader.use();
   shader.setInt("myTexture", 0);
+};
+
+
+void Mesh::draw() {
+  glBindVertexArray(VAO);
+  glActiveTexture(GL_TEXTURE0);
+  glBindTexture(GL_TEXTURE_2D, textureID);
+
+  glDrawElements(GL_TRIANGLES, sizeof(objLoader.vertIndices), GL_UNSIGNED_INT, 0);
+  glBindVertexArray(0);
 };

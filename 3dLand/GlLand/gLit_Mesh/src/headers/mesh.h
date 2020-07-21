@@ -23,6 +23,7 @@ class Mesh {
 
     Mesh();
     void init();
+    void draw();
 };
 
 #endif

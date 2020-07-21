@@ -38,8 +38,9 @@ void Draw::init() {
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
   // @MESH objShader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
 
-  mesh.init();
+  
 // @MESH // @MESH // @MESH 
+  // mesh.init();
   // /******** binding obj attribs ********/
   // glGenVertexArrays(1, &objVAO);
   // glGenBuffers(1, &objVBO);
@@ -84,10 +85,10 @@ void Draw::init() {
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 
   sbTexID = texture.loadSkybox(sbFaces);
-  objTexID = texture.load("assets/textures/box_weave.png");
 
-  objShader.use();
-  objShader.setInt("myTexture", 0);
+  // objTexID = texture.load("assets/textures/box_weave.png");
+  // objShader.use();
+  // objShader.setInt("myTexture", 0);
 
   skyboxShader.use();
   skyboxShader.setInt("skybox", 0);
@@ -95,28 +96,31 @@ void Draw::init() {
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
   /************* OBJ DRAWING START **********************/
-  objShader.use();
+  // objShader.use();
+  mesh.shader.use();
   mat4 model = mat4(1.0f);
   mat4 transform = mat4(1.0f);
   mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
   mat4 view = camera->GetViewMatrix();
   transform = translate(transform, glm::vec3(1.0f, -1.0f, 0.0f));
 
-  objShader.setMat4("model", model);
-  objShader.setMat4("view", view);
-  objShader.setMat4("projection", projection);
-  objShader.setMat4("transform", transform);
-  glEnable(GL_DEPTH_TEST);  
+  mesh.shader.setMat4("model", model);
+  mesh.shader.setMat4("view", view);
+  mesh.shader.setMat4("projection", projection);
+  mesh.shader.setMat4("transform", transform);
+  glEnable(GL_DEPTH_TEST);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-  glBindVertexArray(objVAO);
-  /* @TODO need texture coordinates imported in */
-  glActiveTexture(GL_TEXTURE0);
-  glBindTexture(GL_TEXTURE_2D, objTexID);
-  // glDrawArrays(GL_TRIANGLES, 0, encodedObj.vertices.size() * sizeof(vec3));
-  // printf("vertIndicesSize(%i)", objLoader.vertIndices.size());
-  glDrawElements(GL_TRIANGLES, sizeof(objLoader.vertIndices), GL_UNSIGNED_INT, 0);
-  glBindVertexArray(0);
+  // glBindVertexArray(objVAO);
+  // /* @TODO need texture coordinates imported in */
+  // glActiveTexture(GL_TEXTURE0);
+  // glBindTexture(GL_TEXTURE_2D, objTexID);
+  // // glDrawArrays(GL_TRIANGLES, 0, encodedObj.vertices.size() * sizeof(vec3));
+  // // printf("vertIndicesSize(%i)", objLoader.vertIndices.size());
+  // glDrawElements(GL_TRIANGLES, sizeof(objLoader.vertIndices), GL_UNSIGNED_INT, 0);
+  // glBindVertexArray(0);
+
+  mesh.draw();
   /************* OBJ DRAWING FINISHED **********************/
 
   /************* SKYBOX DRAWING START **********************/
