@@ -26,52 +26,8 @@ void Draw::init() {
     "assets/skybox/back.jpg"
   };
 
-  // glEnable(GL_DEPTH_TEST);
-  /***********
-  * @BUG LAST OF THE INDICES IS CAUSING A BUG where last tri drawing to mid point
-  * sqr.obj
-  * col.obj
-  * col_lg.obj
-  *************/
-  // @MESH encodedObj = objLoader.load("assets/objects/plane.obj"); 
-
   skyboxShader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
-  // @MESH objShader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
 
-  
-// @MESH // @MESH // @MESH 
-  // mesh.init();
-  // /******** binding obj attribs ********/
-  // glGenVertexArrays(1, &objVAO);
-  // glGenBuffers(1, &objVBO);
-  // glGenBuffers(1, &objEBO);
-  // glGenBuffers(1, &objUVBO);
-  // glBindVertexArray(objVAO);
-  // glBindBuffer(GL_ARRAY_BUFFER, objVBO); //  * sizeof(glm::vec3)
-  // glBufferData(GL_ARRAY_BUFFER, encodedObj.vertices.size() * sizeof(vec3), &encodedObj.vertices[0], GL_STATIC_DRAW); /* here is where final data w/ pos and texturedata goes */
-  // /*
-  //   Naturally the sizeof operator can also be used on the struct for the appropriate size in bytes.
-  //   This should be 32 bytes (8 floats * 4 bytes each).
-  // */
-  // glActiveTexture(GL_TEXTURE0);
-  // glBindTexture(GL_TEXTURE_2D, objTexID);
-  // glEnableVertexAttribArray(0);
-  // glVertexAttribPointer(
-  //   0, /* matches layout in header */
-  //   3, /* size */
-  //   GL_FLOAT, /* type */
-  //   GL_FALSE, /* isNormalized? */
-  //   sizeof(vec3), /*  or 3 * sizeof(float) | stride, matches my data xyz|vec3*/
-  //   (void*)0 /* array buffer offset */
-  // );
-  // glEnableVertexAttribArray(1);
-  // glBindBuffer(GL_ARRAY_BUFFER, objUVBO);
-  // glBufferData(GL_ARRAY_BUFFER, encodedObj.uvs.size() * sizeof(vec2), &encodedObj.uvs[0], GL_STATIC_DRAW);
-  // glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(vec2), (void*)0);
-  // glEnableVertexAttribArray(2);
-  // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, objEBO);
-  // glBufferData(GL_ELEMENT_ARRAY_BUFFER, objLoader.vertIndices.size() * sizeof(uint), &objLoader.vertIndices[0], GL_STATIC_DRAW);
-// @MESH END // @MESH END // @MESH END // @MESH  END
 
   /******** binding skybox attribs *******/
   glGenVertexArrays(1, &skyboxVAO);
