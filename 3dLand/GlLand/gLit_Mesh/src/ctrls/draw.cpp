@@ -33,7 +33,6 @@ void Draw::init() {
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
   /************* OBJ DRAWING START **********************/
-  // mesh.shader.use();
   mesh.draw(camera, screenSize);
   /************* OBJ DRAWING FINISHED **********************/
  
