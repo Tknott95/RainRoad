@@ -96,7 +96,6 @@ void Draw::init() {
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
   /************* OBJ DRAWING START **********************/
-  // objShader.use();
   mesh.shader.use();
   mat4 model = mat4(1.0f);
   mat4 transform = mat4(1.0f);
@@ -108,17 +107,6 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   mesh.shader.setMat4("view", view);
   mesh.shader.setMat4("projection", projection);
   mesh.shader.setMat4("transform", transform);
-  glEnable(GL_DEPTH_TEST);
-  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-  // glBindVertexArray(objVAO);
-  // /* @TODO need texture coordinates imported in */
-  // glActiveTexture(GL_TEXTURE0);
-  // glBindTexture(GL_TEXTURE_2D, objTexID);
-  // // glDrawArrays(GL_TRIANGLES, 0, encodedObj.vertices.size() * sizeof(vec3));
-  // // printf("vertIndicesSize(%i)", objLoader.vertIndices.size());
-  // glDrawElements(GL_TRIANGLES, sizeof(objLoader.vertIndices), GL_UNSIGNED_INT, 0);
-  // glBindVertexArray(0);
 
   mesh.draw();
   /************* OBJ DRAWING FINISHED **********************/
