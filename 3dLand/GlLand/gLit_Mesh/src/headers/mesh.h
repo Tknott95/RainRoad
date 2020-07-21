@@ -3,12 +3,15 @@
 
 #include <string>
 #include <vector>
+
 using namespace std;
+
+#include "structs/encodedObj.h"
+#include "utils/skybox_data.h"
 
 #include "shader.h"
 #include "texture.h"
 #include "objLoader.h"
-#include "structs/encodedObj.h"
 #include "camera.h"
 
 struct ShaderParams { /* will tweak this just better if ctrl have "knobs" */
@@ -33,6 +36,7 @@ class Mesh {
     Shader shader;
 
     Mesh(bool _isSkybox=false);
+    virtual ~Mesh();
     void init();
     void draw(Camera* camera, ivec2 screenSize);
 };
