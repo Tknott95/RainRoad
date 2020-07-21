@@ -38,14 +38,15 @@ vDyn<T, arraySize> mergeSort(vDyn<T, arraySize> data, int start, int end) {
       else if(i>halfArraySize-1) rightArray.val[i-halfArraySize] = data.val[i];
     };
 
-    //if(halfArraySize > 0) {
-      leftArray = mergeSort<int, halfArraySize>(leftArray, 0, halfArraySize/2);
-      rightArray = mergeSort<int, halfArraySize>(rightArray, halfArraySize/2+1, end);
-      const int newSize = sizeof(leftArray.val)/sizeof(leftArray.val[0]);
-      const int newSizeTwo = sizeof(rightArray.val)/sizeof(rightArray.val[0]);
 
-      // if(halfArraySize != 0) leftArray = mergeSort<T, halfArraySize>(leftArray, 0, halfArraySize);
-      // rightArray = mergeSort<T, halfArraySize>(rightArray, 0, halfArraySize);
+    /* calling both rmerge and recursive mergeSort like this throws errors. */
+    returnArray = merge<T, newSize>(leftArray, rightArray);
+  
+    // leftArray = mergeSort<int, halfArraySize>(leftArray, 0, halfArraySize/2);
+    // rightArray = mergeSort<int, halfArraySize>(rightArray, halfArraySize/2+1, end);
+    const int newSize = sizeof(leftArray.val)/sizeof(leftArray.val[0]);
+    const int newSizeTwo = sizeof(rightArray.val)/sizeof(rightArray.val[0]);
+
   
     data.log("\n\n\n\n\nStarting Array");
 
