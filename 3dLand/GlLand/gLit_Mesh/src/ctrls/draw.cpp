@@ -40,6 +40,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glDepthFunc(GL_LEQUAL);
   skyboxShader.use();
  
+  /* does this ened to be called via. 4skybox eevry frame? */
   mat4 projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
   mat4 view = camera->GetViewMatrix();
   view = mat4(mat3(camera->GetViewMatrix()));
