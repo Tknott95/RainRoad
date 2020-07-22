@@ -41,4 +41,6 @@ void Camera::updateCameraVectors() {
   Front = glm::normalize(front);
   Right = glm::normalize(glm::cross(Front, WorldUp));  // Normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
   Up    = glm::normalize(glm::cross(Right, Front));
+
+  printf("\n  \e[0;36;40mcamPos\e[0;39;40m(%.2f, %.2f, %.2f)\e[0m", Position.x, Position.y, Position.z);
 }

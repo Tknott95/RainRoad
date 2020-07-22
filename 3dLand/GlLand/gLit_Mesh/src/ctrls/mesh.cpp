@@ -106,7 +106,6 @@ void Mesh::draw(Camera* camera, ivec2 screenSize) {
     sP.view = mat4(mat3(camera->GetViewMatrix()));
   };
 
-
   shader.setMat4("view", sP.view);
   shader.setMat4("projection", sP.projection);
 
