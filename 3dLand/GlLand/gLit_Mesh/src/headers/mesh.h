@@ -17,7 +17,6 @@ using namespace std;
 using namespace glm;
 
 struct ShaderParams { 
- /* will tweak this just better if ctrl have "knobs" */
   mat4 model;
   mat4 transform;
   mat4 projection;
