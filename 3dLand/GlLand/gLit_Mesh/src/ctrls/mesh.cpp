@@ -46,7 +46,7 @@ void Mesh::init() {
   glVertexAttribPointer(
     0,3,
     GL_FLOAT, /* type */
-    GL_FALSE, /* isNormalized? */
+    GL_TRUE, /* isNormalized? */
     sizeof(vec3), /* stride - matches my data xyz|vec3*/
     (void*)0 /* array buffer offset @TODO offset others proper via: 3, 6, etc. Offset of <n, n, n(i) ...>, spliced after n(i) in the tuple/arr */
   );
