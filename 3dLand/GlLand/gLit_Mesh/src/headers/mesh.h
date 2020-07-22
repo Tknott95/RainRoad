@@ -14,11 +14,12 @@ using namespace std;
 #include "objLoader.h"
 #include "camera.h"
 
-struct ShaderParams { /* will tweak this just better if ctrl have "knobs" */
- glm::mat4 model;
- glm::mat4 transform;
- glm::mat4 projection;
- glm::mat4 view;
+struct ShaderParams { 
+ /* will tweak this just better if ctrl have "knobs" */
+  glm::mat4 model;
+  glm::mat4 transform;
+  glm::mat4 projection;
+  glm::mat4 view;
 };
 
 class Mesh {
