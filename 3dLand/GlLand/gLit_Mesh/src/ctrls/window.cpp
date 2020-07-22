@@ -30,9 +30,11 @@ Window::Window() {
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
   glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
+  /* @TODO make var for window name, maybe inside the custom screen struct */
   this->_window = glfwCreateWindow(screenSize.x, screenSize.y, "gLit_Mesh", nullptr, nullptr);
   glfwMakeContextCurrent(this->_window);
   glfwSetFramebufferSizeCallback(_window, framebufferSizeCallback);
+
   glfwSetInputMode(_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
   mouse.lastX = screenSize.x /2; mouse.lastY = screenSize.y /2;  
