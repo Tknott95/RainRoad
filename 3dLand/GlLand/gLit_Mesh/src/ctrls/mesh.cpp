@@ -124,7 +124,7 @@ void Mesh::draw(Camera* camera, ivec2 screenSize) {
 
   if(!isSkybox) {
     glBindTexture(GL_TEXTURE_2D, textureID);
-    glDrawElements(GL_TRIANGLES, sizeof(objLoader.vertIndices), GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLES, sizeof(objLoader.vertIndices) * sizeof(vec3), GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);
   } else {
     glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
