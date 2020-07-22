@@ -1,8 +1,8 @@
 #include "../headers/draw.h"
 
 Draw::Draw()  {  /* onInit() */
-  this->mesh.push_back(m00);
-  // this->mesh.emplace_back(m01);
+  // this->mesh[0] = this->m00;
+  // this->mesh[1] = this->m01;
 };
 
 Draw::~Draw() { /* deallocate anythin needed here */ };
@@ -14,8 +14,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   // };
 
   this->mesh[0].draw(camera, screenSize);
-  // this->mesh[1].draw(camera, screenSize);
-  this->m01.draw(camera, screenSize);
+  this->mesh[1].draw(camera, screenSize);
 
  /************* OBJ DRAWING FINISHED **********************/
  /************* SKYBOX DRAWING START **********************/
