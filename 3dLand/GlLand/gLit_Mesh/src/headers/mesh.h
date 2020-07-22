@@ -24,7 +24,7 @@ struct ShaderParams { /* will tweak this just better if ctrl have "knobs" */
 class Mesh {
   private:
     uint VBO, EBO, UVBO, textureID;
-    bool isSkybox{false};
+    bool isSkybox;
 
     ShaderParams sP;
     EncodedObj encodedObj;

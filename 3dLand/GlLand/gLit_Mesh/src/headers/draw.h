@@ -8,9 +8,9 @@ using namespace glm;
 
 class Draw {
   private:
-    std::vector<Mesh> mesh;
-    Mesh skybox{true};
     Mesh m00;
+    Mesh skybox{true};
+    std::vector<Mesh> mesh;
 
   public:
     Draw();
