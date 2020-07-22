@@ -72,7 +72,7 @@ void Window::update() {
       this->_camera->Position.y += 0.2f;
     }
 
-    if(this->_camera->Position.y >= -0.1) {
+    if(this->_camera->Position.y >= 2) {
       this->_camera->Position.y -= 0.3f;
     }
   
