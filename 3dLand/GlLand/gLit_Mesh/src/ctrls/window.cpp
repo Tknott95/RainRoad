@@ -48,8 +48,9 @@ Window::Window() {
 };
 
 Window::~Window() {
-  /* Deallocate here */
   glfwTerminate();
+  delete(this->_camera);
+  delete(this->draw);
 };
 
 void Window::render() {
