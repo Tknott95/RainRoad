@@ -39,7 +39,7 @@ class Mesh {
     uint VAO;
     Shader shader;
 
-    Mesh(bool _isSkybox=false, vec3 pos=vec3{0.0f, 0.0f, 0.0f}, const char* _objPath = "assets/objects/plane.obj");
+    Mesh(bool _isSkybox=false, vec3 pos=vec3{0.0f}, const char* _objPath = "assets/objects/plane.obj");
     virtual ~Mesh();
     void init();
     void draw(Camera* camera, ivec2 screenSize);
