@@ -1,4 +1,5 @@
-float skyboxVertices[] = {     
+#pragma once
+const float skyboxVertices[] = {     
   -1.0f,  1.0f, -1.0f,
   -1.0f, -1.0f, -1.0f,
    1.0f, -1.0f, -1.0f,

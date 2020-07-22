@@ -1,5 +1,4 @@
 #include "../headers/mesh.h"
-#include "../headers/utils/skybox_data.h"
 
 Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath) : isSkybox(_isSkybox), pos(_pos) {
     /* Pass path down prob via: param to call ub draw class dynamically down the stack */
