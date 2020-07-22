@@ -11,6 +11,8 @@ Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath) : isSkybox(_isSkybox
       shader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
     };
 
+    printf("\n  \e[0;46;40mCompiling mesh: %s\n     - at pos(%d, %d, %d) \e[0m", _objPath, pos.x, pos.y, pos.z);
+
     this->init();
 };
 

@@ -2,7 +2,7 @@
 
 Draw::Draw()  {  /* onInit() */
   this->mesh.push_back(m00);
-  // this->mesh.push_back(m01);
+  // this->mesh.emplace_back(m01);
 };
 
 Draw::~Draw() { /* deallocate anythin needed here */ };
@@ -14,7 +14,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   // };
 
   this->mesh[0].draw(camera, screenSize);
-  this->mesh[1].draw(camera, screenSize);
+  // this->mesh[1].draw(camera, screenSize);
   this->m01.draw(camera, screenSize);
 
  /************* OBJ DRAWING FINISHED **********************/
