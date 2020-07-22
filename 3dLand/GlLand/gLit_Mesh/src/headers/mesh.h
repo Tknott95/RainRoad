@@ -14,18 +14,21 @@ using namespace std;
 #include "objLoader.h"
 #include "camera.h"
 
+using namespace glm;
+
 struct ShaderParams { 
  /* will tweak this just better if ctrl have "knobs" */
-  glm::mat4 model;
-  glm::mat4 transform;
-  glm::mat4 projection;
-  glm::mat4 view;
+  mat4 model;
+  mat4 transform;
+  mat4 projection;
+  mat4 view;
 };
 
 class Mesh {
   private:
     uint VBO, EBO, UVBO, textureID;
     bool isSkybox;
+    vec3 pos{0.0f, 0.0f, 0.0f};
 
     ShaderParams sP;
     EncodedObj encodedObj;
@@ -36,7 +39,7 @@ class Mesh {
     uint VAO;
     Shader shader;
 
-    Mesh(bool _isSkybox=false, const char* _objPath = "assets/objects/plane.obj");
+    Mesh(bool _isSkybox=false, vec3 pos=vec3{0.0f, 0.0f, 0.0f}, const char* _objPath = "assets/objects/plane.obj");
     virtual ~Mesh();
     void init();
     void draw(Camera* camera, ivec2 screenSize);

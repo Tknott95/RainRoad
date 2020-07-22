@@ -1,7 +1,7 @@
 #include "../headers/mesh.h"
 #include "../headers/utils/skybox_data.h"
 
-Mesh::Mesh(bool _isSkybox, const char* _objPath) : isSkybox(_isSkybox) {
+Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath) : isSkybox(_isSkybox), pos(_pos) {
     /* Pass path down prob via: param to call ub draw class dynamically down the stack */
 
     if(!isSkybox) {
@@ -64,11 +64,13 @@ void Mesh::init() {
   };
 
   glBindVertexArray(0); /* may not need */
-
+  
+  glEnable(GL_DEPTH_TEST);
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   if(!isSkybox) {
     this->textureID = texture.load("assets/textures/box_weave.png");
-    glEnable(GL_DEPTH_TEST);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    // glEnable(GL_DEPTH_TEST);
+    // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     shader.use();
     shader.setInt("myTexture", 0);
@@ -88,13 +90,15 @@ void Mesh::init() {
 
 void Mesh::draw(Camera* camera, ivec2 screenSize) {
   if(isSkybox) glDepthFunc(GL_LEQUAL);
+  if(!isSkybox) glDepthFunc(GL_DEPTH_BUFFER_BIT);
+
   shader.use();
 
   sP.view = camera->GetViewMatrix();
   if(!isSkybox) {
     sP.model = mat4(1.0f);
     sP.transform = mat4(1.0f);
-    sP.transform = translate(sP.transform, glm::vec3(1.0f, -1.0f, 0.0f));
+    sP.transform = translate(sP.transform, this->pos);
 
     sP.projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
     sP.view = camera->GetViewMatrix();
