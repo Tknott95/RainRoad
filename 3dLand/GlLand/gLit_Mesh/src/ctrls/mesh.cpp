@@ -64,7 +64,7 @@ void Mesh::init() {
 
   glBindVertexArray(0); /* may not need */
   
-  glEnable(GL_DEPTH_TEST);
+  // glEnable(GL_DEPTH_TEST);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   if(!isSkybox) {
     this->textureID = texture.load("assets/textures/box_weave.png");
@@ -89,7 +89,7 @@ void Mesh::init() {
 
 void Mesh::draw(Camera* camera, ivec2 screenSize) {
   if(isSkybox) glDepthFunc(GL_LEQUAL);
-  if(!isSkybox) glDepthFunc(GL_DEPTH_BUFFER_BIT);
+  // if(!isSkybox) glDepthFunc(GL_DEPTH_BUFFER_BIT);
 
   shader.use();
 
@@ -99,13 +99,12 @@ void Mesh::draw(Camera* camera, ivec2 screenSize) {
     sP.transform = mat4(1.0f);
     sP.transform = translate(sP.transform, this->pos);
 
-    sP.projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
+    sP.projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 300.f); /* @NOTE was 100 -> is view distance, essentially */
     sP.view = camera->GetViewMatrix();
   } else {
-    sP.projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
+    sP.projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 300.f); /* @NOTE was 100 -> is view distance, essentially */
     sP.view = mat4(mat3(camera->GetViewMatrix()));
   };
-
 
 
   shader.setMat4("view", sP.view);
