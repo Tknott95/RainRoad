@@ -1,7 +1,7 @@
 #include "../headers/draw.h"
 
 Draw::Draw()  {};
-Draw::~Draw() {/* deallocate anythin needed here */};
+Draw::~Draw() {};
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
  /************* OBJ DRAWING START **********************/
