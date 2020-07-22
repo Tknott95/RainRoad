@@ -7,7 +7,7 @@
 using namespace std;
 
 #include "structs/encodedObj.h"
-#include "utils/skybox_data.h"
+// #include "utils/skybox_data.h"
 
 #include "shader.h"
 #include "texture.h"

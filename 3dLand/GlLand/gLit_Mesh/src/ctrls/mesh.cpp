@@ -1,5 +1,5 @@
 #include "../headers/mesh.h"
-// #include "../headers/utils/skybox_data.h"
+#include "../headers/utils/skybox_data.h"
 
 Mesh::Mesh(bool _isSkybox) : isSkybox(_isSkybox) {
     /* Pass path down prob via: param to call ub draw class dynamically down the stack */
@@ -90,14 +90,20 @@ void Mesh::draw(Camera* camera, ivec2 screenSize) {
   if(isSkybox) glDepthFunc(GL_LEQUAL);
   shader.use();
 
+  sP.view = camera->GetViewMatrix();
   if(!isSkybox) {
     sP.model = mat4(1.0f);
     sP.transform = mat4(1.0f);
     sP.transform = translate(sP.transform, glm::vec3(1.0f, -1.0f, 0.0f));
+
+    sP.projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
+    sP.view = camera->GetViewMatrix();
+  } else {
+    sP.projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
+    sP.view = mat4(mat3(camera->GetViewMatrix()));
   };
 
-  sP.projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 100.f);
-  sP.view = camera->GetViewMatrix();
+
 
   shader.setMat4("view", sP.view);
   shader.setMat4("projection", sP.projection);

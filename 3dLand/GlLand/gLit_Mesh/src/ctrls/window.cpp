@@ -86,7 +86,6 @@ void Window::update() {
     glfwPollEvents();
   }
 
-  this->draw->deallocate();
-
+  // delete(this->draw);
   isOpen = false;
 };
