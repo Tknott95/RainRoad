@@ -6,9 +6,7 @@ Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath) : isSkybox(_isSkybox
     if(!isSkybox) {
       shader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
       encodedObj = objLoader.load(_objPath);
-    } else {
-      shader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
-    };
+    } else shader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
 
     printf("\n    \e[0;46;40mCompiling mesh:  \e[0;92;40m%s\e[0;46;40m\n     - at \e[0;92;40mpos(%.2f, %.2f, %.2f) \e[0m", _objPath, pos.x, pos.y, pos.z);
 
