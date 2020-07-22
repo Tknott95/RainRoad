@@ -112,7 +112,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glBindTexture(GL_TEXTURE_2D, objTexID);
   // glDrawArrays(GL_TRIANGLES, 0, encodedObj.vertices.size() * sizeof(vec3));
   // printf("vertIndicesSize(%i)", objLoader.vertIndices.size());
-  glDrawElements(GL_TRIANGLES, sizeof(objLoader.vertIndices), GL_UNSIGNED_INT, 0);
+  glDrawElements(GL_TRIANGLES, sizeof(objLoader.vertIndices) * sizeof(vec3), GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);
   /************* OBJ DRAWING FINISHED **********************/
 
