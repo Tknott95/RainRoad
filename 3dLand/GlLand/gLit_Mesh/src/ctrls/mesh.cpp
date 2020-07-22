@@ -1,12 +1,12 @@
 #include "../headers/mesh.h"
 #include "../headers/utils/skybox_data.h"
 
-Mesh::Mesh(bool _isSkybox) : isSkybox(_isSkybox) {
+Mesh::Mesh(bool _isSkybox, const char* _objPath) : isSkybox(_isSkybox) {
     /* Pass path down prob via: param to call ub draw class dynamically down the stack */
 
     if(!isSkybox) {
       shader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
-      encodedObj = objLoader.load("assets/objects/plane.obj");
+      encodedObj = objLoader.load(_objPath);
     } else {
       shader.compile("assets/shaders/skybox.vs", "assets/shaders/skybox.fs");
     };
