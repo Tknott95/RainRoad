@@ -77,7 +77,7 @@ void Window::update() {
     }
   
     glfwGetCursorPos(_window, &xpos, &ypos);
-    /* for debugging pos
+    /* for debugging pos @TODO make a printf();
       std::cout << "\e[0;33;40m  xPos(" << xpos << ") yPos(" << ypos << ") \e[0m" << std::endl;
     */
     mousePolling(xpos, ypos);
