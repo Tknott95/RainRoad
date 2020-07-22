@@ -14,7 +14,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   // };
 
   this->mesh[0].draw(camera, screenSize);
-  // this->mesh[1].draw(camera, screenSize);
+  this->mesh[1].draw(camera, screenSize);
   this->m01.draw(camera, screenSize);
 
  /************* OBJ DRAWING FINISHED **********************/
