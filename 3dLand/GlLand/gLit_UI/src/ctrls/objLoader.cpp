@@ -2,25 +2,22 @@
 
 EncodedObj ObjectLoader::load(const char* objPath) {
   FILE *data = fopen(objPath, "r");
-  if(!data) printf("\n\e[0;31;40m OBJECT NOT LOADING\e[0m"); /* change this to be under the return of the if(data) as it is da waay */
+  if(!data) printf("\n\e[0;31;40m OBJECT NOT LOADING\e[0m");
 
   ofstream objFileForLogger;
   objFileForLogger.open("assets/logs/encodedObjLogger.txt");
-  while(data) { /* while so it reads every lang rather then an if */
+  while(data) {
     char header[256];
     int reader = fscanf(data, "%s", header);
-    // printf("\n  \e[1;33;40m    %d \e[0m", reader);
     if(reader == EOF) break;
 
     if(strcmp(header, "o") == 0) {
-      /* ObjName from file for prefab type creation */
     }
     else if(strcmp(header, "v") == 0) {
       vec3 vertex;
       fscanf(data, "%f %f %f\n", &vertex.x, &vertex.y, &vertex.z);
       objFileForLogger << "v " << vertex.x << ", " << vertex.y << ", " << vertex.z <<"\n";
       encodedObj.vertices.push_back(vertex);
-      // temp_vertices.push_back(vertex);
     }
     else if(strcmp(header, "vt") == 0) {
       vec2 uvs;
@@ -39,11 +36,6 @@ EncodedObj ObjectLoader::load(const char* objPath) {
 
       objFileForLogger << "i-ces 1(" << vIndex[0]-1 << ") 2(" << vIndex[1]-1 << ") 3(" << vIndex[2]-1 <<") \n";
 
-      /*
-      ** @NOTE 
-      **  - indexing starting at 1 for indices so subtracting prior
-      ** to store for correct values via. the math world. 
-      **/
       vertIndices.push_back(vIndex[0]-1);
       vertIndices.push_back(vIndex[1]-1);
       vertIndices.push_back(vIndex[2]-1);
@@ -53,19 +45,8 @@ EncodedObj ObjectLoader::load(const char* objPath) {
       normIndices.push_back(normIndex[0]-1);
       normIndices.push_back(normIndex[1]-1);
       normIndices.push_back(normIndex[2]-1);
-      /* *********** Faces Debuggine  **************
-      ** printf("\n\e[0;39;49m  faces(%d)  \e[0m", dataAmt);
-      */
     }
   }
-
-  // /* @TODO compare for(uint) to for(size_t) in book */
-  // for(size_t i=0; i<vertIndices.size(); i++) {
-  //   uint currVertexIndex = vertIndices[i];
-  //   // glm::vec3 newVertex = tempVertices[currVertexIndex-1];
-  //   printf("Vertex[%i](%f, %f, %f)\n", i, tempVertices[currVertexIndex-1].x, tempVertices[currVertexIndex-1].y, tempVertices[currVertexIndex-1].z);
-  //   encodedObj.vertices.push_back(tempVertices[currVertexIndex-1]);
-  // }
 
   printf("\n  \e[0;94;40m  Object Loaded: \e[0;33;40m %s \n    v(%d) vIndices(%d) \e[0m\n",
     objPath, encodedObj.vertices.size(), vertIndices.size());

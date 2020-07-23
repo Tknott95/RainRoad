@@ -7,11 +7,12 @@
   BlackBG_Red='\e[0;31;40m'
   BlackBG_Yellow='\e[0;33;40m'
 ***************************/
-const char* APP_TITLE = "gLit_UI";
 
 int main(int argc, char *argv[]) {
+  const char* APP_TITLE = "gLit_UI";
+  const bool DEBUG_MODE = (argc) ? true : false;
+
   printf("    \n\e[1;32;40m    App Initialized\e[0m\n");
-  const bool debug = (argc) ? true : false;
 
   Window window{APP_TITLE};
 
