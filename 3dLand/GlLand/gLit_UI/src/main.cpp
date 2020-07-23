@@ -7,8 +7,9 @@
 ***************************/
 
 int main() {
-  printf("    \n\e[1;32;40m    App Initialized\e[0m\n");
   const char* APP_TITLE = "gLit_UI";
+
+  printf("    \n\e[1;32;40m    App Initialized\e[0m\n");
   Window window{APP_TITLE};
 
   while(window.isOpen) {

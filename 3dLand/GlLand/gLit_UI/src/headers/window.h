@@ -6,8 +6,6 @@
 
 class Window {
   private:
-    // const char* appTitle = "gLit_UI";
-
     struct Mouse {
       bool initMove = false;
       float lastX;

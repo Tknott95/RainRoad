@@ -30,11 +30,9 @@ Window::Window(const char* _appTitle) {
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
   glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
-  // const char* title = "gLit_UI";
   this->_window = glfwCreateWindow(
     screenSize.x, screenSize.y,
-    _appTitle,
-    nullptr, nullptr);
+    _appTitle, nullptr, nullptr);
   glfwMakeContextCurrent(this->_window);
   glfwSetFramebufferSizeCallback(_window, framebufferSizeCallback);
 
