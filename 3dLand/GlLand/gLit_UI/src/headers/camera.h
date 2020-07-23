@@ -5,7 +5,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <vector>
 #include <GLFW/glfw3.h>
-/*@TODO rename for project conventions once tested w/ actual scene via: view, perspective, etc transformations */
 
 enum Camera_Movement {
   FORWARD,

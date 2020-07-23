@@ -1,5 +1,4 @@
 #include "../headers/objLoader.h"
-#include <fstream>
 /******************************
   USING
   - Have an active logger at v step and 1/3of f step 
