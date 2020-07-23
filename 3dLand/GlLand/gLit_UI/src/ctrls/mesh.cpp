@@ -95,10 +95,10 @@ void Mesh::draw(Camera* camera, ivec2 screenSize) {
     sP.transform = mat4(1.0f);
     sP.transform = translate(sP.transform, this->pos);
 
-    sP.projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 300.f); /* @NOTE was 100 -> is view distance, essentially */
+    sP.projection = perspective(radians(camera->getZoom()), (float)screenSize.x / (float)screenSize.y, 0.1f, 300.f); /* @NOTE was 100 -> is view distance, essentially */
     sP.view = camera->GetViewMatrix();
   } else {
-    sP.projection = perspective(radians(camera->Zoom), (float)screenSize.x / (float)screenSize.y, 0.1f, 300.f); /* @NOTE was 100 -> is view distance, essentially */
+    sP.projection = perspective(radians(camera->getZoom()), (float)screenSize.x / (float)screenSize.y, 0.1f, 300.f); /* @NOTE was 100 -> is view distance, essentially */
     sP.view = mat4(mat3(camera->GetViewMatrix()));
   };
 
