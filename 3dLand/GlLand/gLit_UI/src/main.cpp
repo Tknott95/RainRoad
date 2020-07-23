@@ -8,7 +8,8 @@
 
 int main() {
   printf("    \n\e[1;32;40m    App Initialized\e[0m\n");
-  Window window{"gLit_UI"};
+  const char* APP_TITLE = "gLit_UI";
+  Window window{APP_TITLE};
 
   while(window.isOpen) {
     window.render();
