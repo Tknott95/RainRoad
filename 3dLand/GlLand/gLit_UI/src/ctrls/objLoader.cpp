@@ -1,15 +1,4 @@
 #include "../headers/objLoader.h"
-/******************************
-  USING
-  - Have an active logger at v step and 1/3of f step 
-    v - vertices - x y z
-    vt - uvs - x y
-    vn
-    f - vIndices, uvIndices, texIndices - x/y/z x/y/z x/y/z
-  @TODO -> read below for indexing
-  @TODO -> NEEDS INDEXING FOR VERTICES - starting at 1 not 0 as obj files start at 1 unlike matematicuhh bruhh
-  @INTERESTING || so the position is temp_vertices[ vertexIndex-1 ] (there is a -1 because C++ indexing starts at 0 and OBJ indexing starts at 1, remember ?) :
-*******************************/
 
 EncodedObj ObjectLoader::load(const char* objPath) {
   FILE *data = fopen(objPath, "r");
