@@ -1,5 +1,4 @@
 #include "../headers/camera.h"
-#include <GLFW/glfw3.h>
 
 glm::mat4 Camera::GetViewMatrix() {
   return glm::lookAt(Position, Position + Front, Up);
