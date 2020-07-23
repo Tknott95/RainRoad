@@ -1,8 +1,6 @@
 #include "../headers/mesh.h"
 
 Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath) : isSkybox(_isSkybox), pos(_pos) {
-    /* Pass path down prob via: param to call ub draw class dynamically down the stack */
-
     if(!isSkybox) {
       shader.compile("assets/shaders/obj.vs", "assets/shaders/obj.fs");
       encodedObj = objLoader.load(_objPath);
@@ -68,8 +66,6 @@ void Mesh::init() {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   if(!isSkybox) {
     this->textureID = texture.load("assets/textures/box_weave.png");
-    // glEnable(GL_DEPTH_TEST);
-    // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     shader.use();
     shader.setInt("myTexture", 0);
@@ -83,7 +79,7 @@ void Mesh::init() {
     this->textureID = texture.loadSkybox(skyboxFaces);
 
     shader.use();
-    shader.setInt("skybox", 0); /* @NOTE - will make myTexture later for less code w/ this dynamic way */
+    shader.setInt("skybox", 0);
   };
 };
 
@@ -120,13 +116,10 @@ void Mesh::draw(Camera* camera, ivec2 screenSize) {
   if(!isSkybox) {
     glBindTexture(GL_TEXTURE_2D, textureID);
     glDrawElements(GL_TRIANGLES, sizeof(objLoader.vertIndices) * sizeof(vec3), GL_UNSIGNED_INT, 0);
-    glBindVertexArray(0);
   } else {
     glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
     glDrawArrays(GL_TRIANGLES, 0, 36);
-
-    glBindVertexArray(0);
     glDepthFunc(GL_LESS);
   };
-  // glBindVertexArray(0); /* FOR MVP THEN WILL PULL THIS ABCK TO PROPER CODE */
+  glBindVertexArray(0);
 };
