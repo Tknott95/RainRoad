@@ -31,7 +31,10 @@ Window::Window() {
   glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
   /* @TODO make var for window name, maybe inside the custom screen struct */
-  this->_window = glfwCreateWindow(screenSize.x, screenSize.y, "gLit_Mesh", nullptr, nullptr);
+  this->_window = glfwCreateWindow(
+    screenSize.x, screenSize.y,
+    appTitle,
+    nullptr, nullptr);
   glfwMakeContextCurrent(this->_window);
   glfwSetFramebufferSizeCallback(_window, framebufferSizeCallback);
 

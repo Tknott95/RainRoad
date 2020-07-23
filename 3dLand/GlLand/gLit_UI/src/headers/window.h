@@ -13,6 +13,7 @@ class Window {
     };
 
     ivec2 screenSize = ivec2(1280, 800);
+    const char* appTitle = "gLit_UI";
     float _deltaTime, _lastFrame = 0.0f;
     double xpos, ypos;
 
