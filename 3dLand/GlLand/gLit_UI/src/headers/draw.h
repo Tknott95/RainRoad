@@ -16,10 +16,10 @@ class Draw {
       "assets/objects/sqr.obj"};
     Mesh m02{false,
       vec3(2.0f, 1.0f, 8.0f),
-      "assets/objects/col_lg.obj"};
+      "assets/objects/col.obj"};
     Mesh m03{false,
       vec3(2.0f, 1.0f, -8.0f),
-      "assets/objects/col_lg.obj"};
+      "assets/objects/col.obj"};
     Mesh skybox{true};
     Mesh mesh[4] = {
       plane,
