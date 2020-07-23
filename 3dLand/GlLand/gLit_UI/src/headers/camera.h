@@ -37,11 +37,11 @@ enum CamMovement {
 class Camera {
 struct CamData {
   float yaw=-90.f,
-    pitch=0.f,
-    speed=2.5f,
-    sensitivity=0.1f,
-    zoom=45.f;
-  // CamData(float _pitch, _speed, _sensitivity, _zoom): Pitch(_pitch), Speed(_speed), Sensitivity(_sensitivity), Zoom(_zoom)  {};
+    pitch,
+    speed,
+    sensitivity,
+    zoom;
+  CamData(float _yaw=-90.f, float _pitch=0.f, float _speed=2.5f, float _sensitivity=0.1f, float _zoom=45.f): pitch(_pitch), speed(_speed), sensitivity(_sensitivity), zoom(_zoom)  {};
 };
 public:
   CamData cam;
