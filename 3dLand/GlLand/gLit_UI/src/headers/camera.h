@@ -17,7 +17,7 @@ using namespace glm;
 
 class Camera {
   struct CamData {
-    float yaw=-90.f,
+    float yaw,
       pitch,
       speed,
       sensitivity,
