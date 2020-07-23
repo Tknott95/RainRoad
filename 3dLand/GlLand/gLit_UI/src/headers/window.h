@@ -6,6 +6,8 @@
 
 class Window {
   private:
+    // const char* appTitle = "gLit_UI";
+
     struct Mouse {
       bool initMove = false;
       float lastX;
@@ -13,7 +15,6 @@ class Window {
     };
 
     ivec2 screenSize = ivec2(1280, 800);
-    const char* appTitle = "gLit_UI";
     float _deltaTime, _lastFrame = 0.0f;
     double xpos, ypos;
 
@@ -28,8 +29,8 @@ class Window {
   public:
     bool isOpen;
 
-    Window();
-    virtual ~Window(); /* @TIP - Using this for dynamic deAllocation of buffers */
+    Window(const char*);
+    virtual ~Window();
 
     void render();
     void update();

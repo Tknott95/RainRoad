@@ -8,7 +8,7 @@
 
 int main() {
   printf("    \n\e[1;32;40m    App Initialized\e[0m\n");
-  Window window;
+  Window window{"gLit_UI"};
 
   while(window.isOpen) {
     window.render();

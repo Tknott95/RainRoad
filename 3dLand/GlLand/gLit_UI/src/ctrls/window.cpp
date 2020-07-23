@@ -18,7 +18,7 @@ void Window::mousePolling(double xpos, double ypos) {
   this->_camera->ProcessMouseMovement(xoffset, yoffset, true);
 }
 
-Window::Window() {
+Window::Window(const char* _appTitle) {
   if(!glfwInit()) printf("\n\e[0;31;40m glfwInit() FAILED \e[0m\n");
   if(!glewInit()) printf("\n\e[0;31;40m GlewInit FAILED \e[0m\n");
 
@@ -30,10 +30,10 @@ Window::Window() {
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
   glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
-  /* @TODO make var for window name, maybe inside the custom screen struct */
+  // const char* title = "gLit_UI";
   this->_window = glfwCreateWindow(
     screenSize.x, screenSize.y,
-    appTitle,
+    _appTitle,
     nullptr, nullptr);
   glfwMakeContextCurrent(this->_window);
   glfwSetFramebufferSizeCallback(_window, framebufferSizeCallback);

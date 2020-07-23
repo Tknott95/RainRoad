@@ -9,21 +9,18 @@ using namespace glm;
 class Draw {
   private:
     Mesh plane{false,
-      vec3( 0.0f, -1.0f, 0.0f),
+      vec3(0.0f,-1.0f,0.0f),
       "assets/objects/plane_for_walls.obj"};
-    Mesh m01{false,
-      vec3(2.0f, 0.0f, 1.0f),
+    Mesh mCube00{false,
+      vec3(4.0f, 0.0f, 1.0f),
       "assets/objects/sqr.obj"};
-    Mesh m02{false,
-      vec3(2.0f, 1.0f, 8.0f),
-      "assets/objects/col.obj"};
-    Mesh m03{false,
-      vec3(2.0f, 1.0f, -8.0f),
-      "assets/objects/col.obj"};
+    Mesh mCube01{false,
+      vec3(-4.0f, 0.0f, 1.0f),
+      "assets/objects/sqr.obj"};
     Mesh skybox{true};
-    Mesh mesh[4] = {
+    Mesh mesh[3] = {
       plane,
-      m01,m02,m03
+      mCube00, mCube01
     };
 
   public:
