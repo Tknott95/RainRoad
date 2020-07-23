@@ -6,11 +6,15 @@
 #include <vector>
 #include <GLFW/glfw3.h>
 
-enum Camera_Movement {
+enum CamMovement {
   FORWARD,
   BACKWARD,
   LEFT,
   RIGHT
+};
+
+struct CamData {
+  const float YAW, PITCH, SPEED, SENSITIVITY, ZOOM;
 };
 
 const float YAW = -90.0f;
@@ -50,7 +54,7 @@ public:
   };
 
   glm::mat4 GetViewMatrix();
-  void ProcessKeyboard(Camera_Movement direction, float deltaTime);
+  void ProcessKeyboard(CamMovement direction, float deltaTime);
   void ProcessMouseMovement(float xoffset, float yoffset, bool constrainPitch);
   void ProcessMouseScroll(float yoffset);
 
