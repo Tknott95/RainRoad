@@ -33,36 +33,41 @@ enum CamMovement {
 // const float SPEED = 2.5f;
 // const float SENSITIVITY = 0.1f;
 // const float ZOOM = 45.0f;
+using namespace glm;
 
 class Camera {
-struct CamData {
-  float yaw=-90.f,
-    pitch,
-    speed,
-    sensitivity,
-    zoom;
-  CamData(float _yaw=-90.f, float _pitch=0.f, float _speed=2.5f, float _sensitivity=0.1f, float _zoom=45.f): pitch(_pitch), speed(_speed), sensitivity(_sensitivity), zoom(_zoom)  {};
-};
+  struct CamData {
+    float yaw=-90.f,
+      pitch,
+      speed,
+      sensitivity,
+      zoom;
+    CamData(float _yaw=-90.f, float _pitch=0.f, float _speed=2.5f, float _sensitivity=0.1f, float _zoom=45.f): pitch(_pitch), speed(_speed), sensitivity(_sensitivity), zoom(_zoom)  {};
+  };
+  struct CamTransform {
+    vec3 Position;
+    vec3 Front;
+    vec3 Up;
+    vec3 Right;
+    vec3 WorldUp;
+    CamTransform(vec3 _front = vec3(0.0f, 0.0f, -1.0f)): Front(_front) {};
+  };
+
 public:
   CamData cam;
-  glm::vec3 Position;
-  glm::vec3 Front;
-  glm::vec3 Up;
-  glm::vec3 Right;
-  glm::vec3 WorldUp;
+  CamTransform transform;
 
-
-  Camera(float screenWidth, float screenHeight, glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = -90.f, float pitch = 0.f) : Front(glm::vec3(0.0f, 0.0f, -1.0f)) {
-    Position = position;
-    WorldUp = up;
+  Camera(float screenWidth, float screenHeight, glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = -90.f, float pitch = 0.f) {
+    transform.Position = position;
+    transform.WorldUp = up;
     cam.yaw = yaw;
     cam.pitch = pitch;
 
     updateCameraVectors();
   };
-  Camera(float screenWidth,  float screenHeight, float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) : Front(glm::vec3(0.0f, 0.0f, -1.0f)) {
-    Position = glm::vec3(posX, posY, posZ);
-    WorldUp = glm::vec3(upX, upY, upZ);
+  Camera(float screenWidth,  float screenHeight, float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) {
+    transform.Position = glm::vec3(posX, posY, posZ);
+    transform.WorldUp = glm::vec3(upX, upY, upZ);
     cam.yaw = yaw;
     cam.pitch = pitch;
 
