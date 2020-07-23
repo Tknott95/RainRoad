@@ -2,18 +2,18 @@
 
 void framebufferSizeCallback(GLFWwindow* window, int width, int height) { glViewport(0, 0, width, height); }
 
-void Window::mousePolling(double xpos, double ypos) {
+void Window::mousePolling(dvec2 _pos) {
   if (mouse.initMove) {
-    mouse.lastX = xpos;
-    mouse.lastY = ypos;
+    mouse.lastX = _pos.x;
+    mouse.lastY = _pos.y;
     mouse.initMove = false;
   }
 
-  float xoffset = xpos - mouse.lastX;
-  float yoffset = mouse.lastY - ypos;
+  float xoffset = _pos.x - mouse.lastX;
+  float yoffset = mouse.lastY - _pos.y;
 
-  mouse.lastX = xpos;
-  mouse.lastY = ypos;
+  mouse.lastX = _pos.x;
+  mouse.lastY = _pos.y;
 
   this->_camera->ProcessMouseMovement(xoffset, yoffset, true);
 }
@@ -79,11 +79,11 @@ void Window::update() {
       this->_camera->Position.y -= 0.3f;
     }
   
-    glfwGetCursorPos(_window, &xpos, &ypos);
+    glfwGetCursorPos(_window, &pos.x, &pos.y);
     /* for debugging pos @TODO make a printf();
-      std::cout << "\e[0;33;40m  xPos(" << xpos << ") yPos(" << ypos << ") \e[0m" << std::endl;
+      std::cout << "\e[0;33;40m  pos.x(" << pos.x << ") pos.y(" << pos.y << ") \e[0m" << std::endl;
     */
-    mousePolling(xpos, ypos);
+    mousePolling(pos);
 
     glfwSwapBuffers(this->_window);
     glfwPollEvents();

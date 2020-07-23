@@ -13,8 +13,8 @@ class Window {
     };
 
     ivec2 screenSize = ivec2(1280, 800);
+    dvec2 pos;
     float _deltaTime, _lastFrame = 0.0f;
-    double xpos, ypos;
 
     GLFWwindow* _window;
     Mouse mouse;
@@ -22,7 +22,7 @@ class Window {
     Keys keys;
     Draw* draw;
 
-    void mousePolling(double xpos, double ypos);
+    void mousePolling(dvec2 _pos);
 
   public:
     bool isOpen;
