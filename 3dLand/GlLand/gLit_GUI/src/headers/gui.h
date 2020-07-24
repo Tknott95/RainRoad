@@ -8,6 +8,5 @@ class GUI {
     FT_Library  ftLib;
     FT_Face     ftFace;
   public:
-    GUI();
-
+    GUI(const char* fPath, const int _fontSize);
 };

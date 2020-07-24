@@ -1,6 +1,12 @@
 #include "../headers/shader.h"
 
-/* @TODO - clean this shit up, make a switch and single function? Will it slow down speed? */
+/********************
+*
+*
+* @TODO - make dynamic struct/class with templates 
+     and remove many of these functions w/ that.
+* @TODO - clean this shit up, make a switch and single function?
+*    Will it slow down speed? */
 void Shader::compile(const char* vertPath, const char* fragPath, const char* geometrySource) {
   const char* geometryPath = nullptr;
   std::string vertexCode, fragmentCode, geometryCode;
