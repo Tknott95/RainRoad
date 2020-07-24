@@ -34,7 +34,6 @@ void Mesh::init() {
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
   if(!isSkybox) glBufferData(GL_ARRAY_BUFFER, encodedObj.vertices.size() * sizeof(vec3), &encodedObj.vertices[0], GL_STATIC_DRAW);
   if(isSkybox) glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
-  /* w/ skybox data here */
 
   glActiveTexture(GL_TEXTURE0);
   if(!isSkybox) glBindTexture(GL_TEXTURE_2D, textureID);
