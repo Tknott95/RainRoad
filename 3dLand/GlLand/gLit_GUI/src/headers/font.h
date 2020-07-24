@@ -8,10 +8,12 @@
 #include <glm/glm.hpp>
 #include <map>
 
+using namespace glm;
+
 struct Char {
   uint ID;            // TextureID
-  glm::ivec2 Size;    // GlyphSize
-  glm::ivec2 Bearing; // Offset from baseline from L to R 
+  ivec2 Size;         // GlyphSize
+  ivec2 Bearing;      // Offset from baseline from L to R 
   long Advance;       // Offset to advance to next glyph
 };
 
@@ -25,5 +27,5 @@ class Font {
     unsigned int myVAO, myVBO;
     Font(const char*, const int _fontSize=12);
     virtual ~Font();
-    void Draw();
+    void Draw(Shader &_shader, vec3 _posAndScale, vec3 _color);
 };

@@ -62,6 +62,6 @@ Font::~Font() {
 
 };
 
-void Font::Draw() {
+void Font::Draw(Shader &_shader, vec3 _posAndScale, vec3 _color) {
 
 };
