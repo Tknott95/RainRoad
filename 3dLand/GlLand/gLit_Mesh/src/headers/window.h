@@ -28,7 +28,7 @@ class Window {
     bool isOpen;
 
     Window();
-    virtual ~Window(); /* @TIP - Using this for dynamic deAllocation of buffers */
+    virtual ~Window();
 
     void render();
     void update();
