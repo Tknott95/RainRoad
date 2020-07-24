@@ -1,8 +1,8 @@
 #include <iostream>
 #include <thread>
-
 #include "keys.h"
 #include "draw.h"
+#include "gui.h"
 
 class Window {
   private:
@@ -21,6 +21,7 @@ class Window {
     Camera* _camera;
     Keys keys;
     Draw* draw;
+    GUI gui{"assets/fonts/KurriIslandBlack.ttf"};
 
     void mousePolling(dvec2 _pos);
 
