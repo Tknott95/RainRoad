@@ -13,15 +13,15 @@ struct Char {
   long Advance;       // Offset to advance to next glyph
 };
 
-
-class GUI {
-  public:
-    unsigned int myVAO, myVBO;
-    GUI(const char*, const int _fontSize=12);
-    virtual ~GUI();
+class Font {
   private:
     FT_Library  ftLib;
     FT_Face     ftFace;
   
     std::map<char, Char> characters;
+  public:
+    unsigned int myVAO, myVBO;
+    Font(const char*, const int _fontSize=12);
+    virtual ~Font();
+    void DrawText();
 };

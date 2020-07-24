@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+#include "font.h"
 #include "mesh.h"
 #include "camera.h"
 
@@ -8,6 +9,8 @@ using namespace glm;
 
 class Draw {
   private:
+    Font font{"assets/fonts/KurriIslandBlack.ttf"};
+
     Mesh plane{false,
       vec3(0.0f,-1.0f,0.0f),
       "assets/objects/plane_for_walls.obj"};

@@ -40,7 +40,7 @@ Window::Window(const char* _appTitle) {
 
   glfwSetInputMode(_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
-  mouse.lastX = screenSize.x /2; mouse.lastY = screenSize.y /2;  
+  mouse.lastX = screenSize.x /2; mouse.lastY = screenSize.y /2;
 
   this->_camera = new Camera(screenSize.x, screenSize.y, vec3(0.0f, 0.0f, 2.4f));
 

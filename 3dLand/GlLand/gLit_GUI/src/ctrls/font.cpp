@@ -1,6 +1,6 @@
-#include "../headers/gui.h"
+#include "../headers/font.h"
 
-GUI::GUI(const char* _fontPath, const int _fontSize) {
+Font::Font(const char* _fontPath, const int _fontSize) {
   if(FT_Init_FreeType(&ftLib))  printf("\n\e[0;31;40m FREETYPE LIBRARY INIT() ERROR \e[0m");
   if(FT_New_Face(ftLib, _fontPath, 0, &ftFace)) printf("\n\e[0;31;40m FREETYPE LIBRARY INIT() ERROR \e[0m");
 
@@ -47,18 +47,21 @@ GUI::GUI(const char* _fontPath, const int _fontSize) {
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
 
-
-  // glGenVertexArrays(2, &myVAO);
-  // glGenBuffers(1, &VBO);
-  // glBindVertexArray(VAO);
-  // glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  // glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
-  // glEnableVertexAttribArray(0);
-  // glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
-  // glBindBuffer(GL_ARRAY_BUFFER, 0);
-  // glBindVertexArray(0);
+  glGenVertexArrays(0, &myVAO);
+  glGenBuffers(1, &myVBO);
+  glBindVertexArray(myVAO);
+  glBindBuffer(GL_ARRAY_BUFFER, myVBO);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
+  glEnableVertexAttribArray(0);
+  glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
+  glBindBuffer(GL_ARRAY_BUFFER, 0);
+  glBindVertexArray(0);
 };
 
-GUI::~GUI() {
+Font::~Font() {
+
+};
+
+void Font::DrawText() {
 
 };
