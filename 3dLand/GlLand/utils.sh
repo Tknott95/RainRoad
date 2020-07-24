@@ -1,5 +1,10 @@
 #!/bin/bash
 
+_IGNORE="
+-Wno-unused-function 
+-Wno-unused-variable"
+_O="./runtime/main"
+
 function clean_binary() {
   # So if compiling fails script fails, prior it ran the old binary
   _BINARY_FILE_PATH="runtime/main"
@@ -14,6 +19,12 @@ function logger_init() {
   if test -f "$_LOGGER_FILE_PATH"; then
     echo "    - Cleaning logger files at: $_LOGGER_FILE_PATH"
     rm -f assets/logs/encodedObjLogger.txt
+  fi
+}
+
+function clean_o() {
+  if test -f "main.o"; then
+    rm -rf *.o
   fi
 }
 

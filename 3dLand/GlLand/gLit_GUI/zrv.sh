@@ -6,26 +6,14 @@ _FREETYPE="
   -I/usr/include/glib-2.0
   -I/usr/lib/glib-2.0/include"
 
-_IGNORE="
--Wno-unused-function 
--Wno-unused-variable"
 
 _LINKERS="
   -lglfw -lGLEW -DGLEW_STATIC -lGL
   -lfreetype"
 
-_O="./runtime/main"
-
 source ../utils.sh
 
-function clean() {
-  if test -f "main.o"; then
-    rm -rf *.o
-  fi
-}
-
-
-clean
+clean_o
 echo "    - COMPILING BINARY"
 #  - Compiling styles -
 # Style 1) w/ -o only    :  (real 0m11.803s|user 0m10.881s|sys 0m0.891s)
@@ -34,4 +22,4 @@ echo "    - COMPILING BINARY"
 g++ -Wall -c src/$1.cpp src/ctrls/*.cpp $_FREETYPE $_IGNORE  && g++ *.o $_LINKERS -o $_O   
 
 echo "    - RUNNING BINARY"
-clean && $_O
+clean_o && $_O
