@@ -48,7 +48,7 @@ EncodedObj ObjectLoader::load(const char* objPath) {
     }
   }
 
-  printf("\n  \e[0;94;40m  Object Loaded: \e[0;33;40m %s \n    v(%d) vIndices(%d) \e[0m\n",
+  printf("\n  \e[0;94;40m  Object Loaded: \e[0;33;40m %s \n    vertices(%i) indices(%i) \e[0m\n",
     objPath, encodedObj.vertices.size(), vertIndices.size());
   
   objFileForLogger.close();
