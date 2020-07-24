@@ -18,7 +18,8 @@ class GUI {
   private:
     FT_Library  ftLib;
     FT_Face     ftFace;
-
+  
+    uint VAO, VBO;
     std::map<char, Char> characters;
 
   public:
