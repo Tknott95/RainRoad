@@ -14,10 +14,14 @@ _FREETYPE="
   -I/usr/include/glib-2.0
   -I/usr/lib/glib-2.0/include"
 
+_LINKERS="
+  -lglfw -lGLEW -DGLEW_STATIC -lGL
+  -lfreetype"
+
 source ../utils.sh
 
 echo "    - COMPILING BINARY"
-g++ $_S/$1.cpp $_CPPs $_FREETYPE -o ./runtime/$1 -lglfw -lGLEW -DGLEW_STATIC -lGL -lfreetype
+g++ $_S/$1.cpp $_CPPs $_FREETYPE -o ./runtime/$1 $_LINKERS
 
 echo "    - RUNNING BINARY"
 ./runtime/$1
