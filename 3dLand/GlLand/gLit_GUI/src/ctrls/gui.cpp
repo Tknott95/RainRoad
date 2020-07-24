@@ -7,7 +7,6 @@ GUI::GUI(const char* _fontPath, const int _fontSize) {
   FT_Set_Pixel_Sizes(ftFace, 0, _fontSize);
 
   if (FT_Load_Char(ftFace, 'T', FT_LOAD_RENDER)) printf("\n\e[0;31;40m GLYPH LOADING ERROR \e[0m");
-
   for(unsigned char k=0;k<128;k++) {
     if(FT_Load_Char(ftFace, k, FT_LOAD_RENDER)) printf("\n\e[0;31;40m GLYPH LOADING ERROR IN LOOP \e[0m");
 
@@ -39,21 +38,27 @@ GUI::GUI(const char* _fontPath, const int _fontSize) {
     };
 
     characters.insert(std::pair<char, Char>(k, thisChar));
-  }
+  };
 
   glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
   FT_Done_Face(ftFace);
   FT_Done_FreeType(ftLib);
 
-  glGenVertexArrays(1, &VAO);
-  glGenBuffers(1, &VBO);
-  glBindVertexArray(VAO);
-  glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
-  glEnableVertexAttribArray(0);
-  glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
-  glBindBuffer(GL_ARRAY_BUFFER, 0);
-  glBindVertexArray(0);
+  glEnable(GL_BLEND);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
+
+
+  // glGenVertexArrays(2, &myVAO);
+  // glGenBuffers(1, &VBO);
+  // glBindVertexArray(VAO);
+  // glBindBuffer(GL_ARRAY_BUFFER, VBO);
+  // glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
+  // glEnableVertexAttribArray(0);
+  // glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
+  // glBindBuffer(GL_ARRAY_BUFFER, 0);
+  // glBindVertexArray(0);
 };
 
+GUI::~GUI() {
 
+};

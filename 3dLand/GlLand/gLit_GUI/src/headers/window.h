@@ -20,8 +20,8 @@ class Window {
     Mouse mouse;
     Camera* _camera;
     Keys keys;
-    Draw* draw;
     GUI gui{"assets/fonts/KurriIslandBlack.ttf"};
+    Draw* draw;
 
     void mousePolling(dvec2 _pos);
 
