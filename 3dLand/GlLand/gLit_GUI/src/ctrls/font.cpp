@@ -62,6 +62,6 @@ Font::~Font() {
 
 };
 
-void Font::DrawText() {
+void Font::Draw() {
 
 };

@@ -1,3 +1,5 @@
+#ifndef SHADER_H
+#define SHADER_H 
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -27,3 +29,4 @@ class Shader {
   private:
     void checkCompileErrors(GLuint shader, std::string type);
 };
+#endif
