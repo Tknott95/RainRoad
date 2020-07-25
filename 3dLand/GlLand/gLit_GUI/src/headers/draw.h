@@ -4,12 +4,14 @@
 #include "font.h"
 #include "mesh.h"
 #include "camera.h"
+#include <string>
 
 using namespace glm;
 
 class Draw {
   private:
     Font font{"assets/fonts/KurriIslandBlack.ttf"};
+    Shader fontShader;
 
     Mesh plane{false,
       vec3(0.0f,-1.0f,0.0f),
