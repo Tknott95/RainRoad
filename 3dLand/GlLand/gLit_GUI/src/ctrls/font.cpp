@@ -8,6 +8,8 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
   if (FT_Load_Char(ftFace, 'T', FT_LOAD_RENDER)) printf("\n\e[0;31;40m GLYPH LOADING ERROR \e[0m");
+
+  
   for(unsigned char k=0;k<128;k++) {
     if(FT_Load_Char(ftFace, k, FT_LOAD_RENDER)) printf("\n\e[0;31;40m GLYPH LOADING ERROR IN LOOP \e[0m");
 
@@ -17,11 +19,11 @@ Font::Font(const char* _fontPath, const int _fontSize) {
     glTexImage2D(
       GL_TEXTURE_2D,                // target
       0,                            // level
-      GL_RGBA,                       // internalFormat
+      GL_RED,                       // internalFormat
       ftFace->glyph->bitmap.width,  // width
       ftFace->glyph->bitmap.rows,   // height
       0,                            // border
-      GL_RGBA,                       // format
+      GL_RED,                       // format
       GL_UNSIGNED_BYTE,             // type
       ftFace->glyph->bitmap.buffer  // data
     );
