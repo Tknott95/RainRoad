@@ -34,7 +34,7 @@ Font::Font(const char* _fontPath, const int _fontSize) {
       texture,
       glm::ivec2(),
       glm::ivec2(),
-      ftFace->glyph->advance.x
+      (int)ftFace->glyph->advance.x
     };
 
     characters.insert(std::pair<char, Char>(k, thisChar));
@@ -99,7 +99,7 @@ void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _co
     * adv is # of 1/64 pixels
     * bitshift by 6 to get val in pxls (2^6 = 64)
     *********************/
-    // _posAndScale.x += (myChar.Advance >> 6) * _posAndScale[3];
+    _posAndScale.x += (myChar.Advance >> 6) * _posAndScale.z;
   };
   glBindVertexArray(0);
   glBindTexture(GL_TEXTURE_2D, 0);
