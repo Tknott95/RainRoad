@@ -10,7 +10,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   font.Draw(
     "das one lit gui homie", // TextToRender
     fontShader,              // Shader
-    vec3(5.f, 5.f, 5.f),   // Pos
+    vec3(25.f, 25.f, 1.f),   // (Pos(x,y), and Scale)
     vec3(0.2, 0.2f, 0.6f)    // Color
   );
  /************* OBJ DRAWING START **********************/
