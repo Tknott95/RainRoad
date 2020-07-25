@@ -101,6 +101,6 @@ void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _co
     *********************/
     _posAndScale.x += (myChar.Advance >> 6) * _posAndScale.z;
   };
-  glBindVertexArray(0);
-  glBindTexture(GL_TEXTURE_2D, 0);
+  // glBindVertexArray(0);
+  // glBindTexture(GL_TEXTURE_2D, 0);
 };

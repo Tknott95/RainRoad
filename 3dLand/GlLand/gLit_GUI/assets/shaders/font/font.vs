@@ -6,6 +6,6 @@ out vec2 oTexCoords;
 uniform mat4 projection;
 
 void main() {
-  gl_position = projection * vec4(vertex.xy, 0.0, 1.0);
-  oTexCoords = vertex.zw;
+  gl_Position = projection * vec4(inVertex.xy, 0.0, 1.0);
+  oTexCoords = inVertex.zw;
 };
