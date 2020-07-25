@@ -35,16 +35,15 @@ Font::Font(const char* _fontPath, const int _fontSize) {
       texture,
       ivec2(ftFace->glyph->bitmap.width, ftFace->glyph->bitmap.rows),
       ivec2(ftFace->glyph->bitmap_left, ftFace->glyph->bitmap_top),
-      ftFace->glyph->advance.x
+      (int)ftFace->glyph->advance.x
     };
 
 
     characters.insert(std::pair<char, Char>(k, thisChar));
   };
-  //
+
   glBindTexture(GL_TEXTURE_2D, 0);
 
-  glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
   FT_Done_Face(ftFace);
   FT_Done_FreeType(ftLib);
 
