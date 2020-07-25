@@ -1,8 +1,9 @@
 #include "../headers/draw.h"
 
-void Draw::renderGUI(Camera* camera, ivec2 screenSize) {
+void Draw::renderGUI(Camera* camera, ivec2 screenSize, int fps) {
+  const string fpsText = "FPS: " + to_string(fps);
   font.Draw(
-    "FPS: ++",                   // TextToRender
+    fpsText,                     // TextToRender
     fontShader,                  // Shader
     vec3(5.f, 5.f, 1.f),         // (Pos(x,y), and Scale)
     vec3(0.05f, 0.35f, 0.55f)    // Color  0.f->1.f
@@ -27,11 +28,11 @@ void Draw::renderGUI(Camera* camera, ivec2 screenSize) {
 Draw::Draw() {fontShader.compile("assets/shaders/font/font.vs","assets/shaders/font/font.fs"); };
 Draw::~Draw() {};
 
-void Draw::update(Camera* camera, ivec2 screenSize) {
+void Draw::update(Camera* camera, ivec2 screenSize, int fps) {
   glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
   glClear(GL_COLOR_BUFFER_BIT);
 
-  this->renderGUI(camera, screenSize);
+  this->renderGUI(camera, screenSize, fps);
  /************* OBJ DRAWING START **********************/
   const int meshSize = sizeof(mesh)/sizeof(mesh[0]);
   for(int k=0;k<meshSize;k++) {

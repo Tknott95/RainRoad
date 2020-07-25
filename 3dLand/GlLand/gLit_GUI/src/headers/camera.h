@@ -22,7 +22,7 @@ class Camera {
       speed,
       sensitivity,
       zoom;
-    CamData(float _yaw=-90.f, float _pitch=0.f, float _speed=2.5f, float _sensitivity=0.1f, float _zoom=45.f): pitch(_pitch), speed(_speed), sensitivity(_sensitivity), zoom(_zoom)  {};
+    CamData(float _yaw=-90.f, float _pitch=0.f, float _speed=0.5f, float _sensitivity=0.07f, float _zoom=45.f): pitch(_pitch), speed(_speed), sensitivity(_sensitivity), zoom(_zoom)  {};
   };
   struct CamTransform {
     vec3 Position,

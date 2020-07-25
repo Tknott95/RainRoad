@@ -19,15 +19,24 @@ void Window::mousePolling(dvec2 _pos) {
 };
 
 void Window::FPS() {
-  const float startTime = glfwGetTime();
-  deltaTime = startTime-endTime; /* deltaTime gives me loopTime for keysFiring */
+  double nowTime = glfwGetTime();
+  fpsEpochs++;
 
-  // fpsEpochs++;
-  // if(deltaTime >= 1.f) { /* fix this to reset a clock every time it psses to check for 1ms */
-  //   this->FPSRate = fpsEpochs*1000/deltaTime;
+  deltaTime = nowTime-startTime;
+  
+  if(deltaTime >= 1.f) {
+    FPSRate = fpsEpochs;
+    fpsEpochs = 0;
+    // startTime += 1.0;
+    /* = nowTime; || Line Causing "lag" every call - time getting huge and arith to costly */
+    // ms/frame = 1000.0/FPSRate;
+    printf("\n    \e[1;36;40mFPS:\e[0;39;40m %i\e[0m", FPSRate);
+    printf("\n    \e[0;36;40mstartTime:\e[0;39;40m %f\e[0m", startTime);
+    printf("\n    \e[2;36;40mnowTime:\e[0;39;40m %f\e[0m", nowTime);
 
-  //   cout << "\n    \e[0;36;40mstartingFPS:\e[0;39;40m " << deltaTime << "\e[0m" << endl;
-  // };
+    deltaTime--;
+
+  };
 };
 
 Window::Window(const char* _appTitle) {
@@ -75,17 +84,16 @@ void Window::render() {
 };
 
 void Window::update() {
-  uptime = glfwGetTime();
-
+  startTime = glfwGetTime();
   while(!glfwWindowShouldClose(_window)) {
     this->FPS();    
-
-    keys.keyPolling(_window, _camera, deltaTime);
+ 
+    keys.keyPolling(_window, _camera, deltaTime); /* inverting delta time here */
 
     glClearColor(0.f, 0.f, 0.14f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    this->draw->update(_camera, screenSize);
+    this->draw->update(_camera, screenSize, FPSRate);
 
     if(this->_camera->transform.Position.y <= -0.7) {
       this->_camera->transform.Position.y += 0.2f;

@@ -28,10 +28,10 @@ class Draw {
       mCube00, mCube01
     };
 
-    void renderGUI(Camera* camera, ivec2 screenSize);
+    void renderGUI(Camera* camera, ivec2 screenSize, int fps);
 
   public:
     Draw();
     virtual ~Draw();
-    void update(Camera* camera, ivec2 screenSize);
+    void update(Camera* camera, ivec2 screenSize, int fps);
 };
