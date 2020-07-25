@@ -64,7 +64,7 @@ Font::~Font() {
   glDeleteVertexArrays(0, &myVAO);
 };
 
-void Font::Draw(string _text ,Shader &_shader, vec3 _posAndScale, vec3 _color) {
+void Font::Draw(const char* _text ,Shader &_shader, vec3 _posAndScale, vec3 _color) {
   _shader.use();
   glUniform3f(glGetUniformLocation(_shader.ID, "textColor"), _color.x, _color.y, _color.z);
   glActiveTexture(GL_TEXTURE0);
@@ -75,7 +75,7 @@ void Font::Draw(string _text ,Shader &_shader, vec3 _posAndScale, vec3 _color) {
     Char myChar = characters[*stringChar];
 
     float xPos = _posAndScale.x + myChar.Bearing.x * _posAndScale[3];
-    float yPos = _posAndScale.y - (myChar.Size.y - myChar.Bearing,y) * _posAndScale[3];
+    float yPos = _posAndScale.y - (myChar.Size.y - myChar.Bearing.y) * _posAndScale[3];
     float width = myChar.Size.x * _posAndScale[3];
     float height = myChar.Size.y * _posAndScale[3];
 
