@@ -6,6 +6,9 @@ Draw::Draw()  {
 Draw::~Draw() {};
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
+  glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+  glClear(GL_COLOR_BUFFER_BIT);
+
   font.Draw(
     "das one lit gui homie", // TextToRender
     fontShader,              // Shader
