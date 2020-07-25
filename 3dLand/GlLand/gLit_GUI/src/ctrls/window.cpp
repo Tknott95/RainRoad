@@ -18,7 +18,24 @@ void Window::mousePolling(dvec2 _pos) {
   this->_camera->ProcessMouseMovement(xoffset, yoffset, true);
 };
 
-// void Window::FPS() { };
+void Window::FPS() {
+  const float startTime = glfwGetTime();
+  fpsEpochs++;
+
+  deltaTime = startTime-endTime; /* timePassingEachFrame */
+
+  if(startTime >= 1000) {
+    FPSRate = fpsEpochs/1000.0;
+    /* if(deltaTime >= maxPeriod)*/
+    endTime = startTime;
+    fpsEpochs = 0;
+  };
+  // deltaTime = startTime-endTime;
+
+
+
+  printf("\n    \e[0;36;40mFPS:\e[0;39;40m %.1f\e[0m", FPSRate);
+};
 
 Window::Window(const char* _appTitle) {
   if(!glfwInit()) printf("\n\e[0;31;40m glfwInit() FAILED \e[0m\n");
@@ -66,12 +83,9 @@ void Window::render() {
 
 void Window::update() {
   while(!glfwWindowShouldClose(_window)) {
+    this->FPS();    
 
-    float currentFrame = glfwGetTime(); /* FPS() */
-    _deltaTime = currentFrame - _lastFrame;
-    if(_deltaTime >= maxPeriod)  _lastFrame = currentFrame;
-  
-    keys.keyPolling(_window, _camera, _deltaTime);
+    keys.keyPolling(_window, _camera, deltaTime);
 
     glClearColor(0.f, 0.f, 0.14f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

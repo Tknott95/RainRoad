@@ -13,12 +13,11 @@ class Window {
 
     ivec2 screenSize = ivec2(1280, 800);
     dvec2 pos;
-    float _deltaTime, _lastFrame = 0.0f;
 
-    /* FPS vars, sloppy code for MVP then refactor */
-    const double 
-      maxFPS = 244.0,
-      maxPeriod = 1.0 / maxFPS;
+    const double maxFPS = 244.0, maxPeriod = 1.0 / maxFPS;
+    float deltaTime=0.f,endTime=0.f;
+    double FPSRate;
+    int fpsEpochs=0;
 
     GLFWwindow* _window;
     Mouse mouse;
@@ -27,7 +26,7 @@ class Window {
     Draw* draw;
 
     void mousePolling(dvec2 _pos);
-    // void FPS();
+    void FPS();
 
 
 
