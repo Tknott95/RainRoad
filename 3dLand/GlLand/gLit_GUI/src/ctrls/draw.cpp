@@ -1,6 +1,6 @@
 #include "../headers/draw.h"
 
-void Draw::initGUI() {
+void Draw::renderGUI() {
   font.Draw(
     "FPS: ++", // TextToRender
     fontShader,              // Shader
@@ -19,7 +19,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
   glClear(GL_COLOR_BUFFER_BIT);
 
-  this->initGUI();
+  this->renderGUI();
  /************* OBJ DRAWING START **********************/
   const int meshSize = sizeof(mesh)/sizeof(mesh[0]);
   for(int k=0;k<meshSize;k++) {
