@@ -34,11 +34,13 @@ Font::Font(const char* _fontPath, const int _fontSize) {
       texture,
       ivec2(),
       ivec2(),
-      (int)ftFace->glyph->advance.x
+      ivec2(ftFace->glyph->advance.x, ftFace->glyph->advance.y);
     };
 
     characters.insert(std::pair<char, Char>(k, thisChar));
   };
+
+  glBindTexture(GL_TEXTURE_2D, 0);
 
   glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
   FT_Done_Face(ftFace);
@@ -91,7 +93,7 @@ void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _co
     glBindTexture(GL_TEXTURE_2D, myChar.ID);
     glBindBuffer(GL_ARRAY_BUFFER, myVBO);
     glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(verts), verts);
-    glBindBuffer(GL_ARRAY_BUFFER, 1);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
     glDrawArrays(GL_TRIANGLES, 0, 6);
 
     /***********************
