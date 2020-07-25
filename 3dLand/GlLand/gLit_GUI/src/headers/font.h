@@ -28,7 +28,7 @@ class Font {
     map<char, Char> characters;
   public:
     unsigned int myVAO, myVBO;
-    Font(const char*, const int _fontSize=12);
+    Font(const char*, const int _fontSize=128);
     virtual ~Font();
     void Draw(
       string _text, Shader &_shader,
