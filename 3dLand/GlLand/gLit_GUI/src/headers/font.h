@@ -19,7 +19,7 @@ struct Char {
   uint ID;            // TextureID
   ivec2 Size;         // GlyphSize
   ivec2 Bearing;      // Offset from baseline from L to R 
-  int Advance;       // Offset to advance to next glyph
+  long int Advance;       // Offset to advance to next glyph
 };
 
 class Font {
