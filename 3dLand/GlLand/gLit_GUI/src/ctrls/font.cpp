@@ -65,5 +65,9 @@ Font::~Font() {
 };
 
 void Font::Draw(Shader &_shader, vec3 _posAndScale, vec3 _color) {
+  _shader.use();
+  glUniform3f(glGetUniformLocation(_shader.ID, "textColor"), _color.x, _color.y, _color.z);
+  glActiveTexture(GL_TEXTURE0);
+  glBindVertexArray(myVAO);
 
 };
