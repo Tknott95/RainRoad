@@ -47,7 +47,7 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
 
-  glGenVertexArrays(0, &myVAO);
+  glGenVertexArrays(1, &myVAO);
   glGenBuffers(1, &myVBO);
   glBindVertexArray(myVAO);
   glBindBuffer(GL_ARRAY_BUFFER, myVBO);
@@ -67,7 +67,7 @@ Font::~Font() {
 void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _color) {
   _shader.use();
   glUniform3f(glGetUniformLocation(_shader.ID, "textColor"), _color.x, _color.y, _color.z);
-  glActiveTexture(GL_TEXTURE0);
+  glActiveTexture(GL_TEXTURE1);
   glBindVertexArray(myVAO);
 
   string::const_iterator stringChar;
@@ -101,6 +101,6 @@ void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _co
     *********************/
     _posAndScale.x += (myChar.Advance >> 6) * _posAndScale.z;
   };
-  glBindVertexArray(0);
-  glBindTexture(GL_TEXTURE_2D, 0);
+  glBindVertexArray(1);
+  glBindTexture(GL_TEXTURE_2D, 1);
 };
