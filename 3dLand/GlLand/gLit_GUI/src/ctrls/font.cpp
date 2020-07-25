@@ -92,6 +92,15 @@ void Font::Draw(string _text,Shader &_shader, vec3 _posAndScale, vec3 _color) {
     glBindBuffer(GL_ARRAY_BUFFER, myVBO);
     glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(verts), verts);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
 
+    /***********************
+    * adv curs for nxt glyph 
+    * adv is # of 1/64 pixels
+    * bitshift by 6 to get val in pxls (2^6 = 64)
+    *********************/
+    _posAndScale += (myChar.Advance >> 6) * _posAndScale[3];
   };
+  glBindVertexArray(0);
+  glBindTexture(GL_TEXTURE_2D, 0);
 };
