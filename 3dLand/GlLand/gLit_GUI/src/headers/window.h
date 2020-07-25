@@ -15,6 +15,11 @@ class Window {
     dvec2 pos;
     float _deltaTime, _lastFrame = 0.0f;
 
+    /* FPS vars, sloppy code for MVP then refactor */
+    const double 
+      maxFPS = 244.0,
+      maxPeriod = 1.0 / maxFPS;
+
     GLFWwindow* _window;
     Mouse mouse;
     Camera* _camera;
@@ -22,6 +27,9 @@ class Window {
     Draw* draw;
 
     void mousePolling(dvec2 _pos);
+    // void FPS();
+
+
 
   public:
     bool isOpen;

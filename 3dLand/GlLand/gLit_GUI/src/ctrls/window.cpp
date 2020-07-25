@@ -16,7 +16,9 @@ void Window::mousePolling(dvec2 _pos) {
   mouse.lastY = _pos.y;
 
   this->_camera->ProcessMouseMovement(xoffset, yoffset, true);
-}
+};
+
+// void Window::FPS() { };
 
 Window::Window(const char* _appTitle) {
   if(!glfwInit()) printf("\n\e[0;31;40m glfwInit() FAILED \e[0m\n");
@@ -64,9 +66,11 @@ void Window::render() {
 
 void Window::update() {
   while(!glfwWindowShouldClose(_window)) {
-    float currentFrame = glfwGetTime();
+
+    float currentFrame = glfwGetTime(); /* FPS() */
     _deltaTime = currentFrame - _lastFrame;
-    _lastFrame = currentFrame;
+    if(_deltaTime >= maxPeriod)  _lastFrame = currentFrame;
+  
     keys.keyPolling(_window, _camera, _deltaTime);
 
     glClearColor(0.f, 0.f, 0.14f, 1.0f);
