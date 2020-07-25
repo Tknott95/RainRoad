@@ -9,17 +9,19 @@ void Draw::renderGUI(Camera* camera, ivec2 screenSize) {
   );
  
   string camPos[3] = {
-    to_string(camera->transform.Position.x),
-    to_string(camera->transform.Position.y),
-    to_string(camera->transform.Position.z)};
-  const string camString = camPos[0]+", "+camPos[1]+", "+camPos[2];
-
+    to_string(camera->transform.Position.x).substr(0,3),
+    to_string(camera->transform.Position.y).substr(0,3),
+    to_string(camera->transform.Position.z).substr(0,3)};
+  const string camString = 
+    camPos[0]+", "
+    +camPos[1]+", "
+    +camPos[2];
 
   camLoc.Draw(
     camString,
     fontShader,
     vec3(screenSize.x*0.40, screenSize.y*0.84, 0.5f),
-    vec3(0.7f, 0.55f, 0.8f)
+    vec3(0.4f, 0.55f, 0.8f)
   );
 };
 
