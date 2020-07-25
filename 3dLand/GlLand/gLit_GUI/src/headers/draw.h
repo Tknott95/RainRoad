@@ -28,6 +28,8 @@ class Draw {
       mCube00, mCube01
     };
 
+    void renderGUI();
+
   public:
     Draw();
     virtual ~Draw();
