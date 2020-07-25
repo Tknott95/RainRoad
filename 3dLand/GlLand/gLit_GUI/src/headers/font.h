@@ -30,5 +30,5 @@ class Font {
     unsigned int myVAO, myVBO;
     Font(const char*, const int _fontSize=12);
     virtual ~Font();
-    void Draw(Shader &_shader, vec3 _posAndScale, vec3 _color);
+    void Draw(string _text, Shader &_shader, vec3 _posAndScale, vec3 _color);
 };

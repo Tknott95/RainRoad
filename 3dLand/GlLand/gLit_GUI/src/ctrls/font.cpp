@@ -64,7 +64,7 @@ Font::~Font() {
   glDeleteVertexArrays(0, &myVAO);
 };
 
-void Font::Draw(string _text,Shader &_shader, vec3 _posAndScale, vec3 _color) {
+void Font::Draw(string _text ,Shader &_shader, vec3 _posAndScale, vec3 _color) {
   _shader.use();
   glUniform3f(glGetUniformLocation(_shader.ID, "textColor"), _color.x, _color.y, _color.z);
   glActiveTexture(GL_TEXTURE0);
@@ -80,12 +80,12 @@ void Font::Draw(string _text,Shader &_shader, vec3 _posAndScale, vec3 _color) {
     float height = myChar.Size.y * _posAndScale[3];
 
     float verts[6][4] = {
-      {xpos, ypos + h, 0.0f, 0.0f},            
-      {xpos, ypos,     0.0f, 1.0f },
-      {xpos + w, ypos, 1.0f, 1.0f },
-      {xpos, ypos + h,     0.0f, 0.0f },
-      {xpos + w, ypos,     1.0f, 1.0f },
-      {xpos + w, ypos + h, 1.0f, 0.0f }     
+      {xpos, ypos+height, 0.0f, 0.0f},            
+      {xpos, ypos,        0.0f, 1.0f },
+      {xpos+width, ypos,  1.0f, 1.0f },
+      {xpos, ypos+height,       0.0f, 0.0f },
+      {xpos+width, ypos,        1.0f, 1.0f },
+      {xpos+width, ypos+height, 1.0f, 0.0f }     
     };
 
     glBindTexture(GL_TEXTURE_2D, myChar.ID);
