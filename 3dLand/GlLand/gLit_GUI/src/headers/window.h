@@ -17,7 +17,7 @@ class Window {
     // const double maxFPS = 244.0, maxPeriod = 1.0/maxFPS; /* if(deltaTime >= maxPeriod)*/
     float deltaTime=0.f,endTime=0.f;
     float FPSRate;
-    int fpsEpochs=0;
+    // int fpsEpochs=0;
 
     float uptime;
 
