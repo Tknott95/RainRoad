@@ -55,7 +55,7 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
   glBindBuffer(GL_ARRAY_BUFFER, 0);
-  glBindVertexArray(0);
+  glBindVertexArray(1);
 };
 
 Font::~Font() {
@@ -91,7 +91,7 @@ void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _co
     glBindTexture(GL_TEXTURE_2D, myChar.ID);
     glBindBuffer(GL_ARRAY_BUFFER, myVBO);
     glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(verts), verts);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindBuffer(GL_ARRAY_BUFFER, 1);
     glDrawArrays(GL_TRIANGLES, 0, 6);
 
     /***********************
