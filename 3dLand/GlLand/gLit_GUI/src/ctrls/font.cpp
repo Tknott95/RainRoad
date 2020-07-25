@@ -5,6 +5,7 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   if(FT_New_Face(ftLib, _fontPath, 0, &ftFace)) printf("\n\e[0;31;40m FREETYPE LIBRARY INIT() ERROR \e[0m");
 
   FT_Set_Pixel_Sizes(ftFace, 0, _fontSize);
+  glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
   if (FT_Load_Char(ftFace, 'T', FT_LOAD_RENDER)) printf("\n\e[0;31;40m GLYPH LOADING ERROR \e[0m");
   for(unsigned char k=0;k<128;k++) {
@@ -47,8 +48,8 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   FT_Done_Face(ftFace);
   FT_Done_FreeType(ftLib);
 
-  glEnable(GL_BLEND);
-  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
+  // glEnable(GL_BLEND);
+  // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
 
   glGenVertexArrays(1, &myVAO);
   glGenBuffers(1, &myVBO);
@@ -58,7 +59,7 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
   glBindBuffer(GL_ARRAY_BUFFER, 0);
-  glBindVertexArray(0);
+  glBindVertexArray(1);
 };
 
 Font::~Font() {
@@ -68,7 +69,11 @@ Font::~Font() {
 };
 
 void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _color) {
+      glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(1280.f), 0.0f, static_cast<float>(800.f));
   _shader.use();
+  glUniformMatrix4fv(glGetUniformLocation(_shader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+
+
   glUniform3f(glGetUniformLocation(_shader.ID, "textColor"), _color.x, _color.y, _color.z);
   glActiveTexture(GL_TEXTURE0);
   glBindVertexArray(myVAO);
