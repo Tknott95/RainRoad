@@ -77,7 +77,6 @@ void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _co
   glEnable(GL_TEXTURE_2D);
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
-  // glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_ONE, GL_ZERO);
 
   mat4 projection = ortho(0.0f, static_cast<float>(1280.f), 0.0f, static_cast<float>(800.f));
   _shader.use();
