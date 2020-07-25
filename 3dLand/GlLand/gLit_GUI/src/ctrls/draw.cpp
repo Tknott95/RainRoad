@@ -9,9 +9,9 @@ void Draw::renderGUI(Camera* camera, ivec2 screenSize) {
   );
  
   string camPos[3] = {
-    to_string(camera->transform.Position.x).substr(0,3),
-    to_string(camera->transform.Position.y).substr(0,3),
-    to_string(camera->transform.Position.z).substr(0,3)
+    to_string(camera->transform.Position.x).substr(0,4),
+    to_string(camera->transform.Position.y).substr(0,4),
+    to_string(camera->transform.Position.z).substr(0,4)
   };
   const string camString = camPos[0]+", " +camPos[1]+", " +camPos[2];
 
