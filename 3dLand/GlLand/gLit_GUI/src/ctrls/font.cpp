@@ -64,7 +64,7 @@ Font::~Font() {
   glDeleteVertexArrays(0, &myVAO);
 };
 
-void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, vec3 _color) {
+void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _color) {
   _shader.use();
   glUniform3f(glGetUniformLocation(_shader.ID, "textColor"), _color.x, _color.y, _color.z);
   glActiveTexture(GL_TEXTURE0);
@@ -99,7 +99,7 @@ void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, vec3 _color) {
     * adv is # of 1/64 pixels
     * bitshift by 6 to get val in pxls (2^6 = 64)
     *********************/
-    _posAndScale += (myChar.Advance >> 6) * _posAndScale[3];
+    // _posAndScale.x += (myChar.Advance >> 6) * _posAndScale[3];
   };
   glBindVertexArray(0);
   glBindTexture(GL_TEXTURE_2D, 0);
