@@ -48,7 +48,7 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   FT_Done_Face(ftFace);
   FT_Done_FreeType(ftLib);
 
-  // glEnable(GL_BLEND);
+  glEnable(GL_BLEND);
   // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
 
   glGenVertexArrays(1, &myVAO);
