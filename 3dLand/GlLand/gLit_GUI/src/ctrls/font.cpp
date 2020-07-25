@@ -71,7 +71,7 @@ void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _co
   glBindVertexArray(myVAO);
 
   string::const_iterator stringChar;
-  for(stringChar=_text.begin(); stringChar!=_text.end(); stringChar++) {
+  for(stringChar = _text.begin(); stringChar != _text.end(); stringChar++) {
     Char myChar = characters[*stringChar];
 
     float xPos = _posAndScale.x + myChar.Bearing.x * _posAndScale[3];
@@ -99,7 +99,7 @@ void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _co
     * adv is # of 1/64 pixels
     * bitshift by 6 to get val in pxls (2^6 = 64)
     *********************/
-    _posAndScale.x += (myChar.Advance >> 6) * _posAndScale.z;
+    _posAndScale.x += (myChar.Advance >> 6) * _posAndScale[3];
   };
   // glBindVertexArray(0);
   // glBindTexture(GL_TEXTURE_2D, 0);
