@@ -34,12 +34,13 @@ Font::Font(const char* _fontPath, const int _fontSize) {
       texture,
       ivec2(ftFace->glyph->bitmap.width, ftFace->glyph->bitmap.rows),
       ivec2(ftFace->glyph->bitmap_left, ftFace->glyph->bitmap_top),
-      ivec2(ftFace->glyph->advance.x, ftFace->glyph->advance.y)
-    };
+      (int)ftFace->glyph->advance.x
+    }; // ivec2(ftFace->glyph->advance.x, ftFace->glyph->advance.y)
+
 
     characters.insert(std::pair<char, Char>(k, thisChar));
   };
-
+  //
   glBindTexture(GL_TEXTURE_2D, 0);
 
   glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
