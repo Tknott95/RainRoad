@@ -23,37 +23,18 @@ void Window::FPS() {
   deltaTime = startTime-endTime; /* deltaTime gives me loopTime for keysFiring */
 
   fpsEpochs++;
-  if(uptime >= 1000.f) { 
-    FPSRate = fpsEpochs;
-    fpsEpochs = 0;
+  if(deltaTime >= 1.f) { 
+    this->FPSRate = fpsEpochs*1000/deltaTime;
+
+    cout << "\n    \e[0;36;40mFPS:\e[0;39;40m " << FPSRate << "\e[0m" << endl;
   };
   // if(deltaTime >= 1000) FPSRate = fpsEpochs*1000.0/deltaTime;
   /* if(deltaTime >= maxPeriod)*/
   endTime = startTime;
-  
-
-  printf("\n    \e[0;36;40mFPS:\e[0;39;40m %.1f\e[0m", FPSRate);
 };
 
-// void Window::FPS() {
-//   const float startTime = glfwGetTime();
-
-//   deltaTime = startTime-endTime; /* timePassingEachFrame */
-//   fpsEpochs++;
-//   // if(deltaTime >= maxPeriod) 
-
-//   if(startTime >= 1000) {
-//     FPSRate = fpsEpochs;
-//     /* if(deltaTime >= maxPeriod)*/
-//     endTime = startTime;
-//     fpsEpochs = 0;
-//   };
-//   // deltaTime = startTime-endTime;
-// };
 
 Window::Window(const char* _appTitle) {
-  uptime = glfwGetTime();
-
   if(!glfwInit()) printf("\n\e[0;31;40m glfwInit() FAILED \e[0m\n");
   if(!glewInit()) printf("\n\e[0;31;40m GlewInit FAILED \e[0m\n");
 
@@ -98,6 +79,8 @@ void Window::render() {
 };
 
 void Window::update() {
+  uptime = glfwGetTime();
+
   while(!glfwWindowShouldClose(_window)) {
     this->FPS();    
 
