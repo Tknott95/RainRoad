@@ -7,9 +7,8 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
  /************* OBJ DRAWING START **********************/
 
   fontShader.compile("assets/shaders/font/font.vs","assets/shaders/font/font.fs");
-  std::string f1 = "das one lit gui homie";
   font.Draw(
-    f1,
+    "das one lit gui homie",
     fontShader,
     vec3(25.f, 25.f, 1.f),
     vec3(0.2, 0.2f, 0.6f)

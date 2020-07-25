@@ -1,7 +1,7 @@
 #version 440 core
 
 layout (location = 0) in vec4 inVertex;
-out vec2 OutTexCoords;
+out vec2 oTexCoords;
 
 uniform mat4 projection;
 
