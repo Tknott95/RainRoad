@@ -6,9 +6,12 @@
 
 #include <GL/glew.h>
 #include <glm/glm.hpp>
+
+#include <string>
 #include <map>
 
 using namespace glm;
+using namespace std;
 
 struct Char {
   uint ID;            // TextureID
@@ -22,7 +25,7 @@ class Font {
     FT_Library  ftLib;
     FT_Face     ftFace;
   
-    std::map<char, Char> characters;
+    map<char, Char> characters;
   public:
     unsigned int myVAO, myVBO;
     Font(const char*, const int _fontSize=12);
