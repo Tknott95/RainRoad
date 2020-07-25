@@ -18,7 +18,7 @@ Font::Font(const char* _fontPath, const int _fontSize) {
     glBindTexture(GL_TEXTURE_2D, texture);
 
     /* alpha hack */
-    GLint swizzleMask[] = {GL_ZERO, GL_RED, GL_RED, GL_RED};
+    GLint swizzleMask[] = {GL_RED, GL_RED, GL_RED, GL_RED};
     glTexParameteriv(GL_TEXTURE_2D, GL_TEXTURE_SWIZZLE_RGBA, swizzleMask);
   
     glTexImage2D(
