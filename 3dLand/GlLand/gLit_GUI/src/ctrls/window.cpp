@@ -26,13 +26,12 @@ void Window::FPS() {
   if(deltaTime >= 1.f) { /* fix this to reset a clock every time it psses to check for 1ms */
     this->FPSRate = fpsEpochs*1000/deltaTime;
 
-    cout << "\n    \e[0;36;40mstartingFPS:\e[0;39;40m " << FPSRate << "\e[0m" << endl;
+    cout << "\n    \e[0;36;40mstartingFPS:\e[0;39;40m " << deltaTime << "\e[0m" << endl;
   };
-  // if(deltaTime >= 1000) FPSRate = fpsEpochs*1000.0/deltaTime;
   /* if(deltaTime >= maxPeriod)*/
-  endTime = startTime;
-};
+  endTime = startTime;    cout << "\n    \e[0;36;40mstartingFPS:\e[0;39;40m " << deltaTime << "\e[0m" << endl;
 
+};
 
 Window::Window(const char* _appTitle) {
   if(!glfwInit()) printf("\n\e[0;31;40m glfwInit() FAILED \e[0m\n");
