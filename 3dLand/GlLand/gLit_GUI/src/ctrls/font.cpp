@@ -74,8 +74,8 @@ void Font::Draw(string _text ,Shader &_shader, vec3 _posAndScale, vec3 _color) {
   for(stringChar=_text.begin(); stringChar!=_text.end(); stringChar++) {
     Char myChar = characters[*stringChar];
 
-    float xPos = x + myChar.Bearing.x * _posAndScale[3];
-    float yPos = y - (myChar.Size.y - myChar.Bearing,y) * _posAndScale[3];
+    float xPos = _posAndScale.x + myChar.Bearing.x * _posAndScale[3];
+    float yPos = _posAndScale.y - (myChar.Size.y - myChar.Bearing,y) * _posAndScale[3];
     float width = myChar.Size.x * _posAndScale[3];
     float height = myChar.Size.y * _posAndScale[3];
 
