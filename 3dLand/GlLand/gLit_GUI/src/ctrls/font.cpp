@@ -32,8 +32,8 @@ Font::Font(const char* _fontPath, const int _fontSize) {
     
     Char thisChar = {
       texture,
-      glm::ivec2(),
-      glm::ivec2(),
+      ivec2(),
+      ivec2(),
       (int)ftFace->glyph->advance.x
     };
 
@@ -55,7 +55,7 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
   glBindBuffer(GL_ARRAY_BUFFER, 0);
-  glBindVertexArray(1);
+  glBindVertexArray(0);
 };
 
 Font::~Font() {
@@ -67,7 +67,7 @@ Font::~Font() {
 void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _color) {
   _shader.use();
   glUniform3f(glGetUniformLocation(_shader.ID, "textColor"), _color.x, _color.y, _color.z);
-  glActiveTexture(GL_TEXTURE1);
+  glActiveTexture(GL_TEXTURE0);
   glBindVertexArray(myVAO);
 
   string::const_iterator stringChar;
@@ -101,6 +101,6 @@ void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _co
     *********************/
     _posAndScale.x += (myChar.Advance >> 6) * _posAndScale.z;
   };
-  glBindVertexArray(1);
-  glBindTexture(GL_TEXTURE_2D, 1);
+  glBindVertexArray(0);
+  glBindTexture(GL_TEXTURE_2D, 0);
 };
