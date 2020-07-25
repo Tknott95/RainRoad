@@ -48,9 +48,10 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   FT_Done_Face(ftFace);
   FT_Done_FreeType(ftLib);
 
-  glEnable(GL_CULL_FACE);
+  glEnable(GL_TEXTURE_2D);
+  // glEnable(GL_CULL_FACE);
   glEnable(GL_BLEND);
-  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);  
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
 
   glGenVertexArrays(1, &myVAO);
   glGenBuffers(1, &myVBO);
@@ -61,6 +62,9 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
   glBindBuffer(GL_ARRAY_BUFFER, 0); /* 0, 1 check later */
   glBindVertexArray(1);
+
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 };
 
 Font::~Font() {
