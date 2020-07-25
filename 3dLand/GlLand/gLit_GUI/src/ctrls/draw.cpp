@@ -13,7 +13,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
     "FPS: ++", // TextToRender
     fontShader,              // Shader
     vec3(5.f, 5.f, 1.f),   // (Pos(x,y), and Scale)
-    vec3(0.f, 0.f, 0.f)    // Color
+    vec3(0.05f, 0.35f, 0.55f)    // Color  (0->255 == 0.f->1.f)
   );
  /************* OBJ DRAWING START **********************/
   const int meshSize = sizeof(mesh)/sizeof(mesh[0]);
