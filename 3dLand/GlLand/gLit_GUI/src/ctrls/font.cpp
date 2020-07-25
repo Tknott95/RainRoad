@@ -49,7 +49,7 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   FT_Done_FreeType(ftLib);
 
   glEnable(GL_TEXTURE_2D);
-  // glEnable(GL_CULL_FACE);
+  glEnable(GL_CULL_FACE);
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
 
@@ -62,9 +62,6 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
   glBindBuffer(GL_ARRAY_BUFFER, 0); /* 0, 1 check later */
   glBindVertexArray(1);
-
-  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 };
 
 Font::~Font() {
@@ -74,6 +71,8 @@ Font::~Font() {
 };
 
 void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _color) {
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
   mat4 projection = ortho(0.0f, static_cast<float>(1280.f), 0.0f, static_cast<float>(800.f));
   _shader.use();
   glUniformMatrix4fv(glGetUniformLocation(_shader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
