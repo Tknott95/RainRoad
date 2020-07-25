@@ -48,7 +48,7 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   FT_Done_Face(ftFace);
   FT_Done_FreeType(ftLib);
 
-  // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  glEnable(GL_CULL_FACE);
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);  
 
@@ -70,7 +70,7 @@ Font::~Font() {
 };
 
 void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _color) {
-      glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(1280.f), 0.0f, static_cast<float>(800.f));
+  mat4 projection = ortho(0.0f, static_cast<float>(1280.f), 0.0f, static_cast<float>(800.f));
   _shader.use();
   glUniformMatrix4fv(glGetUniformLocation(_shader.ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
