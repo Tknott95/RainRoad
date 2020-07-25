@@ -23,7 +23,7 @@ void Window::FPS() {
   deltaTime = startTime-endTime; /* deltaTime gives me loopTime for keysFiring */
 
   fpsEpochs++;
-  if(deltaTime >= 1.f) { 
+  if(deltaTime >= 1.f) { /* fix this to reset a clock every time it psses to check for 1ms */
     this->FPSRate = fpsEpochs*1000/deltaTime;
 
     cout << "\n    \e[0;36;40mFPS:\e[0;39;40m " << FPSRate << "\e[0m" << endl;
