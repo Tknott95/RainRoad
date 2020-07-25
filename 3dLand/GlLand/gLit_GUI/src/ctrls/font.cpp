@@ -74,10 +74,10 @@ void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _co
   for(stringChar = _text.begin(); stringChar != _text.end(); stringChar++) {
     Char myChar = characters[*stringChar];
 
-    float xPos = _posAndScale.x + myChar.Bearing.x * _posAndScale[3];
-    float yPos = _posAndScale.y - (myChar.Size.y - myChar.Bearing.y) * _posAndScale[3];
-    float width = myChar.Size.x * _posAndScale[3];
-    float height = myChar.Size.y * _posAndScale[3];
+    float xPos = _posAndScale.x + myChar.Bearing.x * _posAndScale.z;
+    float yPos = _posAndScale.y - (myChar.Size.y - myChar.Bearing.y) * _posAndScale.z;
+    float width = myChar.Size.x * _posAndScale.z;
+    float height = myChar.Size.y * _posAndScale.z;
 
     float verts[6][4] = {
       {xPos, yPos+height, 0.0f, 0.0f},            
@@ -99,8 +99,8 @@ void Font::Draw(string _text, Shader &_shader, vec3 _posAndScale, const vec3 _co
     * adv is # of 1/64 pixels
     * bitshift by 6 to get val in pxls (2^6 = 64)
     *********************/
-    _posAndScale.x += (myChar.Advance >> 6) * _posAndScale[3];
+    _posAndScale.x += (myChar.Advance >> 6) * _posAndScale.z;
   };
-  // glBindVertexArray(0);
-  // glBindTexture(GL_TEXTURE_2D, 0);
+  glBindVertexArray(0);
+  glBindTexture(GL_TEXTURE_2D, 0);
 };
