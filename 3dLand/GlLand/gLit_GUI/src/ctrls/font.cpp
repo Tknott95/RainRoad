@@ -88,5 +88,10 @@ void Font::Draw(string _text,Shader &_shader, vec3 _posAndScale, vec3 _color) {
       {xpos + w, ypos + h, 1.0f, 0.0f }     
     };
 
+    glBindTexture(GL_TEXTURE_2D, myChar.ID);
+    glBindBuffer(GL_ARRAY_BUFFER, myVBO);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(verts), verts);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+
   };
 };
