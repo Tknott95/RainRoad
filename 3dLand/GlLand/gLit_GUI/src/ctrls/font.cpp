@@ -35,8 +35,8 @@ Font::Font(const char* _fontPath, const int _fontSize) {
       texture,
       ivec2(ftFace->glyph->bitmap.width, ftFace->glyph->bitmap.rows),
       ivec2(ftFace->glyph->bitmap_left, ftFace->glyph->bitmap_top),
-      (int)ftFace->glyph->advance.x
-    }; // ivec2(ftFace->glyph->advance.x, ftFace->glyph->advance.y)
+      ftFace->glyph->advance.x
+    };
 
 
     characters.insert(std::pair<char, Char>(k, thisChar));
@@ -49,7 +49,6 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   FT_Done_FreeType(ftLib);
 
   glEnable(GL_TEXTURE_2D);
-  glEnable(GL_CULL_FACE);
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
 
