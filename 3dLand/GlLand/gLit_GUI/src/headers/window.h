@@ -14,7 +14,7 @@ class Window {
     ivec2 screenSize = ivec2(1280, 800);
     dvec2 pos;
 
-    const double maxFPS = 244.0, maxPeriod = 1.0 / maxFPS;
+    const double maxFPS = 244.0, maxPeriod = 1.0/maxFPS;
     float deltaTime=0.f,endTime=0.f;
     double FPSRate;
     int fpsEpochs=0;

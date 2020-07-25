@@ -20,14 +20,15 @@ void Window::mousePolling(dvec2 _pos) {
 
 void Window::FPS() {
   const float startTime = glfwGetTime();
-  fpsEpochs++;
 
   deltaTime = startTime-endTime; /* timePassingEachFrame */
+  fpsEpochs++;
+  // if(deltaTime >= maxPeriod) 
 
   if(startTime >= 1000) {
-    FPSRate = fpsEpochs/1000.0;
+    FPSRate = fpsEpochs;
     /* if(deltaTime >= maxPeriod)*/
-    endTime = startTime;
+    // endTime = startTime;
     fpsEpochs = 0;
   };
   // deltaTime = startTime-endTime;
