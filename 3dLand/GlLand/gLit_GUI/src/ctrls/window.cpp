@@ -19,14 +19,18 @@ void Window::mousePolling(dvec2 _pos) {
 };
 
 void Window::FPS() {
-  float startTime = glfwGetTime();
-  fpsEpochs++;
-  deltaTime = startTime-endTime;
+  const float startTime = glfwGetTime();
+  deltaTime = startTime-endTime; /* deltaTime gives me loopTime for keysFiring */
 
-  if(deltaTime >= 1000) FPSRate = fpsEpochs*1000.0/deltaTime;
+  fpsEpochs++;
+  if(uptime >= 1000.f) { 
+    FPSRate = fpsEpochs;
+    fpsEpochs = 0;
+  };
+  // if(deltaTime >= 1000) FPSRate = fpsEpochs*1000.0/deltaTime;
   /* if(deltaTime >= maxPeriod)*/
   endTime = startTime;
-  fpsEpochs = 0;
+  
 
   printf("\n    \e[0;36;40mFPS:\e[0;39;40m %.1f\e[0m", FPSRate);
 };
@@ -48,6 +52,8 @@ void Window::FPS() {
 // };
 
 Window::Window(const char* _appTitle) {
+  uptime = glfwGetTime();
+
   if(!glfwInit()) printf("\n\e[0;31;40m glfwInit() FAILED \e[0m\n");
   if(!glewInit()) printf("\n\e[0;31;40m GlewInit FAILED \e[0m\n");
 

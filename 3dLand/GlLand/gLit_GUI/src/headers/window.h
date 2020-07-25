@@ -19,6 +19,8 @@ class Window {
     double FPSRate;
     int fpsEpochs=0;
 
+    float uptime;
+
     GLFWwindow* _window;
     Mouse mouse;
     Camera* _camera;
