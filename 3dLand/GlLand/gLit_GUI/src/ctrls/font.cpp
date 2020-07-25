@@ -59,7 +59,9 @@ Font::Font(const char* _fontPath, const int _fontSize) {
 };
 
 Font::~Font() {
+  glDeleteBuffers(1, &myVBO);
 
+  glDeleteVertexArrays(0, &myVAO);
 };
 
 void Font::Draw(Shader &_shader, vec3 _posAndScale, vec3 _color) {
