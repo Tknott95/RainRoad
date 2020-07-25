@@ -1,6 +1,6 @@
 #include "../headers/draw.h"
 
-void Draw::renderGUI() {
+void Draw::renderGUI(Camera* camera, ivec2 screenSize) {
   font.Draw(
     "FPS: ++", // TextToRender
     fontShader,              // Shader
@@ -8,6 +8,16 @@ void Draw::renderGUI() {
     vec3(0.05f, 0.35f, 0.55f)    // Color  (0->255 == 0.f->1.f)
   );
 
+  const string camString = "loc(" 
+    + to_string(camera->transform.Position.x) + ", "
+    + to_string(camera->transform.Position.y) + ", "
+    + to_string(camera->transform.Position.z) + ")";
+  camLoc.Draw(
+    camString,
+    fontShader,
+    vec3(screenSize.x-50.f, screenSize.y-50.f, 1.f),
+    vec3(0.7f, 0.45f, 0.5f)
+  );
 };
 
 Draw::Draw()  {
@@ -19,7 +29,7 @@ void Draw::update(Camera* camera, ivec2 screenSize) {
   glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
   glClear(GL_COLOR_BUFFER_BIT);
 
-  this->renderGUI();
+  this->renderGUI(camera, screenSize);
  /************* OBJ DRAWING START **********************/
   const int meshSize = sizeof(mesh)/sizeof(mesh[0]);
   for(int k=0;k<meshSize;k++) {

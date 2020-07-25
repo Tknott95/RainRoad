@@ -6,11 +6,13 @@
 #include "camera.h"
 #include <string>
 
-using namespace glm;
+// using namespace glm;
+// using namespace std;
 
 class Draw {
   private:
     Font font{"assets/fonts/KurriIslandBlack.ttf"};
+    Font camLoc;
     Shader fontShader;
 
     Mesh plane{false,
@@ -28,7 +30,7 @@ class Draw {
       mCube00, mCube01
     };
 
-    void renderGUI();
+    void renderGUI(Camera* camera, ivec2 screenSize);
 
   public:
     Draw();
