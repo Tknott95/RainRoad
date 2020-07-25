@@ -5,9 +5,7 @@
 #include "mesh.h"
 #include "camera.h"
 #include <string>
-
-// using namespace glm;
-// using namespace std;
+#include <iostream>
 
 class Draw {
   private:

@@ -2,21 +2,24 @@
 
 void Draw::renderGUI(Camera* camera, ivec2 screenSize) {
   font.Draw(
-    "FPS: ++", // TextToRender
-    fontShader,              // Shader
-    vec3(5.f, 5.f, 1.f),   // (Pos(x,y), and Scale)
-    vec3(0.05f, 0.35f, 0.55f)    // Color  (0->255 == 0.f->1.f)
+    "FPS: ++",                   // TextToRender
+    fontShader,                  // Shader
+    vec3(5.f, 5.f, 1.f),         // (Pos(x,y), and Scale)
+    vec3(0.05f, 0.35f, 0.55f)    // Color  0.f->1.f
   );
+ 
+  string camPos[3] = {
+    to_string(camera->transform.Position.x),
+    to_string(camera->transform.Position.y),
+    to_string(camera->transform.Position.z)};
+  const string camString = camPos[0]+", "+camPos[1]+", "+camPos[2];
 
-  const string camString = "loc(" 
-    + to_string(camera->transform.Position.x) + ", "
-    + to_string(camera->transform.Position.y) + ", "
-    + to_string(camera->transform.Position.z) + ")";
+
   camLoc.Draw(
     camString,
     fontShader,
-    vec3(screenSize.x-50.f, screenSize.y-50.f, 1.f),
-    vec3(0.7f, 0.45f, 0.5f)
+    vec3(screenSize.x*0.40, screenSize.y*0.84, 0.5f),
+    vec3(0.7f, 0.55f, 0.8f)
   );
 };
 
