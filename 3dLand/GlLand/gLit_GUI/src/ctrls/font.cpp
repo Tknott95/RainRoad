@@ -32,8 +32,8 @@ Font::Font(const char* _fontPath, const int _fontSize) {
     
     Char thisChar = {
       texture,
-      ivec2(),
-      ivec2(),
+      ivec2(ftFace->glyph->bitmap.width, ftFace->glyph->bitmap.rows),
+      ivec2(ftFace->bitmap_left, ftFace->glyph->bitmap_top),
       ivec2(ftFace->glyph->advance.x, ftFace->glyph->advance.y)
     };
 
