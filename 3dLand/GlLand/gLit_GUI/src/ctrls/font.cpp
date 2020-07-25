@@ -56,13 +56,12 @@ Font::Font(const char* _fontPath, const int _fontSize) {
   glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
-  glBindBuffer(GL_ARRAY_BUFFER, 0); /* 0 OR 1 */
-  glBindVertexArray(1);
+
+  glBindVertexArray(myVAO);
 };
 
 Font::~Font() {
   glDeleteBuffers(1, &myVBO);
-
   glDeleteVertexArrays(0, &myVAO);
 };
 
