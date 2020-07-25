@@ -34,7 +34,7 @@ Font::Font(const char* _fontPath, const int _fontSize) {
       texture,
       ivec2(),
       ivec2(),
-      ivec2(ftFace->glyph->advance.x, ftFace->glyph->advance.y);
+      ivec2(ftFace->glyph->advance.x, ftFace->glyph->advance.y)
     };
 
     characters.insert(std::pair<char, Char>(k, thisChar));
