@@ -6,7 +6,6 @@ Draw::Draw()  {
 Draw::~Draw() {};
 
 void Draw::update(Camera* camera, ivec2 screenSize) {
-
   font.Draw(
     "das one lit gui homie", // TextToRender
     fontShader,              // Shader
