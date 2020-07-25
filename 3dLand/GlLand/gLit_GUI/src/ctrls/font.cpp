@@ -80,12 +80,12 @@ void Font::Draw(string _text ,Shader &_shader, vec3 _posAndScale, vec3 _color) {
     float height = myChar.Size.y * _posAndScale[3];
 
     float verts[6][4] = {
-      {xpos, ypos+height, 0.0f, 0.0f},            
-      {xpos, ypos,        0.0f, 1.0f },
-      {xpos+width, ypos,  1.0f, 1.0f },
-      {xpos, ypos+height,       0.0f, 0.0f },
-      {xpos+width, ypos,        1.0f, 1.0f },
-      {xpos+width, ypos+height, 1.0f, 0.0f }     
+      {xPos, yPos+height, 0.0f, 0.0f},            
+      {xPos, yPos,        0.0f, 1.0f },
+      {xPos+width, yPos,  1.0f, 1.0f },
+      {xPos, yPos+height,       0.0f, 0.0f },
+      {xPos+width, yPos,        1.0f, 1.0f },
+      {xPos+width, yPos+height, 1.0f, 0.0f }     
     };
 
     glBindTexture(GL_TEXTURE_2D, myChar.ID);
