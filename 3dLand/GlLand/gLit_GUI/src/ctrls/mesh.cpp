@@ -1,5 +1,6 @@
 #include "../headers/mesh.h"
 
+/* @TODO Pass down GlEnum for TextureClamping w/ a default of GL_CLAMP_TO_EDGE */
 Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath, const char* _texturePath) : isSkybox(_isSkybox), pos(_pos) {
   if(!isSkybox) {
     shader.compile("assets/shaders/obj/obj.vs", "assets/shaders/obj/obj.fs");
@@ -49,7 +50,7 @@ Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath, const char* _texture
   glBindVertexArray(0); /* may not need */
   
   if(!isSkybox) {
-    this->textureID = texture.load(_texturePath, GL_REPEAT);
+    this->textureID = texture.load(_texturePath, GL_MIRRORED_REPEAT);
 
     shader.use();
     shader.setInt("myTexture", 0);
