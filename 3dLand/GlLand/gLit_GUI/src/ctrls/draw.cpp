@@ -25,7 +25,7 @@ void Draw::renderGUI(Camera* camera, ivec2 screenSize, int fps) {
 };
 
 
-Draw::Draw() {fontShader.compile("assets/shaders/font/font.vs","assets/shaders/font/font.fs"); };
+Draw::Draw() { fontShader.compile("assets/shaders/font/font.vs","assets/shaders/font/font.fs"); };
 Draw::~Draw() {};
 
 void Draw::update(Camera* camera, ivec2 screenSize, int fps) {

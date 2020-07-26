@@ -24,7 +24,7 @@ void Window::FPS() {
   fpsEpochs++;
 
   deltaTime = nowTime-startTime;
-
+  /* div by maxFPS to cap the FPS */
   if(deltaTime >= 1.f) {
     FPSRate = fpsEpochs;
     fpsEpochs = 0;
@@ -65,7 +65,6 @@ Window::Window(const char* _appTitle) {
   * You cannot both disable vsync and avoid tearing.
   * Synchronising to the display’s refresh rate is what allows tear-free output. 
   *  - THIS DISABLES V-SYNC -  **/ 
-  glfwSwapInterval(0);
 
   glfwSetInputMode(_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
