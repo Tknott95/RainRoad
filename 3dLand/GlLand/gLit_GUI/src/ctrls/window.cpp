@@ -90,7 +90,12 @@ void Window::render() {
 
 void Window::update() {
   while(!glfwWindowShouldClose(_window)) {
-    this->FPS();    
+
+
+    glfwSwapBuffers(this->_window);
+    glfwPollEvents();
+
+        this->FPS();    
  
     keys.keyPolling(_window, _camera, deltaTime); /* inverting delta time here */
 
@@ -112,9 +117,6 @@ void Window::update() {
       std::cout << "\e[0;33;40m  pos.x(" << pos.x << ") pos.y(" << pos.y << ") \e[0m" << std::endl;
     */
     mousePolling(pos);
-
-    glfwSwapBuffers(this->_window);
-    glfwPollEvents();
   }
 
   isOpen = false;
