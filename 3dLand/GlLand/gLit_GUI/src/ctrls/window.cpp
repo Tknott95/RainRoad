@@ -90,33 +90,25 @@ void Window::render() {
 
 void Window::update() {
   while(!glfwWindowShouldClose(_window)) {
-
-
-    glfwSwapBuffers(this->_window);
-    glfwPollEvents();
-
-        this->FPS();    
- 
-    keys.keyPolling(_window, _camera, deltaTime); /* inverting delta time here */
+    this->FPS();    
+    keys.keyPolling(_window, _camera, deltaTime);
 
     glClearColor(0.f, 0.f, 0.14f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     this->draw->update(_camera, screenSize, FPSRate);
 
-    if(this->_camera->transform.Position.y <= -0.7) {
-      this->_camera->transform.Position.y += 0.2f;
-    }
-
-    if(this->_camera->transform.Position.y >= 2) {
-      this->_camera->transform.Position.y -= 0.3f;
-    }
+    if(this->_camera->transform.Position.y <= -0.7)  this->_camera->transform.Position.y += 0.2f;
+    if(this->_camera->transform.Position.y >= 2)  this->_camera->transform.Position.y -= 0.3f;
   
     glfwGetCursorPos(_window, &pos.x, &pos.y);
     /* for debugging pos @TODO make a printf();
       std::cout << "\e[0;33;40m  pos.x(" << pos.x << ") pos.y(" << pos.y << ") \e[0m" << std::endl;
     */
     mousePolling(pos);
+
+    glfwSwapBuffers(this->_window);
+    glfwPollEvents();
   }
 
   isOpen = false;
