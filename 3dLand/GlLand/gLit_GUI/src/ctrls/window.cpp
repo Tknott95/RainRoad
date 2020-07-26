@@ -19,6 +19,7 @@ void Window::mousePolling(dvec2 _pos) {
 };
 
 void Window::FPS() {
+  /* FPS capped at 60 due to double buffering and v-sync w/ glfw */
   double nowTime = glfwGetTime();
   fpsEpochs++;
 
@@ -27,7 +28,6 @@ void Window::FPS() {
   if(deltaTime >= 1.f) {
     FPSRate = fpsEpochs;
     fpsEpochs = 0;
-    // startTime += 1.0;
     /* = nowTime; || Line Causing "lag" every call - time getting huge and arith to costly */
     // ms/frame = 1000.0/FPSRate;
     startTime = glfwGetTime();
