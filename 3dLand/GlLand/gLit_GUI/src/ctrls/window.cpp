@@ -24,11 +24,14 @@ void Window::FPS() {
   fpsEpochs++;
 
   deltaTime = nowTime-startTime;
-  
+
   if(deltaTime >= 1.f) {
     FPSRate = fpsEpochs;
     fpsEpochs = 0;
-    /* = nowTime; || Line Causing "lag" every call - time getting huge and arith to costly */
+    /* time not resetting and getting huge and arith to costly,
+    * set timer back to 0 before the subtraction reaction for no costly faction
+    * inside realities pac-10 controlled masonic lobbied congolomerate. 
+    */
     // ms/frame = 1000.0/FPSRate;
     startTime = glfwGetTime();
     printf("\n    \e[3;36;40mdeltaTime:\e[0;39;40m %f\e[0m", deltaTime);
