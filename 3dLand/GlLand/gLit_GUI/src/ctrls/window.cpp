@@ -101,10 +101,7 @@ void Window::update() {
     if(this->_camera->transform.Position.y <= -0.7)  this->_camera->transform.Position.y = 0; // += 0.2f;
     if(this->_camera->transform.Position.y >= 2)  this->_camera->transform.Position.y -= 0.55f;
   
-    glfwGetCursorPos(_window, &pos.x, &pos.y);
-    /* for debugging pos @TODO make a printf();
-      std::cout << "\e[0;33;40m  pos.x(" << pos.x << ") pos.y(" << pos.y << ") \e[0m" << std::endl;
-    */
+    glfwGetCursorPos(_window, &pos.x, &pos.y); /* printf("\e[0;33;40m  pos.x(%f) pos.y(%f)\e[0m", pos.x, pos.y) */
     mousePolling(pos);
 
     glfwSwapBuffers(this->_window);
