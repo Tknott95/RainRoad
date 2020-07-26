@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 
-using namespace std;
 
 #include "structs/encodedObj.h"
 #include "utils/skybox_data.h"
@@ -14,6 +13,7 @@ using namespace std;
 #include "objLoader.h"
 #include "camera.h"
 
+using namespace std;
 using namespace glm;
 
 struct ShaderParams { 
@@ -33,14 +33,20 @@ class Mesh {
     EncodedObj encodedObj;
     ObjectLoader objLoader;
     Texture texture;
+    const char* _objPath = "assets/objects/plane.obj";
+    const char*  texturePath;
 
   public:
     uint VAO;
     Shader shader;
 
-    Mesh(bool _isSkybox=false, vec3 pos=vec3{0.0f}, const char* _objPath = "assets/objects/plane.obj");
+    Mesh(bool _isSkybox=false,
+      vec3 pos=vec3{0.0f},
+      const char* _objPath = "assets/objects/plane.obj",
+      const char* _texturePath = "assets/textures/box_weave.png"
+    );
+
     virtual ~Mesh();
-    void init();
     void draw(Camera* camera, ivec2 screenSize);
 };
 

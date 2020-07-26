@@ -9,6 +9,6 @@
 
 class Texture {
   public:
-    uint load(const char* path, GLenum _textureClamping=GL_CLAMP_TO_EDGE);
+    uint load(const char* path, GLenum _textureClamping=GL_CLAMP_TO_BORDER);
     uint loadSkybox(std::vector<std::string>);
 };

@@ -1,27 +1,15 @@
 #include "../headers/mesh.h"
 
-Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath) : isSkybox(_isSkybox), pos(_pos) {
-    if(!isSkybox) {
-      shader.compile("assets/shaders/obj/obj.vs", "assets/shaders/obj/obj.fs");
-      encodedObj = objLoader.load(_objPath);
-    } else shader.compile("assets/shaders/skybox/skybox.vs", "assets/shaders/skybox/skybox.fs");
+Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath, const char* _texturePath) : isSkybox(_isSkybox), pos(_pos) {
+  if(!isSkybox) {
+    shader.compile("assets/shaders/obj/obj.vs", "assets/shaders/obj/obj.fs");
+    encodedObj = objLoader.load(_objPath);
+  } else shader.compile("assets/shaders/skybox/skybox.vs", "assets/shaders/skybox/skybox.fs");
 
-    printf("\n    \e[0;46;40mCompiling mesh:  \e[0;92;40m%s\e[0;46;40m\n     - at \e[0;92;40mpos(%.2f, %.2f, %.2f) \e[0m", _objPath, pos.x, pos.y, pos.z);
+  printf("\n    \e[0;46;40mCompiling mesh:  \e[0;92;40m%s\e[0;46;40m\n     - at \e[0;92;40mpos(%.2f, %.2f, %.2f) \e[0m", _objPath, pos.x, pos.y, pos.z);
 
-    this->init();
-};
-
-Mesh::~Mesh() {
-  glDeleteBuffers(1, &VBO);
-  glDeleteBuffers(1, &EBO);
-  glDeleteBuffers(1, &UVBO);
-
-  glDeleteVertexArrays(1, &VAO);
-};
-
-void Mesh::init() {
+  /**** Init Mesh() ****/
   glGenVertexArrays(1, &VAO);
-
   glGenBuffers(1, &VBO);
 
   if(!isSkybox) {
@@ -58,13 +46,10 @@ void Mesh::init() {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, objLoader.vertIndices.size() * sizeof(uint), &objLoader.vertIndices[0], GL_STATIC_DRAW);
   };
-
   glBindVertexArray(0); /* may not need */
   
-  // glEnable(GL_DEPTH_TEST);
-  // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   if(!isSkybox) {
-    this->textureID = texture.load("assets/textures/box_weave.png");
+    this->textureID = texture.load(_texturePath, GL_REPEAT);
 
     shader.use();
     shader.setInt("myTexture", 0);
@@ -81,6 +66,15 @@ void Mesh::init() {
     shader.setInt("skybox", 0);
   };
 };
+
+Mesh::~Mesh() {
+  glDeleteBuffers(1, &VBO);
+  glDeleteBuffers(1, &EBO);
+  glDeleteBuffers(1, &UVBO);
+
+  glDeleteVertexArrays(1, &VAO);
+};
+
 
 void Mesh::draw(Camera* camera, ivec2 screenSize) {
   if(isSkybox) glDepthFunc(GL_LEQUAL);
