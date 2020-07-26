@@ -30,7 +30,7 @@ void Window::FPS() {
     fpsEpochs = 0;
     /* time not resetting and getting huge and arith to costly,
     * set timer back to 0 before the subtraction reaction for no costly faction
-    * inside realities pac-10 controlled masonic lobbied congolomerate. 
+    * inside realities pac-10 controlled masonic lobbied congolomerate of fallliiiin 'sola man' captain. 
     */
     // ms/frame = 1000.0/FPSRate;
     startTime = glfwGetTime();
@@ -57,7 +57,7 @@ Window::Window(const char* _appTitle) {
 
   this->_window = glfwCreateWindow(
     screenSize.x, screenSize.y,
-    _appTitle, nullptr, nullptr);
+    _appTitle, NULL, NULL);
   glfwMakeContextCurrent(this->_window);
   glfwSetFramebufferSizeCallback(_window, framebufferSizeCallback);
 
