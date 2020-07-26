@@ -15,7 +15,8 @@ class Draw {
 
     Mesh plane{false,
       vec3(0.0f,-1.0f,0.0f),
-      "assets/objects/plane_for_walls.obj"};
+      "assets/objects/plane_for_walls.obj",
+      "assets/textures/clouds.png"};
     Mesh mCube00{false,
       vec3(4.0f, 0.0f, 1.0f),
       "assets/objects/sqr.obj"};
