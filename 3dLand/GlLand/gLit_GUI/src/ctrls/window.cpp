@@ -60,20 +60,22 @@ Window::Window(const char* _appTitle) {
     _appTitle, NULL, NULL);
   glfwMakeContextCurrent(this->_window);
   glfwSetFramebufferSizeCallback(_window, framebufferSizeCallback);
+  
+  /** - NOTE -   glfwSwapInterval(0);
+  * You cannot both disable vsync and avoid tearing.
+  * Synchronising to the display’s refresh rate is what allows tear-free output. 
+  *  - THIS DISABLES V-SYNC -  **/ 
+  glfwSwapInterval(0);
 
   glfwSetInputMode(_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
   mouse.lastX = screenSize.x /2; mouse.lastY = screenSize.y /2;
-
   this->_camera = new Camera(screenSize.x, screenSize.y, vec3(0.0f, 0.0f, 2.4f));
 
   glewInit();
-
   glEnable(GL_DEPTH_TEST);
 
-  
   this->draw = new Draw();
-
   startTime = glfwGetTime();
 };
 
