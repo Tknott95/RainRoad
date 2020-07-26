@@ -9,7 +9,7 @@ float Camera::getZoom() const {
 }
 
 void Camera::ProcessKeyboard(CamMovement direction, float deltaTime) {
-  float velocity = cam.speed * deltaTime;
+  float velocity = cam.speed; // STATIC SPEED FOR NOW * deltaTime;
   if (direction == FORWARD) transform.Position += transform.Front * velocity;
   if (direction == BACKWARD) transform.Position -= transform.Front * velocity;
   if (direction == LEFT) transform.Position -= transform.Right * velocity;

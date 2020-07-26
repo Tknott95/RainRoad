@@ -30,12 +30,11 @@ void Window::FPS() {
     // startTime += 1.0;
     /* = nowTime; || Line Causing "lag" every call - time getting huge and arith to costly */
     // ms/frame = 1000.0/FPSRate;
+    startTime = glfwGetTime();
+    printf("\n    \e[3;36;40mdeltaTime:\e[0;39;40m %f\e[0m", deltaTime);
     printf("\n    \e[1;36;40mFPS:\e[0;39;40m %i\e[0m", FPSRate);
     printf("\n    \e[0;36;40mstartTime:\e[0;39;40m %f\e[0m", startTime);
     printf("\n    \e[2;36;40mnowTime:\e[0;39;40m %f\e[0m", nowTime);
-
-    deltaTime--;
-
   };
 };
 
@@ -84,6 +83,7 @@ void Window::render() {
 };
 
 void Window::update() {
+  // nowTime = 0.f;
   startTime = glfwGetTime();
   while(!glfwWindowShouldClose(_window)) {
     this->FPS();    
