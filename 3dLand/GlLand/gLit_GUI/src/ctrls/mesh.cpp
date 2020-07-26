@@ -50,7 +50,7 @@ Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath, const char* _texture
   glBindVertexArray(0); /* may not need */
   
   if(!isSkybox) {
-    this->textureID = texture.load(_texturePath, GL_MIRRORED_REPEAT);
+    this->textureID = texture.load(_texturePath);
 
     shader.use();
     shader.setInt("myTexture", 0);
@@ -79,7 +79,7 @@ Mesh::~Mesh() {
 
 void Mesh::draw(Camera* camera, ivec2 screenSize) {
   if(isSkybox) glDepthFunc(GL_LEQUAL);
-  // if(!isSkybox) glDepthFunc(GL_DEPTH_BUFFER_BIT);
+  if(!isSkybox) glDepthFunc(GL_DEPTH_BUFFER_BIT);
 
   shader.use();
 
