@@ -16,7 +16,6 @@ uint Texture::load(const char* path, GLenum _textureClamping) {
     glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
     glGenerateMipmap(GL_TEXTURE_2D);
 
-    /* GL_REPEAT GL_CLAMP_TO_EDGE GL_CLAMP_TO_BORDER */
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, _textureClamping);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, _textureClamping);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
