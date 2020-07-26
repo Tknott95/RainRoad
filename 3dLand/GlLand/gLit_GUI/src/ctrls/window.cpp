@@ -70,6 +70,8 @@ Window::Window(const char* _appTitle) {
 
   
   this->draw = new Draw();
+
+  startTime = glfwGetTime();
 };
 
 Window::~Window() {
@@ -83,8 +85,6 @@ void Window::render() {
 };
 
 void Window::update() {
-  // nowTime = 0.f;
-  startTime = glfwGetTime();
   while(!glfwWindowShouldClose(_window)) {
     this->FPS();    
  
