@@ -93,9 +93,6 @@ void Window::update() {
     this->FPS();    
     keys.keyPolling(_window, _camera, deltaTime);
 
-    glClearColor(0.f, 0.f, 0.14f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
     this->draw->update(_camera, screenSize, FPSRate);
 
     if(this->_camera->transform.Position.y <= -0.7)  this->_camera->transform.Position.y = 0; // += 0.2f;

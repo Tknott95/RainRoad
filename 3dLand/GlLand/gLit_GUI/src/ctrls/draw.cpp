@@ -29,8 +29,8 @@ Draw::Draw() { fontShader.compile("assets/shaders/font/font.vs","assets/shaders/
 Draw::~Draw() {};
 
 void Draw::update(Camera* camera, ivec2 screenSize, int fps) {
-  glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-  glClear(GL_COLOR_BUFFER_BIT);
+  glClearColor(0.f, 0.f, 0.14f, 1.0f);
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
   this->renderGUI(camera, screenSize, fps);
  /************* OBJ DRAWING START **********************/
