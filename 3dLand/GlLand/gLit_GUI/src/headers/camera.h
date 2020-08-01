@@ -37,7 +37,7 @@ public:
   CamData cam;
   CamTransform transform;
 
-  Camera(float screenWidth, float screenHeight, glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = -90.f, float pitch = 0.f) {
+  Camera(float screenWidth, float screenHeight, vec3 position = vec3(0.0f, 0.0f, 0.0f), vec3 up = vec3(0.0f, 1.0f, 0.0f), float yaw = -90.f, float pitch = 0.f) {
     transform.Position = position;
     transform.WorldUp = up;
     cam.yaw = yaw;
@@ -48,8 +48,8 @@ public:
 
   /* @TODO - make these params vec3's, pos and up, for better readability? */
   Camera(float screenWidth,  float screenHeight, float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) {
-    transform.Position = glm::vec3(posX, posY, posZ);
-    transform.WorldUp = glm::vec3(upX, upY, upZ);
+    transform.Position = vec3(posX, posY, posZ);
+    transform.WorldUp = vec3(upX, upY, upZ);
     cam.yaw = yaw;
     cam.pitch = pitch;
 
