@@ -47,7 +47,7 @@ public:
   };
 
   /* @TODO - make these params vec3's, pos and up, for better readability? */
-  Camera(float screenWidth,  float screenHeight, float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) {
+  Camera(float screenWidth, float screenHeight, float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) {
     transform.Position = vec3(posX, posY, posZ);
     transform.WorldUp = vec3(upX, upY, upZ);
     cam.yaw = yaw;

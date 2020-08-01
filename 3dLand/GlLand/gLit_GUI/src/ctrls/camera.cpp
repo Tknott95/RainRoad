@@ -38,7 +38,7 @@ void Camera::ProcessMouseScroll(float yoffset) {
 
 void Camera::updateCameraVectors() {
   /* lock pitch for tru fpsCAM AND/OR to turn off freeCAM */
-  glm::vec3 front;
+  vec3 front;
   front.x = cos(glm::radians(cam.yaw)) * cos(glm::radians(cam.pitch));
   front.y = sin(glm::radians(cam.pitch));
   front.z = sin(glm::radians(cam.yaw)) * cos(glm::radians(cam.pitch));
