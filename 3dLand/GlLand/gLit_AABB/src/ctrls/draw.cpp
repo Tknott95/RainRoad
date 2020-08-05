@@ -1,5 +1,19 @@
 #include "../headers/draw.h"
 
+bool Draw::isPointInsideAABB(vec3 _pos, vec3 _otherPos) {
+ const float cubeMeshWidth = 1.25f; /* .25 to col b4 render is behind view -  will make this a dyn vec3 mag eventually */
+ return (_pos.x >= _otherPos.x-cubeMeshWidth && _pos.x <= _otherPos.x+cubeMeshWidth) &&
+  (_pos.y >= _otherPos.y-cubeMeshWidth && _pos.y <= _otherPos.y+cubeMeshWidth) &&
+  (_pos.z >= _otherPos.z-cubeMeshWidth && _pos.z <= _otherPos.z+cubeMeshWidth);
+};
+
+bool Draw::isAABBInsideAABB(vec3 _pos, vec3 _otherPos) {
+ const float cubeMeshWidth = 1.25f;
+ return (_pos.x-cubeMeshWidth >= _otherPos.x-cubeMeshWidth && _pos.x+cubeMeshWidth <= _otherPos.x+cubeMeshWidth) &&
+  (_pos.y-cubeMeshWidth >= _otherPos.y-cubeMeshWidth && _pos.y+cubeMeshWidth <= _otherPos.y+cubeMeshWidth) &&
+  (_pos.z-cubeMeshWidth >= _otherPos.z-cubeMeshWidth && _pos.z+cubeMeshWidth <= _otherPos.z+cubeMeshWidth);
+};
+
 void Draw::renderGUI(Camera* camera, ivec2 screenSize, int fps) {
   const string fpsText = "FPS: " + to_string(fps);
   font.Draw(
@@ -24,19 +38,6 @@ void Draw::renderGUI(Camera* camera, ivec2 screenSize, int fps) {
   );
 };
 
-bool Draw::isPointInsideAABB(vec3 _pos, vec3 _otherPos) {
- const float cubeMeshWidth = 1.25f; /* .25 to col b4 render is behind view -  will make this a dyn vec3 mag eventually */
- return (_pos.x >= _otherPos.x-cubeMeshWidth && _pos.x <= _otherPos.x+cubeMeshWidth) &&
-  (_pos.y >= _otherPos.y-cubeMeshWidth && _pos.y <= _otherPos.y+cubeMeshWidth) &&
-  (_pos.z >= _otherPos.z-cubeMeshWidth && _pos.z <= _otherPos.z+cubeMeshWidth);
-};
-
-bool Draw::isAABBInsideAABB(vec3 _pos, vec3 _otherPos) {
- const float cubeMeshWidth = 1.25f;
- return (_pos.x-cubeMeshWidth >= _otherPos.x-cubeMeshWidth && _pos.x+cubeMeshWidth <= _otherPos.x+cubeMeshWidth) &&
-  (_pos.y-cubeMeshWidth >= _otherPos.y-cubeMeshWidth && _pos.y+cubeMeshWidth <= _otherPos.y+cubeMeshWidth) &&
-  (_pos.z-cubeMeshWidth >= _otherPos.z-cubeMeshWidth && _pos.z+cubeMeshWidth <= _otherPos.z+cubeMeshWidth);
-};
 
 Draw::Draw() { fontShader.compile("assets/shaders/font/font.vs","assets/shaders/font/font.fs"); };
 Draw::~Draw() {};

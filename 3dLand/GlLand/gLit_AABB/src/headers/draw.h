@@ -36,10 +36,12 @@ class Draw {
       mCube00, mCube01
     };
 
-    void renderGUI(Camera* camera, ivec2 screenSize, int fps);
-
+    /* @TODO REFACTOR THESE */
     bool isPointInsideAABB(vec3 myPos, vec3 otherPos/*float otherCube[6]*/);
     bool isAABBInsideAABB(vec3, vec3);
+
+    void renderGUI(Camera* camera, ivec2 screenSize, int fps);
+
   public:
     Draw();
     virtual ~Draw();
