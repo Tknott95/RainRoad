@@ -14,7 +14,7 @@ bool Draw::isAABBInsideAABB(vec3 _pos, vec3 _otherPos) {
    (_pos.z-cubeMeshWidth >= _otherPos.z-cubeMeshWidth && _pos.z+cubeMeshWidth <= _otherPos.z+cubeMeshWidth);
 
   /* @TODO normal cals here */
-  if(returnBool) this->NewCamPosAfterCol.x = 10.f; // vec3(10.f, 10.f, 10.f);
+  if(returnBool) this->NewCamPosAfterCol = vec3{40.f};
 
   return returnBool;
 };
