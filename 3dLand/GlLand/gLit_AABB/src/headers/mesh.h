@@ -22,6 +22,14 @@ enum class TypeOfMesh {
   IsSkybox
 };
 
+/**************************8
+* IF A COLLISIO WE NEED A 
+*  - vec3(posX, posY, posZ) 
+*     () from top left corner of cube
+*  - vec3(magx, magY, magZ); 
+*     () for size of each vertices, may make it a "vec6() instead"
+**************************/
+
 struct ShaderParams { 
   mat4 model;
   mat4 transform;

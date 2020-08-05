@@ -26,10 +26,10 @@ class Draw {
       "assets/textures/plane.png"};
     Mesh mCube00{TypeOfMesh::IsObject,
       vec3(4.0f, 0.0f, 1.0f),
-      "assets/objects/sqr.obj"};
+      "assets/objects/meshCube.obj"};
     Mesh mCube01{TypeOfMesh::IsCollision,
       vec3(-4.0f, 0.0f, 1.0f),
-      "assets/objects/sqr.obj"};
+      "assets/objects/meshCube.obj"};
     Mesh skybox{TypeOfMesh::IsSkybox};
     Mesh mesh[3] = {
       plane,
