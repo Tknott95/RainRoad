@@ -37,7 +37,7 @@ class Draw {
 
   public:
     bool MoveCameraOnCol = false;
-    vec3 NewCamPosAfterCol;
+    vec3 NewCamPosAfterCol{20.f};
     Draw();
     virtual ~Draw();
     void update(Camera* camera, ivec2 screenSize, int fps);
