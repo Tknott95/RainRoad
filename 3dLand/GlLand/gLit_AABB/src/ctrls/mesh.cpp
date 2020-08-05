@@ -1,8 +1,22 @@
 #include "../headers/mesh.h"
 
+
+bool Mesh::isSkybox(TypeOfMesh meshType) {
+  return meshType == TypeOfMesh::IsSkybox;
+};
+
+bool Mesh::isObject(TypeOfMesh meshType) {
+  return meshType == TypeOfMesh::IsObject;
+};
+
+bool Mesh::isCollision(TypeOfMesh meshType) {
+  return meshType == TypeOfMesh::IsCollision;
+};
+
 /* @TODO Pass down GlEnum for TextureClamping w/ a default of GL_CLAMP_TO_EDGE */
-Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath, const char* _texturePath) : isSkybox(_isSkybox), pos(_pos) {
-  if(!isSkybox) {
+Mesh::Mesh(TypeOfMesh _meshType, vec3 _pos, const char* _objPath, const char* _texturePath) : meshType(_meshType), pos(_pos) {
+  meshType = _meshType;
+  if(!isSkybox(meshType)) {
     shader.compile("assets/shaders/obj/obj.vs", "assets/shaders/obj/obj.fs");
     encodedObj = objLoader.load(_objPath);
   } else shader.compile("assets/shaders/skybox/skybox.vs", "assets/shaders/skybox/skybox.fs");
@@ -13,7 +27,7 @@ Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath, const char* _texture
   glGenVertexArrays(1, &VAO);
   glGenBuffers(1, &VBO);
 
-  if(!isSkybox) {
+  if(!isSkybox(meshType)) {
     glGenBuffers(1, &EBO);
     glGenBuffers(1, &UVBO);
   };
@@ -21,11 +35,11 @@ Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath, const char* _texture
   glBindVertexArray(VAO);
 
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  if(!isSkybox) glBufferData(GL_ARRAY_BUFFER, encodedObj.vertices.size() * sizeof(vec3), &encodedObj.vertices[0], GL_STATIC_DRAW);
-  if(isSkybox) glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
+  if(!isSkybox(meshType)) glBufferData(GL_ARRAY_BUFFER, encodedObj.vertices.size() * sizeof(vec3), &encodedObj.vertices[0], GL_STATIC_DRAW);
+  if(isSkybox(meshType)) glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
 
   glActiveTexture(GL_TEXTURE0);
-  if(!isSkybox) glBindTexture(GL_TEXTURE_2D, textureID);
+  if(!isSkybox(meshType)) glBindTexture(GL_TEXTURE_2D, textureID);
 
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(
@@ -37,7 +51,7 @@ Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath, const char* _texture
   );
   glEnableVertexAttribArray(1);
 
-  if(!isSkybox) {
+  if(!isSkybox(meshType)) {
     glBindBuffer(GL_ARRAY_BUFFER, UVBO);
     glBufferData(GL_ARRAY_BUFFER, encodedObj.uvs.size() * sizeof(vec2), &encodedObj.uvs[0], GL_STATIC_DRAW);
     
@@ -49,7 +63,7 @@ Mesh::Mesh(bool _isSkybox, vec3 _pos, const char* _objPath, const char* _texture
   };
   glBindVertexArray(0); /* may not need */
   
-  if(!isSkybox) {
+  if(!isSkybox(meshType)) {
     this->textureID = texture.load(_texturePath);
 
     shader.use();
@@ -78,13 +92,13 @@ Mesh::~Mesh() {
 
 
 void Mesh::draw(Camera* camera, ivec2 screenSize) {
-  if(isSkybox) glDepthFunc(GL_LEQUAL);
-  if(!isSkybox) glDepthFunc(GL_DEPTH_BUFFER_BIT);
+  if(isSkybox(meshType)) glDepthFunc(GL_LEQUAL);
+  if(!isSkybox(meshType)) glDepthFunc(GL_DEPTH_BUFFER_BIT);
 
   shader.use();
 
   sP.view = camera->GetViewMatrix();
-  if(!isSkybox) {
+  if(!isSkybox(meshType)) {
     sP.model = mat4(1.0f);
     sP.transform = mat4(1.0f);
     sP.transform = translate(sP.transform, this->pos);
@@ -96,11 +110,12 @@ void Mesh::draw(Camera* camera, ivec2 screenSize) {
     sP.view = mat4(mat3(camera->GetViewMatrix()));
   };
 
+  if(isCollision(meshType)) uShaderColorChange = vec3{0.3f, 0.4f, 1.f};
   shader.setMat4("view", sP.view);
   shader.setMat4("projection", sP.projection);
   shader.setVec3("uShaderColorChange", uShaderColorChange);
 
-  if(!isSkybox) {
+  if(!isSkybox(meshType)) {
     shader.setMat4("model", sP.model);
     shader.setMat4("transform", sP.transform);
   };
@@ -108,7 +123,7 @@ void Mesh::draw(Camera* camera, ivec2 screenSize) {
   glBindVertexArray(VAO);
   glActiveTexture(GL_TEXTURE0);
 
-  if(!isSkybox) {
+  if(!isSkybox(meshType)) {
     glBindTexture(GL_TEXTURE_2D, textureID);
     glDrawElements(GL_TRIANGLES, sizeof(objLoader.vertIndices) * sizeof(vec3), GL_UNSIGNED_INT, 0);
   } else {

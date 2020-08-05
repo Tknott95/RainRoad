@@ -7,23 +7,30 @@
 #include <string>
 #include <iostream>
 
+/* @TODO refactor this into a file, maybe utilities? mesh-utilities, etc. */
+// enum TypeOfMesh {
+//   Object,
+//   Collision,
+//   Skybox
+// };
+
 class Draw {
   private:
     Font font{"assets/fonts/KurriIslandBlack.ttf"};
     Font camLoc;
     Shader fontShader;
 
-    Mesh plane{false,
+    Mesh plane{TypeOfMesh::IsObject,
       vec3(0.0f,-1.0f,0.0f),
       "assets/objects/plane_for_walls.obj",
       "assets/textures/plane.png"};
-    Mesh mCube00{false,
+    Mesh mCube00{TypeOfMesh::IsObject,
       vec3(4.0f, 0.0f, 1.0f),
       "assets/objects/sqr.obj"};
-    Mesh mCube01{false,
+    Mesh mCube01{TypeOfMesh::IsCollision,
       vec3(-4.0f, 0.0f, 1.0f),
       "assets/objects/sqr.obj"};
-    Mesh skybox{true};
+    Mesh skybox{TypeOfMesh::IsSkybox};
     Mesh mesh[3] = {
       plane,
       mCube00, mCube01

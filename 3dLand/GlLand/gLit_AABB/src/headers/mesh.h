@@ -16,6 +16,12 @@
 using namespace std;
 using namespace glm;
 
+enum class TypeOfMesh {
+  IsObject,
+  IsCollision,
+  IsSkybox
+};
+
 struct ShaderParams { 
   mat4 model;
   mat4 transform;
@@ -26,9 +32,10 @@ struct ShaderParams {
 class Mesh {
   private:
     uint VBO, EBO, UVBO, textureID;
-    bool isSkybox;
+    TypeOfMesh meshType;
+
     vec3 pos{0.0f, 0.0f, 0.0f};
-    vec3 uShaderColorChange{0.3f, 0.4f, 1.f};
+    vec3 uShaderColorChange{1.f, 1.f, 1.f};
 
     ShaderParams sP;
     EncodedObj encodedObj;
@@ -37,11 +44,15 @@ class Mesh {
     const char* _objPath = "assets/objects/plane.obj";
     const char*  texturePath;
 
+    bool isSkybox(TypeOfMesh);
+    bool isObject(TypeOfMesh);
+    bool isCollision(TypeOfMesh);
+
   public:
     uint VAO;
     Shader shader;
 
-    Mesh(bool _isSkybox=false,
+    Mesh(TypeOfMesh _meshtype, // = isObject
       vec3 pos=vec3{0.0f},
       const char* _objPath = "assets/objects/plane.obj",
       const char* _texturePath = "assets/textures/box_weave.png"
