@@ -39,7 +39,7 @@ class Draw {
     void renderGUI(Camera* camera, ivec2 screenSize, int fps);
 
     bool isPointInsideAABB(vec3 myPos, vec3 otherPos/*float otherCube[6]*/);
-    bool isAABBInsideAABB(float myCube[6], float otherCube[6]);
+    bool isAABBInsideAABB(vec3, vec3);
   public:
     Draw();
     virtual ~Draw();
