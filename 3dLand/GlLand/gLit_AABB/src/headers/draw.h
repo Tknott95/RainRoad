@@ -7,13 +7,6 @@
 #include <string>
 #include <iostream>
 
-/* @TODO refactor this into a file, maybe utilities? mesh-utilities, etc. */
-// enum TypeOfMesh {
-//   Object,
-//   Collision,
-//   Skybox
-// };
-
 class Draw {
   private:
     Font font{"assets/fonts/KurriIslandBlack.ttf"};
@@ -37,7 +30,7 @@ class Draw {
     };
 
     /* @TODO REFACTOR THESE */
-    bool isPointInsideAABB(vec3 myPos, vec3 otherPos/*float otherCube[6]*/);
+    bool isPointInsideAABB(vec3 myPos, vec3 otherPos);
     bool isAABBInsideAABB(vec3, vec3);
 
     void renderGUI(Camera* camera, ivec2 screenSize, int fps);
