@@ -23,7 +23,7 @@ enum class TypeOfMesh {
 };
 
 /**************************8
-* IF A COLLISIO WE NEED A 
+* IF A COLLISIO WE NEED A ( ON OBJ LOADER? )
 *  - vec3(posX, posY, posZ) 
 *     () from top left corner of cube
 *  - vec3(magx, magY, magZ); 
