@@ -25,16 +25,12 @@ void Draw::renderGUI(Camera* camera, ivec2 screenSize, int fps) {
 };
 
 
-// return (point.x >= box.minX && point.x <= box.maxX) &&
-//        (point.y >= box.minY && point.y <= box.maxY) &&
-//        (point.z >= box.minZ && point.z <= box.maxZ);
 bool Draw::isPointInsideAABB(vec3 _pos, vec3 _otherPos/*float other[6]*/) {
- const float cubeMeshWidth = 1.0f;
+ const float cubeMeshWidth = 1.25f; /* .25 to col b4 render is behind view -  will make this a dyn vec3 mag eventually */
  return (_pos.x >= _otherPos.x-cubeMeshWidth && _pos.x <= _otherPos.x+cubeMeshWidth) &&
   (_pos.y >= _otherPos.y-cubeMeshWidth && _pos.y <= _otherPos.y+cubeMeshWidth) &&
   (_pos.z >= _otherPos.z-cubeMeshWidth && _pos.z <= _otherPos.z+cubeMeshWidth);
 };
-
 
 Draw::Draw() { fontShader.compile("assets/shaders/font/font.vs","assets/shaders/font/font.fs"); };
 Draw::~Draw() {};
