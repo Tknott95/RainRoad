@@ -15,9 +15,9 @@ bool Draw::isAABBInsideAABB(vec3 _pos, vec3 _otherPos) {
 
   /* @TODO normal cals here */
   if(returnBool) {
-    NewCamPosAfterCol[0] = 10.f;
-    NewCamPosAfterCol[1] = 100.f;
-    NewCamPosAfterCol[2] = 10.f;
+    NewCamPosAfterCol.x = 10.f;
+    NewCamPosAfterCol.y = 100.f;
+    NewCamPosAfterCol.z = 10.f;
   };
   return returnBool;
 };
