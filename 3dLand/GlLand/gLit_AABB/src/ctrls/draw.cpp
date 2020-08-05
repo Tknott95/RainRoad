@@ -6,7 +6,11 @@ bool Draw::isPointInsideAABB(vec3 _pos, vec3 _otherPos) {
   (_pos.y >= _otherPos.y-cubeMeshWidth && _pos.y <= _otherPos.y+cubeMeshWidth) &&
   (_pos.z >= _otherPos.z-cubeMeshWidth && _pos.z <= _otherPos.z+cubeMeshWidth);
 
-  if(returnBool) this->NewCamPosAfterCol = posBeforeCol; /* track last pos for static cols */
+  /***
+  * @TODO track which side hit, as above alrdy does,
+  *  and add 0.10f more for better cols
+  ****/
+  if(returnBool) this->NewCamPosAfterCol = posBeforeCol;
 
   return returnBool;
 };
