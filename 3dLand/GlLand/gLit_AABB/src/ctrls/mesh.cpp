@@ -90,7 +90,6 @@ Mesh::~Mesh() {
   glDeleteVertexArrays(1, &VAO);
 };
 
-
 void Mesh::draw(Camera* camera, ivec2 screenSize) {
   if(isSkybox(meshType)) glDepthFunc(GL_LEQUAL);
   if(!isSkybox(meshType)) glDepthFunc(GL_DEPTH_BUFFER_BIT);

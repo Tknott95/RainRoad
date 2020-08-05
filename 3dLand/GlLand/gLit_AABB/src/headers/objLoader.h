@@ -21,5 +21,7 @@ class ObjectLoader {
     EncodedObj encodedObj;
   public:
     vector<uint> vertIndices;
+    /* store location of 6 floating points IF this is a meshForCollision */
+    /* Collision check internal? or make it external for MVP first */
     EncodedObj load(const char*); /* return a vector of <ObjStruct> ? @TODO */
 };
