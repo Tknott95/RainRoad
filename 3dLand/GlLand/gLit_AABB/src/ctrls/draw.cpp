@@ -8,10 +8,15 @@ bool Draw::isPointInsideAABB(vec3 _pos, vec3 _otherPos) {
 };
 
 bool Draw::isAABBInsideAABB(vec3 _pos, vec3 _otherPos) {
- const float cubeMeshWidth = 1.25f;
- return (_pos.x-cubeMeshWidth >= _otherPos.x-cubeMeshWidth && _pos.x+cubeMeshWidth <= _otherPos.x+cubeMeshWidth) &&
-  (_pos.y-cubeMeshWidth >= _otherPos.y-cubeMeshWidth && _pos.y+cubeMeshWidth <= _otherPos.y+cubeMeshWidth) &&
-  (_pos.z-cubeMeshWidth >= _otherPos.z-cubeMeshWidth && _pos.z+cubeMeshWidth <= _otherPos.z+cubeMeshWidth);
+  const float cubeMeshWidth = 1.25f;
+  bool returnBool = (_pos.x-cubeMeshWidth >= _otherPos.x-cubeMeshWidth && _pos.x+cubeMeshWidth <= _otherPos.x+cubeMeshWidth) &&
+   (_pos.y-cubeMeshWidth >= _otherPos.y-cubeMeshWidth && _pos.y+cubeMeshWidth <= _otherPos.y+cubeMeshWidth) &&
+   (_pos.z-cubeMeshWidth >= _otherPos.z-cubeMeshWidth && _pos.z+cubeMeshWidth <= _otherPos.z+cubeMeshWidth);
+
+  /* @TODO normal cals here */
+  // if(returnBool) this->NewCamPosAfterCol = vec3(0.f, 1.f, 1.f);
+
+  return returnBool;
 };
 
 void Draw::renderGUI(Camera* camera, ivec2 screenSize, int fps) {
@@ -54,6 +59,8 @@ void Draw::update(Camera* camera, ivec2 screenSize, int fps) {
   };
 
   bool hasCollided = isPointInsideAABB(camera->transform.Position, this->mesh[2].pos);
+  this->MoveCameraOnCol = hasCollided;
+
   cout << "\e[0;33;40m hasCollided: " << hasCollided << "\e[0m \n" << endl;
  /************* OBJ DRAWING FINISHED **********************/
  /************* SKYBOX DRAWING START **********************/
