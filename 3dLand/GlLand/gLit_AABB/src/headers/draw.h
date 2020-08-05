@@ -38,6 +38,8 @@ class Draw {
 
     void renderGUI(Camera* camera, ivec2 screenSize, int fps);
 
+    void isPointInsideAABB(vec3 myPos, float[6] other);
+    void isAABBInsideAABB(float[6] this, float[6] other);
   public:
     Draw();
     virtual ~Draw();
