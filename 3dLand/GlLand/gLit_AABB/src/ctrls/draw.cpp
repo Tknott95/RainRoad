@@ -47,8 +47,7 @@ void Draw::update(Camera* camera, ivec2 screenSize, int fps) {
   };
 
   bool hasCollided = isPointInsideAABB(camera->transform.Position, this->mesh[2].pos);
-  // printf("\e[0;33;40m meshPos(%f, %f, %f)\e[0m \n", this->mesh[2].pos.x, this->mesh[2].pos.y, this->mesh[2].pos.z);
-  std::cout << "\e[0;33;40m hasCollided: " << hasCollided << "\e[0m \n" << std::endl;
+  cout << "\e[0;33;40m hasCollided: " << hasCollided << "\e[0m \n" << endl;
  /************* OBJ DRAWING FINISHED **********************/
  /************* SKYBOX DRAWING START **********************/
   this->skybox.draw(camera, screenSize);
