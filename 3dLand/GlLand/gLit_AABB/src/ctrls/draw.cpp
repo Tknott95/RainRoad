@@ -6,12 +6,8 @@ bool Draw::isPointInsideAABB(vec3 _pos, vec3 _otherPos) {
   (_pos.y >= _otherPos.y-cubeMeshWidth && _pos.y <= _otherPos.y+cubeMeshWidth) &&
   (_pos.z >= _otherPos.z-cubeMeshWidth && _pos.z <= _otherPos.z+cubeMeshWidth);
 
-  if(returnBool) { /* @TODO normal cals here */
-    printf("\n\n\n\n\n CALLING CALLING \n\n\n\n\n ");
-    this->NewCamPosAfterCol.x = 10.f;
-    this->NewCamPosAfterCol.y = 100.f;
-    this->NewCamPosAfterCol.z = 10.f;
-  };
+  if(returnBool) this->NewCamPosAfterCol = _pos;
+
   return returnBool;
 };
 
