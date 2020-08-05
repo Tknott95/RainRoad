@@ -24,6 +24,18 @@ void Draw::renderGUI(Camera* camera, ivec2 screenSize, int fps) {
   );
 };
 
+
+// return (point.x >= box.minX && point.x <= box.maxX) &&
+//        (point.y >= box.minY && point.y <= box.maxY) &&
+//        (point.z >= box.minZ && point.z <= box.maxZ);
+bool Draw::isPointInsideAABB(vec3 _pos, vec3 _otherPos/*float other[6]*/) {
+ const float cubeMeshWidth = 1.0f;
+ return (_pos.x >= _otherPos.x-cubeMeshWidth && _pos.x <= _otherPos.x+cubeMeshWidth) &&
+  (_pos.y >= _otherPos.y-cubeMeshWidth && _pos.y <= _otherPos.y+cubeMeshWidth) &&
+  (_pos.z >= _otherPos.z-cubeMeshWidth && _pos.z <= _otherPos.z+cubeMeshWidth);
+};
+
+
 Draw::Draw() { fontShader.compile("assets/shaders/font/font.vs","assets/shaders/font/font.fs"); };
 Draw::~Draw() {};
 
@@ -37,6 +49,10 @@ void Draw::update(Camera* camera, ivec2 screenSize, int fps) {
   for(int k=0;k<meshSize;k++) {
     this->mesh[k].draw(camera, screenSize);
   };
+
+  bool hasCollided = isPointInsideAABB(camera->transform.Position, this->mesh[2].pos);
+  // printf("\e[0;33;40m meshPos(%f, %f, %f)\e[0m \n", this->mesh[2].pos.x, this->mesh[2].pos.y, this->mesh[2].pos.z);
+  std::cout << "\e[0;33;40m hasCollided: " << hasCollided << "\e[0m \n" << std::endl;
  /************* OBJ DRAWING FINISHED **********************/
  /************* SKYBOX DRAWING START **********************/
   this->skybox.draw(camera, screenSize);
