@@ -28,6 +28,7 @@ class Mesh {
     uint VBO, EBO, UVBO, textureID;
     bool isSkybox;
     vec3 pos{0.0f, 0.0f, 0.0f};
+    vec3 uShaderColorChange{0.3f, 0.4f, 1.f};
 
     ShaderParams sP;
     EncodedObj encodedObj;

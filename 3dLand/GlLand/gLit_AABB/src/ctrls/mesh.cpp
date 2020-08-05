@@ -98,6 +98,7 @@ void Mesh::draw(Camera* camera, ivec2 screenSize) {
 
   shader.setMat4("view", sP.view);
   shader.setMat4("projection", sP.projection);
+  shader.setVec3("uShaderColorChange", uShaderColorChange);
 
   if(!isSkybox) {
     shader.setMat4("model", sP.model);
