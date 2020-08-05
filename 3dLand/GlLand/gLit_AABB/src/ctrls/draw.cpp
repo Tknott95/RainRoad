@@ -6,7 +6,7 @@ bool Draw::isPointInsideAABB(vec3 _pos, vec3 _otherPos) {
   (_pos.y >= _otherPos.y-cubeMeshWidth && _pos.y <= _otherPos.y+cubeMeshWidth) &&
   (_pos.z >= _otherPos.z-cubeMeshWidth && _pos.z <= _otherPos.z+cubeMeshWidth);
 
-  if(returnBool) this->NewCamPosAfterCol = _pos;
+  if(returnBool) this->NewCamPosAfterCol = posBeforeCol; /* track last pos for static cols */
 
   return returnBool;
 };
@@ -58,8 +58,11 @@ void Draw::update(Camera* camera, ivec2 screenSize, int fps) {
     this->mesh[k].draw(camera, screenSize);
   };
 
+  /***** COLLISION CHECKING *****/
   bool hasCollided = isPointInsideAABB(camera->transform.Position, this->mesh[2].pos);
+  if(!hasCollided) posBeforeCol = camera->transform.Position;
   this->MoveCameraOnCol = hasCollided;
+  /***** COLLISION CHECKING FINISHED *****/
 
   cout << "\e[0;33;40m hasCollided: " << hasCollided << "\e[0m \n" << endl;
  /************* OBJ DRAWING FINISHED **********************/
