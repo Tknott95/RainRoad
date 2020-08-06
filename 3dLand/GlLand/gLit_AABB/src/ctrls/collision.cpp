@@ -18,10 +18,8 @@ bool Collision::PointInsideAABB(vec3 _pos, vec3 _otherPos) {
   * y0 -> BOTTOM
   * z1 -> LEFT
   * z0 -> RIGHT
+  * TO DEBUG  if(y1) printf("\e[2;1;40m TOP HIT \e[0m");
   ********************/
-  if(y1) printf("\e[2;1;40m LEFT HIT \e[0m");
-
-
   if(hasCollided) /* printf("\e[2;33;40m AABB(%f, %f, %f)\e[0m\n", PosAfterCol.x, PosAfterCol.y, PosAfterCol.z); */
     this->PosAfterCol = this->PosBeforeCol;
 
