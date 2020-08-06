@@ -17,7 +17,6 @@ struct Wav {
   uint8_t BitsPerSample;
 };
 
-/* @TODO make all public names Uppercase and not CamelCase */
 class Audio {
   private:
     Wav wav;
