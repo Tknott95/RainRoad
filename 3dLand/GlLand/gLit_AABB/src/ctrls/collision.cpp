@@ -2,7 +2,7 @@
 
 bool Collision::PointInsideAABB(vec3 _pos, vec3 _otherPos) {
   vec3 _otherMag{1.f}; /* @TODO make this dynamic */
-  _otherMag += vec3(0.33f);
+  _otherMag += vec3(0.22f);
 
   bool x0  = _pos.x >= _otherPos.x - _otherMag.x;
   bool x1  = _pos.x <= _otherPos.x + _otherMag.x;

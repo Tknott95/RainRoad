@@ -99,7 +99,7 @@ void Window::update() {
     if(this->_camera->transform.Position.y >= 2) this->_camera->transform.Position.y -= 0.55f;
 
     if(this->draw->CameraCollided) {
-      this->_camera->transform.Position = this->draw->collision.PosBeforeCol; 
+      this->_camera->transform.Position = this->draw->collision.PosBeforeCol; // * vec3(0.9); 0.9 or 1.10 depending side. need new method @TODO 
       this->draw->CameraCollided = false;
     };
 
