@@ -31,7 +31,7 @@ class Audio {
   private:
     Wav wav;
     int32_t convToInt(char*, size_t);
-    void loadWavFile(const char* _path, Wav _wav);
+    char* loadWavFile(const char* _path, Wav _wav);
   public:
     Audio();
     virtual ~Audio();

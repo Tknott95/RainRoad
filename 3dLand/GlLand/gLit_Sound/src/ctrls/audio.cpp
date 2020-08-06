@@ -7,7 +7,7 @@ Audio::Audio() {
   ALCdevice* openALDevice = alcOpenDevice(nullptr);
   if(!openALDevice) printf("\n\e[0;31;40m Wav -> ERROR opening openAL device ERROR\e[0m");
 
-  loadWavFile("assets/audio/loop94.wav", wav);
+  char* wavData = loadWavFile("assets/audio/loop94.wav", wav);
 };
 
 Audio::~Audio() {
@@ -27,7 +27,7 @@ int32_t Audio::convToInt(char* buffer, size_t len) {
   return a;
 };
 
-void Audio::loadWavFile(const char* _path, Wav _wav) {
+char* Audio::loadWavFile(const char* _path, Wav _wav) {
   /* Will use Third Party Lib until M.V.P then will refactor */
   char buffer[4];
 
@@ -57,7 +57,8 @@ void Audio::loadWavFile(const char* _path, Wav _wav) {
   if(_file.fail()) printf("\n\e[0;31;40m Wav -> state set on file ERROR \e[0m");
 
   ifstream wavFile02(_path, std::ios::binary);
-  char* data = new char[size];
+  char* data = new char[wav.Size];
 
-  wavFile02.read(data, size);
+  wavFile02.read(data, wav.Size);
+  return data;
 };
