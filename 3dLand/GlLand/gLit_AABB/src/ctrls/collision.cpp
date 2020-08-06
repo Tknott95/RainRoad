@@ -12,7 +12,7 @@ bool Collision::PointInsideAABB(vec3 _pos, vec3 _otherPos) {
   bool z1  = _pos.z <= _otherPos.z + _otherMag.z;
 
   bool hasCollided = (x0 && x1) && (y0 && y1) && (z0 && z1);
-  /********************
+  /******************** WILL NEED BETTER COLLISION RESOLUTION @TODO
   * x1 -> FRONT
   * x0 -> BACK
   * y1 -> TOP
