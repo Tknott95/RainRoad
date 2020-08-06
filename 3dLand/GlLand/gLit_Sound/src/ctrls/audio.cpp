@@ -1,6 +1,10 @@
 #include "../headers/audio.h"
 
-void Audio::loadWavFile() {
+void Audio::loadWavFile(ifstream& _file, 
+                    uint8_t& _channels,
+                    int32_t& _sampleRate,
+                    uint8_t& _bitsPerSample,
+                    ALsizei& _size) {
 
 };
 
