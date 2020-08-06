@@ -11,14 +11,18 @@ bool Collision::PointInsideAABB(vec3 _pos, vec3 _otherPos) {
   bool z0  = _pos.z >= _otherPos.z - _otherMag.z;
   bool z1  = _pos.z <= _otherPos.z + _otherMag.z;
   bool hasCollided = (x0 && x1) && (y0 && y1) && (z0 && z1);
+  /********************
+  * x1 -> FRONT
+  * x0 -> BACK
+  *
+  *
+  * z1 -> LEFT
+  * z0 -> RIGHT
+  ********************/
 
   /* TRACKING FACE COLLIDED WITH */
-  if(x0) printf("\e[2;34;40m x0 HIT \e[0m\n");
-  if(x1) printf("\e[2;34;40m x1 HIT \e[0m\n");
-  if(y0) printf("\e[2;34;40m y0 HIT \e[0m\n");
-  if(y1) printf("\e[2;34;40m y1 HIT \e[0m\n");
-  if(z0) printf("\e[2;34;40m z0 HIT \e[0m\n");
-  if(z1) printf("\e[2;34;40m z1 HIT \e[0m\n");
+  if(z1) printf("\e[2;1;40m FRONT HIT \e[0m");
+
 
   if(hasCollided) /* printf("\e[2;33;40m AABB(%f, %f, %f)\e[0m\n", PosAfterCol.x, PosAfterCol.y, PosAfterCol.z); */
     this->PosAfterCol = this->PosBeforeCol;
