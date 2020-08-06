@@ -63,7 +63,7 @@ Window::Window(const char* _appTitle) {
   
   /** - NOTE -   glfwSwapInterval(0);
   * You cannot both disable vsync and avoid tearing.
-  * Synchronising to the display’s refresh rate is what allows tear-free output. 
+  * Synchronizing to the display’s refresh rate is what allows tear-free output. 
   *  - THIS DISABLES V-SYNC -  **/ 
 
   glfwSetInputMode(_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
