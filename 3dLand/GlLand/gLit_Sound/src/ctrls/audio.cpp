@@ -18,7 +18,7 @@ void Audio::Update() {
   /* FixedUpdate loop also? Better cals running both */
 };
 
-int32_t convert_to_int(char* buffer, size_t len) {
+int32_t Audio::convToInt(char* buffer, size_t len) {
   int32_t a = 0;
   if(endian::native == endian::little)
     memcpy(&a, buffer, len);
@@ -42,13 +42,13 @@ void Audio::loadWavFile(const char* _path, Wav _wav) {
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> fmt data chunk(16) read ERROR \e[0m");
   if(!_file.read(buffer, 2)) printf("\n\e[0;31;40m Wav -> PCM read ERROR \e[0m");
   if(!_file.read(buffer, 2)) printf("\n\e[0;31;40m Wav -> # of channels read ERROR \e[0m");
-  wav.Channels = convert_to_int(buffer, 2);
+  wav.Channels = convToInt(buffer, 2);
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> sample rate read ERROR \e[0m");
-  wav.SampleRate = convert_to_int(buffer, 4);
+  wav.SampleRate = convToInt(buffer, 4);
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> (sampleRate * bitsPerSample * channels) / 8  read ERROR \e[0m");
   if(!_file.read(buffer, 2)) printf("\n\e[0;31;40m Wav -> dafuq ERROR \e[0m");
   if(!_file.read(buffer, 2)) printf("\n\e[0;31;40m Wav -> bits per sample read ERROR \e[0m");
-  // wav.BitsPerSample = convert_to_int(buffer, 2);
+  wav.BitsPerSample = convToInt(buffer, 2);
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> chunk header read ERROR \e[0m");
   if(strncmp(buffer, "data", 4) != 0) printf("\n\e[0;31;40m Wav -> NOT VALID WAVE no 'data' tag ERROR \e[0m");
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> data size read ERROR \e[0m");
