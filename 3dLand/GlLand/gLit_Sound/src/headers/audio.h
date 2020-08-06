@@ -24,6 +24,7 @@ struct Wav {
   uint8_t Channels;
   int32_t SampleRate;
   uint8_t BitsPerSample;
+  ALsizei Size;
 };
 
 class Audio {
