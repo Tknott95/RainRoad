@@ -103,7 +103,7 @@ void Window::update() {
       this->draw->CameraCollided = false;
     };
 
-    glfwGetCursorPos(_window, &pos.x, &pos.y); /* printf("\e[0;33;40m  pos.x(%f) pos.y(%f)\e[0m", pos.x, pos.y) */
+    glfwGetCursorPos(_window, &pos.x, &pos.y);
     mousePolling(pos);
 
     glfwSwapBuffers(this->_window);
