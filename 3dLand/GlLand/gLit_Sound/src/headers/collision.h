@@ -1,4 +1,4 @@
-#include <cstdio> /* printf(); */
+#include <cstdio>
 #include <glm/glm.hpp>
 
 using namespace glm;
