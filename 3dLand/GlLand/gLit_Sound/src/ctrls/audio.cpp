@@ -8,6 +8,9 @@ Audio::Audio() {
   if(!openALDevice) printf("\n\e[0;31;40m Wav -> ERROR opening openAL device ERROR\e[0m");
 
   char* wavData = loadWavFile("assets/audio/loop94.wav", wav);
+
+  ALCcontext* openALContext; /* @TODO add err checking */
+  ALCboolean contextMadeCurrent = false;
 };
 
 Audio::~Audio() {
