@@ -19,7 +19,7 @@ class Draw {
       vec3(0.0f,-1.0f,0.0f),
       "assets/objects/plane_for_walls.obj",
       "assets/textures/plane.png"};
-    Mesh mCube00{TypeOfMesh::IsObject,
+    Mesh mCube00{TypeOfMesh::IsCollision,
       vec3(4.0f, 0.0f, 1.0f),
       "assets/objects/meshCube.obj"};
     Mesh mCube01{TypeOfMesh::IsCollision,
