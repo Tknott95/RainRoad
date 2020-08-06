@@ -9,7 +9,7 @@ _FREETYPE="
 
 _LINKERS="
   -lglfw -lGLEW -DGLEW_STATIC -lGL
-  -lfreetype"
+  -lfreetype -lopenal"
 
 source ../utils.sh
 

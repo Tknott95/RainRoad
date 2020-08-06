@@ -16,15 +16,13 @@ class Window {
 
     double startTime, deltaTime;
 
-    int FPSRate;
-    int fpsEpochs;
+    int FPSRate, fpsEpochs;
 
     GLFWwindow* _window;
     Mouse mouse;
     Camera* _camera;
     Keys keys;
     Draw* draw;
-   
 
     void mousePolling(dvec2 _pos);
     void FPS();

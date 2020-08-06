@@ -4,7 +4,10 @@
 Audio::Audio() {
   printf("\n   \e[2;39;40m Audio Initialized...\e[0m\n");
 
-  loadWavFile("assets/audio/loop94.wav", wav);
+  ALCdevice* openALDevice = alcOpenDevice(nullptr);
+  if(!openALDevice) printf("\n\e[0;31;40m Wav -> ERROR opening openAL device ERROR\e[0m");
+
+  // loadWavFile("assets/audio/loop94.wav", wav);
 };
 
 Audio::~Audio() {
@@ -34,5 +37,5 @@ void Audio::loadWavFile(const char* _path, Wav _wav) {
   if(!_file.read(buffer, 2)) printf("\n\e[0;31;40m Wav -> # of channels read ERROR \e[0m");
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> sample rate read ERROR \e[0m");
 
-  _file.close();
+  // _file.close();
 };

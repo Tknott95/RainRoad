@@ -74,8 +74,8 @@ Window::Window(const char* _appTitle) {
   glewInit();
   glEnable(GL_DEPTH_TEST);
 
-  this->draw = new Draw();
   startTime = glfwGetTime();
+  this->draw = new Draw();
 };
 
 Window::~Window() {
@@ -89,8 +89,7 @@ void Window::render() {
 };
 
 void Window::update() {
-  while(!glfwWindowShouldClose(_window)) {
-    this->FPS();    
+  while(!glfwWindowShouldClose(_window)) {   
     keys.keyPolling(_window, _camera, deltaTime);
 
     this->draw->update(_camera, screenSize, FPSRate);
@@ -102,6 +101,8 @@ void Window::update() {
       this->_camera->transform.Position = this->draw->collision.PosBeforeCol; // * vec3(0.9); 0.9 or 1.10 depending side. need new method @TODO 
       this->draw->CameraCollided = false;
     };
+
+    this->FPS();
 
     glfwGetCursorPos(_window, &pos.x, &pos.y);
     mousePolling(pos);

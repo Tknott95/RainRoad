@@ -1,21 +1,19 @@
 #include <iostream>
-#include <vector>
+#include <string>
 
 #include "font.h"
 #include "mesh.h"
 #include "camera.h"
 #include "collision.h"
-
-#include <string>
-#include <iostream>
 #include "audio.h"
+
 
 class Draw {
   private:
     Font font{"assets/fonts/KurriIslandBlack.ttf"};
     Font camLoc;
     Shader fontShader;
-    Audio audio;
+    Audio* audio;
 
     Mesh plane{TypeOfMesh::IsObject,
       vec3(0.0f,-1.0f,0.0f),

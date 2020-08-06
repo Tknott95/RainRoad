@@ -1,8 +1,6 @@
 #include<cstdio>
-// #include<cstdint>
 #include<cstring> /* for strncmp */
 
-//#include<vector>
 #include<fstream>
 
 /* OpenAL */
