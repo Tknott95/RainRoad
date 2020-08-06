@@ -44,7 +44,6 @@ void Draw::update(Camera* camera, ivec2 screenSize, int fps) {
   if(!this->CameraCollided) collision.PosBeforeCol = camera->transform.Position;
   /***** COLLISION CHECKING FINISHED *****/
 
-  cout << "\e[0;33;40m hasCollided: " << this->CameraCollided << "\e[0m \n" << endl;
  /************* OBJ DRAWING FINISHED **********************/
  /************* SKYBOX DRAWING START **********************/
   this->skybox.draw(camera, screenSize);
