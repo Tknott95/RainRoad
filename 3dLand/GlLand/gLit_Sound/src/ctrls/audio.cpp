@@ -7,7 +7,7 @@ Audio::Audio() {
   ALCdevice* openALDevice = alcOpenDevice(nullptr);
   if(!openALDevice) printf("\n\e[0;31;40m Wav -> ERROR opening openAL device ERROR\e[0m");
 
-  // loadWavFile("assets/audio/loop94.wav", wav);
+  loadWavFile("assets/audio/loop94.wav", wav);
 };
 
 Audio::~Audio() {
@@ -23,8 +23,7 @@ void Audio::loadWavFile(const char* _path, Wav _wav) {
   /* Will use Third Party Lib until M.V.P then will refactor */
   char buffer[4];
 
-  ifstream _file;
-  _file.open(_path);
+  ifstream _file(_path);
 
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> RIFF read ERROR \e[0m");
   if(strncmp(buffer, "RIFF", 4) != 0) printf("\n\e[0;31;40m Wav -> not valid .wav\n   HEADER DOESN'T BEGIN W/ RIFF \e[0m");
@@ -37,5 +36,4 @@ void Audio::loadWavFile(const char* _path, Wav _wav) {
   if(!_file.read(buffer, 2)) printf("\n\e[0;31;40m Wav -> # of channels read ERROR \e[0m");
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> sample rate read ERROR \e[0m");
 
-  _file.close();
 };
