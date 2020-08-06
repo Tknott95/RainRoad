@@ -10,7 +10,7 @@ class Audio {
 
   public:
     Audio();
-    virtual ~Audio();
+    // virtual ~Audio();
 
-    void Update();
+    // void Update();
 };

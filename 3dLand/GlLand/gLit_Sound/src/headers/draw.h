@@ -19,16 +19,13 @@ class Draw {
       vec3(0.0f,-1.0f,0.0f),
       "assets/objects/plane_for_walls.obj",
       "assets/textures/plane.png"};
-    Mesh mCube00{TypeOfMesh::IsCollision,
-      vec3(4.0f, 0.0f, 1.0f),
-      "assets/objects/meshCube.obj"};
-    Mesh mCube01{TypeOfMesh::IsCollision,
+    Mesh sqr00{TypeOfMesh::IsCollision,
       vec3(-4.0f, 0.0f, 1.0f),
       "assets/objects/meshCube.obj"};
     Mesh skybox{TypeOfMesh::IsSkybox};
-    Mesh mesh[3] = {
+    Mesh mesh[2] = {
       plane,
-      mCube00, mCube01
+      sqr00
     };
 
     void renderGUI(Camera* camera, ivec2 screenSize, int fps);

@@ -25,7 +25,7 @@ class Window {
     Camera* _camera;
     Keys keys;
     Draw* draw;
-    Audio audio;
+    // Audio audio;
 
     void mousePolling(dvec2 _pos);
     void FPS();
