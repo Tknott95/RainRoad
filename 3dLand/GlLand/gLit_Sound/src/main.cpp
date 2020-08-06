@@ -11,9 +11,8 @@
   BlackBG_BlueWhiteCombo=\e[0;36;40m ...  \e[0;39;40m... \e[0m
 ***************************/
 
-int main(/*int argc, char *argv[]*/) {
+int main() {
   const char* APP_TITLE = "gLit_UI";
-  /* const bool DEBUG_MODE = (argc) ? true : false; */
 
   printf("    \n\e[1;32;40m    App Initialized\e[0m\n");
 
