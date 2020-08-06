@@ -95,12 +95,8 @@ void Window::update() {
 
     this->draw->update(_camera, screenSize, FPSRate);
 
-    /**** BARRIERS/GRAVITY HACK *****/
-    if(this->_camera->transform.Position.y <= -0.7)  
-      this->_camera->transform.Position.y = 0;
-    if(this->_camera->transform.Position.y >= 2)
-      this->_camera->transform.Position.y -= 0.55f;
-    /**** END | BARRIERS/GRAVITY HACK | END *****/
+    if(this->_camera->transform.Position.y <= -0.7) this->_camera->transform.Position.y = 0;
+    if(this->_camera->transform.Position.y >= 2) this->_camera->transform.Position.y -= 0.55f;
 
     if(this->draw->CameraCollided) {
       this->_camera->transform.Position = this->draw->collision.PosBeforeCol; 
