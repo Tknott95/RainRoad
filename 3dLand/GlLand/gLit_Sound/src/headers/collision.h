@@ -7,7 +7,7 @@ struct PosAndMag {
   vec3 Pos;
   vec3 Mag;
 
-  // PosAndMag(): Mag(vec3(1.f)) {};
+  PosAndMag(): Mag(vec3(1.f)) {};
 };
 
 class Collision {

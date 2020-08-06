@@ -42,7 +42,6 @@ class Mesh {
     uint VBO, EBO, UVBO, textureID;
     TypeOfMesh meshType;
 
-    // vec3 pos{0.0f, 0.0f, 0.0f};
     vec3 uShaderColorChange{1.f, 1.f, 1.f};
 
     ShaderParams sP;

@@ -43,7 +43,6 @@ void Draw::update(Camera* camera, ivec2 screenSize, int fps) {
   PosAndMag myPosAndMag;
   myPosAndMag.Mag = vec3(1.f);
   myPosAndMag.Pos = this->mesh[1].pos;
-  myPosAndMag.Pos[2] = 10.f;
   this->CameraCollided = collision.PointInsideAABB(camera->transform.Position, myPosAndMag);
   if(!this->CameraCollided) collision.PosBeforeCol = camera->transform.Position;
   /***** COLLISION CHECKING FINISHED *****/
