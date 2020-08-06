@@ -1,15 +1,5 @@
 #include "../headers/audio.h"
 
-// int32_t Audio::convToInt(char* buffer, size_t len) {
-//   int32_t a = 0;
-//   if(std::endian::native == std::endian::little)
-//     std::memcpy(&a, buffer, len);
-//   else
-//     for(std::size_t i = 0; i < len; ++i)
-//       reinterpret_cast<char*>(&a)[3 - i] = buffer[i];
-//   return a;
-// };
-
 void Audio::loadWavFile(const char* _path, Wav _wav) {
   char buffer[4];
 

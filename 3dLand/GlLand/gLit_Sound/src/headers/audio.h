@@ -22,7 +22,6 @@ class Audio {
   private:
     Wav wav;
     vector<char> soundData;
-    // int32_t convToInt(char*, size_t);
     void loadWavFile(const char* _path, Wav _wav);
 
   public:
