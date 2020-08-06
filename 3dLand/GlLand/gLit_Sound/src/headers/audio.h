@@ -7,6 +7,7 @@
 /* @TODO make all public names Uppercase and not CamelCase */
 class Audio {
   private:
+    void loadWavFile();
 
   public:
     Audio();

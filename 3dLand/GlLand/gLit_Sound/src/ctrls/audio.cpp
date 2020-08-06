@@ -1,5 +1,9 @@
 #include "../headers/audio.h"
 
+void Audio::loadWavFile() {
+
+};
+
 Audio::Audio() {
   printf(" Audio Initialized...");
 };
