@@ -109,6 +109,8 @@ void Mesh::draw(Camera* camera, ivec2 screenSize) {
     sP.view = mat4(mat3(camera->GetViewMatrix()));
   };
 
+  if(isCollision(meshType)) sP.transform[0][2] = 10.f;
+
   if(isCollision(meshType)) uShaderColorChange = vec3{0.3f, 0.4f, 1.f};
   shader.setMat4("view", sP.view);
   shader.setMat4("projection", sP.projection);
