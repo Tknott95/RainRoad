@@ -14,14 +14,12 @@ bool Collision::PointInsideAABB(vec3 _pos, vec3 _otherPos) {
   /********************
   * x1 -> FRONT
   * x0 -> BACK
-  *
-  *
+  * y1 -> TOP
+  * y0 -> BOTTOM
   * z1 -> LEFT
   * z0 -> RIGHT
   ********************/
-
-  /* TRACKING FACE COLLIDED WITH */
-  if(z1) printf("\e[2;1;40m FRONT HIT \e[0m");
+  if(y1) printf("\e[2;1;40m LEFT HIT \e[0m");
 
 
   if(hasCollided) /* printf("\e[2;33;40m AABB(%f, %f, %f)\e[0m\n", PosAfterCol.x, PosAfterCol.y, PosAfterCol.z); */
