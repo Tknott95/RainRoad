@@ -31,7 +31,7 @@ struct Wav {
 class Audio {
   private:
     Wav wav;
-    vector<char> soundData;
+    // vector<char> soundData;
     int32_t convToInt(char*, size_t);
     char* loadWavFile(const char* _path, Wav _wav);
   public:
