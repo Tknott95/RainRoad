@@ -42,14 +42,18 @@ void Audio::loadWavFile(const char* _path, Wav _wav) {
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> fmt data chunk(16) read ERROR \e[0m");
   if(!_file.read(buffer, 2)) printf("\n\e[0;31;40m Wav -> PCM read ERROR \e[0m");
   if(!_file.read(buffer, 2)) printf("\n\e[0;31;40m Wav -> # of channels read ERROR \e[0m");
+  wav.Channels = convert_to_int(buffer, 2);
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> sample rate read ERROR \e[0m");
+  wav.SampleRate = convert_to_int(buffer, 4);
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> (sampleRate * bitsPerSample * channels) / 8  read ERROR \e[0m");
   if(!_file.read(buffer, 2)) printf("\n\e[0;31;40m Wav -> dafuq ERROR \e[0m");
   if(!_file.read(buffer, 2)) printf("\n\e[0;31;40m Wav -> bits per sample read ERROR \e[0m");
+  wav.BitsPerSample = convert_to_int(buffer, 2);
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> chunk header read ERROR \e[0m");
   if(strncmp(buffer, "data", 4) != 0) printf("\n\e[0;31;40m Wav -> NOT VALID WAVE no 'data' tag ERROR \e[0m");
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> data size read ERROR \e[0m");
-//   if(!_file.eof()) printf("\n\e[0;31;40m Wav -> EOF on wav file ERROR \e[0m");
-//   if(!_file.fail()) printf("\n\e[0;31;40m Wav -> state set on file ERROR \e[0m");
+  // size = convert_to_int(buffer, 4);
+  //   if(!_file.eof()) printf("\n\e[0;31;40m Wav -> EOF on wav file ERROR \e[0m");
+  //   if(!_file.fail()) printf("\n\e[0;31;40m Wav -> state set on file ERROR \e[0m");
 
 };
