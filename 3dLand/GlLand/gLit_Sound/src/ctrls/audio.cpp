@@ -56,5 +56,8 @@ void Audio::loadWavFile(const char* _path, Wav _wav) {
   if(_file.eof()) printf("\n\e[0;31;40m Wav -> EOF on wav file ERROR \e[0m");
   if(_file.fail()) printf("\n\e[0;31;40m Wav -> state set on file ERROR \e[0m");
 
-  ifstream in(_path, std::ios::binary);
+  ifstream wavFile02(_path, std::ios::binary);
+  char* data = new char[size];
+
+  wavFile02.read(data, size);
 };
