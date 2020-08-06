@@ -49,7 +49,7 @@ void Audio::loadWavFile(const char* _path, Wav _wav) {
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> chunk header read ERROR \e[0m");
   if(strncmp(buffer, "data", 4) != 0) printf("\n\e[0;31;40m Wav -> NOT VALID WAVE no 'data' tag ERROR \e[0m");
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> data size read ERROR \e[0m");
-  if(!_file.eof()) printf("\n\e[0;31;40m Wav -> EOF on wav file ERROR \e[0m");
-  if(!_file.fail()) printf("\n\e[0;31;40m Wav -> state set on file ERROR \e[0m");
+//   if(!_file.eof()) printf("\n\e[0;31;40m Wav -> EOF on wav file ERROR \e[0m");
+//   if(!_file.fail()) printf("\n\e[0;31;40m Wav -> state set on file ERROR \e[0m");
 
 };
