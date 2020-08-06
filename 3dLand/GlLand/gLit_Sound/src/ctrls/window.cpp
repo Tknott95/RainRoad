@@ -95,7 +95,7 @@ void Window::update() {
     this->draw->update(_camera, screenSize, FPSRate);
 
     if(this->_camera->transform.Position.y <= -0.7) this->_camera->transform.Position.y = 0;
-    if(this->_camera->transform.Position.y >= 2) this->_camera->transform.Position.y -= 0.55f;
+    if(this->_camera->transform.Position.y >= 0) this->_camera->transform.Position.y -= 0.55f;
 
     if(this->draw->CameraCollided) {
       this->_camera->transform.Position = this->draw->collision.PosBeforeCol; // * vec3(0.9); 0.9 or 1.10 depending side. need new method @TODO 

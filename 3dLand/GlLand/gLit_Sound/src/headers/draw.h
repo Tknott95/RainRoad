@@ -13,7 +13,7 @@ class Draw {
     Font font{"assets/fonts/KurriIslandBlack.ttf"};
     Font camLoc;
     Shader fontShader;
-    Audio* audio;
+    Audio audio; /* Might make this a pointer */
 
     Mesh plane{TypeOfMesh::IsObject,
       vec3(0.0f,-1.0f,0.0f),

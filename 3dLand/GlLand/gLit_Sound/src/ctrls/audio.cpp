@@ -37,5 +37,5 @@ void Audio::loadWavFile(const char* _path, Wav _wav) {
   if(!_file.read(buffer, 2)) printf("\n\e[0;31;40m Wav -> # of channels read ERROR \e[0m");
   if(!_file.read(buffer, 4)) printf("\n\e[0;31;40m Wav -> sample rate read ERROR \e[0m");
 
-  // _file.close();
+  _file.close();
 };
