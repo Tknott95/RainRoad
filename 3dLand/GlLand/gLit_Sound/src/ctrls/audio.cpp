@@ -24,7 +24,7 @@ void Audio::loadWavFile(const char* _path, Wav _wav) {
 Audio::Audio() {
   printf(" Audio Initialized...");
 
-  loadWavFile("asseys/audio/loop94.wav", wav);
+  loadWavFile("assets/audio/loop94.wav", wav);
 };
 
 Audio::~Audio() {
