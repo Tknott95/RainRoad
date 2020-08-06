@@ -2,7 +2,6 @@
 #include <thread>
 #include "keys.h"
 #include "draw.h"
-#include "audio.h"
 
 class Window {
   private:
@@ -25,7 +24,7 @@ class Window {
     Camera* _camera;
     Keys keys;
     Draw* draw;
-    Audio audio;
+   
 
     void mousePolling(dvec2 _pos);
     void FPS();

@@ -16,24 +16,14 @@ struct Wav {
   int32_t SampleRate;
   uint8_t BitsPerSample;
 };
-    // Wav wav;
-    // void loadWavFile(const char* _path, Wav _wav);
-// class Audio {
-//   private:
-//     // Wav wav;
-//     // void loadWavFile(const char* _path, Wav _wav);
-
-//   public:
-//     Audio();
-//     virtual ~Audio();
-
-//     void Update();
-// };
 
 class Audio {
   private:
-    
-
+    Wav wav;
+    void loadWavFile(const char* _path, Wav _wav);
   public:
     Audio();
+    virtual ~Audio();
+
+    void Update();
 };
