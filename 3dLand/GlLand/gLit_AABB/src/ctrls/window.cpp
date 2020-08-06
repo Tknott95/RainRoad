@@ -103,7 +103,7 @@ void Window::update() {
     /**** END | BARRIERS/GRAVITY HACK | END *****/
 
     if(this->draw->CameraCollided) {
-      this->_camera->transform.Position = this->draw->collision.PosAfterCol; 
+      this->_camera->transform.Position = this->draw->collision.PosBeforeCol; 
       this->draw->CameraCollided = false;
     };
 

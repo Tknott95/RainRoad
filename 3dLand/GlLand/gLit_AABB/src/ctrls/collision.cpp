@@ -1,7 +1,8 @@
 #include "../headers/collision.h"
 
 bool Collision::PointInsideAABB(vec3 _pos, vec3 _otherPos) {
-  const vec3 _otherMag{1.25f}; /* @TODO make this dynamic */
+  vec3 _otherMag{1.f}; /* @TODO make this dynamic */
+  _otherMag += vec3(0.33f);
 
   bool x0  = _pos.x >= _otherPos.x - _otherMag.x;
   bool x1  = _pos.x <= _otherPos.x + _otherMag.x;
@@ -23,13 +24,13 @@ bool Collision::PointInsideAABB(vec3 _pos, vec3 _otherPos) {
   *  1)  if(y1) printf("\e[2;1;40m TOP HIT \e[0m");
   *  2)  printf("\e[2;33;40m AABB(%f, %f, %f)\e[0m\n", PosAfterCol.x, PosAfterCol.y, PosAfterCol.z);
   ********************/
-  if(hasCollided) this->PosAfterCol = this->PosBeforeCol;
+  if(hasCollided) this->PosAfterCol = _pos;
 
   return hasCollided;
 };
 
 bool Collision::AABBInsideAABB(vec3 _pos, vec3 _otherPos) {
-  const float cubeMeshWidth = 1.25f;
+  const float cubeMeshWidth = 1.33f;
 
   bool x00  = (_pos.x-cubeMeshWidth >= _otherPos.x-cubeMeshWidth && _pos.x+cubeMeshWidth <= _otherPos.x+cubeMeshWidth);
   bool y00  = (_pos.y-cubeMeshWidth >= _otherPos.y-cubeMeshWidth && _pos.y+cubeMeshWidth <= _otherPos.y+cubeMeshWidth);
