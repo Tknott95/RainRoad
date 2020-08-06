@@ -40,12 +40,11 @@ void Draw::update(Camera* camera, ivec2 screenSize, int fps) {
   };
 
   /***** COLLISION CHECKING *****/
-  bool hasCollided = this->collision->PointInsideAABB(camera->transform.Position, this->mesh[2].pos);
-  if(!hasCollided) posBeforeCol = camera->transform.Position;
-  this->MoveCameraOnCol = hasCollided;
+  this->CameraCollided = collision.PointInsideAABB(camera->transform.Position, this->mesh[2].pos);
+  if(!this->CameraCollided) collision.PosBeforeCol = camera->transform.Position;
   /***** COLLISION CHECKING FINISHED *****/
 
-  cout << "\e[0;33;40m hasCollided: " << hasCollided << "\e[0m \n" << endl;
+  cout << "\e[0;33;40m hasCollided: " << this->CameraCollided << "\e[0m \n" << endl;
  /************* OBJ DRAWING FINISHED **********************/
  /************* SKYBOX DRAWING START **********************/
   this->skybox.draw(camera, screenSize);

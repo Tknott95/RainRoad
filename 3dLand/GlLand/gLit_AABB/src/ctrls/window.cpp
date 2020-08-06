@@ -99,9 +99,11 @@ void Window::update() {
     if(this->_camera->transform.Position.y >= 2)  this->_camera->transform.Position.y -= 0.55f;
   
     
-    if(this->draw->MoveCameraOnCol)
-      this->_camera->transform.Position = this->draw->NewCamPosAfterCol;
-    
+    if(this->draw->CameraCollided) {
+      this->_camera->transform.Position = this->draw->collision.PosAfterCol; 
+      this->draw->CameraCollided = false;
+    };
+
     glfwGetCursorPos(_window, &pos.x, &pos.y); /* printf("\e[0;33;40m  pos.x(%f) pos.y(%f)\e[0m", pos.x, pos.y) */
     mousePolling(pos);
 
