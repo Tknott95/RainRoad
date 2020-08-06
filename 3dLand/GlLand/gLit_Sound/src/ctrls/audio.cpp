@@ -11,6 +11,15 @@ Audio::Audio() {
 
   ALCcontext* openALContext; /* @TODO add err checking */
   ALCboolean contextMadeCurrent = false;
+
+  ALuint buffer;
+  alcCall(alGenBuffers, 1, &buffer);
+
+  ALenum format;
+  if(wav.Channels == 1 && wav.BitsPerSample == 8)       format = AL_FORMAT_MONO8;
+  else if(wav.Channels == 1 && wav.BitsPerSample == 16) format = AL_FORMAT_MONO16;
+  else if(wav.Channels == 2 && wav.BitsPerSample == 8)  format = AL_FORMAT_STEREO8;
+  else if(wav.Channels == 2 && wav.BitsPerSample == 16) format = AL_FORMAT_STEREO16; /* @TODO Debug on else */
 };
 
 Audio::~Audio() {
