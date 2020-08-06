@@ -18,6 +18,14 @@ void Audio::Update() {
   /* FixedUpdate loop also? Better cals running both */
 };
 
+int32_t convert_to_int(char* buffer, size_t len) {
+  int32_t a = 0;
+  if(endian::native == endian::little)
+    memcpy(&a, buffer, len);
+  else
+    for(size_t i = 0; i < len; ++i) reinterpret_cast<char*>(&a)[3 - i] = buffer[i];
+  return a;
+};
 
 void Audio::loadWavFile(const char* _path, Wav _wav) {
   /* Will use Third Party Lib until M.V.P then will refactor */
