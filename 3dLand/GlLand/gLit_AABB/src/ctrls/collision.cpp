@@ -10,7 +10,7 @@ bool Collision::PointInsideAABB(vec3 _pos, vec3 _otherPos) {
   * @TODO track which side hit, as above alrdy does,
   *  and add 0.10f more for better cols
   ****/
-  if(returnBool) this->PosAfterCol = posBeforeCol;
+  if(returnBool) this->PosAfterCol = PosBeforeCol;
 
   return returnBool;
 };

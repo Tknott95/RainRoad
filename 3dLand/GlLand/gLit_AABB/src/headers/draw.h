@@ -4,6 +4,8 @@
 #include "font.h"
 #include "mesh.h"
 #include "camera.h"
+#include "collision.h"
+
 #include <string>
 #include <iostream>
 
@@ -12,6 +14,7 @@ class Draw {
     Font font{"assets/fonts/KurriIslandBlack.ttf"};
     Font camLoc;
     Shader fontShader;
+    Collision collision;
     vec3 posBeforeCol;
 
     Mesh plane{TypeOfMesh::IsObject,
@@ -29,10 +32,6 @@ class Draw {
       plane,
       mCube00, mCube01
     };
-
-    /* @TODO REFACTOR THESE */
-    bool isPointInsideAABB(vec3 myPos, vec3 otherPos);
-    bool isAABBInsideAABB(vec3, vec3);
 
     void renderGUI(Camera* camera, ivec2 screenSize, int fps);
 
