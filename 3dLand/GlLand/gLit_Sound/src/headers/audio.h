@@ -1,5 +1,7 @@
-#include <cstdio>
-#include <vector>
+#include<cstdio>
+#include<cstdint>
+#include<vector>
+#include<fstream>
 
 /* OpenAL */
 #include <AL/al.h>
@@ -7,15 +9,20 @@
 
 using namespace std;
 
+struct Wav {
+  uint8_t Channels;
+  int32_t SampleRate;
+  uint8_t BitsPerSample;
+  vector<char> SoundData;
+};
+
 /* @TODO make all public names Uppercase and not CamelCase */
 class Audio {
   private:
-    uint8_t channels;
-    int32_t sampleRate;
-    uint8_t bitsPerSample;
-    vector<char> soundData;
-
-    void loadWavFile(ifstream&, uint8_t& ,int32_t& , uint8_t&, ALsizei&); /* file, channels, sampleRate, bitsperSample, size */
+    Wav wav;
+    void loadWavFile(ifstream& _file, 
+                    Wav _wav,
+                    ALsizei& _size);
 
   public:
     Audio();
