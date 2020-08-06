@@ -1,4 +1,6 @@
+#include <cstdio> /* printf(); */
 #include <glm/glm.hpp>
+
 using namespace glm;
 
 class Collision {
