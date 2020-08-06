@@ -37,7 +37,7 @@ void Window::FPS() {
     printf("\n    \e[3;36;40mdeltaTime:\e[0;39;40m %f\e[0m", deltaTime);
     printf("\n    \e[1;36;40mFPS:\e[0;39;40m %i\e[0m", FPSRate);
     printf("\n    \e[0;36;40mstartTime:\e[0;39;40m %f\e[0m", startTime);
-    printf("\n    \e[2;36;40mnowTime:\e[0;39;40m %f\e[0m\n", nowTime);
+    printf("\n    \e[2;36;40mnowTime:\e[0;39;40m %f\e[0m\n\n", nowTime);
   };
 };
 

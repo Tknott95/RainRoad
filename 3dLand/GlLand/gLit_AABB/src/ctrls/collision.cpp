@@ -15,7 +15,7 @@ bool Collision::PointInsideAABB(vec3 _pos, vec3 _otherPos) {
 
   if(returnBool) {
     this->PosAfterCol = this->PosBeforeCol;
-    printf("\e[0;33;40m PointInsideAABB @(%f, %f, %f) \e[0m \n", PosAfterCol.x, PosAfterCol.y, PosAfterCol.z);
+    printf("\e[0;40;1m PointInsideAABB @(%f, %f, %f) \e[0m \n", PosAfterCol.x, PosAfterCol.y, PosAfterCol.z);
   };
 
   return returnBool;
