@@ -20,9 +20,7 @@ struct Wav {
 class Audio {
   private:
     Wav wav;
-    void loadWavFile(ifstream& _file, 
-                    Wav _wav,
-                    ALsizei& _size);
+    void loadWavFile(ifstream& _file, Wav _wav, ALsizei& _size);
 
   public:
     Audio();
