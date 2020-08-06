@@ -1,6 +1,7 @@
 #include<cstdio>
 #include<cstring> /* for strncmp */
 #include<fstream>
+#include<vector>
 #include <bit>
 /* OpenAL */
 #include <AL/al.h>
@@ -30,6 +31,7 @@ struct Wav {
 class Audio {
   private:
     Wav wav;
+    vector<char> soundData;
     int32_t convToInt(char*, size_t);
     char* loadWavFile(const char* _path, Wav _wav);
   public:

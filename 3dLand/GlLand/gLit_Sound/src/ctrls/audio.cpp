@@ -20,6 +20,8 @@ Audio::Audio() {
   else if(wav.Channels == 1 && wav.BitsPerSample == 16) format = AL_FORMAT_MONO16;
   else if(wav.Channels == 2 && wav.BitsPerSample == 8)  format = AL_FORMAT_STEREO8;
   else if(wav.Channels == 2 && wav.BitsPerSample == 16) format = AL_FORMAT_STEREO16; /* @TODO Debug on else */
+ 
+  alCall(alBufferData, buffer, format, soundData.data(), soundData.size(), wav.SampleRate);
 };
 
 Audio::~Audio() {
