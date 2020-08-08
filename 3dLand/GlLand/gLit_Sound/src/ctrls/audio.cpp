@@ -5,27 +5,29 @@ Audio::Audio() {
   printf("\n   \e[2;39;40m Audio Initialized...\e[0m\n");
 
   this->openALDevice = alcOpenDevice(nullptr);
-  if(!this->openALDevice) printf("\n\e[0;31;40m Wav -> ERROR opening openAL device ERROR\e[0m");
+  if(!this->openALDevice) printf("\n\e[0;31;40m openAL -> ERROR opening openAL device ERROR\e[0m");
+
+  enumeration = alcIsExtensionPresent(NULL, "ALC_ENUMERATION_EXT");
+  if(!enumeration) printf("\n\e[0;31;40m openAL -> ERROR enumeration ERROR\e[0m");
 
   char* wavData = loadWavFile("assets/audio/loop94.wav", wav);
 
+  alGetError();
   openALContext = alcCreateContext(this->openALDevice, NULL);
   if (!alcMakeContextCurrent(openALContext)) printf("\n\e[0;31;40m OpenAL -> makeContextCurr ERROR \e[0m");
 
-  alGenBuffers(1, &bufferID);
 
-  // if(wav.Channels == 1 && wav.BitsPerSample == 8)       format = AL_FORMAT_MONO8;
-  // else if(wav.Channels == 1 && wav.BitsPerSample == 16) format = AL_FORMAT_MONO16;
-  // else if(wav.Channels == 2 && wav.BitsPerSample == 8)  format = AL_FORMAT_STEREO8;
-  // else if(wav.Channels == 2 && wav.BitsPerSample == 16) format = AL_FORMAT_STEREO16;
+  if(wav.Channels == 1 && wav.BitsPerSample == 8)       format = AL_FORMAT_MONO8;
+  else if(wav.Channels == 1 && wav.BitsPerSample == 16) format = AL_FORMAT_MONO16;
+  else if(wav.Channels == 2 && wav.BitsPerSample == 8)  format = AL_FORMAT_STEREO8;
+  else if(wav.Channels == 2 && wav.BitsPerSample == 16) format = AL_FORMAT_STEREO16;
 
-  // ALsizei size, freq;
-  // ALenum format;
-  // ALvoid *data;
-  // ALboolean loop = AL_FALSE;
-  // loadWAVFile("assets/audio/loop94.wav", &format, &data, &size, &freq, &loop);
 
-  alBufferData(bufferID, format, wavData, wav.Size, wav.BitsPerSample);
+
+  ALfloat camListenerOri[] = { 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f };
+  alListener3f(AL_POSITION, 0, 0, 1.0f);
+  alListener3f(AL_VELOCITY, 0, 0, 0);
+  alListenerfv(AL_ORIENTATION, camListenerOri);
 
   /* Source is called via> ID */
   alGenSources(1, &source);
@@ -35,15 +37,14 @@ Audio::Audio() {
   alSource3f(source, AL_VELOCITY, 0, 0, 0);
   alSourcei(source, AL_LOOPING, AL_FALSE);
 
-  // alSourcePlay(source);
-  // alGetSourcei(source, AL_SOURCE_STATE, &source);
-  // while (source == AL_PLAYING) alGetSourcei(source, AL_SOURCE_STATE, &source);
+  alGenBuffers(1, &bufferID);
+  alBufferData(bufferID, format, wavData, wav.Size, wav.BitsPerSample);
 
-  ALfloat camListenerOri[] = { 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f };
-  alListener3f(AL_POSITION, 0, 0, 1.0f);
-  alListener3f(AL_VELOCITY, 0, 0, 0);
-  alListenerfv(AL_ORIENTATION, camListenerOri);
+  alSourcei(source, AL_BUFFER, bufferID);
+  alSourcePlay(source);
 
+  alGetSourcei(source, AL_SOURCE_STATE, &source_state);
+  while (source_state == AL_PLAYING) alGetSourcei(source, AL_SOURCE_STATE, &source_state);
 };
 
 Audio::~Audio() {

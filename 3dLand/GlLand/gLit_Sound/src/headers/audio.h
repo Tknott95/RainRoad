@@ -33,9 +33,11 @@ class Audio {
   private:
     ALCdevice* openALDevice;
     ALCcontext* openALContext;
+    ALboolean enumeration;
     ALuint bufferID;
     ALenum format;
     ALuint source;
+    ALint source_state;
 
     Wav wav;
     // vector<char> soundData;
