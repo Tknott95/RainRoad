@@ -105,7 +105,7 @@ char* Audio::loadWavFile(const char* _path, Wav _wav) {
   return data;
 };
 
-static void Audio::listAudioDevices(const ALCchar *devices) {
+void Audio::listAudioDevices(const ALCchar *devices) {
   const ALCchar *device = devices, *next = devices + 1;
   size_t len = 0;
 
