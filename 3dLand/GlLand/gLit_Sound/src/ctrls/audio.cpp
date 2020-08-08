@@ -12,18 +12,23 @@ Audio::Audio() {
   openALContext = alcCreateContext(this->openALDevice, NULL);
   if (!alcMakeContextCurrent(openALContext)) printf("\n\e[0;31;40m OpenAL -> makeContextCurr ERROR \e[0m");
 
-  alGenBuffers(1, &buffer);
+  alGenBuffers(1, &bufferID);
+
+
+  // if(wav.Channels == 1 && wav.BitsPerSample == 8)       format = AL_FORMAT_MONO8;
+  // else if(wav.Channels == 1 && wav.BitsPerSample == 16) format = AL_FORMAT_MONO16;
+  // else if(wav.Channels == 2 && wav.BitsPerSample == 8)  format = AL_FORMAT_STEREO8;
+  // else if(wav.Channels == 2 && wav.BitsPerSample == 16) format = AL_FORMAT_STEREO16;
 
   ALfloat camListenerOri[] = { 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f };
   alListener3f(AL_POSITION, 0, 0, 1.0f);
   alListener3f(AL_VELOCITY, 0, 0, 0);
   alListenerfv(AL_ORIENTATION, camListenerOri);
 
-  alBufferData(buffer, to_al_format(wav.Channels, wav.BitsPerSample),
-                wavData, wav.Size, wav.SampleRate);
+  // alBufferData(bufferID, format, wavData, wav.Size, wav.SampleRate);
 
   /* Source is called via> ID */
-  alGenSources((ALuint)1, &source);
+  alGenSources(1, &source);
   alSourcef(source, AL_PITCH, 1);
   alSourcef(source, AL_GAIN, 1);
   alSource3f(source, AL_POSITION, 0, 0, 0);
@@ -36,14 +41,14 @@ Audio::Audio() {
   ALboolean loop = AL_FALSE;
 
   alSourcePlay(source);
-  alGetSourcei(source, AL_SOURCE_STATE, &source_state);
-  while (source_state == AL_PLAYING) alGetSourcei(source, AL_SOURCE_STATE, &source_state);
+  // alGetSourcei(source, AL_SOURCE_STATE, &source);
+  // while (source == AL_PLAYING) alGetSourcei(source, AL_SOURCE_STATE, &source);
 
 };
 
 Audio::~Audio() {
   alDeleteSources(1, &source);
-  alDeleteBuffers(1, &buffer);
+  alDeleteBuffers(1, &bufferID);
   alcDestroyContext(this->openALContext);
   alcCloseDevice(this->openALDevice);
 };

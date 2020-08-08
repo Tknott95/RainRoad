@@ -31,9 +31,10 @@ struct Wav {
 
 class Audio {
   private:
-    ALCdevice* openALDevice
+    ALCdevice* openALDevice;
     ALCcontext* openALContext;
-    ALuint buffer;
+    ALuint bufferID;
+    ALenum format;
     ALuint source;
 
     Wav wav;
