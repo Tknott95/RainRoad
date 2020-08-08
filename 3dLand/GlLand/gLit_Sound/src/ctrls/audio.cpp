@@ -14,16 +14,16 @@ Audio::Audio() {
 
   alGenBuffers(1, &bufferID);
 
-
   // if(wav.Channels == 1 && wav.BitsPerSample == 8)       format = AL_FORMAT_MONO8;
   // else if(wav.Channels == 1 && wav.BitsPerSample == 16) format = AL_FORMAT_MONO16;
   // else if(wav.Channels == 2 && wav.BitsPerSample == 8)  format = AL_FORMAT_STEREO8;
   // else if(wav.Channels == 2 && wav.BitsPerSample == 16) format = AL_FORMAT_STEREO16;
 
-  ALfloat camListenerOri[] = { 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f };
-  alListener3f(AL_POSITION, 0, 0, 1.0f);
-  alListener3f(AL_VELOCITY, 0, 0, 0);
-  alListenerfv(AL_ORIENTATION, camListenerOri);
+  // ALsizei size, freq;
+  // ALenum format;
+  // ALvoid *data;
+  // ALboolean loop = AL_FALSE;
+  // loadWAVFile("assets/audio/loop94.wav", &format, &data, &size, &freq, &loop);
 
   // alBufferData(bufferID, format, wavData, wav.Size, wav.SampleRate);
 
@@ -35,14 +35,14 @@ Audio::Audio() {
   alSource3f(source, AL_VELOCITY, 0, 0, 0);
   alSourcei(source, AL_LOOPING, AL_FALSE);
 
-  ALsizei size, freq;
-  ALenum format;
-  ALvoid *data;
-  ALboolean loop = AL_FALSE;
-
-  alSourcePlay(source);
+  // alSourcePlay(source);
   // alGetSourcei(source, AL_SOURCE_STATE, &source);
   // while (source == AL_PLAYING) alGetSourcei(source, AL_SOURCE_STATE, &source);
+
+  ALfloat camListenerOri[] = { 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f };
+  alListener3f(AL_POSITION, 0, 0, 1.0f);
+  alListener3f(AL_VELOCITY, 0, 0, 0);
+  alListenerfv(AL_ORIENTATION, camListenerOri);
 
 };
 
