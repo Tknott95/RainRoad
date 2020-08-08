@@ -25,7 +25,7 @@ Audio::Audio() {
   // ALboolean loop = AL_FALSE;
   // loadWAVFile("assets/audio/loop94.wav", &format, &data, &size, &freq, &loop);
 
-  // alBufferData(bufferID, format, wavData, wav.Size, wav.SampleRate);
+  alBufferData(bufferID, format, wavData, wav.Size, wav.BitsPerSample);
 
   /* Source is called via> ID */
   alGenSources(1, &source);
