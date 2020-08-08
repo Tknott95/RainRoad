@@ -9,19 +9,27 @@ Audio::Audio() {
 
   char* wavData = loadWavFile("assets/audio/loop94.wav", wav);
 
-  ALCcontext* openALContext; /* @TODO add err checking */
-  ALCboolean contextMadeCurrent = false;
+  ALCcontext* openALContext;
+  openALContext = alcCreateContext(openALDevice, NULL);
+  if (!alcMakeContextCurrent(openALContext)) printf("\n\e[0;31;40m OpenAL -> makeContextCurr ERROR \e[0m");
 
   ALuint buffer;
   alGenBuffers(1, &buffer);
 
-  ALenum format;
-  if(wav.Channels == 1 && wav.BitsPerSample == 8)       format = AL_FORMAT_MONO8;
-  else if(wav.Channels == 1 && wav.BitsPerSample == 16) format = AL_FORMAT_MONO16;
-  else if(wav.Channels == 2 && wav.BitsPerSample == 8)  format = AL_FORMAT_STEREO8;
-  else if(wav.Channels == 2 && wav.BitsPerSample == 16) format = AL_FORMAT_STEREO16; /* @TODO Debug on else */
- 
-//   alCall(alBufferData, buffer, format, soundData.data(), soundData.size(), wav.SampleRate);
+  ALfloat camListenerOri[] = { 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f };
+  alListener3f(AL_POSITION, 0, 0, 1.0f);
+  alListener3f(AL_VELOCITY, 0, 0, 0);
+  alListenerfv(AL_ORIENTATION, camListenerOri);
+
+  /* Source is called via> ID */
+  ALuint source;
+  alGenSources((ALuint)1, &source);
+  alSourcef(source, AL_PITCH, 1);
+  alSourcef(source, AL_GAIN, 1);
+  alSource3f(source, AL_POSITION, 0, 0, 0);
+  alSource3f(source, AL_VELOCITY, 0, 0, 0);
+  alSourcei(source, AL_LOOPING, AL_FALSE);
+
 };
 
 Audio::~Audio() {
@@ -42,7 +50,6 @@ int32_t Audio::convToInt(char* buffer, size_t len) {
 };
 
 char* Audio::loadWavFile(const char* _path, Wav _wav) {
-  /* Will use Third Party Lib until M.V.P then will refactor */
   char buffer[4];
 
   ifstream _file(_path);
