@@ -9,7 +9,7 @@ Audio::Audio() {
   enumeration = alcIsExtensionPresent(NULL, "ALC_ENUMERATION_EXT");
   if(!enumeration) printf("\n\e[0;31;40m openAL -> ERROR enumeration ERROR\e[0m");
 
-  listAudioDevices(alcGetString(NULL, ALC_DEVICE_SPECIFIER));
+  // listAudioDevices(alcGetString(NULL, ALC_DEVICE_SPECIFIER));
 
   wavData = loadWavFile("assets/audio/loop94.wav", wav);
 
