@@ -41,7 +41,9 @@ Audio::Audio() {
   alBufferData(bufferID, format, wavData, wav.Size, wav.SampleRate);
 
   alSourcei(source, AL_BUFFER, bufferID);
-  /* FixedUpdate loop also? Better cals running both */
+
+  state = AL_PLAYING;
+
 
 
 };
@@ -54,9 +56,9 @@ Audio::~Audio() {
 };
 
 void Audio::Update() {
+  /* FixedUpdate loop also? Better cals running both */
   alSourcePlay(source);
 
-  state = AL_PLAYING;
   alGetSourcei(source, AL_SOURCE_STATE, &state);
   while (state == AL_PLAYING) alGetSourcei(source, AL_SOURCE_STATE, &state);
 };
