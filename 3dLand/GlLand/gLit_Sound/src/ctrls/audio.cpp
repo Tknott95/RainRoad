@@ -115,6 +115,7 @@ static void Audio::listAudioDevices(const ALCchar *devices) {
     fprintf(stdout, "%s\n", device);
     len = strlen(device);
     device += (len + 1);
-     next += (len + 2);}
-    fprintf(stdout, "----------\n");
+     next += (len + 2);
+  };
+  fprintf(stdout, "----------\n");
 };
