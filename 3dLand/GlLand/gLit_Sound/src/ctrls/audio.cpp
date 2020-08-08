@@ -9,14 +9,13 @@ Audio::Audio() {
   enumeration = alcIsExtensionPresent(NULL, "ALC_ENUMERATION_EXT");
   if(!enumeration) printf("\n\e[0;31;40m openAL -> ERROR enumeration ERROR\e[0m");
 
-
-
   listAudioDevices(alcGetString(NULL, ALC_DEVICE_SPECIFIER));
 
-  char* wavData = loadWavFile("assets/audio/loop94.wav", wav);
+  wavData = loadWavFile("assets/audio/loop94.wav", wav);
 
   alGetError();
   openALContext = alcCreateContext(this->openALDevice, NULL);
+  alcMakeContextCurrent(openALContext);
   if (!alcMakeContextCurrent(openALContext)) printf("\n\e[0;31;40m OpenAL -> makeContextCurr ERROR \e[0m");
 
 
@@ -25,29 +24,26 @@ Audio::Audio() {
   else if(wav.Channels == 2 && wav.BitsPerSample == 8)  format = AL_FORMAT_STEREO8;
   else if(wav.Channels == 2 && wav.BitsPerSample == 16) format = AL_FORMAT_STEREO16;
 
-
-
-  ALfloat camListenerOri[] = { 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f };
-  alListener3f(AL_POSITION, 0, 0, 1.0f);
+  ALfloat camListenerOri[] = { 0.0f, 0.0f, -1.0f,  0.0f, 1.0f, 0.0f };
+  alListener3f(AL_POSITION, 0, 0, 0.0f);
   alListener3f(AL_VELOCITY, 0, 0, 0);
   alListenerfv(AL_ORIENTATION, camListenerOri);
 
   /* Source is called via> ID */
-  alGenSources(1, &source);
+  alGenSources((ALuint)1, &source);
   alSourcef(source, AL_PITCH, 1);
   alSourcef(source, AL_GAIN, 1);
   alSource3f(source, AL_POSITION, 0, 0, 0);
   alSource3f(source, AL_VELOCITY, 0, 0, 0);
   alSourcei(source, AL_LOOPING, AL_FALSE);
 
-  alGenBuffers(1, &bufferID);
-  alBufferData(bufferID, format, wavData, wav.Size, wav.BitsPerSample);
+  alGenBuffers((ALuint)1, &bufferID);
+  alBufferData(bufferID, format, wavData, wav.Size, wav.SampleRate);
 
   alSourcei(source, AL_BUFFER, bufferID);
-  alSourcePlay(source);
+  /* FixedUpdate loop also? Better cals running both */
 
-  alGetSourcei(source, AL_SOURCE_STATE, &source_state);
-  while (source_state == AL_PLAYING) alGetSourcei(source, AL_SOURCE_STATE, &source_state);
+
 };
 
 Audio::~Audio() {
@@ -58,7 +54,11 @@ Audio::~Audio() {
 };
 
 void Audio::Update() {
-  /* FixedUpdate loop also? Better cals running both */
+  alSourcePlay(source);
+
+  state = AL_PLAYING;
+  alGetSourcei(source, AL_SOURCE_STATE, &state);
+  while (state == AL_PLAYING) alGetSourcei(source, AL_SOURCE_STATE, &state);
 };
 
 int32_t Audio::convToInt(char* buffer, size_t len) {

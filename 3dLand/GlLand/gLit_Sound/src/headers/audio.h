@@ -6,7 +6,7 @@
 /* OpenAL */
 #include <AL/al.h>
 #include <AL/alc.h>
-#include <AL/alut.h>
+// #include <AL/alut.h>
 enum class endian {
   #ifdef _WIN32
     little = 0,
@@ -31,13 +31,14 @@ struct Wav {
 
 class Audio {
   private:
+    char* wavData;
     ALCdevice* openALDevice;
     ALCcontext* openALContext;
     ALboolean enumeration;
     ALuint bufferID;
     ALenum format;
     ALuint source;
-    ALint source_state;
+    ALint state;
 
     Wav wav;
     // vector<char> soundData;
