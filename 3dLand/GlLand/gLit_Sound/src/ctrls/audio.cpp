@@ -1,6 +1,5 @@
 #include "../headers/audio.h"
 
-
 Audio::Audio() {
   printf("\n   \e[2;39;40m Audio Initialized...\e[0m\n");
 
@@ -9,6 +8,10 @@ Audio::Audio() {
 
   enumeration = alcIsExtensionPresent(NULL, "ALC_ENUMERATION_EXT");
   if(!enumeration) printf("\n\e[0;31;40m openAL -> ERROR enumeration ERROR\e[0m");
+
+
+
+  listAudioDevices(alcGetString(NULL, ALC_DEVICE_SPECIFIER));
 
   char* wavData = loadWavFile("assets/audio/loop94.wav", wav);
 
@@ -100,4 +103,18 @@ char* Audio::loadWavFile(const char* _path, Wav _wav) {
 
   wavFile02.read(data, wav.Size);
   return data;
+};
+
+static void Audio::listAudioDevices(const ALCchar *devices) {
+  const ALCchar *device = devices, *next = devices + 1;
+  size_t len = 0;
+
+  fprintf(stdout, "Devices list:\n");
+  fprintf(stdout, "----------\n");
+  while (device && *device != '\0' && next && *next != '\0') {
+    fprintf(stdout, "%s\n", device);
+    len = strlen(device);
+    device += (len + 1);
+     next += (len + 2);}
+    fprintf(stdout, "----------\n");
 };

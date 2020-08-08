@@ -43,7 +43,7 @@ class Audio {
     // vector<char> soundData;
     int32_t convToInt(char*, size_t);
     char* loadWavFile(const char* _path, Wav _wav);
-
+    static void listAudioDevices(const ALCchar *devices)
 
   public:
     Audio();
