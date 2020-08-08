@@ -4,16 +4,14 @@
 Audio::Audio() {
   printf("\n   \e[2;39;40m Audio Initialized...\e[0m\n");
 
-  ALCdevice* openALDevice = alcOpenDevice(nullptr);
-  if(!openALDevice) printf("\n\e[0;31;40m Wav -> ERROR opening openAL device ERROR\e[0m");
+  this->openALDevice = alcOpenDevice(nullptr);
+  if(!this->openALDevice) printf("\n\e[0;31;40m Wav -> ERROR opening openAL device ERROR\e[0m");
 
   char* wavData = loadWavFile("assets/audio/loop94.wav", wav);
 
-  ALCcontext* openALContext;
-  openALContext = alcCreateContext(openALDevice, NULL);
+  openALContext = alcCreateContext(this->openALDevice, NULL);
   if (!alcMakeContextCurrent(openALContext)) printf("\n\e[0;31;40m OpenAL -> makeContextCurr ERROR \e[0m");
 
-  ALuint buffer;
   alGenBuffers(1, &buffer);
 
   ALfloat camListenerOri[] = { 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f };
@@ -21,8 +19,10 @@ Audio::Audio() {
   alListener3f(AL_VELOCITY, 0, 0, 0);
   alListenerfv(AL_ORIENTATION, camListenerOri);
 
+  alBufferData(buffer, to_al_format(wav.Channels, wav.BitsPerSample),
+                wavData, wav.Size, wav.SampleRate);
+
   /* Source is called via> ID */
-  ALuint source;
   alGenSources((ALuint)1, &source);
   alSourcef(source, AL_PITCH, 1);
   alSourcef(source, AL_GAIN, 1);
@@ -30,10 +30,22 @@ Audio::Audio() {
   alSource3f(source, AL_VELOCITY, 0, 0, 0);
   alSourcei(source, AL_LOOPING, AL_FALSE);
 
+  ALsizei size, freq;
+  ALenum format;
+  ALvoid *data;
+  ALboolean loop = AL_FALSE;
+
+  alSourcePlay(source);
+  alGetSourcei(source, AL_SOURCE_STATE, &source_state);
+  while (source_state == AL_PLAYING) alGetSourcei(source, AL_SOURCE_STATE, &source_state);
+
 };
 
 Audio::~Audio() {
-  /* Delete all audio buffers here */
+  alDeleteSources(1, &source);
+  alDeleteBuffers(1, &buffer);
+  alcDestroyContext(this->openALContext);
+  alcCloseDevice(this->openALDevice);
 };
 
 void Audio::Update() {
