@@ -3,13 +3,13 @@
 Audio::Audio() {
   printf("\n   \e[2;39;40m Audio Initialized...\e[0m\n");
 
-  this->openALDevice = alcOpenDevice(nullptr);
+  this->openALDevice = alcOpenDevice(NULL);
   if(!this->openALDevice) printf("\n\e[0;31;40m openAL -> ERROR opening openAL device ERROR\e[0m");
 
   enumeration = alcIsExtensionPresent(NULL, "ALC_ENUMERATION_EXT");
   if(!enumeration) printf("\n\e[0;31;40m openAL -> ERROR enumeration ERROR\e[0m");
 
-  // listAudioDevices(alcGetString(NULL, ALC_DEVICE_SPECIFIER));
+  listAudioDevices(alcGetString(NULL, ALC_DEVICE_SPECIFIER));
 
   wavData = loadWavFile("assets/audio/loop94.wav", wav);
 

@@ -1,4 +1,5 @@
 #include "headers/window.h"
+
 /*************************
 @AUTHOR: Trevor Knott
 @DATE:   07-22-20
