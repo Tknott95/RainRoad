@@ -36,7 +36,7 @@ class Audio {
     ALboolean enumeration;
     ALuint bufferID;
     ALenum format;
-    ALuint source;
+    ALuint sourceID;
     ALint state;
 
     Wav wav;

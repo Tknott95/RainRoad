@@ -8,59 +8,61 @@ Audio::Audio() {
   this->openALDevice = alcOpenDevice(NULL); /* or NULL? read this can cause issues, forget which was which */
   if(!this->openALDevice) printf("\n\e[0;31;40m openAL -> ERROR opening openAL device ERROR\e[0m");
 
+  this->openALContext = alcCreateContext(this->openALDevice, NULL);
+  if(!this->openALContext) printf("\n\e[0;31;40m openAL -> ERROR opening openAL context ERROR\e[0m");
+
+
   // enumeration = alcIsExtensionPresent(NULL, "ALC_ENUMERATION_EXT");
   // if(!enumeration) printf("\n\e[0;31;40m openAL -> ERROR enumeration ERROR\e[0m");
 
   listAudioDevices(alcGetString(NULL, ALC_DEVICE_SPECIFIER));
 
-  alGetError();
-  openALContext = alcCreateContext(this->openALDevice, NULL);
-  alcMakeContextCurrent(openALContext);
-  if (!alcMakeContextCurrent(openALContext)) printf("\n\e[0;31;40m OpenAL -> makeContextCurr ERROR \e[0m");
-
+  alcMakeContextCurrent(this->openALContext);
+  if(!alcMakeContextCurrent(this->openALContext)) printf("\n\e[0;31;40m OpenAL -> makeContextCurr ERROR \e[0m");
+  alGenBuffers(1, &bufferID);
 
   if(wav.Channels == 1 && wav.BitsPerSample == 8)       format = AL_FORMAT_MONO8;
   else if(wav.Channels == 1 && wav.BitsPerSample == 16) format = AL_FORMAT_MONO16;
   else if(wav.Channels == 2 && wav.BitsPerSample == 8)  format = AL_FORMAT_STEREO8;
   else if(wav.Channels == 2 && wav.BitsPerSample == 16) format = AL_FORMAT_STEREO16;
 
-  ALfloat camListenerOri[] = { 0.0f, 0.0f, -1.0f,  0.0f, 1.0f, 0.0f };
-  alListener3f(AL_POSITION, 0, 0, 0.0f);
-  alListener3f(AL_VELOCITY, 0, 0, 0);
-  alListenerfv(AL_ORIENTATION, camListenerOri);
+  // alBufferData(bufferID, format, wavData, wav.Size, wav.SampleRate);
 
-  /* Source is called via> ID */
-  alGenSources((ALuint)1, &source);
-  alSourcef(source, AL_PITCH, 1);
-  alSourcef(source, AL_GAIN, 1);
-  alSource3f(source, AL_POSITION, 0, 0, 0);
-  alSource3f(source, AL_VELOCITY, 0, 0, 0);
-  alSourcei(source, AL_LOOPING, AL_FALSE);
+  // alGenSources(1, &sourceID);
+  // alSourcef(sourceID, AL_PITCH, 1);
+  // alSourcef(sourceID, AL_GAIN, 1);
+  // alSource3f(sourceID, AL_POSITION, 0, 0, 0);
+  // alSource3f(sourceID, AL_VELOCITY, 0, 0, 0);
+  // alSourcei(sourceID, AL_LOOPING, AL_TRUE);
+  // alSourcei(sourceID, AL_BUFFER, bufferID);
+  // alSourcePlay(sourceID);
 
-  alGenBuffers((ALuint)1, &bufferID);
-  alBufferData(bufferID, format, wavData, wav.Size, wav.SampleRate);
+  // ALfloat camListenerOri[] = { 0.0f, 0.0f, -1.0f,  0.0f, 1.0f, 0.0f };
+  // alListener3f(AL_POSITION, 0, 0, 0.0f);
+  // alListener3f(AL_VELOCITY, 0, 0, 0);
+  // alListenerfv(AL_ORIENTATION, camListenerOri);
 
-  alSourcei(source, AL_BUFFER, bufferID);
+  // // /* Source is called via> ID */
+  // // alGenSources(1, &sourceID);
 
-  state = AL_PLAYING;
 
-  alSourcePlay(source);
-
-  alGetSourcei(source, AL_SOURCE_STATE, &state);
+  // state = AL_PLAYING;
+  // alGetSourcei(sourceID, AL_SOURCE_STATE, &state);
 
 };
 
 Audio::~Audio() {
-  alDeleteSources(1, &source);
+  alDeleteSources(1, &sourceID);
   alDeleteBuffers(1, &bufferID);
   alcDestroyContext(this->openALContext);
   alcCloseDevice(this->openALDevice);
+  delete[] wavData;
 };
 
 void Audio::Update() {
   /* FixedUpdate loop also? Better cals running both */
-
-  while (state == AL_PLAYING) alGetSourcei(source, AL_SOURCE_STATE, &state);
+  
+   while (state == AL_PLAYING) alGetSourcei(sourceID, AL_SOURCE_STATE, &state);
 };
 
 bool isBigEndian() {
