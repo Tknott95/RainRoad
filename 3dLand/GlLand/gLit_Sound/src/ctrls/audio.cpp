@@ -3,7 +3,7 @@
 Audio::Audio() {
   printf("\n   \e[2;39;40m Audio Initialized...\e[0m\n");
 
-  this->openALDevice = alcOpenDevice(NULL);
+  this->openALDevice = alcOpenDevice(nullptr); /* or NULL? read this can cause issues, forget which was which */
   if(!this->openALDevice) printf("\n\e[0;31;40m openAL -> ERROR opening openAL device ERROR\e[0m");
 
   enumeration = alcIsExtensionPresent(NULL, "ALC_ENUMERATION_EXT");
@@ -44,7 +44,9 @@ Audio::Audio() {
 
   state = AL_PLAYING;
 
+  alSourcePlay(source);
 
+  alGetSourcei(source, AL_SOURCE_STATE, &state);
 
 };
 
@@ -57,9 +59,7 @@ Audio::~Audio() {
 
 void Audio::Update() {
   /* FixedUpdate loop also? Better cals running both */
-  alSourcePlay(source);
 
-  alGetSourcei(source, AL_SOURCE_STATE, &state);
   while (state == AL_PLAYING) alGetSourcei(source, AL_SOURCE_STATE, &state);
 };
 
