@@ -24,7 +24,7 @@ Audio::Audio() {
   else if(wav.Channels == 2 && wav.BitsPerSample == 8)  format = AL_FORMAT_STEREO8;
   else if(wav.Channels == 2 && wav.BitsPerSample == 16) format = AL_FORMAT_STEREO16;
 
-  ALfloat camListenerOri[] = { 0.0f, 0.0f, -1.0f,  0.0f, 1.0f, 0.0f };
+  ALfloat camListenerOri[] = { 0.0f, 0.0f, 1.0f,  0.0f, 1.0f, 0.0f };
   alListener3f(AL_POSITION, 0, 0, 0.0f);
   alListener3f(AL_VELOCITY, 0, 0, 0);
   alListenerfv(AL_ORIENTATION, camListenerOri);
