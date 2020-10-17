@@ -29,11 +29,12 @@ Draw::Draw() { fontShader.compile("assets/shaders/font/font.vs","assets/shaders/
 Draw::~Draw() {};
 
 void Draw::update(Camera* camera, ivec2 screenSize, int fps) {
-  audio.Update();
   glClearColor(0.f, 0.f, 0.14f, 1.0f);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
   this->renderGUI(camera, screenSize, fps);
+  this->audio.Update();
+
  /************* OBJ DRAWING START **********************/
   const int meshSize = sizeof(mesh)/sizeof(mesh[0]);
   for(int k=0;k<meshSize;k++) {
