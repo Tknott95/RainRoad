@@ -1,4 +1,4 @@
-```  Run 2.0 - Post Solst.  ```
+```  Run 2.0   ```
 # RainRoad
 ### @AUTHOR: 
 ##### Trevor Knott
