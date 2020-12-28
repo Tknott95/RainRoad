@@ -1,6 +1,6 @@
  ```   Run 2.0    ```
 
-!! FIX OLD CODE I LOST ON MY JULY z5th .GITIGNORE
+! FIX OLD CODE I LOST ON MY JULY z5th .GITIGNORE
 
 # RainRoad
 ### @AUTHOR: 
