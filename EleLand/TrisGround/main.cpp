@@ -15,7 +15,8 @@ class RefactorMe {
   public:
     mesh cubeMesh;
 
-    void onInit() {
+    void onInit() { 
+      // Not USing constuctors here for visualization purposes
       // South side towards ME on Zedd Axis
       cubeMesh.tris = { 
         /*

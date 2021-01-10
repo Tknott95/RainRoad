@@ -26,7 +26,14 @@ Audio::Audio() {
   else if(wav.Channels == 2 && wav.BitsPerSample == 8)  format = AL_FORMAT_STEREO8;
   else if(wav.Channels == 2 && wav.BitsPerSample == 16) format = AL_FORMAT_STEREO16;
 
+<<<<<<< HEAD
+  ALfloat camListenerOri[] = { 0.0f, 0.0f, 1.0f,  0.0f, 1.0f, 0.0f };
+  alListener3f(AL_POSITION, 0, 0, 0.0f);
+  alListener3f(AL_VELOCITY, 0, 0, 0);
+  alListenerfv(AL_ORIENTATION, camListenerOri);
+=======
   // alBufferData(bufferID, format, wavData, wav.Size, wav.SampleRate);
+>>>>>>> e779689e8391fe58e07c32b15b0307253643e441
 
   // alGenSources(1, &sourceID);
   // alSourcef(sourceID, AL_PITCH, 1);

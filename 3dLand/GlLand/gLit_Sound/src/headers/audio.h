@@ -6,6 +6,11 @@
 /* OpenAL */
 #include <AL/al.h>
 #include <AL/alc.h>
+<<<<<<< HEAD
+
+// #include <AL/alut.h>
+=======
+>>>>>>> e779689e8391fe58e07c32b15b0307253643e441
 enum class endian {
   #ifdef _WIN32
     little = 0,
